@@ -20,10 +20,10 @@
 
 /* ─── 1. VARIABLES ──────────────────────────────────────────── */
 :root {
-  /* Brand Colors - Inferred from new logo */
-  --navy: #060912;
-  --navy-mid: #0C1222;
-  --navy-light: #161F36;
+  /* Obsidian Theme - Neutral Deep Blacks */
+  --navy: #030303;        /* Pure Obsidian */
+  --navy-mid: #0A0A0A;    /* Surface Mid */
+  --navy-light: #121212;  /* Surface Light */
   
   --primary-start: #1D5BFD; /* Vibrant Blue */
   --primary-mid: #10B981;   /* Emerald/Teal */
@@ -37,10 +37,10 @@
   --silver-lt: #CBD5E1;
   --text-muted: #64748B;
   
-  /* Glassmorphism Tokens */
-  --glass-bg: rgba(15, 23, 42, 0.65);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-highlight: rgba(255, 255, 255, 0.03);
+  /* Glassmorphism Tokens - Neutralized */
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.07);
+  --glass-highlight: rgba(255, 255, 255, 0.05);
 
   /* Typography */
   --font-display: 'Bebas Neue', sans-serif;
@@ -121,11 +121,61 @@ body::before {
   position: fixed;
   inset: 0;
   background-image:
-    linear-gradient(rgba(25, 79, 160, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(25, 79, 160, 0.03) 1px, transparent 1px);
-  background-size: 60px 60px;
+    linear-gradient(rgba(29, 91, 253, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(29, 91, 253, 0.04) 1px, transparent 1px);
+  background-size: 80px 80px;
   pointer-events: none;
   z-index: 0;
+}
+
+/* Mesh Gradient Blobs */
+.mesh-gradient {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  overflow: hidden;
+  filter: blur(140px);
+  opacity: 0.22; /* Increased vibrancy from 0.12 */
+  pointer-events: none;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px); /* Slightly smoother blur */
+}
+
+.blob-1 {
+  width: 70vw; /* Increased scale from 50vw */
+  height: 70vw;
+  background: var(--primary-start);
+  top: -20%;
+  left: -20%;
+  animation: drift 25s ease-in-out infinite alternate;
+}
+
+.blob-2 {
+  width: 60vw; /* Increased scale from 40vw */
+  height: 60vw;
+  background: var(--primary-mid);
+  bottom: -15%;
+  right: -10%;
+  animation: drift 30s ease-in-out infinite alternate-reverse;
+}
+
+.blob-3 {
+  width: 65vw; /* Increased scale from 45vw */
+  height: 65vw;
+  background: var(--secondary-start);
+  top: 30%;
+  left: 30%;
+  animation: drift 20s ease-in-out infinite alternate;
+}
+
+@keyframes drift {
+  0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+  50% { transform: translate(10%, 15%) scale(1.1) rotate(45deg); }
+  100% { transform: translate(-5%, 5%) scale(0.9) rotate(-15deg); }
 }
 
 
@@ -133,7 +183,7 @@ body::before {
 .divider {
   width: 100%;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(25, 79, 160, 0.2), transparent);
+  background: linear-gradient(to right, transparent, var(--glass-border), transparent);
   position: relative;
   z-index: 1;
 }
@@ -179,7 +229,7 @@ body::before {
   justify-content: space-between;
   padding: 0 5vw;
   height: 80px;
-  background: rgba(6, 9, 18, 0.7);
+  background: rgba(3, 3, 3, 0.5); /* Neutralized from 6, 9, 18 */
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--glass-border);
@@ -188,7 +238,7 @@ body::before {
 
 #navbar.scrolled {
   height: 70px;
-  background: rgba(6, 9, 18, 0.9);
+  background: rgba(3, 3, 3, 0.8); /* Neutralized */
   border-bottom-color: rgba(29, 91, 253, 0.2);
 }
 
