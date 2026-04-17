@@ -77,3 +77,61 @@ if (revealElements.length > 0) {
 // document.querySelector('.hero-cta')?.addEventListener('click', () => {
 //   trackEvent('Navigation', 'click', 'Hero CTA - View Our Apps');
 // });
+
+
+/* ─── 5. BUTTON TEXT SLIDING ANIMATION ON HOVER ────────────────────────── */
+const heroCta = document.querySelector('.hero-cta');
+const heroCtaText = document.querySelector('.hero-cta span');
+const originalText = 'View Our Apps';
+const hoverText = 'Click Here';
+
+if (heroCta && heroCtaText) {
+  // Create a wrapper to prevent jiggling
+  const textWrapper = document.createElement('div');
+  textWrapper.style.display = 'inline-block';
+  textWrapper.style.overflow = 'hidden';
+  textWrapper.style.width = '120px';
+  textWrapper.style.textAlign = 'center';
+  textWrapper.style.verticalAlign = 'middle';
+
+  // Replace span with wrapper
+  heroCtaText.parentNode.insertBefore(textWrapper, heroCtaText);
+  textWrapper.appendChild(heroCtaText);
+
+  // Set up text styles
+  heroCtaText.style.transition = 'transform 0.4s ease';
+  heroCtaText.style.display = 'inline-block';
+  heroCtaText.style.whiteSpace = 'nowrap';
+  heroCtaText.style.width = '120px';
+  heroCtaText.style.textAlign = 'center';
+
+  heroCta.addEventListener('mouseenter', () => {
+    // Slide out to right
+    heroCtaText.style.transform = 'translateX(100%)';
+
+    setTimeout(() => {
+      // Change text and slide in from left
+      heroCtaText.textContent = hoverText;
+      heroCtaText.style.transform = 'translateX(-100%)';
+
+      setTimeout(() => {
+        heroCtaText.style.transform = 'translateX(0)';
+      }, 50);
+    }, 200);
+  });
+
+  heroCta.addEventListener('mouseleave', () => {
+    // Slide out to left
+    heroCtaText.style.transform = 'translateX(-100%)';
+
+    setTimeout(() => {
+      // Change text and slide in from right
+      heroCtaText.textContent = originalText;
+      heroCtaText.style.transform = 'translateX(100%)';
+
+      setTimeout(() => {
+        heroCtaText.style.transform = 'translateX(0)';
+      }, 50);
+    }, 200);
+  });
+}
