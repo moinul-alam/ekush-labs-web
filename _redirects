@@ -1,0 +1,6 @@
+# Redirect all HTTP to HTTPS
+http://ekushlabs.com/* https://www.ekushlabs.com/:splat 301!
+http://www.ekushlabs.com/* https://www.ekushlabs.com/:splat 301!
+
+# Redirect non-www to www (HTTPS)
+https://ekushlabs.com/* https://www.ekushlabs.com/:splat 301!
