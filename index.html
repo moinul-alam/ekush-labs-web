@@ -78,10 +78,21 @@
     </button>
 
     <ul class="nav-links">
+      <li><a href="#hero">Home</a></li>
       <li><a href="#apps">Apps</a></li>
       <li><a href="#about">About</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+
+    <button class="theme-toggle" aria-label="Toggle theme">
+      <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5" />
+        <path d="M12 1v2m0 18v2m11-11h-2M4 12H2m15.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m12.728 0l-1.414 1.414M7.05 16.95l-1.414 1.414M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+      </svg>
+      <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+      </svg>
+    </button>
   </nav>
 
   <!-- ─── HERO ─────────────────────────────────────────────────── -->
@@ -132,14 +143,25 @@
       </a>
 
       <!-- Jhuri - Smart Grocery List -->
-      <a href="https://jhuri.ekushlabs.com" class="app-card reveal soon">
+      <a href="https://jhuri.ekushlabs.com" class="app-card reveal">
         <span class="app-card-tag">Grocery</span>
         <h3 class="app-card-name">Jhuri</h3>
         <p class="app-card-desc">Smart Grocery List - Organize your shopping with intelligent lists, categories, and
           reminders. Never forget an item again.</p>
         <div class="app-card-footer">
+          <div class="status-dot"></div>
+          <span class="app-card-status">Available on Play Store</span>
+        </div>
+      </a>
+
+      <!-- Shonamoni -->
+      <a href="https://shonamoni.ekushlabs.com" class="app-card reveal soon">
+        <span class="app-card-tag">Coming Soon</span>
+        <h3 class="app-card-name">Shonamoni</h3>
+        <p class="app-card-desc">A new app in development. Stay tuned for updates.</p>
+        <div class="app-card-footer">
           <div class="status-dot soon"></div>
-          <span class="app-card-status">Launching Soon</span>
+          <span class="app-card-status">In Development</span>
         </div>
       </a>
 
@@ -204,8 +226,8 @@
     <div class="about-right reveal">
       <!-- TODO: Update stat numbers as more apps launch -->
       <div class="about-stat">
-        <div class="about-stat-num">01</div>
-        <div class="about-stat-label">App Live</div>
+        <div class="about-stat-num">02</div>
+        <div class="about-stat-label">Apps Live</div>
       </div>
       <div class="about-stat">
         <div class="about-stat-num">02</div>

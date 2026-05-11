@@ -1,9 +1,10 @@
 /* ============================================================
    EkushLabs — main.js
    1. Footer Year
-   2. Navbar & Mobile Menu
-   3. Scroll Reveal
-   4. Stats Counter Animation
+   2. Theme Toggle
+   3. Navbar & Mobile Menu
+   4. Scroll Reveal
+   5. Stats Counter Animation
 ============================================================ */
 
 /**
@@ -15,7 +16,48 @@ if (yearEl) {
 }
 
 /**
- * 2. NAVBAR & MOBILE MENU
+ * 2. THEME TOGGLE
+ */
+const themeToggle = document.querySelector('.theme-toggle');
+const html = document.documentElement;
+
+// Check system theme preference first
+const getSystemTheme = () => {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    return 'dark';
+  }
+  return 'light';
+};
+
+// Determine initial theme
+const savedTheme = localStorage.getItem('theme');
+const systemTheme = getSystemTheme();
+const initialTheme = savedTheme || systemTheme || 'light';
+
+html.setAttribute('data-theme', initialTheme);
+
+// Listen for system theme changes
+if (window.matchMedia) {
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem('theme')) {
+      const newSystemTheme = e.matches ? 'dark' : 'light';
+      html.setAttribute('data-theme', newSystemTheme);
+    }
+  });
+}
+
+// Toggle theme on button click
+if (themeToggle) {
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = html.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+  });
+}
+
+/**
+ * 3. NAVBAR & MOBILE MENU
  */
 const navbar = document.getElementById('navbar');
 const navToggle = document.querySelector('.nav-toggle');
