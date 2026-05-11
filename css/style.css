@@ -604,6 +604,10 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+[data-theme="light"] .hero-cta {
+  color: #FFFFFF;
+}
+
 .hero-cta::before {
   content: '';
   position: absolute;
@@ -620,6 +624,7 @@ body::before {
 .hero-cta:hover {
   transform: translateY(-4px) scale(1.02);
   box-shadow: 0 20px 60px -12px rgba(29, 91, 253, 0.6);
+  color: var(--white);
 }
 
 .hero-cta:hover::before {
