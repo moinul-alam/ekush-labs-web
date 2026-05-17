@@ -1,0 +1,37 @@
+<!-- ============================================================
+   Ekush Labs Shared Component — navbar.html
+   Responsive, domain-agnostic navigation header.
+   Uses root-relative paths for clean local & subdomain operations.
+============================================================ -->
+<nav id="navbar">
+  <!-- Universal portal back anchor -->
+  <a href="https://ekushlabs.com" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+      <path d="M19 12H5M12 5l-7 7 7 7" />
+    </svg>
+    <span>EkushLabs</span>
+  </a>
+
+  <!-- Dynamic Branding (resolves relative to the active site host) -->
+  <a href="/" class="nav-brand">
+    <img src="assets/app_logo.png" alt="Logo" class="nav-logo" onerror="this.style.display='none'" />
+    <span class="nav-name">
+      <img src="assets/app_title.png" alt="Title" class="nav-title-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline'" />
+      <span class="nav-brand-fallback" style="display: none;">App Title</span>
+    </span>
+  </a>
+
+  <!-- Mobile Hamburger Menu Button -->
+  <button class="nav-toggle" aria-label="Toggle Navigation Menu">
+    <span class="hamburger"></span>
+  </button>
+
+  <!-- Interactive Navigation Links -->
+  <ul class="nav-links">
+    <li><a href="/#features">Features</a></li>
+    <li><a href="/#screenshots">Screenshots</a></li>
+    <li><a href="/privacy.html">Privacy</a></li>
+    <li><a href="/terms.html">Terms</a></li>
+    <li><a href="/#support">Support</a></li>
+  </ul>
+</nav>

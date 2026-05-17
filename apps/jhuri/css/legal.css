@@ -13,6 +13,43 @@
 ============================================================ */
 
 
+/* ─── 0. BRAND VARIABLES ────────────────────────────────────── */
+:root {
+  /* Brand */
+  --green: #2A3FA8;
+  --green-dark: #1A2670;
+  --green-light: #E0E3F5;
+  --green-mid: #9CA3DC;
+  --green-dim: rgba(42, 63, 168, 0.06);
+  --orange: #E9A23B;
+  --orange-dim: rgba(233, 162, 59, 0.15);
+  --orange-dark: #C47F1A;
+
+  /* Neutrals */
+  --cream: #FDFAF4;
+  --cream-dark: #F5EFE2;
+  --white: #FFFFFF;
+  --surface: #F8F5EE;
+  --border: #E8E0D0;
+  --text-primary: #1C1C1C;
+  --text-secondary: #4A5568;
+  --text-muted: #8A9AA0;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'Hind Siliguri', sans-serif;
+
+  /* Misc */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 8px rgba(26, 38, 112, 0.12);
+  --shadow: 0 8px 28px rgba(26, 38, 112, 0.18);
+  --shadow-lg: 0 20px 60px rgba(26, 38, 112, 0.24);
+}
+
 /* ─── 1. PAGE BASE ──────────────────────────────────────────── */
 *,
 *::before,

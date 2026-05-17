@@ -25,14 +25,22 @@
     rel="stylesheet" />
 
   <!-- ─── STYLES ───────────────────────────────────────────────── -->
-  <link rel="stylesheet" href="css/components.css" />
+  <!-- ─── SHARED THEME & DESIGN TOKENS ────────────────────────── -->
+  <script src="/shared/js/theme-manager.js"></script>
+  <link rel="stylesheet" href="/shared/css/design-tokens.css" />
+  <link rel="stylesheet" href="/shared/css/reset.css" />
+  <link rel="stylesheet" href="/shared/css/animations.css" />
+  <link rel="stylesheet" href="/shared/css/components.css" />
+
+  <!-- ─── LOCAL APP STYLES ─────────────────────────────────────── -->
   <link rel="stylesheet" href="css/privacy.css" />
 </head>
 
 <body>
 
   <!-- ─── NAVBAR (injected by components.js) ───────────────────── -->
-  <div id="navbar-placeholder"></div>
+  <!-- ─── NAVBAR PLACEHOLDER (Dynamic universal header) ────────── -->
+  <div id="navbar-placeholder" data-app-name="Ekush Ponji"></div>
 
   <!-- ─── HEADER ───────────────────────────────────────────────── -->
   <header class="policy-header">
@@ -417,11 +425,11 @@
     </div>
   </main>
 
-  <!-- ─── FOOTER (injected by components.js) ───────────────────── -->
-  <div id="footer-placeholder"></div>
+  <!-- ─── FOOTER PLACEHOLDER (Dynamic universal footer) ────────── -->
+  <div id="footer-placeholder" data-app-name="Ekush Ponji"></div>
 
-  <!-- ─── SCRIPTS ───────────────────────────────────────────────── -->
-  <script src="js/components.js" defer></script>
+  <!-- ─── SHARED UTILITY ENGINE ────────────────────────────────── -->
+  <script src="/shared/js/loader.js" defer></script>
   <script>
     document.getElementById('effective-date').textContent = 'April 2026';
   </script>
