@@ -40,8 +40,14 @@
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap"
     rel="stylesheet" />
 
-  <!-- ─── STYLES ───────────────────────────────────────────────── -->
-  <link rel="stylesheet" href="css/components.css" />
+  <!-- ─── SHARED THEME & DESIGN TOKENS ────────────────────────── -->
+  <script src="/shared/js/theme-manager.js"></script>
+  <link rel="stylesheet" href="/shared/css/design-tokens.css" />
+  <link rel="stylesheet" href="/shared/css/reset.css" />
+  <link rel="stylesheet" href="/shared/css/animations.css" />
+  <link rel="stylesheet" href="/shared/css/components.css" />
+
+  <!-- ─── LOCAL APP STYLES ─────────────────────────────────────── -->
   <link rel="stylesheet" href="css/style.css" />
 
   <!-- ─── GOOGLE ANALYTICS ─────────────────────────────────────── -->
@@ -59,8 +65,8 @@
 
 <body>
 
-  <!-- ─── NAVBAR (injected by components.js) ───────────────────── -->
-  <div id="navbar-placeholder"></div>
+  <!-- ─── NAVBAR PLACEHOLDER (Dynamic universal header) ────────── -->
+  <div id="navbar-placeholder" data-app-name="Ekush Ponji"></div>
 
   <!-- ─── HERO ─────────────────────────────────────────────────── -->
   <section id="hero">
@@ -394,11 +400,14 @@
     </div>
   </section>
 
-  <!-- ─── FOOTER (injected by components.js) ───────────────────── -->
-  <div id="footer-placeholder"></div>
+  <!-- ─── FOOTER PLACEHOLDER (Dynamic universal footer) ────────── -->
+  <div id="footer-placeholder" data-app-name="Ekush Ponji"></div>
 
-  <!-- ─── SCRIPTS ───────────────────────────────────────────────── -->
-  <script src="js/components.js" defer></script>
+  <!-- ─── SHARED UTILITY ENGINE ────────────────────────────────── -->
+  <script src="/shared/js/loader.js" defer></script>
+  <script src="/shared/js/observers.js" defer></script>
+
+  <!-- ─── LOCAL SCRIPTS ─────────────────────────────────────────── -->
   <script src="js/main.js" defer></script>
 
 </body>
