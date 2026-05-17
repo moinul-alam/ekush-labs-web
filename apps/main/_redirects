@@ -1,3 +1,0 @@
-# Redirect all HTTP to HTTPS
-http://ekushlabs.com/* https://ekushlabs.com/:splat 301!
-http://www.ekushlabs.com/* https://ekushlabs.com/:splat 301!
