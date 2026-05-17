@@ -1,0 +1,253 @@
+/* ============================================================
+   Jhuri — components.css
+   Shared navbar and footer across all pages.
+   Structure:
+   1. Variables
+   2. Navbar
+   3. Footer
+   4. Responsive
+============================================================ */
+
+
+/* ─── 1. VARIABLES ──────────────────────────────────────────── */
+:root {
+  /* Brand */
+  --green: #2A3FA8;
+  --green-dark: #1A2670;
+  --green-light: #E0E3F5;
+  --green-mid: #9CA3DC;
+  --green-dim: rgba(42, 63, 168, 0.06);
+  --orange: #E9A23B;
+  --orange-dim: rgba(233, 162, 59, 0.15);
+  --orange-dark: #C47F1A;
+
+  /* Neutrals */
+  --cream: #FDFAF4;
+  --cream-dark: #F5EFE2;
+  --white: #FFFFFF;
+  --surface: #F8F5EE;
+  --border: #E8E0D0;
+  --text-primary: #1C1C1C;
+  --text-secondary: #4A5568;
+  --text-muted: #8A9AA0;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'Hind Siliguri', sans-serif;
+
+  /* Misc */
+  --radius-sm: 6px;
+  --radius: 12px;
+  --radius-lg: 20px;
+  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --shadow-sm: 0 2px 8px rgba(26, 38, 112, 0.12);
+  --shadow: 0 8px 28px rgba(26, 38, 112, 0.18);
+  --shadow-lg: 0 20px 60px rgba(26, 38, 112, 0.24);
+}
+
+
+/* ─── 2. NAVBAR ─────────────────────────────────────────────── */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: 68px;
+  background: rgba(253, 250, 244, 0.92);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: box-shadow var(--transition);
+}
+
+#navbar.scrolled {
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.nav-back svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+}
+
+.nav-back:hover {
+  color: var(--green);
+}
+
+.nav-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  text-decoration: none;
+}
+
+.nav-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  flex-shrink: 0;
+  transform: translateY(-6.4px);
+}
+
+.nav-name {
+  font-family: var(--font-head);
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.nav-name .nav-bn {
+  color: var(--green);
+}
+
+.nav-title {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color var(--transition);
+  position: relative;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--orange);
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--green);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+
+/* ─── 3. FOOTER ─────────────────────────────────────────────── */
+#footer {
+  padding: 2rem 5vw;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  background: var(--cream);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  transition: opacity var(--transition);
+}
+
+.footer-brand:hover {
+  opacity: 0.7;
+}
+
+.footer-brand-bn {
+  color: var(--green);
+}
+
+.footer-title {
+  height: 41px;
+  width: auto;
+  object-fit: contain;
+}
+
+.footer-app {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.footer-ekush {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.footer-ekush:hover {
+  color: var(--green);
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+
+/* ─── 4. RESPONSIVE ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-back span {
+    display: none;
+  }
+
+  #footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .footer-app {
+    display: none;
+  }
+}

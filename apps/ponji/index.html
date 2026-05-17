@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ─── SEO ─────────────────────────────────────────────────── -->
+  <title>Ekush Ponji - Your complete Bengali calendar companion</title>
+  <meta name="description"
+    content="Ekush Ponji is a Bengali calendar app with events, reminders, daily quotes, daily words, date calculator and more — built for everyday life in Bangladesh." />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="EkushLabs" />
+
+  <!-- ─── THEME COLOR ───────────────────────────────────────────── -->
+  <meta name="theme-color" content="#006B54" />
+
+  <!-- ─── OPEN GRAPH ───────────────────────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ekushponji.ekushlabs.com/" />
+  <meta property="og:title" content="Ekush Ponji - Your complete Bengali calendar companion" />
+  <meta property="og:description" content="Bengali calendar, events, reminders, daily quotes, daily words and more." />
+  <!-- TODO: Create a 1200x630px branded image and place at assets/og-image.png -->
+  <meta property="og:image" content="https://ekushponji.ekushlabs.com/assets/og-image.png" />
+
+  <!-- ─── TWITTER CARD ─────────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Ekush Ponji — Your complete Bengali calendar companion" />
+  <meta name="twitter:description" content="Bengali calendar, events, reminders, daily quotes, daily words and more." />
+  <meta name="twitter:image" content="https://ekushponji.ekushlabs.com/assets/og-image.png" />
+
+  <!-- ─── FAVICON ──────────────────────────────────────────────── -->
+  <link rel="icon" type="image/png" href="assets/icon.png" />
+  <link rel="apple-touch-icon" href="assets/icon.png" />
+
+  <!-- ─── FONTS ────────────────────────────────────────────────── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- ─── STYLES ───────────────────────────────────────────────── -->
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- ─── GOOGLE ANALYTICS ─────────────────────────────────────── -->
+  <!-- TODO: Replace G-XXXXXXXXXX with your actual Measurement ID -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+
+<body>
+
+  <!-- ─── NAVBAR (injected by components.js) ───────────────────── -->
+  <div id="navbar-placeholder"></div>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-bg-shape" aria-hidden="true"></div>
+    <div class="hero-bg-shape-2" aria-hidden="true"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot" aria-hidden="true"></span>
+        Available on Android
+      </div>
+
+      <h1 class="hero-title">
+        Your complete<br />
+        <span class="accent">Bengali calendar</span><br />
+        companion.
+      </h1>
+
+      <p class="hero-tagline">
+        Ekush Ponji brings together the Bengali, Gregorian, and Hijri calendars, alongside events, reminders, daily
+        quotes, and more — all in one beautifully designed app.
+      </p>
+
+      <div class="hero-actions">
+        <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.ponji" class="btn-primary"
+          id="play-store-btn">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M3 20.5v-17c0-.83 1-.98 1.4-.4l14 8.5c.4.24.4.86 0 1.1l-14 8.5c-.4.58-1.4.43-1.4-.4z" />
+          </svg>
+          <div class="btn-text">
+            <span class="btn-sub">Get it on</span>
+            <span class="btn-main">Google Play</span>
+          </div>
+        </a>
+
+        <a href="#features" class="btn-secondary">
+          Explore features
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M12 5v14M5 12l7 7 7-7" />
+          </svg>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num">2</span>
+          <span class="stat-label">Languages</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="stat-num">9+</span>
+          <span class="stat-label">Features</span>
+        </div>
+        <div class="stat-divider" aria-hidden="true"></div>
+        <div class="hero-stat">
+          <span class="stat-num">100%</span>
+          <span class="stat-label">Offline ready</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-phone" aria-hidden="true">
+      <div class="phone-mockup">
+        <div class="phone-screen">
+          <img src="assets/screenshots/1_home.png" alt="Ekush Ponji Home Screen" />
+          <div class="phone-placeholder">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <rect x="3" y="3" width="18" height="18" rx="2" />
+              <circle cx="12" cy="10" r="3" />
+              <path d="M6 21v-1a6 6 0 0 1 12 0v1" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FEATURES ─────────────────────────────────────────────── -->
+  <section id="features">
+    <div class="section-header reveal">
+      <p class="section-label">What's inside</p>
+      <h2 class="section-title">Everything you need,<br /><span class="accent">nothing you don't.</span></h2>
+    </div>
+
+    <div class="features-grid">
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Multi Calendar</h3>
+        <p class="feature-desc">View Bengali, Gregorian, and Hijri dates side-by-side with official government holidays.
+          Never lose track of important dates, no matter which calendar system you use.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <path d="M16 2v4M8 2v4M3 10h18" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Official Government Holidays</h3>
+        <p class="feature-desc">Access the complete list of official holidays for the entire year, meticulously
+          organized and updated according to the latest government circulars.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Events &amp; Reminders</h3>
+        <p class="feature-desc">Create personal events and set reminders so you never miss what matters — birthdays,
+          meetings, or anything in between.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Daily Quotes</h3>
+        <p class="feature-desc">Start your day with an inspiring quote. Save your favourites to revisit anytime.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Daily Words</h3>
+        <p class="feature-desc">Expand your vocabulary with a new English word every day. Save words you want to
+          remember.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M12 8v4l3 3" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Date Calculator</h3>
+        <p class="feature-desc">Calculate the difference between two dates instantly. Get results in years, months,
+          weeks and days.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3" />
+            <path
+              d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Dark &amp; Light Mode</h3>
+        <p class="feature-desc">Switch between dark and light themes to match your preference or environment at any
+          time.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M1 6l11 6 11-6" />
+            <path d="M1 12l11 6 11-6" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Bilingual</h3>
+        <p class="feature-desc">Full support for both Bengali and English. Switch languages instantly from settings.</p>
+      </div>
+
+      <div class="feature-card reveal">
+        <div class="feature-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.96a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16.92z" />
+          </svg>
+        </div>
+        <h3 class="feature-title">Works Offline</h3>
+        <p class="feature-desc">Core features work without internet. Your calendar and saved content are always
+          available.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── SCREENSHOTS ───────────────────────────────────────────── -->
+  <section id="screenshots">
+    <div class="section-header reveal">
+      <p class="section-label">See it in action</p>
+      <h2 class="section-title">Designed for<br /><span class="accent">everyday use.</span></h2>
+    </div>
+
+    <div class="screenshots-row">
+
+      <div class="screenshot-item reveal">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <img src="assets/screenshots/2_calendar.png" alt="Home Screen" />
+          </div>
+        </div>
+        <p class="screenshot-caption">Full Calendar View</p>
+        <p class="screenshot-desc">Holidays highlighted, dual dates shown</p>
+      </div>
+
+      <div class="screenshot-item reveal">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <img src="assets/screenshots/3_all_holidays.png" alt="Calendar View" />
+          </div>
+        </div>
+        <p class="screenshot-caption">Full Calendar View</p>
+        <p class="screenshot-desc">Holidays highlighted, dual dates shown</p>
+      </div>
+
+      <div class="screenshot-item reveal">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <img src="assets/screenshots/4_daily_words.png" alt="Daily Words" />
+          </div>
+        </div>
+        <p class="screenshot-caption">Daily Inspiration</p>
+        <p class="screenshot-desc">Discover a new word every day</p>
+      </div>
+
+      <div class="screenshot-item reveal">
+        <div class="phone-mockup">
+          <div class="phone-screen">
+            <img src="assets/screenshots/5_calculator.png" alt="Date Calculator" />
+          </div>
+        </div>
+        <p class="screenshot-caption">Date Calculator</p>
+        <p class="screenshot-desc">Calculate age or days between any two dates</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ─── DOWNLOAD ──────────────────────────────────────────────── -->
+  <section id="download">
+    <div class="download-inner reveal">
+      <h2 class="download-title">Ready to get started?</h2>
+      <p class="download-sub">Download Ekush Ponji free from Google Play.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.ponji" class="btn-primary large">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M3 20.5v-17c0-.83 1-.98 1.4-.4l14 8.5c.4.24.4.86 0 1.1l-14 8.5c-.4.58-1.4.43-1.4-.4z" />
+        </svg>
+        <div class="btn-text">
+          <span class="btn-sub">Get it on</span>
+          <span class="btn-main">Google Play</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── PRIVACY TEASER ───────────────────────────────────────── -->
+  <section id="privacy">
+    <div class="privacy-teaser reveal">
+      <div class="privacy-teaser-left">
+        <p class="section-label">Legal</p>
+        <h2 class="section-title">Privacy Policy</h2>
+        <p class="privacy-teaser-desc">We believe in full transparency. Ekush Ponji collects no personal information —
+          your data stays on your device. Read our full privacy policy to understand exactly what we do and don't
+          collect.</p>
+        <a href="privacy.html" class="btn-privacy">
+          Read Full Privacy Policy
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+      <div class="privacy-teaser-right">
+        <div class="privacy-pill good">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          No personal data collected
+        </div>
+        <div class="privacy-pill good">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          Your data stays on your device
+        </div>
+        <div class="privacy-pill good">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          No account required
+        </div>
+        <div class="privacy-pill good">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12" />
+          </svg>
+          Delete your data anytime
+        </div>
+        <div class="privacy-pill neutral">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10" />
+            <line x1="12" y1="8" x2="12" y2="12" />
+            <line x1="12" y1="16" x2="12.01" y2="16" />
+          </svg>
+          Ads served by Google AdMob
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SUPPORT ───────────────────────────────────────────────── -->
+  <section id="support">
+    <div class="support-inner reveal">
+      <p class="section-label center">Need help?</p>
+      <h2 class="section-title center">Support</h2>
+      <p class="support-sub">Have a bug to report, a feature to suggest, or just need help? Reach out — we're happy to
+        assist.</p>
+      <a href="mailto:ekushlabs@gmail.com" class="contact-email">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+          <polyline points="22,6 12,13 2,6" />
+        </svg>
+        <span>ekushlabs@gmail.com</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER (injected by components.js) ───────────────────── -->
+  <div id="footer-placeholder"></div>
+
+  <!-- ─── SCRIPTS ───────────────────────────────────────────────── -->
+  <script src="js/components.js" defer></script>
+  <script src="js/main.js" defer></script>
+
+</body>
+
+</html>
