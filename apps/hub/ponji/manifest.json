@@ -4,7 +4,7 @@
   "baseUrl": "https://hub.ekushlabs.com/ponji",
   "datasets": {
     "holidays": {
-      "version": 1,
+      "version": 2,
       "type": "by_year",
       "path": "holidays",
       "files": {
