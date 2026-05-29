@@ -24,7 +24,7 @@
       "type": "single_file",
       "path": "private_vaccines",
       "files": {
-        "default": "private_vaccines.json"
+        "default": "private_vaccines_library.json"
       }
     },
     "govtSuppliments": {
