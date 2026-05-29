@@ -1,4 +1,14 @@
 {
+  "metadata": {
+    "version": 7,
+    "source": "DGHS/IPHN Clinical Guidelines on Infant and Young Child Feeding (IYCF), Government of Bangladesh; Alive & Thrive Bangladesh; UNICEF Bangladesh",
+    "sourceUrl": "https://objectstorage.ap-dcc-gazipur-1.oraclecloud15.com/n/axvjbnqprylg/b/V2Ministry/o/office-dghs/2024/12/9f46fd1b603640de896978e4a346ede2.pdf",
+    "secondarySource": "WHO Guideline for Complementary Feeding of Infants and Young Children 6–23 Months of Age, 2023",
+    "secondarySourceUrl": "https://www.who.int/publications/i/item/9789240081864",
+    "lastReviewed": "2024-12",
+    "coversAgeMonths": "0–59",
+    "notes": "Age groups 0–23 months are based directly on DGHS/IPHN IYCF Clinical Guidelines. The 24–59 month group is based on the DGHS complementary feeding schedule adapted for older children."
+  },
   "ageGroups": [
     {
       "ageGroupId": "0_6m",
@@ -6,6 +16,12 @@
       "ageMonthsMax": 6,
       "titleEnglish": "Birth to 6 Months",
       "titleBangla": "জন্ম থেকে ৬ মাস",
+      "energyGapKcal": null,
+      "textureDescription": null,
+      "textureDescriptionBangla": null,
+      "mealsPerDay": null,
+      "snacksPerDay": null,
+      "bowlSizeMl": null,
       "sections": [
         {
           "type": "guidelines",
@@ -13,16 +29,24 @@
           "titleBangla": "কী করবেন",
           "items": [
             {
-              "english": "TEST",
-              "bangla": "টেস্ট মেসেজ"
+              "english": "Start breastfeeding within 1 hour of birth and give colostrum. Do not discard it; it is the baby's first and most important protection",
+              "bangla": "জন্মের ১ ঘণ্টার মধ্যে বুকের দুধ খাওয়ানো শুরু করুন এবং শালদুধ (কোলোস্ট্রাম) অবশ্যই খাওয়ান। এটি ফেলবেন না; এটি শিশুর প্রথম ও সবচেয়ে গুরুত্বপূর্ণ সুরক্ষা"
             },
             {
-              "english": "Continue breastfeeding exclusively for 6 months",
-              "bangla": "৬ মাস পর্যন্ত শুধুমাত্র মায়ের দুধ খাওয়ানো চালিয়ে যেতে হবে"
+              "english": "Breastfeed exclusively for the first 6 completed months (180 days). Give absolutely nothing else, not even a drop of water",
+              "bangla": "৬ মাস পূর্ণ হওয়া পর্যন্ত (১৮০ দিন) শুধুমাত্র বুকের দুধ দিন। এক ফোঁটা পানিও দেওয়া যাবে না"
             },
             {
-              "english": "Breastfeed frequently",
-              "bangla": "ঘন ঘন মায়ের দুধ খাওয়াতে হবে"
+              "english": "Breastfeed on demand, day and night, at least 8–10 times in 24 hours in the early weeks",
+              "bangla": "দিনে ও রাতে চাহিদামতো বুকের দুধ দিন, প্রথম সপ্তাহগুলোতে ২৪ ঘণ্টায় কমপক্ষে ৮–১০ বার"
+            },
+            {
+              "english": "Let the baby finish one breast fully before offering the other, so the baby gets the fat-rich hindmilk",
+              "bangla": "এক স্তন সম্পূর্ণ খালি হওয়ার পর অন্য স্তন দিন, যাতে শিশু চর্বিসমৃদ্ধ পেছনের দুধ (হাইন্ডমিল্ক) পায়"
+            },
+            {
+              "english": "If the mother needs to return to work, express breastmilk and store it in a clean covered container. It stays safe at room temperature for 6–8 hours",
+              "bangla": "মাকে কাজে যেতে হলে বুকের দুধ হাত দিয়ে বের করে পরিষ্কার ঢাকা পাত্রে রাখুন। সাধারণ তাপমাত্রায় ৬–৮ ঘণ্টা নিরাপদ থাকে"
             }
           ]
         },
@@ -32,35 +56,43 @@
           "titleBangla": "কী করবেন না",
           "items": [
             {
-              "english": "Do not give water, sugar water, honey, oil, or anything other than breast milk",
-              "bangla": "মায়ের দুধ ছাড়া শিশুকে পানি, চিনির পানি, মধু, তেল বা অন্য কিছুই দেওয়া যাবে না"
+              "english": "Do not give water, sugar water, honey, cow's milk, formula, or any other liquid or food before 6 months are completed",
+              "bangla": "৬ মাস পূর্ণ হওয়ার আগে পানি, চিনির পানি, মধু, গরুর দুধ, ফর্মুলা বা অন্য কোনো তরল বা খাবার দেবেন না"
+            },
+            {
+              "english": "Do not give pre-lacteal feeds after birth. Honey, mustard oil, and sugar water given before breastfeeding starts can cause serious harm",
+              "bangla": "জন্মের পরপর বুকের দুধের আগে কোনো কিছু দেবেন না। মধু, সরিষার তেল বা চিনির পানি শিশুর মারাত্মক ক্ষতি করতে পারে"
+            },
+            {
+              "english": "Do not use feeding bottles or pacifiers, as they interfere with correct latching and reduce breastmilk supply",
+              "bangla": "ফিডার বোতল বা প্যাসিফায়ার ব্যবহার করবেন না। এতে শিশু সঠিকভাবে বুক থেকে দুধ নিতে পারে না এবং বুকের দুধ কমে যায়"
+            },
+            {
+              "english": "Do not give infant formula unless medically advised. It is costly, less safe, and reduces breastmilk production",
+              "bangla": "ডাক্তারের পরামর্শ ছাড়া শিশুর ফর্মুলা দুধ দেবেন না। এটি ব্যয়বহুল, কম নিরাপদ এবং বুকের দুধ কমিয়ে দেয়"
             }
           ]
         },
         {
           "type": "healthSigns",
-          "titleEnglish": "Signs of Good Health",
-          "titleBangla": "সুস্বাস্থ্যের লক্ষণ",
+          "titleEnglish": "Signs of Adequate Feeding",
+          "titleBangla": "পর্যাপ্ত দুধ পাওয়ার লক্ষণ",
           "items": [
             {
-              "english": "Urinating at least 6 times a day",
-              "bangla": "দিনে কমপক্ষে ৬ বার প্রস্রাব করছে"
+              "english": "Urinating at least 6 times a day with clear or pale urine",
+              "bangla": "দিনে কমপক্ষে ৬ বার প্রস্রাব করছে এবং প্রস্রাব পরিষ্কার বা হালকা রঙের"
             },
             {
-              "english": "Sleeping well",
-              "bangla": "ভালোভাবে ঘুমাচ্ছে"
+              "english": "Gaining weight steadily; most babies regain their birth weight within 2 weeks",
+              "bangla": "ওজন নিয়মিত বাড়ছে; বেশিরভাগ শিশু ২ সপ্তাহের মধ্যে জন্মের ওজনে ফিরে আসে"
             },
             {
-              "english": "Happy and content",
-              "bangla": "হাসিখুশি থাকছে"
+              "english": "Sleeping well and content after feeds",
+              "bangla": "খাওয়ার পর ভালোভাবে ঘুমাচ্ছে এবং শান্ত থাকছে"
             },
             {
-              "english": "Moving arms and legs normally",
-              "bangla": "স্বাভাবিকভাবে হাত-পা নাড়াচ্ছে"
-            },
-            {
-              "english": "Gaining weight steadily",
-              "bangla": "ওজন বাড়ছে"
+              "english": "Active limb movement and alert when awake",
+              "bangla": "জেগে থাকার সময় হাত-পা সক্রিয়ভাবে নাড়াচ্ছে এবং সজাগ থাকছে"
             }
           ]
         }
@@ -72,35 +104,69 @@
       "ageMonthsMax": 8,
       "titleEnglish": "7–8 Months",
       "titleBangla": "৭–৮ মাস",
+      "energyGapKcal": 200,
+      "textureDescription": "Start with thick porridge (payes/firni), then gradually move to well-mashed family foods",
+      "textureDescriptionBangla": "ঘন পায়েস বা ফিরনি দিয়ে শুরু করুন, তারপর ধীরে ধীরে ভালোভাবে চটকানো পারিবারিক খাবারে যান",
+      "mealsPerDay": 2,
+      "snacksPerDay": 2,
+      "bowlSizeMl": 250,
+      "bowlFraction": "half",
       "sections": [
+        {
+          "type": "firstFoods",
+          "titleEnglish": "Recommended First Foods (BD)",
+          "titleBangla": "প্রথম খাবার হিসেবে যা দেবেন",
+          "items": [
+            {
+              "english": "Thick rice porridge (payes/firni): start with 2–3 tablespoons and gradually increase",
+              "bangla": "ঘন ভাতের পায়েস বা ফিরনি: ২–৩ চামচ দিয়ে শুরু করুন এবং ধীরে ধীরে পরিমাণ বাড়ান"
+            },
+            {
+              "english": "Soft khichuri made with rice, lentils, and a little oil. This is the ideal first complete meal",
+              "bangla": "চাল, ডাল ও সামান্য তেল দিয়ে তৈরি নরম খিচুড়ি। এটি প্রথম সম্পূর্ণ খাবার হিসেবে আদর্শ"
+            },
+            {
+              "english": "Well-mashed cooked vegetables: pumpkin (kumra), sweet potato (misti alu), carrot",
+              "bangla": "ভালোভাবে সেদ্ধ ও চটকানো সবজি: কুমড়া, মিষ্টি আলু, গাজর"
+            },
+            {
+              "english": "Mashed ripe banana or ripe papaya",
+              "bangla": "পাকা কলা বা পাকা পেঁপে চটকানো"
+            }
+          ]
+        },
         {
           "type": "guidelines",
           "titleEnglish": "What To Do",
           "titleBangla": "কী করবেন",
           "items": [
             {
-              "english": "Breastfeed first, then give mashed family foods",
-              "bangla": "প্রথমে মায়ের দুধ ও পরে পারিবারিক চটকানো খাবার খাওয়াতে হবে"
+              "english": "Continue breastfeeding first, then give complementary foods. Breastmilk remains the most important food",
+              "bangla": "আগে বুকের দুধ দিন, তারপর পরিপূরক খাবার দিন। বুকের দুধ এখনও সবচেয়ে গুরুত্বপূর্ণ খাবার"
             },
             {
-              "english": "Give half of a standard 250 ml bowl of nutritious food at least 2 times a day",
-              "bangla": "২৫০ মিঃ লিঃ (১ পোয়া) বাটির আধা (১/২) বাটি পুষ্টিকর খাবার দিনে অন্তত ২ বার খাওয়াতে হবে"
+              "english": "Give half of a 250 ml bowl of nutritious food at least 2 times a day, plus 1–2 snacks",
+              "bangla": "২৫০ মিঃ লিঃ (১ পোয়া) বাটির আধা (১/২) বাটি পুষ্টিকর খাবার দিনে অন্তত ২ বার দিন, সাথে ১–২ বার পুষ্টিকর নাস্তা"
             },
             {
-              "english": "Give at least 4 types of food daily: rice, lentils, colourful or dark green vegetables, and fish, meat, egg, or liver",
-              "bangla": "প্রতিদিন কমপক্ষে ৪ ধরনের খাবার দিতে হবে: ভাত, ডাল, রঙিন ও গাঢ় সবুজ শাক বা সবজি এবং মাছ, মাংস, ডিম বা কলিজা"
+              "english": "Include at least 4 types of food every day: rice or bread, lentils (dal), colourful or dark green vegetables, and fish, meat, egg, or liver",
+              "bangla": "প্রতিদিন কমপক্ষে ৪ ধরনের খাবার দিন: ভাত বা রুটি, ডাল, রঙিন বা গাঢ় সবুজ শাক-সবজি এবং মাছ, মাংস, ডিম বা কলিজা"
             },
             {
-              "english": "Wash mother's and baby's hands with soap before preparing and serving food",
-              "bangla": "খাবার তৈরির ও খাওয়ানোর আগে মা ও শিশুর হাত সাবান দিয়ে ধুয়ে নিতে হবে"
+              "english": "Add a small amount of oil or ghee to meals to increase energy density",
+              "bangla": "খাবারে সামান্য তেল বা ঘি যোগ করুন যাতে খাবারের শক্তি বাড়ে"
             },
             {
-              "english": "Give 2 nutritious snacks per day",
-              "bangla": "দিনে ২ বার পুষ্টিকর নাস্তা খাওয়াতে হবে"
+              "english": "Wash both your hands and the baby's hands with soap before preparing and serving food",
+              "bangla": "খাবার তৈরির ও খাওয়ানোর আগে মা ও শিশু উভয়ের হাত সাবান দিয়ে ভালোভাবে ধুয়ে নিন"
             },
             {
-              "english": "Food may be soft or firm in texture",
-              "bangla": "খাবার নরম বা একটু শক্ত হতে পারে"
+              "english": "Be patient and encouraging. Give the baby enough time to eat, make eye contact, and praise each bite",
+              "bangla": "ধৈর্য ধরুন এবং উৎসাহ দিন। শিশুকে খেতে যথেষ্ট সময় দিন, চোখে চোখ রাখুন এবং প্রতিটি গ্রাসের জন্য প্রশংসা করুন"
+            },
+            {
+              "english": "During illness, increase breastfeeding frequency and continue giving soft complementary foods. Do not stop",
+              "bangla": "অসুস্থ অবস্থায় বুকের দুধ বেশি বেশি দিন এবং নরম পরিপূরক খাবার দেওয়া চালিয়ে যান। বন্ধ করবেন না"
             }
           ]
         },
@@ -110,12 +176,20 @@
           "titleBangla": "কী করবেন না",
           "items": [
             {
-              "english": "Do not give honey to babies under 1 year",
-              "bangla": "১ বছর বয়সের নিচের শিশুদের মধু দেবেন না"
+              "english": "Do not give honey to babies under 1 year, as it can cause serious illness (botulism)",
+              "bangla": "১ বছরের কম বয়সী শিশুকে মধু দেবেন না। এটি মারাত্মক অসুখ (বোটুলিজম) সৃষ্টি করতে পারে"
             },
             {
-              "english": "Avoid cow's milk as a replacement for breast milk",
-              "bangla": "মায়ের দুধের বিকল্প হিসেবে গরুর দুধ দেওয়া এড়িয়ে চলুন"
+              "english": "Do not replace breastmilk with cow's milk at this age",
+              "bangla": "এই বয়সে বুকের দুধের পরিবর্তে গরুর দুধ দেবেন না"
+            },
+            {
+              "english": "Do not give watery, thin foods. They fill the stomach without providing enough nutrition",
+              "bangla": "পাতলা, জলো খাবার দেবেন না। এতে পেট ভরে কিন্তু পুষ্টি পায় না"
+            },
+            {
+              "english": "Do not force-feed, as it creates negative associations with food",
+              "bangla": "জোর করে খাওয়াবেন না। এতে খাবারের প্রতি শিশুর অরুচি তৈরি হয়"
             }
           ]
         },
@@ -125,16 +199,16 @@
           "titleBangla": "সুস্বাস্থ্যের লক্ষণ",
           "items": [
             {
-              "english": "Steady weight gain on the growth chart",
-              "bangla": "গ্রোথ চার্ট অনুযায়ী ওজন স্বাভাবিকভাবে বাড়ছে"
+              "english": "Steady weight gain according to the growth chart",
+              "bangla": "গ্রোথ চার্ট অনুযায়ী ওজন স্বাভাবিকভাবে বাড়ছে"
             },
             {
-              "english": "Child is active, playful and curious",
-              "bangla": "শিশু চঞ্চল, হাসিখুশি এবং কৌতুহলী"
+              "english": "Active, playful, and curious",
+              "bangla": "শিশু চঞ্চল, হাসিখুশি এবং কৌতূহলী"
             },
             {
-              "english": "Regular bowel movements and clear skin",
-              "bangla": "নিয়মিত মলত্যাগ এবং ত্বক পরিষ্কার ও সুস্থ"
+              "english": "Showing interest in food and opening mouth when food approaches",
+              "bangla": "খাবারের প্রতি আগ্রহ দেখাচ্ছে এবং খাবার দেখলে মুখ খুলছে"
             }
           ]
         }
@@ -146,6 +220,13 @@
       "ageMonthsMax": 11,
       "titleEnglish": "9–11 Months",
       "titleBangla": "৯–১১ মাস",
+      "energyGapKcal": 300,
+      "textureDescription": "Finely chopped or mashed foods; introduce soft finger foods the baby can pick up",
+      "textureDescriptionBangla": "সূক্ষ্মভাবে কাটা বা চটকানো খাবার; শিশু নিজে তুলে খেতে পারে এমন নরম ফিঙ্গার ফুড দিতে শুরু করুন",
+      "mealsPerDay": 3,
+      "snacksPerDay": 2,
+      "bowlSizeMl": 250,
+      "bowlFraction": "half",
       "sections": [
         {
           "type": "guidelines",
@@ -153,28 +234,32 @@
           "titleBangla": "কী করবেন",
           "items": [
             {
-              "english": "Give half of a standard 250 ml bowl of nutritious food at least 3 times a day",
-              "bangla": "২৫০ মিঃ লিঃ (১ পোয়া) বাটির আধা (১/২) বাটি পুষ্টিকর খাবার দিনে অন্তত ৩ বার খাওয়াতে হবে"
+              "english": "Give half of a 250 ml bowl of nutritious family food 3 times a day, plus 1–2 nutritious snacks",
+              "bangla": "২৫০ মিঃ লিঃ বাটির আধা (১/২) বাটি পুষ্টিকর পারিবারিক খাবার দিনে ৩ বার দিন, সাথে ১–২ বার পুষ্টিকর নাস্তা"
             },
             {
-              "english": "Give 2 nutritious snacks per day",
-              "bangla": "দিনে ২ বার পুষ্টিকর নাস্তা খাওয়াতে হবে"
+              "english": "Include at least 4 types of food every day: rice or bread, lentils (dal), colourful or dark green vegetables, and fish, meat, egg, or liver",
+              "bangla": "প্রতিদিন কমপক্ষে ৪ ধরনের খাবার দিন: ভাত বা রুটি, ডাল, রঙিন বা গাঢ় সবুজ শাক-সবজি এবং মাছ, মাংস, ডিম বা কলিজা"
             },
             {
-              "english": "Give at least 4 types of food daily: rice, lentils, colourful or dark green vegetables, and fish, meat, egg, or liver",
-              "bangla": "প্রতিদিন কমপক্ষে ৪ ধরনের খাবার দিতে হবে: ভাত, ডাল, রঙিন ও গাঢ় সবুজ শাক বা সবজি এবং মাছ, মাংস, ডিম বা কলিজা"
+              "english": "Continue breastfeeding alongside all meals",
+              "bangla": "সমস্ত খাবারের পাশাপাশি বুকের দুধ দেওয়া চালিয়ে যান"
             },
             {
-              "english": "Continue breastfeeding alongside family foods",
-              "bangla": "পারিবারিক খাবারের পাশাপাশি মায়ের দুধ দিতে হবে"
+              "english": "Encourage and teach the baby to self-feed. This is important for brain development and building independence",
+              "bangla": "শিশুকে নিজে নিজে খেতে উৎসাহিত করুন ও শেখান। এটি মস্তিষ্কের বিকাশ ও স্বনির্ভরতার জন্য গুরুত্বপূর্ণ"
             },
             {
-              "english": "Take time to teach the baby to eat independently",
-              "bangla": "সময় নিয়ে শিশুকে নিজে নিজে খেতে শেখাতে হবে"
+              "english": "Offer different textures and tastes, as variety encourages better eating habits",
+              "bangla": "ভিন্ন ভিন্ন জমিন ও স্বাদের খাবার দিন। বৈচিত্র্য শিশুর খাওয়ার অভ্যাস ভালো করে"
             },
             {
-              "english": "Wash mother's and baby's hands with soap before preparing and serving food",
-              "bangla": "খাবার তৈরির ও খাওয়ানোর আগে মা ও শিশুর হাত সাবান দিয়ে ধুয়ে নিতে হবে"
+              "english": "Wash both your hands and the baby's hands with soap before preparing and serving food",
+              "bangla": "খাবার তৈরির ও খাওয়ানোর আগে মা ও শিশু উভয়ের হাত সাবান দিয়ে ভালোভাবে ধুয়ে নিন"
+            },
+            {
+              "english": "After illness, increase the number of meals and amounts for 10–15 days until the child fully recovers",
+              "bangla": "অসুস্থতার পর ১০–১৫ দিন খাবারের পরিমাণ ও বার বাড়িয়ে দিন যতক্ষণ না শিশু সম্পূর্ণ সুস্থ হয়"
             }
           ]
         },
@@ -184,12 +269,20 @@
           "titleBangla": "কী করবেন না",
           "items": [
             {
-              "english": "Avoid processed snacks, chips, or artificial juices",
-              "bangla": "বাইরের প্রসেসড খাবার, চিপস বা কৃত্রিম জুস এড়িয়ে চলুন"
+              "english": "Do not give honey to babies under 1 year",
+              "bangla": "১ বছরের কম বয়সী শিশুকে মধু দেবেন না"
             },
             {
-              "english": "Do not give small, hard foods like whole nuts (choking hazard)",
-              "bangla": "আস্ত বাদাম বা ছোট শক্ত খাবার দেবেন না (গলায় আটকে যাওয়ার ঝুঁকি থাকে)"
+              "english": "Avoid processed snacks, chips, or artificially sweetened juices",
+              "bangla": "বাইরের প্রসেসড স্ন্যাকস, চিপস বা কৃত্রিম মিষ্টি জুস এড়িয়ে চলুন"
+            },
+            {
+              "english": "Do not give whole nuts or small hard pieces of food, as they are a choking hazard",
+              "bangla": "আস্ত বাদাম বা ছোট শক্ত খাবার দেবেন না। গলায় আটকে যাওয়ার ঝুঁকি আছে"
+            },
+            {
+              "english": "Do not fill the baby's stomach with water or juice before meals, as it reduces appetite",
+              "bangla": "খাওয়ানোর আগে পানি বা জুস দিয়ে পেট ভরাবেন না। এতে খাবারের রুচি কমে যায়"
             }
           ]
         },
@@ -199,12 +292,16 @@
           "titleBangla": "সুস্বাস্থ্যের লক্ষণ",
           "items": [
             {
-              "english": "Developing interest in self-feeding",
-              "bangla": "নিজে নিজে খাওয়ার প্রতি আগ্রহ বাড়ছে"
+              "english": "Showing increasing interest in self-feeding",
+              "bangla": "নিজে নিজে খাওয়ার প্রতি আগ্রহ বাড়ছে"
             },
             {
-              "english": "Bright eyes and strong physical activity",
-              "bangla": "চোখ উজ্জ্বল এবং শারীরিকভাবে বেশ সক্রিয়"
+              "english": "Bright eyes and physically active",
+              "bangla": "চোখ উজ্জ্বল এবং শারীরিকভাবে বেশ সক্রিয়"
+            },
+            {
+              "english": "Regular bowel movements and clear healthy skin",
+              "bangla": "নিয়মিত মলত্যাগ এবং ত্বক পরিষ্কার ও সুস্থ"
             }
           ]
         }
@@ -216,6 +313,13 @@
       "ageMonthsMax": 23,
       "titleEnglish": "12–23 Months",
       "titleBangla": "১২–২৩ মাস",
+      "energyGapKcal": 550,
+      "textureDescription": "Family foods, chopped or mashed only if necessary. Child can handle small soft pieces",
+      "textureDescriptionBangla": "পারিবারিক খাবার, প্রয়োজন হলে কুচি করুন বা চটকান। শিশু ছোট নরম টুকরো খেতে পারে",
+      "mealsPerDay": 3,
+      "snacksPerDay": 2,
+      "bowlSizeMl": 250,
+      "bowlFraction": "full",
       "sections": [
         {
           "type": "guidelines",
@@ -223,28 +327,32 @@
           "titleBangla": "কী করবেন",
           "items": [
             {
-              "english": "Give one full standard 250 ml bowl of nutritious food at least 3 times a day",
-              "bangla": "২৫০ মিঃ লিঃ (১ পোয়া) বাটির ১ বাটি পুষ্টিকর খাবার দিনে অন্তত ৩ বার খাওয়াতে হবে"
+              "english": "Give one full 250 ml bowl of nutritious family food 3 times a day, plus 1–2 nutritious snacks",
+              "bangla": "২৫০ মিঃ লিঃ (১ পোয়া) বাটির ১ পূর্ণ বাটি পুষ্টিকর পারিবারিক খাবার দিনে ৩ বার দিন, সাথে ১–২ বার পুষ্টিকর নাস্তা"
             },
             {
-              "english": "Give at least 4 types of food daily: rice, lentils, colourful or dark green vegetables, and fish, meat, egg, or liver",
-              "bangla": "প্রতিদিন কমপক্ষে ৪ ধরনের খাবার দিতে হবে: ভাত, ডাল, রঙিন ও গাঢ় সবুজ শাক বা সবজি এবং মাছ, মাংস, ডিম বা কলিজা"
+              "english": "Include at least 4 types of food every day: rice or bread, lentils (dal), colourful or dark green vegetables, and fish, meat, egg, or liver",
+              "bangla": "প্রতিদিন কমপক্ষে ৪ ধরনের খাবার দিন: ভাত বা রুটি, ডাল, রঙিন বা গাঢ় সবুজ শাক-সবজি এবং মাছ, মাংস, ডিম বা কলিজা"
             },
             {
-              "english": "Give 2 nutritious snacks per day",
-              "bangla": "দিনে ২ বার পুষ্টিকর নাস্তা খাওয়াতে হবে"
+              "english": "Continue breastfeeding alongside family meals until 2 years of age or beyond",
+              "bangla": "পারিবারিক খাবারের পাশাপাশি ২ বছর বয়স পর্যন্ত বা তারও বেশি সময় বুকের দুধ দেওয়া চালিয়ে যান"
             },
             {
-              "english": "Continue breastfeeding alongside family foods",
-              "bangla": "পারিবারিক খাবারের পাশাপাশি মায়ের দুধ দিতে হবে"
+              "english": "Encourage the child to eat independently and sit with the family at mealtimes",
+              "bangla": "শিশুকে নিজে নিজে খেতে উৎসাহিত করুন এবং পরিবারের সাথে একসাথে বসে খেতে দিন"
             },
             {
-              "english": "Encourage the baby to eat independently",
-              "bangla": "শিশুকে নিজে নিজে খেতে উৎসাহ দিতে হবে"
+              "english": "Prevent the child from eating excessive starchy staples like rice, potato, or banana. Prioritise animal foods, dal, dairy, green vegetables, and coloured fruits",
+              "bangla": "শিশু যাতে বেশি ভাত, আলু বা কলা না খায় সেদিকে খেয়াল রাখুন। মাছ, মাংস, ডিম, ডাল, দুগ্ধজাত খাবার, সবুজ শাকসবজি ও রঙিন ফলকে প্রাধান্য দিন"
             },
             {
-              "english": "Wash mother's and baby's hands with soap before preparing and serving food",
-              "bangla": "খাবার তৈরির ও খাওয়ানোর আগে মা ও শিশুর হাত সাবান দিয়ে ধুয়ে নিতে হবে"
+              "english": "Use oil or fat in cooking to increase energy density of the child's food",
+              "bangla": "রান্নায় তেল বা চর্বি ব্যবহার করুন যাতে শিশুর খাবারের শক্তি বাড়ে"
+            },
+            {
+              "english": "Wash both your and the child's hands with soap before preparing and serving food",
+              "bangla": "খাবার তৈরির ও খাওয়ানোর আগে মা ও শিশু উভয়ের হাত সাবান দিয়ে ভালোভাবে ধুয়ে নিন"
             }
           ]
         },
@@ -254,8 +362,16 @@
           "titleBangla": "কী করবেন না",
           "items": [
             {
-              "english": "Avoid force-feeding as it can lead to negative associations with food",
-              "bangla": "জোর করে খাওয়াবেন না, এতে খাবারের প্রতি শিশুর অরুচি তৈরি হতে পারে"
+              "english": "Do not force-feed, as it creates negative associations with food and can harm appetite long-term",
+              "bangla": "জোর করে খাওয়াবেন না। এতে খাবারের প্রতি অরুচি তৈরি হয় এবং দীর্ঘমেয়াদে ক্ষুধামন্দা হতে পারে"
+            },
+            {
+              "english": "Avoid giving highly salted food or carbonated sugary drinks",
+              "bangla": "অতিরিক্ত লবণযুক্ত খাবার বা কার্বনেটেড মিষ্টি পানীয় (কোমল পানীয়) দেবেন না"
+            },
+            {
+              "english": "Do not allow toys or screens during mealtimes, as they distract and reduce interest in eating",
+              "bangla": "খাওয়ার সময় খেলনা বা স্ক্রিন দেবেন না। এতে শিশুর মনোযোগ নষ্ট হয় এবং খাবারের প্রতি আগ্রহ কমে যায়"
             }
           ]
         },
@@ -265,12 +381,16 @@
           "titleBangla": "সুস্বাস্থ্যের লক্ষণ",
           "items": [
             {
-              "english": "Enjoying family meals with others",
-              "bangla": "পরিবারের অন্যদের সাথে খাবার উপভোগ করছে"
+              "english": "Enjoying family meals and eating a variety of foods",
+              "bangla": "পরিবারের সাথে খাবার উপভোগ করছে এবং বিভিন্ন ধরনের খাবার খাচ্ছে"
             },
             {
               "english": "Steady growth and good concentration during play",
-              "bangla": "স্বাভাবিক বৃদ্ধি এবং খেলার সময় ভালো মনোযোগ দিতে পারছে"
+              "bangla": "স্বাভাবিক বৃদ্ধি এবং খেলার সময় ভালো মনোযোগ দিতে পারছে"
+            },
+            {
+              "english": "Active social interaction and normal physical development",
+              "bangla": "সক্রিয় সামাজিক মেলামেশা এবং শরীরের স্বাভাবিক বিকাশ"
             }
           ]
         }
@@ -282,6 +402,13 @@
       "ageMonthsMax": 59,
       "titleEnglish": "24–59 Months",
       "titleBangla": "২৪–৫৯ মাস",
+      "energyGapKcal": null,
+      "textureDescription": "Full family foods; child eats what the family eats",
+      "textureDescriptionBangla": "সম্পূর্ণ পারিবারিক খাবার; শিশু পরিবারের সাথে যা খায় তাই খাবে",
+      "mealsPerDay": 3,
+      "snacksPerDay": 2,
+      "bowlSizeMl": null,
+      "bowlFraction": null,
       "sections": [
         {
           "type": "guidelines",
@@ -289,28 +416,28 @@
           "titleBangla": "কী করবেন",
           "items": [
             {
-              "english": "Breakfast: 1 medium roti, 1 egg, or 1 bowl of vegetables",
-              "bangla": "সকালের খাবার: মাঝারী সাইজের ১টি রুটি, ১টি ডিম অথবা ১ বাটি সবজি"
+              "english": "Breakfast: 1 medium roti with 1 egg, or 1 bowl of vegetables with rice",
+              "bangla": "সকালের খাবার: মাঝারি সাইজের ১টি রুটি ও ১টি ডিম, অথবা ১ বাটি সবজি দিয়ে ভাত"
             },
             {
-              "english": "Morning snack: any seasonal fruit or homemade oil-fried snack",
-              "bangla": "সকাল ও দুপুরের মাঝের নাস্তা: যে কোনো মৌসুমী ফল বা বাড়িতে তৈরি তেল দিয়ে ভাজা নাস্তা জাতীয় খাবার"
+              "english": "Morning snack: any seasonal fruit or homemade snack such as muri, chira, or pitha",
+              "bangla": "সকাল ও দুপুরের মাঝে নাস্তা: যেকোনো মৌসুমী ফল অথবা বাড়িতে তৈরি নাস্তা যেমন মুড়ি, চিড়া বা পিঠা"
             },
             {
-              "english": "Lunch: 1 bowl of rice, 1 bowl of vegetables, 2 tablespoons of thick lentils, 1 piece of fish, meat, egg, or liver",
-              "bangla": "দুপুরের খাবার: ১ বাটি ভাত, ১ বাটি শাক-সবজি, ২ টেবিল চামচ ঘন ডাল, ১ টুকরো মাছ, মাংস, ডিম বা কলিজা"
+              "english": "Lunch: 1 bowl of rice, 1 bowl of vegetables, 2 tablespoons of thick dal, and 1 piece of fish, meat, egg, or liver",
+              "bangla": "দুপুরের খাবার: ১ বাটি ভাত, ১ বাটি শাক-সবজি, ২ টেবিল চামচ ঘন ডাল এবং ১ টুকরো মাছ, মাংস, ডিম বা কলিজা"
             },
             {
-              "english": "Afternoon snack: any milk-based dessert (payesh, dahi, yoghurt), seasonal fruit, or homemade oil-fried snack",
-              "bangla": "বিকালের নাস্তা: দুধ দিয়ে ঘন করে তৈরি যে কোনো খাবার (পায়েশ, দধি, দই ইত্যাদি) অথবা যে কোনো মৌসুমী ফল বা বাড়িতে তৈরি তেল দিয়ে ভাজা নাস্তা জাতীয় খাবার"
+              "english": "Afternoon snack: milk-based dessert (payesh, dahi/yogurt), seasonal fruit, or homemade snack",
+              "bangla": "বিকালের নাস্তা: দুধ দিয়ে তৈরি খাবার (পায়েশ, দধি বা দই) অথবা যেকোনো মৌসুমী ফল বা বাড়িতে তৈরি নাস্তা"
             },
             {
-              "english": "Dinner: 1 bowl of rice, 1 bowl of vegetables, 2 tablespoons of thick lentils, and if possible 1 piece of fish, meat, egg, or liver",
+              "english": "Dinner: 1 bowl of rice, 1 bowl of vegetables, 2 tablespoons of thick dal, and if possible 1 piece of fish, meat, egg, or liver",
               "bangla": "রাতের খাবার: ১ বাটি ভাত, ১ বাটি শাক-সবজি, ২ টেবিল চামচ ঘন ডাল এবং সম্ভব হলে ১ টুকরো মাছ, মাংস, ডিম বা কলিজা"
             },
             {
-              "english": "At this age the child can sit and eat independently with other family members",
-              "bangla": "শিশু এই বয়সে নিজে নিজে পরিবারের অন্য সদস্যদের সাথে বসে খেতে পারবে"
+              "english": "At this age the child can sit and eat independently with the family",
+              "bangla": "এই বয়সে শিশু পরিবারের অন্য সদস্যদের সাথে বসে নিজে নিজে খেতে পারবে"
             }
           ]
         },
@@ -320,12 +447,20 @@
           "titleBangla": "কী করবেন না",
           "items": [
             {
-              "english": "Avoid highly spicy or deep-fried outside food",
-              "bangla": "অতিরিক্ত ঝাল বা বাইরের কড়া ভাজা পোড়া খাবার এড়িয়ে চলুন"
+              "english": "Avoid highly spicy food and deep-fried street food",
+              "bangla": "অতিরিক্ত ঝাল বা বাইরের কড়া ভাজা-পোড়া খাবার এড়িয়ে চলুন"
             },
             {
-              "english": "Limit salt and carbonated sugary drinks",
-              "bangla": "লবণ এবং কার্বনেটেড মিষ্টি পানীয় (কোমল পানীয়) সীমিত করুন"
+              "english": "Limit added salt and carbonated sugary drinks (soft drinks)",
+              "bangla": "অতিরিক্ত লবণ এবং কার্বনেটেড মিষ্টি পানীয় (কোমল পানীয়) সীমিত রাখুন"
+            },
+            {
+              "english": "Do not allow screens or toys during mealtimes",
+              "bangla": "খাওয়ার সময় স্ক্রিন বা খেলনা দেবেন না"
+            },
+            {
+              "english": "Do not give chips, commercially packaged snacks, or artificial juices as regular snacks",
+              "bangla": "নিয়মিত নাস্তা হিসেবে চিপস, প্যাকেটজাত স্ন্যাকস বা কৃত্রিম জুস দেবেন না"
             }
           ]
         },
@@ -335,12 +470,16 @@
           "titleBangla": "সুস্বাস্থ্যের লক্ষণ",
           "items": [
             {
-              "english": "Strong immunity with fewer frequent illnesses",
-              "bangla": "রোগ প্রতিরোধ ক্ষমতা ভালো হওয়া এবং ঘন ঘন অসুস্থ না হওয়া"
+              "english": "Good immunity, with fewer frequent illnesses",
+              "bangla": "রোগ প্রতিরোধ ক্ষমতা ভালো; ঘন ঘন অসুস্থ হচ্ছে না"
             },
             {
-              "english": "Active interaction and good motor skills",
-              "bangla": "সক্রিয় সামাজিক মেলামেশা এবং শরীরের অঙ্গপ্রত্যঙ্গের সাবলীল চালনা"
+              "english": "Active social interaction and good motor skills",
+              "bangla": "সক্রিয় সামাজিক মেলামেশা এবং শরীরের অঙ্গপ্রত্যঙ্গের সাবলীল চালনা"
+            },
+            {
+              "english": "Steady height and weight gain according to the growth chart",
+              "bangla": "গ্রোথ চার্ট অনুযায়ী উচ্চতা ও ওজন স্বাভাবিকভাবে বাড়ছে"
             }
           ]
         }
