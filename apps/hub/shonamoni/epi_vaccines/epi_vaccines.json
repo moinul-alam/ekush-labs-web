@@ -1,0 +1,262 @@
+[
+  {
+    "id": 1,
+    "nameEn": "BCG",
+    "nameBn": "বিসিজি",
+    "diseaseNameEn": [
+      "Tuberculosis"
+    ],
+    "diseaseNameBn": [
+      "যক্ষ্মা"
+    ],
+    "descriptionEn": "BCG vaccine prevents tuberculosis.",
+    "descriptionBn": "বিসিজি টিকা যক্ষ্মা রোগ প্রতিরোধ করে",
+    "doseAmount": 0.05,
+    "doseUnit": "ml",
+    "administrationSiteEn": "Left upper arm",
+    "administrationSiteBn": "বাম বাহুর ওপরের অংশে",
+    "administrationMethodEn": "Intradermal",
+    "administrationMethodBn": "চামড়ার মধ্যে",
+    "administrationMethodType": "intradermal",
+    "isOral": false,
+    "totalDoses": 1,
+    "scheduleUnit": "weeks",
+    "doseNameEn": "BCG",
+    "doseNameBn": "বিসিজি",
+    "doses": [
+      {
+        "doseNumber": 1,
+        "scheduledAgeWeeks": 0
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "nameEn": "Pentavalent",
+    "nameBn": "পেন্টাভ্যালেন্ট",
+    "diseaseNameEn": [
+      "Diphtheria",
+      "Pertussis",
+      "Tetanus",
+      "Hepatitis B",
+      "Hib"
+    ],
+    "diseaseNameBn": [
+      "ডিপথেরিয়া",
+      "হুপিং কাশি",
+      "ধনুষ্টঙ্কার",
+      "হেপাটাইটিস-বি",
+      "হিমোফাইলাস ইনফ্লুয়েঞ্জা-বি"
+    ],
+    "descriptionEn": "Pentavalent Vaccine (DPT-HepB-Hib). Protects against: Diphtheria, Pertussis (Whooping Cough), Tetanus, Hepatitis B, Haemophilus influenzae type b (Hib).",
+    "descriptionBn": "পেন্টাভ্যালেন্ট টিকা ৫টি রোগ (ডিপথেরিয়া, হুপিং কাশি, ধনুষ্টঙ্কার, হেপাটাইটিস-বি এবং হিমোফাইলাস ইনফ্লুয়েঞ্জা-বি) প্রতিরোধ করে।",
+    "doseAmount": 0.5,
+    "doseUnit": "ml",
+    "administrationSiteEn": "Outer middle section of left thigh",
+    "administrationSiteBn": "বাম উরুর মধ্যভাগের বহিরাংশে",
+    "administrationMethodEn": "Intramuscular injection",
+    "administrationMethodBn": "মাংশপেশিতে ইনজেকশন",
+    "administrationMethodType": "intramuscular",
+    "isOral": false,
+    "totalDoses": 3,
+    "scheduleUnit": "weeks",
+    "doseNameEn": "Penta",
+    "doseNameBn": "পেন্টা",
+    "doses": [
+      {
+        "doseNumber": 1,
+        "scheduledAgeWeeks": 6
+      },
+      {
+        "doseNumber": 2,
+        "scheduledAgeWeeks": 10
+      },
+      {
+        "doseNumber": 3,
+        "scheduledAgeWeeks": 14
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "nameEn": "OPV",
+    "nameBn": "ওপিভি",
+    "diseaseNameEn": [
+      "Poliomyelitis (Polio)"
+    ],
+    "diseaseNameBn": [
+      "পোলিও"
+    ],
+    "descriptionEn": "Protects against Poliomyelitis.",
+    "descriptionBn": "এটি শিশুকে পোলিও রোগ থেকে রক্ষা করে",
+    "doseAmount": 2,
+    "doseUnit": "drops",
+    "administrationSiteEn": "Mouth",
+    "administrationSiteBn": "মুখ",
+    "administrationMethodEn": "Oral (by mouth)",
+    "administrationMethodBn": "মুখে খাওয়ার",
+    "administrationMethodType": "oral",
+    "isOral": true,
+    "totalDoses": 3,
+    "scheduleUnit": "weeks",
+    "doseNameEn": "OPV",
+    "doseNameBn": "ওপিভি",
+    "doses": [
+      {
+        "doseNumber": 1,
+        "scheduledAgeWeeks": 6
+      },
+      {
+        "doseNumber": 2,
+        "scheduledAgeWeeks": 10
+      },
+      {
+        "doseNumber": 3,
+        "scheduledAgeWeeks": 14
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "nameEn": "PCV",
+    "nameBn": "পিসিভি",
+    "diseaseNameEn": [
+      "Pneumonia",
+      "Meningitis"
+    ],
+    "diseaseNameBn": [
+      "নিউমোনিয়া ও মেনিনজাইটিস"
+    ],
+    "descriptionEn": "Protects against Pneumonia and Meningitis caused by Pneumococcus bacteria.",
+    "descriptionBn": "পিসিভি টিকা নিউমোনিয়া ও মেনিনজাইটিস প্রতিরোধ করে",
+    "doseAmount": 0.5,
+    "doseUnit": "ml",
+    "administrationSiteEn": "Right thigh (outer middle section)",
+    "administrationSiteBn": "ডান উরুর মধ্যভাগের বহিরাংশে",
+    "administrationMethodEn": "Intramuscular injection",
+    "administrationMethodBn": "মাংশপেশিতে ইনজেকশন",
+    "administrationMethodType": "intramuscular",
+    "isOral": false,
+    "totalDoses": 3,
+    "scheduleUnit": "weeks",
+    "doseNameEn": "PCV",
+    "doseNameBn": "পিসিভি",
+    "doses": [
+      {
+        "doseNumber": 1,
+        "scheduledAgeWeeks": 6
+      },
+      {
+        "doseNumber": 2,
+        "scheduledAgeWeeks": 10
+      },
+      {
+        "doseNumber": 3,
+        "scheduledAgeWeeks": 14
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "nameEn": "IPV",
+    "nameBn": "আইপিভি",
+    "diseaseNameEn": [
+      "Poliomyelitis (Polio)"
+    ],
+    "diseaseNameBn": [
+      "পোলিও"
+    ],
+    "descriptionEn": "Provides additional protection against Polio",
+    "descriptionBn": "এটি পোলিও রোগের বিরুদ্ধে অতিরিক্ত সুরক্ষা প্রদান করে",
+    "doseAmount": 0.1,
+    "doseUnit": "ml",
+    "administrationSiteEn": "Right upper arm",
+    "administrationSiteBn": "ডান হাতের ওপরের অংশ",
+    "administrationMethodEn": "Intradermal (ID)",
+    "administrationMethodBn": "চামড়ার নিচে (ইন্ট্রাডার্মাল)",
+    "administrationMethodType": "intradermal",
+    "isOral": false,
+    "totalDoses": 2,
+    "scheduleUnit": "weeks",
+    "doseNameEn": "IPV",
+    "doseNameBn": "আইপিভি",
+    "doses": [
+      {
+        "doseNumber": 1,
+        "scheduledAgeWeeks": 6
+      },
+      {
+        "doseNumber": 2,
+        "scheduledAgeWeeks": 14
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "nameEn": "MR",
+    "nameBn": "এমআর",
+    "diseaseNameEn": [
+      "Measles",
+      "Rubella"
+    ],
+    "diseaseNameBn": [
+      "হাম ও রুবেলা"
+    ],
+    "descriptionEn": "Measles and Rubella Vaccine. Protects against Measles and congenital Rubella syndrome.",
+    "descriptionBn": "এমআর টিকা হাম ও রুবেলা প্রতিরোধ করে। এটি শিশুর ৯ মাস ও ১৫ মাস বয়সে দুইবার দেওয়া হয়।",
+    "doseAmount": 0.5,
+    "doseUnit": "ml",
+    "administrationSiteEn": "Right upper arm",
+    "administrationSiteBn": "ডান হাতের ওপরের অংশ",
+    "administrationMethodEn": "Subcutaneous (SC)",
+    "administrationMethodBn": "চামড়ার নিচে (সাবকিউটেনিয়াস)",
+    "administrationMethodType": "subcutaneous",
+    "isOral": false,
+    "totalDoses": 2,
+    "scheduleUnit": "months",
+    "doseNameEn": "MR",
+    "doseNameBn": "এমআর",
+    "doses": [
+      {
+        "doseNumber": 1,
+        "scheduledAgeMonths": 9
+      },
+      {
+        "doseNumber": 2,
+        "scheduledAgeMonths": 15
+      }
+    ],
+    "isAdditional": true
+  },
+  {
+    "id": 7,
+    "nameEn": "TCV",
+    "nameBn": "টিসিভি",
+    "diseaseNameEn": [
+      "Typhoid"
+    ],
+    "diseaseNameBn": [
+      "টাইফয়েড"
+    ],
+    "descriptionEn": "Typhoid Conjugate Vaccine. Protects against Typhoid fever.",
+    "descriptionBn": "টিসিভি টিকা টাইফয়েড জ্বর প্রতিরোধ করে। এটি সাধারণত ৯ মাস বয়সে এমআর-১ এর সাথে দেওয়া হয়।",
+    "doseAmount": 0.5,
+    "doseUnit": "ml",
+    "administrationSiteEn": "Left or Right thigh (anterolateral aspect)",
+    "administrationSiteBn": "বাম অথবা ডান উরু (বাহ্যিক অংশ)",
+    "administrationMethodEn": "Intramuscular (IM)",
+    "administrationMethodBn": "মাংসে ইনজেকশন (আই.এম.)",
+    "administrationMethodType": "intramuscular",
+    "isOral": false,
+    "totalDoses": 1,
+    "scheduleUnit": "months",
+    "doseNameEn": "TCV",
+    "doseNameBn": "টিসিভি",
+    "doses": [
+      {
+        "doseNumber": 1,
+        "scheduledAgeMonths": 9
+      }
+    ]
+  }
+]

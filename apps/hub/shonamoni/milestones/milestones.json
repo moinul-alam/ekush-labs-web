@@ -1,0 +1,47 @@
+[
+    {
+        "ageMonthsMin": 3.8,
+        "ageMonthsMax": 9.2,
+        "averageMonths": 6,
+        "category": "physical",
+        "descriptionEnglish": "Sits without support",
+        "descriptionBangla": "সাহায্য ছাড়া বসতে পারবে",
+        "sortOrder": 1
+    },
+    {
+        "ageMonthsMin": 5.2,
+        "ageMonthsMax": 13.5,
+        "averageMonths": 8.5,
+        "category": "physical",
+        "descriptionEnglish": "Crawls on hands and knees",
+        "descriptionBangla": "হাত ও হাঁটু দিয়ে হামাগুড়ি দিতে পারবে",
+        "sortOrder": 2
+    },
+    {
+        "ageMonthsMin": 5.9,
+        "ageMonthsMax": 13.7,
+        "averageMonths": 9.2,
+        "category": "physical",
+        "descriptionEnglish": "Walks with support",
+        "descriptionBangla": "সাহায্য নিয়ে হাঁটতে পারবে",
+        "sortOrder": 3
+    },
+    {
+        "ageMonthsMin": 6.9,
+        "ageMonthsMax": 16.9,
+        "averageMonths": 11,
+        "category": "physical",
+        "descriptionEnglish": "Stands alone without support",
+        "descriptionBangla": "একা একা দাঁড়াতে পারবে",
+        "sortOrder": 4
+    },
+    {
+        "ageMonthsMin": 8.2,
+        "ageMonthsMax": 17.6,
+        "averageMonths": 12.1,
+        "category": "physical",
+        "descriptionEnglish": "Walks independently",
+        "descriptionBangla": "একা একা হাঁটতে পারবে",
+        "sortOrder": 5
+    }
+]

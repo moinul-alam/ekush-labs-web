@@ -1,0 +1,143 @@
+[
+  {
+    "id": 1,
+    "nameEn": "Rotavirus",
+    "nameBn": "রোটা ভাইরাস",
+    "descriptionEn": "Protects against severe diarrhea and vomiting caused by rotavirus infection.",
+    "descriptionBn": "রোটাভাইরাসজনিত মারাত্মক ডায়রিয়া ও বমি প্রতিরোধ করে।",
+    "isOral": true,
+    "knownBrands": [
+      {
+        "nameEn": "Rotarix",
+        "nameBn": "রোটারিক্স",
+        "suggestedDoses": 2
+      },
+      {
+        "nameEn": "RotaTeq",
+        "nameBn": "রোটাটেক",
+        "suggestedDoses": 3
+      },
+      {
+        "nameEn": "Rotasil",
+        "nameBn": "রোটাসিল",
+        "suggestedDoses": 3
+      }
+    ],
+    "noteEn": "1st dose must be given between 6–12 weeks of age. Consult your doctor for scheduling.",
+    "noteBn": "১ম ডোজ অবশ্যই ৬–১২ সপ্তাহ বয়সের মধ্যে দিতে হবে। সময়সূচির জন্য ডাক্তারের পরামর্শ নিন।"
+  },
+  {
+    "id": 2,
+    "nameEn": "Varicella (Chickenpox)",
+    "nameBn": "ভ্যারিসেলা (জলবসন্ত)",
+    "descriptionEn": "Protects against chickenpox, a highly contagious viral infection causing itchy blisters.",
+    "descriptionBn": "জলবসন্ত প্রতিরোধ করে, যা অত্যন্ত ছোঁয়াচে একটি ভাইরাসজনিত রোগ।",
+    "isOral": false,
+    "knownBrands": [
+      {
+        "nameEn": "Varivax",
+        "nameBn": "ভ্যারিভ্যাক্স",
+        "suggestedDoses": 2
+      },
+      {
+        "nameEn": "Varizost",
+        "nameBn": "ভ্যারিজোস্ট",
+        "suggestedDoses": 2
+      },
+      {
+        "nameEn": "Varilrix",
+        "nameBn": "ভ্যারিলরিক্স",
+        "suggestedDoses": 2
+      }
+    ],
+    "noteEn": "First dose at 12–15 months, second dose at 4–6 years. Consult your doctor.",
+    "noteBn": "১ম ডোজ ১২–১৫ মাসে, ২য় ডোজ ৪–৬ বছরে। ডাক্তারের পরামর্শ নিন।"
+  },
+  {
+    "id": 3,
+    "nameEn": "MMR",
+    "nameBn": "এমএমআর",
+    "descriptionEn": "Combined vaccine protecting against measles, mumps, and rubella.",
+    "descriptionBn": "হাম, মাম্পস ও রুবেলা প্রতিরোধী একটি সম্মিলিত টিকা।",
+    "isOral": false,
+    "knownBrands": [],
+    "noteEn": "EPI provides MR vaccine; MMR additionally covers mumps. Ask your doctor specifically for MMR. Brand availability may vary.",
+    "noteBn": "ইপিআই এমআর টিকা দেয়; এমএমআর অতিরিক্তভাবে মাম্পস প্রতিরোধ করে। ডাক্তারের কাছে সুনির্দিষ্টভাবে এমএমআর চাইতে হবে। ব্র্যান্ডের প্রাপ্যতা ভিন্ন হতে পারে।"
+  },
+  {
+    "id": 4,
+    "nameEn": "Influenza",
+    "nameBn": "ইনফ্লুয়েঞ্জা",
+    "descriptionEn": "Protects against seasonal flu. Recommended yearly as the virus strain changes annually.",
+    "descriptionBn": "মৌসুমী ফ্লু প্রতিরোধ করে। প্রতি বছর ভাইরাসের ধরন পরিবর্তন হওয়ায় বার্ষিক টিকা প্রয়োজন।",
+    "isOral": false,
+    "knownBrands": [
+      {
+        "nameEn": "Vaxigrip Tetra",
+        "nameBn": "ভ্যাক্সিগ্রিপ টেট্রা",
+        "suggestedDoses": 1
+      },
+      {
+        "nameEn": "Influvac Tetra",
+        "nameBn": "ইনফ্লুভ্যাক টেট্রা",
+        "suggestedDoses": 1
+      }
+    ],
+    "noteEn": "Children under 9 receiving flu vaccine for the first time need 2 doses, 4 weeks apart. Consult your doctor.",
+    "noteBn": "৯ বছরের কম বয়সী শিশু প্রথমবার ফ্লু টিকা নিলে ৪ সপ্তাহ ব্যবধানে ২টি ডোজ প্রয়োজন। ডাক্তারের পরামর্শ নিন।"
+  },
+  {
+    "id": 5,
+    "nameEn": "Hepatitis A",
+    "nameBn": "হেপাটাইটিস এ",
+    "descriptionEn": "Protects against Hepatitis A, a liver infection spread through contaminated food and water.",
+    "descriptionBn": "হেপাটাইটিস এ প্রতিরোধ করে, যা দূষিত খাবার ও পানির মাধ্যমে ছড়ানো একটি লিভার সংক্রমণ।",
+    "isOral": false,
+    "knownBrands": [
+      {
+        "nameEn": "Avaxim",
+        "nameBn": "অ্যাভাক্সিম",
+        "suggestedDoses": 2
+      },
+      {
+        "nameEn": "PrevaHAV",
+        "nameBn": "প্রেভাহ্যাভ",
+        "suggestedDoses": 2
+      },
+      {
+        "nameEn": "Havrix",
+        "nameBn": "হ্যাভরিক্স",
+        "suggestedDoses": 2
+      }
+    ],
+    "noteEn": "Given at 12–23 months, with a booster 6–12 months after the first dose.",
+    "noteBn": "১২–২৩ মাস বয়সে দেওয়া হয়, প্রথম ডোজের ৬–১২ মাস পরে বুস্টার ডোজ দিতে হয়।"
+  },
+  {
+    "id": 6,
+    "nameEn": "Meningococcal",
+    "nameBn": "মেনিনগোকক্কাল",
+    "descriptionEn": "Protects against meningococcal disease, a serious bacterial infection of the brain lining and blood.",
+    "descriptionBn": "মেনিনগোকক্কাল রোগ থেকে সুরক্ষা দেয়, যা মস্তিষ্কের আবরণ ও রক্তের একটি মারাত্মক ব্যাকটেরিয়াজনিত সংক্রমণ।",
+    "isOral": false,
+    "knownBrands": [
+      {
+        "nameEn": "Menactra",
+        "nameBn": "মেনাকট্রা",
+        "suggestedDoses": 1
+      },
+      {
+        "nameEn": "Nimenrix",
+        "nameBn": "নিমেনরিক্স",
+        "suggestedDoses": 1
+      },
+      {
+        "nameEn": "Ingovax ACWY",
+        "nameBn": "ইনগোভ্যাক্স এসিডব্লিউওয়াই",
+        "suggestedDoses": 1
+      }
+    ],
+    "noteEn": "Recommended from 2 years of age. Consult your doctor for the appropriate schedule.",
+    "noteBn": "২ বছর বয়স থেকে প্রযোজ্য। উপযুক্ত সময়সূচির জন্য ডাক্তারের পরামর্শ নিন।"
+  }
+]

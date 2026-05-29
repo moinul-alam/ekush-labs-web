@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "nameEn": "Vitamin A",
+        "nameBn": "ভিটামিন এ",
+        "descriptionEn": "Vitamin A supplements protect children from night blindness, boost immunity, and reduce the risk of serious infections.",
+        "descriptionBn": "ভিটামিন এ সাপ্লিমেন্ট শিশুদের রাতকানা রোগ থেকে রক্ষা করে, রোগ প্রতিরোধ ক্ষমতা বাড়ায় এবং মারাত্মক সংক্রমণের ঝুঁকি কমায়।",
+        "isOral": true,
+        "administrationMethodEn": "Oral drops",
+        "administrationMethodBn": "মুখে ড্রপ",
+        "scheduleUnit": "months",
+        "noteEn": "Provided free by EPI to children at immunization centers and during national campaigns.",
+        "noteBn": "টিকা কেন্দ্রে এবং জাতীয় ভিটামিন এ ক্যাম্পেইনে বিনামূল্যে পাওয়া যায়।",
+        "doses": [
+            {
+                "doseNumber": 1,
+                "scheduledAgeMonths": 6,
+                "upToAgeMonths": 11,
+                "intervalMonths": 6,
+                "doseAmount": 100000,
+                "doseUnit": "IU",
+                "noteEn": "Blue capsule (1,00,000 IU)",
+                "noteBn": "নীল ক্যাপসুল (১,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 2,
+                "scheduledAgeMonths": 12,
+                "upToAgeMonths": 17,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 3,
+                "scheduledAgeMonths": 18,
+                "upToAgeMonths": 23,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 4,
+                "scheduledAgeMonths": 24,
+                "upToAgeMonths": 29,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 5,
+                "scheduledAgeMonths": 30,
+                "upToAgeMonths": 35,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 6,
+                "scheduledAgeMonths": 36,
+                "upToAgeMonths": 41,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 7,
+                "scheduledAgeMonths": 42,
+                "upToAgeMonths": 47,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 8,
+                "scheduledAgeMonths": 48,
+                "upToAgeMonths": 53,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            },
+            {
+                "doseNumber": 9,
+                "scheduledAgeMonths": 54,
+                "upToAgeMonths": 59,
+                "intervalMonths": 6,
+                "doseAmount": 200000,
+                "doseUnit": "IU",
+                "noteEn": "Red capsule (200,000 IU)",
+                "noteBn": "লাল ক্যাপসুল (২,০০,০০০ আইইউ)"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "nameEn": "Deworming Medicine",
+        "nameBn": "কৃমিনাশক ঔষধ",
+        "descriptionEn": "Eliminates intestinal worms that cause malnutrition, anemia, and impaired growth in children.",
+        "descriptionBn": "অন্ত্রের কৃমি দূর করে, যা শিশুদের অপুষ্টি, রক্তশূন্যতা ও বৃদ্ধি বাধাগ্রস্ত করে।",
+        "isOral": true,
+        "administrationMethodEn": "Oral tablet (chewable)",
+        "administrationMethodBn": "মুখে চিবিয়ে খাওয়ার ট্যাবলেট",
+        "scheduleUnit": "months",
+        "noteEn": "Provided free at government health centers. Given every 6 months starting from 12 months of age.",
+        "noteBn": "সরকারি স্বাস্থ্যকেন্দ্রে বিনামূল্যে পাওয়া যায়। ১২ মাস বয়স থেকে প্রতি ৬ মাসে একবার দেওয়া হয়",
+        "doses": [
+            {
+                "doseNumber": 1,
+                "scheduledAgeMonths": 12,
+                "upToAgeMonths": 17,
+                "intervalMonths": 12,
+                "doseAmount": 200,
+                "doseUnit": "mg",
+                "noteEn": "Half tablet (200mg) for children 12–23 months.",
+                "noteBn": "১২–২৩ মাস বয়সী শিশুদের জন্য আধা ট্যাবলেট (২০০ মিগ্রা)।"
+            },
+            {
+                "doseNumber": 2,
+                "scheduledAgeMonths": 18,
+                "upToAgeMonths": 23,
+                "intervalMonths": 6,
+                "doseAmount": 200,
+                "doseUnit": "mg",
+                "noteEn": "Half tablet (200mg) for children 12–23 months.",
+                "noteBn": "১২–২৩ মাস বয়সী শিশুদের জন্য আধা ট্যাবলেট (২০০ মিগ্রা)।"
+            },
+            {
+                "doseNumber": 3,
+                "scheduledAgeMonths": 24,
+                "upToAgeMonths": 29,
+                "intervalMonths": 6,
+                "doseAmount": 400,
+                "doseUnit": "mg",
+                "noteEn": "Full tablet (400mg) for children 24 months and above.",
+                "noteBn": "২৪ মাস ও তার বেশি বয়সী শিশুদের জন্য পূর্ণ ট্যাবলেট (৪০০ মিগ্রা)।"
+            },
+            {
+                "doseNumber": 4,
+                "scheduledAgeMonths": 30,
+                "upToAgeMonths": 35,
+                "intervalMonths": 6,
+                "doseAmount": 400,
+                "doseUnit": "mg",
+                "noteEn": "Full tablet (400mg) for children 24 months and above.",
+                "noteBn": "২৪ মাস ও তার বেশি বয়সী শিশুদের জন্য পূর্ণ ট্যাবলেট (৪০০ মিগ্রা)।"
+            },
+            {
+                "doseNumber": 5,
+                "scheduledAgeMonths": 36,
+                "upToAgeMonths": 41,
+                "intervalMonths": 6,
+                "doseAmount": 400,
+                "doseUnit": "mg",
+                "noteEn": "Full tablet (400mg) for children 24 months and above.",
+                "noteBn": "২৪ মাস ও তার বেশি বয়সী শিশুদের জন্য পূর্ণ ট্যাবলেট (৪০০ মিগ্রা)।"
+            },
+            {
+                "doseNumber": 6,
+                "scheduledAgeMonths": 42,
+                "upToAgeMonths": 47,
+                "intervalMonths": 6,
+                "doseAmount": 400,
+                "doseUnit": "mg",
+                "noteEn": "Full tablet (400mg) for children 24 months and above.",
+                "noteBn": "২৪ মাস ও তার বেশি বয়সী শিশুদের জন্য পূর্ণ ট্যাবলেট (৪০০ মিগ্রা)।"
+            },
+            {
+                "doseNumber": 7,
+                "scheduledAgeMonths": 48,
+                "upToAgeMonths": 53,
+                "intervalMonths": 6,
+                "doseAmount": 400,
+                "doseUnit": "mg",
+                "noteEn": "Full tablet (400mg) for children 24 months and above.",
+                "noteBn": "২৪ মাস ও তার বেশি বয়সী শিশুদের জন্য পূর্ণ ট্যাবলেট (৪০০ মিগ্রা)।"
+            },
+            {
+                "doseNumber": 8,
+                "scheduledAgeMonths": 54,
+                "upToAgeMonths": 59,
+                "intervalMonths": 6,
+                "doseAmount": 400,
+                "doseUnit": "mg",
+                "noteEn": "Full tablet (400mg) for children 24 months and above.",
+                "noteBn": "২৪ মাস ও তার বেশি বয়সী শিশুদের জন্য পূর্ণ ট্যাবলেট (৪০০ মিগ্রা)।"
+            }
+        ]
+    }
+]

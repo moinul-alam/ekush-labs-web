@@ -1,0 +1,55 @@
+{
+  "manifestVersion": 1,
+  "lastUpdated": "2026-05-30",
+  "baseUrl": "https://hub.ekushlabs.com/shonamoni",
+  "datasets": {
+    "growthStandards": {
+      "version": 1,
+      "type": "single_file",
+      "path": "growth",
+      "files": {
+        "default": "growth_standards.json"
+      }
+    },
+    "epiVaccines": {
+      "version": 1,
+      "type": "single_file",
+      "path": "epi_vaccines",
+      "files": {
+        "default": "epi_vaccines.json"
+      }
+    },
+    "privateVaccines": {
+      "version": 1,
+      "type": "single_file",
+      "path": "private_vaccines",
+      "files": {
+        "default": "private_vaccines.json"
+      }
+    },
+    "govtSuppliments": {
+      "version": 1,
+      "type": "single_file",
+      "path": "supplements",
+      "files": {
+        "default": "govt_suppliments.json"
+      }
+    },
+    "nutrition": {
+      "version": 1,
+      "type": "single_file",
+      "path": "nutrition",
+      "files": {
+        "default": "nutrition_data.json"
+      }
+    },
+    "milestones": {
+      "version": 1,
+      "type": "single_file",
+      "path": "milestones",
+      "files": {
+        "default": "milestones.json"
+      }
+    }
+  }
+}
