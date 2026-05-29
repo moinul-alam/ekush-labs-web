@@ -4,7 +4,7 @@
   "baseUrl": "https://hub.ekushlabs.com/shonamoni",
   "datasets": {
     "growthStandards": {
-      "version": 1,
+      "version": 2,
       "type": "single_file",
       "path": "growth",
       "files": {
@@ -12,7 +12,7 @@
       }
     },
     "epiVaccines": {
-      "version": 1,
+      "version": 2,
       "type": "single_file",
       "path": "epi_vaccines",
       "files": {
