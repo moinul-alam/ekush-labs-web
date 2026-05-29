@@ -1,5 +1,5 @@
 {
-  "manifestVersion": 5,
+  "manifestVersion": 6,
   "lastUpdated": "2026-05-30",
   "baseUrl": "https://hub.ekushlabs.com/shonamoni",
   "datasets": {
@@ -36,7 +36,7 @@
       }
     },
     "nutrition": {
-      "version": 5,
+      "version": 6,
       "type": "single_file",
       "path": "nutrition",
       "files": {
