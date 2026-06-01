@@ -17,12 +17,11 @@ ekush-labs-web/
 │   ├── shonamoni/        # Child vaccination, growth tracker landing page
 │   ├── jhuri/            # Smart bilingual grocery bazaar planner landing page
 │   ├── ponji/            # Bengali financial ledger & calendar landing page
-│   └── hub/              # Static API microservice hosting JSON data files
-├── shared/               # Central Source of Truth (Shared Resources)
-│   ├── components/       # Asynchronous HTML modules (navbar, footer)
-│   ├── css/              # Core resets, animations, layouts, and design tokens
-│   ├── js/               # Theme manager, IntersectionObservers, dynamic loader
-│   └── sync.js           # Lightweight Node.js build-mirror synchronizer
+│   ├── hub/              # Static API microservice hosting JSON data files
+│   └── shared/           # Central Source of Truth (Shared Resources for apps)
+├── web-apps/             # Self-contained web applications with their own shared resources
+│   ├── calendar/         # Calendar web app
+│   └── shared/           # Shared resources for web-apps
 └── README.md             # Developer blueprint (You are here)
 ```
 
@@ -63,9 +62,9 @@ Every sub-application serves as a standalone web property hosted on its own dedi
 
 ---
 
-## 🎨 Central Shared Resources (`/shared`)
+## 🎨 Central Shared Resources for apps (`/apps/shared`)
 
-To prevent duplicate code maintenance and keep branding completely uniform, all core designs, templates, and scripts are centralized inside `/shared`.
+To prevent duplicate code maintenance and keep branding completely uniform, all core designs, templates, and scripts for apps are centralized inside `/apps/shared`.
 
 ### ⚡ Assets & Libraries:
 * **`css/design-tokens.css`**: Defines HSL tailored colors, spacing coordinates, responsive sizes, glassmorphism boundaries, and dark/light palettes.
@@ -75,23 +74,24 @@ To prevent duplicate code maintenance and keep branding completely uniform, all 
 * **`js/theme-manager.js`**: Synchronously parsed in the `<head>` of all pages to prevent Flash of Unstyled Content (FOUC). Detects user preferences and locks light/dark configurations.
 * **`js/observers.js`**: Universal staggered fade-in animations on scrolling via IntersectionObservers.
 * **`js/loader.js`**: The universal dynamic fragment injector. It asynchronously fetches `navbar.html` and `footer.html`, parses active tabs, and wires up click triggers.
+* **`sync.js`**: Lightweight Node.js build-mirror synchronizer for apps.
 
 ---
 
-## 🔄 Synchronization Engine (`shared/sync.js`)
+## 🔄 Synchronization Engine (`apps/shared/sync.js`)
 
 Because modern browsers prohibit relative XMLHttpRequests that step out of a subdomain document root, the monorepo leverages a lightweight, zero-dependency Node.js file synchronizer:
 
 ```bash
-# Clone and mirror the central /shared resources into all /apps subdirectories
-node shared/sync.js
+# Clone and mirror the central /apps/shared resources into all /apps subdirectories
+node apps/shared/sync.js
 ```
 
 ### Hot Reload / Development Mode:
-For real-time development, the script can run in **watch mode**. It listens for file modifications inside `/shared` and instantly pushes updates across all child apps in under **5ms**:
+For real-time development, the script can run in **watch mode**. It listens for file modifications inside `/apps/shared` and instantly pushes updates across all child apps in under **5ms**:
 
 ```bash
-node shared/sync.js --watch
+node apps/shared/sync.js --watch
 ```
 
 ---

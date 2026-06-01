@@ -1,0 +1,339 @@
+/* ============================================================
+   Ekush Labs Hub Page Styles
+   Premium landing page for apps.ekushlabs.com
+============================================================ */
+
+/* Hub Wrapper */
+.hub-wrapper {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 120px 24px 80px;
+}
+
+/* Hero Section */
+.hub-hero {
+  text-align: center;
+  margin-bottom: 72px;
+  position: relative;
+}
+
+.hub-hero::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(46, 125, 50, 0.12) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.hub-hero h1 {
+  font-size: 3.2rem;
+  font-weight: 800;
+  margin: 0 0 16px;
+  font-family: 'Syne', sans-serif;
+  letter-spacing: -0.03em;
+  background: linear-gradient(135deg, #1E6F22 0%, #2E7D32 30%, #10B981 70%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+
+.hub-hero p {
+  font-size: 1.25rem;
+  color: #475569;
+  margin: 0;
+  font-weight: 400;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Tools Grid */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 88px;
+}
+
+/* Tool Card */
+.tool-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 24px;
+  padding: 32px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+}
+
+.tool-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2E7D32, #10B981);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.tool-card:not(.coming-soon):hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(46, 125, 50, 0.12);
+  border-color: rgba(46, 125, 50, 0.2);
+}
+
+.tool-card:not(.coming-soon):hover::before {
+  transform: scaleX(1);
+}
+
+.tool-card.coming-soon {
+  opacity: 0.75;
+  cursor: not-allowed;
+  background: #f8fafc;
+}
+
+.tool-icon {
+  font-size: 3.5rem;
+  display: inline-block;
+  margin-bottom: 8px;
+}
+
+.tool-card h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #1e293b;
+  letter-spacing: -0.01em;
+}
+
+.tool-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 1rem;
+  line-height: 1.6;
+  flex: 1;
+}
+
+.tool-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.open-label {
+  font-weight: 700;
+  color: #2E7D32;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 1rem;
+  transition: gap 0.3s ease;
+}
+
+.tool-card:not(.coming-soon):hover .open-label {
+  gap: 10px;
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+  color: #475569;
+  padding: 6px 14px;
+  border-radius: 100px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* App Cross-Promotion Section */
+.app-promotion {
+  margin-top: 40px;
+  padding: 56px 48px;
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.06), rgba(16, 185, 129, 0.04));
+  border-radius: 28px;
+  border: 1px solid rgba(46, 125, 50, 0.12);
+  position: relative;
+  overflow: hidden;
+}
+
+.app-promotion::before {
+  content: '';
+  position: absolute;
+  bottom: -80px;
+  right: -80px;
+  width: 240px;
+  height: 240px;
+  background: radial-gradient(circle, rgba(16, 185, 129, 0.15) 0%, transparent 70%);
+}
+
+.app-promotion-header {
+  text-align: center;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.app-promotion-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 10px;
+  color: #1e293b;
+  letter-spacing: -0.02em;
+}
+
+.app-promotion-header p {
+  margin: 0;
+  color: #475569;
+  font-size: 1.05rem;
+}
+
+.apps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  position: relative;
+}
+
+/* App Card */
+.app-card {
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 20px;
+  padding: 28px;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.02);
+}
+
+.app-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(46, 125, 50, 0.1);
+  border-color: rgba(46, 125, 50, 0.2);
+}
+
+.app-card h4 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.app-card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 0.95rem;
+  flex: 1;
+  line-height: 1.5;
+}
+
+.play-store-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #2E7D32, #10B981);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-top: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.25);
+  width: fit-content;
+}
+
+.play-store-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(46, 125, 50, 0.35);
+}
+
+/* Dark Mode Support */
+body.dark .hub-hero h1 {
+  background: linear-gradient(135deg, #4ADE80 0%, #22C55E 30%, #10B981 70%, #059669 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+body.dark .hub-hero p,
+body.dark .tool-card p,
+body.dark .app-promotion-header p,
+body.dark .app-card p {
+  color: #94a3b8;
+}
+
+body.dark .tool-card,
+body.dark .app-card {
+  background: #1e293b;
+  border-color: #334155;
+}
+
+body.dark .tool-card h3,
+body.dark .app-card h4,
+body.dark .app-promotion-header h2 {
+  color: #f1f5f9;
+}
+
+body.dark .tool-card.coming-soon {
+  background: #1e293b;
+  opacity: 0.6;
+}
+
+body.dark .coming-soon-badge {
+  background: linear-gradient(135deg, #334155, #1e293b);
+  color: #94a3b8;
+}
+
+body.dark .app-promotion {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.15), rgba(16, 185, 129, 0.08));
+  border-color: rgba(46, 125, 50, 0.25);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hub-wrapper {
+    padding: 100px 16px 56px;
+  }
+
+  .hub-hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hub-hero p {
+    font-size: 1.1rem;
+  }
+
+  .tools-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .apps-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .app-promotion {
+    padding: 40px 24px;
+  }
+}

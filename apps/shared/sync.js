@@ -8,8 +8,8 @@ const fs = require('fs');
 const path = require('path');
 
 const ROOT_SHARED = __dirname;
-const APPS_DIR = path.join(ROOT_SHARED, '..', 'apps');
-const EXEMPTIONS = ['hub']; // Hub only serves API JSON and has no front-end assets
+const APPS_DIR = path.join(ROOT_SHARED, '..');
+const EXEMPTIONS = ['hub', 'shared']; // Hub only serves API JSON, shared is the source
 
 /**
  * Utility: Deeply copy a directory recursively
@@ -77,7 +77,7 @@ function runSync() {
   console.log(`[Sync] Starting synchronization for: ${apps.join(', ')}`);
   const startTime = Date.now();
 
-  const syncDirs = ['assets', 'css', 'js', 'components'];
+  const syncDirs = ['fonts', 'css', 'js', 'components'];
 
   apps.forEach((app) => {
     const appSharedDir = path.join(APPS_DIR, app, 'shared');
@@ -115,7 +115,7 @@ function startWatchMode() {
   let timeoutId = null;
 
   // Watch directories
-  const watchDirs = ['assets', 'css', 'js', 'components'];
+  const watchDirs = ['fonts', 'css', 'js', 'components'];
   
   watchDirs.forEach((dir) => {
     const dirPath = path.join(ROOT_SHARED, dir);

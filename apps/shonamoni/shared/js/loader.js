@@ -150,8 +150,8 @@ function initMobileMenu() {
 
 // Coordinate loading of standard navbar and footer
 Promise.all([
-  loadSharedComponent('navbar-placeholder', '/shared/components/navbar.html'),
-  loadSharedComponent('footer-placeholder', '/shared/components/footer.html')
+  loadSharedComponent('navbar-placeholder', '/apps/shared/components/navbar.html'),
+  loadSharedComponent('footer-placeholder', '/apps/shared/components/footer.html')
 ]).then(() => {
   // Fire initialization routines
   setFooterYear();

@@ -159,16 +159,43 @@ function initMobileMenu() {
   }
 }
 
+// Get the base path for shared components based on current location
+function getSharedBasePath() {
+  const path = window.location.pathname;
+  const parts = path.split('/').filter(Boolean);
+  
+  // Check if we're in web-apps and in a subdirectory (like calendar)
+  if (parts.includes('web-apps') && parts.length > 1) {
+    return '../shared';
+  }
+  // If we're not in web-apps or are at web-apps root
+  if (parts.length === 0 || (parts.length === 1 && parts[0] === 'web-apps')) {
+    return 'shared';
+  }
+  // For other subdirectories
+  return '../shared';
+}
+
+const sharedBase = getSharedBasePath();
+
+/**
+ * Resolve all links on the page
+ */
+function resolveAllLinksOnPage() {
+  resolveLocalMonorepoLinks(document.body);
+}
+
 // Coordinate loading of standard navbar and footer
 Promise.all([
-  loadSharedComponent('navbar-placeholder', '../shared/components/navbar.html'),
-  loadSharedComponent('footer-placeholder', '../shared/components/footer.html')
+  loadSharedComponent('navbar-placeholder', `${sharedBase}/components/navbar.html`),
+  loadSharedComponent('footer-placeholder', `${sharedBase}/components/footer.html`)
 ]).then(() => {
   // Fire initialization routines
   setFooterYear();
   highlightActiveNavLink();
   initNavbarScroll();
   initMobileMenu();
+  resolveAllLinksOnPage();
 
   // Broadcast event to notify that shared elements are fully parsed
   window.dispatchEvent(new Event('componentsLoaded'));
@@ -180,6 +207,7 @@ Promise.all([
  */
 function resolveLocalMonorepoLinks(element) {
   const path = window.location.pathname;
+  
   // Detect if we are running inside the local /apps/ monorepo structure
   if (path.includes('/apps/')) {
     // Extract "/apps/app-name"
@@ -205,6 +233,26 @@ function resolveLocalMonorepoLinks(element) {
         }
       });
     }
+  }
+  
+  // Detect if we are running inside the local /web-apps/ monorepo structure
+  if (path.includes('/web-apps/')) {
+    // Extract "/web-apps"
+    const webAppsRoot = '/web-apps';
+    
+    // Select all anchors
+    const anchors = element.querySelectorAll('a');
+    anchors.forEach(anchor => {
+      const href = anchor.getAttribute('href');
+      if (href) {
+        // If the link is root-relative (starts with "/" but not "//" or external protocol)
+        if (href.startsWith('/') && !href.startsWith('//') && !href.startsWith('http') && !href.startsWith('mailto:')) {
+          // Rewrite link to prepend /web-apps
+          const rewritten = href === '/' ? webAppsRoot + '/' : webAppsRoot + href;
+          anchor.setAttribute('href', rewritten);
+        }
+      }
+    });
   }
 }
 
