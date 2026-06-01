@@ -20,7 +20,11 @@ const dict = {
     bottomCtaTitle: "একুশ পঞ্জি অ্যাপ ডাউনলোড করুন",
     bottomCtaDesc: "ক্যালেন্ডার, ছুটি, ইভেন্ট, রিমাইন্ডার, বয়স ক্যালকুলেটর, দৈনিক উক্তি, দৈনিক শব্দ এবং আরও অনেক কিছুর সাথে আপডেট থাকুন!",
     bottomCtaBtnText: "একুশ পঞ্জি অ্যাপ ডাউনলোড করুন",
-    fabCtaText: "একুশ পঞ্জি অ্যাপ পান"
+    fabCtaText: "একুশ পঞ্জি অ্যাপ পান",
+    navEkush: "একুশ",
+    navPonji: "পঞ্জি",
+    navCalTitle: "বাংলা ক্যালেন্ডার",
+    navSubTitle: "গ্রেগোরিয়ান, বাংলা ও হিজরি তারিখ, সরকারি ছুটিসহ"
   },
   en: {
     weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -40,7 +44,11 @@ const dict = {
     bottomCtaTitle: "Get the Ekush Ponji App",
     bottomCtaDesc: "Get updated with Calendar, Holidays, Events, Reminders, Age Calculator, Daily Quote, Daily Words and more!",
     bottomCtaBtnText: "Get Ekush Ponji App",
-    fabCtaText: "Get Ekush Ponji App"
+    fabCtaText: "Get Ekush Ponji App",
+    navEkush: "Ekush",
+    navPonji: "Ponji",
+    navCalTitle: "Bangla Calendar",
+    navSubTitle: "Gregorian, Bangla & Hijri Dates with Holidays"
   }
 };
 
@@ -148,22 +156,6 @@ const bottomCtaBtnText = document.getElementById('bottom-cta-btn-text');
 const fabCtaText = document.getElementById('fab-cta-text');
 
 // Initialization
-async function initCalendar() {
-  // Wait for shared components to load first, before doing anything else
-  // because we need the navbar elements (lang toggle, theme toggle) to exist
-  window.addEventListener('componentsLoaded', async () => {
-    // Now that components are loaded, we can initialize everything
-    initTheme();
-    setupStaticEventListeners();
-    updateUIStaticText();
-    updateTodayWidget();
-    
-    // Fetch manifest first, then render once
-    await fetchManifest();
-    await renderCalendar();
-  });
-}
-
 function setupStaticEventListeners() {
   prevBtn.addEventListener('click', async () => {
     currentMonth--;
@@ -184,18 +176,15 @@ function setupStaticEventListeners() {
   });
 }
 
-window.addEventListener('componentsLoaded', () => {
+// Initialize immediately when DOM is ready
+document.addEventListener('DOMContentLoaded', async () => {
+  // Assign navbar element variables
   langToggleBtn = document.getElementById('lang-toggle');
   themeToggleBtn = document.getElementById('theme-toggle');
   themeIconLight = document.querySelector('.theme-icon--light');
   themeIconDark = document.querySelector('.theme-icon--dark');
 
-  // Update back button href
-  const backBtn = document.querySelector('.nav-back');
-  if (backBtn) {
-    backBtn.href = '../index.html';
-  }
-
+  // Attach event listeners
   if (langToggleBtn && themeToggleBtn) {
     langToggleBtn.addEventListener('click', async () => {
       currentLang = currentLang === 'bn' ? 'en' : 'bn';
@@ -208,14 +197,17 @@ window.addEventListener('componentsLoaded', () => {
       currentTheme = currentTheme === 'light' ? 'dark' : 'light';
       applyTheme();
     });
-
-    // Update their text using the current dict
-    const t = dict[currentLang];
-    langToggleBtn.title = t.langToggle;
-    themeToggleBtn.title = t.themeToggle;
-    applyTheme();
-    syncNavbarHeaders();
   }
+
+  // Initialize everything
+  setupStaticEventListeners();
+  applyTheme();
+  updateUIStaticText();
+  updateTodayWidget();
+
+  // Fetch manifest first, then render
+  await fetchManifest();
+  await renderCalendar();
 });
 
 function syncNavbarHeaders() {
@@ -258,6 +250,17 @@ function updateUIStaticText() {
   bottomCtaDesc.textContent = t.bottomCtaDesc;
   bottomCtaBtnText.textContent = t.bottomCtaBtnText;
   fabCtaText.textContent = t.fabCtaText;
+
+  // Update navbar titles
+  const navEkushEl = document.querySelector('.nav-ekush');
+  const navPonjiEl = document.querySelector('.nav-ponji-text');
+  const navCalEl = document.getElementById('nav-cal-title');
+  const navSubEl = document.getElementById('nav-sub-title');
+
+  if (navEkushEl) navEkushEl.textContent = t.navEkush;
+  if (navPonjiEl) navPonjiEl.textContent = t.navPonji;
+  if (navCalEl) navCalEl.textContent = t.navCalTitle;
+  if (navSubEl) navSubEl.textContent = t.navSubTitle;
 
   // Render weekdays
   calendarWeekdays.innerHTML = '';
@@ -522,5 +525,4 @@ async function renderCalendar() {
   }
 }
 
-// Start
-initCalendar();
+// Start - initialized in componentsLoaded listener

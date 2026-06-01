@@ -50,13 +50,16 @@ body.dark .day-cell.today .date-main,
 }
 
 #navbar .nav-links {
-  gap: 0.5rem;
+  gap: 0.75rem;
+  display: flex !important;
+  align-items: center;
 }
 
 #navbar .nav-controls {
   display: flex !important;
   gap: 0.75rem;
   align-items: center;
+  pointer-events: auto;
 }
 
 /* Style nav-back link */
@@ -65,9 +68,32 @@ body.dark .day-cell.today .date-main,
   pointer-events: auto;
 }
 
-/* Improve language toggle button */
-#lang-toggle {
-  padding: 6px 10px;
+/* Make nav buttons super visible */
+#lang-toggle, #theme-toggle {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+}
+
+/* Fix navbar title visibility in dark mode */
+body.dark .nav-ekush,
+body.dark .nav-ponji-text,
+body.dark .nav-cal-text,
+:root[data-theme="dark"] .nav-ekush,
+:root[data-theme="dark"] .nav-ponji-text,
+:root[data-theme="dark"] .nav-cal-text {
+  color: #fff !important;
+}
+
+body.dark #nav-sub-title,
+:root[data-theme="dark"] #nav-sub-title {
+  color: #ddd !important;
+}
+
+/* Increase description font size */
+#nav-sub-title {
+  font-size: 1rem !important;
 }
 
 /* Navbar adjustments for calendar app */
@@ -121,16 +147,7 @@ body.dark .day-cell.today .date-main,
   transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.calendar-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--primary-gradient);
-  pointer-events: none;
-}
+/* Remove useless gradient line */
 
 /* ─── 4. HEADER SECTION ─────────────────────────────────────── */
 .calendar-header {
