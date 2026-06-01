@@ -250,38 +250,37 @@ async function fetchWithCORSFallback(url) {
 }
 
 async function fetchManifest() {
-    try {
-        const response = await fetchWithCORSFallback('https://hub.ekushlabs.com/ponji/manifest.json');
-        if (response.ok) {
-            manifestCache = await response.json();
-        }
-    } catch (e) {
-        console.error("Failed to fetch manifest:", e);
+  try {
+    const response = await fetch('assets/data/manifest.json');
+    if (response.ok) {
+      manifestCache = await response.json();
     }
+  } catch (e) {
+    console.error("Failed to fetch manifest:", e);
+  }
 }
 
 async function fetchHolidays(year) {
-    if (holidaysCache[year]) return holidaysCache[year];
-    if (!manifestCache || !manifestCache.datasets || !manifestCache.datasets.holidays) return [];
-    
-    const holidayFiles = manifestCache.datasets.holidays.files;
-    const yearStr = year.toString();
-    
-    if (holidayFiles && holidayFiles[yearStr]) {
-        try {
-            const baseUrl = manifestCache.baseUrl || 'https://hub.ekushlabs.com/ponji';
-            const url = `${baseUrl}/${holidayFiles[yearStr]}`;
-            const response = await fetchWithCORSFallback(url);
-            if (response.ok) {
-                const data = await response.json();
-                holidaysCache[year] = parseHolidays(data.holidays || []);
-                return holidaysCache[year];
-            }
-        } catch (e) {
-            console.error(`Failed to fetch holidays for ${year}:`, e);
-        }
+  if (holidaysCache[year]) return holidaysCache[year];
+  if (!manifestCache || !manifestCache.datasets || !manifestCache.datasets.holidays) return [];
+  
+  const holidayFiles = manifestCache.datasets.holidays.files;
+  const yearStr = year.toString();
+  
+  if (holidayFiles && holidayFiles[yearStr]) {
+    try {
+      const url = `assets/data/${holidayFiles[yearStr]}`;
+      const response = await fetch(url);
+      if (response.ok) {
+        const data = await response.json();
+        holidaysCache[year] = parseHolidays(data.holidays || []);
+        return holidaysCache[year];
+      }
+    } catch (e) {
+      console.error(`Failed to fetch holidays for ${year}:`, e);
     }
-    return [];
+  }
+  return [];
 }
 
 function parseHolidays(rawHolidays) {

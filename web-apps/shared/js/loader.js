@@ -33,9 +33,8 @@ async function loadSharedComponent(placeholderId, componentPath) {
       if (navBrand) {
         const appNameLower = appName.toLowerCase();
         if (appNameLower.includes('ponji')) {
-          // Re-create Ponji's custom text-split branding with subtitles and scroll states
+          // Re-create Ponji's custom text-split branding with subtitles and scroll states (no images)
           navBrand.innerHTML = `
-            <img src="assets/app_logo.png" alt="Ekush Ponji" class="nav-logo" onerror="this.style.display='none'" />
             <div class="nav-titles-wrapper" style="position: relative; display: flex; align-items: center; width: 100%; min-width: 250px;">
               <span class="nav-name brand-default" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0;">
                 <div style="display:flex; align-items:center; gap: 4px;">
@@ -50,20 +49,6 @@ async function loadSharedComponent(placeholderId, componentPath) {
                 <div id="nav-scrolled-sub" style="font-size: 0.75rem; color: var(--text-secondary, #666); margin-top: 2px;">Sub Months</div>
               </span>
             </div>
-          `;
-        } else if (appNameLower.includes('jhuri')) {
-          // Re-create Jhuri's custom offset logo branding
-          navBrand.innerHTML = `
-            <img src="assets/app_logo.png" alt="Jhuri" class="nav-logo nav-jhuri-logo" onerror="this.style.display='none'" />
-            <img src="assets/app_title.png" alt="Jhuri" class="nav-title-img" onerror="this.style.display='none'" />
-          `;
-        } else if (appNameLower.includes('shonamoni')) {
-          // Re-create Shonamoni's title image branding
-          navBrand.innerHTML = `
-            <img src="assets/app_logo.png" alt="Shonamoni" class="nav-logo" onerror="this.style.display='none'" />
-            <span class="nav-name">
-              <img src="assets/app_title.png" alt="Shonamoni" class="nav-title-img" onerror="this.style.display='none'" />
-            </span>
           `;
         } else {
           // Generic fallback
@@ -186,15 +171,25 @@ function resolveAllLinksOnPage() {
 }
 
 // Coordinate loading of standard navbar and footer
-Promise.all([
-  loadSharedComponent('navbar-placeholder', `${sharedBase}/components/navbar.html`),
-  loadSharedComponent('footer-placeholder', `${sharedBase}/components/footer.html`)
-]).then(() => {
+const loadTasks = [];
+const navbarPlaceholder = document.getElementById('navbar-placeholder');
+const footerPlaceholder = document.getElementById('footer-placeholder');
+
+if (navbarPlaceholder) {
+  loadTasks.push(loadSharedComponent('navbar-placeholder', `${sharedBase}/components/navbar.html`));
+}
+if (footerPlaceholder) {
+  loadTasks.push(loadSharedComponent('footer-placeholder', `${sharedBase}/components/footer.html`));
+}
+
+Promise.all(loadTasks).then(() => {
   // Fire initialization routines
   setFooterYear();
-  highlightActiveNavLink();
-  initNavbarScroll();
-  initMobileMenu();
+  if (navbarPlaceholder) {
+    highlightActiveNavLink();
+    initNavbarScroll();
+    initMobileMenu();
+  }
   resolveAllLinksOnPage();
 
   // Broadcast event to notify that shared elements are fully parsed
