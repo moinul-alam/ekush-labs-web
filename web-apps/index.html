@@ -7,6 +7,20 @@
   <title>Ekush Labs Web Tools</title>
   <meta name="description" content="Free web tools by Ekush Labs">
 
+  <!-- Apply theme FIRST, before any other content loads -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('ekush_theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.dataset.theme = 'dark';
+        document.body.classList.add('dark');
+      } else {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="shared/css/design-tokens.css">
   <link rel="stylesheet" href="shared/css/reset.css">
   <link rel="stylesheet" href="shared/css/components.css">
@@ -51,7 +65,7 @@
     <section class="app-promotion">
       <div class="app-promotion-header">
         <h2>Want the full experience?</h2>
-        <p>Our Android apps go further — reminders, offline access, and more.</p>
+        <p>Our Android apps go further — reminders, offline access, and more</p>
       </div>
 
       <div class="apps-grid">

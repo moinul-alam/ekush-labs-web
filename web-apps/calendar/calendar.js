@@ -133,10 +133,9 @@ const holidayListContainer = document.getElementById('holiday-list');
 async function initCalendar() {
     initTheme();
     setupStaticEventListeners();
-    // Render immediately so UI doesn't vanish while waiting for network
-    await renderCalendar();
+    updateUIStaticText();
     
-    // Fetch in background and re-render
+    // Fetch manifest first, then render once
     await fetchManifest();
     await renderCalendar();
 }
@@ -200,16 +199,20 @@ function initTheme() {
 }
 
 function applyTheme() {
-    if (currentTheme === 'dark') {
-        document.body.classList.add('dark');
-        if (themeIconLight) themeIconLight.classList.add('theme-icon-hidden');
-        if (themeIconDark) themeIconDark.classList.remove('theme-icon-hidden');
-    } else {
-        document.body.classList.remove('dark');
-        if (themeIconLight) themeIconLight.classList.remove('theme-icon-hidden');
-        if (themeIconDark) themeIconDark.classList.add('theme-icon-hidden');
-    }
-    localStorage.setItem('ekush_theme', currentTheme);
+  if (currentTheme === 'dark') {
+    document.documentElement.classList.add('dark');
+    document.documentElement.setAttribute('data-theme', 'dark');
+    document.body.classList.add('dark');
+    if (themeIconLight) themeIconLight.classList.add('theme-icon-hidden');
+    if (themeIconDark) themeIconDark.classList.remove('theme-icon-hidden');
+  } else {
+    document.documentElement.classList.remove('dark');
+    document.documentElement.setAttribute('data-theme', 'light');
+    document.body.classList.remove('dark');
+    if (themeIconLight) themeIconLight.classList.remove('theme-icon-hidden');
+    if (themeIconDark) themeIconDark.classList.add('theme-icon-hidden');
+  }
+  localStorage.setItem('ekush_theme', currentTheme);
 }
 
 function updateUIStaticText() {

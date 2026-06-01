@@ -7,6 +7,20 @@
   <title>Ekush Ponji - Bangla Calendar</title>
   <meta name="description" content="Calendar, Holidays and more">
 
+  <!-- Apply theme FIRST, before any other content loads -->
+  <script>
+    (function() {
+      const theme = localStorage.getItem('ekush_theme') || 'light';
+      if (theme === 'dark') {
+        document.documentElement.classList.add('dark');
+        document.documentElement.dataset.theme = 'dark';
+        document.body.classList.add('dark');
+      } else {
+        document.documentElement.dataset.theme = 'light';
+      }
+    })();
+  </script>
+
   <link rel="stylesheet" href="../shared/css/design-tokens.css">
   <link rel="stylesheet" href="../shared/css/reset.css">
   <link rel="stylesheet" href="../shared/css/components.css">

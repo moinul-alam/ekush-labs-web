@@ -21,7 +21,8 @@ body {
   transition: background 0.4s ease, color 0.4s ease;
 }
 
-body.dark {
+body.dark,
+:root[data-theme="dark"] body {
   background: radial-gradient(circle at 0% 0%, rgba(46, 125, 50, 0.12) 0%, transparent 50%),
               radial-gradient(circle at 100% 0%, rgba(16, 185, 129, 0.12) 0%, transparent 50%),
               #0f172a;
@@ -69,13 +70,15 @@ body.dark {
   border-color: rgba(0, 0, 0, 0.15);
 }
 
-body.dark .toolbar-btn {
+body.dark .toolbar-btn,
+:root[data-theme="dark"] .toolbar-btn {
   background: rgba(255, 255, 255, 0.06);
   border-color: rgba(255, 255, 255, 0.1);
   color: #94a3b8;
 }
 
-body.dark .toolbar-btn:hover {
+body.dark .toolbar-btn:hover,
+:root[data-theme="dark"] .toolbar-btn:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.15);
   color: #e2e8f0;
@@ -98,7 +101,8 @@ body.dark .toolbar-btn:hover {
   border-color: rgba(16, 185, 129, 0.2);
 }
 
-body.dark .cta-banner {
+body.dark .cta-banner,
+:root[data-theme="dark"] .cta-banner {
   background: linear-gradient(135deg, rgba(16, 185, 129, 0.12), rgba(59, 130, 246, 0.08));
   border-color: rgba(255, 255, 255, 0.06);
 }
@@ -111,7 +115,8 @@ body.dark .cta-banner {
   transition: color 0.3s ease;
 }
 
-body.dark .cta-text h3 {
+body.dark .cta-text h3,
+:root[data-theme="dark"] .cta-text h3 {
   color: #f1f5f9;
 }
 
@@ -122,7 +127,8 @@ body.dark .cta-text h3 {
   transition: color 0.3s ease;
 }
 
-body.dark .cta-text p {
+body.dark .cta-text p,
+:root[data-theme="dark"] .cta-text p {
   color: #94a3b8;
 }
 

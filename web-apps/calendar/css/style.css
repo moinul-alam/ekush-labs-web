@@ -29,7 +29,8 @@
 }
 
 /* ---- Dark Mode Variables ---- */
-body.dark {
+body.dark,
+:root[data-theme="dark"] {
   --cal-primary: #34d399;
   --cal-primary-glow: rgba(52, 211, 153, 0.25);
   --cal-bg: rgba(30, 41, 59, 0.65);
@@ -79,7 +80,8 @@ body.dark {
   transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 
-body.dark .calendar-container {
+body.dark .calendar-container,
+:root[data-theme="dark"] .calendar-container {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
@@ -331,7 +333,8 @@ body.dark .calendar-container {
   transition: all 0.4s ease;
 }
 
-body.dark .holiday-list-container {
+body.dark .holiday-list-container,
+:root[data-theme="dark"] .holiday-list-container {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
 }
