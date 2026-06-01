@@ -1,0 +1,350 @@
+/* ============================================================
+   Ekush Labs Shared Styles — components.css
+   Universal responsive styling rules for #navbar and #footer.
+   Tailored to inherit local app typography and palettes.
+============================================================ */
+
+/* ─── 1. NAVBAR CONTAINER ───────────────────────────────────── */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5vw;
+  height: 68px; /* Original clean, premium height */
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur));
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  border-bottom: 1px solid var(--border, var(--glass-border));
+  transition: all var(--transition);
+}
+
+#navbar.scrolled {
+  height: 60px; /* Slightly compact when scrolled */
+  box-shadow: var(--shadow-sm);
+}
+
+/* Brand title swap on scroll */
+.brand-default {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.brand-scrolled {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+#navbar.scrolled .brand-default {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#navbar.scrolled .brand-scrolled {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ─── 2. PORTAL BACK BUTTON ─────────────────────────────────── */
+.nav-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted, var(--silver));
+  text-decoration: none;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+
+.nav-back svg {
+  width: 14px;
+  height: 14px;
+  stroke: currentColor;
+  flex-shrink: 0;
+  transition: transform var(--transition-fast);
+}
+
+.nav-back:hover {
+  color: var(--teal, var(--green, var(--primary-start)));
+}
+
+.nav-back:hover svg {
+  transform: translateX(-3px);
+}
+
+/* ─── 3. BRANDING LOGO & TITLE ──────────────────────────────── */
+.nav-brand {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-decoration: none;
+  pointer-events: auto;
+}
+
+.nav-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  flex-shrink: 0;
+  transition: all var(--transition);
+}
+
+/* Jhuri offset logo override */
+.nav-jhuri-logo {
+  width: 32px;
+  height: 32px;
+  transform: translateY(-4px);
+}
+
+.nav-title-img {
+  height: 34px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Ponji text-split styles */
+.nav-name {
+  display: flex;
+  align-items: center;
+}
+
+.nav-ekush {
+  color: #D32F2F; /* Premium Bengali Deep Red */
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.nav-ponji-text {
+  color: var(--green, #006B54);
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+/* ─── 4. DESKTOP NAVIGATION LINKS ────────────────────────────── */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.8rem;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-secondary, var(--silver));
+  text-decoration: none;
+  transition: color var(--transition);
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--teal, var(--green, var(--orange, var(--primary-start))));
+  border-radius: 2px;
+  transition: width var(--transition);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--teal, var(--green, var(--primary-start)));
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-btn-outline {
+  background: transparent;
+  border: 1px solid var(--text-secondary, var(--silver, #888));
+  color: var(--text-secondary, var(--silver, #888));
+  border-radius: 8px;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: all var(--transition, 0.2s);
+  display: inline-flex;
+  align-items: center;
+}
+
+.nav-btn-outline:hover {
+  color: var(--teal, var(--green, var(--primary-start, #10b981)));
+  border-color: var(--teal, var(--green, var(--primary-start, #10b981)));
+}
+
+/* Theme icon toggle */
+.theme-icon-hidden {
+  display: none !important;
+}
+
+/* ─── 5. RESPONSIVE MOBILE TOGGLE (HAMBURGER) ────────────────── */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1100;
+}
+
+.hamburger {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: var(--text-primary, var(--white));
+  position: relative;
+  transition: background 0.3s;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: var(--text-primary, var(--white));
+  left: 0;
+  transition: transform 0.3s;
+}
+
+.hamburger::before { top: -5px; }
+.hamburger::after { bottom: -5px; }
+
+#navbar.nav-open .hamburger {
+  background: transparent;
+}
+
+#navbar.nav-open .hamburger::before {
+  transform: translateY(5px) rotate(45deg);
+}
+
+#navbar.nav-open .hamburger::after {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* ─── 6. UNIVERSAL FOOTER STYLE ─────────────────────────────── */
+#footer {
+  padding: 2rem 5vw;
+  border-top: 1px solid var(--border, var(--glass-border));
+  background: var(--navy-mid, var(--white));
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-brand {
+  font-family: var(--font-display), 'Syne', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary, var(--white));
+  letter-spacing: -0.01em;
+  text-decoration: none;
+}
+
+.footer-app-label {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: var(--text-muted, var(--silver));
+}
+
+.footer-copy {
+  font-size: 0.78rem;
+  color: var(--text-muted, var(--silver-lt));
+}
+
+/* ─── 7. RESPONSIVE BREAKPOINTS (PREVENT OVERLAP) ───────────── */
+@media (max-width: 1024px) {
+  /* Increase breakpoint to 1024px to completely eliminate overlap on medium screens */
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 260px;
+    height: 100vh;
+    background: var(--navy-mid, #0A0A0A);
+    border-left: 1px solid var(--border, var(--glass-border));
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 3rem;
+    gap: 1.8rem;
+    transition: right var(--transition);
+    z-index: 1050;
+    box-shadow: var(--shadow-lg);
+  }
+
+  #navbar.nav-open .nav-links {
+    right: 0;
+  }
+
+  .nav-links a {
+    font-size: 1.05rem;
+    color: var(--white);
+  }
+
+  .nav-brand {
+    max-width: 48%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-back span {
+    display: none; /* Hide back link label text on small mobile screens */
+  }
+  
+  #footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-brand {
+    max-width: 40%;
+    gap: 6px;
+  }
+  .nav-logo {
+    height: 30px;
+  }
+  .nav-title-img {
+    height: 28px;
+  }
+  .nav-ekush, .nav-ponji-text {
+    font-size: 1.3rem;
+  }
+}
