@@ -9,7 +9,7 @@
 
   <!-- Apply theme FIRST, before any other content loads -->
   <script>
-    (function() {
+    (function () {
       const theme = localStorage.getItem('ekush_theme') || 'light';
       if (theme === 'dark') {
         document.documentElement.classList.add('dark');
@@ -32,26 +32,42 @@
   <main class="hub-wrapper">
     <!-- Hero Section -->
     <section class="hub-hero">
-      <h1>Free web tools by Ekush Labs</h1>
-      <p>Simple, reliable tools for everyday use</p>
+      <div class="hero-orbit">
+        <span class="orbit-circle orbit-1"></span>
+        <span class="orbit-circle orbit-2"></span>
+        <span class="orbit-circle orbit-3"></span>
+      </div>
+      <h1><span class="hero-emoji">🚀</span> Ekush Labs</h1>
+      <p>Beautiful, simple tools for everyday use</p>
+      <div class="hero-badges">
+        <span class="badge">⚡ Fast</span>
+        <span class="badge">🎨 Beautiful</span>
+        <span class="badge">🌙 Dark Mode</span>
+      </div>
     </section>
 
     <!-- Tools Grid -->
     <section class="tools-grid">
       <!-- Bangla Calendar -->
       <a href="calendar/" class="tool-card">
-        <div class="tool-icon">📅</div>
+        <div class="tool-glow"></div>
+        <div class="tool-icon-wrapper">
+          <span class="tool-icon">📅</span>
+        </div>
         <h3>Bangla Calendar</h3>
-        <p>View Gregorian, Bangla & Hijri dates with Bangladesh government holidays</p>
+        <p>Gregorian, Bangla & Hijri dates with Bangladesh government holidays</p>
         <div class="tool-card-footer">
-          <span></span>
+          <span class="tool-tag">Popular</span>
           <span class="open-label">Open &rarr;</span>
         </div>
       </a>
 
       <!-- Age Calculator (Coming Soon) -->
       <div class="tool-card coming-soon">
-        <div class="tool-icon">🎂</div>
+        <div class="tool-glow"></div>
+        <div class="tool-icon-wrapper">
+          <span class="tool-icon">🎂</span>
+        </div>
         <h3>Age Calculator</h3>
         <p>Calculate your exact age in years, months and days</p>
         <div class="tool-card-footer">
@@ -64,47 +80,53 @@
     <!-- App Cross-Promotion -->
     <section class="app-promotion">
       <div class="app-promotion-header">
-        <h2>Want the full experience?</h2>
-        <p>Our Android apps go further — reminders, offline access, and more</p>
+        <h2>Go even further!</h2>
+        <p>Our Android apps bring reminders, offline access, and more features</p>
       </div>
 
       <div class="apps-grid">
-        <!-- Play Store Dev Link -->
-        <a href="https://play.google.com/store/apps/dev?id=8661557018658311013" target="_blank" rel="noopener noreferrer" class="app-card">
-          <h4>Ekush Labs on Google Play</h4>
-          <p>Explore all our Android apps</p>
-          <span class="play-store-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 20V4l10 8-10 8z"/>
-              <path d="M22 10l-10 8V2l10 8z"/>
-            </svg>
-            View All Apps
-          </span>
-        </a>
-
         <!-- Ekush Ponji -->
-        <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.ponji" target="_blank" rel="noopener noreferrer" class="app-card">
+        <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.ponji" target="_blank"
+          rel="noopener noreferrer" class="app-card">
+          <div class="app-icon app-icon-ponji">📆</div>
           <h4>Ekush Ponji</h4>
           <p>Bangla Calendar with reminders, widgets & more</p>
           <span class="play-store-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 20V4l10 8-10 8z"/>
-              <path d="M22 10l-10 8V2l10 8z"/>
+              <path d="M2 20V4l10 8-10 8z" />
+              <path d="M22 10l-10 8V2l10 8z" />
             </svg>
             Get on Google Play
           </span>
         </a>
 
         <!-- Jhuri -->
-        <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.jhuri" target="_blank" rel="noopener noreferrer" class="app-card">
+        <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.jhuri" target="_blank"
+          rel="noopener noreferrer" class="app-card">
+          <div class="app-icon app-icon-jhuri">📂</div>
           <h4>Jhuri</h4>
           <p>Simple, fast file manager for Android</p>
           <span class="play-store-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 20V4l10 8-10 8z"/>
-              <path d="M22 10l-10 8V2l10 8z"/>
+              <path d="M2 20V4l10 8-10 8z" />
+              <path d="M22 10l-10 8V2l10 8z" />
             </svg>
             Get on Google Play
+          </span>
+        </a>
+
+        <!-- Play Store Dev Link -->
+        <a href="https://play.google.com/store/apps/dev?id=8661557018658311013" target="_blank"
+          rel="noopener noreferrer" class="app-card">
+          <div class="app-icon app-icon-all">📱</div>
+          <h4>All Apps</h4>
+          <p>Explore everything we've built</p>
+          <span class="play-store-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M2 20V4l10 8-10 8z" />
+              <path d="M22 10l-10 8V2l10 8z" />
+            </svg>
+            View All Apps
           </span>
         </a>
       </div>

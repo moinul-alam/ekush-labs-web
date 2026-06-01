@@ -1,111 +1,124 @@
 /* ============================================================
-   Ekush Ponji Calendar — Premium Styling
-   Modern, premium calendar UI with full dark/light mode support
+   Ekush Ponji Calendar — Modern Redesign
+   Two-column layout, widgets, and improved visual hierarchy
 ============================================================ */
 
 /* ─── 1. CALENDAR-SPECIFIC TOKENS ───────────────────────────── */
 :root {
-  --ponji-gradient: linear-gradient(135deg, #2E7D32 0%, #10B981 50%, #059669 100%);
-  --ponji-gradient-soft: linear-gradient(135deg, rgba(46, 125, 50, 0.1), rgba(16, 185, 129, 0.06));
-  
+  --primary-gradient: linear-gradient(135deg, #1D5BFD 0%, #10B981 50%, #06B6D4 100%);
+  --primary-green: #10B981;
+  --primary-blue: #1D5BFD;
+  --primary-purple: #8B5CF6;
+
   --cal-bg: #ffffff;
   --cal-surface: #f8fafc;
-  --cal-surface-hover: #f1f5f9;
-  --cal-border: rgba(0, 0, 0, 0.06);
-  --cal-border-strong: rgba(0, 0, 0, 0.1);
+  --cal-border: #e2e8f0;
   --cal-text: #1e293b;
   --cal-text-muted: #64748b;
-  --cal-text-weak: #94a3b8;
-  --cal-weekend-text: #dc2626;
-  --cal-weekend-bg: rgba(239, 68, 68, 0.04);
-  --cal-holiday-bg: rgba(239, 68, 68, 0.08);
-  --cal-holiday-hover: rgba(239, 68, 68, 0.14);
-  --cal-empty-bg: rgba(0, 0, 0, 0.02);
-  --cal-hover-bg: rgba(0, 0, 0, 0.03);
-  --cal-header-bg: linear-gradient(180deg, rgba(46, 125, 50, 0.04), transparent);
-  --cal-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
-  --cal-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-  --cal-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.08);
-  --cal-today-bg: rgba(46, 125, 50, 0.08);
-  --cal-today-border: rgba(46, 125, 50, 0.3);
-  --cal-today-glow: rgba(46, 125, 50, 0.15);
-  --cal-tooltip-bg: rgba(15, 23, 42, 0.95);
-  --cal-tooltip-text: #f1f5f9;
-  --cal-alt-row: rgba(0, 0, 0, 0.02);
+
+  --date-gregorian: #1e293b;
+  --date-bangla: #10B981;
+  --date-hijri: #8B5CF6;
 }
 
 body.dark,
 :root[data-theme="dark"] {
-  --ponji-gradient: linear-gradient(135deg, #4ADE80 0%, #22C55E 50%, #10B981 100%);
-  --ponji-gradient-soft: linear-gradient(135deg, rgba(34, 197, 94, 0.15), rgba(16, 185, 129, 0.1));
-  
-  --cal-bg: rgba(30, 41, 59, 0.7);
-  --cal-surface: rgba(51, 65, 85, 0.4);
-  --cal-surface-hover: rgba(51, 65, 85, 0.6);
-  --cal-border: rgba(255, 255, 255, 0.06);
-  --cal-border-strong: rgba(255, 255, 255, 0.1);
+  --cal-bg: #1e293b;
+  --cal-surface: #334155;
+  --cal-border: #475569;
   --cal-text: #f1f5f9;
   --cal-text-muted: #94a3b8;
-  --cal-text-weak: #64748b;
-  --cal-weekend-text: #f87171;
-  --cal-weekend-bg: rgba(248, 113, 113, 0.06);
-  --cal-holiday-bg: rgba(248, 113, 113, 0.12);
-  --cal-holiday-hover: rgba(248, 113, 113, 0.2);
-  --cal-empty-bg: rgba(255, 255, 255, 0.02);
-  --cal-hover-bg: rgba(255, 255, 255, 0.04);
-  --cal-header-bg: linear-gradient(180deg, rgba(34, 197, 94, 0.08), transparent);
-  --cal-shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.2);
-  --cal-shadow-md: 0 4px 16px rgba(0, 0, 0, 0.25);
-  --cal-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.35);
-  --cal-today-bg: rgba(34, 197, 94, 0.12);
-  --cal-today-border: rgba(34, 197, 94, 0.4);
-  --cal-today-glow: rgba(34, 197, 94, 0.2);
-  --cal-tooltip-bg: rgba(15, 23, 42, 0.98);
-  --cal-tooltip-text: #f8fafc;
-  --cal-alt-row: rgba(255, 255, 255, 0.02);
+
+  --date-gregorian: #f1f5f9;
+  --date-bangla: #4ADE80;
+  --date-hijri: #C4B5FD;
+}
+
+body.dark .day-cell.today,
+:root[data-theme="dark"] .day-cell.today {
+  border-color: #4ADE80;
+}
+
+body.dark .day-cell.today .date-main,
+:root[data-theme="dark"] .day-cell.today .date-main {
+  color: #4ADE80;
 }
 
 /* Hide irrelevant navbar links */
-#navbar .nav-links a[href*="#features"],
-#navbar .nav-links a[href*="#screenshots"] {
+#navbar .nav-links li:not(.nav-controls) {
   display: none !important;
 }
 
-/* ─── 2. LAYOUT WRAPPER ────────────────────────────────────── */
+#navbar .nav-links {
+  gap: 0.5rem;
+}
+
+#navbar .nav-controls {
+  display: flex !important;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+/* Style nav-back link */
+.nav-back {
+  display: flex !important;
+  pointer-events: auto;
+}
+
+/* Improve language toggle button */
+#lang-toggle {
+  padding: 6px 10px;
+}
+
+/* Navbar adjustments for calendar app */
+#navbar {
+  justify-content: space-between;
+}
+
+.nav-brand {
+  position: static;
+  transform: none;
+  pointer-events: auto;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-brand .nav-brand-fallback {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1D5BFD 0%, #10B981 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* ─── 2. LAYOUT WRAPPER ─────────────────────────────────────── */
 .calendar-wrapper {
-  max-width: 1080px;
-  margin: 110px auto 60px;
+  max-width: 1200px;
+  margin: 100px auto 80px;
   padding: 0 24px;
   position: relative;
 }
 
-/* Background glow effect */
-.calendar-wrapper::before {
-  content: '';
-  position: absolute;
-  top: -80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(46, 125, 50, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-  z-index: -1;
+/* Content Layout */
+.content-layout {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 28px;
 }
 
 /* ─── 3. PREMIUM CALENDAR CARD ─────────────────────────────── */
 .calendar-container {
   background: var(--cal-bg);
-  border-radius: 28px;
+  border-radius: 24px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   border: 1px solid var(--cal-border);
-  box-shadow: var(--cal-shadow-lg);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  position: relative;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
 .calendar-container::before {
@@ -115,23 +128,18 @@ body.dark,
   left: 0;
   right: 0;
   height: 4px;
-  background: var(--ponji-gradient);
+  background: var(--primary-gradient);
   pointer-events: none;
 }
 
-.calendar-container:hover {
-  box-shadow: var(--cal-shadow-lg), 0 0 40px rgba(46, 125, 50, 0.08);
-}
-
-/* ─── 4. HEADER SECTION ────────────────────────────────────── */
+/* ─── 4. HEADER SECTION ─────────────────────────────────────── */
 .calendar-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 32px 36px;
+  padding: 28px 32px;
   border-bottom: 1px solid var(--cal-border);
-  background: var(--cal-header-bg);
-  position: relative;
+  background: linear-gradient(180deg, rgba(29, 91, 253, 0.04), transparent);
 }
 
 .header-center {
@@ -139,26 +147,38 @@ body.dark,
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 4px;
 }
 
 .calendar-header h2 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: var(--cal-text);
   font-weight: 700;
-  letter-spacing: -0.03em;
-  transition: color 0.4s ease;
+  letter-spacing: -0.02em;
   line-height: 1.2;
 }
 
 .header-sub {
   margin: 0;
-  font-size: 1rem;
+  font-size: 0.95rem;
   color: var(--cal-text-muted);
-  letter-spacing: 0.01em;
   font-weight: 500;
-  transition: color 0.4s ease;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.header-sub .bng-month {
+  color: var(--date-bangla);
+  font-weight: 600;
+}
+
+.header-sub .hjr-month {
+  color: var(--date-hijri);
+  font-weight: 600;
 }
 
 /* ─── 5. NAVIGATION BUTTONS ────────────────────────────────── */
@@ -166,36 +186,23 @@ body.dark,
   background: var(--cal-surface);
   border: 1px solid var(--cal-border);
   border-radius: 14px;
-  padding: 12px 20px;
+  padding: 10px 18px;
   cursor: pointer;
   color: var(--cal-text);
   font-weight: 600;
-  font-size: 0.95rem;
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
-  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  min-width: 120px;
-  justify-content: center;
+  font-family: inherit;
 }
 
 .nav-btn:hover {
-  background: var(--cal-surface-hover);
-  border-color: var(--cal-border-strong);
+  background: var(--cal-bg);
+  border-color: var(--primary-blue);
   transform: translateY(-2px);
-  box-shadow: var(--cal-shadow-sm);
-  color: var(--cal-text);
-}
-
-.nav-btn:active {
-  transform: translateY(0);
-  box-shadow: none;
-}
-
-.prev-txt,
-.next-txt {
-  font-size: 0.9rem;
+  box-shadow: 0 4px 12px rgba(29, 91, 253, 0.15);
 }
 
 /* ─── 6. WEEKDAY GRID ──────────────────────────────────────── */
@@ -206,16 +213,15 @@ body.dark,
 
 .weekday {
   text-align: center;
-  padding: 18px 0;
+  padding: 16px 0;
   font-weight: 700;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--cal-text-muted);
   border-bottom: 1px solid var(--cal-border);
   border-right: 1px solid var(--cal-border);
   background: var(--cal-surface);
-  transition: all 0.4s ease;
 }
 
 .weekday:last-child {
@@ -223,22 +229,26 @@ body.dark,
 }
 
 .weekday.weekend {
-  color: var(--cal-weekend-text);
+  color: #EF4444;
+}
+
+body.dark .weekday.weekend {
+  color: #F87171;
 }
 
 /* ─── 7. DAY CELLS ─────────────────────────────────────────── */
 .day-cell {
-  min-height: 110px;
-  padding: 12px;
+  min-height: 100px;
+  padding: 8px;
   border-right: 1px solid var(--cal-border);
   border-bottom: 1px solid var(--cal-border);
   position: relative;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  transition: all 0.3s ease;
   cursor: default;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .day-cell:nth-child(7n) {
@@ -246,242 +256,252 @@ body.dark,
 }
 
 .day-cell.weekend {
-  background-color: var(--cal-weekend-bg);
+  background: rgba(239, 68, 68, 0.08);
 }
 
 .day-cell.holiday {
-  background-color: var(--cal-holiday-bg);
-  cursor: help;
+  background: rgba(239, 68, 68, 0.25);
 }
 
 .day-cell.holiday:hover {
-  background-color: var(--cal-holiday-hover);
+  background: rgba(239, 68, 68, 0.35);
 }
 
 .day-cell:not(.weekend):not(.holiday):not(.empty):hover {
-  background-color: var(--cal-hover-bg);
+  background: var(--cal-surface);
 }
 
 .day-cell.empty {
-  background-color: var(--cal-empty-bg);
+  background: rgba(0, 0, 0, 0.02);
 }
 
 /* ─── 8. DAY CELL CONTENT ──────────────────────────────────── */
 .date-main {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 700;
-  color: var(--cal-text);
+  color: var(--date-gregorian);
   line-height: 1;
-  transition: all 0.3s ease;
   letter-spacing: -0.02em;
+  margin-top: 4px;
 }
 
-.date-bangla,
-.date-hijri {
-  position: absolute;
-  bottom: 10px;
-  font-size: 0.78rem;
-  color: var(--cal-text-weak);
-  opacity: 0.9;
-  transition: all 0.3s ease;
-  font-weight: 500;
+.date-bottom-row {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 4px;
+  box-sizing: border-box;
 }
 
 .date-bangla {
-  left: 12px;
+  font-size: 0.85rem;
+  color: var(--date-bangla);
+  font-weight: 600;
 }
 
 .date-hijri {
-  right: 12px;
+  font-size: 0.85rem;
+  color: var(--date-hijri);
+  font-weight: 600;
 }
 
 .weekend .date-main {
-  color: var(--cal-weekend-text);
+  color: #EF4444;
+}
+
+body.dark .weekend .date-main {
+  color: #F87171;
 }
 
 .holiday .date-main {
-  color: var(--cal-weekend-text);
+  color: #EF4444;
+}
+
+body.dark .holiday .date-main {
+  color: #F87171;
 }
 
 /* ─── 9. TODAY HIGHLIGHT ───────────────────────────────────── */
 .day-cell.today {
-  border: 2px solid var(--cal-today-border);
-  background: var(--cal-today-bg);
-  box-shadow: 0 0 24px var(--cal-today-glow) inset;
-  animation: todayPulse 3s ease-in-out infinite;
+  background: linear-gradient(135deg, rgba(29, 91, 253, 0.08), rgba(16, 185, 129, 0.08));
+  border: 2px solid #006B54;
+  box-sizing: border-box;
 }
 
 .day-cell.today .date-main {
-  color: #2E7D32;
   font-weight: 800;
+  color: #006B54;
 }
 
-body.dark .day-cell.today .date-main,
-:root[data-theme="dark"] .day-cell.today .date-main {
-  color: #4ADE80;
+/* ─── 10. CUSTOM TOOLTIPS ───────────────────────────────────── */
+.day-cell {
+  position: relative;
 }
 
-.day-cell.today::after {
-  content: '';
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 10px;
-  height: 10px;
-  background: var(--ponji-gradient);
-  border-radius: 50%;
-  box-shadow: 0 0 12px rgba(46, 125, 50, 0.4);
-  animation: pulseDot 2.5s ease-in-out infinite;
-}
-
-@keyframes todayPulse {
-  0%, 100% {
-    box-shadow: 0 0 24px var(--cal-today-glow) inset;
-  }
-  50% {
-    box-shadow: 0 0 36px var(--cal-today-glow) inset;
-  }
-}
-
-@keyframes pulseDot {
-  0%, 100% {
-    transform: scale(1);
-    opacity: 1;
-    box-shadow: 0 0 12px rgba(46, 125, 50, 0.4);
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 0.85;
-    box-shadow: 0 0 20px rgba(46, 125, 50, 0.6);
-  }
-}
-
-/* ─── 10. HOLIDAY TOOLTIP ───────────────────────────────────── */
-.tooltip {
+.day-cell .custom-tooltip {
   position: absolute;
   bottom: 100%;
   left: 50%;
-  transform: translateX(-50%) translateY(8px);
-  background: var(--cal-tooltip-bg);
-  color: var(--cal-tooltip-text);
-  padding: 10px 16px;
-  border-radius: 12px;
+  transform: translateX(-50%);
+  margin-bottom: 8px;
+  padding: 8px 12px;
+  background: var(--cal-bg);
+  color: var(--cal-text);
+  border: 1px solid var(--cal-border);
+  border-radius: 8px;
   font-size: 0.85rem;
-  white-space: nowrap;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
-  z-index: 50;
-  margin-bottom: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
   font-weight: 500;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+  z-index: 10;
 }
 
-.tooltip::before {
+.day-cell .custom-tooltip::after {
   content: '';
   position: absolute;
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  border: 8px solid transparent;
-  border-top-color: var(--cal-tooltip-bg);
+  border: 6px solid transparent;
+  border-top-color: var(--cal-border);
 }
 
-.day-cell.holiday:hover .tooltip {
+.day-cell:hover .custom-tooltip {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  visibility: visible;
 }
 
-/* ─── 11. HOLIDAY LIST CARD ─────────────────────────────────── */
-.holiday-list-container {
-  margin-top: 32px;
+/* Muted dates for empty cells */
+.day-cell.empty .date-main {
+  color: var(--cal-text-muted);
+  opacity: 0.5;
+}
+
+.day-cell.empty .date-bangla,
+.day-cell.empty .date-hijri {
+  color: var(--cal-text-muted);
+  opacity: 0.4;
+}
+
+/* ─── 10. WIDGETS ─────────────────────────────────────────── */
+.right-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.widget {
   background: var(--cal-bg);
-  border-radius: 24px;
-  padding: 32px 36px;
   border: 1px solid var(--cal-border);
-  box-shadow: var(--cal-shadow-md);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
-  transition: all 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-  position: relative;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
 }
 
-.holiday-list-container::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, #EF4444, #F87171);
-  border-radius: 24px 24px 0 0;
-  pointer-events: none;
-}
-
-.holiday-list-container:hover {
-  box-shadow: var(--cal-shadow-lg);
-}
-
-.holiday-list-title {
-  font-size: 1.25rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  margin-top: 0;
-  color: var(--cal-text);
-  letter-spacing: -0.02em;
-  transition: color 0.4s ease;
+.widget-header {
   display: flex;
   align-items: center;
   gap: 10px;
+  margin-bottom: 18px;
 }
 
-.holiday-list-title::before {
-  content: '🎉';
-  font-size: 1.1rem;
+.widget-icon {
+  font-size: 1.3rem;
 }
 
+.widget-header h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--cal-text);
+}
+
+/* Today's Date Widget */
+.today-dates {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.today-item {
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: var(--cal-surface);
+}
+
+.today-item.gregorian .date-value {
+  color: var(--primary-blue);
+  font-weight: 700;
+}
+
+.today-item.bangla .date-value {
+  color: var(--date-bangla);
+  font-weight: 700;
+}
+
+.today-item.hijri .date-value {
+  color: var(--date-hijri);
+  font-weight: 700;
+}
+
+.date-value {
+  font-size: 1rem;
+  color: var(--cal-text);
+}
+
+/* Holidays Widget */
 .holiday-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 8px;
 }
 
 .holiday-list-item {
-  padding: 18px 20px;
-  border-radius: 16px;
+  padding: 14px 16px;
+  border-radius: 12px;
   display: flex;
-  align-items: flex-start;
-  gap: 20px;
+  gap: 16px;
+  transition: all 0.3s ease;
+}
+
+.holiday-list-item:nth-child(odd) {
   background: var(--cal-surface);
-  border: 1px solid var(--cal-border);
-  transition: all 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.holiday-list-item:nth-child(even) {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark .holiday-list-item:nth-child(even) {
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .holiday-list-item:hover {
-  background: var(--cal-surface-hover);
-  border-color: var(--cal-border-strong);
-  transform: translateX(4px);
+  transform: translateX(3px);
 }
 
-.holiday-list-item.alt-row {
-  background: var(--cal-alt-row);
+.holiday-date-col {
+  flex-shrink: 0;
 }
 
 .holiday-date-text {
   font-weight: 700;
-  color: var(--cal-weekend-text);
-  min-width: 140px;
-  margin-top: 2px;
-  font-size: 0.98rem;
-  transition: color 0.4s ease;
-  letter-spacing: -0.01em;
+  color: #EF4444;
+  font-size: 0.95rem;
+  white-space: nowrap;
 }
 
-.holiday-content {
+body.dark .holiday-date-text {
+  color: #F87171;
+}
+
+.holiday-content-col {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -491,131 +511,138 @@ body.dark .day-cell.today .date-main,
 .holiday-name {
   font-weight: 600;
   color: var(--cal-text);
-  display: block;
-  font-size: 1.02rem;
-  transition: color 0.4s ease;
-  letter-spacing: -0.01em;
+  font-size: 0.95rem;
 }
 
 .holiday-desc {
   margin: 0;
-  font-size: 0.92rem;
+  font-size: 0.85rem;
   color: var(--cal-text-muted);
-  line-height: 1.5;
-  transition: color 0.4s ease;
+  text-align: justify;
+}
+
+/* ─── 11. FAB CTA ────────────────────────────────────────── */
+.fab-cta {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  background: var(--primary-gradient);
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  box-shadow: 0 8px 24px rgba(29, 91, 253, 0.35);
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  z-index: 100;
+}
+
+.fab-cta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(29, 91, 253, 0.45);
+}
+
+/* ─── 12. BOTTOM CTA SECTION ──────────────────────────────── */
+.bottom-cta {
+  margin-top: 48px;
+  text-align: center;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, rgba(29, 91, 253, 0.05), rgba(16, 185, 129, 0.05));
+  border-radius: 24px;
+  border: 1px solid var(--cal-border);
+}
+
+.bottom-cta h2 {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+  color: var(--cal-text);
+  font-weight: 700;
+}
+
+.bottom-cta p {
+  margin: 0 0 20px;
+  color: var(--cal-text-muted);
+  font-size: 1rem;
+}
+
+.bottom-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(29, 91, 253, 0.25);
+  transition: all 0.3s ease;
+}
+
+.bottom-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 91, 253, 0.35);
 }
 
 /* ─── 12. RESPONSIVE DESIGN ─────────────────────────────────── */
+@media (max-width: 968px) {
+  .content-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
   .calendar-wrapper {
-    margin: 20px auto 40px;
+    margin: 80px auto 60px;
     padding: 0 16px;
   }
 
-  .calendar-wrapper::before {
-    width: 280px;
-    height: 280px;
-    top: -40px;
+  .app-title {
+    font-size: 2.2rem;
   }
 
-  .calendar-container {
-    border-radius: 20px;
+  .page-header {
+    margin-bottom: 32px;
   }
 
   .calendar-header {
     flex-direction: column;
     gap: 16px;
-    padding: 24px 20px;
-  }
-
-  .calendar-header h2 {
-    font-size: 1.6rem;
-  }
-
-  .header-sub {
-    font-size: 0.95rem;
+    padding: 20px 16px;
   }
 
   .nav-btn {
-    min-width: auto;
     width: 100%;
-    padding: 10px 16px;
-    border-radius: 12px;
+    justify-content: center;
   }
 
-  .header-actions {
-    width: 100%;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-  }
-
-  .calendar-grid {
-    grid-template-columns: repeat(7, minmax(0, 1fr));
-  }
-
-  .day-cell {
-    min-height: 76px;
-    padding: 8px 4px;
-  }
-
-  .date-main {
-    font-size: 1.35rem;
-  }
-
-  .date-bangla,
-  .date-hijri {
-    font-size: 0.7rem;
-    bottom: 6px;
-  }
-
-  .date-bangla {
-    left: 6px;
-  }
-
-  .date-hijri {
-    right: 6px;
-  }
-
-  .holiday-list-container {
-    padding: 24px 20px;
-    border-radius: 20px;
-  }
-
-  .holiday-list-title {
-    font-size: 1.1rem;
-  }
-
-  .holiday-list-item {
-    flex-direction: column;
-    gap: 8px;
-    padding: 14px 16px;
-  }
-
-  .holiday-date-text {
-    min-width: auto;
-  }
-
-  .toolbar-controls {
-    gap: 8px;
-  }
-}
-
-@media (max-width: 480px) {
   .calendar-header h2 {
     font-size: 1.45rem;
   }
 
-  .weekday {
-    font-size: 0.75rem;
-    padding: 14px 0;
-  }
-
   .day-cell {
-    min-height: 68px;
+    min-height: 80px;
+    padding: 10px 6px;
   }
 
   .date-main {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+  }
+
+  .date-bangla,
+  .date-hijri {
+    font-size: 0.8rem;
+  }
+
+  .fab-cta {
+    bottom: 20px;
+    right: 20px;
+    padding: 12px 20px;
+    font-size: 0.9rem;
   }
 }

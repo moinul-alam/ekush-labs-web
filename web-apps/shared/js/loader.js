@@ -35,16 +35,16 @@ async function loadSharedComponent(placeholderId, componentPath) {
         if (appNameLower.includes('ponji')) {
           // Re-create Ponji's custom text-split branding with subtitles and scroll states (no images)
           navBrand.innerHTML = `
-            <div class="nav-titles-wrapper" style="position: relative; display: flex; align-items: center; width: 100%; min-width: 250px;">
-              <span class="nav-name brand-default" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0;">
+            <div class="nav-titles-wrapper" style="position: relative; display: flex; align-items: center; justify-content: center; width: 100%;">
+              <span class="nav-name brand-default" style="display: flex; flex-direction: column; align-items: center; gap: 2px;">
                 <div style="display:flex; align-items:center; gap: 4px;">
                   <span class="nav-ekush" style="color: #D32F2F;">Ekush</span>
                   <span class="nav-ponji-text" style="color: #006B54;">Ponji</span>
                   <span class="nav-cal-text" style="color: var(--text-primary, #111); font-weight: 700; font-family: var(--font-display), 'Syne', sans-serif; font-size: 1.5rem; letter-spacing: 0.02em;">Bangla Calendar</span>
                 </div>
-                <span style="font-size: 0.65rem; color: var(--text-secondary, #666); font-weight: normal; margin-top: 2px;">Gregorian (English), Bangla and Hijri (Arabic) Dates with Government Holidays</span>
+                <span style="font-size: 0.65rem; color: var(--text-secondary, #666); font-weight: normal; text-align: center;">Gregorian, Bangla & Hijri Dates with Holidays</span>
               </span>
-              <span class="nav-name brand-scrolled" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0; position: absolute; left: 0; top: 50%; transform: translateY(-50%);">
+              <span class="nav-name brand-scrolled" style="display: flex; flex-direction: column; align-items: center; gap: 0; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);">
                 <div id="nav-scrolled-title" style="font-size: 1.1rem; font-weight: 700; color: var(--text-primary, #000); font-family: var(--font-display), 'Syne', sans-serif;">Calendar</div>
                 <div id="nav-scrolled-sub" style="font-size: 0.75rem; color: var(--text-secondary, #666); margin-top: 2px;">Sub Months</div>
               </span>
