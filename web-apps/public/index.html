@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 
 <head>
   <meta charset="UTF-8">
@@ -26,9 +26,76 @@
   <link rel="stylesheet" href="shared/css/components.css">
   <link rel="stylesheet" href="shared/css/main.css">
   <link rel="stylesheet" href="shared/css/hub.css">
+  <style>
+    .hub-controls {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      display: flex;
+      gap: 0.5rem;
+      z-index: 100;
+    }
+    .nav-btn-icon {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 50%;
+      background: var(--card-surface, white);
+      color: var(--text-primary, #111);
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: all 0.2s ease;
+    }
+    .nav-btn-icon:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .theme-icon-hidden {
+      display: none;
+    }
+    [data-theme="dark"] .nav-btn-icon {
+      background: var(--card-surface, #1a1a2e);
+    }
+    .hub-hero h1, .hub-hero p, .tool-card h3, .tool-card p, .app-promotion-header h2, .app-promotion-header p, .app-card h4, .app-card p {
+      font-family: 'Kalpurush', 'Plus Jakarta Sans', sans-serif !important;
+    }
+    .hub-hero h1 {
+      line-height: 1.4 !important;
+      padding-bottom: 0.3em !important;
+    }
+  </style>
 </head>
 
 <body>
+  <div class="hub-controls">
+    <button class="nav-btn-icon" id="lang-toggle" title="Switch Language">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="10"/>
+        <line x1="2" y1="12" x2="22" y2="12"/>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+      </svg>
+    </button>
+    <button class="nav-btn-icon" id="theme-toggle" title="Toggle Dark Mode">
+      <svg class="theme-icon theme-icon--light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="12" cy="12" r="5"/>
+        <line x1="12" y1="1" x2="12" y2="3"/>
+        <line x1="12" y1="21" x2="12" y2="23"/>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+        <line x1="1" y1="12" x2="3" y2="12"/>
+        <line x1="21" y1="12" x2="23" y2="12"/>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+      </svg>
+      <svg class="theme-icon theme-icon--dark theme-icon-hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+      </svg>
+    </button>
+  </div>
+  
   <main class="hub-wrapper">
     <!-- Hero Section -->
     <section class="hub-hero">
@@ -37,12 +104,12 @@
         <span class="orbit-circle orbit-2"></span>
         <span class="orbit-circle orbit-3"></span>
       </div>
-      <h1><span class="hero-emoji">🚀</span> Ekush Labs</h1>
-      <p>Beautiful, simple tools for everyday use</p>
+      <h1><span class="hero-emoji">🚀</span> <span id="hero-brand">Ekush Labs</span></h1>
+      <p id="hero-subtitle">Beautiful, simple tools for everyday use</p>
       <div class="hero-badges">
-        <span class="badge">⚡ Fast</span>
-        <span class="badge">🎨 Beautiful</span>
-        <span class="badge">🌙 Dark Mode</span>
+        <span class="badge" id="badge-fast">⚡ Fast</span>
+        <span class="badge" id="badge-beautiful">🎨 Beautiful</span>
+        <span class="badge" id="badge-dark">🌙 Dark Mode</span>
       </div>
     </section>
 
@@ -54,34 +121,34 @@
         <div class="tool-icon-wrapper">
           <span class="tool-icon">📅</span>
         </div>
-        <h3>Bangla Calendar</h3>
-        <p>Gregorian, Bangla & Hijri dates with Bangladesh government holidays</p>
+        <h3 id="tool-calendar-title">Bangla Calendar</h3>
+        <p id="tool-calendar-desc">Gregorian, Bangla & Hijri dates with Bangladesh government holidays</p>
         <div class="tool-card-footer">
-          <span class="tool-tag">Popular</span>
-          <span class="open-label">Open &rarr;</span>
+          <span class="tool-tag" id="tag-popular">Popular</span>
+          <span class="open-label" id="open-label">Open &rarr;</span>
         </div>
       </a>
 
-      <!-- Age Calculator (Coming Soon) -->
-      <div class="tool-card coming-soon">
+      <!-- Age Calculator -->
+      <a href="age-calculator/" class="tool-card">
         <div class="tool-glow"></div>
         <div class="tool-icon-wrapper">
           <span class="tool-icon">🎂</span>
         </div>
-        <h3>Age Calculator</h3>
-        <p>Calculate your exact age in years, months and days</p>
+        <h3 id="tool-age-title">Age Calculator</h3>
+        <p id="tool-age-desc">Calculate your exact age in years, months and days</p>
         <div class="tool-card-footer">
-          <span class="coming-soon-badge">Coming Soon</span>
-          <span></span>
+          <span class="tool-tag" id="tag-new">New</span>
+          <span class="open-label" id="open-label-2">Open &rarr;</span>
         </div>
-      </div>
+      </a>
     </section>
 
     <!-- App Cross-Promotion -->
     <section class="app-promotion">
       <div class="app-promotion-header">
-        <h2>Go even further!</h2>
-        <p>Our Android apps bring reminders, offline access, and more features</p>
+        <h2 id="promo-title">Go even further!</h2>
+        <p id="promo-desc">Our Android apps bring reminders, offline access, and more features</p>
       </div>
 
       <div class="apps-grid">
@@ -89,14 +156,14 @@
         <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.ponji" target="_blank"
           rel="noopener noreferrer" class="app-card">
           <div class="app-icon app-icon-ponji">📆</div>
-          <h4>Ekush Ponji</h4>
-          <p>Bangla Calendar with reminders, widgets & more</p>
+          <h4 id="app-ponji-title">Ekush Ponji</h4>
+          <p id="app-ponji-desc">Bangla Calendar with reminders, widgets & more</p>
           <span class="play-store-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M2 20V4l10 8-10 8z" />
               <path d="M22 10l-10 8V2l10 8z" />
             </svg>
-            Get on Google Play
+            <span id="play-store-1">Get on Google Play</span>
           </span>
         </a>
 
@@ -104,14 +171,14 @@
         <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.jhuri" target="_blank"
           rel="noopener noreferrer" class="app-card">
           <div class="app-icon app-icon-jhuri">📂</div>
-          <h4>Jhuri</h4>
-          <p>Simple, fast file manager for Android</p>
+          <h4 id="app-jhuri-title">Jhuri</h4>
+          <p id="app-jhuri-desc">Simple, fast file manager for Android</p>
           <span class="play-store-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M2 20V4l10 8-10 8z" />
               <path d="M22 10l-10 8V2l10 8z" />
             </svg>
-            Get on Google Play
+            <span id="play-store-2">Get on Google Play</span>
           </span>
         </a>
 
@@ -119,14 +186,14 @@
         <a href="https://play.google.com/store/apps/dev?id=8661557018658311013" target="_blank"
           rel="noopener noreferrer" class="app-card">
           <div class="app-icon app-icon-all">📱</div>
-          <h4>All Apps</h4>
-          <p>Explore everything we've built</p>
+          <h4 id="app-all-title">All Apps</h4>
+          <p id="app-all-desc">Explore everything we've built</p>
           <span class="play-store-btn">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <path d="M2 20V4l10 8-10 8z" />
               <path d="M22 10l-10 8V2l10 8z" />
             </svg>
-            View All Apps
+            <span id="play-store-3">View All Apps</span>
           </span>
         </a>
       </div>
@@ -135,6 +202,132 @@
 
   <div id="footer-placeholder" data-app-name="Ekush Labs Web Tools"></div>
 
+  <script src="shared/js/theme.js"></script>
+  <script>
+    var dict = {
+      bn: {
+        heroBrand: 'একুশ ল্যাব্‌স',
+        heroSubtitle: 'প্রতিদিনের ব্যবহারের জন্য সুন্দর, সহজ টুলসমূহ',
+        badgeFast: '⚡ দ্রুত',
+        badgeBeautiful: '🎨 সুন্দর',
+        badgeDark: '🌙 ডার্ক মোড',
+        toolCalendarTitle: 'বাংলা ক্যালেন্ডার',
+        toolCalendarDesc: 'বাংলাদেশ সরকারের ছুটির সাথে গ্রেগরিয়ান, বাংলা ও হিজরি তারিখ',
+        toolAgeTitle: 'বয়স ক্যালকুলেটর',
+        toolAgeDesc: 'বছর, মাস ও দিনে আপনার সঠিক বয়স গণনা করুন',
+        tagPopular: 'জনপ্রিয়',
+        tagNew: 'নতুন',
+        openLabel: 'খুলুন →',
+        promoTitle: 'আরও বেশি কিছু করুন!',
+        promoDesc: 'আমাদের অ্যান্ড্রয়েড অ্যাপগুলো রিমাইন্ডার, অফলাইন অ্যাক্সেস এবং আরও বেশি ফিচার নিয়ে আসে',
+        appPonjiTitle: 'একুশ পঞ্জি',
+        appPonjiDesc: 'রিমাইন্ডার, উইজেট এবং আরও অনেক কিছু সহ বাংলা ক্যালেন্ডার',
+        appJhuriTitle: 'ঝুড়ি',
+        appJhuriDesc: 'অ্যান্ড্রয়েডের জন্য সহজ, দ্রুত ফাইল ম্যানেজার',
+        appAllTitle: 'সব অ্যাপ',
+        appAllDesc: 'আমরা যা কিছু তৈরি করেছি তা অন্বেষণ করুন',
+        playStore1: 'গুগল প্লে থেকে নিন',
+        playStore2: 'গুগল প্লে থেকে নিন',
+        playStore3: 'সব অ্যাপ দেখুন'
+      },
+      en: {
+        heroBrand: 'Ekush Labs',
+        heroSubtitle: 'Beautiful, simple tools for everyday use',
+        badgeFast: '⚡ Fast',
+        badgeBeautiful: '🎨 Beautiful',
+        badgeDark: '🌙 Dark Mode',
+        toolCalendarTitle: 'Bangla Calendar',
+        toolCalendarDesc: 'Gregorian, Bangla & Hijri dates with Bangladesh government holidays',
+        toolAgeTitle: 'Age Calculator',
+        toolAgeDesc: 'Calculate your exact age in years, months and days',
+        tagPopular: 'Popular',
+        tagNew: 'New',
+        openLabel: 'Open →',
+        promoTitle: 'Go even further!',
+        promoDesc: 'Our Android apps bring reminders, offline access, and more features',
+        appPonjiTitle: 'Ekush Ponji',
+        appPonjiDesc: 'Bangla Calendar with reminders, widgets & more',
+        appJhuriTitle: 'Jhuri',
+        appJhuriDesc: 'Simple, fast file manager for Android',
+        appAllTitle: 'All Apps',
+        appAllDesc: 'Explore everything we\'ve built',
+        playStore1: 'Get on Google Play',
+        playStore2: 'Get on Google Play',
+        playStore3: 'View All Apps'
+      }
+    };
+
+    var currentLang = localStorage.getItem('ekush_lang') || 'bn';
+    var elements = {
+      heroBrand: document.getElementById('hero-brand'),
+      heroSubtitle: document.getElementById('hero-subtitle'),
+      badgeFast: document.getElementById('badge-fast'),
+      badgeBeautiful: document.getElementById('badge-beautiful'),
+      badgeDark: document.getElementById('badge-dark'),
+      toolCalendarTitle: document.getElementById('tool-calendar-title'),
+      toolCalendarDesc: document.getElementById('tool-calendar-desc'),
+      toolAgeTitle: document.getElementById('tool-age-title'),
+      toolAgeDesc: document.getElementById('tool-age-desc'),
+      tagPopular: document.getElementById('tag-popular'),
+      tagNew: document.getElementById('tag-new'),
+      openLabel: document.getElementById('open-label'),
+      openLabel2: document.getElementById('open-label-2'),
+      promoTitle: document.getElementById('promo-title'),
+      promoDesc: document.getElementById('promo-desc'),
+      appPonjiTitle: document.getElementById('app-ponji-title'),
+      appPonjiDesc: document.getElementById('app-ponji-desc'),
+      appJhuriTitle: document.getElementById('app-jhuri-title'),
+      appJhuriDesc: document.getElementById('app-jhuri-desc'),
+      appAllTitle: document.getElementById('app-all-title'),
+      appAllDesc: document.getElementById('app-all-desc'),
+      playStore1: document.getElementById('play-store-1'),
+      playStore2: document.getElementById('play-store-2'),
+      playStore3: document.getElementById('play-store-3')
+    };
+
+    function updateUI() {
+      var t = dict[currentLang];
+      elements.heroBrand.textContent = t.heroBrand;
+      elements.heroSubtitle.textContent = t.heroSubtitle;
+      elements.badgeFast.textContent = t.badgeFast;
+      elements.badgeBeautiful.textContent = t.badgeBeautiful;
+      elements.badgeDark.textContent = t.badgeDark;
+      elements.toolCalendarTitle.textContent = t.toolCalendarTitle;
+      elements.toolCalendarDesc.textContent = t.toolCalendarDesc;
+      elements.toolAgeTitle.textContent = t.toolAgeTitle;
+      elements.toolAgeDesc.textContent = t.toolAgeDesc;
+      elements.tagPopular.textContent = t.tagPopular;
+      elements.tagNew.textContent = t.tagNew;
+      elements.openLabel.textContent = t.openLabel;
+      elements.openLabel2.textContent = t.openLabel;
+      elements.promoTitle.textContent = t.promoTitle;
+      elements.promoDesc.textContent = t.promoDesc;
+      elements.appPonjiTitle.textContent = t.appPonjiTitle;
+      elements.appPonjiDesc.textContent = t.appPonjiDesc;
+      elements.appJhuriTitle.textContent = t.appJhuriTitle;
+      elements.appJhuriDesc.textContent = t.appJhuriDesc;
+      elements.appAllTitle.textContent = t.appAllTitle;
+      elements.appAllDesc.textContent = t.appAllDesc;
+      elements.playStore1.textContent = t.playStore1;
+      elements.playStore2.textContent = t.playStore2;
+      elements.playStore3.textContent = t.playStore3;
+      document.documentElement.lang = currentLang;
+    }
+
+    function toggleLang() {
+      currentLang = currentLang === 'bn' ? 'en' : 'bn';
+      localStorage.setItem('ekush_lang', currentLang);
+      updateUI();
+    }
+
+    document.getElementById('lang-toggle').addEventListener('click', toggleLang);
+    
+    // Init theme
+    EkushTheme.initTheme();
+    
+    // Init language
+    updateUI();
+  </script>
   <script src="shared/js/loader.js" defer></script>
 </body>
 

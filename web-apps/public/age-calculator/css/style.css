@@ -1,0 +1,646 @@
+/* ============================================================
+   Age Calculator — Styles
+============================================================ */
+
+/* ─── CUSTOM TOKENS ─────────────────────────────────────── */
+:root {
+  --primary-gradient: linear-gradient(135deg, #1D5BFD 0%, #10B981 50%, #06B6D4 100%);
+  --primary-green: #10B981;
+  --primary-blue: #1D5BFD;
+  --primary-purple: #8B5CF6;
+
+  --accent-pink: #EC4899;
+
+  --accent-gradient: linear-gradient(135deg, #EC4899 0%, #F472B6 100%);
+
+  --card-bg: #ffffff;
+  --card-surface: #f8fafc;
+  --card-border: #e2e8f0;
+  --card-text: #1e293b;
+  --card-text-muted: #64748b;
+}
+
+body.dark,
+:root[data-theme="dark"] {
+  --card-bg: #1e293b;
+  --card-surface: #334155;
+  --card-border: #475569;
+  --card-text: #f1f5f9;
+  --card-text-muted: #94a3b8;
+}
+
+/* Fix navbar title visibility in dark mode like calendar */
+body.dark .nav-ekush,
+body.dark .nav-ponji-text,
+body.dark .nav-cal-title,
+:root[data-theme="dark"] .nav-ekush,
+:root[data-theme="dark"] .nav-ponji-text,
+:root[data-theme="dark"] .nav-cal-title {
+  color: #fff !important;
+}
+
+/* Hide irrelevant navbar links */
+#navbar .nav-links li:not(.nav-controls) {
+  display: none !important;
+}
+
+#navbar .nav-links {
+  gap: 0.75rem;
+  display: flex !important;
+  align-items: center;
+}
+
+#navbar .nav-controls {
+  display: flex !important;
+  gap: 0.75rem;
+  align-items: center;
+  pointer-events: auto;
+}
+
+/* Style nav-back link */
+.nav-back {
+  display: flex !important;
+  pointer-events: auto;
+}
+
+/* Navbar adjustments like calendar */
+#navbar {
+  justify-content: space-between;
+}
+
+.nav-brand {
+  position: static;
+  transform: none;
+  pointer-events: auto;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav-brand .nav-brand-fallback {
+  font-family: var(--font-display, 'Syne', sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1D5BFD 0%, #10B981 50%, #06B6D4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.02em;
+}
+
+/* ─── WRAPPER ────────────────────────────────────────── */
+.age-calculator-wrapper {
+  max-width: 800px;
+  margin: 100px auto 80px;
+  padding: 0 24px;
+  position: relative;
+}
+
+/* ─── CALCULATOR CARD ──────────────────────────────────────── */
+.calculator-card {
+  background: var(--card-bg);
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.04);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.card-icon {
+  font-size: 2.5rem;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: var(--card-text);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ─── INPUT SECTION ─────────────────────────────────────── */
+.input-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.input-label {
+  font-weight: 600;
+  color: var(--card-text);
+  font-size: 1.1rem;
+}
+
+.label-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+}
+
+.today-btn {
+  padding: 8px 16px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  background: var(--primary-gradient);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+  white-space: nowrap;
+}
+
+.today-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(29, 91, 253, 0.3);
+}
+
+.date-input-group {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.input-item {
+  flex: 3 3 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.small-input {
+  width: 100%;
+  padding: 14px 12px;
+  font-size: 1.2rem;
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-surface);
+  color: var(--card-text);
+  font-family: inherit;
+  font-weight: 600;
+  text-align: center;
+  transition: all 0.3s ease;
+  height: 56px;
+  box-sizing: border-box;
+}
+
+.small-input:focus {
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 4px rgba(29, 91, 253, 0.1);
+}
+
+.input-subtext {
+  font-size: 0.85rem;
+  color: var(--card-text-muted);
+  font-weight: 500;
+  text-align: center;
+}
+
+.calendar-wrapper {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.calendar-wrapper .input-subtext {
+  visibility: hidden;
+}
+
+.calendar-input-container {
+  height: 56px;
+  position: relative;
+}
+
+.calendar-input {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  background: var(--card-surface);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: transparent;
+  font-size: 0;
+}
+
+.calendar-input::-webkit-datetime-edit {
+  display: none;
+}
+
+.calendar-input::-webkit-datetime-edit-fields-wrapper {
+  display: none;
+}
+
+.calendar-input::-webkit-datetime-edit-text {
+  display: none;
+}
+
+.calendar-input::-webkit-datetime-edit-month-field {
+  display: none;
+}
+
+.calendar-input::-webkit-datetime-edit-day-field {
+  display: none;
+}
+
+.calendar-input::-webkit-datetime-edit-year-field {
+  display: none;
+}
+
+.calendar-input::-webkit-inner-spin-button {
+  display: none;
+}
+
+.calendar-input::-webkit-calendar-picker-indicator {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  opacity: 0;
+  z-index: 2;
+}
+
+.calendar-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--card-text-muted);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.calendar-input:hover {
+  border-color: var(--primary-blue);
+}
+
+.calendar-input:hover ~ .calendar-icon,
+.calendar-wrapper:hover .calendar-icon {
+  color: var(--primary-blue);
+}
+
+/* ─── RESULTS SECTION ───────────────────────────────────── */
+.results-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.result-item {
+  background: var(--card-surface);
+  padding: 24px 16px;
+  border-radius: 16px;
+  text-align: center;
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.result-item-actions {
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.copy-all-btn,
+.reset-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.copy-all-btn {
+  background: var(--card-surface);
+  color: var(--card-text);
+  border: 2px solid var(--card-border);
+}
+
+.copy-all-btn:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+}
+
+.reset-btn {
+  background: #EF4444;
+  color: white;
+}
+
+.reset-btn:hover {
+  background: #DC2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.copy-tooltip {
+  position: absolute;
+  top: -36px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1F2937;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+
+.copy-tooltip.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--card-text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+.result-item:hover .copy-btn,
+.info-item:hover .copy-btn {
+  opacity: 1;
+}
+
+.copy-btn:hover {
+  background: var(--primary-blue);
+  color: white;
+}
+
+.result-value {
+  font-size: 3rem;
+  font-weight: 800;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.result-label {
+  font-size: 1rem;
+  color: var(--card-text-muted);
+  font-weight: 600;
+}
+
+/* ─── MODAL STYLES ───────────────────────────────────── */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.modal-overlay.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal {
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 32px 24px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+  transform: scale(0.9);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.modal-overlay.show .modal {
+  transform: scale(1);
+}
+
+.modal-icon {
+  font-size: 4rem;
+  margin-bottom: 16px;
+}
+
+.modal-title {
+  margin: 0 0 8px;
+  font-size: 1.5rem;
+  color: var(--card-text);
+  font-weight: 700;
+}
+
+.modal-desc {
+  margin: 0 0 24px;
+  color: var(--card-text-muted);
+  font-size: 1rem;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+}
+
+.modal-btn {
+  flex: 1;
+  padding: 14px 24px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-btn-no {
+  background: var(--card-surface);
+  color: var(--card-text);
+  border: 2px solid var(--card-border);
+}
+
+.modal-btn-no:hover {
+  background: var(--card-border);
+}
+
+.modal-btn-yes {
+  background: #EF4444;
+  color: white;
+}
+
+.modal-btn-yes:hover {
+  background: #DC2626;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239,68,68,0.3);
+}
+
+/* ─── ADDITIONAL INFO ───────────────────────────────────── */
+.additional-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.info-item {
+  background: var(--card-surface);
+  padding: 20px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  border: 1px solid var(--card-border);
+  position: relative;
+}
+
+.info-item .copy-btn {
+  top: 8px;
+  right: 8px;
+  width: 32px;
+  height: 32px;
+}
+
+.info-icon {
+  font-size: 2rem;
+}
+
+.info-label {
+  font-size: 0.85rem;
+  color: var(--card-text-muted);
+  font-weight: 500;
+}
+
+.info-value {
+  font-size: 1.3rem;
+  color: var(--card-text);
+  font-weight: 700;
+}
+
+/* ─── BOTTOM CTA SECTION ─────────────────────────────────── */
+.bottom-cta {
+  margin-top: 48px;
+  text-align: center;
+  padding: 32px 24px;
+  background: linear-gradient(135deg, rgba(29, 91, 253, 0.05), rgba(16, 185, 129, 0.05));
+  border-radius: 24px;
+  border: 1px solid var(--card-border);
+}
+
+.bottom-cta h2 {
+  margin: 0 0 12px;
+  font-size: 1.6rem;
+  color: var(--card-text);
+  font-weight: 700;
+}
+
+.bottom-cta p {
+  margin: 0 0 20px;
+  color: var(--card-text-muted);
+  font-size: 1rem;
+}
+
+.bottom-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--primary-gradient);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  box-shadow: 0 4px 16px rgba(29, 91, 253, 0.25);
+  transition: all 0.3s ease;
+}
+
+.bottom-cta-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(29, 91, 253, 0.35);
+}
+
+/* ─── RESPONSIVE DESIGN ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .age-calculator-wrapper {
+    margin: 80px auto 60px;
+    padding: 0 16px;
+  }
+
+  .calculator-card {
+    padding: 24px 16px;
+  }
+
+  .card-header h2 {
+    font-size: 1.5rem;
+  }
+
+  .date-input-group {
+    flex-wrap: wrap;
+  }
+
+  .input-item {
+    flex: 1 1 30%;
+  }
+
+  .calendar-input {
+    flex: 0 0 48px;
+  }
+
+  .results-section {
+    grid-template-columns: 1fr;
+  }
+
+  .additional-info {
+    grid-template-columns: 1fr;
+  }
+}
