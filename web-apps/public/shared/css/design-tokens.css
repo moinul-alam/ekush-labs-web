@@ -55,8 +55,8 @@
   --font-display-main:  'Bebas Neue', sans-serif;
   --font-display-soft:  'Syne', sans-serif;
   --font-cond:          'Barlow Condensed', sans-serif;
-  --font-body:          'Barlow', sans-serif;
-  --font-body-soft:     'Plus Jakarta Sans', sans-serif;
+  --font-body:          'Barlow', 'Kalpurush', sans-serif;
+  --font-body-soft:     'Plus Jakarta Sans', 'Kalpurush', sans-serif;
 
   /* ─── 5. SHADOWS & RADII ───────────────────────────────────── */
   --radius-sm:        4px;

@@ -2,315 +2,281 @@
 <html lang="bn">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ekush Labs Web Tools</title>
-  <meta name="description" content="Free web tools by Ekush Labs">
+  <meta name="description" content="Free web tools by Ekush Labs" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap"
+    rel="stylesheet" />
 
   <!-- Apply theme FIRST, before any other content loads -->
   <script>
     (function () {
-      const theme = localStorage.getItem('ekush_theme') || 'light';
-      if (theme === 'dark') {
-        document.documentElement.classList.add('dark');
-        document.documentElement.dataset.theme = 'dark';
-        document.body.classList.add('dark');
-      } else {
-        document.documentElement.dataset.theme = 'light';
-      }
+      const getSystemTheme = () => {
+        return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      };
+      const savedTheme = localStorage.getItem('theme');
+      const initialTheme = savedTheme || 'light'; // DEFAULT: LIGHT
+      document.documentElement.setAttribute('data-theme', initialTheme);
     })();
   </script>
 
-  <link rel="stylesheet" href="shared/css/design-tokens.css">
-  <link rel="stylesheet" href="shared/css/reset.css">
-  <link rel="stylesheet" href="shared/css/components.css">
-  <link rel="stylesheet" href="shared/css/main.css">
-  <link rel="stylesheet" href="shared/css/hub.css">
-  <style>
-    .hub-controls {
-      position: absolute;
-      top: 1rem;
-      right: 1rem;
-      display: flex;
-      gap: 0.5rem;
-      z-index: 100;
-    }
-    .nav-btn-icon {
-      width: 40px;
-      height: 40px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: none;
-      border-radius: 50%;
-      background: var(--card-surface, white);
-      color: var(--text-primary, #111);
-      cursor: pointer;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      transition: all 0.2s ease;
-    }
-    .nav-btn-icon:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    }
-    .theme-icon-hidden {
-      display: none;
-    }
-    [data-theme="dark"] .nav-btn-icon {
-      background: var(--card-surface, #1a1a2e);
-    }
-    .hub-hero h1, .hub-hero p, .tool-card h3, .tool-card p, .app-promotion-header h2, .app-promotion-header p, .app-card h4, .app-card p {
-      font-family: 'Kalpurush', 'Plus Jakarta Sans', sans-serif !important;
-    }
-    .hub-hero h1 {
-      line-height: 1.4 !important;
-      padding-bottom: 0.3em !important;
-    }
-  </style>
+  <link rel="stylesheet" href="shared/css/design-tokens.css" />
+  <link rel="stylesheet" href="shared/css/reset.css" />
+  <link rel="stylesheet" href="shared/css/hub.css" />
+
 </head>
 
 <body>
-  <div class="hub-controls">
-    <button class="nav-btn-icon" id="lang-toggle" title="Switch Language">
-      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="10"/>
-        <line x1="2" y1="12" x2="22" y2="12"/>
-        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
-      </svg>
-    </button>
-    <button class="nav-btn-icon" id="theme-toggle" title="Toggle Dark Mode">
-      <svg class="theme-icon theme-icon--light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <circle cx="12" cy="12" r="5"/>
-        <line x1="12" y1="1" x2="12" y2="3"/>
-        <line x1="12" y1="21" x2="12" y2="23"/>
-        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
-        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-        <line x1="1" y1="12" x2="3" y2="12"/>
-        <line x1="21" y1="12" x2="23" y2="12"/>
-        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
-        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-      </svg>
-      <svg class="theme-icon theme-icon--dark theme-icon-hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-      </svg>
-    </button>
-  </div>
-  
-  <main class="hub-wrapper">
-    <!-- Hero Section -->
-    <section class="hub-hero">
-      <div class="hero-orbit">
-        <span class="orbit-circle orbit-1"></span>
-        <span class="orbit-circle orbit-2"></span>
-        <span class="orbit-circle orbit-3"></span>
-      </div>
-      <h1><span class="hero-emoji">🚀</span> <span id="hero-brand">Ekush Labs</span></h1>
-      <p id="hero-subtitle">Beautiful, simple tools for everyday use</p>
-      <div class="hero-badges">
-        <span class="badge" id="badge-fast">⚡ Fast</span>
-        <span class="badge" id="badge-beautiful">🎨 Beautiful</span>
-        <span class="badge" id="badge-dark">🌙 Dark Mode</span>
-      </div>
-    </section>
 
-    <!-- Tools Grid -->
-    <section class="tools-grid">
+  <!-- ─── BACKGROUND LAYERS ────────────────────────────────────── -->
+  <div class="grid-bg" aria-hidden="true"></div>
+  <div class="mesh-gradient" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+
+  <!-- ─── NAVBAR ───────────────────────────────────────────────── -->
+  <nav id="navbar">
+    <a href="#hero" class="nav-brand">
+      <span class="nav-name" id="nav-brand-text"><span class="accent">একুশ</span><span class="accent-secondary"> ল্যাব্‌স</span></span>
+    </a>
+
+    <button class="nav-toggle" aria-label="Toggle navigation">
+      <span class="hamburger"></span>
+    </button>
+
+    <ul class="nav-links">
+      <li><a href="#hero" id="nav-home">Home</a></li>
+      <li><a href="#tools" id="nav-tools">Tools</a></li>
+      <li><a href="#apps" id="nav-apps">Apps</a></li>
+    </ul>
+
+    <div class="nav-controls">
+      <button class="nav-btn-icon" id="lang-toggle" aria-label="Switch Language">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <line x1="2" y1="12" x2="22" y2="12" />
+          <path
+            d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+      </button>
+      <button class="theme-toggle" aria-label="Toggle theme">
+        <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5" />
+          <path
+            d="M12 1v2m0 18v2m11-11h-2M4 12H2m15.364 6.364l-1.414-1.414M7.05 7.05L5.636 5.636m12.728 0l-1.414 1.414M7.05 16.95l-1.414 1.414M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8z" />
+        </svg>
+        <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─────────────────────────────────────────────────── -->
+  <section id="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-glow-2" aria-hidden="true"></div>
+
+    <p class="hero-eyebrow" id="hero-eyebrow">Welcome to</p>
+    <h1 class="hero-title" id="hero-title"><span class="accent">একুশ</span><span class="accent-secondary"> ল্যাব্‌স</span></h1>
+    <p class="hero-tagline" id="hero-tagline">Beautiful, simple tools for everyday use</p>
+
+    <div class="hero-badges">
+      <span class="badge" id="badge-fast">⚡ Fast</span>
+      <span class="badge" id="badge-beautiful">🎨 Beautiful</span>
+      <span class="badge" id="badge-dark">🌙 Dark Mode</span>
+    </div>
+  </section>
+
+  <div class="divider" aria-hidden="true"></div>
+
+  <!-- ─── TOOLS GRID ───────────────────────────────────────────── -->
+  <section id="tools">
+    <div class="section-header reveal">
+      <p class="section-label" id="section-label">What we build</p>
+      <h2 class="section-title" id="section-title">Web Tools</h2>
+      <p class="section-subtitle" id="section-subtitle">Simple, reliable web tools designed with care</p>
+    </div>
+
+    <div class="tools-grid">
+
       <!-- Bangla Calendar -->
-      <a href="calendar/" class="tool-card">
-        <div class="tool-glow"></div>
+      <a href="calendar/" class="tool-card reveal">
         <div class="tool-icon-wrapper">
           <span class="tool-icon">📅</span>
         </div>
-        <h3 id="tool-calendar-title">Bangla Calendar</h3>
-        <p id="tool-calendar-desc">Gregorian, Bangla & Hijri dates with Bangladesh government holidays</p>
+        <span class="tool-card-tag" id="tag-popular">Popular</span>
+        <h3 class="tool-card-name" id="tool-calendar-title">Bangla Calendar</h3>
+        <p class="tool-card-desc" id="tool-calendar-desc">Gregorian, Bangla & Hijri dates with Bangladesh government holidays</p>
         <div class="tool-card-footer">
-          <span class="tool-tag" id="tag-popular">Popular</span>
-          <span class="open-label" id="open-label">Open &rarr;</span>
+          <span class="open-label" id="open-label">Open →</span>
         </div>
       </a>
 
       <!-- Age Calculator -->
-      <a href="age-calculator/" class="tool-card">
-        <div class="tool-glow"></div>
+      <a href="age-calculator/" class="tool-card reveal">
         <div class="tool-icon-wrapper">
           <span class="tool-icon">🎂</span>
         </div>
-        <h3 id="tool-age-title">Age Calculator</h3>
-        <p id="tool-age-desc">Calculate your exact age in years, months and days</p>
+        <span class="tool-card-tag" id="tag-new">New</span>
+        <h3 class="tool-card-name" id="tool-age-title">Age Calculator</h3>
+        <p class="tool-card-desc" id="tool-age-desc">Calculate your exact age in years, months and days</p>
         <div class="tool-card-footer">
-          <span class="tool-tag" id="tag-new">New</span>
-          <span class="open-label" id="open-label-2">Open &rarr;</span>
+          <span class="open-label" id="open-label-2">Open →</span>
         </div>
       </a>
-    </section>
 
-    <!-- App Cross-Promotion -->
-    <section class="app-promotion">
-      <div class="app-promotion-header">
-        <h2 id="promo-title">Go even further!</h2>
-        <p id="promo-desc">Our Android apps bring reminders, offline access, and more features</p>
-      </div>
+    </div>
+  </section>
 
-      <div class="apps-grid">
-        <!-- Ekush Ponji -->
-        <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.ponji" target="_blank"
-          rel="noopener noreferrer" class="app-card">
-          <div class="app-icon app-icon-ponji">📆</div>
-          <h4 id="app-ponji-title">Ekush Ponji</h4>
-          <p id="app-ponji-desc">Bangla Calendar with reminders, widgets & more</p>
-          <span class="play-store-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 20V4l10 8-10 8z" />
-              <path d="M22 10l-10 8V2l10 8z" />
-            </svg>
-            <span id="play-store-1">Get on Google Play</span>
-          </span>
-        </a>
+  <div class="divider" aria-hidden="true"></div>
 
-        <!-- Jhuri -->
-        <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.jhuri" target="_blank"
-          rel="noopener noreferrer" class="app-card">
-          <div class="app-icon app-icon-jhuri">📂</div>
-          <h4 id="app-jhuri-title">Jhuri</h4>
-          <p id="app-jhuri-desc">Simple, fast file manager for Android</p>
-          <span class="play-store-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 20V4l10 8-10 8z" />
-              <path d="M22 10l-10 8V2l10 8z" />
-            </svg>
-            <span id="play-store-2">Get on Google Play</span>
-          </span>
-        </a>
+  <!-- ─── APP CROSS-PROMOTION ──────────────────────────────────── -->
+  <section id="apps">
+    <div class="section-header reveal">
+      <p class="section-label" id="promo-label">Go further</p>
+      <h2 class="section-title" id="promo-title">Our Apps</h2>
+      <p class="section-subtitle" id="promo-desc">Our Android apps bring reminders, offline access, and more features</p>
+    </div>
 
-        <!-- Play Store Dev Link -->
-        <a href="https://play.google.com/store/apps/dev?id=8661557018658311013" target="_blank"
-          rel="noopener noreferrer" class="app-card">
-          <div class="app-icon app-icon-all">📱</div>
-          <h4 id="app-all-title">All Apps</h4>
-          <p id="app-all-desc">Explore everything we've built</p>
-          <span class="play-store-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M2 20V4l10 8-10 8z" />
-              <path d="M22 10l-10 8V2l10 8z" />
-            </svg>
-            <span id="play-store-3">View All Apps</span>
-          </span>
-        </a>
-      </div>
-    </section>
-  </main>
+    <div class="apps-grid">
 
-  <div id="footer-placeholder" data-app-name="Ekush Labs Web Tools"></div>
+      <!-- Ekush Ponji -->
+      <a href="https://ekushponji.ekushlabs.com" class="app-card reveal">
+        <div class="app-icon app-icon-ponji">
+          <img src="assets/ponji_logo.png" alt="Ekush Ponji Logo" class="app-logo-img" />
+        </div>
+        <span class="app-card-tag">Available on Play Store</span>
+        <h3 class="app-card-name" id="app-ponji-title">Ekush Ponji</h3>
+        <p class="app-card-desc" id="app-ponji-desc">Bangla Calendar with reminders, widgets & more</p>
+        <div class="app-card-footer">
+          <div class="status-dot"></div>
+          <span class="app-card-status" id="play-store-1">Get on Google Play</span>
+        </div>
+      </a>
 
-  <script src="shared/js/theme.js"></script>
+      <!-- Jhuri -->
+      <a href="https://jhuri.ekushlabs.com" class="app-card reveal">
+        <div class="app-icon app-icon-jhuri">
+          <img src="assets/jhuri_logo.png" alt="Jhuri Logo" class="app-logo-img" />
+        </div>
+        <span class="app-card-tag">Available on Play Store</span>
+        <h3 class="app-card-name" id="app-jhuri-title">Jhuri</h3>
+        <p class="app-card-desc" id="app-jhuri-desc">Simple, fast file manager for Android</p>
+        <div class="app-card-footer">
+          <div class="status-dot"></div>
+          <span class="app-card-status" id="play-store-2">Get on Google Play</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ───────────────────────────────────────────────── -->
+  <footer id="footer">
+    <a href="#hero" class="footer-brand">
+      <span class="footer-name" id="footer-brand-text"><span class="accent">একুশ</span><span class="accent-secondary"> ল্যাব্‌স</span></span>
+    </a>
+    <span class="footer-tagline" id="footer-tagline">Simple apps, meaningful experiences</span>
+    <span class="footer-copy">© <span id="footer-year"></span> Ekush Labs. All rights reserved.</span>
+  </footer>
+
+  <!-- ─── SCRIPTS ──────────────────────────────────────────────── -->
   <script>
-    var dict = {
+    // Language dictionary
+    const dict = {
       bn: {
-        heroBrand: 'একুশ ল্যাব্‌স',
-        heroSubtitle: 'প্রতিদিনের ব্যবহারের জন্য সুন্দর, সহজ টুলসমূহ',
-        badgeFast: '⚡ দ্রুত',
-        badgeBeautiful: '🎨 সুন্দর',
-        badgeDark: '🌙 ডার্ক মোড',
-        toolCalendarTitle: 'বাংলা ক্যালেন্ডার',
-        toolCalendarDesc: 'বাংলাদেশ সরকারের ছুটির সাথে গ্রেগরিয়ান, বাংলা ও হিজরি তারিখ',
-        toolAgeTitle: 'বয়স ক্যালকুলেটর',
-        toolAgeDesc: 'বছর, মাস ও দিনে আপনার সঠিক বয়স গণনা করুন',
-        tagPopular: 'জনপ্রিয়',
-        tagNew: 'নতুন',
-        openLabel: 'খুলুন →',
-        promoTitle: 'আরও বেশি কিছু করুন!',
-        promoDesc: 'আমাদের অ্যান্ড্রয়েড অ্যাপগুলো রিমাইন্ডার, অফলাইন অ্যাক্সেস এবং আরও বেশি ফিচার নিয়ে আসে',
-        appPonjiTitle: 'একুশ পঞ্জি',
-        appPonjiDesc: 'রিমাইন্ডার, উইজেট এবং আরও অনেক কিছু সহ বাংলা ক্যালেন্ডার',
-        appJhuriTitle: 'ঝুড়ি',
-        appJhuriDesc: 'অ্যান্ড্রয়েডের জন্য সহজ, দ্রুত ফাইল ম্যানেজার',
-        appAllTitle: 'সব অ্যাপ',
-        appAllDesc: 'আমরা যা কিছু তৈরি করেছি তা অন্বেষণ করুন',
-        playStore1: 'গুগল প্লে থেকে নিন',
-        playStore2: 'গুগল প্লে থেকে নিন',
-        playStore3: 'সব অ্যাপ দেখুন'
+        'nav-home': 'হোম',
+        'nav-tools': 'টুলসমূহ',
+        'nav-apps': 'অ্যাপসমূহ',
+        'nav-brand-text': '<span class="accent">একুশ</span><span class="accent-secondary"> ল্যাব্‌স</span>',
+        'hero-title': '<span class="accent">একুশ</span><span class="accent-secondary"> ল্যাব্‌স</span>',
+        'hero-eyebrow': 'স্বাগতম',
+        'hero-tagline': 'প্রতিদিনের ব্যবহারের জন্য সুন্দর, সহজ টুলসমূহ',
+        'badge-fast': '⚡ দ্রুত',
+        'badge-beautiful': '🎨 সুন্দর',
+        'badge-dark': '🌙 ডার্ক মোড',
+        'section-label': 'আমরা যা তৈরি করি',
+        'section-title': 'ওয়েব টুলসমূহ',
+        'section-subtitle': 'যত্ন করে ডিজাইন করা সহজ, নির্ভরযোগ্য ওয়েব টুলসমূহ',
+        'tag-popular': 'জনপ্রিয়',
+        'tag-new': 'নতুন',
+        'tool-calendar-title': 'বাংলা ক্যালেন্ডার',
+        'tool-calendar-desc': 'বাংলাদেশ সরকারের ছুটি সহ গ্রেগরিয়ান, বাংলা ও হিজরি তারিখ',
+        'tool-age-title': 'বয়স ক্যালকুলেটর',
+        'tool-age-desc': 'বছর, মাস ও দিনে আপনার সঠিক বয়স গণনা করুন',
+        'open-label': 'খুলুন →',
+        'open-label-2': 'খুলুন →',
+        'promo-label': 'আরও এগিয়ে যান',
+        'promo-title': 'আমাদের অ্যাপস',
+        'promo-desc': 'আমাদের অ্যান্ড্রয়েড অ্যাপগুলো রিমাইন্ডার, অফলাইন অ্যাক্সেস এবং আরও বেশি ফিচার নিয়ে আসে',
+        'app-ponji-title': 'একুশ পঞ্জি',
+        'app-ponji-desc': 'রিমাইন্ডার, উইজেট এবং আরও অনেক কিছু সহ বাংলা ক্যালেন্ডার',
+        'app-jhuri-title': 'ঝুড়ি',
+        'app-jhuri-desc': 'স্মার্ট ক্রয় তালিকা - সহজে বাজার করুন',
+        'play-store-1': 'গুগল প্লে থেকে নিন',
+        'play-store-2': 'গুগল প্লে থেকে নিন',
+        'footer-brand-text': '<span class="accent">একুশ</span><span class="accent-secondary"> ল্যাব্‌স</span>',
+        'footer-tagline': 'সহজ অ্যাপস, অর্থবহ অভিজ্ঞতা'
       },
       en: {
-        heroBrand: 'Ekush Labs',
-        heroSubtitle: 'Beautiful, simple tools for everyday use',
-        badgeFast: '⚡ Fast',
-        badgeBeautiful: '🎨 Beautiful',
-        badgeDark: '🌙 Dark Mode',
-        toolCalendarTitle: 'Bangla Calendar',
-        toolCalendarDesc: 'Gregorian, Bangla & Hijri dates with Bangladesh government holidays',
-        toolAgeTitle: 'Age Calculator',
-        toolAgeDesc: 'Calculate your exact age in years, months and days',
-        tagPopular: 'Popular',
-        tagNew: 'New',
-        openLabel: 'Open →',
-        promoTitle: 'Go even further!',
-        promoDesc: 'Our Android apps bring reminders, offline access, and more features',
-        appPonjiTitle: 'Ekush Ponji',
-        appPonjiDesc: 'Bangla Calendar with reminders, widgets & more',
-        appJhuriTitle: 'Jhuri',
-        appJhuriDesc: 'Simple, fast file manager for Android',
-        appAllTitle: 'All Apps',
-        appAllDesc: 'Explore everything we\'ve built',
-        playStore1: 'Get on Google Play',
-        playStore2: 'Get on Google Play',
-        playStore3: 'View All Apps'
+        'nav-home': 'Home',
+        'nav-tools': 'Tools',
+        'nav-apps': 'Apps',
+        'nav-brand-text': '<span class="accent">Ekush</span><span class="accent-secondary">Labs</span>',
+        'hero-title': '<span class="accent">Ekush</span><span class="accent-secondary">Labs</span>',
+        'hero-eyebrow': 'Welcome to',
+        'hero-tagline': 'Beautiful, simple tools for everyday use',
+        'badge-fast': '⚡ Fast',
+        'badge-beautiful': '🎨 Beautiful',
+        'badge-dark': '🌙 Dark Mode',
+        'section-label': 'What we build',
+        'section-title': 'Web Tools',
+        'section-subtitle': 'Simple, reliable web tools designed with care',
+        'tag-popular': 'Popular',
+        'tag-new': 'New',
+        'tool-calendar-title': 'Bangla Calendar',
+        'tool-calendar-desc': 'Gregorian, Bangla & Hijri dates with Bangladesh government holidays',
+        'tool-age-title': 'Age Calculator',
+        'tool-age-desc': 'Calculate your exact age in years, months and days',
+        'open-label': 'Open →',
+        'open-label-2': 'Open →',
+        'promo-label': 'Go further',
+        'promo-title': 'Our Apps',
+        'promo-desc': 'Our Android apps bring reminders, offline access, and more features',
+        'app-ponji-title': 'Ekush Ponji',
+        'app-ponji-desc': 'Bangla Calendar with reminders, widgets & more',
+        'app-jhuri-title': 'Jhuri',
+        'app-jhuri-desc': 'Smart Grocery List - shop smarter',
+        'play-store-1': 'Get on Google Play',
+        'play-store-2': 'Get on Google Play',
+        'footer-brand-text': '<span class="accent">Ekush</span><span class="accent-secondary">Labs</span>',
+        'footer-tagline': 'Simple apps, meaningful experiences'
       }
     };
 
-    var currentLang = localStorage.getItem('ekush_lang') || 'bn';
-    var elements = {
-      heroBrand: document.getElementById('hero-brand'),
-      heroSubtitle: document.getElementById('hero-subtitle'),
-      badgeFast: document.getElementById('badge-fast'),
-      badgeBeautiful: document.getElementById('badge-beautiful'),
-      badgeDark: document.getElementById('badge-dark'),
-      toolCalendarTitle: document.getElementById('tool-calendar-title'),
-      toolCalendarDesc: document.getElementById('tool-calendar-desc'),
-      toolAgeTitle: document.getElementById('tool-age-title'),
-      toolAgeDesc: document.getElementById('tool-age-desc'),
-      tagPopular: document.getElementById('tag-popular'),
-      tagNew: document.getElementById('tag-new'),
-      openLabel: document.getElementById('open-label'),
-      openLabel2: document.getElementById('open-label-2'),
-      promoTitle: document.getElementById('promo-title'),
-      promoDesc: document.getElementById('promo-desc'),
-      appPonjiTitle: document.getElementById('app-ponji-title'),
-      appPonjiDesc: document.getElementById('app-ponji-desc'),
-      appJhuriTitle: document.getElementById('app-jhuri-title'),
-      appJhuriDesc: document.getElementById('app-jhuri-desc'),
-      appAllTitle: document.getElementById('app-all-title'),
-      appAllDesc: document.getElementById('app-all-desc'),
-      playStore1: document.getElementById('play-store-1'),
-      playStore2: document.getElementById('play-store-2'),
-      playStore3: document.getElementById('play-store-3')
-    };
+    let currentLang = localStorage.getItem('ekush_lang') || 'bn'; // DEFAULT: BANGLA
 
     function updateUI() {
-      var t = dict[currentLang];
-      elements.heroBrand.textContent = t.heroBrand;
-      elements.heroSubtitle.textContent = t.heroSubtitle;
-      elements.badgeFast.textContent = t.badgeFast;
-      elements.badgeBeautiful.textContent = t.badgeBeautiful;
-      elements.badgeDark.textContent = t.badgeDark;
-      elements.toolCalendarTitle.textContent = t.toolCalendarTitle;
-      elements.toolCalendarDesc.textContent = t.toolCalendarDesc;
-      elements.toolAgeTitle.textContent = t.toolAgeTitle;
-      elements.toolAgeDesc.textContent = t.toolAgeDesc;
-      elements.tagPopular.textContent = t.tagPopular;
-      elements.tagNew.textContent = t.tagNew;
-      elements.openLabel.textContent = t.openLabel;
-      elements.openLabel2.textContent = t.openLabel;
-      elements.promoTitle.textContent = t.promoTitle;
-      elements.promoDesc.textContent = t.promoDesc;
-      elements.appPonjiTitle.textContent = t.appPonjiTitle;
-      elements.appPonjiDesc.textContent = t.appPonjiDesc;
-      elements.appJhuriTitle.textContent = t.appJhuriTitle;
-      elements.appJhuriDesc.textContent = t.appJhuriDesc;
-      elements.appAllTitle.textContent = t.appAllTitle;
-      elements.appAllDesc.textContent = t.appAllDesc;
-      elements.playStore1.textContent = t.playStore1;
-      elements.playStore2.textContent = t.playStore2;
-      elements.playStore3.textContent = t.playStore3;
+      const t = dict[currentLang];
+      Object.keys(t).forEach(key => {
+        const el = document.getElementById(key);
+        if (el) {
+          if (key.includes('brand-text') || key.includes('hero-title')) {
+            el.innerHTML = t[key];
+          } else {
+            el.textContent = t[key];
+          }
+        }
+      });
       document.documentElement.lang = currentLang;
     }
 
@@ -320,15 +286,103 @@
       updateUI();
     }
 
-    document.getElementById('lang-toggle').addEventListener('click', toggleLang);
-    
-    // Init theme
-    EkushTheme.initTheme();
-    
-    // Init language
-    updateUI();
+    // Theme manager (matches main site)
+    (function () {
+      const getSystemTheme = () => {
+        return (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+      };
+
+      const savedTheme = localStorage.getItem('theme');
+      const initialTheme = savedTheme || 'light'; // DEFAULT: LIGHT
+      document.documentElement.setAttribute('data-theme', initialTheme);
+
+      if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            const newSystemTheme = e.matches ? 'dark' : 'light';
+            document.documentElement.setAttribute('data-theme', newSystemTheme);
+          }
+        });
+      }
+
+      document.addEventListener('DOMContentLoaded', () => {
+        const bindToggles = () => {
+          const themeToggles = document.querySelectorAll('.theme-toggle');
+          themeToggles.forEach(toggle => {
+            toggle.replaceWith(toggle.cloneNode(true));
+          });
+
+          const activeToggles = document.querySelectorAll('.theme-toggle');
+          activeToggles.forEach(toggle => {
+            toggle.addEventListener('click', () => {
+              const currentTheme = document.documentElement.getAttribute('data-theme');
+              const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+              document.documentElement.setAttribute('data-theme', newTheme);
+              localStorage.setItem('theme', newTheme);
+            });
+          });
+        };
+
+        bindToggles();
+      });
+    })();
+
+    // Navbar toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const navToggle = document.querySelector('.nav-toggle');
+      const navbar = document.getElementById('navbar');
+      if (navToggle) {
+        navToggle.addEventListener('click', () => {
+          navbar.classList.toggle('nav-open');
+          document.body.classList.toggle('no-scroll');
+        });
+      }
+
+      // Close nav on link click
+      document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+          navbar.classList.remove('nav-open');
+          document.body.classList.remove('no-scroll');
+        });
+      });
+
+      // Footer year
+      const footerYear = document.getElementById('footer-year');
+      if (footerYear) footerYear.textContent = new Date().getFullYear();
+
+      // Scroll reveal
+      const revealElements = document.querySelectorAll('.reveal');
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, observerOptions);
+
+      revealElements.forEach(el => observer.observe(el));
+
+      // Navbar scroll effect
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Language toggle
+      document.getElementById('lang-toggle').addEventListener('click', toggleLang);
+      updateUI();
+    });
   </script>
-  <script src="shared/js/loader.js" defer></script>
+
 </body>
 
 </html>
