@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>একুশ পঞ্জি BMI ক্যালকুলেটর | Ekush Ponji</title>
+  <meta name="description" content="Calculate your Body Mass Index (BMI)">
+
+  <!-- Theme before first paint — prevents flash -->
+  <script>
+    (function () {
+      var t = localStorage.getItem('ekush_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+      if (t === 'dark') document.documentElement.classList.add('dark');
+    })();
+  </script>
+
+  <link rel="stylesheet" href="../shared/css/design-tokens.css">
+  <link rel="stylesheet" href="../shared/css/reset.css">
+  <link rel="stylesheet" href="../shared/css/components.css">
+  <link rel="stylesheet" href="../shared/css/app-shell.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <!-- Static navbar -->
+  <nav id="navbar">
+    <a href="../index.html" class="nav-back">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+        <path d="M19 12H5M12 5l-7 7 7 7"/>
+      </svg>
+      <span id="nav-back-text">Back</span>
+    </a>
+
+    <div class="nav-brand" style="position:absolute;left:50%;transform:translateX(-50%);">
+      <span class="nav-name" id="nav-title" style="display:flex;flex-direction:column;align-items:center;">
+        <span id="nav-main-title">
+          <span class="nav-ekush" style="color:#D32F2F;">একুশ</span>
+          <span class="nav-ponji-text" style="color:#006B54;">পঞ্জি</span>
+          <span class="nav-cal-title" id="nav-cal-title"
+            style="color:var(--text-primary,#111);font-weight:700;font-family:var(--font-display),'Syne',sans-serif;font-size:1.5rem;letter-spacing:0.02em;">BMI ক্যালকুলেটর</span>
+        </span>
+      </span>
+    </div>
+
+    <ul class="nav-links" style="list-style:none;display:flex;gap:0.75rem;align-items:center;padding:0;margin:0;">
+      <li class="nav-controls" style="display:flex;gap:8px;align-items:center;">
+        <button class="nav-btn-icon" id="lang-toggle" title="Switch Language">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"/>
+            <line x1="2" y1="12" x2="22" y2="12"/>
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+          </svg>
+        </button>
+        <button class="nav-btn-icon" id="theme-toggle" title="Toggle Dark Mode">
+          <svg class="theme-icon theme-icon--light" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"/>
+            <line x1="12" y1="1" x2="12" y2="3"/>
+            <line x1="12" y1="21" x2="12" y2="23"/>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
+            <line x1="1" y1="12" x2="3" y2="12"/>
+            <line x1="21" y1="12" x2="23" y2="12"/>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+          </svg>
+          <svg class="theme-icon theme-icon--dark theme-icon-hidden" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <main class="bmi-calculator-wrapper">
+    <div class="content-layout">
+      <!-- Calculator Card -->
+      <div class="calculator-card">
+        <div class="card-header">
+          <span class="card-icon">⚖️</span>
+          <h2 id="card-title">Calculate Your BMI</h2>
+        </div>
+        
+        <!-- Weight Input -->
+        <div class="input-section">
+          <label class="input-label" id="weight-label">Weight (kg)</label>
+          <div class="input-wrapper">
+            <input type="number" id="weight-input" class="main-input" placeholder="70" min="0" max="500" step="0.1">
+            <span class="input-unit">kg</span>
+          </div>
+        </div>
+
+        <!-- Height Input -->
+        <div class="input-section">
+          <div class="label-row">
+            <label class="input-label" id="height-label">Height</label>
+            <div class="unit-toggle">
+              <button class="toggle-btn toggle-active" id="toggle-cm">cm</button>
+              <button class="toggle-btn" id="toggle-ft">ft/in</button>
+            </div>
+          </div>
+          <div class="height-inputs">
+            <div class="input-wrapper cm-input">
+              <input type="number" id="height-cm" class="main-input" placeholder="170" min="0" max="300" step="0.1">
+              <span class="input-unit">cm</span>
+            </div>
+            <div class="ft-in-inputs">
+              <div class="input-wrapper">
+                <input type="number" id="height-ft" class="main-input" placeholder="5" min="0" max="10" step="1">
+                <span class="input-unit">ft</span>
+              </div>
+              <div class="input-wrapper">
+                <input type="number" id="height-in" class="main-input" placeholder="7" min="0" max="11" step="0.1">
+                <span class="input-unit">in</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Results Section -->
+        <div class="results-section" id="results-section">
+          <div class="result-item bmi-result">
+            <div class="result-value" id="bmi-value">--</div>
+            <div class="result-label" id="bmi-label">BMI</div>
+          </div>
+          <div class="result-item category-result">
+            <div class="category-indicator" id="category-indicator"></div>
+            <div class="result-label" id="category-label">Category</div>
+            <div class="category-text" id="category-text"></div>
+          </div>
+        </div>
+
+        <!-- Reset Button -->
+        <button class="reset-btn" id="reset-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+            <path d="M3 3v5h5"/>
+          </svg>
+          <span id="reset-text">Reset</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Bottom CTA for Shonamoni -->
+    <div class="bottom-cta">
+      <h2 id="bottom-cta-title">Track your baby's growth with Shonamoni</h2>
+      <p id="bottom-cta-desc">Monitor your child's development, track milestones, and get expert guidance.</p>
+      <a href="https://play.google.com/store/apps/details?id=com.ekushlabs.shonamoni"
+         target="_blank" rel="noopener noreferrer" class="bottom-cta-btn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3,20.5V3.5C3,2.91 3.34,2.39 3.84,2.15L13.69,12L3.84,21.85C3.34,21.6 3,21.09 3,20.5M16.81,15.12L6.05,21.34L14.54,12.85L16.81,15.12M20.16,12L17.89,9.73L6.05,1.66L16.81,7.88L18.86,9.04C20.09,9.74 20.84,10.82 20.84,12C20.84,13.18 20.09,14.26 18.86,14.96L16.81,16.12L20.16,12Z"/>
+        </svg>
+        <span id="bottom-cta-btn-text">Get Shonamoni</span>
+      </a>
+    </div>
+  </main>
+
+  <!-- Footer only — loader.js skips navbar injection here -->
+  <div id="footer-placeholder"
+       data-shared-root="../shared"
+       data-app-name="একুশ পঞ্জি"></div>
+
+  <!-- Load order matters: theme → loader → app -->
+  <script src="../shared/js/theme.js"></script>
+  <script src="../shared/js/loader.js"></script>
+  <script src="bmi-calculator.js"></script>
+</body>
+
+</html>
