@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>একুশ পঞ্জি BMI ক্যালকুলেটর | Ekush Ponji</title>
-  <meta name="description" content="Calculate your Body Mass Index (BMI)">
+  <title>বিএমআই (BMI) ক্যালকুলেটর | Ekush Apps</title>
+  <meta name="description" content="Calculate Body Mass Index (BMI)">
 
   <!-- Theme before first paint — prevents flash -->
   <script>
@@ -77,115 +77,108 @@
 
   <main class="bmi-calculator-wrapper">
     <div class="content-layout">
-      <!-- Calculator Card -->
-      <div class="calculator-card">
-        <div class="card-header">
-          <span class="card-icon">📊</span>
-          <div class="card-header-text">
-            <h2 id="card-title">Calculate BMI</h2>
-            <p id="card-desc" class="card-desc">BMI (Body Mass Index) is a quick way to check if your weight is healthy for your height. It helps estimate if you are underweight, normal weight, overweight, or obese.</p>
-          </div>
-        </div>
-        
-        <!-- Weight Input -->
-        <div class="input-section">
-          <label class="input-label" id="weight-label">Weight</label>
-          <div class="input-wrapper">
-            <input type="number" id="weight-input" class="main-input" placeholder="Enter weight">
-            <div class="unit-toggle">
-              <button class="toggle-btn toggle-active" id="toggle-weight-kg">kg</button>
-              <button class="toggle-btn" id="toggle-weight-lb">lb</button>
+      <div class="calculator-layout">
+        <!-- Input Card -->
+        <div class="calculator-card input-card">
+          <div class="card-header">
+            <span class="card-icon">📊</span>
+            <div class="card-header-text">
+              <h2 id="card-title">Calculate BMI</h2>
+              <p id="card-desc" class="card-desc">BMI (Body Mass Index) is a quick way to check if your weight is healthy for your height. It helps estimate if you are underweight, normal weight, overweight, or obese.</p>
             </div>
           </div>
-        </div>
-
-        <!-- Height Input -->
-        <div class="input-section">
-          <div class="label-row">
-            <label class="input-label" id="height-label">Height</label>
-          </div>
-          <div class="input-wrapper">
-            <div class="height-inputs" id="height-inputs-cm">
-              <input type="number" id="height-cm" class="main-input" placeholder="Enter height">
+          
+          <!-- Weight Input -->
+          <div class="input-section">
+            <label class="input-label" id="weight-label">Weight</label>
+            <div class="input-wrapper">
+              <input type="number" id="weight-input" class="main-input" placeholder="Enter weight">
               <div class="unit-toggle">
-                <button class="toggle-btn toggle-active" id="toggle-height-cm">cm</button>
-                <button class="toggle-btn" id="toggle-height-ft">ft/in</button>
-              </div>
-            </div>
-            <div class="height-inputs ft-in-inputs" id="height-inputs-ft">
-              <div class="input-wrapper-small">
-                <input type="number" id="height-ft" class="main-input" placeholder="ft">
-                <span class="input-unit">ft</span>
-              </div>
-              <div class="input-wrapper-small">
-                <input type="number" id="height-in" class="main-input" placeholder="in">
-                <span class="input-unit">in</span>
-              </div>
-              <div class="unit-toggle">
-                <button class="toggle-btn" id="toggle-height-cm-2">cm</button>
-                <button class="toggle-btn toggle-active" id="toggle-height-ft-2">ft/in</button>
+                <button class="toggle-btn toggle-active" id="toggle-weight-kg">kg</button>
+                <button class="toggle-btn" id="toggle-weight-lb">lb</button>
               </div>
             </div>
           </div>
-        </div>
 
-        <!-- Results Section -->
-        <div class="results-section" id="results-section">
-          <div class="result-card">
-            <h3 class="result-title" id="result-title">Result</h3>
-            
-            <div class="result-main">
-              <div class="result-left">
-                <p class="result-label-small" id="result-score-label">Score</p>
-              </div>
-              <div class="result-center">
-                <div class="bmi-value-wrapper">
-                  <span class="bmi-value" id="bmi-value">--</span>
-                  <span class="bmi-unit" id="bmi-unit">kg/m²</span>
+          <!-- Height Input -->
+          <div class="input-section">
+            <div class="label-row">
+              <label class="input-label" id="height-label">Height</label>
+            </div>
+            <div class="input-wrapper">
+              <div class="height-inputs" id="height-inputs-cm">
+                <input type="number" id="height-cm" class="main-input" placeholder="Enter height">
+                <div class="unit-toggle">
+                  <button class="toggle-btn toggle-active" id="toggle-height-cm">cm</button>
+                  <button class="toggle-btn" id="toggle-height-ft">ft/in</button>
                 </div>
               </div>
-              <div class="result-right">
-                <p class="result-label-small" id="result-verdict-label">Verdict</p>
-                <p class="result-verdict" id="result-verdict"></p>
+              <div class="height-inputs ft-in-inputs" id="height-inputs-ft">
+                <div class="input-wrapper-small">
+                  <input type="number" id="height-ft" class="main-input" placeholder="ft">
+                  <span class="input-unit">ft</span>
+                </div>
+                <div class="input-wrapper-small">
+                  <input type="number" id="height-in" class="main-input" placeholder="in">
+                  <span class="input-unit">in</span>
+                </div>
+                <div class="unit-toggle">
+                  <button class="toggle-btn" id="toggle-height-cm-2">cm</button>
+                  <button class="toggle-btn toggle-active" id="toggle-height-ft-2">ft/in</button>
+                </div>
               </div>
             </div>
-
-            <!-- Speedometer -->
-            <div class="speedometer">
-              <svg viewBox="0 0 200 120" class="speedometer-svg">
-                <!-- Background arc -->
-                <path d="M 20 100 A 80 80 0 0 1 180 100" fill="none" stroke="#e2e8f0" stroke-width="16" stroke-linecap="round"/>
-                
-                <!-- Underweight (light blue/yellow) -->
-                <path class="speed-segment speed-underweight" d="M 20 100 A 80 80 0 0 1 68 50" fill="none" stroke="#3b82f6" stroke-width="16" stroke-linecap="round"/>
-                <!-- Normal (green) -->
-                <path class="speed-segment speed-normal" d="M 68 50 A 80 80 0 0 1 100 36" fill="none" stroke="#10b981" stroke-width="16" stroke-linecap="round"/>
-                <!-- Overweight (orange) -->
-                <path class="speed-segment speed-overweight" d="M 100 36 A 80 80 0 0 1 132 50" fill="none" stroke="#f59e0b" stroke-width="16" stroke-linecap="round"/>
-                <!-- Obese (red) -->
-                <path class="speed-segment speed-obese" d="M 132 50 A 80 80 0 0 1 180 100" fill="none" stroke="#ef4444" stroke-width="16" stroke-linecap="round"/>
-
-                <!-- Needle -->
-                <g id="needle" transform="rotate(-90 100 100)">
-                  <circle cx="100" cy="100" r="6" fill="#1e293b"/>
-                  <path d="M 100 100 L 100 30" stroke="#1e293b" stroke-width="4" stroke-linecap="round"/>
-                </g>
-
-                <!-- Center dot -->
-                <circle cx="100" cy="100" r="8" fill="#ffffff" stroke="#1e293b" stroke-width="2"/>
-              </svg>
-            </div>
           </div>
+
+          <!-- Reset Button -->
+          <button class="reset-btn" id="reset-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
+              <path d="M3 3v5h5"/>
+            </svg>
+            <span id="reset-text">Reset</span>
+          </button>
         </div>
 
-        <!-- Reset Button -->
-        <button class="reset-btn" id="reset-btn">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/>
-            <path d="M3 3v5h5"/>
-          </svg>
-          <span id="reset-text">Reset</span>
-        </button>
+        <!-- Result Card -->
+        <div class="calculator-card result-card hidden" id="result-card">
+          <div class="bmi-bar-container">
+            <div class="bmi-bar-segments">
+              <div class="bmi-bar-segment bmi-bar-underweight">
+                <span class="bmi-bar-segment-label" data-category="underweight">Underweight</span>
+              </div>
+              <div class="bmi-bar-segment bmi-bar-normal">
+                <span class="bmi-bar-segment-label" data-category="normal">Normal</span>
+              </div>
+              <div class="bmi-bar-segment bmi-bar-overweight">
+                <span class="bmi-bar-segment-label" data-category="overweight">Overweight</span>
+              </div>
+              <div class="bmi-bar-segment bmi-bar-obese">
+                <span class="bmi-bar-segment-label" data-category="obese">Obese</span>
+              </div>
+            </div>
+            
+            <!-- Marker with BMI Number -->
+            <div class="bmi-bar-marker-wrapper" id="bmi-bar-marker-wrapper">
+              <div class="bmi-bar-number" id="bmi-bar-number">--</div>
+              <div class="bmi-bar-marker"></div>
+            </div>
+            
+            <!-- Bar Labels -->
+            <div class="bmi-bar-labels">
+              <span class="bmi-label" data-value="10">10</span>
+              <span class="bmi-label" data-value="18.5">18.5</span>
+              <span class="bmi-label" data-value="25">25</span>
+              <span class="bmi-label" data-value="30">30</span>
+              <span class="bmi-label" data-value="40">40</span>
+            </div>
+          </div>
+
+          <!-- Category below bar -->
+          <div class="bmi-category-wrapper">
+            <p class="result-verdict" id="result-verdict"></p>
+          </div>
+        </div>
       </div>
     </div>
 

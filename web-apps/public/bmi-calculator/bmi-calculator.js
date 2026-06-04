@@ -3,22 +3,23 @@
    Calculates Body Mass Index (BMI) with category classification
 ============================================================ */
 
-/* ─── LANGUAGE DICTIONARY ────────────────────────────────────── */
+/* ─── LANGUAGE DICTIONARY ─────────────────────────────────────── */
 var dict = {
   bn: {
     cardTitle: 'বিএমআই (BMI) গণনা করুন',
     cardDesc: 'বিএমআই (বডি মাস ইনডেক্স) হলো আপনার উচ্চতা অনুযায়ী ওজন ঠিক আছে কি না তা সহজে জানার একটি উপায়। এর মাধ্যমে আপনার ওজন স্বাভাবিকের চেয়ে কম, স্বাভাবিক, অতিরিক্ত নাকি স্থূল, তা অনুমান করা যায়।',
     weightLabel: 'ওজন',
     heightLabel: 'উচ্চতা',
-    resultTitle: 'ফলাফল',
-    scoreLabel: 'স্কোর',
-    verdictLabel: 'মতামত',
     bmiUnit: 'kg/m²',
     resetText: 'রিসেট',
     underweight: 'অন্যপেক্ষা কম ওজন',
     normal: 'স্বাভাবিক',
     overweight: 'অতিরিক্ত ওজন',
     obese: 'স্থূলকায়',
+    underweightShort: 'কম',
+    normalShort: 'স্বাভাবিক',
+    overweightShort: 'অতিরিক্ত',
+    obeseShort: 'স্থূল',
     weightPlaceholder: 'ওজন ইনপুট দিন',
     heightPlaceholderCm: 'উচ্চতা ইনপুট দিন',
     heightPlaceholderFt: 'ft',
@@ -37,15 +38,16 @@ var dict = {
     cardDesc: 'BMI (Body Mass Index) is a quick way to check if your weight is healthy for your height. It helps estimate if you are underweight, normal weight, overweight, or obese.',
     weightLabel: 'Weight',
     heightLabel: 'Height',
-    resultTitle: 'Result',
-    scoreLabel: 'Score',
-    verdictLabel: 'Verdict',
     bmiUnit: 'kg/m²',
     resetText: 'Reset',
     underweight: 'Underweight',
     normal: 'Normal',
     overweight: 'Overweight',
     obese: 'Obese',
+    underweightShort: 'Underweight',
+    normalShort: 'Normal',
+    overweightShort: 'Overweight',
+    obeseShort: 'Obese',
     weightPlaceholder: 'Enter weight',
     heightPlaceholderCm: 'Enter height',
     heightPlaceholderFt: 'ft',
@@ -61,10 +63,13 @@ var dict = {
   }
 };
 
-/* ─── STATE ──────────────────────────────────────────────────── */
+/* ─── STATE ─────────────────────────────────────────────────── */
 var currentLang = 'bn';
 var weightUnit = 'kg'; // 'kg' or 'lb'
 var heightUnit = 'cm'; // 'cm' or 'ft'
+
+/* ─── DOM REFS ───────────────────────────────────────────────── */
+var weightInput, heightCm, heightFt, heightIn, resultCard, bmiBarNumber, bmiBarMarkerWrapper, resultVerdict, bmiLabels;
 
 /* ─── UTILITIES ──────────────────────────────────────────────── */
 function fmt(n) {
@@ -124,22 +129,49 @@ function calculateBMI(weightKg, heightCm) {
   };
 }
 
-/* ─── SPEEDOMETER UPDATE ────────────────────────────────────── */
-function updateSpeedometer(bmi) {
-  var needle = document.getElementById('needle');
-  if (!needle) return;
+/* ─── BMI BAR UPDATE ─────────────────────────────────────── */
+function updateBMIBar(bmi) {
+  if (!bmiBarMarkerWrapper || !bmiBarNumber) return;
 
-  var minAngle = -90; // leftmost
-  var maxAngle = 90; // rightmost
   var minBMI = 10;
   var maxBMI = 40;
   
   var clampedBMI = Math.max(minBMI, Math.min(maxBMI, bmi || 0));
   var progress = (clampedBMI - minBMI) / (maxBMI - minBMI);
-  var angle = minAngle + (progress * (maxAngle - minAngle));
+  var leftPercent = progress * 100;
   
-  needle.style.transform = 'rotate(' + angle + 'deg)';
-  needle.style.transition = 'transform 0.5s ease-out';
+  bmiBarMarkerWrapper.style.left = leftPercent + '%';
+  
+  if (bmiBarNumber) {
+    bmiBarNumber.textContent = bmi ? fmt(formatBMI(bmi)) : '--';
+  }
+}
+
+/* ─── UPDATE LABELS LOCALE ─────────────────────────────────── */
+function updateBarLabels() {
+  var t = dict[currentLang];
+  
+  // Update numerical bar labels
+  var labels = document.querySelectorAll('.bmi-label');
+  labels.forEach(function(label) {
+    var value = label.getAttribute('data-value');
+    var parts = value.split('.');
+    if (currentLang === 'bn') {
+      var bnValue = parts.map(function(part) {
+        return part.split('').map(function(c) { return '০১২৩৪৫৬৭৮৯'[c]; }).join('');
+      }).join('·');
+      label.textContent = bnValue;
+    } else {
+      label.textContent = value;
+    }
+  });
+  
+  // Update segment labels
+  var segmentLabels = document.querySelectorAll('.bmi-bar-segment-label');
+  segmentLabels.forEach(function(label) {
+    var category = label.getAttribute('data-category');
+    label.textContent = t[category + 'Short'];
+  });
 }
 
 /* ─── UPDATE UI TEXT ────────────────────────────────────────── */
@@ -150,10 +182,6 @@ function updateStaticText() {
   if (document.getElementById('card-desc')) document.getElementById('card-desc').textContent = t.cardDesc;
   if (document.getElementById('weight-label')) document.getElementById('weight-label').textContent = t.weightLabel;
   if (document.getElementById('height-label')) document.getElementById('height-label').textContent = t.heightLabel;
-  if (document.getElementById('result-title')) document.getElementById('result-title').textContent = t.resultTitle;
-  if (document.getElementById('result-score-label')) document.getElementById('result-score-label').textContent = t.scoreLabel;
-  if (document.getElementById('result-verdict-label')) document.getElementById('result-verdict-label').textContent = t.verdictLabel;
-  if (document.getElementById('bmi-unit')) document.getElementById('bmi-unit').textContent = t.bmiUnit;
   if (document.getElementById('reset-text')) document.getElementById('reset-text').textContent = t.resetText;
   if (document.getElementById('bottom-cta-title')) document.getElementById('bottom-cta-title').textContent = t.bottomCtaTitle;
   if (document.getElementById('bottom-cta-desc')) document.getElementById('bottom-cta-desc').textContent = t.bottomCtaDesc;
@@ -173,6 +201,9 @@ function updateStaticText() {
   if (document.getElementById('height-ft')) document.getElementById('height-ft').placeholder = t.heightPlaceholderFt;
   if (document.getElementById('height-in')) document.getElementById('height-in').placeholder = t.heightPlaceholderIn;
   
+  // Update bar labels
+  updateBarLabels();
+  
   // Re-calculate and update results if available
   triggerCalculation();
 }
@@ -180,30 +211,31 @@ function updateStaticText() {
 /* ─── UPDATE RESULTS ────────────────────────────────────────── */
 function updateResults(result) {
   var t = dict[currentLang];
-  var bmiValueEl = document.getElementById('bmi-value');
-  var resultVerdictEl = document.getElementById('result-verdict');
-  var resultCardEl = document.querySelector('.result-card');
   
+  if (!resultCard) return;
+
   if (!result) {
-    if (bmiValueEl) bmiValueEl.textContent = '--';
-    if (resultVerdictEl) resultVerdictEl.textContent = '';
-    if (resultCardEl) resultCardEl.className = 'result-card';
-    updateSpeedometer(null);
+    resultCard.classList.add('hidden');
+    resultCard.className = 'calculator-card result-card hidden';
+    resultVerdict.textContent = '';
+    updateBMIBar(null);
     return;
   }
-  
-  if (bmiValueEl) bmiValueEl.textContent = fmt(formatBMI(result.bmi));
-  if (resultVerdictEl) resultVerdictEl.textContent = t[result.category];
-  if (resultCardEl) {
-    resultCardEl.className = 'result-card result-' + result.category;
+
+  resultCard.classList.remove('hidden');
+  resultCard.className = 'calculator-card result-card result-' + result.category;
+
+  if (resultVerdict) {
+    resultVerdict.textContent = t[result.category];
   }
-  updateSpeedometer(result.bmi);
+
+  updateBMIBar(result.bmi);
 }
 
 /* ─── TRIGGER CALCULATION ───────────────────────────────────── */
 function triggerCalculation() {
   // Get weight in kg
-  var weightInputVal = parseFloat(document.getElementById('weight-input').value);
+  var weightInputVal = parseFloat(weightInput.value);
   var weightKg;
   if (weightUnit === 'kg') {
     weightKg = weightInputVal;
@@ -214,10 +246,10 @@ function triggerCalculation() {
   // Get height in cm
   var heightCmVal;
   if (heightUnit === 'cm') {
-    heightCmVal = parseFloat(document.getElementById('height-cm').value);
+    heightCmVal = parseFloat(heightCm.value);
   } else {
-    var ft = parseFloat(document.getElementById('height-ft').value) || 0;
-    var inches = parseFloat(document.getElementById('height-in').value) || 0;
+    var ft = parseFloat(heightFt.value) || 0;
+    var inches = parseFloat(heightIn.value) || 0;
     heightCmVal = ftInToCm(ft, inches);
   }
   
@@ -227,15 +259,25 @@ function triggerCalculation() {
 
 /* ─── RESET FUNCTIONALITY ────────────────────────────────────── */
 function resetAll() {
-  document.getElementById('weight-input').value = '';
-  document.getElementById('height-cm').value = '';
-  document.getElementById('height-ft').value = '';
-  document.getElementById('height-in').value = '';
+  weightInput.value = '';
+  heightCm.value = '';
+  heightFt.value = '';
+  heightIn.value = '';
   updateResults(null);
 }
 
 /* ─── DOM READY ──────────────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', function() {
+  // Get DOM refs
+  weightInput = document.getElementById('weight-input');
+  heightCm = document.getElementById('height-cm');
+  heightFt = document.getElementById('height-ft');
+  heightIn = document.getElementById('height-in');
+  resultCard = document.getElementById('result-card');
+  bmiBarNumber = document.getElementById('bmi-bar-number');
+  bmiBarMarkerWrapper = document.getElementById('bmi-bar-marker-wrapper');
+  resultVerdict = document.getElementById('result-verdict');
+
   // Initialize weight unit toggle
   var toggleWeightKg = document.getElementById('toggle-weight-kg');
   var toggleWeightLb = document.getElementById('toggle-weight-lb');
@@ -243,10 +285,10 @@ document.addEventListener('DOMContentLoaded', function() {
   toggleWeightKg.addEventListener('click', function() {
     if (weightUnit === 'lb') {
       // Convert current value from lb to kg
-      var currentVal = parseFloat(document.getElementById('weight-input').value);
+      var currentVal = parseFloat(weightInput.value);
       if (!isNaN(currentVal)) {
         var newVal = lbToKg(currentVal);
-        document.getElementById('weight-input').value = newVal.toFixed(1);
+        weightInput.value = newVal.toFixed(1);
       }
       weightUnit = 'kg';
       toggleWeightKg.classList.add('toggle-active');
@@ -258,10 +300,10 @@ document.addEventListener('DOMContentLoaded', function() {
   toggleWeightLb.addEventListener('click', function() {
     if (weightUnit === 'kg') {
       // Convert current value from kg to lb
-      var currentVal = parseFloat(document.getElementById('weight-input').value);
+      var currentVal = parseFloat(weightInput.value);
       if (!isNaN(currentVal)) {
         var newVal = kgToLb(currentVal);
-        document.getElementById('weight-input').value = newVal.toFixed(1);
+        weightInput.value = newVal.toFixed(1);
       }
       weightUnit = 'lb';
       toggleWeightLb.classList.add('toggle-active');
@@ -281,11 +323,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (newUnit === 'ft') {
       // Convert cm to ft/in
-      var cmVal = parseFloat(document.getElementById('height-cm').value);
+      var cmVal = parseFloat(heightCm.value);
       if (!isNaN(cmVal)) {
         var ftIn = cmToFtIn(cmVal);
-        document.getElementById('height-ft').value = ftIn.ft;
-        document.getElementById('height-in').value = ftIn.inches.toFixed(1);
+        heightFt.value = ftIn.ft;
+        heightIn.value = ftIn.inches.toFixed(1);
       }
       document.getElementById('height-inputs-cm').style.display = 'none';
       document.getElementById('height-inputs-ft').style.display = 'flex';
@@ -295,11 +337,11 @@ document.addEventListener('DOMContentLoaded', function() {
       toggleHeightFt2.classList.add('toggle-active');
     } else {
       // Convert ft/in to cm
-      var ftVal = parseFloat(document.getElementById('height-ft').value) || 0;
-      var inVal = parseFloat(document.getElementById('height-in').value) || 0;
+      var ftVal = parseFloat(heightFt.value) || 0;
+      var inVal = parseFloat(heightIn.value) || 0;
       if (ftVal > 0 || inVal > 0) {
         var cm = ftInToCm(ftVal, inVal);
-        document.getElementById('height-cm').value = cm.toFixed(1);
+        heightCm.value = cm.toFixed(1);
       }
       document.getElementById('height-inputs-ft').style.display = 'none';
       document.getElementById('height-inputs-cm').style.display = 'flex';
@@ -322,10 +364,10 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('height-inputs-ft').style.display = 'none';
   
   // Input listeners
-  document.getElementById('weight-input').addEventListener('input', triggerCalculation);
-  document.getElementById('height-cm').addEventListener('input', triggerCalculation);
-  document.getElementById('height-ft').addEventListener('input', triggerCalculation);
-  document.getElementById('height-in').addEventListener('input', triggerCalculation);
+  weightInput.addEventListener('input', triggerCalculation);
+  heightCm.addEventListener('input', triggerCalculation);
+  heightFt.addEventListener('input', triggerCalculation);
+  heightIn.addEventListener('input', triggerCalculation);
   
   // Reset listener
   document.getElementById('reset-btn').addEventListener('click', resetAll);

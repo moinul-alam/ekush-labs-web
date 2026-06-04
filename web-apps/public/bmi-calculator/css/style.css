@@ -2,7 +2,7 @@
    BMI Calculator — Styles
 ============================================================ */
 
-/* ─── CUSTOM TOKENS ──────────────────────────────────────── */
+/* ─── CUSTOM TOKENS ─────────────────────────────────────── */
 :root {
   --primary-gradient: linear-gradient(135deg, #1D5BFD 0%, #10B981 50%, #06B6D4 100%);
   --primary-green: #10B981;
@@ -91,10 +91,38 @@ body.dark .nav-ponji-text,
 
 /* ─── WRAPPER ────────────────────────────────────────── */
 .bmi-calculator-wrapper {
-  max-width: 800px;
+  max-width: 1000px;
   margin: 100px auto 80px;
   padding: 0 24px;
   position: relative;
+}
+
+.calculator-layout {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+}
+
+.input-card {
+  flex: 1;
+  min-width: 0;
+}
+
+.result-card {
+  flex: 1;
+  min-width: 0;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease;
+}
+
+.result-card:not(.hidden) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.result-card.hidden {
+  display: none;
 }
 
 /* ─── CALCULATOR CARD ──────────────────────────────────────── */
@@ -253,103 +281,107 @@ body.dark .nav-ponji-text,
   box-shadow: 0 0 0 4px rgba(29, 91, 253, 0.1);
 }
 
-/* ─── RESULTS SECTION ───────────────────────────────────── */
-.results-section {
-  margin-bottom: 24px;
+/* ─── BMI BAR ─────────────────────────────────────── */
+.bmi-bar-container {
+  position: relative;
+  padding-top: 40px;
+  padding-bottom: 20px;
 }
 
-.result-card {
-  background: var(--card-surface);
+.bmi-bar-segments {
+  display: flex;
+  height: 40px;
   border-radius: 20px;
-  padding: 24px;
-  border: 1px solid var(--card-border);
+  overflow: hidden;
 }
 
-.result-title {
-  margin: 0 0 20px;
-  font-size: 1.4rem;
-  color: var(--card-text);
-  font-weight: 700;
-}
-
-.result-main {
-  display: grid;
-  grid-template-columns: 1fr 2fr 1fr;
-  gap: 16px;
+.bmi-bar-segment {
+  height: 100%;
+  display: flex;
   align-items: center;
-  margin-bottom: 24px;
+  justify-content: center;
+  position: relative;
 }
 
-.result-left,
-.result-right {
-  text-align: center;
-}
-
-.result-center {
-  text-align: center;
-}
-
-.result-label-small {
+.bmi-bar-segment-label {
+  color: white;
   font-weight: 600;
-  color: var(--card-text-muted);
-  font-size: 1rem;
-  margin: 0;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  white-space: nowrap;
 }
 
-.bmi-value-wrapper {
-  display: inline-flex;
+.bmi-bar-underweight {
+  width: 28.33%; /* 10 to 18.5 is 8.5 out of 30 total */
+  background-color: #3B82F6;
+}
+
+.bmi-bar-normal {
+  width: 21.67%; /* 18.5 to 25 is 6.5 */
+  background-color: #10B981;
+}
+
+.bmi-bar-overweight {
+  width: 16.67%; /* 25 to 30 is 5 */
+  background-color: #F59E0B;
+}
+
+.bmi-bar-obese {
+  width: 33.33%; /* 30 to 40 is 10 */
+  background-color: #EF4444;
+}
+
+.bmi-bar-marker-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
   flex-direction: column;
   align-items: center;
+  transition: left 0.5s ease-out;
+  transform: translateX(-50%);
 }
 
-.bmi-value {
-  font-size: 3.5rem;
+.bmi-bar-marker {
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 14px solid #1e293b;
+}
+
+.bmi-bar-number {
+  margin-bottom: 8px;
+  font-size: 1.5rem;
   font-weight: 800;
-  background: var(--primary-gradient);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  line-height: 1;
+  color: var(--card-text);
 }
 
-.bmi-unit {
-  font-size: 1rem;
+.bmi-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+  font-size: 0.9rem;
   color: var(--card-text-muted);
   font-weight: 600;
-  margin-top: 4px;
+}
+
+.bmi-category-wrapper {
+  text-align: center;
+  margin-top: 16px;
 }
 
 .result-verdict {
   font-size: 1.3rem;
   font-weight: 700;
-  margin: 8px 0 0;
+  margin: 0;
 }
 
 /* Result category colors */
-.result-underweight .result-verdict { color: #3B82F6;
-}
-
-.result-normal .result-verdict { color: #10B981;
-}
-
-.result-overweight .result-verdict { color: #F59E0B;
-}
-
-.result-obese .result-verdict { color: #EF4444;
-}
-
-/* ─── SPEEDOMETER ─────────────────────────────────────── */
-.speedometer {
-  display: flex;
-  justify-content: center;
-  margin-top: 24px;
-}
-
-.speedometer-svg {
-  width: 100%;
-  max-width: 400px;
-  height: auto;
-}
+.result-card.result-underweight .result-verdict { color: #3B82F6; }
+.result-card.result-normal .result-verdict { color: #10B981; }
+.result-card.result-overweight .result-verdict { color: #F59E0B; }
+.result-card.result-obese .result-verdict { color: #EF4444; }
 
 /* ─── RESET BUTTON ───────────────────────────────────── */
 .reset-btn {
@@ -419,6 +451,17 @@ body.dark .nav-ponji-text,
 }
 
 /* ─── RESPONSIVE DESIGN ─────────────────────────────────── */
+@media (max-width: 900px) {
+  .calculator-layout {
+    flex-direction: column;
+  }
+
+  .input-card,
+  .result-card {
+    width: 100%;
+  }
+}
+
 @media (max-width: 768px) {
   .bmi-calculator-wrapper {
     margin: 80px auto 60px;
@@ -431,11 +474,6 @@ body.dark .nav-ponji-text,
 
   .card-header h2 {
     font-size: 1.5rem;
-  }
-
-  .result-main {
-    grid-template-columns: 1fr;
-    gap: 20px;
   }
 
   .ft-in-inputs {
