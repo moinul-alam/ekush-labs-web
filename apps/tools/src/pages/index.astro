@@ -1,0 +1,139 @@
+---
+import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="EkushLabs Tools - Simple Web Tools" appName="EkushTools" isMainPortal={true}>
+  
+  <!-- Hero Section -->
+  <section id="hero" class="relative pt-32 pb-20 px-[5vw] text-center overflow-hidden min-h-[70vh] flex flex-col justify-center items-center">
+    <div class="absolute top-1/2 left-1/2 w-[80vw] h-[80vw] max-w-[800px] max-h-[800px] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(circle_at_center,rgba(29,91,253,0.15)_0%,transparent_70%)] rounded-full blur-[60px] -z-10 dark:bg-[radial-gradient(circle_at_center,rgba(29,91,253,0.25)_0%,transparent_70%)] pointer-events-none"></div>
+    
+    <p class="text-sm font-bold tracking-widest uppercase text-slate-500 dark:text-silver mb-4 reveal">Welcome to</p>
+    <h1 class="font-display text-7xl md:text-8xl lg:text-[10rem] font-bold leading-none tracking-[-0.02em] mb-2 reveal reveal-delay-1">
+      <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">Ekush</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent">Tools</span>
+    </h1>
+    <p class="font-display text-2xl md:text-3xl font-bold tracking-tight text-slate-400 dark:text-slate-500 mb-8 reveal reveal-delay-1">By Ekush Labs</p>
+    <p class="text-xl md:text-2xl text-slate-600 dark:text-silver max-w-[600px] mx-auto mb-12 font-medium reveal reveal-delay-2">Beautiful, simple tools for everyday use</p>
+
+    <div class="flex flex-wrap justify-center gap-4 reveal reveal-delay-3">
+      <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-[var(--glass-border)] bg-white/80 dark:bg-[var(--glass-bg)] backdrop-blur-md text-sm font-bold text-slate-800 dark:text-white shadow-lg">⚡ Fast</span>
+      <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-[var(--glass-border)] bg-white/80 dark:bg-[var(--glass-bg)] backdrop-blur-md text-sm font-bold text-slate-800 dark:text-white shadow-lg">🎨 Beautiful</span>
+      <span class="px-5 py-2.5 rounded-full border border-slate-200 dark:border-[var(--glass-border)] bg-white/80 dark:bg-[var(--glass-bg)] backdrop-blur-md text-sm font-bold text-slate-800 dark:text-white shadow-lg">🌙 Dark Mode</span>
+    </div>
+  </section>
+
+  <!-- Tools Grid -->
+  <section id="tools" class="py-24 px-[5vw] relative z-10">
+    <div class="text-center mb-16 reveal">
+      <p class="text-sm font-bold tracking-widest uppercase text-primary-mid mb-2">What we build</p>
+      <h2 class="font-display text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">Web Tools</h2>
+      <p class="text-lg text-slate-600 dark:text-silver max-w-[600px] mx-auto">Simple, reliable web tools designed with care</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+      
+      <!-- Bangla Calendar -->
+      <a href="/calendar" class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 reveal">
+        <div class="absolute top-6 right-6 px-3 py-1 bg-gradient-to-r from-primary-start to-primary-end rounded-full text-xs font-bold text-white tracking-wider uppercase">Popular</div>
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary-start/10 to-primary-end/10 dark:from-primary-start/20 dark:to-primary-end/20 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-400 border border-primary-mid/20 dark:border-primary-mid/30">📅</div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Bangla Calendar</h3>
+        <p class="text-slate-600 dark:text-silver mb-8 flex-grow">Gregorian, Bangla & Hijri dates with Bangladesh government holidays</p>
+        <div class="font-bold text-primary-mid group-hover:text-primary-start transition-colors flex items-center gap-2">Open <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></div>
+      </a>
+
+      <!-- Age Calculator -->
+      <a href="/age-calculator" class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 reveal reveal-delay-1">
+        <div class="absolute top-6 right-6 px-3 py-1 bg-gradient-to-r from-secondary-start to-secondary-end rounded-full text-xs font-bold text-white tracking-wider uppercase">New</div>
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary-start/10 to-secondary-end/10 dark:from-secondary-start/20 dark:to-secondary-end/20 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-400 border border-secondary-start/20 dark:border-secondary-start/30">🎂</div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Age Calculator</h3>
+        <p class="text-slate-600 dark:text-silver mb-8 flex-grow">Calculate your exact age in years, months and days</p>
+        <div class="font-bold text-secondary-start group-hover:text-secondary-end transition-colors flex items-center gap-2">Open <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></div>
+      </a>
+
+      <!-- BMI Calculator -->
+      <a href="/bmi-calculator" class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 reveal reveal-delay-2">
+        <div class="absolute top-6 right-6 px-3 py-1 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-full text-xs font-bold text-white tracking-wider uppercase">New</div>
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-400/10 dark:from-emerald-500/20 dark:to-teal-400/20 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-400 border border-emerald-500/20 dark:border-emerald-500/30">📊</div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">BMI Calculator</h3>
+        <p class="text-slate-600 dark:text-silver mb-8 flex-grow">Calculate your Body Mass Index and check your health category</p>
+        <div class="font-bold text-emerald-500 dark:text-emerald-400 group-hover:text-emerald-400 dark:group-hover:text-emerald-300 transition-colors flex items-center gap-2">Open <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- Apps Cross Promotion -->
+  <section id="apps" class="py-24 px-[5vw] relative z-10 bg-black/20">
+    <div class="text-center mb-16 reveal">
+      <p class="text-sm font-bold tracking-widest uppercase text-secondary-start mb-2">Go further</p>
+      <h2 class="font-display text-5xl md:text-6xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">Our Apps</h2>
+      <p class="text-lg text-slate-600 dark:text-silver max-w-[600px] mx-auto">Our Android apps bring reminders, offline access, and more features</p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+      
+      <!-- Ekush Ponji -->
+      <a href="https://ponji.ekushlabs.com" class="group relative flex flex-col items-center text-center p-10 rounded-[40px] bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 overflow-hidden reveal">
+        <div class="absolute inset-0 bg-gradient-to-br from-primary-start/5 to-primary-end/5 dark:from-primary-start/10 dark:to-primary-end/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"></div>
+        <div class="w-24 h-24 rounded-[28px] overflow-hidden mb-6 shadow-[0_10px_30px_rgba(29,91,253,0.15)] dark:shadow-[0_10px_30px_rgba(29,91,253,0.3)] group-hover:scale-110 transition-transform duration-500">
+          <img src="/assets/ponji_logo.png" alt="Ekush Ponji Logo" class="w-full h-full object-cover" />
+        </div>
+        <span class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-600 dark:text-white mb-4">Available on Play Store</span>
+        <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-3">Ekush Ponji</h3>
+        <p class="text-slate-600 dark:text-silver mb-8">Bangla Calendar with reminders, widgets & more</p>
+        <div class="flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-white/80 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Get on Google Play
+        </div>
+      </a>
+
+      <!-- Jhuri -->
+      <a href="https://jhuri.ekushlabs.com" class="group relative flex flex-col items-center text-center p-10 rounded-[40px] bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 overflow-hidden reveal reveal-delay-1">
+        <div class="absolute inset-0 bg-gradient-to-br from-secondary-start/5 to-secondary-end/5 dark:from-secondary-start/10 dark:to-secondary-end/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"></div>
+        <div class="w-24 h-24 rounded-[28px] overflow-hidden mb-6 shadow-[0_10px_30px_rgba(244,63,94,0.15)] dark:shadow-[0_10px_30px_rgba(244,63,94,0.3)] group-hover:scale-110 transition-transform duration-500">
+          <img src="/assets/jhuri_logo.png" alt="Jhuri Logo" class="w-full h-full object-cover" />
+        </div>
+        <span class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-600 dark:text-white mb-4">Available on Play Store</span>
+        <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-3">Jhuri</h3>
+        <p class="text-slate-600 dark:text-silver mb-8">Simple, fast file manager for Android</p>
+        <div class="flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-white/80 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          Get on Google Play
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 100ms; }
+    .reveal-delay-2 { transition-delay: 200ms; }
+    .reveal-delay-3 { transition-delay: 300ms; }
+  </style>
+
+  <script>
+    // Scroll reveal observer
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</BaseLayout>

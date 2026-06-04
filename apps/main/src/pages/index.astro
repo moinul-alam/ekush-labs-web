@@ -1,0 +1,253 @@
+---
+import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
+---
+
+<BaseLayout 
+  title="EkushLabs | Simple apps, meaningful experiences" 
+  description="EkushLabs is a modern app studio building simple, reliable, and privacy-focused utility tools for everyday life."
+  appName="EkushLabs" 
+  isMainPortal={true}
+>
+  <!-- Structured Data -->
+  <script type="application/ld+json" is:inline>
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "EkushLabs",
+    "url": "https://ekushlabs.com",
+    "logo": "https://ekushlabs.com/assets/logo.png",
+    "description": "A modern app studio building simple, reliable, and privacy-focused utility tools for everyday life.",
+    "sameAs": ["https://ekushlabs.com"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "ekushlabs@gmail.com"
+    }
+  }
+  </script>
+
+  <!-- Hero -->
+  <section id="hero" class="relative pt-40 pb-20 px-[5vw] min-h-screen flex flex-col justify-center items-center overflow-hidden">
+    <!-- Animated background glowing orbs -->
+    <div class="absolute top-1/3 left-1/4 w-[60vw] h-[60vw] max-w-[600px] max-h-[600px] -translate-x-1/2 -translate-y-1/2 bg-primary-start/20 dark:bg-primary-start/15 rounded-full blur-[80px] -z-10 mix-blend-multiply dark:mix-blend-screen animate-[pulse_8s_ease-in-out_infinite]"></div>
+    <div class="absolute bottom-1/4 right-1/4 w-[50vw] h-[50vw] max-w-[500px] max-h-[500px] bg-secondary-start/20 dark:bg-secondary-start/15 rounded-full blur-[80px] -z-10 mix-blend-multiply dark:mix-blend-screen animate-[pulse_10s_ease-in-out_infinite_1s]"></div>
+
+    <div class="text-center z-10 max-w-4xl mx-auto">
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100/80 dark:bg-white/5 border border-slate-200 dark:border-white/10 backdrop-blur-md mb-8 reveal shadow-sm">
+        <span class="w-2 h-2 rounded-full bg-primary-mid animate-pulse"></span>
+        <span class="text-xs font-bold tracking-widest uppercase text-slate-700 dark:text-silver-lt">Welcome to the future</span>
+      </div>
+      
+      <h1 class="font-display text-[clamp(4rem,10vw,8rem)] leading-[0.85] font-bold tracking-tight mb-8 reveal reveal-delay-1 text-slate-900 dark:text-white drop-shadow-sm">
+        Building <span class="bg-gradient-to-br from-primary-start via-primary-mid to-primary-end bg-clip-text text-transparent drop-shadow-sm">Meaningful</span><br/>Experiences
+      </h1>
+      
+      <p class="text-lg md:text-2xl text-slate-600 dark:text-silver max-w-2xl mx-auto mb-12 font-medium leading-relaxed reveal reveal-delay-2">
+        EkushLabs is a modern app studio crafting beautifully simple, reliable, and privacy-focused utility tools for everyday life.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-6 reveal reveal-delay-3">
+        <a href="#apps" class="group relative px-8 py-4 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-full overflow-hidden shadow-[0_8px_30px_rgba(0,0,0,0.1)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.15)] hover:shadow-xl hover:-translate-y-1 transition-all duration-400">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-start to-primary-end opacity-0 group-hover:opacity-100 transition-opacity duration-400"></div>
+          <span class="relative flex items-center gap-3 group-hover:text-white transition-colors duration-400">
+            Explore Apps
+            <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+          </span>
+        </a>
+        <a href="#about" class="px-8 py-4 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 text-slate-700 dark:text-white font-bold rounded-full backdrop-blur-md hover:bg-slate-200 dark:hover:bg-white/10 transition-colors duration-400">
+          Learn More
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apps Grid Showcase -->
+  <section id="apps" class="py-32 px-[5vw] relative z-10 bg-slate-50/50 dark:bg-black/20 backdrop-blur-sm border-y border-slate-200 dark:border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 reveal">
+        <div class="max-w-2xl">
+          <h2 class="font-display text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">Our Ecosystem</h2>
+          <p class="text-xl text-slate-600 dark:text-silver">Tools designed with extreme care, zero bloat, and blazingly fast performance.</p>
+        </div>
+        <a href="https://apps.ekushlabs.com" class="shrink-0 flex items-center gap-2 text-primary-start font-bold hover:underline underline-offset-4">
+          View all tools <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
+        </a>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Ekush Ponji Card -->
+        <a href="https://ekushponji.ekushlabs.com" class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden reveal">
+          <div class="absolute inset-0 bg-gradient-to-br from-primary-start/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="flex justify-between items-start mb-12 relative z-10">
+            <div class="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-black/50 border border-slate-100 dark:border-white/10 flex items-center justify-center shadow-inner overflow-hidden group-hover:scale-110 transition-transform duration-500">
+              <img src="/assets/ponji_logo.png" alt="Ponji" class="w-10 h-10 object-contain drop-shadow-md" onerror="this.src='https://ekushponji.ekushlabs.com/assets/icon.png'" />
+            </div>
+            <span class="px-3 py-1 bg-primary-mid/10 text-primary-mid text-xs font-bold tracking-widest uppercase rounded-full">Calendar</span>
+          </div>
+          <h3 class="font-display text-4xl text-slate-900 dark:text-white mb-3">Ekush Ponji</h3>
+          <p class="text-slate-600 dark:text-silver mb-8 flex-grow leading-relaxed">A premium Bengali calendar app with Govt. Holidays, events, reminders, and daily content — built for everyday life.</p>
+          <div class="flex items-center gap-2 text-sm font-bold text-slate-500 dark:text-silver group-hover:text-primary-start transition-colors mt-auto border-t border-slate-100 dark:border-white/5 pt-6">
+            <span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#10B981]"></span>
+            Available on Play Store
+          </div>
+        </a>
+
+        <!-- Jhuri Card -->
+        <a href="https://jhuri.ekushlabs.com" class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden reveal reveal-delay-1">
+          <div class="absolute inset-0 bg-gradient-to-br from-secondary-start/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+          <div class="flex justify-between items-start mb-12 relative z-10">
+            <div class="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-black/50 border border-slate-100 dark:border-white/10 flex items-center justify-center shadow-inner overflow-hidden group-hover:scale-110 transition-transform duration-500">
+              <img src="/assets/jhuri_logo.png" alt="Jhuri" class="w-10 h-10 object-contain drop-shadow-md" onerror="this.src='https://jhuri.ekushlabs.com/assets/app_logo.png'" />
+            </div>
+            <span class="px-3 py-1 bg-secondary-start/10 text-secondary-start text-xs font-bold tracking-widest uppercase rounded-full">Grocery</span>
+          </div>
+          <h3 class="font-display text-4xl text-slate-900 dark:text-white mb-3">Jhuri</h3>
+          <p class="text-slate-600 dark:text-silver mb-8 flex-grow leading-relaxed">Smart Grocery List. Organize your shopping with intelligent lists, categories, and smart reminders.</p>
+          <div class="flex items-center gap-2 text-sm font-bold text-slate-500 dark:text-silver group-hover:text-secondary-start transition-colors mt-auto border-t border-slate-100 dark:border-white/5 pt-6">
+            <span class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#10B981]"></span>
+            Available on Play Store
+          </div>
+        </a>
+
+        <!-- Shonamoni Card -->
+        <a href="https://shonamoni.ekushlabs.com" class="group relative flex flex-col p-8 rounded-3xl bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/5 shadow-inner opacity-80 hover:opacity-100 hover:-translate-y-1 transition-all duration-500 overflow-hidden reveal reveal-delay-2 cursor-default">
+          <div class="flex justify-between items-start mb-12 relative z-10 grayscale group-hover:grayscale-0 transition-all duration-500">
+            <div class="w-16 h-16 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm overflow-hidden">
+              <img src="/assets/shonamoni_logo.png" alt="Shonamoni" class="w-10 h-10 object-contain opacity-50" onerror="this.src='https://shonamoni.ekushlabs.com/assets/app_logo.png'" />
+            </div>
+            <span class="px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold tracking-widest uppercase rounded-full border border-amber-500/20">Coming Soon</span>
+          </div>
+          <h3 class="font-display text-4xl text-slate-800 dark:text-white/60 mb-3">Shonamoni</h3>
+          <p class="text-slate-500 dark:text-silver/60 mb-8 flex-grow leading-relaxed">A next-generation childcare tracking app currently in stealth development.</p>
+          <div class="flex items-center gap-2 text-sm font-bold text-slate-400 dark:text-silver/50 mt-auto border-t border-slate-200 dark:border-white/5 pt-6">
+            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+            In Development
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bento Box Features / About -->
+  <section id="about" class="py-32 px-[5vw] relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-20 reveal">
+        <h2 class="font-display text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-4">How We Build</h2>
+        <p class="text-xl text-slate-600 dark:text-silver max-w-3xl mx-auto">Native Android apps crafted in Flutter, promoted through a blazing-fast web ecosystem powered by Astro, Svelte &amp; Tailwind.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <!-- Flutter Apps -->
+        <div class="col-span-1 md:col-span-2 bg-gradient-to-br from-[#027DFD]/10 to-[#0553B1]/5 dark:from-[#027DFD]/20 dark:to-[#0553B1]/10 p-10 rounded-[2rem] border border-[#027DFD]/20 dark:border-[#027DFD]/30 relative overflow-hidden reveal">
+          <div class="absolute -right-20 -bottom-20 w-64 h-64 bg-[#027DFD]/15 rounded-full blur-[60px] pointer-events-none"></div>
+          <div class="flex items-center gap-3 mb-8 relative z-10">
+            <div class="w-14 h-14 rounded-2xl bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm">
+              <svg class="w-7 h-7 text-[#027DFD]" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
+            </div>
+            <span class="px-3 py-1 bg-[#027DFD]/10 text-[#027DFD] text-xs font-bold tracking-widest uppercase rounded-full">Mobile</span>
+          </div>
+          <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">Flutter-Powered Android Apps</h3>
+          <p class="text-lg text-slate-600 dark:text-silver max-w-lg">Our core products are Android apps built entirely in Flutter — delivering native performance, beautiful Material 3 interfaces, and a single codebase that compiles to optimized ARM binaries.</p>
+          <div class="flex flex-wrap gap-3 mt-8">
+            <span class="px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 text-slate-700 dark:text-silver-lt text-xs font-bold border border-slate-200 dark:border-white/10">Dart</span>
+            <span class="px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 text-slate-700 dark:text-silver-lt text-xs font-bold border border-slate-200 dark:border-white/10">Flutter</span>
+            <span class="px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 text-slate-700 dark:text-silver-lt text-xs font-bold border border-slate-200 dark:border-white/10">Material 3</span>
+            <span class="px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 text-slate-700 dark:text-silver-lt text-xs font-bold border border-slate-200 dark:border-white/10">Play Store</span>
+          </div>
+        </div>
+
+        <!-- Stats Column -->
+        <div class="col-span-1 flex flex-col gap-6">
+          <div class="bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-8 rounded-[2rem] flex flex-col justify-center text-center flex-1 reveal reveal-delay-1">
+            <h4 class="font-display text-7xl text-slate-900 dark:text-white mb-1 leading-none">2</h4>
+            <p class="text-sm font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">Apps on Play Store</p>
+          </div>
+          <div class="bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-8 rounded-[2rem] flex flex-col justify-center text-center flex-1 reveal reveal-delay-2">
+            <h4 class="font-display text-7xl text-amber-500 mb-1 leading-none">1</h4>
+            <p class="text-sm font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">In Closed Testing</p>
+          </div>
+        </div>
+
+        <!-- Web Ecosystem -->
+        <div class="col-span-1 bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 p-10 rounded-[2rem] reveal reveal-delay-2">
+          <div class="w-14 h-14 rounded-2xl bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 flex items-center justify-center mb-8 shadow-sm">
+            <svg class="w-7 h-7 text-primary-start" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+          </div>
+          <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Static Web Stack</h3>
+          <p class="text-slate-600 dark:text-silver mb-6">Every landing page and web tool runs on Astro + Svelte + Tailwind — 100% static output, zero server cost, deployed on Cloudflare Pages.</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 text-slate-700 dark:text-silver-lt text-xs font-bold border border-slate-200 dark:border-white/10">Astro</span>
+            <span class="px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 text-slate-700 dark:text-silver-lt text-xs font-bold border border-slate-200 dark:border-white/10">Svelte</span>
+            <span class="px-3 py-1.5 rounded-full bg-white/80 dark:bg-white/10 text-slate-700 dark:text-silver-lt text-xs font-bold border border-slate-200 dark:border-white/10">Tailwind</span>
+          </div>
+        </div>
+
+        <!-- Privacy + Unified Ecosystem -->
+        <div class="col-span-1 md:col-span-2 bg-slate-900 dark:bg-black/40 border border-slate-800 dark:border-white/10 p-10 rounded-[2rem] text-white reveal reveal-delay-3">
+          <div class="flex flex-col md:flex-row gap-12">
+            <div class="flex-1">
+              <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-8">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">Privacy First</h3>
+              <p class="text-slate-300">All data stays on your device. No accounts, no tracking, no analytics. Our apps work fully offline.</p>
+            </div>
+            <div class="flex-1">
+              <div class="w-14 h-14 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center mb-8">
+                <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path></svg>
+              </div>
+              <h3 class="text-2xl font-bold mb-3">One Design Language</h3>
+              <p class="text-slate-300">From the Play Store listing to the web landing page, every touchpoint shares a unified, cohesive design system.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Modern CTA Section -->
+  <section id="contact" class="py-32 px-[5vw] relative z-10 text-center">
+    <div class="max-w-4xl mx-auto bg-gradient-to-r from-primary-start to-primary-end p-[1px] rounded-[3rem] reveal">
+      <div class="bg-slate-50 dark:bg-navy rounded-[calc(3rem-1px)] py-20 px-8">
+        <h2 class="font-display text-5xl md:text-7xl font-bold tracking-tight text-slate-900 dark:text-white mb-6">Let's connect</h2>
+        <p class="text-xl text-slate-600 dark:text-silver mb-10 max-w-xl mx-auto">Have a question, feedback, or just want to say hello? Our inbox is always open.</p>
+        <a href="mailto:ekushlabs@gmail.com" class="inline-flex items-center gap-3 px-10 py-5 bg-slate-900 dark:bg-white text-white dark:text-slate-900 font-bold rounded-full hover:scale-105 transition-transform duration-300 shadow-xl">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+          ekushlabs@gmail.com
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 150ms; }
+    .reveal-delay-2 { transition-delay: 300ms; }
+    .reveal-delay-3 { transition-delay: 450ms; }
+  </style>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</BaseLayout>
