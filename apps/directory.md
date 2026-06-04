@@ -1,0 +1,184 @@
+# File Tree: apps
+
+**Generated:** 6/4/2026, 8:21:34 PM
+**Root Path:** `e:\App\ekush-labs-web\apps`
+
+```
+├── 📁 hub
+│   ├── 📁 ponji
+│   │   ├── 📁 hijri
+│   │   │   ├── ⚙️ 2025.json
+│   │   │   ├── ⚙️ 2026.json
+│   │   │   ├── ⚙️ 2027.json
+│   │   │   └── 📝 readme.md
+│   │   ├── 📁 holidays
+│   │   │   ├── ⚙️ holidays_2022.json
+│   │   │   ├── ⚙️ holidays_2023.json
+│   │   │   ├── ⚙️ holidays_2024.json
+│   │   │   ├── ⚙️ holidays_2025.json
+│   │   │   └── ⚙️ holidays_2026.json
+│   │   ├── 📁 quotes
+│   │   │   └── ⚙️ quotes_en.json
+│   │   ├── 📁 words
+│   │   │   └── ⚙️ words_en.json
+│   │   └── ⚙️ manifest.json
+│   ├── 📁 shonamoni
+│   │   ├── 📁 epi_vaccines
+│   │   │   └── ⚙️ epi_vaccines.json
+│   │   ├── 📁 growth
+│   │   │   └── ⚙️ growth_standards.json
+│   │   ├── 📁 milestones
+│   │   │   └── ⚙️ milestones.json
+│   │   ├── 📁 nutrition
+│   │   │   └── ⚙️ nutrition_data.json
+│   │   ├── 📁 private_vaccines
+│   │   │   └── ⚙️ private_vaccine_library.json
+│   │   ├── 📁 supplements
+│   │   │   └── ⚙️ govt_suppliments.json
+│   │   └── ⚙️ manifest.json
+│   ├── 📄 CNAME
+│   └── 🌐 index.html
+├── 📁 jhuri
+│   ├── 📁 assets
+│   │   ├── 📁 screenshots
+│   │   │   ├── 📁 New folder
+│   │   │   │   ├── 🖼️ 1_home.png
+│   │   │   │   ├── 🖼️ 2_calendar.png
+│   │   │   │   ├── 🖼️ 3_all_holidays.png
+│   │   │   │   ├── 🖼️ 4_daily_words.png
+│   │   │   │   └── 🖼️ 5_calculator.png
+│   │   │   ├── 🖼️ 1_home.png
+│   │   │   ├── 🖼️ 2_home_dark.png
+│   │   │   ├── 🖼️ 3_categories.png
+│   │   │   ├── 🖼️ 4_item_picker.png
+│   │   │   ├── 🖼️ 5_shopping_mode.png
+│   │   │   ├── 🖼️ 6.png
+│   │   │   ├── 🖼️ 6_monthly_summary.png
+│   │   │   └── 🖼️ 8.png
+│   │   ├── 🖼️ app_logo.png
+│   │   └── 🖼️ app_title.png
+│   ├── 📁 css
+│   │   ├── 🎨 legal.css
+│   │   └── 🎨 style.css
+│   ├── 📁 js
+│   │   └── 📄 main.js
+│   ├── 📄 CNAME
+│   ├── 📝 README.md
+│   ├── 🌐 index.html
+│   ├── 🌐 privacy.html
+│   └── 🌐 terms.html
+├── 📁 main
+│   ├── 📁 assets
+│   │   ├── 🖼️ jhuri_logo.png
+│   │   ├── 🖼️ logo.png
+│   │   ├── 🖼️ og-image.png
+│   │   ├── 🖼️ ponji_logo.png
+│   │   └── 🖼️ shonamoni_logo.png
+│   ├── 📁 css
+│   │   └── 🎨 style.css
+│   ├── 📁 js
+│   │   └── 📄 main.js
+│   ├── 📄 CNAME
+│   ├── 📝 README.md
+│   ├── 📄 app-ads.txt
+│   ├── 🌐 index.html
+│   ├── 📄 robots.txt
+│   └── ⚙️ sitemap.xml
+├── 📁 ponji
+│   ├── 📁 assets
+│   │   ├── 📁 data
+│   │   │   ├── 📁 hijri
+│   │   │   │   ├── ⚙️ 2025.json
+│   │   │   │   ├── ⚙️ 2026.json
+│   │   │   │   ├── ⚙️ 2027.json
+│   │   │   │   └── 📝 readme.md
+│   │   │   ├── 📁 holidays
+│   │   │   │   ├── ⚙️ holidays_2022.json
+│   │   │   │   ├── ⚙️ holidays_2023.json
+│   │   │   │   ├── ⚙️ holidays_2024.json
+│   │   │   │   ├── ⚙️ holidays_2025.json
+│   │   │   │   └── ⚙️ holidays_2026.json
+│   │   │   ├── 📁 quotes
+│   │   │   │   └── ⚙️ quotes_en.json
+│   │   │   ├── 📁 words
+│   │   │   │   └── ⚙️ words_en.json
+│   │   │   └── ⚙️ manifest.json
+│   │   ├── 📁 screenshots
+│   │   │   ├── 🖼️ 1_home.png
+│   │   │   ├── 🖼️ 2_calendar.png
+│   │   │   ├── 🖼️ 3_all_holidays.png
+│   │   │   ├── 🖼️ 4_daily_words.png
+│   │   │   └── 🖼️ 5_calculator.png
+│   │   ├── 🖼️ app_logo.png
+│   │   ├── 🖼️ icon.png
+│   │   └── 🖼️ logo.png
+│   ├── 📁 css
+│   │   ├── 🎨 privacy.css
+│   │   └── 🎨 style.css
+│   ├── 📁 js
+│   │   └── 📄 main.js
+│   ├── 📄 CNAME
+│   ├── 📝 README.md
+│   ├── 🌐 index.html
+│   ├── 🌐 privacy.html
+│   └── 🌐 terms.html
+├── 📁 shonamoni
+│   ├── 📁 assets
+│   │   ├── 📁 screenshots
+│   │   │   ├── 🖼️ 1_home.jpeg
+│   │   │   ├── 🖼️ 2_growth.jpeg
+│   │   │   ├── 🖼️ 3_vaccines.jpeg
+│   │   │   ├── 🖼️ 4_milestones.jpeg
+│   │   │   └── 🖼️ 5_nutrition.jpeg
+│   │   ├── 🖼️ app_logo.png
+│   │   ├── 🖼️ app_title.png
+│   │   ├── 🖼️ app_title_en_dark.png
+│   │   └── 🖼️ app_title_en_light.png
+│   ├── 📁 css
+│   │   ├── 🎨 privacy.css
+│   │   └── 🎨 style.css
+│   ├── 📁 js
+│   │   └── 📄 main.js
+│   ├── 📄 CNAME
+│   ├── 📄 app-ads.txt
+│   ├── 🌐 index.html
+│   ├── 🌐 privacy.html
+│   ├── 📄 robots.txt
+│   ├── ⚙️ sitemap.xml
+│   └── 🌐 terms.html
+└── 📁 tools
+    ├── 📁 public
+    │   ├── 📁 age-calculator
+    │   │   ├── 📁 css
+    │   │   │   └── 🎨 style.css
+    │   │   ├── 📄 age-calculator.js
+    │   │   └── 🌐 index.html
+    │   ├── 📁 assets
+    │   │   ├── 🖼️ jhuri_logo.png
+    │   │   └── 🖼️ ponji_logo.png
+    │   ├── 📁 bmi-calculator
+    │   │   ├── 📁 css
+    │   │   │   └── 🎨 style.css
+    │   │   ├── 📄 bmi-calculator.js
+    │   │   └── 🌐 index.html
+    │   ├── 📁 calendar
+    │   │   ├── 📁 assets
+    │   │   │   └── 📁 data
+    │   │   │       ├── 📁 holidays
+    │   │   │       │   ├── ⚙️ holidays_2022.json
+    │   │   │       │   ├── ⚙️ holidays_2023.json
+    │   │   │       │   ├── ⚙️ holidays_2024.json
+    │   │   │       │   ├── ⚙️ holidays_2025.json
+    │   │   │       │   └── ⚙️ holidays_2026.json
+    │   │   │       └── ⚙️ manifest.json
+    │   │   ├── 📁 css
+    │   │   │   └── 🎨 style.css
+    │   │   ├── 📄 calendar.js
+    │   │   └── 🌐 index.html
+    │   ├── 📄 _headers
+    │   └── 🌐 index.html
+    └── 📄 wrangler.jsonc
+```
+
+---
+*Generated by FileTree Pro Extension*

@@ -18,10 +18,8 @@ ekush-labs-web/
 │   ├── jhuri/            # Smart bilingual grocery bazaar planner landing page
 │   ├── ponji/            # Bengali financial ledger & calendar landing page
 │   ├── hub/              # Static API microservice hosting JSON data files
-│   └── shared/           # Central Source of Truth (Shared Resources for apps)
-├── web-apps/             # Self-contained web applications with their own shared resources
-│   ├── calendar/         # Calendar web app
-│   └── shared/           # Shared resources for web-apps
+│   └── tools/            # Hub of web utility applications (tools.ekushlabs.com)
+├── shared/               # Central Source of Truth (Shared UI Resources & Design System)
 └── README.md             # Developer blueprint (You are here)
 ```
 
@@ -60,11 +58,15 @@ Every sub-application serves as a standalone web property hosted on its own dedi
   * `/ponji/quotes/` — Daily motivational and utility quote matrices.
   * `/ponji/words/` — Curated translation files and educational arrays.
 
+### 6. Web Tools Hub (`apps/tools`)
+* **Production URL**: [tools.ekushlabs.com](https://tools.ekushlabs.com)
+* **Description**: A consolidated collection of simple, everyday utility web applications (BMI Calculator, Age Calculator, Web Calendar).
+
 ---
 
-## 🎨 Central Shared Resources for apps (`/apps/shared`)
+## 🎨 Central Shared Resources (`/shared`)
 
-To prevent duplicate code maintenance and keep branding completely uniform, all core designs, templates, and scripts for apps are centralized inside `/apps/shared`.
+To prevent duplicate code maintenance and keep branding completely uniform, all core designs, templates, and scripts for apps are centralized inside the `/shared` folder.
 
 ### ⚡ Assets & Libraries:
 * **`css/design-tokens.css`**: Defines HSL tailored colors, spacing coordinates, responsive sizes, glassmorphism boundaries, and dark/light palettes.
@@ -78,21 +80,13 @@ To prevent duplicate code maintenance and keep branding completely uniform, all 
 
 ---
 
-## 🔄 Synchronization Engine (`apps/shared/sync.js`)
+## 🔄 Dynamic CDN & Local Resource Injection
 
-Because modern browsers prohibit relative XMLHttpRequests that step out of a subdomain document root, the monorepo leverages a lightweight, zero-dependency Node.js file synchronizer:
+The monorepo uses a smart environment-detection script in the `<head>` of all HTML files. This eliminates the need for manual file synchronization or build tools.
 
-```bash
-# Clone and mirror the central /apps/shared resources into all /apps subdirectories
-node apps/shared/sync.js
-```
-
-### Hot Reload / Development Mode:
-For real-time development, the script can run in **watch mode**. It listens for file modifications inside `/apps/shared` and instantly pushes updates across all child apps in under **5ms**:
-
-```bash
-node apps/shared/sync.js --watch
-```
+### How it works:
+* **Local Development**: If you run a local server (e.g. at `localhost:5500`), the script detects the local hostname and automatically serves shared assets via root-relative paths (`/shared/...`). Any change in the root `/shared` folder is instantly reflected across all apps without needing to copy files.
+* **Production Deployment**: On the live domains, the script gracefully resolves to the production CDN (`https://shared.ekushlabs.com/...`).
 
 ---
 
@@ -126,6 +120,7 @@ When deploying to production (e.g. via Cloudflare Pages, Netlify, or Vercel), ma
 | **`jhuri.ekushlabs.com`** | `/apps/jhuri/` | Jhuri Planner |
 | **`ekushponji.ekushlabs.com`** | `/apps/ponji/` | Ponji Ledger |
 | **`hub.ekushlabs.com`** | `/apps/hub/` | JSON Data Services |
+| **`tools.ekushlabs.com`** | `/apps/tools/` | Web Utilities Hub |
 
 ---
 
