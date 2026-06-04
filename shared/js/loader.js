@@ -4,6 +4,8 @@
    active path coloring, copyright year stamp, and scroll wrappers.
 ============================================================ */
 
+const CDN_BASE_URL = 'https://shared.ekushlabs.com';
+
 /**
  * Core: Asynchronously load an HTML fragment and swap the placeholder
  */
@@ -13,8 +15,11 @@ async function loadSharedComponent(placeholderId, componentPath) {
 
   const appName = placeholder.getAttribute('data-app-name');
 
+  // Prefix with CDN_BASE_URL to always fetch from the CDN
+  const fullUrl = componentPath.startsWith('http') ? componentPath : `${CDN_BASE_URL}${componentPath}`;
+
   try {
-    const response = await fetch(componentPath);
+    const response = await fetch(fullUrl);
     if (!response.ok) throw new Error(`HTTP status error: ${response.status}`);
     const html = await response.text();
     
@@ -25,7 +30,6 @@ async function loadSharedComponent(placeholderId, componentPath) {
 
     // Resolve local monorepo routing to prevent local 404s
     resolveLocalMonorepoLinks(element);
-
 
     // Dynamically inject custom configured branding based on appName
     if (appName) {
@@ -150,14 +154,18 @@ function initMobileMenu() {
 
 // Coordinate loading of standard navbar and footer
 Promise.all([
-  loadSharedComponent('navbar-placeholder', '/apps/shared/components/navbar.html'),
-  loadSharedComponent('footer-placeholder', '/apps/shared/components/footer.html')
+  loadSharedComponent('navbar-placeholder', '/components/navbar.html'),
+  loadSharedComponent('footer-placeholder', '/components/footer.html')
 ]).then(() => {
   // Fire initialization routines
   setFooterYear();
   highlightActiveNavLink();
   initNavbarScroll();
   initMobileMenu();
+
+  if (window.EkushTheme && typeof window.EkushTheme.initTheme === 'function') {
+    window.EkushTheme.initTheme();
+  }
 
   // Broadcast event to notify that shared elements are fully parsed
   window.dispatchEvent(new Event('componentsLoaded'));
@@ -196,4 +204,3 @@ function resolveLocalMonorepoLinks(element) {
     }
   }
 }
-
