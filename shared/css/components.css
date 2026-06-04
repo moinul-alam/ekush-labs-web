@@ -369,3 +369,9 @@
     font-size: 1.3rem;
   }
 }
+
+/* CSS Theme Icon Swapping */
+html[data-theme='dark'] .theme-icon--light { display: none !important; }
+html[data-theme='dark'] .theme-icon--dark { display: block !important; }
+html[data-theme='light'] .theme-icon--dark { display: none !important; }
+html[data-theme='light'] .theme-icon--light { display: block !important; }
