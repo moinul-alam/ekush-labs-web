@@ -16,10 +16,15 @@
     })();
   </script>
 
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/design-tokens.css">
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/reset.css">
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/components.css">
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/app-shell.css">
+  <script>
+    (function() {
+      var base = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '/shared' : 'https://shared.ekushlabs.com';
+      document.write(`<link rel="stylesheet" href="${base}/css/design-tokens.css">`);
+      document.write(`<link rel="stylesheet" href="${base}/css/reset.css">`);
+      document.write(`<link rel="stylesheet" href="${base}/css/components.css">`);
+      document.write(`<link rel="stylesheet" href="${base}/css/app-shell.css">`);
+    })();
+  </script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -154,8 +159,13 @@
        data-app-name="একুশ পঞ্জি"></div>
 
   <!-- Load order matters: theme → loader → app -->
-  <script src="https://shared.ekushlabs.com/js/theme.js"></script>
-  <script src="https://shared.ekushlabs.com/js/loader.js"></script>
+  <script>
+    (function() {
+      var base = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '/shared' : 'https://shared.ekushlabs.com';
+      document.write(`<script src="${base}/js/theme.js"><\/script>`);
+      document.write(`<script src="${base}/js/loader.js"><\/script>`);
+    })();
+  </script>
   <script src="bmi-calculator.js"></script>
 </body>
 

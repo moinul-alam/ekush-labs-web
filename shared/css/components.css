@@ -199,23 +199,18 @@
 
 .nav-btn-icon {
   background: transparent;
-  border: 1px solid var(--text-secondary, var(--silver, #888));
+  border: none;
   color: var(--text-secondary, var(--silver, #888));
-  border-radius: 12px;
-  padding: 10px;
+  padding: 4px;
   cursor: pointer;
-  transition: all var(--transition, 0.2s);
+  transition: color var(--transition, 0.2s);
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
 }
 
 .nav-btn-icon:hover {
   color: var(--teal, var(--green, var(--primary-start, #10b981)));
-  border-color: var(--teal, var(--green, var(--primary-start, #10b981)));
-  background: rgba(16, 185, 129, 0.08);
 }
 
 /* Theme icon toggle */

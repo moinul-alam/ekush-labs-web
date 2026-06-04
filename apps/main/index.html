@@ -61,7 +61,12 @@
     rel="stylesheet" />
 
   <!-- ─── SHARED THEME MANAGER ────────────────────────────────── -->
-  <script src="https://shared.ekushlabs.com/js/theme-manager.js"></script>
+  <script>
+    (function() {
+      var base = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '/shared' : 'https://shared.ekushlabs.com';
+      document.write(`<script src="${base}/js/theme-manager.js"><\/script>`);
+    })();
+  </script>
 
   <!-- ─── STYLES ───────────────────────────────────────────────── -->
   <link rel="stylesheet" href="css/style.css" />

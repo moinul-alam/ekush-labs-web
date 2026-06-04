@@ -17,11 +17,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Syne:wght@700;800&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
 
   <!-- ─── SHARED THEME & DESIGN TOKENS ────────────────────────── -->
-  <script src="https://shared.ekushlabs.com/js/theme-manager.js"></script>
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/design-tokens.css" />
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/reset.css" />
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/animations.css" />
-  <link rel="stylesheet" href="https://shared.ekushlabs.com/css/components.css" />
+  <script>
+    (function() {
+      var base = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '/shared' : 'https://shared.ekushlabs.com';
+      document.write(`<script src="${base}/js/theme-manager.js"><\/script>`);
+      document.write(`<link rel="stylesheet" href="${base}/css/design-tokens.css" />`);
+      document.write(`<link rel="stylesheet" href="${base}/css/reset.css" />`);
+      document.write(`<link rel="stylesheet" href="${base}/css/animations.css" />`);
+      document.write(`<link rel="stylesheet" href="${base}/css/components.css" />`);
+    })();
+  </script>
 
   <!-- ─── LOCAL APP STYLES ─────────────────────────────────────── -->
   <link rel="stylesheet" href="css/legal.css" />
@@ -208,7 +213,12 @@
   <div id="footer-placeholder" data-app-name="Jhuri"></div>
 
   <!-- ─── SHARED UTILITY ENGINE ────────────────────────────────── -->
-  <script src="https://shared.ekushlabs.com/js/loader.js" defer></script>
+  <script>
+    (function() {
+      var base = (location.hostname === 'localhost' || location.hostname === '127.0.0.1') ? '/shared' : 'https://shared.ekushlabs.com';
+      document.write(`<script src="${base}/js/loader.js" defer><\/script>`);
+    })();
+  </script>
   <script>
     document.getElementById('effective-date').textContent = 'April 2026';
   </script>
