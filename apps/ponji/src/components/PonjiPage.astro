@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
-import { useTranslations, getLangFromUrl } from '@ekush-labs/ui/src/i18n/utils';
+import { useTranslations, getLangFromUrl, localizeNumber } from '@ekush-labs/ui/src/i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <BaseLayout 
-  title="Ekush Ponji - Your complete Bengali calendar companion" 
-  description="Ekush Ponji is a Bengali calendar app with events, reminders, daily quotes, daily words, date calculator and more — built for everyday life in Bangladesh."
+  title={t('ponji.meta.title')} 
+  description={t('ponji.meta.desc')}
   appName="Ekush Ponji"
   navLinks={[
     { name: t('ponji.stats.features'), href: '#features' },
@@ -55,17 +55,17 @@ const t = useTranslations(lang);
 
       <div class="flex items-center gap-8 md:gap-12 text-center">
         <div>
-          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">2</div>
+          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">{localizeNumber('2', lang)}</div>
           <div class="text-xs font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">{t('ponji.stats.languages')}</div>
         </div>
         <div class="w-px h-12 bg-slate-200 dark:bg-white/10"></div>
         <div>
-          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">9+</div>
+          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">{localizeNumber('9', lang)}+</div>
           <div class="text-xs font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">{t('ponji.stats.features')}</div>
         </div>
         <div class="w-px h-12 bg-slate-200 dark:bg-white/10"></div>
         <div>
-          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">100%</div>
+          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">{localizeNumber('100', lang)}%</div>
           <div class="text-xs font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">{t('ponji.stats.offline')}</div>
         </div>
       </div>
@@ -138,10 +138,10 @@ const t = useTranslations(lang);
       <!-- Horizontal scrolling container -->
       <div class="flex gap-8 overflow-x-auto pb-16 snap-x snap-mandatory hide-scrollbar">
         {[
-          { img: '2_calendar.png', title: 'Full Calendar View', desc: 'Holidays highlighted, dual dates shown' },
-          { img: '3_all_holidays.png', title: 'Full Calendar View', desc: 'Holidays highlighted, dual dates shown' },
-          { img: '4_daily_words.png', title: 'Daily Inspiration', desc: 'Discover a new word every day' },
-          { img: '5_calculator.png', title: 'Date Calculator', desc: 'Calculate age or days between any two dates' }
+          { img: '2_calendar.png', title: t('ponji.screenshots.cal_title'), desc: t('ponji.screenshots.cal_desc') },
+          { img: '3_all_holidays.png', title: t('ponji.screenshots.holiday_title'), desc: t('ponji.screenshots.holiday_desc') },
+          { img: '4_daily_words.png', title: t('ponji.screenshots.word_title'), desc: t('ponji.screenshots.word_desc') },
+          { img: '5_calculator.png', title: t('ponji.screenshots.calc_title'), desc: t('ponji.screenshots.calc_desc') }
         ].map((s, i) => (
           <div class={`min-w-[280px] md:min-w-[320px] flex-col items-center text-center snap-center reveal reveal-delay-${i}`}>
             <!-- Perfect Replica Phone Mockup -->

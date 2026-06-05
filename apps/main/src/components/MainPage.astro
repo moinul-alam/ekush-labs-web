@@ -7,7 +7,7 @@ const t = useTranslations(lang);
 ---
 
 <BaseLayout 
-  title="EkushLabs | Simple apps, meaningful experiences" 
+  title={t('main.meta.title')} 
   description={t('main.hero.desc')}
   appName={t('app.name')}
   isMainPortal={true}
@@ -86,7 +86,7 @@ const t = useTranslations(lang);
             <div class="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-black/50 border border-slate-100 dark:border-white/10 flex items-center justify-center shadow-inner overflow-hidden group-hover:scale-110 transition-transform duration-500">
               <img src="/assets/ponji_logo.png" alt="Ponji" class="w-10 h-10 object-contain drop-shadow-md" onerror="this.src='https://ekushponji.ekushlabs.com/assets/icon.png'" />
             </div>
-            <span class="px-3 py-1 bg-primary-mid/10 text-primary-mid text-xs font-bold tracking-widest uppercase rounded-full">Calendar</span>
+            <span class="px-3 py-1 bg-primary-mid/10 text-primary-mid text-xs font-bold tracking-widest uppercase rounded-full">{t('main.badge.calendar')}</span>
           </div>
           <h3 class="font-display text-4xl text-slate-900 dark:text-white mb-3">{t('app.ekushponji')}</h3>
           <p class="text-slate-600 dark:text-silver mb-8 flex-grow leading-relaxed">{t('main.ponji.desc')}</p>
@@ -103,7 +103,7 @@ const t = useTranslations(lang);
             <div class="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-black/50 border border-slate-100 dark:border-white/10 flex items-center justify-center shadow-inner overflow-hidden group-hover:scale-110 transition-transform duration-500">
               <img src="/assets/jhuri_logo.png" alt="Jhuri" class="w-10 h-10 object-contain drop-shadow-md" onerror="this.src='https://jhuri.ekushlabs.com/assets/app_logo.png'" />
             </div>
-            <span class="px-3 py-1 bg-secondary-start/10 text-secondary-start text-xs font-bold tracking-widest uppercase rounded-full">Grocery</span>
+            <span class="px-3 py-1 bg-secondary-start/10 text-secondary-start text-xs font-bold tracking-widest uppercase rounded-full">{t('main.badge.grocery')}</span>
           </div>
           <h3 class="font-display text-4xl text-slate-900 dark:text-white mb-3">{t('app.jhuri')}</h3>
           <p class="text-slate-600 dark:text-silver mb-8 flex-grow leading-relaxed">{t('main.jhuri.desc')}</p>
@@ -149,7 +149,7 @@ const t = useTranslations(lang);
             <div class="w-14 h-14 rounded-2xl bg-white dark:bg-black/50 border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm">
               <svg class="w-7 h-7 text-[#027DFD]" viewBox="0 0 24 24" fill="currentColor"><path d="M14.314 0L2.3 12 6 15.7 21.684.013h-7.357zm.014 11.072L7.857 17.53l6.47 6.47H21.7l-6.46-6.468 6.46-6.46h-7.37z"/></svg>
             </div>
-            <span class="px-3 py-1 bg-[#027DFD]/10 text-[#027DFD] text-xs font-bold tracking-widest uppercase rounded-full">Mobile</span>
+            <span class="px-3 py-1 bg-[#027DFD]/10 text-[#027DFD] text-xs font-bold tracking-widest uppercase rounded-full">{t('main.badge.mobile')}</span>
           </div>
           <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-4">{t('main.how.mobile.title')}</h3>
           <p class="text-lg text-slate-600 dark:text-silver max-w-lg">{t('main.how.mobile.desc')}</p>

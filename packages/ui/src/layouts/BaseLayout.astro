@@ -3,7 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import '../../global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
-import { getLangFromUrl } from '../i18n/utils';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
 
 export interface Props {
   title: string;
@@ -16,7 +16,7 @@ export interface Props {
 
 const { 
   title, 
-  description = 'EkushLabs is a modern app studio building simple, reliable, and privacy-focused utility tools for everyday life.',
+  description,
   appName = 'EkushLabs',
   isMainPortal = false,
   navLinks = [],
@@ -24,6 +24,8 @@ const {
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+const metaDesc = description || t('main.meta.desc');
 ---
 
 <!DOCTYPE html>
@@ -32,7 +34,7 @@ const lang = getLangFromUrl(Astro.url);
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{title}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDesc} />
     <ViewTransitions />
     
     <!-- Theme Manager (Prevents FOUC) -->

@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
-import { useTranslations, getLangFromUrl } from '@ekush-labs/ui/src/i18n/utils';
+import { useTranslations, getLangFromUrl, localizeNumber } from '@ekush-labs/ui/src/i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <BaseLayout 
-  title="Jhuri - Smart Grocery List" 
-  description="Jhuri is a smart grocery list app for Bangladesh. Browse 200+ items by category, plan your bazar, and shop with confidence — in Bangla."
+  title={t('jhuri.meta.title')} 
+  description={t('jhuri.meta.desc')}
   appName="Jhuri"
   navLinks={[
     { name: t('jhuri.categories.title_prefix'), href: '#categories' },
@@ -54,17 +54,17 @@ const t = useTranslations(lang);
 
       <div class="flex items-center gap-8 md:gap-12 text-center">
         <div>
-          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">200+</div>
+          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">{localizeNumber('200', lang)}+</div>
           <div class="text-xs font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">{t('jhuri.stats.items')}</div>
         </div>
         <div class="w-px h-12 bg-slate-200 dark:bg-white/10"></div>
         <div>
-          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">8</div>
+          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">{localizeNumber('8', lang)}</div>
           <div class="text-xs font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">{t('jhuri.stats.categories')}</div>
         </div>
         <div class="w-px h-12 bg-slate-200 dark:bg-white/10"></div>
         <div>
-          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">20s</div>
+          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">{localizeNumber('20', lang)}{lang === 'bn' ? 'সে.' : 's'}</div>
           <div class="text-xs font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">{t('jhuri.stats.time')}</div>
         </div>
       </div>
@@ -82,16 +82,16 @@ const t = useTranslations(lang);
       <div class="absolute -left-8 top-1/4 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-[float_6s_ease-in-out_infinite]">
         <span class="text-2xl">🥬</span>
         <div>
-          <div class="font-bold text-slate-900 dark:text-white text-sm">শাকসবজি</div>
-          <div class="text-xs text-slate-500">35+ items</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm">{t('jhuri.categories.vegetables')}</div>
+          <div class="text-xs text-slate-500">{t('jhuri.categories.items_count').replace('{count}', localizeNumber('35', lang) + '+')}</div>
         </div>
       </div>
       
       <div class="absolute -right-8 bottom-1/4 bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-xl flex items-center gap-3 animate-[float_7s_ease-in-out_infinite_reverse]">
         <span class="text-2xl">🐟</span>
         <div>
-          <div class="font-bold text-slate-900 dark:text-white text-sm">মাছ ও মাংস</div>
-          <div class="text-xs text-slate-500">25+ items</div>
+          <div class="font-bold text-slate-900 dark:text-white text-sm">{t('jhuri.categories.fish_meat')}</div>
+          <div class="text-xs text-slate-500">{t('jhuri.categories.items_count').replace('{count}', localizeNumber('25', lang) + '+')}</div>
         </div>
       </div>
     </div>
@@ -126,20 +126,20 @@ const t = useTranslations(lang);
 
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
         {[
-          { emoji: '🥬', bn: 'শাকসবজি', en: 'Vegetables', count: '35+ items' },
-          { emoji: '🐟', bn: 'মাছ ও মাংস', en: 'Fish & Meat', count: '25+ items' },
-          { emoji: '🌾', bn: 'চাল, ডাল ও মশলা', en: 'Rice, Lentils & Spices', count: '40+ items' },
-          { emoji: '🥛', bn: 'তেল ও দুগ্ধজাত', en: 'Oil & Dairy', count: '20+ items' },
-          { emoji: '🍎', bn: 'ফলমূল', en: 'Fruits', count: '25+ items' },
-          { emoji: '🍚', bn: 'খাদ্যসামগ্রী', en: 'Food Essentials', count: '20+ items' },
-          { emoji: '🧼', bn: 'পরিচ্ছন্নতা সামগ্রী', en: 'Cleaning & Personal Care', count: '15+ items' },
-          { emoji: '🧹', bn: 'গৃহস্থালি সামগ্রী', en: 'Household Items', count: '30+ items' }
+          { emoji: '🥬', bn: 'শাকসবজি', en: 'Vegetables', count: 35 },
+          { emoji: '🐟', bn: 'মাছ ও মাংস', en: 'Fish & Meat', count: 25 },
+          { emoji: '🌾', bn: 'চাল, ডাল ও মশলা', en: 'Rice, Lentils & Spices', count: 40 },
+          { emoji: '🥛', bn: 'তেল ও দুগ্ধজাত', en: 'Oil & Dairy', count: 20 },
+          { emoji: '🍎', bn: 'ফলমূল', en: 'Fruits', count: 25 },
+          { emoji: '🍚', bn: 'খাদ্যসামগ্রী', en: 'Food Essentials', count: 20 },
+          { emoji: '🧼', bn: 'পরিচ্ছন্নতা সামগ্রী', en: 'Cleaning & Personal Care', count: 15 },
+          { emoji: '🧹', bn: 'গৃহস্থালি সামগ্রী', en: 'Household Items', count: 30 }
         ].map((c, i) => (
           <div class={`p-8 rounded-[2rem] bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] text-center hover:shadow-lg hover:-translate-y-2 transition-all duration-300 reveal reveal-delay-${i % 4}`}>
             <div class="text-4xl mb-4">{c.emoji}</div>
             <h3 class="text-lg font-bold text-slate-900 dark:text-white mb-1">{lang === 'en' ? c.en : c.bn}</h3>
             <p class="text-xs text-slate-500 dark:text-silver mb-3">{lang === 'en' ? c.bn : c.en}</p>
-            <div class="inline-block px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-bold rounded-full">{c.count}</div>
+            <div class="inline-block px-3 py-1 bg-indigo-50 dark:bg-indigo-900/30 text-indigo-600 dark:text-indigo-400 text-xs font-bold rounded-full">{t('jhuri.categories.items_count').replace('{count}', localizeNumber(c.count, lang) + '+')}</div>
           </div>
         ))}
       </div>
@@ -232,11 +232,11 @@ const t = useTranslations(lang);
 
       <div class="flex gap-8 overflow-x-auto pb-16 snap-x snap-mandatory hide-scrollbar">
         {[
-          { img: '2_home_dark.png', title: 'Home', desc: 'Your lists at a glance' },
-          { img: '3_categories.png', title: 'Categories', desc: 'Visual grid, tap to browse' },
-          { img: '4_item_picker.png', title: 'Item Picker', desc: 'Search and tap to add' },
-          { img: '5_shopping_mode.png', title: 'Shopping Mode', desc: 'Checklist, tap to mark bought' },
-          { img: '6_monthly_summary.png', title: 'Monthly Summary', desc: 'Spending insights' }
+          { img: '2_home_dark.png', title: t('jhuri.screenshots.home_title'), desc: t('jhuri.screenshots.home_desc') },
+          { img: '3_categories.png', title: t('jhuri.screenshots.categories_title'), desc: t('jhuri.screenshots.categories_desc') },
+          { img: '4_item_picker.png', title: t('jhuri.screenshots.picker_title'), desc: t('jhuri.screenshots.picker_desc') },
+          { img: '5_shopping_mode.png', title: t('jhuri.screenshots.shopping_title'), desc: t('jhuri.screenshots.shopping_desc') },
+          { img: '6_monthly_summary.png', title: t('jhuri.screenshots.summary_title'), desc: t('jhuri.screenshots.summary_desc') }
         ].map((s, i) => (
           <div class={`min-w-[280px] md:min-w-[320px] flex-col items-center text-center snap-center reveal reveal-delay-${i}`}>
             <!-- Perfect Replica Phone Mockup -->

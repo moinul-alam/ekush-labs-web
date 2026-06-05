@@ -24,6 +24,10 @@
       modalDesc: 'সব ইনপুট রিসেট করতে চান?',
       modalYes: 'হ্যাঁ',
       modalNo: 'না',
+      emptyStateDesc: 'আপনার সঠিক বয়স দেখতে উভয় তারিখ লিখুন।',
+      placeholderDay: 'দিন',
+      placeholderMonth: 'মাস',
+      placeholderYear: 'বছর',
     },
     en: {
       cardTitle: 'Calculate Your Age',
@@ -47,6 +51,10 @@
       modalDesc: 'Do you want to reset all inputs?',
       modalYes: 'Yes',
       modalNo: 'No',
+      emptyStateDesc: 'Enter both dates to see your exact age.',
+      placeholderDay: 'DD',
+      placeholderMonth: 'MM',
+      placeholderYear: 'YYYY',
     },
   };
 
@@ -148,9 +156,9 @@
   function getCopyText(copyType) {
     if (!results) return '';
     switch (copyType) {
-      case 'years': return results.years + ' ' + t.labelYears;
-      case 'months': return results.months + ' ' + t.labelMonths;
-      case 'days': return results.days + ' ' + t.labelDays;
+      case 'years': return fmt(results.years) + ' ' + t.labelYears;
+      case 'months': return fmt(results.months) + ' ' + t.labelMonths;
+      case 'days': return fmt(results.days) + ' ' + t.labelDays;
       case 'total-days': return formatNumberWithCommas(results.totalDays) + ' ' + t.totalDaysLabel;
       case 'total-months': return formatNumberWithCommas(results.totalMonths) + ' ' + t.totalMonthsLabel;
       case 'total-weeks': return formatNumberWithCommas(results.totalWeeks) + ' ' + t.totalWeeksLabel;
@@ -180,18 +188,18 @@
 
     <!-- Start Date -->
     <div class="mb-8">
-      <label class="block font-semibold text-slate-800 dark:text-slate-200 mb-3">{t.startLabel}</label>
+      <span class="block font-semibold text-slate-800 dark:text-slate-200 mb-3">{t.startLabel}</span>
       <div class="flex gap-4">
         <div class="flex-1">
-          <input type="number" bind:value={startDay} placeholder="DD" class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="31">
+          <input type="number" bind:value={startDay} placeholder={t.placeholderDay} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="31">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.dayText}</div>
         </div>
         <div class="flex-1">
-          <input type="number" bind:value={startMonth} placeholder="MM" class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="12">
+          <input type="number" bind:value={startMonth} placeholder={t.placeholderMonth} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="12">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.monthText}</div>
         </div>
         <div class="flex-[1.5]">
-          <input type="number" bind:value={startYear} placeholder="YYYY" class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white">
+          <input type="number" bind:value={startYear} placeholder={t.placeholderYear} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.yearText}</div>
         </div>
       </div>
@@ -200,20 +208,20 @@
     <!-- End Date -->
     <div class="mb-8">
       <div class="flex justify-between items-center mb-3">
-        <label class="font-semibold text-slate-800 dark:text-slate-200">{t.endLabel}</label>
+        <span class="font-semibold text-slate-800 dark:text-slate-200">{t.endLabel}</span>
         <button class="px-4 py-1.5 bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 rounded-lg text-sm font-bold hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors" on:click={setTodayAsEnd}>{t.todayText}</button>
       </div>
       <div class="flex gap-4">
         <div class="flex-1">
-          <input type="number" bind:value={endDay} placeholder="DD" class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="31">
+          <input type="number" bind:value={endDay} placeholder={t.placeholderDay} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="31">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.dayText}</div>
         </div>
         <div class="flex-1">
-          <input type="number" bind:value={endMonth} placeholder="MM" class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="12">
+          <input type="number" bind:value={endMonth} placeholder={t.placeholderMonth} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="12">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.monthText}</div>
         </div>
         <div class="flex-[1.5]">
-          <input type="number" bind:value={endYear} placeholder="YYYY" class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white">
+          <input type="number" bind:value={endYear} placeholder={t.placeholderYear} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.yearText}</div>
         </div>
       </div>
@@ -245,29 +253,29 @@
       </div>
 
       <div class="grid grid-cols-2 gap-4">
-        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" on:click={() => copyToClipboard(getCopyText('total-months'))}>
+        <button type="button" class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-left" on:click={() => copyToClipboard(getCopyText('total-months'))}>
           <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">{t.totalMonthsLabel}</span>
           <span class="text-xl font-bold text-slate-800 dark:text-slate-200">{formatNumberWithCommas(results.totalMonths)}</span>
-        </div>
-        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" on:click={() => copyToClipboard(getCopyText('total-weeks'))}>
+        </button>
+        <button type="button" class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-left" on:click={() => copyToClipboard(getCopyText('total-weeks'))}>
           <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">{t.totalWeeksLabel}</span>
           <span class="text-xl font-bold text-slate-800 dark:text-slate-200">{formatNumberWithCommas(results.totalWeeks)}</span>
-        </div>
-        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" on:click={() => copyToClipboard(getCopyText('total-days'))}>
+        </button>
+        <button type="button" class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-left" on:click={() => copyToClipboard(getCopyText('total-days'))}>
           <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">{t.totalDaysLabel}</span>
           <span class="text-xl font-bold text-slate-800 dark:text-slate-200">{formatNumberWithCommas(results.totalDays)}</span>
-        </div>
-        <div class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors" on:click={() => copyToClipboard(getCopyText('total-hours'))}>
+        </button>
+        <button type="button" class="bg-slate-50 dark:bg-slate-700/50 p-4 rounded-2xl flex flex-col cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700 transition-colors text-left" on:click={() => copyToClipboard(getCopyText('total-hours'))}>
           <span class="text-slate-500 dark:text-slate-400 text-sm font-semibold mb-1">{t.totalHoursLabel}</span>
           <span class="text-xl font-bold text-slate-800 dark:text-slate-200">{formatNumberWithCommas(results.totalHours)}</span>
-        </div>
+        </button>
       </div>
     {:else}
       <div class="h-full flex flex-col items-center justify-center text-slate-400 dark:text-slate-500">
         <svg class="w-16 h-16 mb-4 opacity-50" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
         </svg>
-        <p class="text-lg font-semibold text-center max-w-[200px]">Enter both dates to see your exact age.</p>
+        <p class="text-lg font-semibold text-center max-w-[200px]">{t.emptyStateDesc}</p>
       </div>
     {/if}
   </div>

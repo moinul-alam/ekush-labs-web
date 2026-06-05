@@ -1,14 +1,14 @@
 ---
 import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
-import { useTranslations, getLangFromUrl } from '@ekush-labs/ui/src/i18n/utils';
+import { useTranslations, getLangFromUrl, localizeNumber } from '@ekush-labs/ui/src/i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
 <BaseLayout 
-  title="Shonamoni - Baby Growth Tracker for Bangladeshi Parents" 
-  description="Shonamoni helps Bangladeshi parents track their baby's growth, vaccinations, milestones and nutrition — all guided by WHO and DGHS standards."
+  title={t('shonamoni.meta.title')} 
+  description={t('shonamoni.meta.desc')}
   appName="Shonamoni"
   navLinks={[
     { name: t('shonamoni.features.title_prefix'), href: '#features' },
@@ -54,7 +54,7 @@ const t = useTranslations(lang);
 
       <div class="flex items-center gap-8 md:gap-12 text-center">
         <div>
-          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">2</div>
+          <div class="text-4xl font-display font-bold text-slate-900 dark:text-white mb-1">{localizeNumber('2', lang)}</div>
           <div class="text-xs font-bold tracking-widest uppercase text-slate-500 dark:text-silver-lt">{t('shonamoni.stats.languages')}</div>
         </div>
         <div class="w-px h-12 bg-slate-200 dark:bg-white/10"></div>
@@ -128,10 +128,10 @@ const t = useTranslations(lang);
 
       <div class="flex gap-8 overflow-x-auto pb-16 snap-x snap-mandatory hide-scrollbar">
         {[
-          { img: '2_growth.jpeg', title: 'Growth Charts', desc: "WHO percentile curves with your baby's measurements" },
-          { img: '3_vaccines.jpeg', title: 'Vaccine Schedule', desc: 'EPI schedule with dose tracking and reminders' },
-          { img: '4_milestones.jpeg', title: 'Milestones', desc: "Age-band milestones to track your baby's development" },
-          { img: '5_nutrition.jpeg', title: 'Nutrition Guide', desc: 'Age-appropriate feeding guidance from DGHS standards' }
+          { img: '2_growth.jpeg', title: t('shonamoni.screenshots.charts_title'), desc: t('shonamoni.screenshots.charts_desc') },
+          { img: '3_vaccines.jpeg', title: t('shonamoni.screenshots.vaccine_title'), desc: t('shonamoni.screenshots.vaccine_desc') },
+          { img: '4_milestones.jpeg', title: t('shonamoni.screenshots.milestones_title'), desc: t('shonamoni.screenshots.milestones_desc') },
+          { img: '5_nutrition.jpeg', title: t('shonamoni.screenshots.nutrition_title'), desc: t('shonamoni.screenshots.nutrition_desc') }
         ].map((s, i) => (
           <div class={`min-w-[280px] md:min-w-[320px] flex-col items-center text-center snap-center reveal reveal-delay-${i}`}>
             <!-- Perfect Replica Phone Mockup -->

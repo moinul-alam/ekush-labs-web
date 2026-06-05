@@ -13,6 +13,9 @@
       gregorianSuffix: 'খ্রীস্টাব্দ',
       banglaSuffix: 'বঙ্গাব্দ',
       hijriSuffix: 'হিজরি',
+      banglaLabel: 'বাংলা',
+      hijriLabel: 'হিজরি',
+      loading: 'লোড হচ্ছে...',
     },
     en: {
       weekdays: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
@@ -25,6 +28,9 @@
       gregorianSuffix: '',
       banglaSuffix: 'BS',
       hijriSuffix: 'AH',
+      banglaLabel: 'Bangla',
+      hijriLabel: 'Hijri',
+      loading: 'Loading...',
     },
   };
 
@@ -229,11 +235,11 @@
     
     <div class="flex flex-col gap-4">
       <div class="bg-amber-50 dark:bg-amber-900/20 p-4 rounded-xl border border-amber-100 dark:border-amber-800/50">
-        <div class="text-sm font-semibold text-amber-600 dark:text-amber-500 mb-1">বাংলা</div>
+        <div class="text-sm font-semibold text-amber-600 dark:text-amber-500 mb-1">{t.banglaLabel}</div>
         <div class="font-bold text-slate-800 dark:text-slate-200">{fmt(todayBangla.day)} {t.bMonths[todayBangla.monthIndex]} {fmt(todayBangla.year)} {t.banglaSuffix}</div>
       </div>
       <div class="bg-emerald-50 dark:bg-emerald-900/20 p-4 rounded-xl border border-emerald-100 dark:border-emerald-800/50">
-        <div class="text-sm font-semibold text-emerald-600 dark:text-emerald-500 mb-1">هجري</div>
+        <div class="text-sm font-semibold text-emerald-600 dark:text-emerald-500 mb-1">{t.hijriLabel}</div>
         <div class="font-bold text-slate-800 dark:text-slate-200">{fmt(todayHijri.day)} {t.hMonths[todayHijri.monthIndex]} {fmt(todayHijri.year)} {t.hijriSuffix}</div>
       </div>
     </div>
@@ -297,7 +303,7 @@
       </h3>
       
       {#if !manifestCache}
-        <div class="text-slate-500 dark:text-slate-400 py-4 text-center">Loading...</div>
+        <div class="text-slate-500 dark:text-slate-400 py-4 text-center">{t.loading}</div>
       {:else if currentMonthHolidays.length === 0}
         <div class="text-slate-500 dark:text-slate-400 py-4 text-center">{t.noHolidays}</div>
       {:else}

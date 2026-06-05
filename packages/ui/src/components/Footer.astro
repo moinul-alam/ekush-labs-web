@@ -1,5 +1,5 @@
 ---
-import { getLangFromUrl, useTranslations } from '../i18n/utils';
+import { getLangFromUrl, useTranslations, localizeNumber } from '../i18n/utils';
 
 export interface Props {
   appName?: string;
@@ -33,6 +33,6 @@ const getTranslatedAppName = () => {
   </div>
 
   <div class="footer-copy-container">
-    <span class="text-[0.78rem] text-slate-400 dark:text-textMuted">&copy; {currentYear} {t('app.ekush')}{t('app.labs')}. {t('footer.rights')}</span>
+    <span class="text-[0.78rem] text-slate-400 dark:text-textMuted">&copy; {localizeNumber(currentYear, lang)} {t('app.ekush')}{t('app.labs')}. {t('footer.rights')}</span>
   </div>
 </footer>
