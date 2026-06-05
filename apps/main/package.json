@@ -11,9 +11,13 @@
   "dependencies": {
     "@astrojs/svelte": "^5.0.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@ekush-labs/ui": "*",
     "astro": "^4.5.0",
     "svelte": "^4.2.12",
-    "tailwindcss": "^3.4.1",
-    "@ekush-labs/ui": "*"
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.9",
+    "typescript": "^5.9.3"
   }
 }

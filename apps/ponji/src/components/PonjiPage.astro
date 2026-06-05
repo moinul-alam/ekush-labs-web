@@ -10,6 +10,8 @@ const t = useTranslations(lang);
   title={t('ponji.meta.title')} 
   description={t('ponji.meta.desc')}
   appName="Ekush Ponji"
+  faviconUrl="/assets/app_logo.png"
+  logoUrl="/assets/app_logo.png"
   navLinks={[
     { name: t('ponji.stats.features'), href: '#features' },
     { name: t('ponji.screenshots.title_prefix'), href: '#screenshots' },
@@ -29,8 +31,7 @@ const t = useTranslations(lang);
       
       <h1 class="font-display text-6xl md:text-7xl lg:text-8xl font-bold leading-[0.9] tracking-tight text-slate-900 dark:text-white mb-8">
         {t('ponji.hero.title1')}<br/>
-        <span class="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent drop-shadow-sm">{t('ponji.hero.title_highlight')}</span><br/>
-        {t('ponji.hero.title2')}
+        <span class="bg-gradient-to-r from-emerald-500 to-teal-400 bg-clip-text text-transparent drop-shadow-sm">{t('ponji.hero.title_highlight')}</span>
       </h1>
       
       <p class="text-xl text-slate-600 dark:text-silver max-w-[500px] mb-12 leading-relaxed">{t('ponji.hero.desc')}</p>

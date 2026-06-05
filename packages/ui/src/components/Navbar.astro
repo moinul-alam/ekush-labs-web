@@ -20,11 +20,19 @@ const t = useTranslations(lang);
   <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary-start via-primary-mid via-primary-end to-transparent opacity-0 transition-opacity duration-400" id="navbar-border"></div>
 
   <div class="nav-brand-container">
-    <a href={appName === 'EkushTools' ? (lang === 'bn' ? "/" : "/en") : (isMainPortal ? (lang === 'bn' ? "/" : "/en") : "https://ekushlabs.com")} class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white no-underline flex items-center gap-2 relative group">
-      {!isMainPortal && appName !== 'EkushTools' && <img src={logoUrl} alt={`${appName} Logo`} class="w-8 h-8 rounded-lg shadow-sm" onerror="this.style.display='none'" />}
+    <a href={lang === 'bn' ? "/" : "/en"} class="font-display text-4xl font-medium tracking-tight text-slate-900 dark:text-white no-underline flex items-center gap-2 relative group">
+      <img src={logoUrl} alt={`${appName} Logo`} class="w-8 h-8 rounded-lg shadow-sm" onerror="this.style.display='none'" />
       <span class="group-hover:text-primary-start transition-colors duration-300">
         {appName === 'EkushTools' ? (
           <><span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">{t('tools.hero.ekush')}</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent">{t('tools.hero.tools')}</span></>
+        ) : isMainPortal ? (
+          <><span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">{t('app.ekush')}</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent">{t('app.labs')}</span></>
+        ) : appName === 'Ekush Ponji' || appName === 'Ponji' ? (
+          t('app.ekushponji')
+        ) : appName === 'Jhuri' ? (
+          t('app.jhuri')
+        ) : appName === 'Shonamoni' ? (
+          t('app.shonamoni')
         ) : (
           appName
         )}
@@ -43,7 +51,7 @@ const t = useTranslations(lang);
   </button>
 
   <nav class="nav-menu">
-    <div class="nav-links flex items-center gap-8">
+    <div class="nav-links flex items-center gap-12">
       {isMainPortal ? (
         appName === 'EkushTools' ? (
           <>

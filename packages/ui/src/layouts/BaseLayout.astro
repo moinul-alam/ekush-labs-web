@@ -12,6 +12,8 @@ export interface Props {
   isMainPortal?: boolean;
   navLinks?: { name: string, href: string }[];
   pageTitle?: string;
+  faviconUrl?: string;
+  logoUrl?: string;
 }
 
 const { 
@@ -20,7 +22,9 @@ const {
   appName = 'EkushLabs',
   isMainPortal = false,
   navLinks = [],
-  pageTitle
+  pageTitle,
+  faviconUrl = '/assets/ekushlabs_logo.png',
+  logoUrl = '/assets/ekushlabs_logo.png'
 } = Astro.props;
 
 const lang = getLangFromUrl(Astro.url);
@@ -39,26 +43,29 @@ const metaDesc = description || t('main.meta.desc');
     
     <!-- Theme Manager (Prevents FOUC) -->
     <script is:inline>
-      (function () {
-        var t = localStorage.getItem('ekush_theme') || 'light';
+      const applyTheme = () => {
+        const t = localStorage.getItem('ekush_theme') || 'dark';
         document.documentElement.setAttribute('data-theme', t);
         if (t === 'dark') {
           document.documentElement.classList.add('dark');
         } else {
           document.documentElement.classList.remove('dark');
         }
-      })();
+      };
+      
+      applyTheme();
+      document.addEventListener('astro:after-swap', applyTheme);
     </script>
     
-    <link rel="icon" type="image/png" href="/assets/icon.png" />
+    <link rel="icon" type="image/png" href={faviconUrl} />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600;700&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600;700&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700&display=block" rel="stylesheet">
   </head>
   <body class="bg-slate-50 text-slate-900 dark:bg-navy dark:text-white font-body overflow-x-hidden min-h-screen flex flex-col transition-colors duration-300">
-    <Navbar appName={appName} isMainPortal={isMainPortal} navLinks={navLinks} pageTitle={pageTitle} />
+    <Navbar appName={appName} logoUrl={logoUrl} isMainPortal={isMainPortal} navLinks={navLinks} pageTitle={pageTitle} />
     
     <main class="flex-grow">
       <slot />
