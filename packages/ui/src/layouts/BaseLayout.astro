@@ -1,0 +1,67 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+import '../../global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import { getLangFromUrl } from '../i18n/utils';
+
+export interface Props {
+  title: string;
+  description?: string;
+  appName?: string;
+  isMainPortal?: boolean;
+  navLinks?: { name: string, href: string }[];
+  pageTitle?: string;
+}
+
+const { 
+  title, 
+  description = 'EkushLabs is a modern app studio building simple, reliable, and privacy-focused utility tools for everyday life.',
+  appName = 'EkushLabs',
+  isMainPortal = false,
+  navLinks = [],
+  pageTitle
+} = Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <ViewTransitions />
+    
+    <!-- Theme Manager (Prevents FOUC) -->
+    <script is:inline>
+      (function () {
+        var t = localStorage.getItem('ekush_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        if (t === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+      })();
+    </script>
+    
+    <link rel="icon" type="image/png" href="/assets/icon.png" />
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Barlow:wght@300;400;500;600;700&family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-slate-50 text-slate-900 dark:bg-navy dark:text-white font-body overflow-x-hidden min-h-screen flex flex-col transition-colors duration-300">
+    <Navbar appName={appName} isMainPortal={isMainPortal} navLinks={navLinks} pageTitle={pageTitle} />
+    
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <Footer appName={appName} />
+  </body>
+</html>

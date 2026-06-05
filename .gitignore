@@ -1,29 +1,44 @@
-# Dependencies
+# ── Dependencies ─────────────────────────────────
 node_modules/
 packages/*/node_modules/
 apps/*/node_modules/
 
-# Build Output
+# ── Build output ─────────────────────────────────
 dist/
 packages/*/dist/
 apps/*/dist/
+.output/
 
-# Astro
+# ── Astro ─────────────────────────────────────────
 .astro/
 
-# Logs
+# ── Environment variables ─────────────────────────
+.env
+.env.*
+!.env.example
+
+# ── OS files ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+Desktop.ini
+*.pem
+
+# ── Editor / IDE ──────────────────────────────────
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Logs ──────────────────────────────────────────
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Environment Variables
-.env
-.env.production
-.env.local
-.env.*.local
-
-# OS Files
-.DS_Store
-*.pem
-Thumbs.db
+# ── Misc ──────────────────────────────────────────
+.cache/
+*.tsbuildinfo

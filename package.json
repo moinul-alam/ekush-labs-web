@@ -1,0 +1,8 @@
+{
+  "name": "ekush-labs-web",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ]
+}

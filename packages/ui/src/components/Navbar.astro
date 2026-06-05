@@ -1,0 +1,167 @@
+---
+import ThemeToggle from './ThemeToggle.svelte';
+import LanguageToggle from './LanguageToggle.svelte';
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
+export interface Props {
+  appName?: string;
+  logoUrl?: string;
+  isMainPortal?: boolean;
+  navLinks?: { name: string; href: string }[];
+  pageTitle?: string;
+}
+
+const { appName = 'EkushLabs', logoUrl = '/assets/logo.png', isMainPortal = false, navLinks = [], pageTitle } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<header id="navbar" class="fixed top-0 left-0 right-0 z-[1000] flex items-center justify-between px-[5vw] h-20 bg-white/80 dark:bg-[var(--glass-bg)] backdrop-blur-xl border-b border-slate-200/50 dark:border-white/10 transition-all duration-400">
+  <div class="absolute bottom-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-primary-start via-primary-mid via-primary-end to-transparent opacity-0 transition-opacity duration-400" id="navbar-border"></div>
+
+  <div class="nav-brand-container">
+    <a href={appName === 'EkushTools' ? (lang === 'bn' ? "/" : "/en") : (isMainPortal ? (lang === 'bn' ? "/" : "/en") : "https://ekushlabs.com")} class="text-2xl font-bold tracking-tight text-slate-900 dark:text-white no-underline flex items-center gap-2 relative group">
+      {!isMainPortal && appName !== 'EkushTools' && <img src={logoUrl} alt={`${appName} Logo`} class="w-8 h-8 rounded-lg shadow-sm" onerror="this.style.display='none'" />}
+      <span class="group-hover:text-primary-start transition-colors duration-300">
+        {appName === 'EkushTools' ? (
+          <><span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">{t('tools.hero.ekush')}</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent">{t('tools.hero.tools')}</span></>
+        ) : (
+          appName
+        )}
+      </span>
+    </a>
+  </div>
+
+  {pageTitle && (
+    <div class="absolute left-1/2 -translate-x-1/2 text-lg font-bold text-slate-900 dark:text-white tracking-tight pointer-events-none">
+      {pageTitle}
+    </div>
+  )}
+
+  <button class="nav-toggle hidden bg-transparent border-none cursor-pointer p-2 z-[1100]" aria-label="Toggle navigation">
+    <span class="hamburger block w-6 h-[2px] bg-slate-800 dark:bg-white relative transition-colors duration-300 before:content-[''] before:absolute before:w-6 before:h-[2px] before:bg-slate-800 dark:before:bg-white before:left-0 before:top-[-8px] before:transition-transform before:duration-300 after:content-[''] after:absolute after:w-6 after:h-[2px] after:bg-slate-800 dark:after:bg-white after:left-0 after:bottom-[-8px] after:transition-transform after:duration-300"></span>
+  </button>
+
+  <nav class="nav-menu">
+    <div class="nav-links flex items-center gap-8">
+      {isMainPortal ? (
+        appName === 'EkushTools' ? (
+          <>
+            <a href="#tools" class="relative py-2 font-cond text-base font-semibold tracking-[0.15em] uppercase text-slate-600 hover:text-slate-900 dark:text-silver dark:hover:text-white dark:hover:drop-shadow-[0_0_20px_rgba(29,91,253,0.8)] dark:hover:brightness-120 hover:-translate-y-[2px] transition-all duration-400 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-primary-start after:via-primary-mid after:to-primary-end after:-translate-x-1/2 after:transition-all after:duration-400 hover:after:w-full">{useTranslations(lang)('nav.web_tools')}</a>
+            <a href="#apps" class="relative py-2 font-cond text-base font-semibold tracking-[0.15em] uppercase text-slate-600 hover:text-slate-900 dark:text-silver dark:hover:text-white dark:hover:drop-shadow-[0_0_20px_rgba(29,91,253,0.8)] dark:hover:brightness-120 hover:-translate-y-[2px] transition-all duration-400 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-primary-start after:via-primary-mid after:to-primary-end after:-translate-x-1/2 after:transition-all after:duration-400 hover:after:w-full">{useTranslations(lang)('nav.apps')}</a>
+          </>
+        ) : (
+          <>
+            <a href="#apps" class="relative py-2 font-cond text-base font-semibold tracking-[0.15em] uppercase text-slate-600 hover:text-slate-900 dark:text-silver dark:hover:text-white dark:hover:drop-shadow-[0_0_20px_rgba(29,91,253,0.8)] dark:hover:brightness-120 hover:-translate-y-[2px] transition-all duration-400 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-primary-start after:via-primary-mid after:to-primary-end after:-translate-x-1/2 after:transition-all after:duration-400 hover:after:w-full">{useTranslations(lang)('nav.apps')}</a>
+            <a href="https://tools.ekushlabs.com" class="relative py-2 font-cond text-base font-semibold tracking-[0.15em] uppercase text-slate-600 hover:text-slate-900 dark:text-silver dark:hover:text-white dark:hover:drop-shadow-[0_0_20px_rgba(29,91,253,0.8)] dark:hover:brightness-120 hover:-translate-y-[2px] transition-all duration-400 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-primary-start after:via-primary-mid after:to-primary-end after:-translate-x-1/2 after:transition-all after:duration-400 hover:after:w-full">{useTranslations(lang)('nav.tools')}</a>
+            <a href="#about" class="relative py-2 font-cond text-base font-semibold tracking-[0.15em] uppercase text-slate-600 hover:text-slate-900 dark:text-silver dark:hover:text-white dark:hover:drop-shadow-[0_0_20px_rgba(29,91,253,0.8)] dark:hover:brightness-120 hover:-translate-y-[2px] transition-all duration-400 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-primary-start after:via-primary-mid after:to-primary-end after:-translate-x-1/2 after:transition-all after:duration-400 hover:after:w-full">{useTranslations(lang)('nav.about')}</a>
+          </>
+        )
+      ) : (
+        <>
+          {appName === 'EkushTools' ? (
+            <div class="relative group">
+              <button class="relative py-2 font-cond text-base font-semibold tracking-[0.15em] uppercase text-slate-600 hover:text-slate-900 dark:text-silver dark:hover:text-white transition-all duration-400 flex items-center gap-1">
+                {useTranslations(lang)('nav.other_tools')}
+                <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg>
+              </button>
+              <div class="absolute top-full right-0 mt-2 w-56 bg-white dark:bg-slate-800 rounded-xl shadow-lg border border-slate-200 dark:border-slate-700 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform origin-top-right scale-95 group-hover:scale-100 flex flex-col overflow-hidden p-2">
+                <a href="/calendar" class="px-4 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 text-slate-700 dark:text-slate-200 font-semibold transition-colors flex items-center gap-3"><span class="text-xl">📅</span> {useTranslations(lang)('tools.tools.calendar.title')}</a>
+                <a href="/age-calculator" class="px-4 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 text-slate-700 dark:text-slate-200 font-semibold transition-colors flex items-center gap-3"><span class="text-xl">🎂</span> {useTranslations(lang)('tools.tools.age.title')}</a>
+                <a href="/bmi-calculator" class="px-4 py-3 rounded-lg hover:bg-slate-50 dark:hover:bg-slate-700/50 text-slate-700 dark:text-slate-200 font-semibold transition-colors flex items-center gap-3"><span class="text-xl">📊</span> {useTranslations(lang)('tools.tools.bmi.title')}</a>
+              </div>
+            </div>
+          ) : (
+            navLinks.map(link => (
+              <a href={link.href} class="relative py-2 font-cond text-base font-semibold tracking-[0.15em] uppercase text-slate-600 hover:text-slate-900 dark:text-silver dark:hover:text-white dark:hover:drop-shadow-[0_0_20px_rgba(29,91,253,0.8)] dark:hover:brightness-120 hover:-translate-y-[2px] transition-all duration-400 after:absolute after:bottom-0 after:left-1/2 after:w-0 after:h-[2px] after:bg-gradient-to-r after:from-primary-start after:via-primary-mid after:to-primary-end after:-translate-x-1/2 after:transition-all after:duration-400 hover:after:w-full">{link.name}</a>
+            ))
+          )}
+        </>
+      )}
+      <div class="flex items-center">
+        <LanguageToggle currentLang={lang} client:load />
+        <ThemeToggle client:load />
+      </div>
+    </div>
+  </nav>
+</header>
+
+<script>
+  // Handle scroll events for navbar
+  const navbar = document.getElementById('navbar');
+  const navBorder = document.getElementById('navbar-border');
+  
+  if (navbar && navBorder) {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('h-[70px]', 'shadow-[0_4px_20px_rgba(0,0,0,0.06)]');
+        navbar.classList.remove('h-20');
+        navBorder.classList.add('opacity-100');
+        navBorder.classList.remove('opacity-0');
+      } else {
+        navbar.classList.remove('h-[70px]', 'shadow-[0_4px_20px_rgba(0,0,0,0.06)]');
+        navbar.classList.add('h-20');
+        navBorder.classList.remove('opacity-100');
+        navBorder.classList.add('opacity-0');
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+  }
+
+  // Handle active link
+  const currentPath = window.location.pathname;
+  const navLinksList = document.querySelectorAll('.nav-links a');
+  navLinksList.forEach(link => {
+    try {
+      // Use standard type assertion since this is JS
+      const anchor = link as HTMLAnchorElement;
+      const url = new URL(anchor.href);
+      if (!url.hash && url.pathname !== '/' && url.pathname === currentPath) {
+        link.classList.add('text-slate-900', 'dark:text-white');
+        link.classList.add('after:w-full');
+      }
+    } catch (e) {}
+  });
+
+  // Handle mobile menu
+  const navToggle = document.querySelector('.nav-toggle');
+  if (navToggle && navbar) {
+    navToggle.addEventListener('click', () => {
+      navbar.classList.toggle('nav-open');
+      document.body.classList.toggle('overflow-hidden');
+    });
+  }
+</script>
+
+<style>
+  @media (max-width: 768px) {
+    .nav-toggle {
+      display: block;
+    }
+    
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 100%;
+      height: 100vh;
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      transition: right 0.4s ease;
+    }
+    
+    #navbar.nav-open .nav-menu {
+      right: 0;
+    }
+    
+    .nav-links {
+      flex-direction: column;
+      gap: 2rem;
+    }
+  }
+</style>
