@@ -2,6 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: 'Kalpurush';
+  src: url('./src/assets/fonts/kalpurush.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'LiSirajee';
+  src: url('./src/assets/fonts/LiSirajeeSheikhUnicode-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @layer base {
   /* Light mode (default) */
   :root {
@@ -12,6 +28,16 @@
     --glass-border: rgba(0, 0, 0, 0.08);
     --glass-highlight: rgba(255, 255, 255, 0.9);
     --primary-mid: #10B981;
+
+    --font-display: 'Bebas Neue', sans-serif;
+    --font-cond: 'Barlow Condensed', sans-serif;
+    --font-body: 'Barlow', sans-serif;
+  }
+
+  html[lang="bn"] {
+    --font-display: 'LiSirajee', 'Bebas Neue', sans-serif;
+    --font-cond: 'Kalpurush', 'Barlow Condensed', sans-serif;
+    --font-body: 'Kalpurush', 'Barlow', sans-serif;
   }
 
   /* Dark mode */
@@ -29,7 +55,7 @@
   }
 
   body {
-    font-family: 'Barlow', sans-serif;
+    font-family: var(--font-body);
     font-weight: 300;
     line-height: 1.6;
     overflow-x: hidden;

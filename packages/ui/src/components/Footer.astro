@@ -1,24 +1,38 @@
 ---
+import { getLangFromUrl, useTranslations } from '../i18n/utils';
+
 export interface Props {
   appName?: string;
 }
 
 const { appName = 'EkushLabs' } = Astro.props;
 const currentYear = new Date().getFullYear();
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+// Get the translated app name or fallback to the provided name
+const getTranslatedAppName = () => {
+  const key = `app.${appName.toLowerCase().replace(/\s+/g, '')}`;
+  return t(key as any) || appName;
+};
 ---
 
 <footer id="footer" class="py-8 px-[5vw] border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#0A0A0A] flex items-center justify-between flex-wrap gap-4 relative z-10 transition-colors duration-300 max-md:flex-col max-md:items-start max-md:gap-2">
   <div class="footer-brand-container">
-    <a href="https://ekushlabs.com" class="text-[0.95rem] font-bold text-slate-900 dark:text-white no-underline tracking-tight inline-flex gap-[2px]">
-      Ekush<span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">Labs</span>
+    <a href={lang === 'bn' ? "/" : "/en"} class="text-[0.95rem] font-bold text-slate-900 dark:text-white no-underline tracking-tight inline-flex gap-[2px]">
+      {t('app.ekush')}<span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">{t('app.labs')}</span>
     </a>
   </div>
 
-  <div class="footer-desc-container">
-    <span class="text-[0.82rem] font-medium text-slate-500 dark:text-silver">An {appName} Product</span>
+  <div class="footer-desc-container flex gap-1">
+    {lang === 'en' ? (
+      <span class="text-[0.82rem] font-medium text-slate-500 dark:text-silver">{t('footer.product_prefix')} {getTranslatedAppName()} {t('footer.product_suffix')}</span>
+    ) : (
+      <span class="text-[0.82rem] font-medium text-slate-500 dark:text-silver">{getTranslatedAppName()}-এর {t('footer.product_prefix')} {t('footer.product_suffix')}</span>
+    )}
   </div>
 
   <div class="footer-copy-container">
-    <span class="text-[0.78rem] text-slate-400 dark:text-textMuted">&copy; {currentYear} EkushLabs. All rights reserved.</span>
+    <span class="text-[0.78rem] text-slate-400 dark:text-textMuted">&copy; {currentYear} {t('app.ekush')}{t('app.labs')}. {t('footer.rights')}</span>
   </div>
 </footer>

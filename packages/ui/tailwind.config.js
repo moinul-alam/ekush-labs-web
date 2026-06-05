@@ -30,9 +30,10 @@ export default {
         textMuted: '#64748B',
       },
       fontFamily: {
-        display: ['Bebas Neue', 'sans-serif'],
-        cond: ['Barlow Condensed', 'sans-serif'],
-        body: ['Barlow', 'sans-serif'],
+        display: ['var(--font-display)'],
+        cond: ['var(--font-cond)'],
+        body: ['var(--font-body)'],
+        sans: ['var(--font-body)'],
       },
     },
   },
