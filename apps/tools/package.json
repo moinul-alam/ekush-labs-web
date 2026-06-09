@@ -6,14 +6,20 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@astrojs/cloudflare": "11",
     "@astrojs/svelte": "^5.0.3",
     "@astrojs/tailwind": "^5.1.0",
+    "@ekush-labs/ui": "*",
     "astro": "^4.5.0",
     "svelte": "^4.2.12",
-    "tailwindcss": "^3.4.1",
-    "@ekush-labs/ui": "*"
+    "tailwindcss": "^3.4.1"
+  },
+  "devDependencies": {
+    "wrangler": "^4.98.0"
   }
 }
