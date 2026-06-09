@@ -1,0 +1,11 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "moduleResolution": "bundler",
+    "types": ["svelte", "@astrojs/svelte"],
+    "baseUrl": ".",
+    "paths": {
+      "@ekush-labs/ui/*": ["../../packages/ui/*"]
+    }
+  }
+}
