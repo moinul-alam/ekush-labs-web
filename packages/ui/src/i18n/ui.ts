@@ -1,3 +1,7 @@
+// ============================================================
+// LANGUAGE CONFIGURATION
+// ============================================================
+
 export const languages = {
   bn: 'বাংলা',
   en: 'English',
@@ -5,52 +9,110 @@ export const languages = {
 
 export const defaultLang = 'bn';
 
+// ============================================================
+// UI STRINGS
+// ============================================================
+
 export const ui = {
+
+  // ------------------------------------------------------------
+  // BANGLA (bn)
+  // ------------------------------------------------------------
   bn: {
+
+    // App & Navigation
+    'app.name': 'একুশ ল্যাব্‌স',
+    'app.ekush': 'একুশ',
+    'app.labs': 'ল্যাব্‌স',
+    'app.ekushlabs': 'একুশ ল্যাব্‌স',
+    'app.ekushponji': 'একুশ পঞ্জি',
+    'app.jhuri': 'ঝুড়ি',
+    'app.shonamoni': 'সোনামনি',
+    'app.ekushtools': 'একুশ টুলস',
+
     'nav.apps': 'অ্যান্ড্রয়েড অ্যাপস',
     'nav.tools': 'ওয়েব টুলস',
     'nav.web_tools': 'ওয়েব টুলস',
     'nav.other_tools': 'অন্যান্য টুলস',
     'nav.about': 'আমাদের সম্পর্কে',
-    'app.name': 'একুশ ল্যাব্‌স',
+
+    // Footer
+    'footer.product_prefix': 'একটি',
+    'footer.product_suffix': 'উদ্যোগ',
+    'footer.rights': 'সর্বস্বত্ব সংরক্ষিত।',
+
+    // ---- Main / Homepage ----
+
+    // Hero
     'main.hero.badge': 'স্বাগতম',
+    'main.hero.tagline': 'সহজ অ্যাপ, সুন্দর অভিজ্ঞতা',
     'main.hero.desc': 'একুশ ল্যাব্‌স একটি প্রিমিয়াম অ্যাপ্ স্টুডিও। ব্যবহারকারীর গোপনীয়তাকে সর্বোচ্চ অগ্রাধিকার দিয়ে আমরা তৈরি করি দৈনন্দিন জীবনের উপযোগী দৃষ্টিনন্দন, নির্ভরযোগ্য ও আধুনিক অ্যাপ্লিকেশন',
     'main.hero.explore': 'অ্যাপসমূহ দেখুন',
     'main.hero.learn': 'আরও জানুন',
-    'main.hero.tagline': 'সহজ অ্যাপ, সুন্দর অভিজ্ঞতা',
+
+    // Meta
+    'main.meta.title': 'একুশ ল্যাবস | সাধারণ অ্যাপস, অর্থপূর্ণ অভিজ্ঞতা',
+    'main.meta.desc': 'একুশ ল্যাবস একটি আধুনিক অ্যাপ স্টুডিও, যারা দৈনন্দিন জীবনের জন্য সুন্দর, নির্ভরযোগ্য এবং গোপনীয়তা-কেন্দ্রিক ইউটিলিটি টুলস তৈরি করে।',
+
+    // Badges
+    'main.badge.calendar': 'ক্যালেন্ডার',
+    'main.badge.grocery': 'গ্রোসারি',
+    'main.badge.mobile': 'মোবাইল',
+    'main.badge.health': 'স্বাস্থ্য',
+
+    // Ecosystem section
     'main.ecosystem.title': 'আমরা কি করি',
     'main.ecosystem.desc': 'আমরা শূন্য ব্লোটওয়্যার ও সর্বোচ্চ গতি নিশ্চিত করে, নিখুঁত কারিগরিতে আধুনিক মোবাইল এবং ওয়েব অ্যাপ্লিকেশনস ডিজাইন ও ডেভেলপ করি',
     'main.ecosystem.view_all': 'অন্যান্য টুলস দেখুন',
+
+    // App descriptions (on main page)
     'main.ponji.desc': 'সরকারি ছুটির দিন, ইভেন্ট, রিমাইন্ডার এবং দৈনন্দিন কন্টেন্ট সহ একটি প্রিমিয়াম বাংলা ক্যালেন্ডার অ্যাপ, দৈনন্দিন জীবনের জন্য তৈরি',
     'main.jhuri.desc': 'স্মার্ট গ্রোসারি লিস্ট। ইন্টেলিজেন্ট লিস্ট, ক্যাটাগরি এবং স্মার্ট রিমাইন্ডার দিয়ে আপনার শপিং গুছিয়ে রাখুন',
     'main.shonamoni.desc': 'শিশুর বৃদ্ধি, টিকা ও পুষ্টি ট্র্যাক করার জন্য একটি নেক্সট-জেনারেশন চাইল্ডকেয়ার ট্র্যাকিং অ্যাপ।',
+
+    // Status badges
     'main.coming_soon': 'শীঘ্রই আসছে',
     'main.in_development': 'ডেভেলপমেন্ট চলমান',
     'main.play_store': 'প্লে স্টোরে লাইভ',
+
+    // How we build section
     'main.how.title': 'আমরা কীভাবে তৈরি করি',
     'main.how.desc': 'ফ্লাটার ও ম্যাটেরিয়াল ৩-এর সমন্বয়ে তৈরি নেটিভ অ্যান্ড্রয়েড অ্যাপ এবং অ্যাস্ট্রো, স্ভেল্ট ও টেইলউইন্ড সিএসএস দ্বারা চালিত একটি সুপার-ফাস্ট ওয়েব ইকোসিস্টেম',
     'main.how.mobile.title': 'ফ্লাটার-পাওয়ার্ড অ্যান্ড্রয়েড অ্যাপস',
     'main.how.mobile.desc': 'ফ্লাটার ও ম্যাটেরিয়াল ৩-এর নিখুঁত মেলবন্ধনে তৈরি আমাদের অ্যান্ড্রয়েড অ্যাপস; যা নিশ্চিত করে সর্বোচ্চ নেটিভ পারফরম্যান্স এবং দৃষ্টিনন্দন মিনিমাল ইন্টারফেস',
     'main.how.stats.apps': 'প্লে স্টোরে লাইভ অ্যাপ্‌স',
-    'main.how.stats.testing': 'ক্লোজড টেস্টিং চলমান',
+    'main.how.stats.testing': 'পাইপলাইনে আছে',
     'main.how.web.title': 'ওয়েব ইকোসিস্টেম',
     'main.how.web.desc': 'অ্যাস্ট্রো, স্ভেল্ট এবং টেইলউইন্ড সিএসএস-এর সমন্বয়ে তৈরি প্রতিটি ল্যান্ডিং পেজ ও ওয়েব টুল; যা নিশ্চিত করে ১০০% স্ট্যাটিক আউটপুট এবং অবিশ্বাস্য গতি',
     'main.how.privacy.title': 'প্রাইভেসি ফার্স্ট',
     'main.how.privacy.desc': 'কোনো ব্যক্তিগত তথ্য সংগ্রহ বা সংরক্ষণের ঝামেলা ছাড়াই ব্যবহার করুন আমাদের অ্যাপস। আপনার সমস্ত ডেটা আপনার ডিভাইসের নিরাপদ গণ্ডিতে রেখেই নিশ্চিত করা হয়েছে সর্বোচ্চ প্রাইভেসী',
     'main.how.design.title': 'ডিজাইন কনসিস্টেন্সি',
     'main.how.design.desc': 'প্লে স্টোরের অ্যাপ থেকে শুরু করে ওয়েবসাইটের ল্যান্ডিং পেজ পর্যন্ত আমাদের সব কিছুতেই পাবেন একই রকম চেনা এবং গোছানো একটা দৃষ্টিনন্দন ছোঁয়া',
+
+    // Contact section
     'main.contact.title': 'যোগাযোগ করুন',
     'main.contact.desc': 'কোনো প্রশ্ন, মতামত, বা শুধু হ্যালো বলতে চান? আমাদের ইনবক্স সবসময় খোলা',
-    // Ponji
+
+    // ---- Ponji ----
+
+    // Meta
+    'ponji.meta.title': 'একুশ পঞ্জি - বাংলা ক্যালেন্ডার, ছুটির দিন, বয়স ক্যালকুলেটর, রিমাইন্ডার ও উক্তি',
+    'ponji.meta.desc': 'একুশ পঞ্জি বাংলা, গ্রেগরিয়ান এবং হিজরি ক্যালেন্ডার একসাথে নিয়ে আসে, পাশাপাশি ইভেন্ট, রিমাইন্ডার, দৈনিক উক্তি এবং আরও অনেক কিছু।',
+
+    // Hero
     'ponji.hero.badge': 'অ্যান্ড্রয়েড অ্যাপ',
     'ponji.hero.title1': 'বিশ্বস্ত',
     'ponji.hero.title_highlight': 'বাংলা ক্যালেন্ডার',
     'ponji.hero.desc': 'একুশ পঞ্জি বাংলা, গ্রেগরিয়ান এবং হিজরি ক্যালেন্ডার একসাথে নিয়ে আসে, পাশাপাশি ইভেন্ট, রিমাইন্ডার, দৈনিক উক্তি এবং আরও অনেক কিছু, সবকিছু একটি সুন্দর ডিজাইনের অ্যাপে।',
     'ponji.hero.get_on': 'ডাউনলোড করুন',
     'ponji.hero.explore': 'ফিচারস দেখুন',
+
+    // Stats
     'ponji.stats.languages': 'ভাষা',
     'ponji.stats.features': 'ফিচারস',
     'ponji.stats.offline': 'অফলাইন',
+
+    // Features
     'ponji.features.title_prefix': 'যা আছে ভেতরে',
     'ponji.features.title1': 'যা দরকার, সব আছে,',
     'ponji.features.title_highlight': 'বাড়তি কিছু নেই।',
@@ -72,32 +134,74 @@ export const ui = {
     'ponji.features.bilingual_desc': 'বাংলা এবং ইংরেজি উভয় ভাষায় সম্পূর্ণ সাপোর্ট। সেটিংস থেকে তাৎক্ষণিকভাবে ভাষা পরিবর্তন করুন।',
     'ponji.features.offline_title': 'অফলাইনে কাজ করে',
     'ponji.features.offline_desc': 'মূল ফিচারগুলো ইন্টারনেট ছাড়াই কাজ করে। আপনার ক্যালেন্ডার এবং সেভ করা কন্টেন্ট সবসময় পাওয়া যাবে।',
+
+    // Screenshots
     'ponji.screenshots.title_prefix': 'দেখুন কীভাবে কাজ করে',
     'ponji.screenshots.title1': 'প্রতিদিনের',
     'ponji.screenshots.title_highlight': 'ব্যবহারের জন্য ডিজাইন করা।',
+    'ponji.screenshots.home_title': 'হোম স্ক্রিন',
+    'ponji.screenshots.home_desc': 'আজকের তারিখ, ছুটির দিন এবং গুরুত্বপূর্ণ তথ্য এক নজরে',
+    'ponji.screenshots.cal_title': 'সম্পূর্ণ ক্যালেন্ডার',
+    'ponji.screenshots.cal_desc': 'বাংলা, গ্রেগরিয়ান এবং হিজরি তারিখ পাশাপাশি ছুটির দিনসহ',
+    'ponji.screenshots.holiday_title': 'ছুটির তালিকা',
+    'ponji.screenshots.holiday_desc': 'সারা বছরের সরকারি ছুটির দিনের সম্পূর্ণ তালিকা',
+    'ponji.screenshots.reminder_title': 'ইভেন্ট ও রিমাইন্ডার',
+    'ponji.screenshots.reminder_desc': 'জন্মদিন বা যেকোনো ব্যক্তিগত ইভেন্টের জন্য রিমাইন্ডার',
+    'ponji.screenshots.quote_title': 'অনুপ্রেরণাদায়ক উক্তি',
+    'ponji.screenshots.quote_desc': 'প্রতিদিন একটি নতুন ইতিবাচক চিন্তা বা উক্তি',
+    'ponji.screenshots.word_title': 'দৈনিক শব্দ',
+    'ponji.screenshots.word_desc': 'সহজে ভোকাবুলারি বাড়ানোর জন্য প্রতিদিন একটি ইংরেজি শব্দ',
+    'ponji.screenshots.calc_title': 'তারিখ ক্যালকুলেটর',
+    'ponji.screenshots.calc_desc': 'দুইটি তারিখের নিখুঁত ব্যবধান হিসাব করুন',
+
+    // Support & Legal
     'ponji.support.title_prefix': 'সাহায্য দরকার?',
     'ponji.support.title': 'সাপোর্ট',
     'ponji.support.desc': 'কোনো বাগ রিপোর্ট, ফিচার সাজেশন, বা সাহায্যের দরকার? আমাদের জানান — আমরা সাহায্য করতে রাজি।',
     'ponji.privacy': 'গোপনীয়তা নীতি',
     'ponji.terms': 'সেবার শর্তাবলি',
-    // Jhuri
+
+    // ---- Jhuri ----
+
+    // Meta
+    'jhuri.meta.title': 'ঝুড়ি - স্মার্ট গ্রোসারি লিস্ট ও বাজার পরিকল্পনাকারী',
+    'jhuri.meta.desc': 'ঝুড়ি অ্যাপ দিয়ে সহজেই আপনার বাজারের লিস্ট তৈরি ও গুছিয়ে রাখুন। বাংলাদেশের জন্য তৈরি একটি সাধারণ গ্রোসারি অ্যাপ।',
+
+    // Hero
     'jhuri.hero.badge': 'অ্যান্ড্রয়েড অ্যাপ',
     'jhuri.hero.title1': 'ভালো পরিকল্পনা,',
     'jhuri.hero.title_highlight': 'স্মার্ট শপিং।',
     'jhuri.hero.desc': 'ঝুড়ি ২০০+ গ্রোসারি আইটেম ক্যাটাগরি অনুযায়ী সাজিয়ে রাখে, তাই আপনি মাত্র ২০ সেকেন্ডে আপনার পুরো বাজার পরিকল্পনা করতে পারবেন — একটি শব্দও টাইপ না করে।',
     'jhuri.hero.get_on': 'ডাউনলোড করুন',
     'jhuri.hero.see_features': 'ফিচারস দেখুন',
+
+    // Stats
     'jhuri.stats.items': 'গ্রোসারি আইটেম',
     'jhuri.stats.categories': 'ক্যাটাগরি',
     'jhuri.stats.time': 'বাজার পরিকল্পনায়',
+
+    // Promise badges
     'jhuri.promise.ready': '২০ সেকেন্ডে রেডি',
     'jhuri.promise.offline': 'অফলাইনে কাজ করে',
     'jhuri.promise.bangladesh': 'বাংলাদেশের জন্য তৈরি',
     'jhuri.promise.privacy': 'কোনো ডেটা সংগ্রহ হয় না',
+
+    // Categories section
     'jhuri.categories.title_prefix': 'ভেতরে কী আছে',
     'jhuri.categories.title1': '৮টি ক্যাটাগরি,',
     'jhuri.categories.title_highlight': 'যা দরকার সব আছে।',
     'jhuri.categories.desc': 'আপনার পরিবার নিয়মিত যা কেনে, ঠিক যেভাবে আপনি চিন্তা করেন সেভাবে সাজানো।',
+    'jhuri.categories.vegetables': 'শাকসবজি',
+    'jhuri.categories.fish_meat': 'মাছ ও মাংস',
+    'jhuri.categories.rice_pulses': 'চাল, ডাল ও মশলা',
+    'jhuri.categories.oil_dairy': 'তেল ও দুগ্ধজাত',
+    'jhuri.categories.fruits': 'ফলমূল',
+    'jhuri.categories.essentials': 'খাদ্যসামগ্রী',
+    'jhuri.categories.cleaning': 'পরিচ্ছন্নতা সামগ্রী',
+    'jhuri.categories.household': 'গৃহস্থালি সামগ্রী',
+    'jhuri.categories.items_count': '{count}টি পণ্য',
+
+    // Features
     'jhuri.features.title_prefix': 'ফিচারস',
     'jhuri.features.title1': 'সাপ্তাহিক বাজারের জন্য',
     'jhuri.features.title_highlight': 'সবকিছু।',
@@ -119,165 +223,11 @@ export const ui = {
     'jhuri.features.reminders_desc': 'প্রতি লিস্টে রিমাইন্ডার সেট করুন। বাজারের দিনে নোটিফিকেশন পান।',
     'jhuri.features.custom': 'কাস্টম আইটেম',
     'jhuri.features.custom_desc': 'ডেটাবেসে নেই এমন কিছু আপনার লাইব্রেরিতে স্থায়ীভাবে যোগ করুন।',
+
+    // Screenshots
     'jhuri.screenshots.title_prefix': 'দেখুন কীভাবে কাজ করে',
     'jhuri.screenshots.title1': 'আসল রান্নাঘরের জন্য',
     'jhuri.screenshots.title_highlight': 'ডিজাইন করা।',
-    'jhuri.support.email': 'সাপোর্ট: ekushlabs@gmail.com',
-    'jhuri.privacy': 'গোপনীয়তা নীতি',
-    'jhuri.terms': 'সেবার শর্তাবলি',
-    // Shonamoni
-    'shonamoni.hero.badge': 'অ্যান্ড্রয়েড অ্যাপ',
-    'shonamoni.hero.title1': 'আপনার শিশুর বেড়ে ওঠা,',
-    'shonamoni.hero.title_highlight': 'সুন্দরভাবে ট্র্যাক করা।',
-    'shonamoni.hero.desc': 'সোনামণি বাংলাদেশি বাবা-মায়েদের তাদের শিশুর ওজন, উচ্চতা, টিকা, মাইলস্টোন এবং পুষ্টি ট্র্যাক করতে সাহায্য করে — সবকিছু WHO এবং DGHS মান অনুসারে, বাংলা ও ইংরেজিতে।',
-    'shonamoni.hero.launching': 'শীঘ্রই আসছে',
-    'shonamoni.hero.get_on': 'ডাউনলোড করুন',
-    'shonamoni.hero.see_features': 'ফিচারস দেখুন',
-    'shonamoni.stats.languages': 'ভাষা',
-    'shonamoni.stats.standards': 'মান',
-    'shonamoni.stats.vaccine': 'টিকার সূচি',
-    'shonamoni.features.title_prefix': 'সোনামণি কী দেয়',
-    'shonamoni.features.title1': 'একজন বাবা-মায়ের যা দরকার,',
-    'shonamoni.features.title_highlight': 'সব এক জায়গায়।',
-    'shonamoni.features.growth': 'গ্রোথ ট্র্যাকিং',
-    'shonamoni.features.growth_desc': 'আপনার শিশুর ওজন এবং উচ্চতা সময়ের সাথে লগ করুন। WHO চাইল্ড গ্রোথ স্ট্যান্ডার্ডের বিপরীতে দেখুন।',
-    'shonamoni.features.vaccine': 'টিকা ট্র্যাকার',
-    'shonamoni.features.vaccine_desc': 'বাংলাদেশের অফিসিয়াল EPI সূচি এবং প্রাইভেট টিকা অনুসরণ করুন। ডোজ মার্ক করুন এবং রিমাইন্ডার পান।',
-    'shonamoni.features.milestone': 'মাইলস্টোন মনিটরিং',
-    'shonamoni.features.milestone_desc': 'বয়স অনুযায়ী বিকাশমূলক মাইলস্টোন ট্র্যাক করুন — গড়াগড়ি, বসা, হামাগুড়ি, প্রথম শব্দ এবং আরও অনেক কিছু।',
-    'shonamoni.features.nutrition': 'পুষ্টি নির্দেশিকা',
-    'shonamoni.features.nutrition_desc': 'DGHS এবং IPHN ক্লিনিক্যাল গাইডলাইন অনুযায়ী বয়স-উপযুক্ত খাওয়ানোর নির্দেশিকা।',
-    'shonamoni.features.charts': 'গ্রোথ চার্ট',
-    'shonamoni.features.charts_desc': 'WHO পার্সেন্টাইল কার্ভের বিপরীতে ভিজ্যুয়াল ওজন এবং উচ্চতা চার্ট। এক নজরে বুঝুন।',
-    'shonamoni.features.smart_reminders': 'স্মার্ট রিমাইন্ডার',
-    'shonamoni.features.smart_reminders_desc': 'আসন্ন টিকা, নির্ধারিত গ্রোথ চেক-ইন এবং মাইলস্টোন বয়সের জন্য সময়মতো রিমাইন্ডার।',
-    'shonamoni.features.profiles': 'একাধিক চাইল্ড প্রোফাইল',
-    'shonamoni.features.profiles_desc': 'আপনার সব সন্তানের প্রোফাইল যোগ করুন। তাৎক্ষণিকভাবে সুইচ করুন।',
-    'shonamoni.features.bilingual': 'দ্বিভাষিক',
-    'shonamoni.features.bilingual_desc': 'সম্পূর্ণ বাংলা ও ইংরেজি সাপোর্ট। সেটিংস থেকে তাৎক্ষণিকভাবে ভাষা পরিবর্তন করুন।',
-    'shonamoni.features.theme': 'ডার্ক ও লাইট মোড',
-    'shonamoni.features.theme_desc': 'দিনে বা রাতে আরামদায়ক ভিউ। সুন্দরভাবে তৈরি ডার্ক থিম।',
-    'shonamoni.screenshots.title_prefix': 'দেখুন কীভাবে কাজ করে',
-    'shonamoni.screenshots.title1': 'যত্নের সাথে ডিজাইন করা,',
-    'shonamoni.screenshots.title_highlight': 'প্রতিটি বাবা-মায়ের জন্য।',
-    'shonamoni.download.badge': 'উপলব্ধ',
-    'shonamoni.download.title': 'সোনামণি ডাউনলোড করুন',
-    'shonamoni.download.desc': 'আজই ডাউনলোড করে আপনার শিশুর সুন্দর বেড়ে ওঠা ট্র্যাক করা শুরু করুন।',
-    'shonamoni.download.visit': 'গুগল প্লে থেকে ডাউনলোড করুন',
-    'shonamoni.support.title': 'সাপোর্ট',
-    'shonamoni.support.email': 'সাপোর্ট: ekushlabs@gmail.com',
-    'shonamoni.privacy': 'গোপনীয়তা নীতি',
-    'shonamoni.terms': 'সেবার শর্তাবলি',
-    // Tools
-    'tools.hero.welcome': 'স্বাগতম',
-    'tools.hero.ekush': 'একুশ',
-    'tools.hero.tools': 'টুলস',
-    'tools.hero.by': 'একুশ ল্যাবসের তৈরি',
-    'tools.hero.desc': 'দৈনন্দিন ব্যবহারের জন্য সুন্দর, সহজ টুলস',
-    'tools.hero.fast': '⚡ দ্রুত',
-    'tools.hero.beautiful': '🎨 সুন্দর',
-    'tools.hero.dark_mode': '🌙 ডার্ক মোড',
-    'tools.tools.subtitle': 'আমরা কী তৈরি করি',
-    'tools.tools.title': 'ওয়েব টুলস',
-    'tools.tools.desc': 'সহজ, নির্ভরযোগ্য ওয়েব টুলস যা যত্ন সহকারে ডিজাইন করা হয়েছে',
-    'tools.tools.calendar.title': 'বাংলা ক্যালেন্ডার',
-    'tools.tools.calendar.desc': 'বাংলাদেশ সরকারের ছুটির সাথে গ্রেগরিয়ান, বাংলা এবং হিজরি তারিখ',
-    'tools.tools.age.title': 'বয়স ক্যালকুলেটর',
-    'tools.tools.age.desc': 'বছর, মাস এবং দিনে আপনার সঠিক বয়স গণনা করুন',
-    'tools.tools.bmi.title': 'বিএমআই ক্যালকুলেটর',
-    'tools.tools.bmi.desc': 'আপনার বডি মাস ইনডেক্স গণনা করুন এবং আপনার স্বাস্থ্যের বিভাগ দেখুন',
-    'tools.tools.open': 'খুলুন',
-    'tools.apps.subtitle': 'আরও এগিয়ে যান',
-    'tools.apps.title': 'আমাদের অ্যাপস',
-    'tools.apps.desc': 'আমাদের অ্যান্ড্রয়েড অ্যাপগুলো রিমাইন্ডার, অফলাইন অ্যাক্সেস এবং আরও অনেক ফিচার নিয়ে আসে',
-    'tools.apps.ponji.desc': 'রিমাইন্ডার, উইজেট এবং আরও অনেক কিছু সহ বাংলা ক্যালেন্ডার',
-    'tools.apps.jhuri.desc': 'স্মার্ট গ্রোসারি লিস্ট। ইন্টেলিজেন্ট লিস্ট, ক্যাটাগরি এবং স্মার্ট রিমাইন্ডার দিয়ে আপনার শপিং গুছিয়ে রাখুন',
-    'tools.apps.get_on_play': 'গুগল প্লে থেকে নিন',
-    'tools.badge.popular': 'জনপ্রিয়',
-    'tools.badge.new': 'নতুন',
-    'tools.badge.available': 'প্লে স্টোরে পাওয়া যাচ্ছে',
-
-    // Footer & App Names
-    'app.ekush': 'একুশ',
-    'app.labs': 'ল্যাব্‌স',
-    'app.ekushlabs': 'একুশ ল্যাব্‌স',
-    'app.ekushponji': 'একুশ পঞ্জি',
-    'app.jhuri': 'ঝুড়ি',
-    'app.shonamoni': 'সোনামনি',
-    'app.ekushtools': 'একুশ টুলস',
-    'footer.product_prefix': 'একটি',
-    'footer.rights': 'সর্বস্বত্ব সংরক্ষিত।',
-
-    // Tools Components
-    'tools.bmi.weight': 'ওজন (কেজি)',
-    'tools.bmi.height': 'উচ্চতা (সেমি)',
-    'tools.bmi.calc': 'হিসাব করুন',
-    'tools.bmi.result': 'আপনার বিএমআই',
-    'tools.bmi.under': 'কম ওজন',
-    'tools.bmi.normal': 'স্বাভাবিক',
-    'tools.bmi.over': 'অতিরিক্ত ওজন',
-    'tools.bmi.obese': 'স্থূলতা',
-
-    'tools.age.dob': 'জন্ম তারিখ',
-    'tools.age.calc': 'বয়স হিসাব করুন',
-    'tools.age.result': 'আপনার বয়স',
-    'tools.age.years': 'বছর',
-    'tools.age.months': 'মাস',
-    'tools.age.days': 'দিন',
-
-    'tools.cal.today': 'আজ',
-    'tools.cal.sun': 'রবি',
-    'tools.cal.mon': 'সোম',
-    'tools.cal.tue': 'মঙ্গল',
-    'tools.cal.wed': 'বুধ',
-    'tools.cal.thu': 'বৃহঃ',
-    'tools.cal.fri': 'শুক্র',
-    'tools.cal.sat': 'শনি',
-
-    // New keys
-    'footer.product_suffix': 'উদ্যোগ',
-    'tools.hero.ponji': 'একুশ পঞ্জি অ্যাপ ডাউনলোড করুন',
-    'tools.hero.shonamoni': 'সোনামণি দিয়ে আপনার শিশুর বৃদ্ধি ট্র্যাক করুন',
-    'tools.age.empty_desc': 'আপনার সঠিক বয়স দেখতে উভয় তারিখ লিখুন।',
-    'tools.age.placeholder_day': 'দিন',
-    'tools.age.placeholder_month': 'মাস',
-    'tools.age.placeholder_year': 'বছর',
-    'tools.cal.bangla_label': 'বাংলা',
-    'tools.cal.hijri_label': 'হিজরি',
-    'tools.cal.loading': 'লোড হচ্ছে...',
-    'main.meta.title': 'একুশ ল্যাবস | সাধারণ অ্যাপস, অর্থপূর্ণ অভিজ্ঞতা',
-    'main.meta.desc': 'একুশ ল্যাবস একটি আধুনিক অ্যাপ স্টুডিও, যারা দৈনন্দিন জীবনের জন্য সুন্দর, নির্ভরযোগ্য এবং গোপনীয়তা-কেন্দ্রিক ইউটিলিটি টুলস তৈরি করে।',
-    'main.badge.calendar': 'ক্যালেন্ডার',
-    'main.badge.grocery': 'গ্রোসারি',
-    'main.badge.mobile': 'মোবাইল',
-    'main.badge.health': 'স্বাস্থ্য',
-    'ponji.meta.title': 'একুশ পঞ্জি - বাংলা ক্যালেন্ডার, ছুটির দিন ও রিমাইন্ডার',
-    'ponji.meta.desc': 'একুশ পঞ্জি বাংলা, গ্রেগরিয়ান এবং হিজরি ক্যালেন্ডার একসাথে নিয়ে আসে, পাশাপাশি ইভেন্ট, রিমাইন্ডার, দৈনিক উক্তি এবং আরও অনেক কিছু।',
-    'ponji.screenshots.home_title': 'হোম স্ক্রিন',
-    'ponji.screenshots.home_desc': 'আজকের তারিখ, ছুটির দিন এবং গুরুত্বপূর্ণ তথ্য এক নজরে',
-    'ponji.screenshots.cal_title': 'সম্পূর্ণ ক্যালেন্ডার',
-    'ponji.screenshots.cal_desc': 'বাংলা, গ্রেগরিয়ান এবং হিজরি তারিখ পাশাপাশি ছুটির দিনসহ',
-    'ponji.screenshots.holiday_title': 'ছুটির তালিকা',
-    'ponji.screenshots.holiday_desc': 'সারা বছরের সরকারি ছুটির দিনের সম্পূর্ণ তালিকা',
-    'ponji.screenshots.reminder_title': 'ইভেন্ট ও রিমাইন্ডার',
-    'ponji.screenshots.reminder_desc': 'জন্মদিন বা যেকোনো ব্যক্তিগত ইভেন্টের জন্য রিমাইন্ডার',
-    'ponji.screenshots.quote_title': 'অনুপ্রেরণাদায়ক উক্তি',
-    'ponji.screenshots.quote_desc': 'প্রতিদিন একটি নতুন ইতিবাচক চিন্তা বা উক্তি',
-    'ponji.screenshots.word_title': 'দৈনিক শব্দ',
-    'ponji.screenshots.word_desc': 'সহজে ভোকাবুলারি বাড়ানোর জন্য প্রতিদিন একটি ইংরেজি শব্দ',
-    'ponji.screenshots.calc_title': 'তারিখ ক্যালকুলেটর',
-    'ponji.screenshots.calc_desc': 'দুইটি তারিখের নিখুঁত ব্যবধান হিসাব করুন',
-    'jhuri.meta.title': 'ঝুড়ি - স্মার্ট গ্রোসারি লিস্ট ও বাজার পরিকল্পনাকারী',
-    'jhuri.meta.desc': 'ঝুড়ি অ্যাপ দিয়ে সহজেই আপনার বাজারের লিস্ট তৈরি ও গুছিয়ে রাখুন। বাংলাদেশের জন্য তৈরি একটি সাধারণ গ্রোসারি অ্যাপ।',
-    'jhuri.categories.vegetables': 'শাকসবজি',
-    'jhuri.categories.fish_meat': 'মাছ ও মাংস',
-    'jhuri.categories.rice_pulses': 'চাল, ডাল ও মশলা',
-    'jhuri.categories.oil_dairy': 'তেল ও দুগ্ধজাত',
-    'jhuri.categories.fruits': 'ফলমূল',
-    'jhuri.categories.essentials': 'খাদ্যসামগ্রী',
-    'jhuri.categories.cleaning': 'পরিচ্ছন্নতা সামগ্রী',
-    'jhuri.categories.household': 'গৃহস্থালি সামগ্রী',
-    'jhuri.categories.items_count': '{count}টি পণ্য',
     'jhuri.screenshots.home_title': 'হোম স্ক্রিন',
     'jhuri.screenshots.home_desc': 'আপনার তৈরি সব শপিং লিস্ট এক নজরে',
     'jhuri.screenshots.categories_title': 'ক্যাটাগরি ভিউ',
@@ -288,8 +238,59 @@ export const ui = {
     'jhuri.screenshots.shopping_desc': 'বাজার করার সময় ফোকাসড চেকলিস্ট',
     'jhuri.screenshots.summary_title': 'মাসিক সারাংশ',
     'jhuri.screenshots.summary_desc': 'সময়ের সাথে খরচ ও বাজারের ধরন ট্র্যাক করুন',
+
+    // Support & Legal
+    'jhuri.support.email': 'সাপোর্ট: ekushlabs@gmail.com',
+    'jhuri.privacy': 'গোপনীয়তা নীতি',
+    'jhuri.terms': 'সেবার শর্তাবলি',
+
+    // ---- Shonamoni ----
+
+    // Meta
     'shonamoni.meta.title': 'সোনামণি - শিশুর বিকাশ ও গ্রোথ ট্র্যাকার',
     'shonamoni.meta.desc': 'সোনামণি বাংলাদেশি বাবা-মায়েদের তাদের শিশুর বৃদ্ধি, টিকা, মাইলস্টোন ও পুষ্টি ট্র্যাক করতে সাহায্য করে।',
+
+    // Hero
+    'shonamoni.hero.badge': 'অ্যান্ড্রয়েড অ্যাপ',
+    'shonamoni.hero.title1': 'আপনার শিশুর বিকাশ',
+    'shonamoni.hero.title_highlight': 'সুন্দরভাবে ট্র্যাক করুন',
+    'shonamoni.hero.desc': 'সোনামণি বাংলাদেশি বাবা-মায়েদের তাদের শিশুর ওজন, উচ্চতা, টিকা, মাইলস্টোন এবং পুষ্টি ট্র্যাক করতে সাহায্য করে, সবকিছু বিশ্ব স্বাস্থ্য সংস্থা (WHO) এবং স্বাস্থ্য অধিদপ্তর (DGHS) এর মান অনুসারে',
+    'shonamoni.hero.launching': 'শীঘ্রই আসছে',
+    'shonamoni.hero.get_on': 'ডাউনলোড করুন',
+    'shonamoni.hero.see_features': 'ফিচারস দেখুন',
+
+    // Stats
+    'shonamoni.stats.languages': 'ভাষা',
+    'shonamoni.stats.standards': 'মান',
+    'shonamoni.stats.vaccine': 'টিকার সূচি',
+
+    // Features
+    'shonamoni.features.title_prefix': 'সোনামণি অ্যাপে আছে',
+    'shonamoni.features.title1': 'শিশুর যত্নে যা দরকার,',
+    'shonamoni.features.title_highlight': 'সব এক জায়গায়',
+    'shonamoni.features.growth': 'গ্রোথ ট্র্যাকিং',
+    'shonamoni.features.growth_desc': 'আপনার শিশুর ওজন এবং উচ্চতা নির্দিষ্ঠ সময় পর পর নোট রাখতে পারবেন এবং WHO চাইল্ড গ্রোথ স্ট্যান্ডার্ডের অনুযায়ী ফলাফল দেখতে পারবেন',
+    'shonamoni.features.vaccine': 'টিকা ট্র্যাকার',
+    'shonamoni.features.vaccine_desc': 'বাংলাদেশের সরকারি টিকার এবং প্রাইভেট টিকার বিস্তারিত তথ্য পাওয়া যাবে, প্রাপ্ত ডোজের তথ্য যোগ করা যাবে, পরবর্তী টিকার সময় জানা যাবে',
+    'shonamoni.features.milestone': 'মাইলস্টোন মনিটরিং',
+    'shonamoni.features.milestone_desc': 'বয়স অনুযায়ী বিকাশমূলক মাইলস্টোন জানতে পারবেন',
+    'shonamoni.features.nutrition': 'পুষ্টি নির্দেশিকা',
+    'shonamoni.features.nutrition_desc': 'DGHS এবং IPHN ক্লিনিক্যাল গাইডলাইন অনুযায়ী বয়স-উপযুক্ত খাবানের নির্দেশনা পাওয়া যাবে',
+    'shonamoni.features.charts': 'গ্রোথ চার্ট',
+    'shonamoni.features.charts_desc': 'WHO পার্সেন্টাইল কার্ভের বিপরীতে ভিজ্যুয়াল ওজন এবং উচ্চতা চার্ট এক নজরে দেখা যাবে, গ্রোথ সঠিকভাবে হচ্ছে কি না বোঝা যাবে',
+    'shonamoni.features.smart_reminders': 'স্মার্ট রিমাইন্ডার',
+    'shonamoni.features.smart_reminders_desc': 'আসন্ন টিকা, নির্ধারিত গ্রোথ চেক-ইন এবং মাইলস্টোন বয়সের জন্য সময়মতো রিমাইন্ডার পাওয়া যাবে',
+    'shonamoni.features.profiles': 'একাধিক চাইল্ড প্রোফাইল',
+    'shonamoni.features.profiles_desc': 'আপনার সব সন্তানের প্রোফাইল যোগ করুন এবং তাৎক্ষণিকভাবে সুইচ করা যাবে',
+    'shonamoni.features.bilingual': 'দ্বিভাষিক',
+    'shonamoni.features.bilingual_desc': 'সম্পূর্ণ বাংলা ও ইংরেজি সাপোর্ট, সেটিংস থেকে তাৎক্ষণিকভাবে ভাষা পরিবর্তন করা যাবে',
+    'shonamoni.features.theme': 'ডার্ক ও লাইট মোড',
+    'shonamoni.features.theme_desc': 'দিনে বা রাতে আরামদায়ক ভিউ, সুন্দরভাবে তৈরি ডার্ক থিম',
+
+    // Screenshots
+    'shonamoni.screenshots.title_prefix': 'দেখুন কীভাবে কাজ করে',
+    'shonamoni.screenshots.title1': 'যত্নের সাথে ডিজাইন করা,',
+    'shonamoni.screenshots.title_highlight': 'প্রতিটি বাবা-মায়ের জন্য।',
     'shonamoni.screenshots.charts_title': 'গ্রোথ চার্ট',
     'shonamoni.screenshots.charts_desc': 'WHO পার্সেন্টাইল কার্ভের বিপরীতে ওজন ও উচ্চতার ভিজ্যুয়াল চার্ট',
     'shonamoni.screenshots.vaccine_title': 'টিকার সূচি',
@@ -298,99 +299,281 @@ export const ui = {
     'shonamoni.screenshots.milestones_desc': 'বয়স অনুযায়ী আপনার শিশুর বিকাশমূলক মাইলস্টোন পর্যবেক্ষণ',
     'shonamoni.screenshots.nutrition_title': 'পুষ্টি নির্দেশিকা',
     'shonamoni.screenshots.nutrition_desc': 'DGHS নির্দেশিকা অনুযায়ী বয়স-উপযুক্ত খাওয়ানোর পরামর্শ',
+
+    // Download section
+    'shonamoni.download.badge': 'গুগল প্লেতে লাইভ',
+    'shonamoni.download.title': 'সোনামণি অ্যাপ ডাউনলোড করুন',
+    'shonamoni.download.desc': 'আজই ডাউনলোড করে আপনার শিশুর সুন্দর বেড়ে ওঠা ট্র্যাক করা শুরু করুন',
+    'shonamoni.download.visit': 'গুগল প্লে স্টোর থেকে ডাউনলোড করতে ট্যাপ করুন',
+
+    // Support & Legal
+    'shonamoni.support.title': 'সাপোর্ট',
+    'shonamoni.support.email': 'সাপোর্ট: ekushlabs@gmail.com',
+    'shonamoni.privacy': 'গোপনীয়তা নীতি',
+    'shonamoni.terms': 'সেবার শর্তাবলি',
+
+    // ---- Tools ----
+
+    // Hero
+    'tools.hero.welcome': 'স্বাগতম',
+    'tools.hero.ekush': 'একুশ',
+    'tools.hero.tools': 'টুলস',
+    'tools.hero.by': 'একুশ ল্যাব্‌সের উদ্যোগে তৈরি প্রয়োজনীয় ডিজিটাল টুলস',
+    'tools.hero.desc': 'দৈনন্দিন ব্যবহারের জন্য সুন্দর, সহজ অ্যাপ্লিকেশন যা আপনার জীবনকে কিছুটা হলেও সহজ করে তুলবে',
+    'tools.hero.fast': '⚡ দ্রুত',
+    'tools.hero.beautiful': '🎨 সুন্দর',
+    'tools.hero.dark_mode': '🌙 ডার্ক মোড',
+    'tools.hero.ponji': 'একুশ পঞ্জি অ্যাপ ডাউনলোড করুন',
+    'tools.hero.shonamoni': 'সোনামণি দিয়ে আপনার শিশুর বৃদ্ধি ট্র্যাক করুন',
+
+    // Web tools section
+    'tools.tools.subtitle': 'আমরা কী তৈরি করি',
+    'tools.tools.title': 'ওয়েব টুলস',
+    'tools.tools.desc': 'সহজ, নির্ভরযোগ্য ওয়েব টুলস যা যত্ন সহকারে ডিজাইন করা হয়েছে',
+    'tools.tools.calendar.title': 'বাংলা ক্যালেন্ডার',
+    'tools.tools.calendar.desc': 'বাংলাদেশ সরকারের ছুটির সাথে ইংরেজি(গ্রেগরিয়ান), বাংলা এবং আরবি (হিজরি) তারিখ',
+    'tools.tools.age.title': 'বয়স ক্যালকুলেটর',
+    'tools.tools.age.desc': 'খুব সহজেই আপনার সঠিক বয়স বছর, মাস এবং দিনে গণনা করুন',
+    'tools.tools.bmi.title': 'বিএমআই (BMI) ক্যালকুলেটর',
+    'tools.tools.bmi.desc': 'আপনার বডি মাস ইনডেক্স (BMI) গণনা করুন এবং আপনার স্বাস্থ্যের অবস্থা পর্যালোচনা করুন',
+    'tools.tools.open': 'খুলুন',
+
+    // Badges
+    'tools.badge.popular': 'জনপ্রিয়',
+    'tools.badge.new': 'নতুন',
+    'tools.badge.available': 'প্লে স্টোরে পাওয়া যাচ্ছে',
+
+    // Apps section
+    'tools.apps.subtitle': 'আরও এগিয়ে যান',
+    'tools.apps.title': 'আমাদের অ্যাপস',
+    'tools.apps.desc': 'আমাদের অ্যান্ড্রয়েড অ্যাপগুলো বাংলা ও ইংরেজি উভয় ভাষায় ব্যবহার্য, অফলাইন অ্যাক্সেস, ডার্কমোডসহ আরও অনেক ফিচার রয়েছে',
+    'tools.apps.ponji.desc': 'পরিপূর্ণ ক্যালেন্ডার, সরকারি ছুটির হিসাব, রিমাইন্ডার, বয়স ক্যালকুলেটরসহ অনেক ফিচারসমৃদ্ধ অ্যান্ড্রয়েড অ্যাপ',
+    'tools.apps.jhuri.desc': 'স্মার্ট গ্রোসারি লিস্ট। ইন্টেলিজেন্ট লিস্ট, ক্যাটাগরি এবং স্মার্ট রিমাইন্ডার দিয়ে আপনার শপিং গুছিয়ে রাখুন',
+    'tools.apps.get_on_play': 'বিস্তারিত জানতে ট্যাপ করুন',
+
+    // Tool components - BMI
+    'tools.bmi.weight': 'ওজন (কেজি)',
+    'tools.bmi.height': 'উচ্চতা (সেমি)',
+    'tools.bmi.calc': 'হিসাব করুন',
+    'tools.bmi.result': 'আপনার বিএমআই',
+    'tools.bmi.under': 'কম ওজন',
+    'tools.bmi.normal': 'স্বাভাবিক',
+    'tools.bmi.over': 'অতিরিক্ত ওজন',
+    'tools.bmi.obese': 'স্থূলতা',
+
+    // Tool components - Age calculator
+    'tools.age.dob': 'জন্ম তারিখ',
+    'tools.age.calc': 'বয়স হিসাব করুন',
+    'tools.age.result': 'আপনার বয়স',
+    'tools.age.years': 'বছর',
+    'tools.age.months': 'মাস',
+    'tools.age.days': 'দিন',
+    'tools.age.empty_desc': 'আপনার সঠিক বয়স দেখতে উভয় তারিখ লিখুন।',
+    'tools.age.placeholder_day': 'দিন',
+    'tools.age.placeholder_month': 'মাস',
+    'tools.age.placeholder_year': 'বছর',
+
+    // Tool components - Calendar
+    'tools.cal.today': 'আজ',
+    'tools.cal.sun': 'রবি',
+    'tools.cal.mon': 'সোম',
+    'tools.cal.tue': 'মঙ্গল',
+    'tools.cal.wed': 'বুধ',
+    'tools.cal.thu': 'বৃহঃ',
+    'tools.cal.fri': 'শুক্র',
+    'tools.cal.sat': 'শনি',
+    'tools.cal.bangla_label': 'বাংলা',
+    'tools.cal.hijri_label': 'হিজরি',
+    'tools.cal.loading': 'লোড হচ্ছে...',
   },
+
+  // ------------------------------------------------------------
+  // ENGLISH (en)
+  // ------------------------------------------------------------
   en: {
+
+    // App & Navigation
+    'app.name': 'Ekush Labs',
+    'app.ekush': 'Ekush',
+    'app.labs': 'Labs',
+    'app.ekushlabs': 'EkushLabs',
+    'app.ekushponji': 'Ekush Ponji',
+    'app.jhuri': 'Jhuri',
+    'app.shonamoni': 'Shonamoni',
+    'app.ekushtools': 'EkushTools',
+
     'nav.apps': 'Apps',
     'nav.tools': 'Tools',
     'nav.web_tools': 'Web Tools',
     'nav.other_tools': 'Other Tools',
     'nav.about': 'About',
-    'app.name': 'Ekush Labs',
+
+    // Footer
+    'footer.product_prefix': 'An',
+    'footer.product_suffix': 'product',
+    'footer.rights': 'All rights reserved.',
+
+    // ---- Main / Homepage ----
+
+    // Hero
     'main.hero.badge': 'Welcome',
-    'main.hero.desc': 'EkushLabs is a premium app studio. We build beautiful, reliable, and modern applications for everyday life, with user privacy at the very top of our priorities.',
+    'main.hero.tagline': 'Simple apps, beautiful experiences',
+    'main.hero.desc': 'EkushLabs is a premium app studio. We build beautiful, reliable, and modern apps for everyday life, with user privacy right at the top of our priorities.',
     'main.hero.explore': 'Explore Apps',
     'main.hero.learn': 'Learn More',
-    'main.hero.tagline': 'Simple apps, beautiful experiences',
+
+    // Meta
+    'main.meta.title': 'EkushLabs | Simple apps, meaningful experiences',
+    'main.meta.desc': 'EkushLabs is a modern app studio building beautifully simple, reliable, and privacy-focused utility tools for everyday life.',
+
+    // Badges
+    'main.badge.calendar': 'Calendar',
+    'main.badge.grocery': 'Grocery',
+    'main.badge.mobile': 'Mobile',
+    'main.badge.health': 'Health',
+
+    // Ecosystem section
     'main.ecosystem.title': 'What We Do',
-    'main.ecosystem.desc': 'We design and develop modern mobile and web applications with zero bloat, maximum speed, and a genuine obsession with craft.',
+    'main.ecosystem.desc': 'We design and develop modern mobile and web apps with zero bloat, maximum speed, and a genuine obsession with craft.',
     'main.ecosystem.view_all': 'View other tools',
+
+    // App descriptions (on main page)
     'main.ponji.desc': 'A premium Bengali calendar app with government holidays, events, reminders, and daily content, built for everyday life.',
     'main.jhuri.desc': 'Smart Grocery List. Keep your shopping organized with intelligent lists, categories, and smart reminders.',
     'main.shonamoni.desc': 'A next-generation childcare tracking app to monitor your baby\'s growth, vaccines, and nutrition.',
+
+    // Status badges
     'main.coming_soon': 'Coming Soon',
     'main.in_development': 'In Development',
     'main.play_store': 'Live on Play Store',
+
+    // How we build section
     'main.how.title': 'How We Build',
-    'main.how.desc': 'Native Android apps crafted with Flutter and Material 3, promoted through a super-fast web ecosystem powered by Astro, Svelte, and Tailwind CSS.',
+    'main.how.desc': 'Native Android apps crafted with Flutter and Material 3, paired with a super-fast web ecosystem powered by Astro, Svelte, and Tailwind CSS.',
     'main.how.mobile.title': 'Flutter-Powered Android Apps',
-    'main.how.mobile.desc': 'Our Android apps are built with Flutter and Material 3 working in perfect harmony, delivering top-tier native performance and a clean, minimal interface.',
+    'main.how.mobile.desc': 'Our Android apps are built with Flutter and Material 3 working together seamlessly, delivering top-tier native performance and a clean, minimal interface.',
     'main.how.stats.apps': 'Apps Live on Play Store',
-    'main.how.stats.testing': 'In Closed Testing',
+    'main.how.stats.testing': 'In Pipeline',
     'main.how.web.title': 'Web Ecosystem',
     'main.how.web.desc': 'Every landing page and web tool is built with Astro, Svelte, and Tailwind CSS, guaranteeing 100% static output and incredible speed.',
     'main.how.privacy.title': 'Privacy First',
-    'main.how.privacy.desc': 'Use our apps without any fuss about personal data being collected or stored. All your data stays safely on your own device, and that is how we keep your privacy intact.',
+    'main.how.privacy.desc': 'Use our apps without worrying about personal data being collected or stored. All your data stays safely on your own device, and that is exactly how we keep your privacy intact.',
     'main.how.design.title': 'Design Consistency',
     'main.how.design.desc': 'From the Play Store app to the website landing page, everything we make carries the same familiar, tidy, and beautiful touch.',
+
+    // Contact section
     'main.contact.title': 'Get in Touch',
     'main.contact.desc': 'Got a question, some feedback, or just want to say hello? Our inbox is always open.',
-    // Ponji
+
+    // ---- Ponji ----
+
+    // Meta
+    'ponji.meta.title': 'Ekush Ponji - Bengali Calendar, Holidays, Age Calculator, Reminders & Quotes',
+    'ponji.meta.desc': 'Ekush Ponji brings together the Bengali, Gregorian, and Hijri calendars with events, reminders, daily quotes, and a whole lot more.',
+
+    // Hero
     'ponji.hero.badge': 'Android App',
     'ponji.hero.title1': 'Trusted',
     'ponji.hero.title_highlight': 'Bengali Calendar',
     'ponji.hero.desc': 'Ekush Ponji brings together the Bengali, Gregorian, and Hijri calendars, alongside events, reminders, daily quotes, and more, all in one beautifully designed app.',
     'ponji.hero.get_on': 'Download',
     'ponji.hero.explore': 'Explore features',
+
+    // Stats
     'ponji.stats.languages': 'Languages',
     'ponji.stats.features': 'Features',
     'ponji.stats.offline': 'Offline',
+
+    // Features
     'ponji.features.title_prefix': "What's inside",
     'ponji.features.title1': 'Everything you need,',
     'ponji.features.title_highlight': "nothing you don't.",
     'ponji.features.multi_calendar': 'Multi Calendar',
     'ponji.features.multi_calendar_desc': 'View Bengali, Gregorian, and Hijri dates side by side with official government holidays. Never miss an important date again.',
     'ponji.features.holidays': 'Official Government Holidays',
-    'ponji.features.holidays_desc': 'The complete list of official holidays for the entire year, carefully updated according to the latest circulars.',
+    'ponji.features.holidays_desc': 'A complete list of official holidays for the entire year, carefully updated to reflect the latest circulars.',
     'ponji.features.reminders': 'Events & Reminders',
-    'ponji.features.reminders_desc': 'Create personal events and set reminders for birthdays, meetings, or anything that matters.',
+    'ponji.features.reminders_desc': 'Create personal events and set reminders for birthdays, meetings, or anything that matters to you.',
     'ponji.features.quotes': 'Daily Quotes',
     'ponji.features.quotes_desc': 'Start your day with an inspiring quote. Save your favourites to revisit anytime.',
     'ponji.features.words': 'Daily Words',
     'ponji.features.words_desc': 'Learn a new English word every day. Save the ones you want to remember.',
     'ponji.features.calculator': 'Date Calculator',
-    'ponji.features.calculator_desc': 'Calculate the difference between two dates instantly. Get results in years, months, weeks, and days.',
+    'ponji.features.calculator_desc': 'Calculate the exact difference between two dates instantly. Get results in years, months, weeks, and days.',
     'ponji.features.theme': 'Dark & Light Mode',
-    'ponji.features.theme_desc': 'Switch between dark and light themes to match your preference or environment at any time.',
+    'ponji.features.theme_desc': 'Switch between dark and light themes to match your preference or your surroundings at any time.',
     'ponji.features.bilingual': 'Bilingual',
     'ponji.features.bilingual_desc': 'Full support for both Bengali and English. Switch languages instantly from settings.',
     'ponji.features.offline_title': 'Works Offline',
     'ponji.features.offline_desc': 'Core features work without internet. Your calendar and saved content are always there when you need them.',
+
+    // Screenshots
     'ponji.screenshots.title_prefix': 'See it in action',
     'ponji.screenshots.title1': 'Designed for',
     'ponji.screenshots.title_highlight': 'everyday use.',
+    'ponji.screenshots.home_title': 'Home Screen',
+    'ponji.screenshots.home_desc': "Today's dates, holidays, and daily widgets at a glance",
+    'ponji.screenshots.cal_title': 'Full Calendar View',
+    'ponji.screenshots.cal_desc': 'Bengali, Gregorian, and Hijri dates side by side with holidays',
+    'ponji.screenshots.holiday_title': 'Official Holidays',
+    'ponji.screenshots.holiday_desc': 'Complete list of government holidays for the year',
+    'ponji.screenshots.reminder_title': 'Events & Reminders',
+    'ponji.screenshots.reminder_desc': 'Create reminders for birthdays or personal events',
+    'ponji.screenshots.quote_title': 'Daily Inspiration',
+    'ponji.screenshots.quote_desc': 'A fresh positive quote to start your day',
+    'ponji.screenshots.word_title': 'Daily Word',
+    'ponji.screenshots.word_desc': 'Learn a new English word with its meaning every day',
+    'ponji.screenshots.calc_title': 'Date Calculator',
+    'ponji.screenshots.calc_desc': 'Calculate the exact difference between two dates',
+
+    // Support & Legal
     'ponji.support.title_prefix': 'Need help?',
     'ponji.support.title': 'Support',
-    'ponji.support.desc': 'Have a bug to report, a feature to suggest, or just need a hand? Let us know, we are happy to help.',
+    'ponji.support.desc': 'Have a bug to report, a feature to suggest, or just need a hand? Let us know. We are happy to help.',
     'ponji.privacy': 'Privacy Policy',
     'ponji.terms': 'Terms of Service',
-    // Jhuri
+
+    // ---- Jhuri ----
+
+    // Meta
+    'jhuri.meta.title': 'Jhuri - Smart Grocery List & Bazar Planner',
+    'jhuri.meta.desc': 'Create and organize your shopping list with ease. A simple grocery app built for Bangladesh.',
+
+    // Hero
     'jhuri.hero.badge': 'Android App',
     'jhuri.hero.title1': 'Plan Better,',
     'jhuri.hero.title_highlight': 'Shop Smarter.',
     'jhuri.hero.desc': 'Jhuri keeps 200+ grocery items organized by category, so you can plan your entire bazar in under 20 seconds, without typing a single word.',
     'jhuri.hero.get_on': 'Download',
     'jhuri.hero.see_features': 'See features',
+
+    // Stats
     'jhuri.stats.items': 'Grocery Items',
     'jhuri.stats.categories': 'Categories',
     'jhuri.stats.time': 'To Plan a Bazar',
+
+    // Promise badges
     'jhuri.promise.ready': 'Ready in 20 seconds',
     'jhuri.promise.offline': 'Works offline',
     'jhuri.promise.bangladesh': 'Built for Bangladesh',
     'jhuri.promise.privacy': 'No data collected',
+
+    // Categories section
     'jhuri.categories.title_prefix': "What's inside",
     'jhuri.categories.title1': '8 categories,',
     'jhuri.categories.title_highlight': 'everything you need.',
-    'jhuri.categories.desc': 'Every item your household buys regularly, organized exactly how you think about them.',
+    'jhuri.categories.desc': 'Every item your household buys regularly, organized exactly the way you think about them.',
+    'jhuri.categories.vegetables': 'Vegetables',
+    'jhuri.categories.fish_meat': 'Fish & Meat',
+    'jhuri.categories.rice_pulses': 'Rice, Lentils & Spices',
+    'jhuri.categories.oil_dairy': 'Oil & Dairy',
+    'jhuri.categories.fruits': 'Fruits',
+    'jhuri.categories.essentials': 'Food Essentials',
+    'jhuri.categories.cleaning': 'Cleaning & Personal Care',
+    'jhuri.categories.household': 'Household Items',
+    'jhuri.categories.items_count': '{count} items',
+
+    // Features
     'jhuri.features.title_prefix': 'Features',
     'jhuri.features.title1': 'Everything for your',
     'jhuri.features.title_highlight': 'weekly bazar.',
@@ -411,33 +594,58 @@ export const ui = {
     'jhuri.features.reminders': 'Shopping Reminders',
     'jhuri.features.reminders_desc': 'Set a reminder per list. Get notified on bazar day.',
     'jhuri.features.custom': 'Custom Items',
-    'jhuri.features.custom_desc': 'Permanently add anything not in the database to your library.',
+    'jhuri.features.custom_desc': 'Permanently add anything not in the database to your own library.',
+
+    // Screenshots
     'jhuri.screenshots.title_prefix': 'See it in action',
     'jhuri.screenshots.title1': 'Designed for',
     'jhuri.screenshots.title_highlight': 'real kitchens.',
+    'jhuri.screenshots.home_title': 'Home Screen',
+    'jhuri.screenshots.home_desc': 'Your grocery shopping lists at a glance',
+    'jhuri.screenshots.categories_title': 'Category View',
+    'jhuri.screenshots.categories_desc': 'Visual grid view, tap to browse items by category',
+    'jhuri.screenshots.picker_title': 'Item Picker',
+    'jhuri.screenshots.picker_desc': 'Search and tap to add items without typing',
+    'jhuri.screenshots.shopping_title': 'Shopping Mode',
+    'jhuri.screenshots.shopping_desc': 'A clean checklist view for when you are out shopping',
+    'jhuri.screenshots.summary_title': 'Monthly Summary',
+    'jhuri.screenshots.summary_desc': 'Track your spending and buying patterns over time',
+
+    // Support & Legal
     'jhuri.support.email': 'Support: ekushlabs@gmail.com',
     'jhuri.privacy': 'Privacy Policy',
     'jhuri.terms': 'Terms of Service',
-    // Shonamoni
+
+    // ---- Shonamoni ----
+
+    // Meta
+    'shonamoni.meta.title': 'Shonamoni - Baby Growth & Development Tracker',
+    'shonamoni.meta.desc': 'Shonamoni helps Bangladeshi parents track their baby\'s weight, height, vaccines, milestones, and nutrition, guided by WHO and DGHS standards.',
+
+    // Hero
     'shonamoni.hero.badge': 'Android App',
     'shonamoni.hero.title1': "Your baby's growth,",
     'shonamoni.hero.title_highlight': 'beautifully tracked.',
-    'shonamoni.hero.desc': 'Shonamoni helps Bangladeshi parents track weight, height, vaccinations, milestones, and nutrition, all guided by WHO and DGHS standards, in Bangla and English.',
+    'shonamoni.hero.desc': 'Shonamoni helps Bangladeshi parents track weight, height, vaccinations, milestones, and nutrition, all aligned with WHO and DGHS standards, available in both Bangla and English.',
     'shonamoni.hero.launching': 'Launching soon',
     'shonamoni.hero.get_on': 'Download',
     'shonamoni.hero.see_features': 'See features',
+
+    // Stats
     'shonamoni.stats.languages': 'Languages',
     'shonamoni.stats.standards': 'Standards',
     'shonamoni.stats.vaccine': 'Vaccine Schedule',
+
+    // Features
     'shonamoni.features.title_prefix': 'What Shonamoni offers',
     'shonamoni.features.title1': 'Everything a parent needs,',
     'shonamoni.features.title_highlight': 'in one place.',
     'shonamoni.features.growth': 'Growth Tracking',
-    'shonamoni.features.growth_desc': "Log your baby's weight and height over time. See how they're developing against WHO Child Growth Standards.",
+    'shonamoni.features.growth_desc': "Log your baby's weight and height at regular intervals and see how they are developing against WHO Child Growth Standards.",
     'shonamoni.features.vaccine': 'Vaccination Tracker',
-    'shonamoni.features.vaccine_desc': "Follow Bangladesh's official EPI schedule alongside private vaccines. Mark doses as given and get reminders so nothing gets missed.",
+    'shonamoni.features.vaccine_desc': "Get detailed info on both government EPI and private vaccines. Mark doses as received and see when the next one is due.",
     'shonamoni.features.milestone': 'Milestone Monitoring',
-    'shonamoni.features.milestone_desc': 'Track developmental milestones by age band, rolling, sitting, crawling, first words, and more.',
+    'shonamoni.features.milestone_desc': 'Discover the developmental milestones your baby should be hitting at each age.',
     'shonamoni.features.nutrition': 'Nutrition Guidance',
     'shonamoni.features.nutrition_desc': 'Age-appropriate feeding guidance based on DGHS and IPHN clinical guidelines.',
     'shonamoni.features.charts': 'Growth Charts',
@@ -445,63 +653,77 @@ export const ui = {
     'shonamoni.features.smart_reminders': 'Smart Reminders',
     'shonamoni.features.smart_reminders_desc': 'Timely reminders for upcoming vaccines, scheduled growth check-ins, and milestone age bands.',
     'shonamoni.features.profiles': 'Multiple Child Profiles',
-    'shonamoni.features.profiles_desc': 'Add profiles for all your children. Switch between them instantly.',
+    'shonamoni.features.profiles_desc': 'Add profiles for all your children and switch between them instantly.',
     'shonamoni.features.bilingual': 'Bilingual',
     'shonamoni.features.bilingual_desc': 'Full Bangla and English support. Switch languages instantly from settings.',
     'shonamoni.features.theme': 'Dark & Light Mode',
-    'shonamoni.features.theme_desc': 'Comfortable viewing day or night. A beautifully crafted dark theme included.',
+    'shonamoni.features.theme_desc': 'Comfortable viewing day or night, with a beautifully crafted dark theme included.',
+
+    // Screenshots
     'shonamoni.screenshots.title_prefix': 'See it in action',
     'shonamoni.screenshots.title1': 'Designed with care,',
     'shonamoni.screenshots.title_highlight': 'for every parent.',
+    'shonamoni.screenshots.charts_title': 'Growth Charts',
+    'shonamoni.screenshots.charts_desc': "Visual weight and height charts plotted against WHO percentile curves",
+    'shonamoni.screenshots.vaccine_title': 'Vaccine Schedule',
+    'shonamoni.screenshots.vaccine_desc': 'Full EPI schedule with dose tracking and reminders',
+    'shonamoni.screenshots.milestones_title': 'Milestone Tracker',
+    'shonamoni.screenshots.milestones_desc': "Age-band milestones to follow your baby's development",
+    'shonamoni.screenshots.nutrition_title': 'Nutrition Guide',
+    'shonamoni.screenshots.nutrition_desc': 'Age-appropriate feeding guidance based on DGHS standards',
+
+    // Download section
     'shonamoni.download.badge': 'Available Now',
     'shonamoni.download.title': 'Download Shonamoni',
-    'shonamoni.download.desc': 'Start tracking your baby\'s beautiful growth journey today. Available for free on Android.',
-    'shonamoni.download.visit': 'Download on Google Play',
+    'shonamoni.download.desc': "Start tracking your baby's growth journey today. Free on Android.",
+    'shonamoni.download.visit': 'Tap to download on Google Play',
+
+    // Support & Legal
     'shonamoni.support.title': 'Support',
     'shonamoni.support.email': 'Support: ekushlabs@gmail.com',
     'shonamoni.privacy': 'Privacy Policy',
     'shonamoni.terms': 'Terms of Service',
-    // Tools
+
+    // ---- Tools ----
+
+    // Hero
     'tools.hero.welcome': 'Welcome to',
     'tools.hero.ekush': 'Ekush',
     'tools.hero.tools': 'Tools',
     'tools.hero.by': 'By Ekush Labs',
-    'tools.hero.desc': 'Beautiful, simple tools for everyday use',
+    'tools.hero.desc': 'Beautiful, simple tools for everyday use that make life just a little easier',
     'tools.hero.fast': '⚡ Fast',
     'tools.hero.beautiful': '🎨 Beautiful',
     'tools.hero.dark_mode': '🌙 Dark Mode',
+    'tools.hero.ponji': 'Get the Ekush Ponji App',
+    'tools.hero.shonamoni': "Track your baby's growth with Shonamoni",
+
+    // Web tools section
     'tools.tools.subtitle': 'What we build',
     'tools.tools.title': 'Web Tools',
     'tools.tools.desc': 'Simple, reliable web tools designed with care',
     'tools.tools.calendar.title': 'Bangla Calendar',
-    'tools.tools.calendar.desc': 'Gregorian, Bangla and Hijri dates with Bangladesh government holidays',
+    'tools.tools.calendar.desc': 'Gregorian, Bangla, and Hijri dates alongside Bangladesh government holidays',
     'tools.tools.age.title': 'Age Calculator',
     'tools.tools.age.desc': 'Calculate your exact age in years, months, and days',
     'tools.tools.bmi.title': 'BMI Calculator',
     'tools.tools.bmi.desc': 'Calculate your Body Mass Index and check your health category',
     'tools.tools.open': 'Open',
-    'tools.apps.subtitle': 'Go further',
-    'tools.apps.title': 'Our Apps',
-    'tools.apps.desc': 'Our Android apps bring reminders, offline access, and a lot more',
-    'tools.apps.ponji.desc': 'Bangla Calendar with reminders, widgets, and more',
-    'tools.apps.jhuri.desc': 'Smart Grocery List. Keep your shopping organized with intelligent lists, categories, and smart reminders.',
-    'tools.apps.get_on_play': 'Get on Google Play',
+
+    // Badges
     'tools.badge.popular': 'Popular',
     'tools.badge.new': 'New',
     'tools.badge.available': 'Available on Play Store',
 
-    // Footer & App Names
-    'app.ekush': 'Ekush',
-    'app.labs': 'Labs',
-    'app.ekushlabs': 'EkushLabs',
-    'app.ekushponji': 'Ekush Ponji',
-    'app.jhuri': 'Jhuri',
-    'app.shonamoni': 'Shonamoni',
-    'app.ekushtools': 'EkushTools',
-    'footer.product_prefix': 'An',
-    'footer.rights': 'All rights reserved.',
+    // Apps section
+    'tools.apps.subtitle': 'Go further',
+    'tools.apps.title': 'Our Apps',
+    'tools.apps.desc': 'Our Android apps come with offline access, dark mode, bilingual support, and a lot more',
+    'tools.apps.ponji.desc': 'A full-featured Bangla calendar with reminders, holiday tracking, age calculator, and more',
+    'tools.apps.jhuri.desc': 'Smart Grocery List. Keep your shopping organized with intelligent lists, categories, and smart reminders.',
+    'tools.apps.get_on_play': 'Get on Google Play',
 
-    // Tools Components
+    // Tool components - BMI
     'tools.bmi.weight': 'Weight (kg)',
     'tools.bmi.height': 'Height (cm)',
     'tools.bmi.calc': 'Calculate BMI',
@@ -511,13 +733,19 @@ export const ui = {
     'tools.bmi.over': 'Overweight',
     'tools.bmi.obese': 'Obesity',
 
+    // Tool components - Age calculator
     'tools.age.dob': 'Date of Birth',
     'tools.age.calc': 'Calculate Age',
     'tools.age.result': 'Your Age',
     'tools.age.years': 'Years',
     'tools.age.months': 'Months',
     'tools.age.days': 'Days',
+    'tools.age.empty_desc': 'Enter both dates to see your exact age.',
+    'tools.age.placeholder_day': 'DD',
+    'tools.age.placeholder_month': 'MM',
+    'tools.age.placeholder_year': 'YYYY',
 
+    // Tool components - Calendar
     'tools.cal.today': 'Today',
     'tools.cal.sun': 'Sun',
     'tools.cal.mon': 'Mon',
@@ -526,70 +754,8 @@ export const ui = {
     'tools.cal.thu': 'Thu',
     'tools.cal.fri': 'Fri',
     'tools.cal.sat': 'Sat',
-
-    // New keys
-    'footer.product_suffix': 'product',
-    'tools.hero.ponji': 'Get the Ekush Ponji App',
-    'tools.hero.shonamoni': "Track your baby's growth with Shonamoni",
-    'tools.age.empty_desc': 'Enter both dates to see your exact age.',
-    'tools.age.placeholder_day': 'DD',
-    'tools.age.placeholder_month': 'MM',
-    'tools.age.placeholder_year': 'YYYY',
     'tools.cal.bangla_label': 'Bangla',
     'tools.cal.hijri_label': 'Hijri',
     'tools.cal.loading': 'Loading...',
-    'main.meta.title': 'EkushLabs | Simple apps, meaningful experiences',
-    'main.meta.desc': 'EkushLabs is a modern app studio crafting beautifully simple, reliable, and privacy-focused utility tools for everyday life.',
-    'main.badge.calendar': 'Calendar',
-    'main.badge.grocery': 'Grocery',
-    'main.badge.mobile': 'Mobile',
-    'main.badge.health': 'Health',
-    'ponji.meta.title': 'Ekush Ponji - Bengali Calendar, Holidays & Reminders',
-    'ponji.meta.desc': 'Ekush Ponji brings together the Bengali, Gregorian, and Hijri calendars with events, reminders, daily quotes, and more.',
-    'ponji.screenshots.home_title': 'Home Screen',
-    'ponji.screenshots.home_desc': "Today's dates, holidays, and daily widgets at a glance",
-    'ponji.screenshots.cal_title': 'Full Calendar View',
-    'ponji.screenshots.cal_desc': 'Bengali, Gregorian, and Hijri dates side by side with holidays',
-    'ponji.screenshots.holiday_title': 'Official Holidays',
-    'ponji.screenshots.holiday_desc': 'Complete list of government holidays for the year',
-    'ponji.screenshots.reminder_title': 'Events & Reminders',
-    'ponji.screenshots.reminder_desc': 'Create reminders for birthdays or personal events',
-    'ponji.screenshots.quote_title': 'Daily Inspiration',
-    'ponji.screenshots.quote_desc': 'A fresh positive quote to start your day',
-    'ponji.screenshots.word_title': 'Daily Word',
-    'ponji.screenshots.word_desc': 'Learn a new English word with its meaning daily',
-    'ponji.screenshots.calc_title': 'Date Calculator',
-    'ponji.screenshots.calc_desc': 'Calculate the exact difference between two dates',
-    'jhuri.meta.title': 'Jhuri - Smart Grocery List & Bazar Planner',
-    'jhuri.meta.desc': 'Create and organize your shopping list easily. A simple grocery app designed for Bangladesh.',
-    'jhuri.categories.vegetables': 'Vegetables',
-    'jhuri.categories.fish_meat': 'Fish & Meat',
-    'jhuri.categories.rice_pulses': 'Rice, Lentils & Spices',
-    'jhuri.categories.oil_dairy': 'Oil & Dairy',
-    'jhuri.categories.fruits': 'Fruits',
-    'jhuri.categories.essentials': 'Food Essentials',
-    'jhuri.categories.cleaning': 'Cleaning & Personal Care',
-    'jhuri.categories.household': 'Household Items',
-    'jhuri.categories.items_count': '{count} items',
-    'jhuri.screenshots.home_title': 'Home Screen',
-    'jhuri.screenshots.home_desc': 'Your grocery shopping lists at a glance',
-    'jhuri.screenshots.categories_title': 'Category View',
-    'jhuri.screenshots.categories_desc': 'Visual grid, tap to browse items by category',
-    'jhuri.screenshots.picker_title': 'Item Picker',
-    'jhuri.screenshots.picker_desc': 'Search and tap to add items without typing',
-    'jhuri.screenshots.shopping_title': 'Shopping Mode',
-    'jhuri.screenshots.shopping_desc': 'A clean checklist view for when you are shopping',
-    'jhuri.screenshots.summary_title': 'Monthly Summary',
-    'jhuri.screenshots.summary_desc': 'Track your spending and buying patterns over time',
-    'shonamoni.meta.title': 'Shonamoni - Baby Growth & Development Tracker',
-    'shonamoni.meta.desc': 'Track baby weight, height, vaccines, milestones, and nutrition guided by WHO & DGHS.',
-    'shonamoni.screenshots.charts_title': 'Growth Charts',
-    'shonamoni.screenshots.charts_desc': "WHO percentile curves with your baby's measurements",
-    'shonamoni.screenshots.vaccine_title': 'Vaccine Schedule',
-    'shonamoni.screenshots.vaccine_desc': 'EPI schedule with dose tracking and reminders',
-    'shonamoni.screenshots.milestones_title': 'Milestone Tracker',
-    'shonamoni.screenshots.milestones_desc': "Age-band milestones to track your baby's development",
-    'shonamoni.screenshots.nutrition_title': 'Nutrition Guide',
-    'shonamoni.screenshots.nutrition_desc': 'Age-appropriate feeding guidance from DGHS standards',
   },
 } as const;
