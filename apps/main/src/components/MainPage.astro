@@ -289,41 +289,43 @@ const t = useTranslations(lang);
         <!-- Shonamoni Card -->
         <a
           href="https://shonamoni.ekushlabs.com"
-          class="group relative flex flex-col p-8 rounded-3xl bg-slate-50 dark:bg-black/40 border border-slate-200 dark:border-white/5 shadow-inner opacity-80 hover:opacity-100 hover:-translate-y-1 transition-all duration-500 overflow-hidden reveal reveal-delay-2 cursor-default"
+          class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden reveal reveal-delay-2"
         >
           <div
-            class="flex justify-between items-start mb-12 relative z-10 grayscale group-hover:grayscale-0 transition-all duration-500"
+            class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"
           >
+          </div>
+          <div class="flex justify-between items-start mb-12 relative z-10">
             <div
-              class="w-16 h-16 rounded-2xl bg-white dark:bg-white/5 border border-slate-200 dark:border-white/10 flex items-center justify-center shadow-sm overflow-hidden"
+              class="w-16 h-16 rounded-2xl bg-slate-50 dark:bg-black/50 border border-slate-100 dark:border-white/10 flex items-center justify-center shadow-inner overflow-hidden group-hover:scale-110 transition-transform duration-500"
             >
               <img
                 src="/assets/shonamoni_logo.png"
                 alt="Shonamoni"
-                class="w-10 h-10 object-contain opacity-50"
+                class="w-10 h-10 object-contain drop-shadow-md"
                 onerror="this.src='https://shonamoni.ekushlabs.com/assets/app_logo.png'"
               />
             </div>
             <span
               class="px-3 py-1 bg-amber-500/10 text-amber-600 dark:text-amber-400 text-xs font-bold tracking-widest uppercase rounded-full border border-amber-500/20"
-              >{t("main.coming_soon")}</span
+              >{t("main.badge.health")}</span
             >
           </div>
-          <h3
-            class="font-display text-4xl text-slate-800 dark:text-white/60 mb-3"
-          >
+          <h3 class="font-display text-4xl text-slate-900 dark:text-white mb-3">
             {t("app.shonamoni")}
           </h3>
           <p
-            class="text-slate-500 dark:text-silver/60 mb-8 flex-grow leading-relaxed"
+            class="text-slate-600 dark:text-silver mb-8 flex-grow leading-relaxed"
           >
             {t("main.shonamoni.desc")}
           </p>
           <div
-            class="flex items-center gap-2 text-sm font-bold text-slate-400 dark:text-silver/50 mt-auto border-t border-slate-200 dark:border-white/5 pt-6"
+            class="flex items-center gap-2 text-sm font-bold text-slate-500 dark:text-silver group-hover:text-amber-500 transition-colors mt-auto border-t border-slate-100 dark:border-white/5 pt-6"
           >
-            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
-            {t("main.in_development")}
+            <span
+              class="w-2 h-2 rounded-full bg-green-500 shadow-[0_0_8px_#10B981]"
+            ></span>
+            {t("main.play_store")}
           </div>
         </a>
       </div>

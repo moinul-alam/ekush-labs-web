@@ -74,7 +74,7 @@ const t = useTranslations(lang);
       <p class="text-lg text-slate-600 dark:text-silver max-w-[600px] mx-auto">{t('tools.apps.desc')}</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
       
       <!-- Ekush Ponji -->
       <a href="https://ponji.ekushlabs.com" class="group relative flex flex-col items-center text-center p-10 rounded-[40px] bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 overflow-hidden reveal">
@@ -100,6 +100,21 @@ const t = useTranslations(lang);
         <span class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-600 dark:text-white mb-4">{t('tools.badge.available')}</span>
         <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-3">{t('app.jhuri')}</h3>
         <p class="text-slate-600 dark:text-silver mb-8">{t('tools.apps.jhuri.desc')}</p>
+        <div class="flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-white/80 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
+          <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+          {t('tools.apps.get_on_play')}
+        </div>
+      </a>
+
+      <!-- Shonamoni -->
+      <a href="https://shonamoni.ekushlabs.com" class="group relative flex flex-col items-center text-center p-10 rounded-[40px] bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 overflow-hidden reveal reveal-delay-2">
+        <div class="absolute inset-0 bg-gradient-to-br from-amber-500/5 to-amber-600/5 dark:from-amber-500/10 dark:to-amber-600/10 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"></div>
+        <div class="w-24 h-24 rounded-[28px] overflow-hidden mb-6 shadow-[0_10px_30px_rgba(245,158,11,0.15)] dark:shadow-[0_10px_30px_rgba(245,158,11,0.3)] group-hover:scale-110 transition-transform duration-500 bg-white">
+          <img src="/assets/shonamoni_logo.png" alt="Shonamoni Logo" class="w-full h-full object-contain p-2 drop-shadow-md" onerror="this.src='https://shonamoni.ekushlabs.com/assets/app_logo.png'" />
+        </div>
+        <span class="px-4 py-1.5 rounded-full bg-slate-100 dark:bg-white/10 text-xs font-bold text-slate-600 dark:text-white mb-4">{t('tools.badge.available')}</span>
+        <h3 class="text-3xl font-bold text-slate-900 dark:text-white mb-3">{t('app.shonamoni')}</h3>
+        <p class="text-slate-600 dark:text-silver mb-8">{t('main.shonamoni.desc')}</p>
         <div class="flex items-center gap-2 text-sm font-bold text-slate-600 dark:text-white/80 group-hover:text-slate-900 dark:group-hover:text-white transition-colors">
           <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
           {t('tools.apps.get_on_play')}

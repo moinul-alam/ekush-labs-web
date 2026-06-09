@@ -9,33 +9,31 @@ const { appName = 'EkushLabs' } = Astro.props;
 const currentYear = new Date().getFullYear();
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
-
-// Get the translated app name or fallback to the provided name
-const getTranslatedAppName = () => {
-  const key = `app.${appName.toLowerCase().replace(/\s+/g, '')}`;
-  return t(key as any) || appName;
-};
 ---
 
-<footer id="footer" class="py-8 px-[5vw] border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#0A0A0A] flex items-center justify-between flex-wrap gap-4 relative z-10 transition-colors duration-300 max-md:flex-col max-md:items-start max-md:gap-2">
+<footer id="footer" class="py-8 px-[5vw] border-t border-slate-200 dark:border-white/10 bg-white dark:bg-[#0A0A0A] flex items-center justify-between flex-wrap gap-4 relative z-10 transition-colors duration-300 max-md:flex-col max-md:items-center max-md:gap-4">
   <div class="footer-brand-container">
-    <a href={lang === 'bn' ? "/" : "/en"} class="font-display text-2xl font-medium text-slate-900 dark:text-white no-underline tracking-tight inline-flex gap-1 group">
-      <span class="group-hover:text-primary-start transition-colors duration-300">
+    <a href={lang === 'bn' ? "https://ekushlabs.com" : "https://ekushlabs.com/en"} target="_blank" rel="noopener noreferrer" class="font-display text-2xl font-medium text-slate-900 dark:text-white no-underline tracking-tight inline-flex gap-1 group">
+      <span class="group-hover:scale-105 transition-transform duration-300 flex gap-1">
         <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">{t('app.ekush')}</span>
         <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent">{t('app.labs')}</span>
       </span>
     </a>
   </div>
 
-  <div class="footer-desc-container flex gap-1">
-    {lang === 'en' ? (
-      <span class="text-[0.82rem] font-medium text-slate-500 dark:text-silver">{t('footer.product_prefix')} {getTranslatedAppName()} {t('footer.product_suffix')}</span>
-    ) : (
-      <span class="text-[0.82rem] font-medium text-slate-500 dark:text-silver">{getTranslatedAppName()}-এর {t('footer.product_prefix')} {t('footer.product_suffix')}</span>
-    )}
+  <div class="footer-desc-container flex items-center gap-1">
+    <span class="font-display text-lg font-medium text-slate-700 dark:text-slate-200 tracking-tight flex items-center gap-1.5 group">
+      {lang === 'en' ? (
+        <>An <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent transition-opacity">Ekush</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent transition-opacity">Labs</span> Initiative</>
+      ) : (
+        <><span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent transition-opacity">একুশ</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent transition-opacity">ল্যাব্স</span>-এর উদ্যোগ</>
+      )}
+    </span>
   </div>
 
   <div class="footer-copy-container">
-    <span class="text-[0.78rem] text-slate-400 dark:text-textMuted">&copy; {localizeNumber(currentYear, lang)} {t('app.ekush')} {t('app.labs')}. {t('footer.rights')}</span>
+    <span class="font-display text-base font-medium text-slate-500 dark:text-slate-400 group">
+      &copy; {localizeNumber(currentYear, lang)} <span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent transition-opacity">{t('app.ekush')}</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent transition-opacity">{t('app.labs')}</span>. {t('footer.rights')}
+    </span>
   </div>
 </footer>
