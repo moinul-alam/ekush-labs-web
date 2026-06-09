@@ -519,56 +519,57 @@
   <div class="lg:col-span-4 flex flex-col gap-6">
     <!-- Premium Today Widget -->
     <div
-      class="w-full bg-gradient-to-br from-blue-600 to-indigo-700 dark:from-slate-800 dark:to-slate-950 rounded-[2.5rem] p-8 shadow-2xl shadow-blue-900/20 dark:shadow-black/50 text-white relative overflow-hidden flex flex-col gap-6"
+      class="w-full bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl border border-slate-200/50 dark:border-slate-800/50 shadow-xl shadow-slate-200/50 dark:shadow-none rounded-[2.5rem] p-8 text-slate-800 dark:text-slate-200 relative overflow-hidden flex flex-col gap-6"
     >
       <!-- Glass accents -->
-      <div class="absolute top-0 right-0 -mr-16 -mt-16 w-48 h-48 rounded-full bg-white/10 blur-2xl"></div>
+      <div class="absolute top-0 right-0 -mr-24 -mt-24 w-64 h-64 rounded-full bg-gradient-to-br from-orange-500/10 to-rose-500/10 blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-0 -ml-24 -mb-24 w-64 h-64 rounded-full bg-gradient-to-tr from-violet-500/10 to-fuchsia-500/10 blur-3xl pointer-events-none"></div>
       
       <div
-        class="text-center pb-6 border-b border-white/20 relative z-10"
+        class="text-center pb-6 border-b border-slate-200 dark:border-slate-700/50 relative z-10"
       >
-        <h3 class="text-lg font-bold text-blue-100 mb-4 tracking-wide uppercase">
+        <h3 class="text-lg font-bold text-slate-500 dark:text-slate-400 mb-4 tracking-wide uppercase">
           {t.todayLabel}
         </h3>
-        <div class="text-6xl font-black mb-2 drop-shadow-md">
+        <div class="text-6xl font-black mb-2 bg-gradient-to-r from-blue-800 to-blue-900 dark:from-blue-400 dark:to-blue-300 bg-clip-text text-transparent drop-shadow-sm">
           {fmt(today.getDate())}
         </div>
-        <div class="text-2xl font-bold text-white/90">
+        <div class="text-2xl font-bold text-blue-900 dark:text-blue-200">
           {t.months[today.getMonth()]}
           {fmt(today.getFullYear())}
-          <span class="text-lg font-medium text-white/70 ml-1">{t.gregorianSuffix}</span>
+          <span class="text-lg font-medium text-blue-700 dark:text-blue-400 ml-1">{t.gregorianSuffix}</span>
         </div>
       </div>
 
       <div class="flex flex-col gap-4 relative z-10">
         <div
-          class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20"
+          class="bg-slate-50/50 dark:bg-slate-800/50 backdrop-blur-md p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50"
         >
           <div
-            class="text-xs font-bold text-emerald-200 mb-1 uppercase tracking-wider"
+            class="text-xs font-bold text-emerald-600 dark:text-emerald-500 mb-1 uppercase tracking-wider"
           >
             {t.banglaLabel}
           </div>
-          <div class="text-lg font-bold text-white">
+          <div class="text-lg font-bold text-emerald-700 dark:text-emerald-400">
             {fmt(todayBangla.day)}
             {t.bMonths[todayBangla.monthIndex]}
             {fmt(todayBangla.year)}
-            <span class="text-sm font-medium text-white/70 ml-1">{t.banglaSuffix}</span>
+            <span class="text-sm font-medium text-emerald-600 dark:text-emerald-500 ml-1">{t.banglaSuffix}</span>
           </div>
         </div>
         <div
-          class="bg-white/10 backdrop-blur-md p-5 rounded-2xl border border-white/20"
+          class="bg-slate-50/50 dark:bg-slate-800/50 backdrop-blur-md p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50"
         >
           <div
-            class="text-xs font-bold text-orange-200 mb-1 uppercase tracking-wider"
+            class="text-xs font-bold text-orange-600 dark:text-orange-500 mb-1 uppercase tracking-wider"
           >
             {t.hijriLabel}
           </div>
-          <div class="text-lg font-bold text-white">
+          <div class="text-lg font-bold text-orange-600 dark:text-orange-400">
             {fmt(todayHijri.day)}
             {t.hMonths[todayHijri.monthIndex]}
             {fmt(todayHijri.year)}
-            <span class="text-sm font-medium text-white/70 ml-1">{t.hijriSuffix}</span>
+            <span class="text-sm font-medium text-orange-500 dark:text-orange-500 ml-1">{t.hijriSuffix}</span>
           </div>
         </div>
       </div>
