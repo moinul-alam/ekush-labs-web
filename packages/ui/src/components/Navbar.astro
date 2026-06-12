@@ -21,8 +21,8 @@ const t = useTranslations(lang);
 
   <div class="nav-brand-container">
     <a href={lang === 'bn' ? "/" : "/en"} class="font-display text-4xl font-medium tracking-tight text-slate-900 dark:text-white no-underline flex items-center gap-2 relative group">
-      <img src={logoUrl} alt={`${appName} Logo`} class="w-8 h-8 rounded-lg shadow-sm" onerror="this.style.display='none'" />
-      <span class="group-hover:text-primary-start transition-colors duration-300">
+      <img src={logoUrl} alt={`${appName} Logo`} class="w-6 h-6 sm:w-8 sm:h-8 rounded-lg shadow-sm" onerror="this.style.display='none'" />
+      <span class={`group-hover:text-primary-start transition-colors duration-300 ${pageTitle ? 'hidden sm:block' : ''}`}>
         {appName === 'EkushTools' ? (
           <><span class="bg-gradient-to-r from-primary-start to-primary-end bg-clip-text text-transparent">{t('tools.hero.ekush')}</span> <span class="bg-gradient-to-r from-secondary-start to-secondary-end bg-clip-text text-transparent">{t('tools.hero.tools')}</span></>
         ) : isMainPortal ? (
