@@ -1,27 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Portal (ekushlabs.com) -->
   <url>
     <loc>https://ekushlabs.com/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://ekushlabs.com/#apps</loc>
-    <lastmod>2025-05-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://ekushlabs.com/en/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Jhuri Subdomain (jhuri.ekushlabs.com) -->
+  <url>
+    <loc>https://jhuri.ekushlabs.com/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://ekushlabs.com/#about</loc>
-    <lastmod>2025-05-11</lastmod>
-    <changefreq>monthly</changefreq>
+    <loc>https://jhuri.ekushlabs.com/en/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://ekushlabs.com/#contact</loc>
-    <lastmod>2025-05-11</lastmod>
+    <loc>https://jhuri.ekushlabs.com/privacy</loc>
+    <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://jhuri.ekushlabs.com/terms</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Ekush Ponji Subdomain (ekushponji.ekushlabs.com) -->
+  <url>
+    <loc>https://ekushponji.ekushlabs.com/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://ekushponji.ekushlabs.com/en/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://ekushponji.ekushlabs.com/privacy</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://ekushponji.ekushlabs.com/terms</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Shonamoni Subdomain (shonamoni.ekushlabs.com) -->
+  <url>
+    <loc>https://shonamoni.ekushlabs.com/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://shonamoni.ekushlabs.com/en/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://shonamoni.ekushlabs.com/privacy</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://shonamoni.ekushlabs.com/terms</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- Tools Subdomain (tools.ekushlabs.com) -->
+  <url>
+    <loc>https://tools.ekushlabs.com/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://tools.ekushlabs.com/en/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tools.ekushlabs.com/age-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tools.ekushlabs.com/en/age-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tools.ekushlabs.com/bmi-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tools.ekushlabs.com/en/bmi-calculator</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tools.ekushlabs.com/calendar</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tools.ekushlabs.com/en/calendar</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
     <priority>0.6</priority>
   </url>
 </urlset>
