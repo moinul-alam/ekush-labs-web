@@ -336,6 +336,8 @@ export const ui = {
     'tools.tools.age.desc': 'খুব সহজেই আপনার সঠিক বয়স বছর, মাস এবং দিনে গণনা করুন',
     'tools.tools.bmi.title': 'বিএমআই (BMI) ক্যালকুলেটর',
     'tools.tools.bmi.desc': 'আপনার বডি মাস ইনডেক্স (BMI) গণনা করুন এবং আপনার স্বাস্থ্যের অবস্থা পর্যালোচনা করুন',
+    'tools.tools.converter.title': 'ইউনিট কনভার্টার',
+    'tools.tools.converter.desc': 'দৈর্ঘ্য, ক্ষেত্রফল, ওজন, তাপমাত্রা ও অন্যান্য ইউনিটের মধ্যে দ্রুত রূপান্তর করুন',
     'tools.tools.open': 'খুলুন',
 
     // Badges
@@ -385,6 +387,16 @@ export const ui = {
     'tools.cal.bangla_label': 'বাংলা',
     'tools.cal.hijri_label': 'হিজরি',
     'tools.cal.loading': 'লোড হচ্ছে...',
+
+    // Tool components - Unit Converter
+    'tools.converter.cardTitle': 'ইউনিট কনভার্টার',
+    'tools.converter.category': 'ক্যাটাগরি',
+    'tools.converter.from': 'থেকে',
+    'tools.converter.to': 'প্রতি',
+    'tools.converter.value': 'মান লিখুন',
+    'tools.converter.result': 'ফলাফল',
+    'tools.converter.swap': 'পরিবর্তন করুন',
+    'tools.converter.copiedTooltip': 'কপি হয়েছে!',
   },
 
   // ------------------------------------------------------------
@@ -708,6 +720,8 @@ export const ui = {
     'tools.tools.age.desc': 'Calculate your exact age in years, months, and days',
     'tools.tools.bmi.title': 'BMI Calculator',
     'tools.tools.bmi.desc': 'Calculate your Body Mass Index and check your health category',
+    'tools.tools.converter.title': 'Unit Converter',
+    'tools.tools.converter.desc': 'Quickly convert between length, area, weight, temperature, and other units',
     'tools.tools.open': 'Open',
 
     // Badges
@@ -757,5 +771,15 @@ export const ui = {
     'tools.cal.bangla_label': 'Bangla',
     'tools.cal.hijri_label': 'Hijri',
     'tools.cal.loading': 'Loading...',
+
+    // Tool components - Unit Converter
+    'tools.converter.cardTitle': 'Unit Converter',
+    'tools.converter.category': 'Category',
+    'tools.converter.from': 'From',
+    'tools.converter.to': 'To',
+    'tools.converter.value': 'Enter Value',
+    'tools.converter.result': 'Result',
+    'tools.converter.swap': 'Swap',
+    'tools.converter.copiedTooltip': 'Copied!',
   },
 } as const;
