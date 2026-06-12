@@ -1,4 +1,5 @@
 <script>
+  import { fmt, handleLocalizedInput } from '../utils/numbers';
   // Language Dictionary
   const dict = {
     bn: {
@@ -58,10 +59,7 @@
   $: t = dict[lang];
 
   // Formatting utilities
-  function fmt(n) {
-    if (lang === 'en') return n.toString();
-    return n.toString().replace(/[0-9]/g, d => '০১২৩৪৫৬৭৮৯'[d]);
-  }
+  const formatNum = (n) => fmt(n.toString(), lang);
 
   $: result = calculateBMI(weightVal, heightCmVal, heightFtVal, heightInVal, weightUnit, heightUnit);
 
@@ -177,7 +175,7 @@
         </div>
       </div>
       <div class="input-wrapper flex items-center gap-3 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/10 transition-all">
-        <input id="bmi-weight" type="number" bind:value={weightVal} placeholder={t.weightPlaceholder} class="flex-1 py-3 bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none" />
+        <input id="bmi-weight" type="text" inputmode="decimal" value={fmt(weightVal, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => weightVal = v)} placeholder={t.weightPlaceholder} class="flex-1 py-3 bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
         <span class="text-slate-500 dark:text-slate-400 font-semibold">{weightUnit}</span>
       </div>
     </div>
@@ -194,17 +192,17 @@
       
       {#if heightUnit === 'cm'}
         <div class="input-wrapper flex items-center gap-3 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/10 transition-all">
-          <input id="bmi-height" type="number" bind:value={heightCmVal} placeholder={t.heightPlaceholderCm} class="flex-1 py-3 bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none" />
+          <input id="bmi-height" type="text" inputmode="decimal" value={fmt(heightCmVal, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => heightCmVal = v)} placeholder={t.heightPlaceholderCm} class="flex-1 py-3 bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
           <span class="text-slate-500 dark:text-slate-400 font-semibold">cm</span>
         </div>
       {:else}
         <div class="flex gap-4">
           <div class="input-wrapper flex-1 flex items-center gap-2 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/10 transition-all">
-            <input type="number" bind:value={heightFtVal} placeholder={t.heightPlaceholderFt} class="flex-1 py-3 w-full bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none" />
+            <input type="text" inputmode="decimal" value={fmt(heightFtVal, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => heightFtVal = v)} placeholder={t.heightPlaceholderFt} class="flex-1 py-3 w-full bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
             <span class="text-slate-500 dark:text-slate-400 font-semibold">ft</span>
           </div>
           <div class="input-wrapper flex-1 flex items-center gap-2 bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 focus-within:border-blue-500 focus-within:ring-4 focus-within:ring-blue-500/10 transition-all">
-            <input type="number" bind:value={heightInVal} placeholder={t.heightPlaceholderIn} class="flex-1 py-3 w-full bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none" />
+            <input type="text" inputmode="decimal" value={fmt(heightInVal, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => heightInVal = v)} placeholder={t.heightPlaceholderIn} class="flex-1 py-3 w-full bg-transparent border-none text-lg font-semibold text-slate-900 dark:text-white outline-none [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
             <span class="text-slate-500 dark:text-slate-400 font-semibold">in</span>
           </div>
         </div>
@@ -268,22 +266,22 @@
 
           <!-- Cutoff Markers (Ticks and Numbers) -->
           <!-- 10 (Start) -->
-          <text x={polarToCartesian(190, 180, 175, 0).x} y={polarToCartesian(190, 180, 175, 0).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{fmt(10)}</text>
+          <text x={polarToCartesian(190, 180, 175, 0).x} y={polarToCartesian(190, 180, 175, 0).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{formatNum(10)}</text>
           
           <!-- 18.5 -->
           <line x1={polarToCartesian(190, 180, 157, 51).x} y1={polarToCartesian(190, 180, 157, 51).y} x2={polarToCartesian(190, 180, 165, 51).x} y2={polarToCartesian(190, 180, 165, 51).y} stroke="currentColor" stroke-width="2" class="text-slate-300 dark:text-slate-600" />
-          <text x={polarToCartesian(190, 180, 175, 51).x} y={polarToCartesian(190, 180, 175, 51).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{fmt(18.5)}</text>
+          <text x={polarToCartesian(190, 180, 175, 51).x} y={polarToCartesian(190, 180, 175, 51).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{formatNum(18.5)}</text>
 
           <!-- 25 -->
           <line x1={polarToCartesian(190, 180, 157, 90).x} y1={polarToCartesian(190, 180, 157, 90).y} x2={polarToCartesian(190, 180, 165, 90).x} y2={polarToCartesian(190, 180, 165, 90).y} stroke="currentColor" stroke-width="2" class="text-slate-300 dark:text-slate-600" />
-          <text x={polarToCartesian(190, 180, 175, 90).x} y={polarToCartesian(190, 180, 175, 90).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{fmt(25)}</text>
+          <text x={polarToCartesian(190, 180, 175, 90).x} y={polarToCartesian(190, 180, 175, 90).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{formatNum(25)}</text>
 
           <!-- 30 -->
           <line x1={polarToCartesian(190, 180, 157, 120).x} y1={polarToCartesian(190, 180, 157, 120).y} x2={polarToCartesian(190, 180, 165, 120).x} y2={polarToCartesian(190, 180, 165, 120).y} stroke="currentColor" stroke-width="2" class="text-slate-300 dark:text-slate-600" />
-          <text x={polarToCartesian(190, 180, 175, 120).x} y={polarToCartesian(190, 180, 175, 120).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{fmt(30)}</text>
+          <text x={polarToCartesian(190, 180, 175, 120).x} y={polarToCartesian(190, 180, 175, 120).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{formatNum(30)}</text>
 
           <!-- 40 (End) -->
-          <text x={polarToCartesian(190, 180, 175, 180).x} y={polarToCartesian(190, 180, 175, 180).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{fmt(40)}</text>
+          <text x={polarToCartesian(190, 180, 175, 180).x} y={polarToCartesian(190, 180, 175, 180).y} text-anchor="middle" alignment-baseline="middle" font-size="12" class="fill-slate-500 font-bold">{formatNum(40)}</text>
           
           <!-- Indicator Needle -->
           <g transform="translate(190, 180) rotate({gaugeAngle})" filter="url(#needle-shadow)" style="transition: transform 1s cubic-bezier(0.34, 1.56, 0.64, 1);">
@@ -298,7 +296,7 @@
 
       <div class="text-center mt-4">
         <div class="text-6xl font-black font-display text-slate-900 dark:text-white mb-2 tracking-tight">
-          {fmt(result.bmi.toFixed(1))} <span class="text-xl text-slate-500 dark:text-slate-400 font-bold ml-1">{t.bmiUnit}</span>
+          {formatNum(result.bmi.toFixed(1))} <span class="text-xl text-slate-500 dark:text-slate-400 font-bold ml-1">{t.bmiUnit}</span>
         </div>
         <h4 class="text-3xl font-black font-display {result.category === 'underweight' ? 'text-blue-500' : result.category === 'normal' ? 'text-emerald-500' : result.category === 'overweight' ? 'text-amber-500' : 'text-red-500'}">
           {t[result.category]}

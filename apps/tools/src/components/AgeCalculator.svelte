@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { fmt, handleLocalizedInput } from '../utils/numbers';
 
   const dict = {
     bn: {
@@ -70,9 +71,8 @@
 
   $: t = dict[lang];
 
-  function fmt(n) {
-    if (lang === 'en') return n.toString();
-    return n.toString().replace(/[0-9]/g, (d) => '০১২৩৪৫৬৭৮৯'[d]);
+  function formatNum(n) {
+    return fmt(n.toString(), lang);
   }
 
   function formatNumberWithCommas(n) {
@@ -156,14 +156,14 @@
   function getCopyText(copyType) {
     if (!results) return '';
     switch (copyType) {
-      case 'years': return fmt(results.years) + ' ' + t.labelYears;
-      case 'months': return fmt(results.months) + ' ' + t.labelMonths;
-      case 'days': return fmt(results.days) + ' ' + t.labelDays;
+      case 'years': return formatNum(results.years) + ' ' + t.labelYears;
+      case 'months': return formatNum(results.months) + ' ' + t.labelMonths;
+      case 'days': return formatNum(results.days) + ' ' + t.labelDays;
       case 'total-days': return formatNumberWithCommas(results.totalDays) + ' ' + t.totalDaysLabel;
       case 'total-months': return formatNumberWithCommas(results.totalMonths) + ' ' + t.totalMonthsLabel;
       case 'total-weeks': return formatNumberWithCommas(results.totalWeeks) + ' ' + t.totalWeeksLabel;
       case 'total-hours': return formatNumberWithCommas(results.totalHours) + ' ' + t.totalHoursLabel;
-      case 'all': return `${fmt(results.years)} ${t.labelYears} ${fmt(results.months)} ${t.labelMonths} ${fmt(results.days)} ${t.labelDays}`;
+      case 'all': return `${formatNum(results.years)} ${t.labelYears} ${formatNum(results.months)} ${t.labelMonths} ${formatNum(results.days)} ${t.labelDays}`;
       default: return '';
     }
   }
@@ -191,15 +191,15 @@
       <span class="block font-semibold text-slate-800 dark:text-slate-200 mb-3">{t.startLabel}</span>
       <div class="flex gap-4">
         <div class="flex-1">
-          <input type="number" bind:value={startDay} placeholder={t.placeholderDay} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="31">
+          <input type="text" inputmode="decimal" value={fmt(startDay, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => startDay = v)} placeholder={t.placeholderDay} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.dayText}</div>
         </div>
         <div class="flex-1">
-          <input type="number" bind:value={startMonth} placeholder={t.placeholderMonth} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="12">
+          <input type="text" inputmode="decimal" value={fmt(startMonth, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => startMonth = v)} placeholder={t.placeholderMonth} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.monthText}</div>
         </div>
         <div class="flex-[1.5]">
-          <input type="number" bind:value={startYear} placeholder={t.placeholderYear} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white">
+          <input type="text" inputmode="decimal" value={fmt(startYear, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => startYear = v)} placeholder={t.placeholderYear} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.yearText}</div>
         </div>
       </div>
@@ -213,15 +213,15 @@
       </div>
       <div class="flex gap-4">
         <div class="flex-1">
-          <input type="number" bind:value={endDay} placeholder={t.placeholderDay} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="31">
+          <input type="text" inputmode="decimal" value={fmt(endDay, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => endDay = v)} placeholder={t.placeholderDay} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.dayText}</div>
         </div>
         <div class="flex-1">
-          <input type="number" bind:value={endMonth} placeholder={t.placeholderMonth} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white" min="1" max="12">
+          <input type="text" inputmode="decimal" value={fmt(endMonth, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => endMonth = v)} placeholder={t.placeholderMonth} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.monthText}</div>
         </div>
         <div class="flex-[1.5]">
-          <input type="number" bind:value={endYear} placeholder={t.placeholderYear} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white">
+          <input type="text" inputmode="decimal" value={fmt(endYear, lang)} on:input={(e) => handleLocalizedInput(e, lang, v => endYear = v)} placeholder={t.placeholderYear} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold text-center focus-within:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
           <div class="text-center text-sm font-semibold text-slate-500 mt-2">{t.yearText}</div>
         </div>
       </div>
@@ -244,11 +244,11 @@
     {#if results}
       <div class="text-center mb-10">
         <h3 class="text-6xl font-black text-slate-900 dark:text-white mb-2 tracking-tight">
-          <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">{fmt(results.years)}</span> <span class="text-3xl text-slate-400 font-bold">{t.labelYears}</span>
+          <span class="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">{formatNum(results.years)}</span> <span class="text-3xl text-slate-400 font-bold">{t.labelYears}</span>
         </h3>
         <div class="flex justify-center items-end gap-6 text-2xl font-bold mt-4">
-          <div class="flex items-end gap-2"><span class="text-4xl text-slate-800 dark:text-slate-100">{fmt(results.months)}</span> <span class="text-slate-400">{t.labelMonths}</span></div>
-          <div class="flex items-end gap-2"><span class="text-4xl text-slate-800 dark:text-slate-100">{fmt(results.days)}</span> <span class="text-slate-400">{t.labelDays}</span></div>
+          <div class="flex items-end gap-2"><span class="text-4xl text-slate-800 dark:text-slate-100">{formatNum(results.months)}</span> <span class="text-slate-400">{t.labelMonths}</span></div>
+          <div class="flex items-end gap-2"><span class="text-4xl text-slate-800 dark:text-slate-100">{formatNum(results.days)}</span> <span class="text-slate-400">{t.labelDays}</span></div>
         </div>
       </div>
 
