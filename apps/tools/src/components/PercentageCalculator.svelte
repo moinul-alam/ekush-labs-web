@@ -115,12 +115,12 @@
     </h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode1_x}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m1_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m1_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m1x" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode1_x}</label>
+        <input id="pct-m1x" type="text" inputmode="decimal" value={formatNum(m1_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m1_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode1_y}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m1_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m1_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m1y" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode1_y}</label>
+        <input id="pct-m1y" type="text" inputmode="decimal" value={formatNum(m1_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m1_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-blue-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
     </div>
     {#if m1_result !== null}
@@ -139,12 +139,12 @@
     </h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode2_x}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m2_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m2_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-emerald-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m2x" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode2_x}</label>
+        <input id="pct-m2x" type="text" inputmode="decimal" value={formatNum(m2_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m2_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-emerald-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode2_y}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m2_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m2_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-emerald-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m2y" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode2_y}</label>
+        <input id="pct-m2y" type="text" inputmode="decimal" value={formatNum(m2_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m2_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-emerald-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
     </div>
     {#if m2_result !== null}
@@ -163,12 +163,12 @@
     </h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode3_x}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m3_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m3_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-amber-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m3x" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode3_x}</label>
+        <input id="pct-m3x" type="text" inputmode="decimal" value={formatNum(m3_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m3_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-amber-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode3_y}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m3_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m3_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-amber-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m3y" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode3_y}</label>
+        <input id="pct-m3y" type="text" inputmode="decimal" value={formatNum(m3_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m3_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-amber-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
     </div>
     {#if m3_abs !== null}
@@ -190,12 +190,12 @@
     </h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode4_y}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m4_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m4_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-cyan-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m4y" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode4_y}</label>
+        <input id="pct-m4y" type="text" inputmode="decimal" value={formatNum(m4_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m4_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-cyan-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode4_x}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m4_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m4_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-cyan-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m4x" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode4_x}</label>
+        <input id="pct-m4x" type="text" inputmode="decimal" value={formatNum(m4_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m4_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-cyan-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
     </div>
     {#if m4_result !== null}
@@ -214,12 +214,12 @@
     </h3>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode5_y}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m5_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m5_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-rose-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m5y" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode5_y}</label>
+        <input id="pct-m5y" type="text" inputmode="decimal" value={formatNum(m5_y_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m5_y_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-rose-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
       <div>
-        <label class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode5_x}</label>
-        <input type="text" inputmode="decimal" value={formatNum(m5_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m5_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-rose-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
+        <label for="pct-m5x" class="block text-sm font-semibold text-slate-500 dark:text-slate-400 mb-2">{t.mode5_x}</label>
+        <input id="pct-m5x" type="text" inputmode="decimal" value={formatNum(m5_x_str)} on:input={(e) => handleLocalizedInput(e, lang, v => m5_x_str = v)} class="w-full bg-slate-50 dark:bg-slate-700 border-2 border-slate-200 dark:border-slate-600 rounded-xl px-4 py-3 text-lg font-semibold focus:border-rose-500 outline-none transition-all dark:text-white [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none">
       </div>
     </div>
     {#if m5_result !== null}
