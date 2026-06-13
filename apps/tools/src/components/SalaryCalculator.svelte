@@ -8,6 +8,7 @@
     bn: {
       title: "সরকারি বেতন ক্যালকুলেটর",
       desc: "অষ্টম এবং প্রস্তাবিত নবম পে-স্কেলের তুলনামূলক বেতন হিসাব করুন",
+      devWarning: "এই অ্যাপটি বর্তমানে ডেভেলপমেন্ট পর্যায়ে আছে। এখানে প্রদর্শিত ডেটা চূড়ান্ত নয়।",
       grade: "গ্রেড (১-২০)",
       currentBasic: "বর্তমান বেসিক (৳)",
       location: "কর্মস্থল / বাসাভাড়ার এলাকা",
@@ -45,6 +46,7 @@
     en: {
       title: "Govt Salary Calculator",
       desc: "Calculate and compare salary between 8th and proposed 9th pay scale",
+      devWarning: "This app is currently under development. The data shown here is not actual.",
       grade: "Grade (1-20)",
       currentBasic: "Current Basic (৳)",
       location: "Workplace / House Rent Area",
@@ -407,6 +409,16 @@
 </script>
 
 <div class="max-w-4xl mx-auto flex flex-col gap-8">
+  <!-- Dev Warning Banner -->
+  <div class="bg-red-50 dark:bg-red-500/10 border border-red-200/50 dark:border-red-500/20 rounded-2xl p-4 md:p-5 shadow-sm">
+    <div class="flex items-start gap-3">
+      <span class="text-red-500 mt-0.5">⚠️</span>
+      <p class="text-red-800 dark:text-red-200/80 text-sm md:text-base font-bold leading-relaxed">
+        {t.devWarning}
+      </p>
+    </div>
+  </div>
+
   {#if loading}
     <div class="flex items-center justify-center py-20">
       <div class="animate-spin rounded-full h-12 w-12 border-4 border-blue-500 border-t-transparent"></div>
