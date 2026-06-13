@@ -1,0 +1,33 @@
+---
+import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
+import SalaryCalculatorComponent from '../components/SalaryCalculator.svelte';
+import { useTranslations } from '@ekush-labs/ui/src/i18n/utils';
+
+const t = useTranslations('bn');
+---
+
+<BaseLayout
+  title={`${t('tools.salary.title')} | ${t('app.ekushlabs')}`}
+  description={t('tools.salary.desc')}
+  appName="EkushTools"
+  pageTitle={t('tools.salary.title')}
+>
+  <div class="pt-24 pb-16 px-[5vw] min-h-screen relative">
+    <!-- Background Decor -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-blue-500/5 to-transparent blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-t from-emerald-500/5 to-transparent blur-3xl"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto mb-10 text-center">
+      <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
+        {t('tools.salary.title')}
+      </h1>
+      <p class="text-lg text-slate-600 dark:text-slate-400 font-medium">
+        {t('tools.salary.desc')}
+      </p>
+    </div>
+
+    <SalaryCalculatorComponent client:load lang="bn" />
+  </div>
+</BaseLayout>
