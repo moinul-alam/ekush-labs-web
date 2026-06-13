@@ -90,8 +90,6 @@
     loading = true;
     error = false;
     try {
-      // For local testing, fallback to a local mock if the hub endpoint fails.
-      // But we will try the hub endpoint first as requested.
       let manifestRes;
       try {
         manifestRes = await fetch("https://hub.ekushlabs.com/payscales/manifest.json");
@@ -103,29 +101,61 @@
       if (manifestRes.ok) {
         manifest = await manifestRes.json();
       } else {
-        // Fallback for development if the external server is not ready
         manifestRes = await fetch("/hub/payscales/manifest.json");
         manifest = await manifestRes.json();
       }
 
       const baseUrl = manifest.baseUrl || "https://hub.ekushlabs.com/payscales";
-      const dataFile = manifest.datasets?.payscales?.files?.["8th"] || manifest.datasets?.payscales?.files?.["data"] || "pay_scale_data.json";
+      const file8th = manifest.datasets?.payscales?.files?.["8th"] || "pay_scale_8th.json";
+      const file9th = manifest.datasets?.payscales?.files?.["9th"] || "pay_scale_9th.json";
 
-      let dataRes;
+      // Fetch 8th
+      let data8thRes;
       try {
-        dataRes = await fetch(`${baseUrl}/${dataFile}`);
+        data8thRes = await fetch(`${baseUrl}/${file8th}`);
       } catch (err) {
-        dataRes = { ok: false };
+        data8thRes = { ok: false };
+      }
+      if (!data8thRes.ok) {
+        data8thRes = await fetch(`/hub/payscales/${file8th}`);
+      }
+      const data8th = await data8thRes.json();
+
+      // Fetch 9th
+      let data9thRes;
+      try {
+        data9thRes = await fetch(`${baseUrl}/${file9th}`);
+      } catch (err) {
+        data9thRes = { ok: false };
+      }
+      if (!data9thRes.ok) {
+        data9thRes = await fetch(`/hub/payscales/${file9th}`);
+      }
+      const data9th = await data9thRes.json();
+
+      // Combine them into a single structure
+      const grades = [];
+      for (let i = 0; i < 20; i++) {
+        const g8 = data8th.grades.find(g => g.grade === i + 1);
+        const g9 = data9th.grades.find(g => g.grade === i + 1);
+        if (g8 && g9) {
+          grades.push({
+            grade: i + 1,
+            scale_8th: g8,
+            scale_9th: g9
+          });
+        }
       }
 
-      if (!dataRes.ok) {
-        // Dev fallback
-        dataRes = await fetch(`/hub/payscales/${dataFile}`);
-      }
+      payscaleData = {
+        allowances: data8th.allowances,
+        disclaimer: {
+          bn: data8th.meta.disclaimer_bn,
+          en: data8th.meta.disclaimer_en
+        },
+        grades
+      };
       
-      payscaleData = await dataRes.json();
-      
-      // Auto-populate 8th scale basic for default grade
       updateGradeDefault();
     } catch (e) {
       console.error("[Salary Calculator] Data fetch failed:", e);
@@ -143,7 +173,7 @@
     if (payscaleData && payscaleData.grades) {
       const gradeData = payscaleData.grades.find((g) => g.grade == selectedGrade);
       if (gradeData) {
-        currentBasic = gradeData.scale_8th.basic.toString();
+        currentBasic = gradeData.scale_8th.steps[0].toString();
       }
     }
   }

@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-06-13",
+  "datasets": {
+    "payscales": {
+      "type": "multiple_files",
+      "files": {
+        "8th": "pay_scale_8th.json",
+        "9th": "pay_scale_9th.json"
+      }
+    }
+  }
+}
