@@ -21,13 +21,42 @@
       "type": "flat_monthly"
     },
     "tiffin": {
-      "grades_1_to_10": 200,
-      "grades_11_to_20": 1000,
-      "type": "flat_monthly_by_grade_range"
+      "amount": 1000,
+      "type": "flat_monthly",
+      "grades": [11, 20]
+    },
+    "special_benefit": {
+      "type": "percentage_of_basic_with_min",
+      "rules": [
+        { "grades": [1, 9], "percentage": 0.0, "min_amount": 0 },
+        { "grades": [10, 20], "percentage": 0.0, "min_amount": 0 }
+      ]
     },
     "child_education": {
       "per_child": 500,
       "max_children": 2,
+      "type": "flat_monthly"
+    }
+  },
+  "deductions": {
+    "gpf": {
+      "type": "percentage_of_basic_input",
+      "default_percentage": 0.25,
+      "min_percentage": 0.05,
+      "max_percentage": 0.25
+    },
+    "joint_insurance": {
+      "amount": 100,
+      "type": "flat_monthly",
+      "grades": [1, 12]
+    },
+    "welfare_fund": {
+      "amount": 150,
+      "type": "flat_monthly",
+      "grades": [1, 12]
+    },
+    "stamp_duty": {
+      "amount": 10,
       "type": "flat_monthly"
     }
   },

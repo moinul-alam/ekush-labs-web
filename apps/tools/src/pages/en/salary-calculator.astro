@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
 import SalaryCalculatorComponent from '../../components/SalaryCalculator.svelte';
+import PromoBanner from '../../components/PromoBanner.astro';
 import { useTranslations } from '@ekush-labs/ui/src/i18n/utils';
 
 const t = useTranslations('en');
@@ -29,5 +30,8 @@ const t = useTranslations('en');
     </div>
 
     <SalaryCalculatorComponent client:load lang="en" />
+    <div class="max-w-4xl mx-auto mt-4">
+      <PromoBanner />
+    </div>
   </div>
 </BaseLayout>

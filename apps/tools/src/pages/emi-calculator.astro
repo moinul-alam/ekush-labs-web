@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
 import EMICalculatorComponent from '../components/EMICalculator.svelte';
+import PromoBanner from '../components/PromoBanner.astro';
 ---
 
 <BaseLayout title="ইএমআই ক্যালকুলেটর - একুশ টুলস" appName="EkushTools" pageTitle="ইএমআই ক্যালকুলেটর">
@@ -10,16 +11,7 @@ import EMICalculatorComponent from '../components/EMICalculator.svelte';
       <EMICalculatorComponent client:load lang="bn" />
 
       <!-- Bottom CTA -->
-      <div class="mt-16 text-center py-10 px-6 bg-gradient-to-br from-blue-600/10 to-cyan-400/10 rounded-3xl border border-slate-200 dark:border-slate-700">
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">একুশ পঞ্জি অ্যাপ ডাউনলোড করুন</h2>
-        <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">ক্যালেন্ডার, ছুটির দিন, ইভেন্ট, রিমাইন্ডার, বয়স ক্যালকুলেটর এবং আরও অনেক কিছু।</p>
-        <a href="https://ponji.ekushlabs.com" class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-500 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
-          একুশ পঞ্জি ডাউনলোড করুন
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </a>
-      </div>
+      <PromoBanner />
     </div>
   </div>
 </BaseLayout>

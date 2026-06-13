@@ -402,6 +402,13 @@ export const ui = {
     'tools.converter.swap': 'পরিবর্তন করুন',
     'tools.converter.copiedTooltip': 'কপি হয়েছে!',
 
+    // Shared Promo Banner
+    'tools.promo.ponji.tag': 'অ্যান্ড্রয়েড অ্যাপ',
+    'tools.promo.ponji.title': 'একুশ পঞ্জি - বাংলা ক্যালেন্ডার',
+    'tools.promo.ponji.desc': 'সরকারি ছুটির তালিকা, ৩টি ক্যালেন্ডার, রিমাইন্ডার, বয়স ক্যালকুলেটর এবং প্রতিদিনের লাইফ-হ্যাকস পাবেন এক জায়গায়',
+    'tools.promo.ponji.btn': 'ডাউনলোড করুন',
+    'tools.promo.ponji.url': 'https://play.google.com/store/apps/details?id=com.ekushlabs.ponji',
+
     // Tool components - EMI Calculator
     'tools.emi.cardTitle': 'ইএমআই (EMI) ক্যালকুলেটর',
     'tools.emi.amount': 'লোনের পরিমাণ (৳)',
@@ -856,6 +863,13 @@ export const ui = {
     'tools.converter.result': 'Result',
     'tools.converter.swap': 'Swap',
     'tools.converter.copiedTooltip': 'Copied!',
+
+    // Shared Promo Banner
+    'tools.promo.ponji.tag': 'Android App',
+    'tools.promo.ponji.title': 'Ekush Ponji - Bangla Calendar',
+    'tools.promo.ponji.desc': 'Complete Bangla calendar with holidays',
+    'tools.promo.ponji.btn': 'Download',
+    'tools.promo.ponji.url': 'https://play.google.com/store/apps/details?id=com.ekushlabs.ponji',
 
     // Tool components - EMI Calculator
     'tools.emi.cardTitle': 'EMI Calculator',

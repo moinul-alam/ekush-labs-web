@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
 import BMICalculator from '../components/BMICalculator.svelte';
+import PromoBanner from '../components/PromoBanner.astro';
 import { getLangFromUrl, useTranslations } from '@ekush-labs/ui/src/i18n/utils';
 
 const lang = getLangFromUrl(Astro.url);
@@ -14,16 +15,7 @@ const t = useTranslations(lang);
       <BMICalculator client:load lang={lang} />
 
       <!-- Bottom CTA -->
-      <div class="mt-16 text-center py-10 px-6 bg-gradient-to-br from-purple-600/10 to-orange-400/10 rounded-3xl border border-slate-200 dark:border-slate-700">
-        <h2 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{t('tools.hero.shonamoni')}</h2>
-        <p class="text-slate-600 dark:text-slate-400 mb-6 max-w-lg mx-auto">{lang === 'bn' ? "আপনার শিশুর বিকাশ পর্যবেক্ষণ করুন এবং বিশেষজ্ঞদের নির্দেশনা পান।" : "Monitor your child's development, track milestones, and get expert guidance."}</p>
-        <a href="https://shonamoni.ekushlabs.com" class="inline-flex items-center gap-2 bg-gradient-to-r from-purple-600 to-orange-400 text-white px-8 py-3 rounded-full font-bold shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all">
-          {lang === 'bn' ? "সোনামনি ডাউনলোড করুন" : "Get Shonamoni"}
-          <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 512 512">
-            <path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
-          </svg>
-        </a>
-      </div>
+      <PromoBanner />
     </div>
   </div>
 </BaseLayout>

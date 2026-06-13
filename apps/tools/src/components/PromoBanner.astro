@@ -1,0 +1,26 @@
+---
+import { getLangFromUrl, useTranslations } from '@ekush-labs/ui/src/i18n/utils';
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<a href={t('tools.promo.ponji.url')} target="_blank" rel="noopener noreferrer" class="group block bg-slate-900 dark:bg-slate-800 rounded-[2rem] p-6 md:p-8 hover:-translate-y-1 transition-all duration-300 mt-4 overflow-hidden relative border border-slate-800 dark:border-slate-700">
+  <div class="absolute inset-0 bg-gradient-to-r from-blue-500/20 to-purple-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+  <div class="relative z-10 flex flex-col md:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-4">
+      <div class="w-16 h-16 rounded-2xl bg-white flex items-center justify-center p-2 shadow-lg shrink-0">
+        <img src="/assets/ponji_logo.png" alt="Ekush Ponji" class="w-full h-full object-contain" onerror="this.src='/assets/logo.png'" />
+      </div>
+      <div>
+        <div class="text-blue-400 font-bold uppercase tracking-widest text-xs mb-1">{t('tools.promo.ponji.tag')}</div>
+        <h3 class="text-white text-xl md:text-2xl font-black mb-1">{t('tools.promo.ponji.title')}</h3>
+        <p class="text-slate-400 text-sm font-medium">{t('tools.promo.ponji.desc')}</p>
+      </div>
+    </div>
+    <div class="bg-white/10 hover:bg-white/20 text-white px-6 py-3 rounded-xl font-bold transition-colors flex items-center justify-center gap-2 whitespace-nowrap shrink-0">
+      {t('tools.promo.ponji.btn')}
+      <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+    </div>
+  </div>
+</a>
