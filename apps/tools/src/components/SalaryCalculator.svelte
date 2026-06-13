@@ -140,10 +140,12 @@
           const text = await manifestRes.text();
           if (text.startsWith("<!")) throw new Error("Received HTML instead of JSON");
           manifest = JSON.parse(text);
-        } else if (import.meta.env.DEV) {
-          manifest = (await import("../../../../apps/hub/payscales/manifest.json")).default;
         } else {
-          throw new Error("Failed to load manifest");
+          try {
+            manifest = (await import("../../../../apps/hub/payscales/manifest.json")).default;
+          } catch (e) {
+            throw new Error("Failed to load manifest");
+          }
         }
       }
 
@@ -167,7 +169,7 @@
           const text = await localRes.text();
           if (!text.startsWith("<!")) data8th = JSON.parse(text);
         }
-        if (!data8th && import.meta.env.DEV) {
+        if (!data8th) {
           data8th = (await import("../../../../apps/hub/payscales/pay_scale_8th.json")).default;
         }
       }
@@ -188,7 +190,7 @@
           const text = await localRes.text();
           if (!text.startsWith("<!")) data9th = JSON.parse(text);
         }
-        if (!data9th && import.meta.env.DEV) {
+        if (!data9th) {
           data9th = (await import("../../../../apps/hub/payscales/pay_scale_9th.json")).default;
         }
       }
