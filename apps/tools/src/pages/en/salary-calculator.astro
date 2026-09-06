@@ -20,7 +20,7 @@ const t = useTranslations('en');
       <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-t from-emerald-500/5 to-transparent blur-3xl"></div>
     </div>
 
-    <div class="max-w-4xl mx-auto mb-10 text-center">
+    <div class="max-w-7xl mx-auto mb-10 text-center">
       <h1 class="text-3xl md:text-5xl font-black mb-4 tracking-tight bg-gradient-to-r from-slate-900 to-slate-700 dark:from-white dark:to-slate-300 bg-clip-text text-transparent">
         {t('tools.salary.title')}
       </h1>
@@ -29,9 +29,11 @@ const t = useTranslations('en');
       </p>
     </div>
 
-    <SalaryCalculatorComponent client:load lang="en" />
-    <div class="max-w-4xl mx-auto mt-4">
-      <PromoBanner />
+    <div class="max-w-7xl mx-auto">
+      <SalaryCalculatorComponent client:load lang="en" />
+      <div class="mt-8">
+        <PromoBanner />
+      </div>
     </div>
   </div>
 </BaseLayout>

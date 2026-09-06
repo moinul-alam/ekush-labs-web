@@ -44,7 +44,7 @@ const metaDesc = description || t('main.meta.desc');
     <!-- Theme Manager (Prevents FOUC) -->
     <script is:inline>
       const applyTheme = () => {
-        const t = localStorage.getItem('ekush_theme') || 'dark';
+        const t = localStorage.getItem('ekush_theme') || 'light';
         document.documentElement.setAttribute('data-theme', t);
         if (t === 'dark') {
           document.documentElement.classList.add('dark');

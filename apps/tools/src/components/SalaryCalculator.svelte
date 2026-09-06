@@ -11,7 +11,7 @@
       devWarning:
         "এই অ্যাপটি ৯ম পে-স্কেল ২০২৬ এর অনুমোদিত ৪টি বাস্তবায়ন ধাপের কাঠামোর ভিত্তিতে প্রস্তুতকৃত।",
       grade: "গ্রেড নির্বাচন করুন (১-২০)",
-      currentBasicStep: "বর্তমান মূল বেতন বা ধাপ (৮ম স্কেল)",
+      currentBasicStep: "০১-০৬-২০২৬ তারিখের মূল বেতন",
       stepLabel: "ধাপ",
       initialStep: "১ম ধাপ (প্রারম্ভিক)",
       location: "কর্মস্থল / বাসাভাড়ার এলাকা",
@@ -79,7 +79,7 @@
       devWarning:
         "This app is prepared based on the approved 9th Pay Scale 2026 across 4 rollout phases.",
       grade: "Select Grade (1-20)",
-      currentBasicStep: "Current Basic Pay / Step (8th Scale)",
+      currentBasicStep: "Basic Pay as of 01-06-2026",
       stepLabel: "Step",
       initialStep: "1st Step (Starting)",
       location: "Workplace / House Rent Area",
@@ -154,7 +154,6 @@
   let location = "dhaka_city_corp";
 
   let showDiffTooltip = false;
-  let showFactorTooltip = false;
 
   let calculatedResult = null;
 
@@ -427,10 +426,11 @@
     // Phase 3 House Rent Calculation:
     // Existing 8th basic + 5% increment, fixed to next step in 8th scale, multiplied by house rent %
     const curr8thIdx = steps8th.indexOf(current8thBasic);
-    const next8thBasic = (curr8thIdx !== -1 && curr8thIdx + 1 < steps8th.length)
-      ? steps8th[curr8thIdx + 1]
-      : Math.round(current8thBasic * 1.05);
-    
+    const next8thBasic =
+      curr8thIdx !== -1 && curr8thIdx + 1 < steps8th.length
+        ? steps8th[curr8thIdx + 1]
+        : Math.round(current8thBasic * 1.05);
+
     const allowances8th = payscaleData.allowances_8th;
     const houseRentRate8th = allowances8th.house_rent[location] || 0.55;
     const p3HouseRent = next8thBasic * houseRentRate8th;
@@ -509,29 +509,17 @@
     const currentBasicVal = steps8th[selectedStepIndex] || steps8th[0];
     const grade = selectedGrade;
 
-    // 1. Difference Addition Method (পার্থক্য যোগ পদ্ধতি)
+    // Difference Addition Method (পার্থক্য যোগ পদ্ধতি)
     // Formula: 9th Starting Basic + (Current Step Basic - 8th Starting Basic)
     const diff = Math.max(0, currentBasicVal - start8th);
     const diffCalcBasic = start9th + diff; // Actual calculated basic without step elevation
 
-    // 2. Increment Factor Method (ইনক্রিমেন্ট ফ্যাক্টর পদ্ধতি)
-    // Formula: (Current Step Basic / 8th Starting Basic) * 9th Starting Basic
-    const factor = start8th > 0 ? currentBasicVal / start8th : 1;
-    const factorCalcBasic = Math.round(start9th * factor); // Actual calculated basic without step elevation
-
     // Current 8th breakdown (Gross & Allowances including special benefit in 8th scale)
     const current = compute8thBreakdown(currentBasicVal, grade);
 
-    // 4 Phased rollouts for both methods
+    // 4 Phased rollout
     const diffPhases = calculate4Phases(
       diffCalcBasic,
-      currentBasicVal,
-      grade,
-      current,
-      steps8th,
-    );
-    const factorPhases = calculate4Phases(
-      factorCalcBasic,
       currentBasicVal,
       grade,
       current,
@@ -545,18 +533,12 @@
       start8th,
       start9th,
       diff,
-      factor: factor.toFixed(5),
       current,
       methods: {
         difference: {
           calcBasic: diffCalcBasic,
           increasedBasic: diffCalcBasic - currentBasicVal,
           phases: diffPhases,
-        },
-        factor: {
-          calcBasic: factorCalcBasic,
-          increasedBasic: factorCalcBasic - currentBasicVal,
-          phases: factorPhases,
         },
       },
     };
@@ -909,477 +891,552 @@
       {/if}
     </div>
 
-    <!-- Below: Dual Fixation Methods & Phased Implementation Side by Side -->
+    <!-- Below: Proposed 9th Pay Scale Executive Dashboard -->
     {#if calculatedResult}
-      <div class="flex flex-col gap-6 animate-fade-in-up mt-2">
+      <div class="flex flex-col gap-6 animate-fade-in-up mt-4">
+        <!-- Section Title Header -->
+        <div class="border-b border-slate-200/80 dark:border-slate-800/80 pb-4">
+          <h2
+            class="text-xl md:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2.5"
+          >
+            <span>🏛️</span>
+            {t.newTitle}
+          </h2>
+        </div>
+
+        <!-- 4 IMPLEMENTATION PHASE CARDS: Side-by-Side horizontally on Desktop/Tablet, Stacked on Mobile -->
+        <div class="flex flex-col gap-4">
+
+          <!-- 4 Distinctive, High-Contrast Colorful Cards Grid (Strictly 1 Single Row on Desktop/Tablet, Stacked on Mobile) -->
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-3.5 lg:gap-4">
+            <!-- Phase 1: Blue Theme -->
+            <div
+              class="rounded-3xl p-5 bg-white dark:bg-slate-900 border-2 border-blue-500/80 dark:border-blue-500 shadow-md flex flex-col justify-between relative"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-1.5 mb-3">
+                  <span
+                    class="px-2.5 py-1 rounded-xl bg-blue-600 text-white font-black text-xs shadow-sm shrink-0"
+                  >
+                    {lang === "bn" ? "১ম ধাপ" : "Phase 1"}
+                  </span>
+                  <span
+                    class="px-2.5 py-1 rounded-xl border border-blue-500/60 dark:border-blue-400/60 bg-blue-50/70 dark:bg-blue-950/50 text-[11px] font-bold text-blue-900 dark:text-blue-200 text-right leading-none shrink-0"
+                  >
+                    {lang === "bn" ? "১ জুলাই ২০২৬ হতে কার্যকর" : "Effective 1 July 2026"}
+                  </span>
+                </div>
+
+                <div
+                  class="text-sm font-black text-blue-700 dark:text-blue-400 mt-1"
+                >
+                  {calculatedResult.grade <= 9
+                    ? lang === "bn"
+                      ? "৪০% বর্ধিত মূল বেতন"
+                      : "40% Basic Increase"
+                    : lang === "bn"
+                      ? "৫০% বর্ধিত মূল বেতন"
+                      : "50% Basic Increase"}
+                </div>
+
+                <div
+                  class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-1.5 text-xs"
+                >
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.basic}:</span>
+                    <span
+                      class="font-bold text-slate-900 dark:text-slate-100 text-sm"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[0].basic,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.houseRent}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[0].houseRent,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.medical}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[0].medical,
+                      )}</span
+                    >
+                  </div>
+                  {#if calculatedResult.methods.difference.phases[0].tiffin > 0}
+                    <div
+                      class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                    >
+                      <span>{t.tiffin}:</span>
+                      <span class="font-semibold text-slate-800 dark:text-slate-200"
+                        >৳ {formatMoney(
+                          calculatedResult.methods.difference.phases[0].tiffin,
+                        )}</span
+                      >
+                    </div>
+                  {/if}
+                </div>
+              </div>
+
+              <!-- Total Gross Salary Highlight (High-Contrast Solid Box) -->
+              <div
+                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 bg-blue-50 dark:bg-blue-950/70 -mx-2 -mb-2 p-3 rounded-2xl border border-blue-200 dark:border-blue-900/60 flex items-center justify-between"
+              >
+                <span class="text-xs font-bold text-blue-900 dark:text-blue-200"
+                  >{t.totalGross}</span
+                >
+                <span
+                  class="text-xl font-black text-blue-700 dark:text-blue-400"
+                >
+                  ৳ {formatMoney(
+                    calculatedResult.methods.difference.phases[0].gross,
+                  )}
+                </span>
+              </div>
+            </div>
+
+            <!-- Phase 2: Purple / Indigo Theme -->
+            <div
+              class="rounded-3xl p-5 bg-white dark:bg-slate-900 border-2 border-purple-500/80 dark:border-purple-500 shadow-md flex flex-col justify-between relative"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-1.5 mb-3">
+                  <span
+                    class="px-2.5 py-1 rounded-xl bg-purple-600 text-white font-black text-xs shadow-sm shrink-0"
+                  >
+                    {lang === "bn" ? "২য় ধাপ" : "Phase 2"}
+                  </span>
+                  <span
+                    class="px-2.5 py-1 rounded-xl border border-purple-500/60 dark:border-purple-400/60 bg-purple-50/70 dark:bg-purple-950/50 text-[11px] font-bold text-purple-900 dark:text-purple-200 text-right leading-none shrink-0"
+                  >
+                    {lang === "bn" ? "১ জানুয়ারি ২০২৭ হতে কার্যকর" : "Effective 1 Jan 2027"}
+                  </span>
+                </div>
+
+                <div
+                  class="text-sm font-black text-purple-700 dark:text-purple-400 mt-1"
+                >
+                  {calculatedResult.grade <= 9
+                    ? lang === "bn"
+                      ? "৭০% মূল বেতন"
+                      : "70% Basic Salary"
+                    : lang === "bn"
+                      ? "৭৫% মূল বেতন"
+                      : "75% Basic Salary"}
+                </div>
+
+                <div
+                  class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-1.5 text-xs"
+                >
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.basic}:</span>
+                    <span
+                      class="font-bold text-slate-900 dark:text-slate-100 text-sm"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[1].basic,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.houseRent}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[1].houseRent,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.medical}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[1].medical,
+                      )}</span
+                    >
+                  </div>
+                  {#if calculatedResult.methods.difference.phases[1].tiffin > 0}
+                    <div
+                      class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                    >
+                      <span>{t.tiffin}:</span>
+                      <span class="font-semibold text-slate-800 dark:text-slate-200"
+                        >৳ {formatMoney(
+                          calculatedResult.methods.difference.phases[1].tiffin,
+                        )}</span
+                      >
+                    </div>
+                  {/if}
+                </div>
+              </div>
+
+              <!-- Total Gross Salary Highlight (High-Contrast Solid Box) -->
+              <div
+                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 bg-purple-50 dark:bg-purple-950/70 -mx-2 -mb-2 p-3 rounded-2xl border border-purple-200 dark:border-purple-900/60 flex items-center justify-between"
+              >
+                <span
+                  class="text-xs font-bold text-purple-900 dark:text-purple-200"
+                  >{t.totalGross}</span
+                >
+                <span
+                  class="text-xl font-black text-purple-700 dark:text-purple-400"
+                >
+                  ৳ {formatMoney(
+                    calculatedResult.methods.difference.phases[1].gross,
+                  )}
+                </span>
+              </div>
+            </div>
+
+            <!-- Phase 3: Amber / Warm Gold Theme -->
+            <div
+              class="rounded-3xl p-5 bg-white dark:bg-slate-900 border-2 border-amber-500/80 dark:border-amber-500 shadow-md flex flex-col justify-between relative"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-1.5 mb-3">
+                  <span
+                    class="px-2.5 py-1 rounded-xl bg-amber-600 text-white font-black text-xs shadow-sm shrink-0"
+                  >
+                    {lang === "bn" ? "৩য় ধাপ" : "Phase 3"}
+                  </span>
+                  <span
+                    class="px-2.5 py-1 rounded-xl border border-amber-500/60 dark:border-amber-400/60 bg-amber-50/70 dark:bg-amber-950/50 text-[11px] font-bold text-amber-900 dark:text-amber-200 text-right leading-none shrink-0"
+                  >
+                    {lang === "bn" ? "১ জুলাই ২০২৭ হতে কার্যকর" : "Effective 1 July 2027"}
+                  </span>
+                </div>
+
+                <div
+                  class="text-sm font-black text-amber-700 dark:text-amber-400 mt-1"
+                >
+                  {lang === "bn"
+                    ? "১০০% মূল + ৫% ইনক্রিমেন্ট"
+                    : "100% Basic + 5% Increment"}
+                </div>
+
+                <div
+                  class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-1.5 text-xs"
+                >
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.basic}:</span>
+                    <span
+                      class="font-bold text-slate-900 dark:text-slate-100 text-sm"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[2].basic,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.houseRent}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[2].houseRent,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.medical}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[2].medical,
+                      )}</span
+                    >
+                  </div>
+                  {#if calculatedResult.methods.difference.phases[2].tiffin > 0}
+                    <div
+                      class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                    >
+                      <span>{t.tiffin}:</span>
+                      <span class="font-semibold text-slate-800 dark:text-slate-200"
+                        >৳ {formatMoney(
+                          calculatedResult.methods.difference.phases[2].tiffin,
+                        )}</span
+                      >
+                    </div>
+                  {/if}
+                </div>
+              </div>
+
+              <!-- Total Gross Salary Highlight (High-Contrast Solid Box) -->
+              <div
+                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 bg-amber-50 dark:bg-amber-950/70 -mx-2 -mb-2 p-3 rounded-2xl border border-amber-200 dark:border-amber-900/60 flex items-center justify-between"
+              >
+                <span
+                  class="text-xs font-bold text-amber-900 dark:text-amber-200"
+                  >{t.totalGross}</span
+                >
+                <span
+                  class="text-xl font-black text-amber-700 dark:text-amber-400"
+                >
+                  ৳ {formatMoney(
+                    calculatedResult.methods.difference.phases[2].gross,
+                  )}
+                </span>
+              </div>
+            </div>
+
+            <!-- Phase 4: Emerald Green Theme -->
+            <div
+              class="rounded-3xl p-5 bg-white dark:bg-slate-900 border-2 border-emerald-500/90 dark:border-emerald-500 shadow-lg ring-2 ring-emerald-500/20 flex flex-col justify-between relative"
+            >
+              <div>
+                <div class="flex items-center justify-between gap-1.5 mb-3">
+                  <span
+                    class="px-2.5 py-1 rounded-xl bg-emerald-600 text-white font-black text-xs shadow-sm shrink-0"
+                  >
+                    {lang === "bn" ? "৪র্থ ধাপ" : "Phase 4"}
+                  </span>
+                  <span
+                    class="px-2.5 py-1 rounded-xl border border-emerald-500/60 dark:border-emerald-400/60 bg-emerald-50/70 dark:bg-emerald-950/50 text-[11px] font-bold text-emerald-900 dark:text-emerald-200 text-right leading-none shrink-0"
+                  >
+                    {lang === "bn" ? "১ জানুয়ারি ২০২৮ হতে কার্যকর" : "Effective 1 Jan 2028"}
+                  </span>
+                </div>
+
+                <div
+                  class="text-sm font-black text-emerald-700 dark:text-emerald-400 mt-1"
+                >
+                  {lang === "bn"
+                    ? "১০০% মূল বেতন ও নতুন ভাতাসহ"
+                    : "100% Basic with New Allowances"}
+                </div>
+
+                <div
+                  class="mt-4 pt-3 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-1.5 text-xs"
+                >
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.basic}:</span>
+                    <span
+                      class="font-bold text-slate-900 dark:text-slate-100 text-sm"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[3].basic,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.houseRent}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[3].houseRent,
+                      )}</span
+                    >
+                  </div>
+                  <div
+                    class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                  >
+                    <span>{t.medical}:</span>
+                    <span class="font-semibold text-slate-800 dark:text-slate-200"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.phases[3].medical,
+                      )}</span
+                    >
+                  </div>
+                  {#if calculatedResult.methods.difference.phases[3].tiffin > 0}
+                    <div
+                      class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                    >
+                      <span>{t.tiffin}:</span>
+                      <span class="font-semibold text-slate-800 dark:text-slate-200"
+                        >৳ {formatMoney(
+                          calculatedResult.methods.difference.phases[3].tiffin,
+                        )}</span
+                      >
+                    </div>
+                  {/if}
+                </div>
+              </div>
+
+              <!-- Total Gross Salary Highlight (High-Contrast Solid Box) -->
+              <div
+                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 bg-emerald-50 dark:bg-emerald-950/70 -mx-2 -mb-2 p-3 rounded-2xl border border-emerald-200 dark:border-emerald-900/60 flex items-center justify-between"
+              >
+                <span
+                  class="text-xs font-bold text-emerald-900 dark:text-emerald-200"
+                  >{t.totalGross}</span
+                >
+                <span
+                  class="text-xl font-black text-emerald-700 dark:text-emerald-400"
+                >
+                  ৳ {formatMoney(
+                    calculatedResult.methods.difference.phases[3].gross,
+                  )}
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Collapsible Fixation Formula Breakdown -->
         <div
-          class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-3 pt-2"
+          class="bg-slate-50/90 dark:bg-slate-900/60 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 p-4 transition-all"
         >
-          <div>
-            <h2
-              class="text-xl md:text-2xl font-black text-slate-900 dark:text-white flex items-center gap-2"
+          <div
+            class="flex items-center justify-between cursor-pointer"
+            on:click={() => (showDiffTooltip = !showDiffTooltip)}
+          >
+            <div class="flex items-center gap-2.5">
+              <span
+                class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 flex items-center justify-center text-xs font-bold"
+                >📐</span
+              >
+              <div>
+                <span
+                  class="text-xs md:text-sm font-bold text-slate-800 dark:text-slate-200"
+                >
+                  {lang === "bn"
+                    ? "পার্থক্য যোগ পদ্ধতির ফিক্সেশন সূত্র ও বিশ্লেষণ"
+                    : "Fixation Formula & Step Breakdown"}
+                </span>
+                <span class="hidden sm:inline text-xs text-slate-400 ml-2">
+                  (৳{formatMoney(calculatedResult.start9th)} + ৳{formatMoney(
+                    calculatedResult.diff,
+                  )} = ৳{formatMoney(
+                    calculatedResult.methods.difference.calcBasic,
+                  )})
+                </span>
+              </div>
+            </div>
+            <button
+              class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
             >
-              📊 {t.newTitle} - {lang === "bn"
-                ? "ফিক্সেশন ও তুলনামূলক হিসাব"
-                : "Dual Fixation Comparison"}
-            </h2>
-            <p
-              class="text-xs md:text-sm text-slate-500 dark:text-slate-400 mt-0.5"
+              <span>{showDiffTooltip ? t.closeDetails : t.clickDetails}</span>
+              <span
+                class="text-xs transition-transform {showDiffTooltip
+                  ? 'rotate-180'
+                  : ''}">▼</span
+              >
+            </button>
+          </div>
+
+          {#if showDiffTooltip}
+            <div
+              class="mt-4 pt-4 border-t border-slate-200/80 dark:border-slate-800 text-xs flex flex-col gap-3 animate-fade-in-up"
             >
+              <div
+                class="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-700 dark:text-slate-300 font-medium"
+              >
+                <div
+                  class="p-3 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/70"
+                >
+                  <div class="text-[11px] text-slate-400 uppercase font-bold">
+                    {lang === "bn"
+                      ? "ধাপ ১: পার্থক্য নির্ণয়"
+                      : "Step 1: Difference"}
+                  </div>
+                  <div class="mt-1 text-slate-900 dark:text-white font-bold">
+                    ৳ {formatMoney(calculatedResult.current.basic)}
+                    <span class="text-slate-400 font-normal"
+                      >({lang === "bn" ? "বর্তমান মূল" : "Current Basic"})</span
+                    >
+                    – ৳ {formatMoney(calculatedResult.start8th)}
+                    <span class="text-slate-400 font-normal"
+                      >({lang === "bn"
+                        ? "৮ম প্রারম্ভিক"
+                        : "8th Starting"})</span
+                    >
+                    =
+                    <span class="text-blue-600 dark:text-blue-400 font-black"
+                      >৳ {formatMoney(calculatedResult.diff)}</span
+                    >
+                  </div>
+                </div>
+
+                <div
+                  class="p-3 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/70"
+                >
+                  <div class="text-[11px] text-slate-400 uppercase font-bold">
+                    {lang === "bn"
+                      ? "ধাপ ২: ৯ম স্কেলে ফিক্সেশন"
+                      : "Step 2: 9th Scale Fixation"}
+                  </div>
+                  <div class="mt-1 text-slate-900 dark:text-white font-bold">
+                    ৳ {formatMoney(calculatedResult.start9th)}
+                    <span class="text-slate-400 font-normal"
+                      >({lang === "bn"
+                        ? "৯ম প্রারম্ভিক"
+                        : "9th Starting"})</span
+                    >
+                    + ৳ {formatMoney(calculatedResult.diff)}
+                    <span class="text-slate-400 font-normal"
+                      >({lang === "bn" ? "পার্থক্য" : "Diff"})</span
+                    >
+                    =
+                    <span class="text-blue-600 dark:text-blue-400 font-black"
+                      >৳ {formatMoney(
+                        calculatedResult.methods.difference.calcBasic,
+                      )}</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="text-[11px] text-amber-700 dark:text-amber-300/90 flex items-center gap-1.5"
+              >
+                <span>💡</span>
+                <span>{t.stepNotice}</span>
+              </div>
+            </div>
+          {/if}
+        </div>
+
+        <!-- Footnotes / Directive -->
+        <div
+          class="p-5 md:p-6 bg-gradient-to-br from-amber-500/10 via-slate-50 to-blue-500/10 dark:from-slate-800/90 dark:via-slate-800/60 dark:to-slate-900/90 rounded-2xl border-2 border-amber-500/30 dark:border-amber-500/20 shadow-sm text-slate-800 dark:text-slate-200"
+        >
+          <div class="flex items-center gap-2.5 mb-3.5">
+            <span class="inline-flex items-center justify-center w-8 h-8 rounded-xl bg-amber-500 text-white font-bold shadow-sm shadow-amber-500/30 text-base">
+              📌
+            </span>
+            <h4 class="font-extrabold text-base md:text-lg text-slate-900 dark:text-white tracking-tight">
               {lang === "bn"
-                ? "সার্ভিস রুলস অনুযায়ী দুটি ফিক্সেশন পদ্ধতি এবং ৪টি বাস্তবায়ন ধাপ নিচে পাশাপাশি দেওয়া হলো"
-                : "Side by side comparison of both fixation methods and 4 rollout phases"}
-            </p>
+                ? "বাস্তবায়ন ও ভাতা সংক্রান্ত জরুরি নোট"
+                : "Implementation & Allowance Directives"}
+            </h4>
           </div>
-        </div>
 
-        <!-- Methods Comparison: 2 Columns Side by Side -->
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <!-- Method 1: Difference Addition Method (পার্থক্য যোগ পদ্ধতি) -->
-          <div
-            class="flex flex-col gap-5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-blue-200/80 dark:border-blue-900/50 shadow-xl relative overflow-hidden"
-          >
-            <div
-              class="absolute top-0 right-0 w-36 h-36 bg-blue-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"
-            ></div>
-
-            <!-- First Box: Header & Calculated Basic Only -->
-            <div
-              class="flex flex-col gap-3 border-b border-slate-100 dark:border-slate-800 pb-4"
-            >
-              <div class="flex items-center justify-between">
-                <span
-                  class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-blue-100 text-blue-800 dark:bg-blue-950 dark:text-blue-300"
-                >
-                  {lang === "bn" ? "পদ্ধতি ১" : "Method 1"}
-                </span>
-                <span class="text-xs font-bold text-slate-400"
-                  >{t.methodDiffSub}</span
-                >
-              </div>
-              <h3
-                class="text-lg md:text-xl font-bold text-blue-700 dark:text-blue-400"
-              >
-                {t.methodDiffTitle}
-              </h3>
-              <p
-                class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed"
-              >
-                {t.methodDiffDesc}
-                <button
-                  on:click={() => (showDiffTooltip = !showDiffTooltip)}
-                  class="ml-1 inline-flex items-center font-bold text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 underline underline-offset-2 transition-colors cursor-pointer"
-                >
-                  {showDiffTooltip ? t.closeDetails : t.clickDetails}
-                </button>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-xs md:text-[13px] leading-relaxed">
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700/60 shadow-xs">
+              <span class="text-amber-500 font-bold text-sm mt-0.5">🔹</span>
+              <p>
+                <strong class="font-bold text-slate-900 dark:text-slate-100">
+                  {lang === "bn" ? "ধাপ ও ফিক্সেশন:" : "Step & Fixation:"}
+                </strong>
+                {t.stepNotice}
               </p>
-
-              <!-- Expandable Tooltip / Details Box -->
-              {#if showDiffTooltip}
-                <div
-                  class="mt-2 bg-blue-50/80 dark:bg-blue-950/60 border border-blue-200 dark:border-blue-800/80 rounded-2xl p-4 text-xs flex flex-col gap-2 animate-fade-in-up"
-                >
-                  <div
-                    class="font-bold text-blue-900 dark:text-blue-300 flex items-center justify-between"
-                  >
-                    <span>📐 {t.fixationFormula}</span>
-                    <button
-                      on:click={() => (showDiffTooltip = false)}
-                      class="text-slate-400 hover:text-slate-600 text-sm cursor-pointer"
-                      >✕</button
-                    >
-                  </div>
-                  <div
-                    class="text-slate-700 dark:text-slate-300 font-mono text-[11px] bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-blue-200/60 dark:border-blue-800/60 leading-relaxed"
-                  >
-                    {lang === "bn"
-                      ? "১. পার্থক্য = বর্তমান বেসিক – ৮ম স্কেলের প্রারম্ভিক"
-                      : "1. Diff = Current Basic - 8th Starting"}
-                    <br />
-                    = ৳{formatMoney(calculatedResult.current.basic)} – ৳{formatMoney(
-                      calculatedResult.start8th,
-                    )} = ৳{formatMoney(calculatedResult.diff)}
-                    <br />
-                    {lang === "bn"
-                      ? "২. ৯ম স্কেলের মূল বেতন = ৯ম স্কেলের প্রারম্ভিক + পার্থক্য"
-                      : "2. 9th Basic = 9th Starting + Diff"}
-                    <br />
-                    = ৳{formatMoney(calculatedResult.start9th)} + ৳{formatMoney(
-                      calculatedResult.diff,
-                    )} = ৳{formatMoney(
-                      calculatedResult.methods.difference.calcBasic,
-                    )}
-                  </div>
-                  <div
-                    class="text-[11px] text-amber-700 dark:text-amber-300/90 pt-1 border-t border-blue-200/50 dark:border-blue-800/50"
-                  >
-                    💡 {t.stepNotice}
-                  </div>
-                </div>
-              {/if}
-
-              <!-- Calculated Basic Presentation in First Box -->
-              <div
-                class="bg-gradient-to-r from-blue-50 to-indigo-50/60 dark:from-blue-950/40 dark:to-indigo-950/40 border border-blue-200/80 dark:border-blue-800/60 rounded-2xl p-4 flex items-center justify-between mt-1"
-              >
-                <div>
-                  <span
-                    class="text-xs font-bold uppercase tracking-wider text-blue-800 dark:text-blue-300"
-                    >{t.calculatedBasic}</span
-                  >
-                  <div
-                    class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5"
-                  >
-                    {t.basicOnlyNotice}
-                  </div>
-                </div>
-                <div class="text-right">
-                  <div
-                    class="text-2xl md:text-3xl font-black text-blue-700 dark:text-blue-400"
-                  >
-                    ৳ {formatMoney(
-                      calculatedResult.methods.difference.calcBasic,
-                    )}
-                  </div>
-                  <div
-                    class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400"
-                  >
-                    +৳{formatMoney(
-                      calculatedResult.methods.difference.increasedBasic,
-                    )}
-                    {lang === "bn" ? "মূল বেতন বৃদ্ধি" : "Basic Increase"}
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <!-- 4 Phased Implementation: Each Phase in Its Own Structured Box -->
-            <div class="flex flex-col gap-3">
-              <div class="flex items-center justify-between">
-                <h4
-                  class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5"
-                >
-                  🗓️ {t.phasesTitle}
-                </h4>
-                <span
-                  class="text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded font-semibold"
-                >
-                  {calculatedResult.grade <= 9
-                    ? "৪০% + ৩০% + ৩০% + ভাতা"
-                    : "৫০% + ২৫% + ২৫% + ভাতা"}
-                </span>
-              </div>
-
-              {#each calculatedResult.methods.difference.phases as p}
-                <div
-                  class="bg-slate-50/90 dark:bg-slate-800/60 rounded-2xl p-4 border border-slate-200/70 dark:border-slate-700/70 text-xs flex flex-col gap-2 relative overflow-hidden"
-                >
-                  <div
-                    class="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-700/60 pb-2"
-                  >
-                    <div
-                      class="font-bold text-slate-800 dark:text-slate-200 text-sm flex items-center gap-2"
-                    >
-                      <span>{p.title}</span>
-                      <span
-                        class="text-[10px] px-2 py-0.5 bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 rounded-md font-bold"
-                        >{p.badge}</span
-                      >
-                    </div>
-                  </div>
-
-                  <!-- Phase Breakdown: Basic, House Rent, Medical, Tiffin (No special benefit in 9th scale), Gross -->
-                  <div
-                    class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1 text-slate-600 dark:text-slate-400"
-                  >
-                    <div>
-                      <span class="text-[10px] text-slate-400 uppercase"
-                        >{t.basic}</span
-                      >
-                      <div
-                        class="font-bold text-slate-900 dark:text-white text-xs"
-                      >
-                        ৳ {formatMoney(p.basic)}
-                      </div>
-                    </div>
-                    <div>
-                      <span class="text-[10px] text-slate-400 uppercase"
-                        >{t.houseRent}</span
-                      >
-                      <div
-                        class="font-semibold text-slate-800 dark:text-slate-200 text-xs"
-                      >
-                        ৳ {formatMoney(p.houseRent)}
-                      </div>
-                    </div>
-                    <div>
-                      <span class="text-[10px] text-slate-400 uppercase"
-                        >{t.medical}</span
-                      >
-                      <div
-                        class="font-semibold text-slate-800 dark:text-slate-200 text-xs"
-                      >
-                        ৳ {formatMoney(p.medical)}
-                      </div>
-                    </div>
-                    {#if p.tiffin > 0}
-                      <div>
-                        <span class="text-[10px] text-slate-400 uppercase"
-                          >{t.tiffin}</span
-                        >
-                        <div
-                          class="font-semibold text-slate-800 dark:text-slate-200 text-xs"
-                        >
-                          ৳ {formatMoney(p.tiffin)}
-                        </div>
-                      </div>
-                    {/if}
-                  </div>
-
-                  <div
-                    class="mt-2 pt-2 border-t border-slate-200/80 dark:border-slate-700/80 flex justify-between items-center bg-blue-50/50 dark:bg-blue-950/30 p-2.5 rounded-xl"
-                  >
-                    <span class="font-bold text-slate-800 dark:text-slate-200"
-                      >{t.totalGross}</span
-                    >
-                    <span
-                      class="text-base font-black text-blue-700 dark:text-blue-400"
-                      >৳ {formatMoney(p.gross)}</span
-                    >
-                  </div>
-                </div>
-              {/each}
-            </div>
-          </div>
-
-          <!-- Method 2: Increment Factor Method (ইনক্রিমেন্ট ফ্যাক্টর পদ্ধতি) -->
-          <div
-            class="flex flex-col gap-5 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-emerald-200/80 dark:border-emerald-900/50 shadow-xl relative overflow-hidden"
-          >
-            <div
-              class="absolute top-0 right-0 w-36 h-36 bg-emerald-500/10 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"
-            ></div>
-
-            <!-- First Box: Header & Calculated Basic Only -->
-            <div
-              class="flex flex-col gap-3 border-b border-slate-100 dark:border-slate-800 pb-4"
-            >
-              <div class="flex items-center justify-between">
-                <span
-                  class="px-2.5 py-0.5 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300"
-                >
-                  {lang === "bn" ? "পদ্ধতি ২" : "Method 2"}
-                </span>
-                <span class="text-xs font-bold text-slate-400"
-                  >{t.methodFactorSub}</span
-                >
-              </div>
-              <h3
-                class="text-lg md:text-xl font-bold text-emerald-700 dark:text-emerald-400"
-              >
-                {t.methodFactorTitle}
-              </h3>
-              <p
-                class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed"
-              >
-                {t.methodFactorDesc}
-                <button
-                  on:click={() => (showFactorTooltip = !showFactorTooltip)}
-                  class="ml-1 inline-flex items-center font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 underline underline-offset-2 transition-colors cursor-pointer"
-                >
-                  {showFactorTooltip ? t.closeDetails : t.clickDetails}
-                </button>
+            <div class="flex items-start gap-2.5 p-3 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700/60 shadow-xs">
+              <span class="text-blue-500 font-bold text-sm mt-0.5">🔹</span>
+              <p>
+                <strong class="font-bold text-slate-900 dark:text-slate-100">
+                  {lang === "bn" ? "ভাতা ও ইনক্রিমেন্ট:" : "Allowances & Increment:"}
+                </strong>
+                {t.allowanceNotice}
               </p>
-
-              <!-- Expandable Tooltip / Details Box -->
-              {#if showFactorTooltip}
-                <div
-                  class="mt-2 bg-emerald-50/80 dark:bg-emerald-950/60 border border-emerald-200 dark:border-emerald-800/80 rounded-2xl p-4 text-xs flex flex-col gap-2 animate-fade-in-up"
-                >
-                  <div
-                    class="font-bold text-emerald-900 dark:text-emerald-300 flex items-center justify-between"
-                  >
-                    <span>📐 {t.fixationFormula}</span>
-                    <button
-                      on:click={() => (showFactorTooltip = false)}
-                      class="text-slate-400 hover:text-slate-600 text-sm cursor-pointer"
-                      >✕</button
-                    >
-                  </div>
-                  <div
-                    class="text-slate-700 dark:text-slate-300 font-mono text-[11px] bg-white dark:bg-slate-900 p-2.5 rounded-xl border border-emerald-200/60 dark:border-emerald-800/60 leading-relaxed"
-                  >
-                    {lang === "bn"
-                      ? "১. ফ্যাক্টর = বর্তমান বেসিক ÷ ৮ম স্কেলের প্রারম্ভিক"
-                      : "1. Factor = Current Basic ÷ 8th Starting"}
-                    <br />
-                    = ৳{formatMoney(calculatedResult.current.basic)} ÷ ৳{formatMoney(
-                      calculatedResult.start8th,
-                    )} = {calculatedResult.factor}
-                    <br />
-                    {lang === "bn"
-                      ? "২. ৯ম স্কেলের মূল বেতন = ৯ম স্কেলের প্রারম্ভিক × ফ্যাক্টর"
-                      : "2. 9th Basic = 9th Starting × Factor"}
-                    <br />
-                    = ৳{formatMoney(calculatedResult.start9th)} × {calculatedResult.factor}
-                    = ৳{formatMoney(calculatedResult.methods.factor.calcBasic)}
-                  </div>
-                  <div
-                    class="text-[11px] text-amber-700 dark:text-amber-300/90 pt-1 border-t border-emerald-200/50 dark:border-emerald-800/50"
-                  >
-                    💡 {t.stepNotice}
-                  </div>
-                </div>
-              {/if}
-
-              <!-- Calculated Basic Presentation in First Box -->
-              <div
-                class="bg-gradient-to-r from-emerald-50 to-teal-50/60 dark:from-emerald-950/40 dark:to-teal-950/40 border border-emerald-200/80 dark:border-emerald-800/60 rounded-2xl p-4 flex items-center justify-between mt-1"
-              >
-                <div>
-                  <span
-                    class="text-xs font-bold uppercase tracking-wider text-emerald-800 dark:text-emerald-300"
-                    >{t.calculatedBasic}</span
-                  >
-                  <div
-                    class="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5"
-                  >
-                    {t.basicOnlyNotice}
-                  </div>
-                </div>
-                <div class="text-right">
-                  <div
-                    class="text-2xl md:text-3xl font-black text-emerald-700 dark:text-emerald-400"
-                  >
-                    ৳ {formatMoney(calculatedResult.methods.factor.calcBasic)}
-                  </div>
-                  <div
-                    class="text-[11px] font-bold text-emerald-600 dark:text-emerald-400"
-                  >
-                    +৳{formatMoney(
-                      calculatedResult.methods.factor.increasedBasic,
-                    )}
-                    {lang === "bn" ? "মূল বেতন বৃদ্ধি" : "Basic Increase"}
-                  </div>
-                </div>
-              </div>
             </div>
-
-            <!-- 4 Phased Implementation: Each Phase in Its Own Structured Box -->
-            <div class="flex flex-col gap-3">
-              <div class="flex items-center justify-between">
-                <h4
-                  class="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider flex items-center gap-1.5"
-                >
-                  🗓️ {t.phasesTitle}
-                </h4>
-                <span
-                  class="text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 px-2 py-0.5 rounded font-semibold"
-                >
-                  {calculatedResult.grade <= 9
-                    ? "৪০% + ৩০% + ৩০% + ভাতা"
-                    : "৫০% + ২৫% + ২৫% + ভাতা"}
-                </span>
-              </div>
-
-              {#each calculatedResult.methods.factor.phases as p}
-                <div
-                  class="bg-slate-50/90 dark:bg-slate-800/60 rounded-2xl p-4 border border-slate-200/70 dark:border-slate-700/70 text-xs flex flex-col gap-2 relative overflow-hidden"
-                >
-                  <div
-                    class="flex items-center justify-between border-b border-slate-200/60 dark:border-slate-700/60 pb-2"
-                  >
-                    <div
-                      class="font-bold text-slate-800 dark:text-slate-200 text-sm flex items-center gap-2"
-                    >
-                      <span>{p.title}</span>
-                      <span
-                        class="text-[10px] px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/50 text-emerald-700 dark:text-emerald-300 rounded-md font-bold"
-                        >{p.badge}</span
-                      >
-                    </div>
-                  </div>
-
-                  <!-- Phase Breakdown: Basic, House Rent, Medical, Tiffin (No special benefit in 9th scale), Gross -->
-                  <div
-                    class="grid grid-cols-2 sm:grid-cols-3 gap-2 pt-1 text-slate-600 dark:text-slate-400"
-                  >
-                    <div>
-                      <span class="text-[10px] text-slate-400 uppercase"
-                        >{t.basic}</span
-                      >
-                      <div
-                        class="font-bold text-slate-900 dark:text-white text-xs"
-                      >
-                        ৳ {formatMoney(p.basic)}
-                      </div>
-                    </div>
-                    <div>
-                      <span class="text-[10px] text-slate-400 uppercase"
-                        >{t.houseRent}</span
-                      >
-                      <div
-                        class="font-semibold text-slate-800 dark:text-slate-200 text-xs"
-                      >
-                        ৳ {formatMoney(p.houseRent)}
-                      </div>
-                    </div>
-                    <div>
-                      <span class="text-[10px] text-slate-400 uppercase"
-                        >{t.medical}</span
-                      >
-                      <div
-                        class="font-semibold text-slate-800 dark:text-slate-200 text-xs"
-                      >
-                        ৳ {formatMoney(p.medical)}
-                      </div>
-                    </div>
-                    {#if p.tiffin > 0}
-                      <div>
-                        <span class="text-[10px] text-slate-400 uppercase"
-                          >{t.tiffin}</span
-                        >
-                        <div
-                          class="font-semibold text-slate-800 dark:text-slate-200 text-xs"
-                        >
-                          ৳ {formatMoney(p.tiffin)}
-                        </div>
-                      </div>
-                    {/if}
-                  </div>
-
-                  <div
-                    class="mt-2 pt-2 border-t border-slate-200/80 dark:border-slate-700/80 flex justify-between items-center bg-emerald-50/50 dark:bg-emerald-950/30 p-2.5 rounded-xl"
-                  >
-                    <span class="font-bold text-slate-800 dark:text-slate-200"
-                      >{t.totalGross}</span
-                    >
-                    <span
-                      class="text-base font-black text-emerald-700 dark:text-emerald-400"
-                      >৳ {formatMoney(p.gross)}</span
-                    >
-                  </div>
-                </div>
-              {/each}
-            </div>
-          </div>
-        </div>
-
-        <!-- Footnotes / Directives -->
-        <div
-          class="flex flex-col gap-2 p-4 bg-slate-100/90 dark:bg-slate-800/70 rounded-2xl border border-slate-200/80 dark:border-slate-700/80 text-xs text-slate-700 dark:text-slate-300"
-        >
-          <div class="flex items-start gap-2">
-            <span class="text-base mt-0.5">📌</span>
-            <p class="leading-relaxed">
-              <span class="font-bold text-slate-900 dark:text-white"
-                >{lang === "bn"
-                  ? "বাস্তবায়ন, ইনক্রিমেন্ট ও বিশেষ সুবিধা সংক্রান্ত নির্দেশনা:"
-                  : "Implementation, Increment & Special Benefit Notice:"}</span
-              >
-              {t.stepNotice}
-              {t.allowanceNotice}
-            </p>
           </div>
         </div>
       </div>
