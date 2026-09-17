@@ -19,6 +19,8 @@
 │   │   │   └── ⚙️ holidays_2026.json
 │   │   ├── 📁 quotes
 │   │   │   └── ⚙️ quotes_en.json
+│   │   ├── 📁 today
+│   │   │   └── ⚙️ todays_occasion.json
 │   │   ├── 📁 words
 │   │   │   └── ⚙️ words_en.json
 │   │   └── ⚙️ manifest.json
@@ -100,6 +102,8 @@
 │   │   │   │   └── ⚙️ holidays_2026.json
 │   │   │   ├── 📁 quotes
 │   │   │   │   └── ⚙️ quotes_en.json
+│   │   │   ├── 📁 today
+│   │   │   │   └── ⚙️ todays_occasion.json
 │   │   │   ├── 📁 words
 │   │   │   │   └── ⚙️ words_en.json
 │   │   │   └── ⚙️ manifest.json
