@@ -1,6 +1,7 @@
 <script>
   import { onMount } from "svelte";
   import { fmt as fmtLocalized } from "../utils/numbers";
+  import { getLocalCache, setLocalCache } from "../utils/cache";
 
   export let lang = "bn";
 
@@ -191,9 +192,13 @@
       ? current8thSteps[selectedStepIndex]
       : current8thSteps[0] || 0;
 
-  async function fetchPayScaleData() {
-    loading = true;
-    error = false;
+  const PAYSCALES_CACHE_KEY = "ekush_hub_payscales_combined";
+
+  async function fetchPayScaleData(silent = false) {
+    if (!silent) {
+      loading = true;
+      error = false;
+    }
     try {
       let manifestRes;
       try {
@@ -306,17 +311,30 @@
         grades,
       };
 
+      setLocalCache(PAYSCALES_CACHE_KEY, payscaleData);
       selectedStepIndex = 0;
     } catch (e) {
       console.error("[Salary Calculator] Data fetch failed:", e);
-      error = true;
+      if (!payscaleData) {
+        error = true;
+      }
     } finally {
       loading = false;
     }
   }
 
   onMount(() => {
-    fetchPayScaleData();
+    // 1. Instant cache hydration (0ms load!)
+    const cached = getLocalCache(PAYSCALES_CACHE_KEY, 24 * 3600 * 1000);
+    if (cached?.data) {
+      payscaleData = cached.data;
+      loading = false;
+    }
+
+    // 2. Background revalidation if stale or missing
+    if (!cached?.isFresh) {
+      fetchPayScaleData(!!cached?.data);
+    }
   });
 
   function handleGradeChange(e) {
