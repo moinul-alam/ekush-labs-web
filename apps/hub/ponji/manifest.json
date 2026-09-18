@@ -1,6 +1,6 @@
 {
   "manifestVersion": 2,
-  "lastUpdated": "2026-09-17",
+  "lastUpdated": "2026-09-18",
   "baseUrl": "https://hub.ekushlabs.com/ponji",
   "datasets": {
     "holidays": {
@@ -13,6 +13,16 @@
         "2024": "holidays/holidays_2024.json",
         "2025": "holidays/holidays_2025.json",
         "2026": "holidays/holidays_2026.json"
+      }
+    },
+    "hijri": {
+      "version": 1,
+      "type": "by_year",
+      "path": "hijri",
+      "files": {
+        "2025": "hijri/2025.json",
+        "2026": "hijri/2026.json",
+        "2027": "hijri/2027.json"
       }
     },
     "quotes": {
