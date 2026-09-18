@@ -1,5 +1,6 @@
 <script>
   import { onMount } from "svelte";
+  import { getLocalCache, setLocalCache } from "../utils/cache";
 
   const dict = {
     bn: {
@@ -57,6 +58,18 @@
       loading: "লোড হচ্ছে...",
       cancelLabel: "বাতিল",
       resetLabel: "চলতি মাস",
+      occasionLabel: "আজকের বিশেষ দিবস",
+      categoryLabels: {
+        seasonal: "ঋতু ও উৎসব",
+        lifestyle: "লাইফস্টাইল",
+        health: "স্বাস্থ্য ও সুস্থতা",
+        humanitarian: "মানবকল্যাণ",
+        nature: "প্রকৃতি ও প্রাণী",
+        environment: "পরিবেশ",
+        education: "শিক্ষা",
+        technology: "বিজ্ঞান ও প্রযুক্তি",
+        social: "সামাজিক",
+      },
     },
     en: {
       weekdays: ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"],
@@ -113,6 +126,18 @@
       loading: "Loading...",
       cancelLabel: "Cancel",
       resetLabel: "Current Month",
+      occasionLabel: "Today's Occasion",
+      categoryLabels: {
+        seasonal: "Seasonal",
+        lifestyle: "Lifestyle",
+        health: "Health & Wellness",
+        humanitarian: "Humanitarian",
+        nature: "Nature",
+        environment: "Environment",
+        education: "Education",
+        technology: "Tech & Science",
+        social: "Social",
+      },
     },
   };
 
@@ -126,6 +151,7 @@
   let holidaysCache = {};
   let currentMonthHolidays = [];
   let calendarCells = [];
+  let todaysOccasion = null;
 
   $: t = dict[lang];
 
@@ -230,25 +256,163 @@
       ? `${t.hMonths[hStart.monthIndex]} - ${t.hMonths[hEnd.monthIndex]} ${fmt(hEnd.year)}`
       : `${t.hMonths[hStart.monthIndex]} ${fmt(hEnd.year)}`;
 
-  onMount(async () => {
+  const MANIFEST_CACHE_KEY = "ekush_hub_ponji_manifest";
+  const OCCASION_CACHE_KEY = "ekush_hub_ponji_today";
+
+  async function fetchManifest(forceFresh = false) {
+    if (manifestCache && !forceFresh) return manifestCache;
+
+    const cached = getLocalCache(MANIFEST_CACHE_KEY, 12 * 3600 * 1000);
+    if (cached && !forceFresh) {
+      manifestCache = cached.data;
+      if (cached.isFresh) return manifestCache;
+    }
+
     try {
-      const res = await fetch("/calendar-assets/data/manifest.json");
-      if (res.ok) manifestCache = await res.json();
+      let manifestRes;
+      try {
+        manifestRes = await fetch(
+          "https://hub.ekushlabs.com/ponji/manifest.json",
+        );
+      } catch (err) {
+        manifestRes = { ok: false };
+      }
+
+      if (manifestRes.ok) {
+        manifestCache = await manifestRes.json();
+      } else {
+        manifestRes = await fetch("/hub/ponji/manifest.json");
+        if (manifestRes.ok) {
+          const text = await manifestRes.text();
+          if (!text.startsWith("<!")) {
+            manifestCache = JSON.parse(text);
+          }
+        }
+        if (!manifestCache) {
+          try {
+            manifestCache = (
+              await import("../../../../apps/hub/ponji/manifest.json")
+            ).default;
+          } catch (e) {
+            console.error("[Calendar] Local manifest import failed:", e);
+          }
+        }
+      }
+
+      if (manifestCache) {
+        setLocalCache(MANIFEST_CACHE_KEY, manifestCache);
+      }
     } catch (e) {
       console.error("[Calendar] Manifest fetch failed:", e);
     }
-    updateCalendar();
-  });
+    return manifestCache;
+  }
 
-  async function fetchHolidays(year) {
-    if (holidaysCache[year]) return holidaysCache[year];
-    if (!manifestCache?.datasets?.holidays?.files?.[year]) return {};
+  async function loadTodaysOccasion(forceFresh = false) {
+    const cached = getLocalCache(OCCASION_CACHE_KEY, 12 * 3600 * 1000);
+    if (cached && !forceFresh) {
+      const currentM = today.getMonth() + 1;
+      const currentD = today.getDate();
+      todaysOccasion =
+        cached.data?.events?.find(
+          (e) => e.month === currentM && e.day === currentD,
+        ) || null;
+      if (cached.isFresh) return;
+    }
+
+    const file =
+      manifestCache?.datasets?.today?.files?.occasion ||
+      "today/todays_occasion.json";
+    const baseUrl = manifestCache?.baseUrl || "https://hub.ekushlabs.com/ponji";
+
+    let data;
+    try {
+      let r;
+      try {
+        r = await fetch(`${baseUrl}/${file}`);
+      } catch (err) {
+        r = { ok: false };
+      }
+
+      if (r.ok) {
+        data = await r.json();
+      } else {
+        const localRes = await fetch(`/hub/ponji/${file}`);
+        if (localRes.ok) {
+          const text = await localRes.text();
+          if (!text.startsWith("<!")) data = JSON.parse(text);
+        }
+        if (!data) {
+          try {
+            data = (
+              await import("../../../../apps/hub/ponji/today/todays_occasion.json")
+            ).default;
+          } catch (err) {
+            console.warn("[Calendar] Fallback dynamic import for todays_occasion failed:", err);
+          }
+        }
+      }
+
+      if (data?.events) {
+        setLocalCache(OCCASION_CACHE_KEY, data);
+        const currentM = today.getMonth() + 1;
+        const currentD = today.getDate();
+        todaysOccasion =
+          data.events.find(
+            (e) => e.month === currentM && e.day === currentD,
+          ) || null;
+      }
+    } catch (e) {
+      console.error("[Calendar] Occasions fetch failed:", e);
+    }
+  }
+
+  async function fetchHolidays(year, forceFresh = false) {
+    if (holidaysCache[year] && !forceFresh) return holidaysCache[year];
+
+    const cacheKey = `ekush_hub_ponji_holidays_${year}`;
+    const cached = getLocalCache(cacheKey, 24 * 3600 * 1000);
+    if (cached && !forceFresh) {
+      holidaysCache[year] = cached.data;
+      if (cached.isFresh) return cached.data;
+    }
+
+    if (!manifestCache?.datasets?.holidays?.files?.[year]) {
+      return holidaysCache[year] || {};
+    }
 
     const file = manifestCache.datasets.holidays.files[year];
+    const baseUrl = manifestCache.baseUrl || "https://hub.ekushlabs.com/ponji";
     try {
-      const r = await fetch(`/calendar-assets/data/${file}`);
-      if (!r.ok) return {};
-      const data = await r.json();
+      let data;
+      let r;
+      try {
+        r = await fetch(`${baseUrl}/${file}`);
+      } catch (e) {
+        r = { ok: false };
+      }
+
+      if (r.ok) {
+        data = await r.json();
+      } else {
+        const localRes = await fetch(`/hub/ponji/${file}`);
+        if (localRes.ok) {
+          const text = await localRes.text();
+          if (!text.startsWith("<!")) data = JSON.parse(text);
+        }
+        if (!data) {
+          try {
+            data = (
+              await import(`../../../../apps/hub/ponji/holidays/holidays_${year}.json`)
+            ).default;
+          } catch (err) {
+            console.warn("[Calendar] Fallback dynamic import failed:", err);
+          }
+        }
+      }
+
+      if (!data) return holidaysCache[year] || {};
+
       const map = {};
       data.holidays?.forEach((h) => {
         if (!h.gazetteType?.startsWith("mandatory")) return;
@@ -261,13 +425,36 @@
           cur.setDate(cur.getDate() + 1);
         }
       });
+
       holidaysCache[year] = map;
+      setLocalCache(cacheKey, map);
       return map;
     } catch (e) {
       console.error("[Calendar] Holidays fetch failed:", e);
-      return {};
+      return holidaysCache[year] || {};
     }
   }
+
+  onMount(async () => {
+    // 1. Instant cache hydration: manifest
+    const cachedManifest = getLocalCache(MANIFEST_CACHE_KEY, 12 * 3600 * 1000);
+    if (cachedManifest) {
+      manifestCache = cachedManifest.data;
+    }
+
+    // 2. Instant cache hydration: today's occasion
+    loadTodaysOccasion(false);
+
+    // 3. Instant render with cached data (0ms delay!)
+    updateCalendar();
+
+    // 4. Background revalidation if manifest or data is missing/stale
+    if (!cachedManifest?.isFresh) {
+      await fetchManifest(true);
+      updateCalendar();
+      loadTodaysOccasion(true);
+    }
+  });
 
   async function updateCalendar() {
     const holidays = await fetchHolidays(currentYear);
@@ -542,36 +729,81 @@
       </div>
 
       <div class="flex flex-col gap-4 relative z-10">
-        <div
-          class="bg-slate-50/50 dark:bg-slate-800/50 backdrop-blur-md p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50"
-        >
+        <div class="grid grid-cols-2 gap-3">
           <div
-            class="text-xs font-bold text-emerald-600 dark:text-emerald-500 mb-1 uppercase tracking-wider"
+            class="bg-slate-50/60 dark:bg-slate-800/60 backdrop-blur-md p-4 rounded-2xl border border-slate-100 dark:border-slate-700/50 flex flex-col justify-between"
           >
-            {t.banglaLabel}
+            <div
+              class="text-[11px] font-bold text-emerald-600 dark:text-emerald-500 mb-1 uppercase tracking-wider"
+            >
+              {t.banglaLabel}
+            </div>
+            <div class="text-base font-bold text-emerald-700 dark:text-emerald-400 leading-snug">
+              {fmt(todayBangla.day)}
+              {t.bMonths[todayBangla.monthIndex]}
+              <span class="block text-xs font-semibold text-emerald-600/80 dark:text-emerald-500/80">
+                {fmt(todayBangla.year)} {t.banglaSuffix}
+              </span>
+            </div>
           </div>
-          <div class="text-lg font-bold text-emerald-700 dark:text-emerald-400">
-            {fmt(todayBangla.day)}
-            {t.bMonths[todayBangla.monthIndex]}
-            {fmt(todayBangla.year)}
-            <span class="text-sm font-medium text-emerald-600 dark:text-emerald-500 ml-1">{t.banglaSuffix}</span>
+          <div
+            class="bg-slate-50/60 dark:bg-slate-800/60 backdrop-blur-md p-4 rounded-2xl border border-slate-100 dark:border-slate-700/50 flex flex-col justify-between"
+          >
+            <div
+              class="text-[11px] font-bold text-orange-600 dark:text-orange-500 mb-1 uppercase tracking-wider"
+            >
+              {t.hijriLabel}
+            </div>
+            <div class="text-base font-bold text-orange-600 dark:text-orange-400 leading-snug">
+              {fmt(todayHijri.day)}
+              {t.hMonths[todayHijri.monthIndex]}
+              <span class="block text-xs font-semibold text-orange-500/80 dark:text-orange-400/80">
+                {fmt(todayHijri.year)} {t.hijriSuffix}
+              </span>
+            </div>
           </div>
         </div>
-        <div
-          class="bg-slate-50/50 dark:bg-slate-800/50 backdrop-blur-md p-5 rounded-2xl border border-slate-100 dark:border-slate-700/50"
-        >
+
+        {#if todaysOccasion}
           <div
-            class="text-xs font-bold text-orange-600 dark:text-orange-500 mb-1 uppercase tracking-wider"
+            class="p-5 rounded-2xl bg-gradient-to-br from-indigo-50/90 via-violet-50/50 to-purple-50/90 dark:from-indigo-950/40 dark:via-purple-950/30 dark:to-violet-950/40 border border-indigo-100/90 dark:border-indigo-500/25 shadow-sm group transition-all duration-300 hover:shadow-md"
           >
-            {t.hijriLabel}
+            <div class="flex items-center justify-between gap-2 mb-2.5">
+              <div class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
+                <span class="flex h-2 w-2 relative">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                </span>
+                <span>{t.occasionLabel}</span>
+              </div>
+              {#if todaysOccasion.category}
+                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-100/80 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-700/40">
+                  {t.categoryLabels?.[todaysOccasion.category] || todaysOccasion.category}
+                </span>
+              {/if}
+            </div>
+
+            <h4 class="text-base md:text-lg font-black text-slate-900 dark:text-white leading-snug mb-1.5 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+              {lang === "bn" ? todaysOccasion.title_bn : todaysOccasion.title_en}
+            </h4>
+
+            {#if (lang === "bn" ? todaysOccasion.description_bn : todaysOccasion.description_en)}
+              <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                {lang === "bn" ? todaysOccasion.description_bn : todaysOccasion.description_en}
+              </p>
+            {/if}
+
+            {#if todaysOccasion.tags && todaysOccasion.tags.length > 0}
+              <div class="flex flex-wrap gap-1.5 mt-3 pt-2.5 border-t border-indigo-100/60 dark:border-indigo-800/30">
+                {#each todaysOccasion.tags as tag}
+                  <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400">
+                    #{tag}
+                  </span>
+                {/each}
+              </div>
+            {/if}
           </div>
-          <div class="text-lg font-bold text-orange-600 dark:text-orange-400">
-            {fmt(todayHijri.day)}
-            {t.hMonths[todayHijri.monthIndex]}
-            {fmt(todayHijri.year)}
-            <span class="text-sm font-medium text-orange-500 dark:text-orange-500 ml-1">{t.hijriSuffix}</span>
-          </div>
-        </div>
+        {/if}
       </div>
     </div>
 

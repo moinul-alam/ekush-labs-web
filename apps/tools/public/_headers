@@ -6,10 +6,6 @@
 /shared/*
   Cache-Control: public, max-age=86400, stale-while-revalidate=3600
 
-# ── Holiday/data JSON — cache 1 hour (updated annually but
-#    short TTL means a correction deploy reaches users quickly)
-/*/assets/data/*
-  Cache-Control: public, max-age=3600, stale-while-revalidate=600
 
 # ── HTML pages — never cached (always fresh)
 /*.html
