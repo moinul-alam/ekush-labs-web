@@ -60,6 +60,10 @@
       resetLabel: "চলতি মাস",
       occasionLabel: "আজকের বিশেষ দিবস",
       categoryLabels: {
+        national: "জাতীয় দিবস",
+        human_rights: "মানবাধিকার",
+        culture: "সংস্কৃতি ও ঐতিহ্য",
+        peace: "শান্তি ও কূটনীতি",
         seasonal: "ঋতু ও উৎসব",
         lifestyle: "লাইফস্টাইল",
         health: "স্বাস্থ্য ও সুস্থতা",
@@ -128,6 +132,10 @@
       resetLabel: "Current Month",
       occasionLabel: "Today's Occasion",
       categoryLabels: {
+        national: "National Day",
+        human_rights: "Human Rights",
+        culture: "Culture & Heritage",
+        peace: "Peace & Diplomacy",
         seasonal: "Seasonal",
         lifestyle: "Lifestyle",
         health: "Health & Wellness",
@@ -152,6 +160,7 @@
   let currentMonthHolidays = [];
   let calendarCells = [];
   let todaysOccasion = null;
+  let todaysOccasions = [];
 
   $: t = dict[lang];
 
@@ -313,10 +322,11 @@
     if (cached && !forceFresh) {
       const currentM = today.getMonth() + 1;
       const currentD = today.getDate();
-      todaysOccasion =
-        cached.data?.events?.find(
+      todaysOccasions =
+        cached.data?.events?.filter(
           (e) => e.month === currentM && e.day === currentD,
-        ) || null;
+        ) || [];
+      todaysOccasion = todaysOccasions[0] || null;
       if (cached.isFresh) return;
     }
 
@@ -357,10 +367,11 @@
         setLocalCache(OCCASION_CACHE_KEY, data);
         const currentM = today.getMonth() + 1;
         const currentD = today.getDate();
-        todaysOccasion =
-          data.events.find(
+        todaysOccasions =
+          data.events.filter(
             (e) => e.month === currentM && e.day === currentD,
-          ) || null;
+          ) || [];
+        todaysOccasion = todaysOccasions[0] || null;
       }
     } catch (e) {
       console.error("[Calendar] Occasions fetch failed:", e);
@@ -764,44 +775,55 @@
           </div>
         </div>
 
-        {#if todaysOccasion}
-          <div
-            class="p-5 rounded-2xl bg-gradient-to-br from-indigo-50/90 via-violet-50/50 to-purple-50/90 dark:from-indigo-950/40 dark:via-purple-950/30 dark:to-violet-950/40 border border-indigo-100/90 dark:border-indigo-500/25 shadow-sm group transition-all duration-300 hover:shadow-md"
-          >
-            <div class="flex items-center justify-between gap-2 mb-2.5">
-              <div class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
-                <span class="flex h-2 w-2 relative">
-                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
-                  <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
-                </span>
-                <span>{t.occasionLabel}</span>
+        {#if todaysOccasions && todaysOccasions.length > 0}
+          <div class="flex flex-col gap-3">
+            {#each todaysOccasions as occasion}
+              <div
+                class="p-5 rounded-2xl bg-gradient-to-br from-indigo-50/90 via-violet-50/50 to-purple-50/90 dark:from-indigo-950/40 dark:via-purple-950/30 dark:to-violet-950/40 border border-indigo-100/90 dark:border-indigo-500/25 shadow-sm group transition-all duration-300 hover:shadow-md"
+              >
+                <div class="flex items-center justify-between gap-2 mb-2.5">
+                  <div class="inline-flex items-center gap-1.5 text-xs font-black uppercase tracking-wider text-indigo-700 dark:text-indigo-400">
+                    <span class="flex h-2 w-2 relative">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-indigo-500"></span>
+                    </span>
+                    <span>{t.occasionLabel}</span>
+                  </div>
+                  {#if occasion.category}
+                    <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-100/80 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-700/40">
+                      {t.categoryLabels?.[occasion.category] || occasion.category}
+                    </span>
+                  {/if}
+                </div>
+
+                <h4 class="text-base md:text-lg font-black text-slate-900 dark:text-white leading-snug mb-1.5 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
+                  {lang === "bn" ? occasion.title_bn : occasion.title_en}
+                </h4>
+
+                {#if (lang === "bn" ? occasion.description_bn : occasion.description_en)}
+                  <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                    {lang === "bn" ? occasion.description_bn : occasion.description_en}
+                  </p>
+                {/if}
+
+                {#if occasion.source}
+                  <div class="mt-2 text-[11px] font-semibold text-slate-500 dark:text-slate-400 flex items-center gap-1.5">
+                    <span>🏛️</span>
+                    <span>{occasion.source}</span>
+                  </div>
+                {/if}
+
+                {#if occasion.tags && occasion.tags.length > 0}
+                  <div class="flex flex-wrap gap-1.5 mt-2.5 pt-2 border-t border-indigo-100/60 dark:border-indigo-800/30">
+                    {#each occasion.tags as tag}
+                      <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400">
+                        #{tag}
+                      </span>
+                    {/each}
+                  </div>
+                {/if}
               </div>
-              {#if todaysOccasion.category}
-                <span class="text-[10px] font-bold px-2.5 py-0.5 rounded-full bg-indigo-100/80 dark:bg-indigo-900/50 text-indigo-700 dark:text-indigo-300 border border-indigo-200/50 dark:border-indigo-700/40">
-                  {t.categoryLabels?.[todaysOccasion.category] || todaysOccasion.category}
-                </span>
-              {/if}
-            </div>
-
-            <h4 class="text-base md:text-lg font-black text-slate-900 dark:text-white leading-snug mb-1.5 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors">
-              {lang === "bn" ? todaysOccasion.title_bn : todaysOccasion.title_en}
-            </h4>
-
-            {#if (lang === "bn" ? todaysOccasion.description_bn : todaysOccasion.description_en)}
-              <p class="text-xs md:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-                {lang === "bn" ? todaysOccasion.description_bn : todaysOccasion.description_en}
-              </p>
-            {/if}
-
-            {#if todaysOccasion.tags && todaysOccasion.tags.length > 0}
-              <div class="flex flex-wrap gap-1.5 mt-3 pt-2.5 border-t border-indigo-100/60 dark:border-indigo-800/30">
-                {#each todaysOccasion.tags as tag}
-                  <span class="text-[10px] font-medium text-slate-500 dark:text-slate-400">
-                    #{tag}
-                  </span>
-                {/each}
-              </div>
-            {/if}
+            {/each}
           </div>
         {/if}
       </div>
