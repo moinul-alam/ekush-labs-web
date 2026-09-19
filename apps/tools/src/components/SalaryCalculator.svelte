@@ -8,9 +8,9 @@
   const dict = {
     bn: {
       title: "সরকারি বেতন ক্যালকুলেটর",
-      desc: "৮ম এবং ৯ম পে-স্কেলের তুলনামূলক বেতন ও বাস্তবায়ন ধাপের নির্ভুল হিসাব",
+      desc: "বাংলাদেশ গেজেটে প্রকাশিত ৯ম জাতীয় বেতনস্কেল ২০২৬ এর ধাপ ও গেজেট ফিক্সেশন নিয়মে নির্ভুল হিসাব",
       devWarning:
-        "এই অ্যাপটি ৯ম পে-স্কেল ২০২৬ এর অনুমোদিত ৪টি বাস্তবায়ন ধাপের কাঠামোর ভিত্তিতে প্রস্তুতকৃত।",
+        "এই অ্যাপটি ১৭ সেপ্টেম্বর ২০২৬ তারিখে প্রকাশিত ৯ম জাতীয় বেতনস্কেল গেজেট (এস.আর.ও. নং ৩৪৭-আইন/২০২৬) অনুযায়ী প্রস্তুতকৃত।",
       grade: "গ্রেড নির্বাচন করুন (১-২০)",
       currentBasicStep: "০১-০৬-২০২৬ তারিখের মূল বেতন",
       stepLabel: "ধাপ",
@@ -55,9 +55,9 @@
       phase3: "৩য় ধাপ: ১ জুলাই ২০২৭ (১০০% মূলবেতন + ৫% ইনক্রিমেন্ট)",
       phase4: "৪র্থ ধাপ: ১ জানুয়ারি ২০২৮ (সংশোধিত নতুন ভাতাসহ)",
       stepNotice:
-        "যেহেতু ৯ম পে-স্কেলের চূড়ান্ত গেজেটের প্রতিটি ইনক্রিমেন্ট ধাপ এখনও প্রকাশিত হয়নি, তাই এখানে প্রকৃত গণনাকৃত মূল বেতন দেখানো হয়েছে। গেজেট প্রকাশের পর তা নিকটতম উচ্চতর ধাপে সমন্বয় করা হবে।",
+        "গেজেট অনুচ্ছেদ ৫ অনুযায়ী: ৮ম স্কেলের প্রারম্ভিক হতে পার্থক্য ৯ম স্কেলের প্রারম্ভিক বেতনের সাথে যোগ করার পর যদি হুবহু কোনো ধাপের সমান না হয়, তবে পরবর্তী উচ্চতর ধাপে ফিক্সেশন হবে।",
       allowanceNotice:
-        "৩য় ধাপে (১ জুলাই ২০২৭) মূল বেতনে ৫% বার্ষিক ইনক্রিমেন্ট যুক্ত হবে এবং বাসা ভাড়া ৮ম স্কেলের ইনক্রিমেন্ট-পরবর্তী মূল বেতন অনুযায়ী বৃদ্ধি পাবে। ৯ম স্কেলে 'বিশেষ সুবিধা' (১০%/১৫%) বাতিল হবে এবং ৪র্থ ধাপে (১ জানুয়ারি ২০২৮) নতুন ভাতার হার কার্যকর হবে।",
+        "৩য় ধাপে (১ জুলাই ২০২৭) মূল বেতনে ৫% বার্ষিক ইনক্রিমেন্ট যুক্ত হবে। ৪র্থ ধাপে (১ জানুয়ারি ২০২৮) নতুন গেজেটের গ্রেডভিত্তিক বাসাভাড়া হার (৪০%-৬০%), চিকিৎসা ভাতা (৩০০০/৪০০০), যাতায়াত (৬০০), মোবাইল ও অন্যান্য নতুন ভাতা কার্যকর হবে। ৯ম স্কেলে বিশেষ সুবিধা বিলুপ্ত।",
       currentStepInfo: "৮ম স্কেলের ধাপ",
       startingScale: "প্রারম্ভিক স্কেল",
       factorVal: "ফ্যাক্টর মান",
@@ -69,6 +69,12 @@
       calcCompleted: "হিসাব সম্পন্ন",
       basicOnlyNotice:
         "১ম থেকে ৩য় ধাপে শুধু মূল বেতন বৃদ্ধি পাবে। ৯ম স্কেলে 'বিশেষ সুবিধা' বাতিল হবে। নতুন ভাতার হার ২০২৮ সালের জানুয়ারি থেকে কার্যকর হবে।",
+      conveyance: "যাতায়াত ভাতা",
+      mobile: "মোবাইল ভাতা",
+      childEducation: "শিক্ষা সহায়ক ভাতা",
+      gazetteElevationBadge: "গেজেট ধাপ ফিক্সেশন",
+      candidateBasicLabel: "গণনাকৃত মূল",
+      elevatedBasicLabel: "গেজেট নির্ধারিত মূল",
       ponjiTag: "অ্যান্ড্রয়েড অ্যাপ",
       ponjiTitle: "একুশ পঞ্জি - বাংলা ক্যালেন্ডার",
       ponjiDesc: "সম্পূর্ণ বাংলা ক্যালেন্ডার ও ছুটির তালিকা",
@@ -76,9 +82,9 @@
     },
     en: {
       title: "Govt Salary Calculator",
-      desc: "Accurate salary comparison and 4-phase implementation for 8th & 9th Pay Scales",
+      desc: "Accurate comparison and 4-phase implementation based on the 9th Pay Scale Gazette 2026",
       devWarning:
-        "This app is prepared based on the approved 9th Pay Scale 2026 across 4 rollout phases.",
+        "Prepared based on the officially published 9th National Pay Scale Gazette (S.R.O. No. 347-Law/2026).",
       grade: "Select Grade (1-20)",
       currentBasicStep: "Basic Pay as of 01-06-2026",
       stepLabel: "Step",
@@ -123,9 +129,9 @@
       phase3: "Phase 3: 1 July 2027 (100% Basic + 5% Annual Increment)",
       phase4: "Phase 4: 1 January 2028 (With Revised Allowances)",
       stepNotice:
-        "As the official intermediate steps for the 9th Pay Scale are not gazetted yet, the exact calculated basic is shown without artificial rounding to higher steps.",
+        "Per Gazette Rule 5: Candidate basic is elevated to the immediate next higher official step in the 9th scale if it does not match an exact step.",
       allowanceNotice:
-        "In Phase 3 (1 July 2027), a 5% annual increment is added to basic pay, and house rent is calculated based on the post-increment 8th scale step. Special benefit is abolished in 9th scale.",
+        "In Phase 3 (1 July 2027), a 5% annual increment is added. In Phase 4 (1 Jan 2028), new gazetted grade-bracket house rents (40%-60%), medical allowance (৳3000/৳4000), conveyance (৳600), mobile allowance take effect. Special benefit is abolished in 9th scale.",
       currentStepInfo: "8th Scale Step",
       startingScale: "Starting Scale",
       factorVal: "Factor Value",
@@ -137,6 +143,12 @@
       calcCompleted: "Calculated",
       basicOnlyNotice:
         "In phases 1 to 3, only the basic salary increases. Special benefit is abolished in 9th scale.",
+      conveyance: "Conveyance Allowance",
+      mobile: "Mobile Allowance",
+      childEducation: "Child Education Allowance",
+      gazetteElevationBadge: "Gazette Step Fixation",
+      candidateBasicLabel: "Candidate Basic",
+      elevatedBasicLabel: "Gazette Fixed Basic",
       ponjiTag: "Android App",
       ponjiTitle: "Ekush Ponji - Bangla Calendar",
       ponjiDesc: "Complete Bangla calendar with holidays",
@@ -153,6 +165,8 @@
   let selectedGrade = 9;
   let selectedStepIndex = 0; // Default to 1st step (Starting basic ৳22,000 in Grade 9)
   let location = "dhaka_city_corp";
+  let hasChildrenCount = 0; // 0, 1, or 2 children
+  let isAgeOver50 = false; // Medical allowance 4000 if > 50
 
   let showDiffTooltip = false;
 
@@ -456,13 +470,42 @@
     const p3Tiffin = p12Tiffin;
     const p3Gross = phase3Basic + p3HouseRent + p3Medical + p3Tiffin;
 
-    // Phase 4 Total (Revised 9th scale allowances take effect)
+    // Phase 4 Total (Revised 9th scale allowances per official Gazette take effect)
     const allowances9th = payscaleData.allowances_9th;
-    const p4HouseRentRate = allowances9th.house_rent[location] || 0.55;
+    
+    // Gazette Rule 15: House Rent by Grade Brackets
+    // 16-20: Dhaka 60%, Other City Corp 50%, District/Upazila 45%
+    // 10-15: Dhaka 50%, Other City Corp 40%, District/Upazila 35%
+    // 5-9:   Dhaka 45%, Other City Corp 35%, District/Upazila 30%
+    // 1-4:   Dhaka 40%, Other City Corp 30%, District/Upazila 25%
+    let p4HouseRentRate = 0.45;
+    if (grade >= 16 && grade <= 20) {
+      p4HouseRentRate = location === "dhaka_city_corp" ? 0.60 : location === "other_city_corp" ? 0.50 : 0.45;
+    } else if (grade >= 10 && grade <= 15) {
+      p4HouseRentRate = location === "dhaka_city_corp" ? 0.50 : location === "other_city_corp" ? 0.40 : 0.35;
+    } else if (grade >= 5 && grade <= 9) {
+      p4HouseRentRate = location === "dhaka_city_corp" ? 0.45 : location === "other_city_corp" ? 0.35 : 0.30;
+    } else {
+      p4HouseRentRate = location === "dhaka_city_corp" ? 0.40 : location === "other_city_corp" ? 0.30 : 0.25;
+    }
     const p4HouseRent = phase4Basic * p4HouseRentRate;
-    const p4Medical = allowances9th.medical.amount;
-    const p4Tiffin = getTiffin(allowances9th, grade);
-    const p4Gross = phase4Basic + p4HouseRent + p4Medical + p4Tiffin;
+    
+    // Gazette Rule 13: Medical Allowance (৳3,000 up to age 50, ৳4,000 above age 50)
+    const p4Medical = isAgeOver50 ? 4000 : 3000;
+    
+    // Gazette Rule 19: Tiffin (৳500 for grades 11-20)
+    const p4Tiffin = (grade >= 11 && grade <= 20) ? 500 : 0;
+    
+    // Gazette Rule 21: Conveyance (৳600 for grades 11-20 in City Corporation)
+    const p4Conveyance = (grade >= 11 && grade <= 20 && location !== "district_upazila") ? 600 : 0;
+    
+    // Gazette Rule 22: Mobile (৳500 for grades 1-5, ৳150 for grades 6-20)
+    const p4Mobile = grade <= 5 ? 500 : 150;
+    
+    // Gazette Rule 18: Child Education (৳500 per child, max 2 children)
+    const p4Education = hasChildrenCount * 500;
+    
+    const p4Gross = phase4Basic + p4HouseRent + p4Medical + p4Tiffin + p4Conveyance + p4Mobile + p4Education;
 
     return [
       {
@@ -506,6 +549,9 @@
         houseRent: p4HouseRent,
         medical: p4Medical,
         tiffin: p4Tiffin,
+        conveyance: p4Conveyance,
+        mobile: p4Mobile,
+        education: p4Education,
         specialBenefit: 0,
         gross: p4Gross,
       },
@@ -527,17 +573,36 @@
     const currentBasicVal = steps8th[selectedStepIndex] || steps8th[0];
     const grade = selectedGrade;
 
-    // Difference Addition Method (পার্থক্য যোগ পদ্ধতি)
-    // Formula: 9th Starting Basic + (Current Step Basic - 8th Starting Basic)
+    // Gazette Rule 5 (অনুচ্ছেদ ৫): ৯ম জাতীয় বেতনস্কেলে বেতন নির্ধারণ
+    // (ক) ও (খ) পার্থক্য = বর্তমান মূল বেতন - ৮ম স্কেলের প্রারম্ভিক ধাপ
+    // পদাধিকার প্রাপ্ত প্রার্থী বেসিক = ৯ম স্কেলের প্রারম্ভিক ধাপ + পার্থক্য
+    // যদি ইহা কোন ধাপের হুবহু সমান না হয়, তবে পরবর্তী উচ্চতর ধাপে ফিক্সেশন হইবে।
     const diff = Math.max(0, currentBasicVal - start8th);
-    const diffCalcBasic = start9th + diff; // Actual calculated basic without step elevation
+    const rawCandidateBasic = start9th + diff;
+    
+    // Find matching or next higher step in 9th pay scale gazetted steps
+    let fixedGazetteBasic = rawCandidateBasic;
+    let matchingStepIndex = steps9th.indexOf(rawCandidateBasic);
+    let elevated = false;
+    
+    if (matchingStepIndex !== -1) {
+      fixedGazetteBasic = steps9th[matchingStepIndex];
+    } else {
+      const nextHigher = steps9th.find((s) => s >= rawCandidateBasic);
+      if (nextHigher !== undefined) {
+        fixedGazetteBasic = nextHigher;
+        elevated = true;
+      } else {
+        fixedGazetteBasic = steps9th[steps9th.length - 1];
+      }
+    }
 
     // Current 8th breakdown (Gross & Allowances including special benefit in 8th scale)
     const current = compute8thBreakdown(currentBasicVal, grade);
 
-    // 4 Phased rollout
+    // 4 Phased rollout using the officially fixed gazette basic
     const diffPhases = calculate4Phases(
-      diffCalcBasic,
+      fixedGazetteBasic,
       currentBasicVal,
       grade,
       current,
@@ -551,11 +616,15 @@
       start8th,
       start9th,
       diff,
+      rawCandidateBasic,
+      fixedGazetteBasic,
+      elevated,
       current,
       methods: {
         difference: {
-          calcBasic: diffCalcBasic,
-          increasedBasic: diffCalcBasic - currentBasicVal,
+          calcBasic: fixedGazetteBasic,
+          rawCalcBasic: rawCandidateBasic,
+          increasedBasic: fixedGazetteBasic - currentBasicVal,
           phases: diffPhases,
         },
       },
@@ -781,6 +850,44 @@
                   >{t.locOther}</span
                 >
               </label>
+            </div>
+          </div>
+
+          <!-- Extra Gazette Parameters: Children count (Education allowance) & Age (Medical allowance) -->
+          <div class="flex flex-col gap-1.5 sm:col-span-2 pt-2 border-t border-slate-100 dark:border-slate-800">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <!-- Children count -->
+              <div class="flex flex-col gap-1">
+                <label for="child-count" class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  {lang === "bn" ? "সন্তান সংখ্যা (শিক্ষা সহায়ক ভাতা)" : "Children (Education Allowance)"}
+                </label>
+                <select
+                  id="child-count"
+                  bind:value={hasChildrenCount}
+                  class="w-full bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl px-3 py-2 text-xs font-semibold text-slate-800 dark:text-slate-200 focus:outline-none focus:ring-2 focus:ring-blue-500/50 cursor-pointer"
+                >
+                  <option value={0}>{lang === "bn" ? "সন্তান নেই (৳ ০)" : "None (৳ 0)"}</option>
+                  <option value={1}>{lang === "bn" ? "১ জন সন্তান (৳ ৫০০)" : "1 Child (৳ 500)"}</option>
+                  <option value={2}>{lang === "bn" ? "২ জন বা ততোধিক সন্তান (৳ ১,০০০)" : "2 or more (৳ 1,000)"}</option>
+                </select>
+              </div>
+
+              <!-- Age > 50 toggle -->
+              <div class="flex flex-col gap-1">
+                <span class="text-xs font-bold text-slate-700 dark:text-slate-300">
+                  {lang === "bn" ? "বয়সসীমা (চিকিৎসা ভাতা)" : "Age Limit (Medical Allowance)"}
+                </span>
+                <label class="flex items-center gap-2 p-2 bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700 rounded-xl cursor-pointer hover:border-blue-300 transition-colors h-[38px]">
+                  <input
+                    type="checkbox"
+                    bind:checked={isAgeOver50}
+                    class="w-4 h-4 text-blue-600 rounded cursor-pointer"
+                  />
+                  <span class="text-xs font-semibold text-slate-800 dark:text-slate-200">
+                    {lang === "bn" ? "বয়স ৫০ বছরের ঊর্ধ্বে (৳ ৪,০০০)" : "Age 50+ (৳ 4,000)"}
+                  </span>
+                </label>
+              </div>
             </div>
           </div>
         </div>
@@ -1285,6 +1392,42 @@
                       >
                     </div>
                   {/if}
+                  {#if calculatedResult.methods.difference.phases[3].conveyance > 0}
+                    <div
+                      class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                    >
+                      <span>{t.conveyance}:</span>
+                      <span class="font-semibold text-slate-800 dark:text-slate-200"
+                        >৳ {formatMoney(
+                          calculatedResult.methods.difference.phases[3].conveyance,
+                        )}</span
+                      >
+                    </div>
+                  {/if}
+                  {#if calculatedResult.methods.difference.phases[3].mobile > 0}
+                    <div
+                      class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                    >
+                      <span>{t.mobile}:</span>
+                      <span class="font-semibold text-slate-800 dark:text-slate-200"
+                        >৳ {formatMoney(
+                          calculatedResult.methods.difference.phases[3].mobile,
+                        )}</span
+                      >
+                    </div>
+                  {/if}
+                  {#if calculatedResult.methods.difference.phases[3].education > 0}
+                    <div
+                      class="flex justify-between items-center text-slate-600 dark:text-slate-400"
+                    >
+                      <span>{t.childEducation}:</span>
+                      <span class="font-semibold text-slate-800 dark:text-slate-200"
+                        >৳ {formatMoney(
+                          calculatedResult.methods.difference.phases[3].education,
+                        )}</span
+                      >
+                    </div>
+                  {/if}
                 </div>
               </div>
 
@@ -1386,10 +1529,17 @@
                 <div
                   class="p-3 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/70"
                 >
-                  <div class="text-[11px] text-slate-400 uppercase font-bold">
-                    {lang === "bn"
-                      ? "ধাপ ২: ৯ম স্কেলে ফিক্সেশন"
-                      : "Step 2: 9th Scale Fixation"}
+                  <div class="text-[11px] text-slate-400 uppercase font-bold flex items-center justify-between">
+                    <span>
+                      {lang === "bn"
+                        ? "ধাপ ২: ৯ম স্কেলে ফিক্সেশন"
+                        : "Step 2: 9th Scale Fixation"}
+                    </span>
+                    {#if calculatedResult.elevated}
+                      <span class="text-[10px] bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 px-1.5 py-0.5 rounded font-bold">
+                        {t.gazetteElevationBadge}
+                      </span>
+                    {/if}
                   </div>
                   <div class="mt-1 text-slate-900 dark:text-white font-bold">
                     ৳ {formatMoney(calculatedResult.start9th)}
@@ -1404,10 +1554,13 @@
                     >
                     =
                     <span class="text-blue-600 dark:text-blue-400 font-black"
-                      >৳ {formatMoney(
-                        calculatedResult.methods.difference.calcBasic,
-                      )}</span
+                      >৳ {formatMoney(calculatedResult.methods.difference.calcBasic)}</span
                     >
+                    {#if calculatedResult.elevated}
+                      <span class="block text-[11px] text-emerald-700 dark:text-emerald-400 font-semibold mt-1">
+                        ↳ {lang === "bn" ? "গণনাকৃত ৳" + formatMoney(calculatedResult.rawCandidateBasic) + " ধাপের সমমান না হওয়ায় গেজেট অনুযায়ী পরবর্তী উচ্চতর ধাপে নির্ধারিত।" : "Candidate ৳" + formatMoney(calculatedResult.rawCandidateBasic) + " is elevated to next higher gazette step."}
+                      </span>
+                    {/if}
                   </div>
                 </div>
               </div>
