@@ -453,7 +453,7 @@ export const ui = {
 
     // Tool components - Salary Calculator
     'tools.salary.title': 'সরকারি বেতন ক্যালকুলেটর',
-    'tools.salary.desc': 'অষ্টম এবং প্রস্তাবিত নবম পে-স্কেলের তুলনামূলক বেতন হিসাব করুন',
+    'tools.salary.desc': '৯ম জাতীয় বেতনস্কেল গেজেট ২০২৬ অনুযায়ী বেতন ও ফিক্সেশন হিসাব',
     'tools.salary.cardTitle': 'সরকারি বেতন ক্যালকুলেটর',
     'tools.salary.grade': 'গ্রেড (১-২০)',
     'tools.salary.currentBasic': 'বর্তমান বেসিক (৳)',
@@ -915,7 +915,7 @@ export const ui = {
 
     // Tool components - Salary Calculator
     'tools.salary.title': 'Govt Salary Calculator',
-    'tools.salary.desc': 'Calculate and compare salary between 8th and proposed 9th pay scale',
+    'tools.salary.desc': 'Salary and fixation calculation according to 9th National Pay Scale Gazette 2026',
     'tools.salary.cardTitle': 'Govt Salary Calculator',
     'tools.salary.grade': 'Grade (1-20)',
     'tools.salary.currentBasic': 'Current Basic (৳)',

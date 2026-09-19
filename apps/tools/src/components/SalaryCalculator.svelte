@@ -12,7 +12,7 @@
       devWarning:
         "এই অ্যাপটি ১৭ সেপ্টেম্বর ২০২৬ তারিখে প্রকাশিত ৯ম জাতীয় বেতনস্কেল গেজেট (এস.আর.ও. নং ৩৪৭-আইন/২০২৬) অনুযায়ী প্রস্তুতকৃত।",
       grade: "গ্রেড নির্বাচন করুন (১-২০)",
-      currentBasicStep: "০১-০৬-২০২৬ তারিখের মূল বেতন",
+      currentBasicStep: "৩০/০৬/২০২৬ তারিখের মূল বেতন",
       stepLabel: "ধাপ",
       initialStep: "১ম ধাপ (প্রারম্ভিক)",
       location: "কর্মস্থল / বাসাভাড়ার এলাকা",
@@ -21,8 +21,12 @@
       locOther: "জেলা/উপজেলা বা অন্যান্য (৪০%)",
       calcButton: "বেতন হিসাব করুন",
       recalcButton: "পুনরায় হিসাব করুন",
-      currentTitle: "বর্তমান বেতন (৮ম পে-স্কেল)",
-      newTitle: "প্রস্তাবিত বেতন (৯ম পে-স্কেল)",
+      currentTitle: "বিদ্যমান বেতন কাঠামো (৮ম পে-স্কেল)",
+      newTitle: "নতুন বেতন কাঠামো (৯ম পে-স্কেল)",
+      existingScale: "বিদ্যমান বেতন কাঠামো",
+      newScale: "নতুন বেতন কাঠামো",
+      currentRunningTitle: "বর্তমানে চলমান বেতন কাঠামো",
+      detailsBtn: "বিস্তারিত",
       basic: "মূল বেতন (Basic)",
       houseRent: "বাসা ভাড়া",
       medical: "চিকিৎসা ভাতা",
@@ -65,7 +69,7 @@
       phaseBasic: "মূল বেতন",
       phaseNetEst: "মোট প্রাপ্য বেতন",
       phaseIncBadge: "বৃদ্ধি",
-      inputTitle: "বেতন সংক্রান্ত তথ্য নির্বাচন",
+      inputTitle: "বর্তমান বেতন সংক্রান্ত তথ্য",
       calcCompleted: "হিসাব সম্পন্ন",
       basicOnlyNotice:
         "১ম থেকে ৩য় ধাপে শুধু মূল বেতন বৃদ্ধি পাবে। ৯ম স্কেলে 'বিশেষ সুবিধা' বাতিল হবে। নতুন ভাতার হার ২০২৮ সালের জানুয়ারি থেকে কার্যকর হবে।",
@@ -86,7 +90,7 @@
       devWarning:
         "Prepared based on the officially published 9th National Pay Scale Gazette (S.R.O. No. 347-Law/2026).",
       grade: "Select Grade (1-20)",
-      currentBasicStep: "Basic Pay as of 01-06-2026",
+      currentBasicStep: "Basic Pay as of 30/06/2026",
       stepLabel: "Step",
       initialStep: "1st Step (Starting)",
       location: "Workplace / House Rent Area",
@@ -95,8 +99,12 @@
       locOther: "District/Upazila or Other (40%)",
       calcButton: "Calculate Salary",
       recalcButton: "Recalculate",
-      currentTitle: "Current Salary (8th Scale)",
-      newTitle: "Proposed Salary (9th Scale)",
+      currentTitle: "Existing Salary (8th Scale)",
+      newTitle: "New Salary (9th Scale)",
+      existingScale: "Existing Pay Scale",
+      newScale: "New Pay Scale",
+      currentRunningTitle: "Currently Running Pay Scale",
+      detailsBtn: "Details",
       basic: "Basic Salary",
       houseRent: "House Rent",
       medical: "Medical Allowance",
@@ -169,6 +177,7 @@
   let isAgeOver50 = false; // Medical allowance 4000 if > 50
 
   let showDiffTooltip = false;
+  let showRunningModal = false;
 
   let calculatedResult = null;
 
@@ -609,17 +618,26 @@
       steps8th,
     );
 
+    const runningStepIndex = selectedStepIndex + 1 < steps8th.length ? selectedStepIndex + 2 : steps8th.length;
+    const runningBasic = selectedStepIndex + 1 < steps8th.length ? steps8th[selectedStepIndex + 1] : Math.round(currentBasicVal * 1.05);
+    const runningBreakdown = compute8thBreakdown(runningBasic, grade);
+
+    const stepIndex9th = steps9th.indexOf(fixedGazetteBasic) !== -1 ? steps9th.indexOf(fixedGazetteBasic) + 1 : null;
+
     calculatedResult = {
       grade,
       stepIndex: selectedStepIndex + 1,
       totalSteps: steps8th.length,
       start8th,
       start9th,
+      stepIndex9th,
       diff,
       rawCandidateBasic,
       fixedGazetteBasic,
       elevated,
       current,
+      running: runningBreakdown,
+      runningStepIndex,
       methods: {
         difference: {
           calcBasic: fixedGazetteBasic,
@@ -637,13 +655,22 @@
   <div
     class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border border-blue-200/60 dark:border-blue-800/40 rounded-2xl p-4 md:p-5 shadow-sm"
   >
-    <div class="flex items-start gap-3">
-      <span class="text-blue-600 dark:text-blue-400 text-xl mt-0.5">ℹ️</span>
+    <div class="flex items-center gap-3">
+      <span class="text-blue-600 dark:text-blue-400 text-lg shrink-0">ℹ️</span>
       <div
         class="text-xs md:text-sm font-medium text-blue-900 dark:text-blue-200 leading-relaxed"
       >
-        <span class="font-bold">{t.devWarning}</span>
-        {payscaleData?.disclaimer?.[lang] || t.desc}
+        <span>
+          {lang === "bn"
+            ? "এই অ্যাপটি ১৭ সেপ্টেম্বর ২০২৬ তারিখে প্রকাশিত ৯ম জাতীয় বেতনস্কেল গেজেট (এস.আর.ও. নং ৩৪৭-আইন/২০২৬) অনুযায়ী প্রস্তুতকৃত"
+            : "This tool is prepared according to the 9th National Pay Scale Gazette published on 17 September 2026 (S.R.O. No. 347-Law/2026)"}
+        </span>
+        (<a
+          href="https://mof.gov.bd/pages/notices/%E0%A6%B8%E0%A6%B0%E0%A6%95%E0%A6%BE%E0%A6%B0%E0%A6%BF-%E0%A6%9A%E0%A6%BE%E0%A6%95%E0%A7%81%E0%A6%B0%E0%A6%BF-%E0%A6%AC%E0%A7%87%E0%A6%A4%E0%A6%A8-%E0%A6%93-%E0%A6%AD%E0%A6%BE%E0%A6%A4%E0%A6%BF%E0%A6%A6%E0%A6%BF-%E0%A6%86%E0%A6%A6%E0%A7%87%E0%A6%B6-%E0%A7%A8%E0%A7%A6%E0%A7%A8%E0%A7%AC-llovuq-6aae43362e7225b38ad2a554"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-bold text-blue-600 dark:text-blue-400 underline hover:text-blue-800 dark:hover:text-blue-300"
+        >{lang === "bn" ? "লিংক" : "Link"}</a>)
       </div>
     </div>
   </div>
@@ -670,17 +697,17 @@
       </button>
     </div>
   {:else}
-    <!-- Top Row: Entry Box Stays on Left, Current Salary Appears on Right -->
+    <!-- Top Row: Entry Box Stays on Left, Existing + New Pay Scale Widgets on Right -->
     <div
       class="grid grid-cols-1 {calculatedResult
         ? 'lg:grid-cols-12'
-        : 'max-w-2xl mx-auto w-full'} gap-6 transition-all duration-500"
+        : 'max-w-2xl mx-auto w-full'} gap-6 items-stretch transition-all duration-500"
     >
       <!-- Entry Box / Form Card (Always on the LEFT when viewed) -->
       <div
         class="{calculatedResult
           ? 'lg:col-span-6'
-          : 'w-full'} bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-slate-200/70 dark:border-slate-800/70 shadow-xl relative overflow-hidden transition-all duration-500"
+          : 'w-full'} bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-slate-200/70 dark:border-slate-800/70 shadow-xl relative overflow-hidden flex flex-col justify-between transition-all duration-500"
       >
         <!-- Glow -->
         <div
@@ -910,111 +937,239 @@
           >
           {calculatedResult ? t.recalcButton : t.calcButton}
         </button>
+
+        <!-- Currently Running Pay Scale (Inside Left Card below button) -->
+        {#if calculatedResult}
+          <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800 flex flex-col gap-3 relative z-10 animate-fade-in">
+            <div class="flex items-center justify-between">
+              <h4 class="text-sm font-bold text-slate-800 dark:text-white flex items-center gap-1.5">
+                🏛️ {t.currentRunningTitle}
+              </h4>
+              <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-md text-xs font-bold">
+                {lang === "bn" ? "ধাপ " + fmtNum(calculatedResult.runningStepIndex) : "Step " + calculatedResult.runningStepIndex}
+              </span>
+            </div>
+
+            <div class="bg-slate-50/90 dark:bg-slate-800/60 rounded-2xl p-3.5 border border-slate-200/70 dark:border-slate-700/60 flex flex-col gap-2.5 text-xs md:text-sm">
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span>{t.basic} ({lang === "bn" ? `ধাপ ${fmtNum(calculatedResult.runningStepIndex)}` : `Step ${calculatedResult.runningStepIndex}`}):</span>
+                <span class="font-bold text-slate-900 dark:text-white">৳ {formatMoney(calculatedResult.running.basic)}</span>
+              </div>
+
+              <div class="flex justify-between items-center pt-2 border-t border-slate-200/60 dark:border-slate-700/60">
+                <div class="flex flex-col">
+                  <span class="font-bold text-slate-700 dark:text-slate-300 text-xs">{t.totalGross}</span>
+                  <span class="text-base md:text-lg font-black text-blue-700 dark:text-blue-400">৳ {formatMoney(calculatedResult.running.gross)}</span>
+                </div>
+                <button
+                  type="button"
+                  on:click={() => (showRunningModal = true)}
+                  class="flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-xl bg-blue-600 hover:bg-blue-700 text-white shadow-sm transition-all cursor-pointer"
+                >
+                  <span>ℹ️ {t.detailsBtn}</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        {/if}
       </div>
 
-      <!-- Current Salary Card (Slides in smoothly on the RIGHT when calculated) -->
+      <!-- Right Column: New Pay Scale (9th Pay Scale) with Exact 7 items -->
       {#if calculatedResult}
-        <div
-          class="lg:col-span-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-slate-200/70 dark:border-slate-800/70 shadow-xl relative overflow-hidden animate-slide-right"
-        >
-          <div
-            class="absolute top-0 right-0 w-32 h-32 bg-slate-100 dark:bg-slate-800 rounded-full blur-3xl -mr-16 -mt-16 pointer-events-none"
-          ></div>
+        <div class="lg:col-span-6 bg-white/90 dark:bg-slate-900/90 backdrop-blur-xl rounded-3xl p-6 md:p-8 border border-blue-200/80 dark:border-blue-800/60 shadow-xl relative overflow-hidden flex flex-col justify-between animate-slide-right">
+          <div class="absolute top-0 right-0 w-48 h-48 bg-blue-500/10 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none"></div>
 
-          <div
-            class="flex items-center justify-between mb-5 border-b border-slate-100 dark:border-slate-800 pb-3"
-          >
-            <div>
-              <span
-                class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-slate-500"
-                >{lang === "bn"
-                  ? "বর্তমান বেতন কাঠামো"
-                  : "Current Pay Scale"}</span
-              >
-              <h3
-                class="text-lg font-bold text-slate-800 dark:text-white flex items-center gap-2"
-              >
-                🏛️ {t.currentTitle}
-              </h3>
-            </div>
-            <span
-              class="px-3 py-1 bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 rounded-lg text-xs font-bold"
-            >
-              {lang === "bn"
-                ? "গ্রেড " + fmtNum(calculatedResult.grade)
-                : "Grade " + calculatedResult.grade} • {lang === "bn"
-                ? "ধাপ " + fmtNum(calculatedResult.stepIndex)
-                : "Step " + calculatedResult.stepIndex}
-            </span>
-          </div>
-
-          <div class="flex flex-col gap-3 relative z-10 text-sm">
-            <div
-              class="flex justify-between items-center text-slate-600 dark:text-slate-400"
-            >
-              <span>{t.basic}</span>
-              <span class="text-base font-bold text-slate-900 dark:text-white"
-                >৳ {formatMoney(calculatedResult.current.basic)}</span
-              >
-            </div>
-            <div
-              class="flex justify-between items-center text-slate-600 dark:text-slate-400"
-            >
-              <span>{t.houseRent}</span>
-              <span class="font-semibold text-slate-900 dark:text-slate-200"
-                >৳ {formatMoney(calculatedResult.current.houseRent)}</span
-              >
-            </div>
-            <div
-              class="flex justify-between items-center text-slate-600 dark:text-slate-400"
-            >
-              <span>{t.medical}</span>
-              <span class="font-semibold text-slate-900 dark:text-slate-200"
-                >৳ {formatMoney(calculatedResult.current.medical)}</span
-              >
-            </div>
-            {#if calculatedResult.current.tiffin > 0}
-              <div
-                class="flex justify-between items-center text-slate-600 dark:text-slate-400"
-              >
-                <span>{t.tiffin}</span>
-                <span class="font-semibold text-slate-900 dark:text-slate-200"
-                  >৳ {formatMoney(calculatedResult.current.tiffin)}</span
-                >
+          <div>
+            <div class="flex items-center justify-between mb-5 border-b border-blue-100 dark:border-blue-950 pb-3">
+              <div>
+                <h3 class="text-base md:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                  💎 {lang === "bn" ? "৯ম পে-স্কেল অনুযায়ী নতুন বেতন কাঠামোর বিস্তারিত" : "9th Pay Scale Detailed Salary Breakdown"}
+                </h3>
+                <p class="text-xs font-semibold text-blue-600 dark:text-blue-400 mt-0.5">
+                  {lang === "bn" ? `${fmtNum(calculatedResult.grade)} তম গ্রেডের ক্ষেত্রে` : `For Grade ${calculatedResult.grade}`}
+                </p>
               </div>
-            {/if}
-            <div
-              class="flex justify-between items-center text-slate-600 dark:text-slate-400"
-            >
-              <span class="flex items-center gap-1.5">
-                {t.specialBenefit}
-                <span
-                  class="text-[10px] bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded"
-                >
-                  {calculatedResult.grade <= 9 ? "১০%" : "১৫%"}
+              {#if calculatedResult.stepIndex9th}
+                <span class="px-2.5 py-1 bg-blue-50 dark:bg-blue-950/80 border border-blue-200 dark:border-blue-800 text-blue-700 dark:text-blue-300 rounded-lg text-xs font-bold">
+                  {lang === "bn" ? "ধাপ " + fmtNum(calculatedResult.stepIndex9th) : "Step " + calculatedResult.stepIndex9th}
                 </span>
-              </span>
-              <span class="font-semibold text-slate-900 dark:text-slate-200"
-                >৳ {formatMoney(calculatedResult.current.specialBenefit)}</span
-              >
+              {/if}
             </div>
 
-            <div
-              class="mt-4 pt-3 border-t-2 border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50/80 dark:bg-slate-800/40 p-3 rounded-xl"
-            >
-              <span
-                class="font-bold text-slate-800 dark:text-slate-200 text-sm md:text-base"
-                >{t.totalGross}</span
-              >
-              <span
-                class="text-xl md:text-2xl font-black text-blue-700 dark:text-blue-400"
-                >৳ {formatMoney(calculatedResult.current.gross)}</span
-              >
+            <div class="flex flex-col gap-2.5 relative z-10 text-xs md:text-sm">
+              <!-- ১. ৩০/০৬/২০২৬ তারিখের মূল বেতন -->
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span>{lang === "bn" ? "৩০/০৬/২০২৬ তারিখের মূল বেতন" : "Basic on 30/06/2026"}</span>
+                <span class="font-bold text-slate-900 dark:text-white">৳ {formatMoney(calculatedResult.current.basic)}</span>
+              </div>
+
+              <!-- ২. প্রারম্ভিক মূল বেতন -->
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span>{lang === "bn" ? "প্রারম্ভিক মূল বেতন" : "8th Starting Basic"}</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.start8th)}</span>
+              </div>
+
+              <!-- ৩. ইনক্রিমেন্ট পার্থক্য -->
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span>{lang === "bn" ? "ইনক্রিমেন্ট পার্থক্য" : "Increment Difference"}</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.diff)}</span>
+              </div>
+
+              <!-- ৪. ৯ম পে স্কেল অনুযায়ী মূল বেতন -->
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span>{lang === "bn" ? "৯ম পে স্কেল অনুযায়ী মূল বেতন" : "9th Starting Basic"}</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.start9th)}</span>
+              </div>
+
+              <!-- ৫. নির্ধারিত মূল বেতন -->
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span>{lang === "bn" ? "নির্ধারিত মূল বেতন" : "Determined Basic"}</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.rawCandidateBasic)}</span>
+              </div>
+
+              <!-- ৬. চূড়ান্ত মূল বেতন -->
+              <div class="flex justify-between items-center text-slate-700 dark:text-slate-300 bg-blue-50/70 dark:bg-blue-950/40 p-2.5 rounded-xl border border-blue-100 dark:border-blue-900/60">
+                <span class="flex items-center gap-1.5 font-bold text-slate-900 dark:text-white">
+                  {lang === "bn" ? "চূড়ান্ত মূল বেতন" : "Final Basic Pay"}
+                  {#if calculatedResult.elevated}
+                    <span class="text-[10px] bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 font-bold px-1.5 py-0.5 rounded">
+                      {t.gazetteElevationBadge}
+                    </span>
+                  {/if}
+                </span>
+                <span class="font-black text-blue-700 dark:text-blue-400 text-sm md:text-base">৳ {formatMoney(calculatedResult.fixedGazetteBasic)}</span>
+              </div>
+
+              <!-- ৭. মূল বেতন নিট বৃদ্ধি -->
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span class="font-semibold">{lang === "bn" ? "মূল বেতন নিট বৃদ্ধি" : "Basic Net Increase"}</span>
+                <span class="font-black text-emerald-600 dark:text-emerald-400 text-sm md:text-base">+ ৳ {formatMoney(calculatedResult.methods.difference.increasedBasic)}</span>
+              </div>
+
+              <!-- বাস্তবায়ন ধাপ (শতকরা হার) -->
+              <div class="mt-1 pt-2.5 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-col gap-1.5">
+                <div class="text-[11px] font-bold text-slate-700 dark:text-slate-300">
+                  {lang === "bn" ? "বাস্তবায়ন ধাপ:" : "Implementation Steps:"}
+                </div>
+                <div class="flex flex-col gap-1.5 text-xs">
+                  <div class="bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
+                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০৭/২০২৬ কার্যকর:" : "01/07/2026 Effective:"}</span>
+                    <span class="font-bold text-blue-700 dark:text-blue-300">{calculatedResult.grade <= 9 ? (lang === "bn" ? "৪০%" : "40%") : (lang === "bn" ? "৫০%" : "50%")}</span>
+                  </div>
+                  <div class="bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
+                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০১/২০২৭ কার্যকর:" : "01/01/2027 Effective:"}</span>
+                    <span class="font-bold text-indigo-700 dark:text-indigo-300">{calculatedResult.grade <= 9 ? (lang === "bn" ? "৭০%" : "70%") : (lang === "bn" ? "৭৫%" : "75%")}</span>
+                  </div>
+                  <div class="bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
+                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০৭/২০২৭ কার্যকর:" : "01/07/2027 Effective:"}</span>
+                    <span class="font-bold text-emerald-700 dark:text-emerald-300">{lang === "bn" ? "১০০%" : "100%"}</span>
+                  </div>
+                  <div class="bg-purple-50/70 dark:bg-purple-950/40 border border-purple-100 dark:border-purple-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
+                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০১/২০২৮ কার্যকর:" : "01/01/2028 Effective:"}</span>
+                    <span class="font-bold text-purple-700 dark:text-purple-300">{lang === "bn" ? "১০০%+সকল ভাতা" : "100%+All Allowances"}</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- Footer / Calculation Breakdown toggle -->
+          <div class="mt-4 pt-3 border-t border-blue-100 dark:border-blue-950/80 text-[11px] text-slate-500 dark:text-slate-400 flex items-center justify-between relative z-10">
+            <span>{calculatedResult.elevated ? (lang === "bn" ? "↳ ৯ম স্কেলের পরবর্তী উচ্চতর ধাপে সমন্বয়কৃত" : "↳ Adjusted to next step") : (lang === "bn" ? "↳ ৯ম স্কেলের নির্ধারিত ধাপের সাথে হুবহু মিলেছে" : "↳ Exact step match")}</span>
+            <button
+              type="button"
+              on:click={() => (showDiffTooltip = !showDiffTooltip)}
+              class="text-blue-600 dark:text-blue-400 hover:underline font-bold"
+            >
+              {showDiffTooltip ? (lang === "bn" ? "সূত্র লুকান" : "Hide Formula") : (lang === "bn" ? "হিসাব সূত্র" : "Formula")}
+            </button>
+          </div>
+
+          {#if showDiffTooltip}
+            <div class="mt-2 bg-blue-50/80 dark:bg-slate-800 border border-blue-200 dark:border-blue-700 rounded-xl p-3 text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed animate-fade-in-up relative z-10">
+              <div><strong>১. পার্থক্য:</strong> ৳{formatMoney(calculatedResult.current.basic)} (৩০/০৬/২৬ মূল) – ৳{formatMoney(calculatedResult.start8th)} (৮ম প্রারম্ভিক) = <strong>৳{formatMoney(calculatedResult.diff)}</strong></div>
+              <div><strong>২. নির্ধারিত মূল:</strong> ৳{formatMoney(calculatedResult.start9th)} (৯ম প্রারম্ভিক) + ৳{formatMoney(calculatedResult.diff)} (পার্থক্য) = <strong>৳{formatMoney(calculatedResult.rawCandidateBasic)}</strong></div>
+              {#if calculatedResult.elevated}
+                <div class="text-emerald-700 dark:text-emerald-400 mt-1">↳ গেজেট অনুযায়ী পরবর্তী উচ্চতর ধাপ: <strong>৳{formatMoney(calculatedResult.fixedGazetteBasic)}</strong></div>
+              {/if}
+            </div>
+          {/if}
         </div>
       {/if}
     </div>
+
+    <!-- Running Salary Modal (বিস্তারিত) -->
+    {#if showRunningModal && calculatedResult}
+      <div
+        class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
+        on:click|self={() => (showRunningModal = false)}
+      >
+        <div
+          class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden flex flex-col gap-4 animate-scale-up"
+        >
+          <div class="flex items-center justify-between border-b border-slate-100 dark:border-slate-800 pb-3">
+            <div>
+              <h3 class="text-base md:text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                🏛️ {t.currentRunningTitle}
+              </h3>
+              <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+                {lang === "bn" ? `গ্রেড ${fmtNum(calculatedResult.grade)} • চলমান ধাপ ${fmtNum(calculatedResult.runningStepIndex)} (১ জুলাই ২০২৬ অনুযায়ী)` : `Grade ${calculatedResult.grade} • Step ${calculatedResult.runningStepIndex} (as of 1 July 2026)`}
+              </p>
+            </div>
+            <button
+              type="button"
+              on:click={() => (showRunningModal = false)}
+              class="w-8 h-8 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-500 hover:text-slate-900 dark:hover:text-white flex items-center justify-center text-sm font-bold cursor-pointer"
+            >
+              ✕
+            </button>
+          </div>
+
+          <div class="flex flex-col gap-2.5 text-xs md:text-sm">
+            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+              <span>{t.basic} ({lang === "bn" ? `ধাপ ${fmtNum(calculatedResult.runningStepIndex)}` : `Step ${calculatedResult.runningStepIndex}`}):</span>
+              <span class="font-bold text-slate-900 dark:text-white">৳ {formatMoney(calculatedResult.running.basic)}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+              <span>{t.houseRent}:</span>
+              <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.houseRent)}</span>
+            </div>
+            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+              <span>{t.medical}:</span>
+              <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.medical)}</span>
+            </div>
+            {#if calculatedResult.running.tiffin > 0}
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span>{t.tiffin}:</span>
+                <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.tiffin)}</span>
+              </div>
+            {/if}
+            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+              <span class="flex items-center gap-1.5">
+                {t.specialBenefit}
+                <span class="text-[10px] bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded">
+                  {calculatedResult.grade <= 9 ? "১০%" : "১৫%"}
+                </span>
+              </span>
+              <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.specialBenefit)}</span>
+            </div>
+          </div>
+
+          <div class="pt-3 border-t-2 border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-800/60 p-3 rounded-2xl">
+            <span class="font-bold text-slate-900 dark:text-white text-sm">{t.totalGross}:</span>
+            <span class="text-xl font-black text-blue-700 dark:text-blue-400">৳ {formatMoney(calculatedResult.running.gross)}</span>
+          </div>
+
+          <button
+            type="button"
+            on:click={() => (showRunningModal = false)}
+            class="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl text-sm transition-colors cursor-pointer"
+          >
+            {lang === "bn" ? "বন্ধ করুন" : "Close"}
+          </button>
+        </div>
+      </div>
+    {/if}
 
     <!-- Below: Proposed 9th Pay Scale Executive Dashboard -->
     {#if calculatedResult}
@@ -1449,129 +1604,6 @@
               </div>
             </div>
           </div>
-        </div>
-
-        <!-- Collapsible Fixation Formula Breakdown -->
-        <div
-          class="bg-slate-50/90 dark:bg-slate-900/60 rounded-2xl border border-slate-200/80 dark:border-slate-800/80 p-4 transition-all"
-        >
-          <div
-            class="flex items-center justify-between cursor-pointer"
-            on:click={() => (showDiffTooltip = !showDiffTooltip)}
-          >
-            <div class="flex items-center gap-2.5">
-              <span
-                class="w-7 h-7 rounded-lg bg-blue-100 dark:bg-blue-950 text-blue-700 dark:text-blue-300 flex items-center justify-center text-xs font-bold"
-                >📐</span
-              >
-              <div>
-                <span
-                  class="text-xs md:text-sm font-bold text-slate-800 dark:text-slate-200"
-                >
-                  {lang === "bn"
-                    ? "পার্থক্য যোগ পদ্ধতির ফিক্সেশন সূত্র ও বিশ্লেষণ"
-                    : "Fixation Formula & Step Breakdown"}
-                </span>
-                <span class="hidden sm:inline text-xs text-slate-400 ml-2">
-                  (৳{formatMoney(calculatedResult.start9th)} + ৳{formatMoney(
-                    calculatedResult.diff,
-                  )} = ৳{formatMoney(
-                    calculatedResult.methods.difference.calcBasic,
-                  )})
-                </span>
-              </div>
-            </div>
-            <button
-              class="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline flex items-center gap-1"
-            >
-              <span>{showDiffTooltip ? t.closeDetails : t.clickDetails}</span>
-              <span
-                class="text-xs transition-transform {showDiffTooltip
-                  ? 'rotate-180'
-                  : ''}">▼</span
-              >
-            </button>
-          </div>
-
-          {#if showDiffTooltip}
-            <div
-              class="mt-4 pt-4 border-t border-slate-200/80 dark:border-slate-800 text-xs flex flex-col gap-3 animate-fade-in-up"
-            >
-              <div
-                class="grid grid-cols-1 md:grid-cols-2 gap-3 text-slate-700 dark:text-slate-300 font-medium"
-              >
-                <div
-                  class="p-3 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/70"
-                >
-                  <div class="text-[11px] text-slate-400 uppercase font-bold">
-                    {lang === "bn"
-                      ? "ধাপ ১: পার্থক্য নির্ণয়"
-                      : "Step 1: Difference"}
-                  </div>
-                  <div class="mt-1 text-slate-900 dark:text-white font-bold">
-                    ৳ {formatMoney(calculatedResult.current.basic)}
-                    <span class="text-slate-400 font-normal"
-                      >({lang === "bn" ? "বর্তমান মূল" : "Current Basic"})</span
-                    >
-                    – ৳ {formatMoney(calculatedResult.start8th)}
-                    <span class="text-slate-400 font-normal"
-                      >({lang === "bn"
-                        ? "৮ম প্রারম্ভিক"
-                        : "8th Starting"})</span
-                    >
-                    =
-                    <span class="text-blue-600 dark:text-blue-400 font-black"
-                      >৳ {formatMoney(calculatedResult.diff)}</span
-                    >
-                  </div>
-                </div>
-
-                <div
-                  class="p-3 bg-white dark:bg-slate-800/80 rounded-xl border border-slate-200/70 dark:border-slate-700/70"
-                >
-                  <div class="text-[11px] text-slate-400 uppercase font-bold flex items-center justify-between">
-                    <span>
-                      {lang === "bn"
-                        ? "ধাপ ২: ৯ম স্কেলে ফিক্সেশন"
-                        : "Step 2: 9th Scale Fixation"}
-                    </span>
-                    {#if calculatedResult.elevated}
-                      <span class="text-[10px] bg-emerald-100 text-emerald-800 dark:bg-emerald-950/80 dark:text-emerald-300 px-1.5 py-0.5 rounded font-bold">
-                        {t.gazetteElevationBadge}
-                      </span>
-                    {/if}
-                  </div>
-                  <div class="mt-1 text-slate-900 dark:text-white font-bold">
-                    ৳ {formatMoney(calculatedResult.start9th)}
-                    <span class="text-slate-400 font-normal"
-                      >({lang === "bn"
-                        ? "৯ম প্রারম্ভিক"
-                        : "9th Starting"})</span
-                    >
-                    + ৳ {formatMoney(calculatedResult.diff)}
-                    <span class="text-slate-400 font-normal"
-                      >({lang === "bn" ? "পার্থক্য" : "Diff"})</span
-                    >
-                    =
-                    <span class="text-blue-600 dark:text-blue-400 font-black"
-                      >৳ {formatMoney(calculatedResult.methods.difference.calcBasic)}</span
-                    >
-                    {#if calculatedResult.elevated}
-                      <span class="block text-[11px] text-emerald-700 dark:text-emerald-400 font-semibold mt-1">
-                        ↳ {lang === "bn" ? "গণনাকৃত ৳" + formatMoney(calculatedResult.rawCandidateBasic) + " ধাপের সমমান না হওয়ায় গেজেট অনুযায়ী পরবর্তী উচ্চতর ধাপে নির্ধারিত।" : "Candidate ৳" + formatMoney(calculatedResult.rawCandidateBasic) + " is elevated to next higher gazette step."}
-                      </span>
-                    {/if}
-                  </div>
-                </div>
-              </div>
-              <div
-                class="text-[11px] text-amber-700 dark:text-amber-300/90 flex items-center gap-1.5"
-              >
-                <span>💡</span>
-                <span>{t.stepNotice}</span>
-              </div>
-            </div>
-          {/if}
         </div>
 
         <!-- Footnotes / Directive -->
