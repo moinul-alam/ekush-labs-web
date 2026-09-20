@@ -2,6 +2,10 @@
   import { onMount } from "svelte";
   import { fmt as fmtLocalized } from "../utils/numbers";
   import { getLocalCache, setLocalCache } from "../utils/cache";
+  import {
+    compute8thHouseRentAmount,
+    ensure8thHouseRentAllowances,
+  } from "../utils/eighthHouseRent";
 
   export let lang = "bn";
 
@@ -16,9 +20,9 @@
       stepLabel: "ধাপ",
       initialStep: "১ম ধাপ (প্রারম্ভিক)",
       location: "কর্মস্থল / বাসাভাড়ার এলাকা",
-      locDhaka: "ঢাকা সিটি কর্পোরেশন (৫৫%)",
-      locCityCorp: "অন্যান্য সিটি কর্পোরেশন (৪৫%)",
-      locOther: "জেলা/উপজেলা বা অন্যান্য (৪০%)",
+      locDhaka: "ঢাকা সিটি কর্পোরেশন (৫০%–৬৫%)",
+      locCityCorp: "অন্যান্য সিটি কর্পোরেশন (৪০%–৫৫%)",
+      locOther: "জেলা/উপজেলা বা অন্যান্য (৩৫%–৫০%)",
       calcButton: "বেতন হিসাব করুন",
       recalcButton: "পুনরায় হিসাব করুন",
       currentTitle: "বিদ্যমান বেতন কাঠামো (৮ম পে-স্কেল)",
@@ -95,9 +99,9 @@
       stepLabel: "Step",
       initialStep: "1st Step (Starting)",
       location: "Workplace / House Rent Area",
-      locDhaka: "Dhaka City Corporation (55%)",
-      locCityCorp: "Other City Corporation (45%)",
-      locOther: "District/Upazila or Other (40%)",
+      locDhaka: "Dhaka City Corporation (50%–65%)",
+      locCityCorp: "Other City Corporation (40%–55%)",
+      locOther: "District/Upazila or Other (35%–50%)",
       calcButton: "Calculate Salary",
       recalcButton: "Recalculate",
       currentTitle: "Existing Salary (8th Scale)",
@@ -217,7 +221,7 @@
       ? current8thSteps[selectedStepIndex]
       : current8thSteps[0] || 0;
 
-  const PAYSCALES_CACHE_KEY = "ekush_hub_payscales_combined";
+  const PAYSCALES_CACHE_KEY = "ekush_hub_payscales_combined_v2_hra_slab";
 
   async function fetchPayScaleData(silent = false) {
     if (!silent) {
@@ -324,7 +328,7 @@
         }
       }
 
-      payscaleData = {
+      payscaleData = ensure8thHouseRentAllowances({
         meta_8th: data8th.meta || {},
         meta_9th: data9th.meta || {},
         allowances_8th: data8th.allowances,
@@ -334,10 +338,13 @@
           en: data9th.meta?.disclaimer_en || data8th.meta?.disclaimer_en,
         },
         grades,
-      };
+      });
 
       setLocalCache(PAYSCALES_CACHE_KEY, payscaleData);
       selectedStepIndex = 0;
+      if (calculatedResult) {
+        calculate();
+      }
     } catch (e) {
       console.error("[Salary Calculator] Data fetch failed:", e);
       if (!payscaleData) {
@@ -352,7 +359,7 @@
     // 1. Instant cache hydration (0ms load!)
     const cached = getLocalCache(PAYSCALES_CACHE_KEY, 24 * 3600 * 1000);
     if (cached?.data) {
-      payscaleData = cached.data;
+      payscaleData = ensure8thHouseRentAllowances(cached.data);
       loading = false;
     }
 
@@ -403,8 +410,7 @@
   // For 8th scale breakdown (where special benefit is active)
   function compute8thBreakdown(basicVal, grade) {
     const allowances = payscaleData.allowances_8th;
-    const houseRentRate = allowances.house_rent[location] || 0.55;
-    const houseRent = basicVal * houseRentRate;
+    const houseRent = compute8thHouseRentAmount(basicVal, allowances, location);
     const medical = allowances.medical.amount;
     const tiffin = getTiffin(allowances, grade);
     const specialBenefit = getSpecialBenefit(basicVal, grade);
@@ -485,8 +491,11 @@
         : Math.round(current8thBasic * 1.05);
 
     const allowances8th = payscaleData.allowances_8th;
-    const houseRentRate8th = allowances8th.house_rent[location] || 0.55;
-    const p3HouseRent = next8thBasic * houseRentRate8th;
+    const p3HouseRent = compute8thHouseRentAmount(
+      next8thBasic,
+      allowances8th,
+      location,
+    );
     const p3Medical = p12Medical;
     const p3Tiffin = p12Tiffin;
     const p3Gross = phase3Basic + p3HouseRent + p3Medical + p3Tiffin;

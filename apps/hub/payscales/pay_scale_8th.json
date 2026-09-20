@@ -2,8 +2,8 @@
   "meta": {
     "scale": "8th",
     "year": 2015,
-    "version": "1.0.0",
-    "last_updated": "2026-06-13",
+    "version": "1.1.0",
+    "last_updated": "2026-09-20",
     "source": "National Pay Scale 2015, Ministry of Finance, Bangladesh",
     "status": "active",
     "disclaimer_bn": "বর্তমানে কার্যকর ৮ম জাতীয় বেতন স্কেল ২০১৫ অনুযায়ী হিসাব।",
@@ -11,10 +11,66 @@
   },
   "allowances": {
     "house_rent": {
-      "dhaka_city_corp": 0.55,
-      "other_city_corp": 0.45,
-      "district_upazila": 0.4,
-      "type": "percentage_of_basic"
+      "type": "percentage_of_basic_by_slab",
+      "effective_from": "2016-07-01",
+      "source_rule_bn": "চাকরি (বেতন ও ভাতাদি) আদেশ, ২০১৫ — অনুচ্ছেদ ১৭(৭)",
+      "source_rule_en": "Services (Pay and Allowances) Order, 2015 — Rule 17(7)",
+      "other_city_corp_note_bn": "চট্টগ্রাম, খুলনা, রাজশাহী, সিলেট, বরিশাল, রংপুর, নারায়ণগঞ্জ, গাজীপুর সিটি কর্পোরেশন ও সাভার পৌর এলাকা",
+      "other_city_corp_note_en": "Chattogram, Khulna, Rajshahi, Sylhet, Barishal, Rangpur, Narayanganj, Gazipur city corporations and Savar municipality",
+      "slabs": [
+        {
+          "max_basic": 9700,
+          "rates": {
+            "dhaka_city_corp": 0.65,
+            "other_city_corp": 0.55,
+            "district_upazila": 0.5
+          },
+          "minimum": {
+            "dhaka_city_corp": 5600,
+            "other_city_corp": 5000,
+            "district_upazila": 4500
+          }
+        },
+        {
+          "max_basic": 16000,
+          "rates": {
+            "dhaka_city_corp": 0.6,
+            "other_city_corp": 0.5,
+            "district_upazila": 0.45
+          },
+          "minimum": {
+            "dhaka_city_corp": 6400,
+            "other_city_corp": 5400,
+            "district_upazila": 4800
+          }
+        },
+        {
+          "max_basic": 35500,
+          "rates": {
+            "dhaka_city_corp": 0.55,
+            "other_city_corp": 0.45,
+            "district_upazila": 0.4
+          },
+          "minimum": {
+            "dhaka_city_corp": 9600,
+            "other_city_corp": 8000,
+            "district_upazila": 7000
+          }
+        },
+        {
+          "max_basic": null,
+          "rates": {
+            "dhaka_city_corp": 0.5,
+            "other_city_corp": 0.4,
+            "district_upazila": 0.35
+          },
+          "minimum": {
+            "dhaka_city_corp": 19500,
+            "other_city_corp": 16000,
+            "district_upazila": 13800
+          }
+        }
+      ]
     },
     "medical": {
       "amount": 1500,
