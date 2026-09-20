@@ -444,20 +444,6 @@
     return Math.round(basic * 1.05);
   }
 
-  function computeJulyRunningBreakdown(july9thBasic, current8thBreakdown) {
-    const { houseRent, medical, tiffin } = current8thBreakdown;
-    const gross = july9thBasic + houseRent + medical + tiffin;
-    return {
-      basic: july9thBasic,
-      houseRent,
-      medical,
-      tiffin,
-      specialBenefit: 0,
-      gross,
-      net: gross,
-    };
-  }
-
   function calculate4Phases(
     newCalculatedBasic,
     current8thBasic,
@@ -637,8 +623,6 @@
 
     // One increment on the new 9th pay scale effective 1 July 2026 (next gazette step after fixation)
     const july9thIncrementBasic = nextGazetteStep(steps9th, fixedGazetteBasic);
-    const julyIdx9th = steps9th.indexOf(july9thIncrementBasic);
-    const july9thStepIndex = julyIdx9th !== -1 ? julyIdx9th + 1 : null;
 
     // 4 Phased rollout toward basic after July 2026 increment on 9th scale
     const diffPhases = calculate4Phases(
@@ -650,10 +634,15 @@
       steps9th,
     );
 
-    const runningBreakdown = computeJulyRunningBreakdown(
-      july9thIncrementBasic,
-      current,
-    );
+    const runningStepIndex =
+      selectedStepIndex + 1 < steps8th.length
+        ? selectedStepIndex + 2
+        : steps8th.length;
+    const runningBasic =
+      selectedStepIndex + 1 < steps8th.length
+        ? steps8th[selectedStepIndex + 1]
+        : Math.round(currentBasicVal * 1.05);
+    const runningBreakdown = compute8thBreakdown(runningBasic, grade);
 
     const stepIndex9th = steps9th.indexOf(fixedGazetteBasic) !== -1 ? steps9th.indexOf(fixedGazetteBasic) + 1 : null;
 
@@ -668,11 +657,10 @@
       rawCandidateBasic,
       fixedGazetteBasic,
       july9thIncrementBasic,
-      july9thStepIndex,
       elevated,
       current,
       running: runningBreakdown,
-      runningStepIndex: july9thStepIndex,
+      runningStepIndex,
       methods: {
         difference: {
           calcBasic: july9thIncrementBasic,
@@ -981,7 +969,7 @@
                 🏛️ {t.currentRunningTitle}
               </h4>
               <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-md text-xs font-bold">
-                {lang === "bn" ? "৯ম স্কেল ধাপ " + fmtNum(calculatedResult.runningStepIndex) : "9th scale step " + calculatedResult.runningStepIndex}
+                {lang === "bn" ? "ধাপ " + fmtNum(calculatedResult.runningStepIndex) : "Step " + calculatedResult.runningStepIndex}
               </span>
             </div>
 
@@ -1154,7 +1142,7 @@
                 🏛️ {t.currentRunningTitle}
               </h3>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                {lang === "bn" ? `গ্রেড ${fmtNum(calculatedResult.grade)} • ৯ম স্কেল ধাপ ${fmtNum(calculatedResult.runningStepIndex)} (১ জুলাই ২০২৬ — ১ ধাপ ইনক্রিমেন্ট)` : `Grade ${calculatedResult.grade} • 9th scale step ${calculatedResult.runningStepIndex} (1 July 2026 — 1 increment)`}
+                {lang === "bn" ? `গ্রেড ${fmtNum(calculatedResult.grade)} • চলমান ধাপ ${fmtNum(calculatedResult.runningStepIndex)} (১ জুলাই ২০২৬ অনুযায়ী)` : `Grade ${calculatedResult.grade} • Step ${calculatedResult.runningStepIndex} (as of 1 July 2026)`}
               </p>
             </div>
             <button
@@ -1185,17 +1173,15 @@
                 <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.tiffin)}</span>
               </div>
             {/if}
-            {#if calculatedResult.running.specialBenefit > 0}
-              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
-                <span class="flex items-center gap-1.5">
-                  {t.specialBenefit}
-                  <span class="text-[10px] bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded">
-                    {calculatedResult.grade <= 9 ? "১০%" : "১৫%"}
-                  </span>
+            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+              <span class="flex items-center gap-1.5">
+                {t.specialBenefit}
+                <span class="text-[10px] bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded">
+                  {calculatedResult.grade <= 9 ? "১০%" : "১৫%"}
                 </span>
-                <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.specialBenefit)}</span>
-              </div>
-            {/if}
+              </span>
+              <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.specialBenefit)}</span>
+            </div>
           </div>
 
           <div class="pt-3 border-t-2 border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-800/60 p-3 rounded-2xl">
