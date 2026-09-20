@@ -56,12 +56,13 @@
       phase1_10_20: "১ম ধাপ: ১ জুলাই ২০২৬ (৫০% বর্ধিত মূলবেতন)",
       phase2: "২য় ধাপ: ১ জানুয়ারি ২০২৭ (অতিরিক্ত ৩০% মূলবেতন)",
       phase2_10_20: "২য় ধাপ: ১ জানুয়ারি ২০২৭ (অতিরিক্ত ২৫% মূলবেতন)",
-      phase3: "৩য় ধাপ: ১ জুলাই ২০২৭ (১০০% মূলবেতন + ৫% ইনক্রিমেন্ট)",
+      phase3: "৩য় ধাপ: ১ জুলাই ২০২৭ (১০০% মূলবেতন + ১ ধাপ ইনক্রিমেন্ট)",
       phase4: "৪র্থ ধাপ: ১ জানুয়ারি ২০২৮ (সংশোধিত নতুন ভাতাসহ)",
       stepNotice:
         "গেজেট অনুচ্ছেদ ৫ অনুযায়ী: ৮ম স্কেলের প্রারম্ভিক হতে পার্থক্য ৯ম স্কেলের প্রারম্ভিক বেতনের সাথে যোগ করার পর যদি হুবহু কোনো ধাপের সমান না হয়, তবে পরবর্তী উচ্চতর ধাপে ফিক্সেশন হবে।",
       allowanceNotice:
-        "৩য় ধাপে (১ জুলাই ২০২৭) মূল বেতনে ৫% বার্ষিক ইনক্রিমেন্ট যুক্ত হবে। ৪র্থ ধাপে (১ জানুয়ারি ২০২৮) নতুন গেজেটের গ্রেডভিত্তিক বাসাভাড়া হার (৪০%-৬০%), চিকিৎসা ভাতা (৩০০০/৪০০০), যাতায়াত (৬০০), মোবাইল ও অন্যান্য নতুন ভাতা কার্যকর হবে। ৯ম স্কেলে বিশেষ সুবিধা বিলুপ্ত।",
+        "১ জুলাই ২০২৬ থেকে নতুন (৯ম) স্কেলে এক ধাপ বার্ষিক ইনক্রিমেন্ট যুক্ত হবে। ৩য় ধাপে (১ জুলাই ২০২৭) আরও এক ধাপ ইনক্রিমেন্ট। ৪র্থ ধাপে (১ জানুয়ারি ২০২৮) নতুন গেজেটের গ্রেডভিত্তিক বাসাভাড়া হার (৪০%-৬০%), চিকিৎসা ভাতা (৩০০০/৪০০০), যাতায়াত (৬০০), মোবাইল ও অন্যান্য নতুন ভাতা কার্যকর হবে। ৯ম স্কেলে বিশেষ সুবিধা বিলুপ্ত।",
+      julyIncrement9th: "৯ম স্কেলে জুলাই ইনক্রিমেন্ট (১ ধাপ)",
       currentStepInfo: "৮ম স্কেলের ধাপ",
       startingScale: "প্রারম্ভিক স্কেল",
       factorVal: "ফ্যাক্টর মান",
@@ -134,12 +135,13 @@
       phase1_10_20: "Phase 1: 1 July 2026 (50% Basic Increase)",
       phase2: "Phase 2: 1 January 2027 (Additional 30% Basic Increase)",
       phase2_10_20: "Phase 2: 1 January 2027 (Additional 25% Basic Increase)",
-      phase3: "Phase 3: 1 July 2027 (100% Basic + 5% Annual Increment)",
+      phase3: "Phase 3: 1 July 2027 (100% Basic + 1 Increment Step)",
       phase4: "Phase 4: 1 January 2028 (With Revised Allowances)",
       stepNotice:
         "Per Gazette Rule 5: Candidate basic is elevated to the immediate next higher official step in the 9th scale if it does not match an exact step.",
       allowanceNotice:
-        "In Phase 3 (1 July 2027), a 5% annual increment is added. In Phase 4 (1 Jan 2028), new gazetted grade-bracket house rents (40%-60%), medical allowance (৳3000/৳4000), conveyance (৳600), mobile allowance take effect. Special benefit is abolished in 9th scale.",
+        "From 1 July 2026, one annual increment step applies on the new (9th) pay scale. Phase 3 (1 July 2027) adds another increment step. Phase 4 (1 Jan 2028) applies new gazetted allowances. Special benefit is abolished in 9th scale.",
+      julyIncrement9th: "July increment on 9th scale (1 step)",
       currentStepInfo: "8th Scale Step",
       startingScale: "Starting Scale",
       factorVal: "Factor Value",
@@ -425,20 +427,44 @@
   // Increased Basic = New Calculated Basic - Old Basic
   // Phase 1 (1 July 2026): Old Basic + (Increased Basic * 40% [Grades 1-9] or 50% [Grades 10-20])
   // Phase 2 (1 Jan 2027): Phase 1 Basic + (Increased Basic * 30% [Grades 1-9] or 25% [Grades 10-20])
-  // Phase 3 (1 July 2027): 100% Full New Calculated Basic + 5% Annual Increment (1 July 2027).
+  // From 1 July 2026: one increment on the newly fixed 9th-scale step (next official step).
+  // Phase 3 (1 July 2027): 100% of that target basic + one more 9th-scale increment step.
   //                       House Rent is calculated based on 5% increment on existing 8th basic fixed to same/nearest step.
-  // Phase 4 (1 Jan 2028): 100% Full New Calculated Basic (with Increment) + 9th Scale Revised Allowances
+  // Phase 4 (1 Jan 2028): Same basic as Phase 3 + 9th Scale Revised Allowances
   //
   // Important Rules for 9th scale phases:
   // 1. 'বিশেষ সুবিধা' (Special Benefit) is ABOLISHED once 9th pay scale takes effect.
   // 2. Allowances (House Rent, Medical, Tiffin) in Phases 1 and 2 remain at current 8th pay scale amounts.
-  // 3. In Phase 3 (1 July 2027), 5% annual increment is added to basic, and house rent is updated based on 8th scale post-increment basic.
+  // 3. In Phase 3 (1 July 2027), one 9th-scale increment step is added, and house rent is updated based on 8th scale post-increment basic.
+  function nextGazetteStep(steps, basic) {
+    const idx = steps.indexOf(basic);
+    if (idx !== -1 && idx + 1 < steps.length) return steps[idx + 1];
+    const nextHigher = steps.find((s) => s > basic);
+    if (nextHigher !== undefined) return nextHigher;
+    return Math.round(basic * 1.05);
+  }
+
+  function computeJulyRunningBreakdown(july9thBasic, current8thBreakdown) {
+    const { houseRent, medical, tiffin } = current8thBreakdown;
+    const gross = july9thBasic + houseRent + medical + tiffin;
+    return {
+      basic: july9thBasic,
+      houseRent,
+      medical,
+      tiffin,
+      specialBenefit: 0,
+      gross,
+      net: gross,
+    };
+  }
+
   function calculate4Phases(
     newCalculatedBasic,
     current8thBasic,
     grade,
     current8thBreakdown,
     steps8th,
+    steps9th,
   ) {
     const isHigherGrade = grade <= 9;
     const phaseRates = isHigherGrade ? [0.4, 0.3, 0.3] : [0.5, 0.25, 0.25];
@@ -448,8 +474,8 @@
     const phase1Basic = current8thBasic + increasedBasic * phaseRates[0];
     const phase2Basic = phase1Basic + increasedBasic * phaseRates[1];
 
-    // Phase 3 Basic: 100% new calculated basic + 5% annual increment
-    const phase3Basic = Math.round(newCalculatedBasic * 1.05);
+    // Phase 3 Basic: 100% target (incl. July 2026 increment on 9th scale) + one 9th-scale step (July 2027)
+    const phase3Basic = nextGazetteStep(steps9th, newCalculatedBasic);
     const phase4Basic = phase3Basic;
 
     // Fixed 8th scale allowances for Phases 1 & 2
@@ -542,7 +568,7 @@
       {
         phase: 3,
         title: t.phase3,
-        badge: "100% + 5%",
+        badge: lang === "bn" ? "১০০% + ১ ধাপ" : "100% + 1 step",
         basic: phase3Basic,
         houseRent: p3HouseRent,
         medical: p3Medical,
@@ -609,18 +635,25 @@
     // Current 8th breakdown (Gross & Allowances including special benefit in 8th scale)
     const current = compute8thBreakdown(currentBasicVal, grade);
 
-    // 4 Phased rollout using the officially fixed gazette basic
+    // One increment on the new 9th pay scale effective 1 July 2026 (next gazette step after fixation)
+    const july9thIncrementBasic = nextGazetteStep(steps9th, fixedGazetteBasic);
+    const julyIdx9th = steps9th.indexOf(july9thIncrementBasic);
+    const july9thStepIndex = julyIdx9th !== -1 ? julyIdx9th + 1 : null;
+
+    // 4 Phased rollout toward basic after July 2026 increment on 9th scale
     const diffPhases = calculate4Phases(
-      fixedGazetteBasic,
+      july9thIncrementBasic,
       currentBasicVal,
       grade,
       current,
       steps8th,
+      steps9th,
     );
 
-    const runningStepIndex = selectedStepIndex + 1 < steps8th.length ? selectedStepIndex + 2 : steps8th.length;
-    const runningBasic = selectedStepIndex + 1 < steps8th.length ? steps8th[selectedStepIndex + 1] : Math.round(currentBasicVal * 1.05);
-    const runningBreakdown = compute8thBreakdown(runningBasic, grade);
+    const runningBreakdown = computeJulyRunningBreakdown(
+      july9thIncrementBasic,
+      current,
+    );
 
     const stepIndex9th = steps9th.indexOf(fixedGazetteBasic) !== -1 ? steps9th.indexOf(fixedGazetteBasic) + 1 : null;
 
@@ -634,15 +667,17 @@
       diff,
       rawCandidateBasic,
       fixedGazetteBasic,
+      july9thIncrementBasic,
+      july9thStepIndex,
       elevated,
       current,
       running: runningBreakdown,
-      runningStepIndex,
+      runningStepIndex: july9thStepIndex,
       methods: {
         difference: {
-          calcBasic: fixedGazetteBasic,
+          calcBasic: july9thIncrementBasic,
           rawCalcBasic: rawCandidateBasic,
-          increasedBasic: fixedGazetteBasic - currentBasicVal,
+          increasedBasic: july9thIncrementBasic - currentBasicVal,
           phases: diffPhases,
         },
       },
@@ -946,7 +981,7 @@
                 🏛️ {t.currentRunningTitle}
               </h4>
               <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 rounded-md text-xs font-bold">
-                {lang === "bn" ? "ধাপ " + fmtNum(calculatedResult.runningStepIndex) : "Step " + calculatedResult.runningStepIndex}
+                {lang === "bn" ? "৯ম স্কেল ধাপ " + fmtNum(calculatedResult.runningStepIndex) : "9th scale step " + calculatedResult.runningStepIndex}
               </span>
             </div>
 
@@ -1040,6 +1075,12 @@
                 <span class="font-black text-blue-700 dark:text-blue-400 text-sm md:text-base">৳ {formatMoney(calculatedResult.fixedGazetteBasic)}</span>
               </div>
 
+              <!-- জুলাই ২০২৬: ৯ম স্কেলে ১ ধাপ ইনক্রিমেন্ট -->
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400 bg-indigo-50/60 dark:bg-indigo-950/30 p-2.5 rounded-xl border border-indigo-100 dark:border-indigo-900/50">
+                <span class="font-semibold text-slate-800 dark:text-slate-200">{t.julyIncrement9th}</span>
+                <span class="font-bold text-indigo-700 dark:text-indigo-300">৳ {formatMoney(calculatedResult.july9thIncrementBasic)}</span>
+              </div>
+
               <!-- ৭. মূল বেতন নিট বৃদ্ধি -->
               <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
                 <span class="font-semibold">{lang === "bn" ? "মূল বেতন নিট বৃদ্ধি" : "Basic Net Increase"}</span>
@@ -1113,7 +1154,7 @@
                 🏛️ {t.currentRunningTitle}
               </h3>
               <p class="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
-                {lang === "bn" ? `গ্রেড ${fmtNum(calculatedResult.grade)} • চলমান ধাপ ${fmtNum(calculatedResult.runningStepIndex)} (১ জুলাই ২০২৬ অনুযায়ী)` : `Grade ${calculatedResult.grade} • Step ${calculatedResult.runningStepIndex} (as of 1 July 2026)`}
+                {lang === "bn" ? `গ্রেড ${fmtNum(calculatedResult.grade)} • ৯ম স্কেল ধাপ ${fmtNum(calculatedResult.runningStepIndex)} (১ জুলাই ২০২৬ — ১ ধাপ ইনক্রিমেন্ট)` : `Grade ${calculatedResult.grade} • 9th scale step ${calculatedResult.runningStepIndex} (1 July 2026 — 1 increment)`}
               </p>
             </div>
             <button
@@ -1144,15 +1185,17 @@
                 <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.tiffin)}</span>
               </div>
             {/if}
-            <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
-              <span class="flex items-center gap-1.5">
-                {t.specialBenefit}
-                <span class="text-[10px] bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded">
-                  {calculatedResult.grade <= 9 ? "১০%" : "১৫%"}
+            {#if calculatedResult.running.specialBenefit > 0}
+              <div class="flex justify-between items-center text-slate-600 dark:text-slate-400">
+                <span class="flex items-center gap-1.5">
+                  {t.specialBenefit}
+                  <span class="text-[10px] bg-amber-100 dark:bg-amber-950/60 text-amber-800 dark:text-amber-300 font-bold px-1.5 py-0.5 rounded">
+                    {calculatedResult.grade <= 9 ? "১০%" : "১৫%"}
+                  </span>
                 </span>
-              </span>
-              <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.specialBenefit)}</span>
-            </div>
+                <span class="font-semibold text-slate-900 dark:text-slate-200">৳ {formatMoney(calculatedResult.running.specialBenefit)}</span>
+              </div>
+            {/if}
           </div>
 
           <div class="pt-3 border-t-2 border-slate-200 dark:border-slate-700 flex justify-between items-center bg-slate-50 dark:bg-slate-800/60 p-3 rounded-2xl">
@@ -1404,8 +1447,8 @@
                   class="text-sm font-black text-amber-700 dark:text-amber-400 mt-1"
                 >
                   {lang === "bn"
-                    ? "১০০% মূল + ৫% ইনক্রিমেন্ট"
-                    : "100% Basic + 5% Increment"}
+                    ? "১০০% মূল + ১ ধাপ ইনক্রিমেন্ট"
+                    : "100% Basic + 1 Increment Step"}
                 </div>
 
                 <div
