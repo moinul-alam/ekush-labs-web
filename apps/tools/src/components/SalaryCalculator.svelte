@@ -65,7 +65,7 @@
       stepNotice:
         "গেজেট অনুচ্ছেদ ৫ অনুযায়ী: ৮ম স্কেলের প্রারম্ভিক হতে পার্থক্য ৯ম স্কেলের প্রারম্ভিক বেতনের সাথে যোগ করার পর যদি হুবহু কোনো ধাপের সমান না হয়, তবে পরবর্তী উচ্চতর ধাপে ফিক্সেশন হবে।",
       allowanceNotice:
-        "১ জুলাই ২০২৬ থেকে নতুন (৯ম) স্কেলে এক ধাপ বার্ষিক ইনক্রিমেন্ট যুক্ত হবে। ৩য় ধাপে (১ জুলাই ২০২৭) আরও এক ধাপ ইনক্রিমেন্ট। ৪র্থ ধাপে (১ জানুয়ারি ২০২৮) নতুন গেজেটের গ্রেডভিত্তিক বাসাভাড়া হার (৪০%-৬০%), চিকিৎসা ভাতা (৩০০০/৪০০০), যাতায়াত (৬০০), মোবাইল ও অন্যান্য নতুন ভাতা কার্যকর হবে। ৯ম স্কেলে বিশেষ সুবিধা বিলুপ্ত।",
+        "১ জুলাই ২০২৬ থেকে নতুন (৯ম) স্কেলে ফিক্সেশন ও ইনক্রিমেন্ট কার্যকর হবে এবং ১ম ধাপে জুলাই, আগস্ট ও সেপ্টেম্বর ৩ মাসের বকেয়া (Arrears) অক্টোবর ২০২৬ এর বেতনের সাথে প্রদেয় হবে। ১ম ও ২য় ধাপে অন্যান্য সকল ভাতা ও বাসাভাড়া বিদ্যমান (৮ম স্কেলের) হারে অপরিবর্তিত থাকবে। ৩য় ধাপে (১ জুলাই ২০২৭) আরও এক ধাপ ইনক্রিমেন্ট এবং ৪র্থ ধাপে (১ জানুয়ারি ২০২৮) গেজেটের নতুন গ্রেডভিত্তিক বাসাভাড়া হার (৪০%-৬০%), চিকিৎসা ভাতা (৩০০০/৪০০০), যাতায়াত (৬০০), মোবাইল ও অন্যান্য নতুন ভাতা কার্যকর হবে। ৯ম স্কেলে বিশেষ সুবিধা বিলুপ্ত।",
       julyIncrement9th: "৯ম স্কেলে জুলাই ইনক্রিমেন্ট (১ ধাপ)",
       currentStepInfo: "৮ম স্কেলের ধাপ",
       startingScale: "প্রারম্ভিক স্কেল",
@@ -77,7 +77,7 @@
       inputTitle: "বর্তমান বেতন সংক্রান্ত তথ্য",
       calcCompleted: "হিসাব সম্পন্ন",
       basicOnlyNotice:
-        "১ম থেকে ৩য় ধাপে শুধু মূল বেতন বৃদ্ধি পাবে। ৯ম স্কেলে 'বিশেষ সুবিধা' বাতিল হবে। নতুন ভাতার হার ২০২৮ সালের জানুয়ারি থেকে কার্যকর হবে।",
+        "১ম ও ২য় ধাপে বাসাভাড়াসহ সকল ভাতা বিদ্যমান হারে অপরিবর্তিত থাকবে। ৯ম স্কেলে 'বিশেষ সুবিধা' বাতিল হবে। নতুন ভাতার হার ২০২৮ সালের জানুয়ারি থেকে কার্যকর হবে।",
       conveyance: "যাতায়াত ভাতা",
       mobile: "মোবাইল ভাতা",
       childEducation: "শিক্ষা সহায়ক ভাতা",
@@ -144,7 +144,7 @@
       stepNotice:
         "Per Gazette Rule 5: Candidate basic is elevated to the immediate next higher official step in the 9th scale if it does not match an exact step.",
       allowanceNotice:
-        "From 1 July 2026, one annual increment step applies on the new (9th) pay scale. Phase 3 (1 July 2027) adds another increment step. Phase 4 (1 Jan 2028) applies new gazetted allowances. Special benefit is abolished in 9th scale.",
+        "From 1 July 2026, fixation and one annual increment apply on the 9th pay scale, and 3 months' arrears (July, August, September) will be paid in October 2026. In Phases 1 and 2, all allowances including house rent remain unchanged at existing (8th scale) rates. Phase 3 (1 July 2027) adds another increment step. Phase 4 (1 Jan 2028) applies new gazetted allowances. Special benefit is abolished in 9th scale.",
       julyIncrement9th: "July increment on 9th scale (1 step)",
       currentStepInfo: "8th Scale Step",
       startingScale: "Starting Scale",
@@ -156,7 +156,7 @@
       inputTitle: "Salary Parameters Selection",
       calcCompleted: "Calculated",
       basicOnlyNotice:
-        "In phases 1 to 3, only the basic salary increases. Special benefit is abolished in 9th scale.",
+        "In phases 1 and 2, house rent and all allowances remain at existing rates. Special benefit is abolished in 9th scale.",
       conveyance: "Conveyance Allowance",
       mobile: "Mobile Allowance",
       childEducation: "Child Education Allowance",
@@ -655,6 +655,9 @@
 
     const stepIndex9th = steps9th.indexOf(fixedGazetteBasic) !== -1 ? steps9th.indexOf(fixedGazetteBasic) + 1 : null;
 
+    const phase1RunningDiff = Math.max(0, diffPhases[0].gross - runningBreakdown.gross);
+    const arrear3Months = phase1RunningDiff * 3;
+
     calculatedResult = {
       grade,
       stepIndex: selectedStepIndex + 1,
@@ -670,6 +673,8 @@
       current,
       running: runningBreakdown,
       runningStepIndex,
+      phase1RunningDiff,
+      arrear3Months,
       methods: {
         difference: {
           calcBasic: july9thIncrementBasic,
@@ -1084,28 +1089,37 @@
                 <span class="font-black text-emerald-600 dark:text-emerald-400 text-sm md:text-base">+ ৳ {formatMoney(calculatedResult.methods.difference.increasedBasic)}</span>
               </div>
 
-              <!-- বাস্তবায়ন ধাপ (শতকরা হার) -->
-              <div class="mt-1 pt-2.5 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-col gap-1.5">
-                <div class="text-[11px] font-bold text-slate-700 dark:text-slate-300">
-                  {lang === "bn" ? "বাস্তবায়ন ধাপ:" : "Implementation Steps:"}
+              <!-- ০১/০৭/২০২৬ তারিখে প্রাপ্য অতিরিক্ত ও বকেয়া হিসাব -->
+              <div class="mt-1 pt-2.5 border-t border-slate-200/70 dark:border-slate-800/80 flex flex-col gap-2">
+                <div class="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-950/40 dark:to-teal-950/40 border border-emerald-200 dark:border-emerald-800/60 rounded-xl p-3 flex flex-col gap-1.5 shadow-xs">
+                  <div class="flex justify-between items-center text-xs md:text-sm">
+                    <span class="font-bold text-slate-800 dark:text-slate-100 flex items-center gap-1.5">
+                      ✨ {lang === "bn" ? "০১/০৭/২০২৬ তারিখে প্রাপ্য অতিরিক্ত" : "Extra Receivable on 01/07/2026"}
+                    </span>
+                    <span class="font-black text-emerald-700 dark:text-emerald-400 text-sm md:text-base">
+                      ৳ {formatMoney(calculatedResult.phase1RunningDiff)}
+                    </span>
+                  </div>
+                  <div class="text-[11px] text-slate-500 dark:text-slate-400">
+                    {lang === "bn"
+                      ? `(১ম ধাপের বেতন ৳${formatMoney(calculatedResult.methods.difference.phases[0].gross)} – চলমান বেতন ৳${formatMoney(calculatedResult.running.gross)})`
+                      : `(Phase 1 gross ৳${formatMoney(calculatedResult.methods.difference.phases[0].gross)} – Running gross ৳${formatMoney(calculatedResult.running.gross)})`}
+                  </div>
                 </div>
-                <div class="flex flex-col gap-1.5 text-xs">
-                  <div class="bg-blue-50/70 dark:bg-blue-950/40 border border-blue-100 dark:border-blue-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
-                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০৭/২০২৬ কার্যকর:" : "01/07/2026 Effective:"}</span>
-                    <span class="font-bold text-blue-700 dark:text-blue-300">{calculatedResult.grade <= 9 ? (lang === "bn" ? "৪০%" : "40%") : (lang === "bn" ? "৫০%" : "50%")}</span>
+
+                <!-- বকেয়া (জুলাই, আগস্ট ও সেপ্টেম্বর এর বকেয়া অক্টোবর ২০২৬ এ প্রদেয়) -->
+                <div class="bg-amber-50/80 dark:bg-amber-950/30 border border-amber-200 dark:border-amber-800/50 rounded-xl p-2.5 flex justify-between items-center text-xs">
+                  <div class="flex flex-col">
+                    <span class="font-bold text-amber-900 dark:text-amber-200">
+                      💰 {lang === "bn" ? "৩ মাসের বকেয়া (জুলাই, আগস্ট ও সেপ্টেম্বর)" : "3 Months' Arrears (July, Aug & Sept)"}
+                    </span>
+                    <span class="text-[10px] text-amber-700 dark:text-amber-400">
+                      {lang === "bn" ? "অক্টোবর ২০২৬ এর বেতনের সাথে প্রদেয়" : "To be paid in October 2026"}
+                    </span>
                   </div>
-                  <div class="bg-indigo-50/70 dark:bg-indigo-950/40 border border-indigo-100 dark:border-indigo-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
-                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০১/২০২৭ কার্যকর:" : "01/01/2027 Effective:"}</span>
-                    <span class="font-bold text-indigo-700 dark:text-indigo-300">{calculatedResult.grade <= 9 ? (lang === "bn" ? "৭০%" : "70%") : (lang === "bn" ? "৭৫%" : "75%")}</span>
-                  </div>
-                  <div class="bg-emerald-50/70 dark:bg-emerald-950/40 border border-emerald-100 dark:border-emerald-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
-                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০৭/২০২৭ কার্যকর:" : "01/07/2027 Effective:"}</span>
-                    <span class="font-bold text-emerald-700 dark:text-emerald-300">{lang === "bn" ? "১০০%" : "100%"}</span>
-                  </div>
-                  <div class="bg-purple-50/70 dark:bg-purple-950/40 border border-purple-100 dark:border-purple-900/50 rounded-xl px-3 py-1.5 flex justify-between items-center">
-                    <span class="text-slate-600 dark:text-slate-400 font-medium">{lang === "bn" ? "০১/০১/২০২৮ কার্যকর:" : "01/01/2028 Effective:"}</span>
-                    <span class="font-bold text-purple-700 dark:text-purple-300">{lang === "bn" ? "১০০%+সকল ভাতা" : "100%+All Allowances"}</span>
-                  </div>
+                  <span class="font-black text-amber-800 dark:text-amber-300 text-sm md:text-base shrink-0">
+                    ৳ {formatMoney(calculatedResult.arrear3Months)}
+                  </span>
                 </div>
               </div>
             </div>
@@ -1308,18 +1322,32 @@
 
               <!-- Total Gross Salary Highlight (High-Contrast Solid Box) -->
               <div
-                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 bg-blue-50 dark:bg-blue-950/70 -mx-2 -mb-2 p-3 rounded-2xl border border-blue-200 dark:border-blue-900/60 flex items-center justify-between"
+                class="mt-4 pt-3 border-t border-slate-100 dark:border-slate-800 bg-blue-50 dark:bg-blue-950/70 -mx-2 -mb-2 p-3 rounded-2xl border border-blue-200 dark:border-blue-900/60 flex flex-col gap-2"
               >
-                <span class="text-xs font-bold text-blue-900 dark:text-blue-200"
-                  >{t.totalGross}</span
+                <div class="flex items-center justify-between">
+                  <span class="text-xs font-bold text-blue-900 dark:text-blue-200"
+                    >{t.totalGross}</span
+                  >
+                  <span
+                    class="text-xl font-black text-blue-700 dark:text-blue-400"
+                  >
+                    ৳ {formatMoney(
+                      calculatedResult.methods.difference.phases[0].gross,
+                    )}
+                  </span>
+                </div>
+
+                <!-- বকেয়া নোটিশ (অক্টোবরে প্রদেয়) -->
+                <div
+                  class="pt-2 border-t border-blue-200/60 dark:border-blue-800/60 flex items-center justify-between text-[11px]"
                 >
-                <span
-                  class="text-xl font-black text-blue-700 dark:text-blue-400"
-                >
-                  ৳ {formatMoney(
-                    calculatedResult.methods.difference.phases[0].gross,
-                  )}
-                </span>
+                  <span class="font-bold text-blue-900/90 dark:text-blue-200/90">
+                    {lang === "bn" ? "বকেয়া (৩ মাস - অক্টোবরে প্রদেয়):" : "Arrears (3 mo - Oct '26):"}
+                  </span>
+                  <span class="font-extrabold text-amber-700 dark:text-amber-300">
+                    ৳ {formatMoney(calculatedResult.arrear3Months)}
+                  </span>
+                </div>
               </div>
             </div>
 
