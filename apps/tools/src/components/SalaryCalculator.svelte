@@ -693,7 +693,7 @@
   <div
     class="bg-gradient-to-r from-blue-50 to-indigo-50 dark:from-blue-950/30 dark:to-indigo-950/30 border border-blue-200/60 dark:border-blue-800/40 rounded-2xl p-4 md:p-5 shadow-sm"
   >
-    <div class="flex items-center gap-3">
+    <div class="flex items-center justify-center text-center gap-2.5 flex-wrap">
       <span class="text-blue-600 dark:text-blue-400 text-lg shrink-0">ℹ️</span>
       <div
         class="text-xs md:text-sm font-medium text-blue-900 dark:text-blue-200 leading-relaxed"
