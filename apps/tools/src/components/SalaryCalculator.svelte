@@ -633,16 +633,6 @@
     // One increment on the new 9th pay scale effective 1 July 2026 (next gazette step after fixation)
     const july9thIncrementBasic = nextGazetteStep(steps9th, fixedGazetteBasic);
 
-    // 4 Phased rollout toward basic after July 2026 increment on 9th scale
-    const diffPhases = calculate4Phases(
-      july9thIncrementBasic,
-      currentBasicVal,
-      grade,
-      current,
-      steps8th,
-      steps9th,
-    );
-
     const runningStepIndex =
       selectedStepIndex + 1 < steps8th.length
         ? selectedStepIndex + 2
@@ -652,6 +642,17 @@
         ? steps8th[selectedStepIndex + 1]
         : Math.round(currentBasicVal * 1.05);
     const runningBreakdown = compute8thBreakdown(runningBasic, grade);
+
+    // 4 Phased rollout toward basic after July 2026 increment on 9th scale
+    // House rent & allowances in initial implementation phases match the currently running pay scale (post July 2026 increment)
+    const diffPhases = calculate4Phases(
+      july9thIncrementBasic,
+      currentBasicVal,
+      grade,
+      runningBreakdown,
+      steps8th,
+      steps9th,
+    );
 
     const stepIndex9th = steps9th.indexOf(fixedGazetteBasic) !== -1 ? steps9th.indexOf(fixedGazetteBasic) + 1 : null;
 
