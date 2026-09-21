@@ -1155,7 +1155,15 @@
     {#if showRunningModal && calculatedResult}
       <div
         class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in"
+        role="button"
+        tabindex="0"
+        aria-label={lang === "bn" ? "মডাল বন্ধ করুন" : "Close modal"}
         on:click|self={() => (showRunningModal = false)}
+        on:keydown={(e) => {
+          if (e.key === "Escape" || (e.target === e.currentTarget && (e.key === "Enter" || e.key === " "))) {
+            showRunningModal = false;
+          }
+        }}
       >
         <div
           class="bg-white dark:bg-slate-900 rounded-3xl p-6 max-w-md w-full border border-slate-200 dark:border-slate-800 shadow-2xl relative overflow-hidden flex flex-col gap-4 animate-scale-up"
