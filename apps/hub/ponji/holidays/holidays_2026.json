@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "year": "2026",
   "source": "Ministry of Public Administration, Bangladesh. Gazette dated 09 November 2025 (24 Kartik 1432).",
   "generatedAt": "2026-01-01T00:00:00.000Z",
@@ -130,7 +130,7 @@
     },
     {
       "id": "bd_2026_012",
-      "name": "Vijaya Dashami",
+      "name": "Durga Puja — Vijaya Dashami",
       "namebn": "দুর্গাপূজা — বিজয়া দশমী",
       "startDate": "2026-10-21",
       "gazetteType": "mandatoryGeneral",
@@ -243,6 +243,17 @@
     },
     {
       "id": "bd_2026_022",
+      "name": "Durga Puja — Day after Vijaya Dashami",
+      "namebn": "দুর্গাপূজা — বিজয়া দশমীর পরের দিন",
+      "startDate": "2026-10-22",
+      "gazetteType": "mandatoryExecutive",
+      "category": "hindu",
+      "description": "Public holiday following Vijaya Dashami for Durga Puja celebrations and immersion ceremonies.",
+      "descriptionbn": "শারদীয় দুর্গাপূজার প্রতিমা বিসর্জন ও উৎসবের সুবিধার্থে বিজয়া দশমীর পরের দিন নির্বাহী আদেশে সরকারি ছুটি।",
+      "isApproximate": false
+    },
+    {
+      "id": "bd_2026_023",
       "name": "Shab-e-Miraj",
       "namebn": "শব-ই-মিরাজ",
       "startDate": "2026-01-17",
@@ -253,7 +264,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_023",
+      "id": "bd_2026_024",
       "name": "3rd Day of Eid ul-Fitr",
       "namebn": "ঈদ-উল-ফিতরের তৃতীয় দিন",
       "startDate": "2026-03-24",
@@ -264,7 +275,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_024",
+      "id": "bd_2026_025",
       "name": "4th Day of Eid ul-Adha",
       "namebn": "ঈদ-উল-আজহার চতুর্থ দিন",
       "startDate": "2026-06-01",
@@ -275,7 +286,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_025",
+      "id": "bd_2026_026",
       "name": "Akheri Chahar Somba",
       "namebn": "আখেরি চাহার সোম্বা",
       "startDate": "2026-08-12",
@@ -286,7 +297,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_026",
+      "id": "bd_2026_027",
       "name": "Fateh-e-Yazdaham",
       "namebn": "ফাতেহা-ই-ইয়াজদাহম",
       "startDate": "2026-09-24",
@@ -297,7 +308,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_027",
+      "id": "bd_2026_028",
       "name": "Saraswati Puja",
       "namebn": "সরস্বতী পূজা",
       "startDate": "2026-01-23",
@@ -308,7 +319,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_028",
+      "id": "bd_2026_029",
       "name": "Shivaratri",
       "namebn": "শিবরাত্রি",
       "startDate": "2026-02-15",
@@ -319,7 +330,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_029",
+      "id": "bd_2026_030",
       "name": "Dol Yatra",
       "namebn": "দোলযাত্রা",
       "startDate": "2026-03-03",
@@ -330,7 +341,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_030",
+      "id": "bd_2026_031",
       "name": "Harichand Thakur's Birthday",
       "namebn": "শ্রী শ্রী হরিচাঁদ ঠাকুরের আবির্ভাব",
       "startDate": "2026-03-17",
@@ -341,7 +352,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_031",
+      "id": "bd_2026_032",
       "name": "Mahalaya",
       "namebn": "মহালয়া",
       "startDate": "2026-10-10",
@@ -352,7 +363,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_032",
+      "id": "bd_2026_033",
       "name": "Durga Puja — Saptami & Ashtami",
       "namebn": "দুর্গাপূজা — মহাসপ্তমী ও মহাষ্টমী",
       "startDate": "2026-10-18",
@@ -364,7 +375,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_033",
+      "id": "bd_2026_034",
       "name": "Lakshmi Puja",
       "namebn": "লক্ষ্মী পূজা",
       "startDate": "2026-10-25",
@@ -375,7 +386,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_034",
+      "id": "bd_2026_035",
       "name": "Shyama Puja",
       "namebn": "শ্যামা পূজা",
       "startDate": "2026-11-08",
@@ -386,7 +397,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_035",
+      "id": "bd_2026_036",
       "name": "English New Year",
       "namebn": "ইংরেজি নববর্ষ",
       "startDate": "2026-01-01",
@@ -397,7 +408,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_036",
+      "id": "bd_2026_037",
       "name": "Ash Wednesday",
       "namebn": "ভস্ম বুধবার",
       "startDate": "2026-02-18",
@@ -408,7 +419,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_037",
+      "id": "bd_2026_038",
       "name": "Maundy Thursday",
       "namebn": "পুণ্য বৃহস্পতিবার",
       "startDate": "2026-04-02",
@@ -419,7 +430,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_038",
+      "id": "bd_2026_039",
       "name": "Good Friday",
       "namebn": "পুণ্য শুক্রবার",
       "startDate": "2026-04-03",
@@ -430,7 +441,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_039",
+      "id": "bd_2026_040",
       "name": "Holy Saturday",
       "namebn": "পুণ্য শনিবার",
       "startDate": "2026-04-04",
@@ -441,7 +452,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_040",
+      "id": "bd_2026_041",
       "name": "Easter Sunday",
       "namebn": "ইস্টার সানডে",
       "startDate": "2026-04-05",
@@ -452,7 +463,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_041",
+      "id": "bd_2026_042",
       "name": "Christmas Holiday Period",
       "namebn": "বড়দিনের বর্ধিত ছুটি",
       "startDate": "2026-12-24",
@@ -464,7 +475,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_042",
+      "id": "bd_2026_043",
       "name": "Maghi Purnima",
       "namebn": "মাঘী পূর্ণিমা",
       "startDate": "2026-02-01",
@@ -475,7 +486,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_043",
+      "id": "bd_2026_044",
       "name": "Chaitra Sankranti — Buddhist Communities",
       "namebn": "চৈত্র সংক্রান্তি — বৌদ্ধ সম্প্রদায়",
       "startDate": "2026-04-13",
@@ -486,7 +497,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_044",
+      "id": "bd_2026_045",
       "name": "Buddha Purnima Holiday Period",
       "namebn": "বুদ্ধ পূর্ণিমার বর্ধিত ছুটি",
       "startDate": "2026-04-30",
@@ -498,7 +509,7 @@
       "isApproximate": false
     },
     {
-      "id": "bd_2026_045",
+      "id": "bd_2026_046",
       "name": "Asarhi Purnima",
       "namebn": "আষাঢ়ী পূর্ণিমা",
       "startDate": "2026-07-29",
@@ -509,7 +520,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_046",
+      "id": "bd_2026_047",
       "name": "Madhu Purnima",
       "namebn": "মধু পূর্ণিমা",
       "startDate": "2026-09-26",
@@ -520,7 +531,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_047",
+      "id": "bd_2026_048",
       "name": "Prabarana Purnima",
       "namebn": "প্রবারণা পূর্ণিমা",
       "startDate": "2026-10-25",
@@ -531,7 +542,7 @@
       "isApproximate": true
     },
     {
-      "id": "bd_2026_048",
+      "id": "bd_2026_049",
       "name": "Boisabi — Hill Tracts New Year",
       "namebn": "বৈসাবি — পার্বত্য নববর্ষ",
       "startDate": "2026-04-12",
