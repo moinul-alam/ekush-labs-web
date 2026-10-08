@@ -379,9 +379,11 @@
   }
 
   async function fetchHolidays(year, forceFresh = false) {
+    const hVersion = manifestCache?.datasets?.holidays?.version || 1;
+    const cacheKey = `ekush_hub_ponji_holidays_${year}_v${hVersion}`;
+
     if (holidaysCache[year] && !forceFresh) return holidaysCache[year];
 
-    const cacheKey = `ekush_hub_ponji_holidays_${year}`;
     const cached = getLocalCache(cacheKey, 24 * 3600 * 1000);
     if (cached && !forceFresh) {
       holidaysCache[year] = cached.data;
@@ -459,16 +461,23 @@
     // 3. Instant render with cached data (0ms delay!)
     updateCalendar();
 
-    // 4. Background revalidation if manifest or data is missing/stale
-    if (!cachedManifest?.isFresh) {
-      await fetchManifest(true);
-      updateCalendar();
+    // 4. Background revalidation: always check fresh manifest asynchronously
+    const prevHolidaysVersion = manifestCache?.datasets?.holidays?.version;
+    const freshManifest = await fetchManifest(true);
+    const newHolidaysVersion = freshManifest?.datasets?.holidays?.version;
+
+    if (freshManifest) {
+      const versionChanged = prevHolidaysVersion !== newHolidaysVersion;
+      if (versionChanged) {
+        holidaysCache = {};
+      }
+      await updateCalendar(versionChanged);
       loadTodaysOccasion(true);
     }
   });
 
-  async function updateCalendar() {
-    const holidays = await fetchHolidays(currentYear);
+  async function updateCalendar(forceFresh = false) {
+    const holidays = await fetchHolidays(currentYear, forceFresh);
     const daysInMonth = new Date(currentYear, currentMonth + 1, 0).getDate();
     const firstDay = new Date(currentYear, currentMonth, 1).getDay();
     const isThisMonth =
