@@ -1,0 +1,76 @@
+{
+    "categories": [
+        {
+            "id": 1,
+            "nameBangla": "শাকসবজি",
+            "nameEnglish": "Vegetables",
+            "imageIdentifier": "vegetables",
+            "iconIdentifier": "🥬",
+            "sortOrder": 1,
+            "isActive": true
+        },
+        {
+            "id": 2,
+            "nameBangla": "মাছ ও মাংস",
+            "nameEnglish": "Fish & Meat",
+            "imageIdentifier": "fish_meat",
+            "iconIdentifier": "🐟",
+            "sortOrder": 2,
+            "isActive": true
+        },
+        {
+            "id": 3,
+            "nameBangla": "চাল, ডাল ও মশলা",
+            "nameEnglish": "Rice, Lentils & Spices",
+            "imageIdentifier": "rice_lentils_spices",
+            "iconIdentifier": "🌾",
+            "sortOrder": 3,
+            "isActive": true
+        },
+        {
+            "id": 4,
+            "nameBangla": "তেল ও দুগ্ধজাত পণ্য",
+            "nameEnglish": "Oil & Dairy Products",
+            "imageIdentifier": "oil_dairy",
+            "iconIdentifier": "🥛",
+            "sortOrder": 4,
+            "isActive": true
+        },
+        {
+            "id": 5,
+            "nameBangla": "ফলমূল",
+            "nameEnglish": "Fruits",
+            "imageIdentifier": "fruits",
+            "iconIdentifier": "🍎",
+            "sortOrder": 5,
+            "isActive": true
+        },
+        {
+            "id": 6,
+            "nameBangla": "খাদ্যসামগ্রী",
+            "nameEnglish": "Food Essentials",
+            "imageIdentifier": "food_essentials",
+            "iconIdentifier": "🍚",
+            "sortOrder": 6,
+            "isActive": true
+        },
+        {
+            "id": 7,
+            "nameBangla": "পরিচ্ছন্নতা ও গৃহস্থালি",
+            "nameEnglish": "Cleaning & Household",
+            "imageIdentifier": "cleaning_household",
+            "iconIdentifier": "🧹",
+            "sortOrder": 7,
+            "isActive": true
+        },
+        {
+            "id": 8,
+            "nameBangla": "অন্যান্য",
+            "nameEnglish": "Other",
+            "imageIdentifier": "other_items",
+            "iconIdentifier": "📦",
+            "sortOrder": 8,
+            "isActive": true
+        }
+    ]
+}

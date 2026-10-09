@@ -1,0 +1,21 @@
+{
+  "manifestVersion": 1,
+  "lastUpdated": "2026-10-09",
+  "baseUrl": "https://hub.ekushlabs.com/jhuri/assets",
+  "categories": {
+    "version": 1,
+    "file": "categories.json"
+  },
+  "items": {
+    "version": 1,
+    "files": {
+      "vegetables": "items/vegetables.json",
+      "fruits": "items/fruits.json",
+      "fish_meat": "items/fish_meat.json",
+      "oil_dairy": "items/oil_dairy.json",
+      "rice_lentils_spices": "items/rice_lentils_spices.json",
+      "food_essentials": "items/food_essentials.json",
+      "cleaning_household": "items/cleaning_household.json"
+    }
+  }
+}
