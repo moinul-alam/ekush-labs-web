@@ -1,5 +1,5 @@
 {
-  "manifestVersion": 1,
+  "manifestVersion": 2,
   "lastUpdated": "2026-10-09",
   "baseUrl": "https://hub.ekushlabs.com/jhuri/assets",
   "categories": {
@@ -7,7 +7,7 @@
     "file": "categories.json"
   },
   "items": {
-    "version": 1,
+    "version": 2,
     "files": {
       "vegetables": "items/vegetables.json",
       "fruits": "items/fruits.json",
