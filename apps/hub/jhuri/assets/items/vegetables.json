@@ -1057,20 +1057,6 @@
       "isFeatured": false,
       "sortOrder": 71,
       "availabilityMonths": null
-    },
-    {
-      "id": 1072,
-      "nameBangla": "টেস্ট আইটেম",
-      "nameEnglish": "Test Item",
-      "phoneticName": "test item",
-      "categoryId": 1,
-      "defaultQuantity": 4,
-      "defaultUnit": "pcs",
-      "emoji": null,
-      "isActive": true,
-      "isFeatured": false,
-      "sortOrder": 72,
-      "availabilityMonths": null
     }
   ]
 }
