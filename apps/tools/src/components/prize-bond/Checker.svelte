@@ -7,7 +7,6 @@
   import { exportWinnersToCsv } from '../../lib/prize-bond/export-csv';
 
   import InputPanel from './InputPanel.svelte';
-  import DrawSelector from './DrawSelector.svelte';
   import ResultSummary from './ResultSummary.svelte';
   import WinnerCard from './WinnerCard.svelte';
   import NextSteps from './NextSteps.svelte';
@@ -99,7 +98,7 @@
     matchResult = null;
   }
 
-  function addRangeToNumbers() {
+  function addRangeToNumbers(shouldCheckImmediately = false) {
     const res = expandRange(rangeFrom, rangeTo);
     if (res.error) {
       alert(res.error);
@@ -115,6 +114,18 @@
     rangeTo = '';
     hasChecked = false;
     matchResult = null;
+
+    if (shouldCheckImmediately) {
+      runCheck();
+    }
+  }
+
+  function handleDirectRangeCheck() {
+    if (rangeFrom && rangeTo) {
+      addRangeToNumbers(true);
+    } else if (validNumbersSet.size > 0) {
+      runCheck();
+    }
   }
 
   async function handleFileUpload(e) {
@@ -155,7 +166,26 @@
     hasChecked = false;
   }
 
+  $: topPrizeTier = matchResult && matchResult.matches.length > 0
+    ? Math.min(...matchResult.matches.flatMap((m) => m.wins.map((w) => w.tier)))
+    : null;
+
   function runCheck() {
+    // If user is currently in the Range tab and typed a range without clicking add
+    if (activeTab === 'range' && rangeFrom && rangeTo) {
+      const res = expandRange(rangeFrom, rangeTo);
+      if (res.error) {
+        alert(res.error);
+        return;
+      }
+      for (const num of res.numbers) {
+        validNumbersSet.add(num);
+      }
+      validNumbersSet = new Set(validNumbersSet);
+      rangeFrom = '';
+      rangeTo = '';
+    }
+
     if (validNumbersSet.size === 0) return;
     isChecking = true;
 
@@ -210,25 +240,6 @@
   {/if}
 
   {#if draws.length > 0}
-    <!-- Privacy Header Banner -->
-    <div class="flex items-center justify-between p-3.5 px-5 rounded-2xl bg-blue-50/70 dark:bg-slate-800/50 border border-blue-200/60 dark:border-white/10 text-xs">
-      <div class="flex items-center gap-2 text-slate-700 dark:text-slate-300 font-medium">
-        <span class="text-base">🔒</span>
-        <span>{lang === 'bn' ? 'আপনার প্রবেশ করানো কোনো নম্বর সার্ভারে যায় না — সম্পূর্ণ ক্লায়েন্ট-সাইডে যাচাই হয়।' : '100% private. Numbers stay entirely on your device.'}</span>
-      </div>
-      <span class="hidden sm:inline-block px-2.5 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-bold text-[11px] border border-emerald-500/20">
-        {lang === 'bn' ? 'নিরাপদ ও গোপনীয়' : 'Private & Secure'}
-      </span>
-    </div>
-
-    <!-- Draw Selector -->
-    <DrawSelector
-      {draws}
-      {selectedDrawIds}
-      {lang}
-      onSelectionChange={handleSelectionChange}
-    />
-
     <!-- Input Tabs Island -->
     <div class="p-6 rounded-3xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-lg space-y-5">
       <InputPanel
@@ -286,13 +297,25 @@
               />
             </div>
           </div>
-          <button
-            type="button"
-            on:click={addRangeToNumbers}
-            class="px-5 py-2.5 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-900 text-sm font-bold hover:opacity-90 transition"
-          >
-            {lang === 'bn' ? 'তালিকার সাথে যোগ করুন +' : 'Add Range to List +'}
-          </button>
+          <div class="flex flex-wrap items-center gap-2.5">
+            <button
+              type="button"
+              on:click={() => addRangeToNumbers(false)}
+              disabled={!rangeFrom || !rangeTo}
+              class="px-4 py-2.5 rounded-xl border border-slate-300 dark:border-slate-600 bg-white dark:bg-slate-700 text-slate-800 dark:text-white text-xs font-bold hover:bg-slate-50 transition disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              {lang === 'bn' ? 'তালিকার সাথে যোগ করুন +' : 'Add Range to List +'}
+            </button>
+            <button
+              type="button"
+              on:click={handleDirectRangeCheck}
+              disabled={(!rangeFrom || !rangeTo) && validNumbersSet.size === 0}
+              class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary-start to-primary-end text-white text-xs font-bold hover:opacity-95 shadow-md transition disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1.5"
+            >
+              <span>🔍</span>
+              <span>{lang === 'bn' ? 'সরাসরি এই রেঞ্জ যাচাই করুন' : 'Check This Range Directly'}</span>
+            </button>
+          </div>
         </div>
       {/if}
 
@@ -352,7 +375,7 @@
         </div>
 
         <div class="flex items-center gap-2">
-          {#if validNumbersSet.size > 0}
+          {#if validNumbersSet.size > 0 || rangeFrom || rangeTo}
             <button
               type="button"
               on:click={clearAll}
@@ -365,7 +388,7 @@
           <button
             type="button"
             on:click={runCheck}
-            disabled={validNumbersSet.size === 0 || isChecking}
+            disabled={(validNumbersSet.size === 0 && !(activeTab === 'range' && rangeFrom && rangeTo)) || isChecking}
             class="px-6 py-2.5 rounded-xl bg-gradient-to-r from-primary-start to-primary-end hover:opacity-95 text-white text-sm font-bold shadow-lg shadow-blue-500/20 disabled:opacity-50 disabled:cursor-not-allowed transition transform active:scale-95 flex items-center gap-2"
           >
             <span>{isChecking ? '⏳' : '🔍'}</span>
@@ -394,20 +417,10 @@
 
     <!-- Match Results Presentation -->
     {#if hasChecked && matchResult}
-      <div id="results-section" class="scroll-mt-24">
-        <ResultSummary
-          totalChecked={matchResult.totalChecked}
-          winnersCount={matchResult.totalWinnersCount}
-          ignoredCount={ignoredList.length}
-          totalPrize={matchResult.totalPrizeAmount}
-          durationMs={matchResult.durationMs}
-          drawsCount={selectedDrawIds.length}
-          {lang}
-        />
-
+      <div id="results-section" class="scroll-mt-24 space-y-6">
         {#if matchResult.totalWinnersCount > 0}
-          <!-- Celebratory Banner -->
-          <div class="p-6 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-blue-500/20 border border-emerald-500/30 text-center space-y-2 mb-6">
+          <!-- 1. Celebratory Banner BEFORE the summary stats -->
+          <div class="p-6 rounded-3xl bg-gradient-to-r from-emerald-500/20 via-teal-500/20 to-blue-500/20 border border-emerald-500/30 text-center space-y-2">
             <div class="text-4xl animate-bounce">🎊</div>
             <h3 class="text-2xl font-black text-slate-900 dark:text-white">
               {lang === 'bn' ? 'অভিনন্দন! আপনার প্রাইজবন্ড পুরস্কৃত হয়েছে!' : 'Congratulations! You Have Winning Prize Bonds!'}
@@ -436,7 +449,18 @@
               </button>
             </div>
           </div>
+        {/if}
 
+        <!-- 2. Clean 4-stat Summary Cards -->
+        <ResultSummary
+          totalChecked={matchResult.totalChecked}
+          winnersCount={matchResult.totalWinnersCount}
+          totalPrize={matchResult.totalPrizeAmount}
+          {topPrizeTier}
+          {lang}
+        />
+
+        {#if matchResult.totalWinnersCount > 0}
           <!-- Winners List -->
           <div class="space-y-4">
             {#each matchResult.matches as match}
