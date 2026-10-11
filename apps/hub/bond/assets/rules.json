@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "denomination": 100,
+  "currency": "BDT",
+  "numberFormat": {
+    "digits": 7,
+    "hasSeries": true,
+    "noteBn": "ড্র কেবল ৭-সংখ্যার নম্বরের উপর অনুষ্ঠিত হয়। সিরিজ নির্বিশেষে যেকোনো সিরিজের একই নম্বরের বন্ড বিজয়ী হিসেবে গণ্য হয়।",
+    "noteEn": "Draws are held on the 7-digit number only. All series holding the same 7-digit number win."
+  },
+  "matchKey": "number",
+  "drawFrequency": {
+    "drawsPerYear": 4,
+    "dates": ["January 31", "April 30", "July 31", "October 31"]
+  },
+  "tiers": [
+    { "tier": 1, "labelBn": "প্রথম পুরস্কার", "labelEn": "1st Prize", "amount": 600000, "countPerSeries": 1 },
+    { "tier": 2, "labelBn": "দ্বিতীয় পুরস্কার", "labelEn": "2nd Prize", "amount": 325000, "countPerSeries": 1 },
+    { "tier": 3, "labelBn": "তৃতীয় পুরস্কার", "labelEn": "3rd Prize", "amount": 100000, "countPerSeries": 2 },
+    { "tier": 4, "labelBn": "চতুর্থ পুরস্কার", "labelEn": "4th Prize", "amount": 50000, "countPerSeries": 2 },
+    { "tier": 5, "labelBn": "পঞ্চম পুরস্কার", "labelEn": "5th Prize", "amount": 10000, "countPerSeries": 40 }
+  ],
+  "totalPrizesPerSeries": 46,
+  "tax": {
+    "ratePercent": 20,
+    "noteBn": "আয়কর আইন ২০২৩ অনুযায়ী পুরস্কারের অর্থ হতে ২০% হারে উৎসে কর কর্তন করা হয়।",
+    "noteEn": "Under the Income Tax Act 2023, a 20% source withholding tax is deducted from all prize money."
+  },
+  "claim": {
+    "validityMonths": 24,
+    "officialSourceUrl": "https://www.bb.org.bd/en/index.php/investfacility/prizebond",
+    "stepsBn": [
+      "১. বন্ডটি যত্নে রাখুন: মূল প্রাইজবন্ডটি কোনো প্রকার ভাঁজ, দাগ বা কাটাছেঁড়া ছাড়া নিরাপদ স্থানে রাখুন।",
+      "২. বাংলাদেশ ব্যাংকের অফিসিয়াল ফলাফলের সাথে নিশ্চিত হোন: ব্যাংকের ওয়েবসাইট বা দৈনিক পত্রিকার তালিকা হতে নম্বরটি পুনঃযাচাই করুন।",
+      "৩. দাবি পেশ করার স্থান: বাংলাদেশ ব্যাংকের যেকোনো অফিস বা সরকার অনুমোদিত তফসিলি ব্যাংক শাখায় পুরস্কারের দাবি আবেদন জমা দিন।",
+      "৪. প্রয়োজনীয় কাগজপত্র: মূল প্রাইজবন্ড, আবেদনকারীর জাতীয় পরিচয়পত্র (NID) এর ফটোকপি, ব্যাংক হিসাবের বিবরণী/চেক বইয়ের কপি এবং নির্ধারিত দাবি ফরম।",
+      "৫. কর কর্তন: পুরস্কারের অর্থ হতে সরকারের নিয়মানুযায়ী ২০% উৎসে কর কর্তন করে অবশিষ্ট অর্থ ব্যাংক হিসাবে প্রদান করা হবে।",
+      "৬. মেয়াদ: ড্র অনুষ্ঠানের তারিখ হতে ২ (দুই) বছরের মধ্যে পুরস্কার দাবি করতে হবে। মেয়াদ উত্তীর্ণ হলে অর্থ সরকারি কোষাগারে জমা হয়।",
+      "৭. সতর্কতা: কোনো দালাল বা মধ্যস্থতাকারীর প্রলোভনে পড়বেন না। পুরস্কার দাবির জন্য কোনো অগ্রিম ফি দিতে হয় না।"
+    ],
+    "stepsEn": [
+      "1. Keep physical bond safe: Protect the original bond from damage, marks, or folding.",
+      "2. Confirm officially: Cross-check the winning number with the official Bangladesh Bank publication.",
+      "3. Where to claim: Submit your claim at any Bangladesh Bank office or authorized scheduled commercial bank branch.",
+      "4. Required documents: Original winning bond, claimant's National ID (NID) photocopy, bank account details / cheque copy, and prescribed claim form.",
+      "5. Tax deduction: 20% tax at source is deducted from the prize sum according to government law before disbursement to your bank account.",
+      "6. Deadline: Prizes must be claimed within 2 years (24 months) of the draw date. Unclaimed prizes revert to the government treasury.",
+      "7. Beware of fraud: Never pay any fees or advances to any third party. The claim process requires no upfront payment."
+    ],
+    "documents": [
+      "Original Prize Bond (মূল প্রাইজবন্ড)",
+      "National ID / Passport / Smart Card photocopy (জাতীয় পরিচয়পত্রের কপি)",
+      "Bank Account details & Cheque photocopy (ব্যাংক হিসাব ও চেকের কপি)",
+      "Duly filled official claim form (পূরণকৃত নির্ধারিত দাবি ফরম)"
+    ]
+  },
+  "lastVerified": "2026-10-11"
+}

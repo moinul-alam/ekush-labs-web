@@ -1,0 +1,88 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-11T18:22:07Z",
+  "latestDraw": 124,
+  "draws": [
+    {
+      "id": "124",
+      "drawNumber": 124,
+      "date": "2026-08-02",
+      "file": "draws/124.json",
+      "version": "sha256-656e18d9a662",
+      "totalWinners": 46,
+      "claimableUntil": "2028-08-02"
+    },
+    {
+      "id": "123",
+      "drawNumber": 123,
+      "date": "2026-04-30",
+      "file": "draws/123.json",
+      "version": "sha256-0b9bb36c53d1",
+      "totalWinners": 46,
+      "claimableUntil": "2028-04-28"
+    },
+    {
+      "id": "122",
+      "drawNumber": 122,
+      "date": "2026-02-01",
+      "file": "draws/122.json",
+      "version": "sha256-360bac698123",
+      "totalWinners": 46,
+      "claimableUntil": "2028-02-01"
+    },
+    {
+      "id": "121",
+      "drawNumber": 121,
+      "date": "2025-11-02",
+      "file": "draws/121.json",
+      "version": "sha256-2bb13edf08e3",
+      "totalWinners": 46,
+      "claimableUntil": "2027-11-02"
+    },
+    {
+      "id": "120",
+      "drawNumber": 120,
+      "date": "2025-07-31",
+      "file": "draws/120.json",
+      "version": "sha256-bb2809452648",
+      "totalWinners": 46,
+      "claimableUntil": "2027-07-28"
+    },
+    {
+      "id": "119",
+      "drawNumber": 119,
+      "date": "2025-04-30",
+      "file": "draws/119.json",
+      "version": "sha256-0612b39cfb6e",
+      "totalWinners": 46,
+      "claimableUntil": "2027-04-28"
+    },
+    {
+      "id": "118",
+      "drawNumber": 118,
+      "date": "2025-02-02",
+      "file": "draws/118.json",
+      "version": "sha256-b9728c28045e",
+      "totalWinners": 46,
+      "claimableUntil": "2027-02-02"
+    },
+    {
+      "id": "117",
+      "drawNumber": 117,
+      "date": "2024-10-31",
+      "file": "draws/117.json",
+      "version": "sha256-c0071851fdd8",
+      "totalWinners": 46,
+      "claimableUntil": "2026-10-28"
+    },
+    {
+      "id": "116",
+      "drawNumber": 116,
+      "date": "2024-07-31",
+      "file": "draws/116.json",
+      "version": "sha256-6a775f90cada",
+      "totalWinners": 46,
+      "claimableUntil": "2026-07-28"
+    }
+  ]
+}

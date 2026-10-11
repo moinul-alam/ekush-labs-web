@@ -475,6 +475,16 @@ export const ui = {
     'tools.salary.loading': 'লোড হচ্ছে...',
     'tools.salary.error': 'তথ্য লোড করতে সমস্যা হয়েছে।',
     'tools.salary.retry': 'আবার চেষ্টা করুন',
+
+    // Prize Bond Checker (bn)
+    'tools.prizebond.title': 'প্রাইজবন্ড ড্র রেজাল্ট চেকার',
+    'tools.prizebond.desc': 'বাংলাদেশ প্রাইজবন্ড ড্রয়ের ফলাফল নিমেষেই যাচাই করুন। শতভাগ নিরাপদ, কোনো তথ্য সার্ভারে পাঠানো হয় না।',
+    'tools.prizebond.subtitle': 'বাংলাদেশ ব্যাংক ১০০ টাকা মূল্যমান প্রাইজবন্ড ড্র যাচাইকরণ টুল',
+    'tools.prizebond.tab.text': 'টাইপ বা পেস্ট করুন',
+    'tools.prizebond.tab.range': 'নম্বর রেঞ্জ (সিরিজ)',
+    'tools.prizebond.tab.file': 'এক্সেল বা সিএসভি আপলোড',
+    'tools.prizebond.privacy.badge': '১০০% ব্রাউজার ভিত্তিক ও নিরাপদ',
+    'tools.prizebond.privacy.note': 'আপনার কোনো বন্ড নম্বর বা ফাইল কোনো সার্ভারে আপলোড করা হয় না। সবকিছু সম্পূর্ণ আপনার ডিভাইসে প্রসেস হয়।',
   },
 
   // ------------------------------------------------------------
@@ -937,5 +947,15 @@ export const ui = {
     'tools.salary.loading': 'Loading...',
     'tools.salary.error': 'Failed to load data.',
     'tools.salary.retry': 'Retry',
+
+    // Prize Bond Checker (en)
+    'tools.prizebond.title': 'Prize Bond Result Checker',
+    'tools.prizebond.desc': 'Check Bangladesh Prize Bond draw results instantly. 100% private & client-side.',
+    'tools.prizebond.subtitle': 'Bangladesh Bank 100 Taka Prize Bond Draw Checker Tool',
+    'tools.prizebond.tab.text': 'Type or Paste',
+    'tools.prizebond.tab.range': 'Number Range',
+    'tools.prizebond.tab.file': 'Excel / CSV Upload',
+    'tools.prizebond.privacy.badge': '100% Client-Side & Private',
+    'tools.prizebond.privacy.note': 'Your bond numbers and files are never sent to any server. Everything runs entirely in your browser.',
   },
 } as const;

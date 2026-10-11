@@ -1,0 +1,76 @@
+---
+import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
+import Checker from '../components/prize-bond/Checker.svelte';
+import PromoBanner from '../components/PromoBanner.astro';
+import { useTranslations } from '@ekush-labs/ui/src/i18n/utils';
+
+const t = useTranslations('bn');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "প্রাইজবন্ডের ড্র কত দিন পর পর অনুষ্ঠিত হয়?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "বাংলাদেশ ব্যাংকের অধীনে প্রাইজবন্ড ড্র বছরে চারবার অনুষ্ঠিত হয় — ৩১ জানুয়ারি, ৩০ এপ্রিল, ৩১ জুলাই এবং ৩১ অক্টোবর।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "সিরিজের অক্ষর বা বর্ণ কি ফলাফলে প্রভাব ফেলে?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "না। বাংলাদেশ ব্যাংকের নিয়মানুযায়ী ফলাফল ড্র অনুষ্ঠিত হয় কেবল ৭-সংখ্যার নম্বরের উপর। সকল সিরিজের একই নম্বরের বন্ড পুরস্কৃত হয়।"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "পুরস্কার দাবির মেয়াদ কত দিন?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "ড্র অনুষ্ঠানের তারিখ হতে পরবর্তী ২ (দুই) বছর পর্যন্ত পুরস্কার দাবি করা যায়।"
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${t('tools.prizebond.title')} | ${t('app.ekushlabs')}`}
+  description={t('tools.prizebond.desc')}
+  appName="EkushTools"
+  pageTitle={t('tools.prizebond.title')}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="pt-24 pb-16 px-[5vw] min-h-screen relative">
+    <!-- Background Decor -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-blue-500/10 to-transparent blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-t from-emerald-500/10 to-transparent blur-3xl"></div>
+    </div>
+
+    <!-- SEO & Intro Heading Shell -->
+    <div class="max-w-4xl mx-auto text-center mb-10">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-primary-start dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-500/20">
+        🇧🇩 {t('tools.prizebond.subtitle')}
+      </span>
+      <h1 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
+        {t('tools.prizebond.title')}
+      </h1>
+      <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
+        {t('tools.prizebond.desc')}
+      </p>
+    </div>
+
+    <!-- Interactive Island -->
+    <Checker client:load lang="bn" />
+
+    <div class="max-w-4xl mx-auto mt-12">
+      <PromoBanner />
+    </div>
+  </div>
+</BaseLayout>
