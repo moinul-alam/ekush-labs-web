@@ -4,7 +4,7 @@
   import { parseTextInput, expandRange, englishToBanglaDigits } from '../../lib/prize-bond/parse-input';
   import { parseExcelOrCsvFile, downloadSampleTemplate } from '../../lib/prize-bond/parse-excel';
   import { checkBonds } from '../../lib/prize-bond/matcher';
-  import { exportWinnersToCsv } from '../../lib/prize-bond/export-csv';
+  import { generateWinnersPdf } from '../../lib/prize-bond/export-pdf';
 
   import InputPanel from './InputPanel.svelte';
   import ResultSummary from './ResultSummary.svelte';
@@ -38,8 +38,8 @@
   let ignoredList = [];
   let duplicateCount = 0;
 
-  // Match Results
   let isChecking = false;
+  let isGeneratingPdf = false;
   let matchResult = null;
   let hasChecked = false;
   let copyNotification = false;
@@ -432,20 +432,27 @@
             <div class="flex flex-wrap justify-center gap-3 pt-3">
               <button
                 type="button"
-                on:click={() => exportWinnersToCsv(matchResult.matches, lang)}
-                class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-xs font-bold text-slate-800 dark:text-white shadow-md hover:bg-slate-50 transition flex items-center gap-1.5"
+                disabled={isGeneratingPdf}
+                on:click={async () => {
+                  if (isGeneratingPdf) return;
+                  isGeneratingPdf = true;
+                  try {
+                    await generateWinnersPdf(matchResult.matches, rules, lang);
+                  } catch (e) {
+                    console.error('PDF generation error:', e);
+                  } finally {
+                    isGeneratingPdf = false;
+                  }
+                }}
+                class="px-5 py-2.5 rounded-xl bg-gradient-to-r from-primary-start to-primary-end text-white text-xs md:text-sm font-bold shadow-lg hover:opacity-95 transition active:scale-95 flex items-center gap-2 disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
               >
-                <span>💾</span>
-                <span>{lang === 'bn' ? 'ফলাফল ডাউনলোড (CSV)' : 'Download Results (CSV)'}</span>
-              </button>
-
-              <button
-                type="button"
-                on:click={copyWinners}
-                class="px-4 py-2 rounded-xl bg-white dark:bg-slate-800 text-xs font-bold text-slate-800 dark:text-white shadow-md hover:bg-slate-50 transition flex items-center gap-1.5"
-              >
-                <span>📋</span>
-                <span>{copyNotification ? (lang === 'bn' ? 'কপি হয়েছে!' : 'Copied!') : (lang === 'bn' ? 'বিজয়ী নম্বর কপি করুন' : 'Copy Winning Numbers')}</span>
+                {#if isGeneratingPdf}
+                  <span class="animate-spin text-sm">⏳</span>
+                  <span>{lang === 'bn' ? 'পিডিএফ তৈরি হচ্ছে...' : 'Generating PDF...'}</span>
+                {:else}
+                  <span>📄</span>
+                  <span>{lang === 'bn' ? 'ফলাফল ডাউনলোড করুন (PDF)' : 'Download Results (PDF)'}</span>
+                {/if}
               </button>
             </div>
           </div>
