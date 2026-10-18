@@ -56,11 +56,11 @@
       calculatedBasic: "গণনাকৃত মূল বেতন",
       fullProposedBasic: "নির্ধারিত সম্পূর্ণ মূল বেতন",
       phasesTitle: "বাস্তবায়ন ধাপভিত্তিক বেতন বিবরণী",
-      phase1: "১ম ধাপ: ১ জুলাই ২০২৬ (৪০% বর্ধিত মূলবেতন)",
-      phase1_10_20: "১ম ধাপ: ১ জুলাই ২০২৬ (৫০% বর্ধিত মূলবেতন)",
-      phase2: "২য় ধাপ: ১ জানুয়ারি ২০২৭ (অতিরিক্ত ৩০% মূলবেতন)",
-      phase2_10_20: "২য় ধাপ: ১ জানুয়ারি ২০২৭ (অতিরিক্ত ২৫% মূলবেতন)",
-      phase3: "৩য় ধাপ: ১ জুলাই ২০২৭ (১০০% মূলবেতন + ১ ধাপ ইনক্রিমেন্ট)",
+      phase1: "১ম ধাপ: ১ জুলাই ২০২৬ (৪০% বেতন বৃদ্ধিসহ প্রাপ্য মূল বেতন)",
+      phase1_10_20: "১ম ধাপ: ১ জুলাই ২০২৬ (৫০% বেতন বৃদ্ধিসহ প্রাপ্য মূল বেতন)",
+      phase2: "২য় ধাপ: ১ জানুয়ারি ২০২৭ (পরবর্তী ৩০% বেতন বৃদ্ধিসহ প্রাপ্য মূল বেতন)",
+      phase2_10_20: "২য় ধাপ: ১ জানুয়ারি ২০২৭ (পরবর্তী ২৫% বেতন বৃদ্ধিসহ প্রাপ্য মূল বেতন)",
+      phase3: "৩য় ধাপ: ১ জুলাই ২০২৭ (অবশিষ্ট ৩০% বেতন বৃদ্ধি + বার্ষিক ইনক্রিমেন্টসহ প্রাপ্য মূল বেতন)",
       phase4: "৪র্থ ধাপ: ১ জানুয়ারি ২০২৮ (সংশোধিত নতুন ভাতাসহ)",
       stepNotice:
         "গেজেট অনুচ্ছেদ ৫ অনুযায়ী: ৮ম স্কেলের প্রারম্ভিক হতে পার্থক্য ৯ম স্কেলের প্রারম্ভিক বেতনের সাথে যোগ করার পর যদি হুবহু কোনো ধাপের সমান না হয়, তবে পরবর্তী উচ্চতর ধাপে ফিক্সেশন হবে।",
@@ -88,6 +88,8 @@
       ponjiTitle: "একুশ পঞ্জি - বাংলা ক্যালেন্ডার",
       ponjiDesc: "সম্পূর্ণ বাংলা ক্যালেন্ডার ও ছুটির তালিকা",
       ponjiBtn: "ডাউনলোড করুন",
+      downloadReportBtn: "পে-ফিক্সেশন প্রতিবেদন ডাউনলোড করুন",
+      generatingReport: "প্রতিবেদন তৈরি হচ্ছে...",
     },
     en: {
       title: "Govt Salary Calculator",
@@ -135,11 +137,11 @@
       calculatedBasic: "Calculated Basic Salary",
       fullProposedBasic: "Full Proposed Basic Salary",
       phasesTitle: "Phase-wise Salary Breakdown",
-      phase1: "Phase 1: 1 July 2026 (40% Basic Increase)",
-      phase1_10_20: "Phase 1: 1 July 2026 (50% Basic Increase)",
-      phase2: "Phase 2: 1 January 2027 (Additional 30% Basic Increase)",
-      phase2_10_20: "Phase 2: 1 January 2027 (Additional 25% Basic Increase)",
-      phase3: "Phase 3: 1 July 2027 (100% Basic + 1 Increment Step)",
+      phase1: "Phase 1: 1 July 2026 (40% Pay Increase + Annual Increment)",
+      phase1_10_20: "Phase 1: 1 July 2026 (50% Pay Increase + Annual Increment)",
+      phase2: "Phase 2: 1 January 2027 (Additional 30% Pay Increase)",
+      phase2_10_20: "Phase 2: 1 January 2027 (Additional 25% Pay Increase)",
+      phase3: "Phase 3: 1 July 2027 (Remaining 30% Pay Increase + Annual Increment)",
       phase4: "Phase 4: 1 January 2028 (With Revised Allowances)",
       stepNotice:
         "Per Gazette Rule 5: Candidate basic is elevated to the immediate next higher official step in the 9th scale if it does not match an exact step.",
@@ -167,6 +169,8 @@
       ponjiTitle: "Ekush Ponji - Bangla Calendar",
       ponjiDesc: "Complete Bangla calendar with holidays",
       ponjiBtn: "Download",
+      downloadReportBtn: "Download Pay Fixation Report",
+      generatingReport: "Generating Report...",
     },
   };
 
@@ -184,6 +188,7 @@
 
   let showDiffTooltip = false;
   let showRunningModal = false;
+  let isGeneratingPdf = false;
 
   let calculatedResult = null;
 
@@ -451,7 +456,8 @@
   }
 
   function calculate4Phases(
-    newCalculatedBasic,
+    fixedGazetteBasic,
+    july9thIncrementBasic,
     current8thBasic,
     grade,
     current8thBreakdown,
@@ -460,14 +466,33 @@
   ) {
     const isHigherGrade = grade <= 9;
     const phaseRates = isHigherGrade ? [0.4, 0.3, 0.3] : [0.5, 0.25, 0.25];
-    const increasedBasic = Math.max(0, newCalculatedBasic - current8thBasic);
+    
+    // Official iBAS++ Pay Fixation Formula:
+    // ১) মূল বেতন (৩০-০৬-২০২৬) = current8thBasic
+    // ৬) নতুন স্কেলের সমধাপ / উচ্চতর ধাপ = fixedGazetteBasic
+    // ৭) বার্ষিক বেতন বৃদ্ধি (ইনক্রিমেন্ট) সহ মূল বেতন (১০০% বেতন বৃদ্ধি অনুযায়ী) = july9thIncrementBasic
+    // ৮) বেতন বৃদ্ধির পরিমাণ = fixedGazetteBasic - current8thBasic
+    const increasedBasic = Math.max(0, fixedGazetteBasic - current8thBasic);
+    const july26IncrementAmount = Math.max(0, july9thIncrementBasic - fixedGazetteBasic);
 
-    // Cumulative basic additions for Phases 1 & 2
-    const phase1Basic = current8thBasic + increasedBasic * phaseRates[0];
-    const phase2Basic = phase1Basic + increasedBasic * phaseRates[1];
+    // ৯) ১ম ধাপ বেতন বৃদ্ধির পরিমাণ = ৮ নং এর ৪০% (বা ৫০%)
+    const phase1Inc = Math.round(increasedBasic * phaseRates[0]);
+    // ১০) প্রাপ্য বেতন = ১ নং + ৯ নং
+    const phase1WithoutInc = current8thBasic + phase1Inc;
+    // ১১) বার্ষিক বেতন বৃদ্ধি (ইনক্রিমেন্ট) সহ প্রাপ্য বেতন = ১০ নং + ইনক্রিমেন্ট
+    const phase1Basic = phase1WithoutInc + july26IncrementAmount;
 
-    // Phase 3 Basic: 100% target (incl. July 2026 increment on 9th scale) + one 9th-scale step (July 2027)
-    const phase3Basic = nextGazetteStep(steps9th, newCalculatedBasic);
+    // ১২) পরবর্তী ৩০% (বা ২৫%) বেতন বৃদ্ধি = ৮ নং এর ৩০%
+    const phase2Inc = Math.round(increasedBasic * phaseRates[1]);
+    // ১৩) প্রাপ্য বেতন = ১১ নং + ১২ নং
+    const phase2Basic = phase1Basic + phase2Inc;
+
+    // ১৪) অবশিষ্ট ৩০% (বা ২৫%) বেতন বৃদ্ধি = ৮ নং এর ৩০%
+    const phase3RemainingInc = Math.round(increasedBasic * phaseRates[2]);
+    // ১৫) প্রাপ্য বেতন = ১৩ নং + ১৪ নং (যা ৭ নং তথা জুলাই ২৬ এর মূল বেতন এর সমান)
+    const phase3TargetBasic = phase2Basic + phase3RemainingInc;
+    // ১৬) ০১-০৭-২০২৭ তারিখে বার্ষিক বেতন বৃদ্ধি (ইনক্রিমেন্ট) সহ প্রাপ্য মূল বেতন = পরবর্তী ৯ম ধাপ
+    const phase3Basic = nextGazetteStep(steps9th, phase3TargetBasic);
     const phase4Basic = phase3Basic;
 
     // Fixed 8th scale allowances for Phases 1 & 2
@@ -548,6 +573,9 @@
         tiffin: p12Tiffin,
         specialBenefit: 0,
         gross: p1Gross,
+        phaseInc: phase1Inc,
+        withoutInc: phase1WithoutInc,
+        incrementAmount: july26IncrementAmount,
       },
       {
         phase: 2,
@@ -559,6 +587,7 @@
         tiffin: p12Tiffin,
         specialBenefit: 0,
         gross: p2Gross,
+        phaseInc: phase2Inc,
       },
       {
         phase: 3,
@@ -570,6 +599,8 @@
         tiffin: p3Tiffin,
         specialBenefit: 0,
         gross: p3Gross,
+        phaseInc: phase3RemainingInc,
+        targetBasic: phase3TargetBasic,
       },
       {
         phase: 4,
@@ -603,10 +634,15 @@
     const currentBasicVal = steps8th[selectedStepIndex] || steps8th[0];
     const grade = selectedGrade;
 
-    // Gazette Rule 5 (অনুচ্ছেদ ৫): ৯ম জাতীয় বেতনস্কেলে বেতন নির্ধারণ
-    // (ক) ও (খ) পার্থক্য = বর্তমান মূল বেতন - ৮ম স্কেলের প্রারম্ভিক ধাপ
-    // পদাধিকার প্রাপ্ত প্রার্থী বেসিক = ৯ম স্কেলের প্রারম্ভিক ধাপ + পার্থক্য
-    // যদি ইহা কোন ধাপের হুবহু সমান না হয়, তবে পরবর্তী উচ্চতর ধাপে ফিক্সেশন হইবে।
+    // Gazette Rule 5 (অনুচ্ছেদ ৫) ও iBAS++ ফিক্সেশন নিয়ম:
+    // ১) মূল বেতন = currentBasicVal
+    // ২) প্রারম্ভিক ধাপ = start8th
+    // ৩) পার্থক্য [১ - ২] = diff
+    // ৪) প্রারম্ভিক ধাপ (৯ম স্কেল) = start9th
+    // ৫) মোট [৩ + ৪] = rawCandidateBasic
+    // ৬) নতুন স্কেলের সমধাপ / উচ্চতর ধাপ = fixedGazetteBasic
+    // ৭) বার্ষিক বেতন বৃদ্ধি (ইনক্রিমেন্ট) সহ মূল বেতন (০১-০৭-২০২৬) = july9thIncrementBasic
+    // ৮) বেতন বৃদ্ধির পরিমাণ [৬ - ১] = increasedBasic
     const diff = Math.max(0, currentBasicVal - start8th);
     const rawCandidateBasic = start9th + diff;
     
@@ -632,6 +668,7 @@
 
     // One increment on the new 9th pay scale effective 1 July 2026 (next gazette step after fixation)
     const july9thIncrementBasic = nextGazetteStep(steps9th, fixedGazetteBasic);
+    const increasedBasic = Math.max(0, fixedGazetteBasic - currentBasicVal);
 
     const runningStepIndex =
       selectedStepIndex + 1 < steps8th.length
@@ -643,9 +680,9 @@
         : Math.round(currentBasicVal * 1.05);
     const runningBreakdown = compute8thBreakdown(runningBasic, grade);
 
-    // 4 Phased rollout toward basic after July 2026 increment on 9th scale
-    // House rent & allowances in initial implementation phases match the currently running pay scale (post July 2026 increment)
+    // 4 Phased rollout toward basic per iBAS++ official fixation
     const diffPhases = calculate4Phases(
+      fixedGazetteBasic,
       july9thIncrementBasic,
       currentBasicVal,
       grade,
@@ -670,6 +707,7 @@
       rawCandidateBasic,
       fixedGazetteBasic,
       july9thIncrementBasic,
+      increasedBasic,
       elevated,
       current,
       running: runningBreakdown,
@@ -680,11 +718,252 @@
         difference: {
           calcBasic: july9thIncrementBasic,
           rawCalcBasic: rawCandidateBasic,
-          increasedBasic: july9thIncrementBasic - currentBasicVal,
+          increasedBasic,
           phases: diffPhases,
         },
       },
     };
+  }
+
+  async function downloadPayFixationPdf() {
+    if (!calculatedResult || isGeneratingPdf) return;
+    isGeneratingPdf = true;
+
+    const printContainer = document.createElement("div");
+    printContainer.style.position = "fixed";
+    printContainer.style.left = "-9999px";
+    printContainer.style.top = "0";
+    printContainer.style.width = "794px"; // Standard A4 width at 96 DPI
+    printContainer.style.backgroundColor = "#ffffff";
+    printContainer.style.color = "#0f172a";
+    printContainer.style.padding = "36px 40px";
+    printContainer.style.boxSizing = "border-box";
+    printContainer.style.fontFamily = lang === "bn"
+      ? "'Kalpurush', 'SolaimanLipi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif"
+      : "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif";
+
+    const dateStr = new Date().toLocaleDateString(lang === "bn" ? "bn-BD" : "en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    });
+
+    const isBn = lang === "bn";
+    const res = calculatedResult;
+    const p1 = res.methods.difference.phases[0];
+    const p2 = res.methods.difference.phases[1];
+    const p3 = res.methods.difference.phases[2];
+    const p4 = res.methods.difference.phases[3];
+
+    printContainer.innerHTML = `
+      <div style="border-bottom: 2px solid #2563eb; padding-bottom: 14px; margin-bottom: 20px; display: flex; justify-content: space-between; align-items: flex-end;">
+        <div>
+          <div style="font-size: 20px; font-weight: 800; color: #1e3a8a; margin-bottom: 4px;">
+            ${isBn ? "গণপ্রজাতন্ত্রী বাংলাদেশ সরকার" : "Government of the People's Republic of Bangladesh"}
+          </div>
+          <div style="font-size: 15px; font-weight: 700; color: #0f172a;">
+            ${isBn ? "৯ম জাতীয় বেতনস্কেল ২০২৬ অনুযায়ী পে-ফিক্সেশন প্রতিবেদন" : "9th National Pay Scale 2026 Pay Fixation Report"}
+          </div>
+          <div style="font-size: 11px; color: #64748b; margin-top: 2px;">
+            ${isBn ? "এস.আর.ও. নং ৩৪৭-আইন/২০২৬ ও সরকারি iBAS++ ফিক্সেশন ফরম্যাট অনুযায়ী প্রস্তুতকৃত" : "Prepared as per S.R.O. No. 347-Law/2026 and official iBAS++ fixation format"}
+          </div>
+        </div>
+        <div style="text-align: right; font-size: 11px; color: #475569;">
+          <div><strong>${isBn ? "তারিখ:" : "Date:"}</strong> ${dateStr}</div>
+          <div style="color: #2563eb; font-weight: 600; margin-top: 2px;">Ekush Labs Calculator</div>
+        </div>
+      </div>
+
+      <!-- Employee Fixation Parameters -->
+      <div style="background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin-bottom: 18px; display: grid; grid-template-columns: 1fr 1fr; gap: 8px 24px; font-size: 12px;">
+        <div><strong style="color: #475569;">${isBn ? "গ্রেড:" : "Grade:"}</strong> <span style="font-weight: 700; color: #0f172a;">${fmtNum(res.grade)} (${isBn ? "তম গ্রেড" : "Grade " + res.grade})</span></div>
+        <div><strong style="color: #475569;">${isBn ? "৮ম স্কেলে চলমান ধাপ:" : "8th Scale Step:"}</strong> <span style="font-weight: 700; color: #0f172a;">${fmtNum(res.stepIndex)}</span></div>
+        <div><strong style="color: #475569;">${isBn ? "৩০-০৬-২০২৬ তারিখে মূল বেতন:" : "Basic on 30/06/2026:"}</strong> <span style="font-weight: 700; color: #1e3a8a;">৳ ${formatMoney(res.current.basic)}</span></div>
+        <div><strong style="color: #475569;">${isBn ? "ফিক্সেশন মর্যাদা:" : "Fixation Status:"}</strong> <span style="font-weight: 700; color: #16a34a;">${res.elevated ? (isBn ? "উচ্চতর ধাপে সমন্বিত" : "Elevated to Next Step") : (isBn ? "সমধাপে নির্ধারিত" : "Exact Step Match")}</span></div>
+      </div>
+
+      <!-- Fixation Step by Step Calculation Table (iBAS++ Format) -->
+      <div style="margin-bottom: 22px;">
+        <div style="font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 8px; border-left: 3px solid #2563eb; padding-left: 8px;">
+          ${isBn ? "১. মূল বেতন ফিক্সেশন বিবরণী (iBAS++ পদ্ধতি)" : "1. Basic Pay Fixation Breakdown (iBAS++ Method)"}
+        </div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+          <thead>
+            <tr style="background-color: #f1f5f9; color: #334155; border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1;">
+              <th style="padding: 6px 8px; text-align: center; width: 40px;">${isBn ? "ক্রম" : "No."}</th>
+              <th style="padding: 6px 10px; text-align: left;">${isBn ? "বিবরণ" : "Description"}</th>
+              <th style="padding: 6px 12px; text-align: right; width: 140px;">${isBn ? "টাকার পরিমাণ" : "Amount (৳)"}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #f1f5f9;">
+              <td style="padding: 5px 8px; text-align: center; color: #64748b;">১</td>
+              <td style="padding: 5px 10px;">${isBn ? "৩০-০৬-২০২৬ তারিখে বিদ্যমান মূল বেতন (৮ম পে-স্কেল)" : "Existing Basic Salary as of 30/06/2026 (8th Scale)"}</td>
+              <td style="padding: 5px 12px; text-align: right; font-weight: 700;">৳ ${formatMoney(res.current.basic)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f1f5f9; background-color: #fafafa;">
+              <td style="padding: 5px 8px; text-align: center; color: #64748b;">২</td>
+              <td style="padding: 5px 10px;">${isBn ? "৮ম পে-স্কেলের প্রারম্ভিক ধাপ" : "8th Pay Scale Starting Basic"}</td>
+              <td style="padding: 5px 12px; text-align: right;">৳ ${formatMoney(res.start8th)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f1f5f9;">
+              <td style="padding: 5px 8px; text-align: center; color: #64748b;">৩</td>
+              <td style="padding: 5px 10px;">${isBn ? "ইনক্রিমেন্ট পার্থক্য [১ নং - ২ নং]" : "Increment Difference [Item 1 - Item 2]"}</td>
+              <td style="padding: 5px 12px; text-align: right; font-weight: 600;">৳ ${formatMoney(res.diff)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f1f5f9; background-color: #fafafa;">
+              <td style="padding: 5px 8px; text-align: center; color: #64748b;">৪</td>
+              <td style="padding: 5px 10px;">${isBn ? "৯ম পে-স্কেলের প্রারম্ভিক ধাপ (০১-০৭-২০২৬)" : "9th Pay Scale Starting Basic (01/07/2026)"}</td>
+              <td style="padding: 5px 12px; text-align: right;">৳ ${formatMoney(res.start9th)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f1f5f9;">
+              <td style="padding: 5px 8px; text-align: center; color: #64748b;">৫</td>
+              <td style="padding: 5px 10px;">${isBn ? "মোট [৩ নং + ৪ নং]" : "Total [Item 3 + Item 4]"}</td>
+              <td style="padding: 5px 12px; text-align: right;">৳ ${formatMoney(res.rawCandidateBasic)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #cbd5e1; background-color: #eff6ff;">
+              <td style="padding: 6px 8px; text-align: center; font-weight: 700; color: #1e3a8a;">৬</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #1e3a8a;">${isBn ? "নতুন স্কেলের সমধাপ / উচ্চতর ধাপ (গেজেট নির্ধারিত মূল বেতন)" : "New Scale Matching / Next Higher Step (Gazette Fixed Basic)"}</td>
+              <td style="padding: 6px 12px; text-align: right; font-weight: 800; color: #1e3a8a;">৳ ${formatMoney(res.fixedGazetteBasic)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #f1f5f9;">
+              <td style="padding: 5px 8px; text-align: center; color: #64748b;">৭</td>
+              <td style="padding: 5px 10px;">${isBn ? "বার্ষিক বেতন বৃদ্ধি (ইনক্রিমেন্ট) সহ মূল বেতন (১০০% বাস্তবায়ন অনুযায়ী)" : "Basic Salary with 1 July 2026 Annual Increment (at 100% implementation)"}</td>
+              <td style="padding: 5px 12px; text-align: right; font-weight: 700;">৳ ${formatMoney(res.july9thIncrementBasic)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #cbd5e1; background-color: #ecfdf5;">
+              <td style="padding: 6px 8px; text-align: center; font-weight: 700; color: #065f46;">৮</td>
+              <td style="padding: 6px 10px; font-weight: 700; color: #065f46;">${isBn ? "বেতন বৃদ্ধির পরিমাণ [৬ নং - ১ নং]" : "Total Pay Increase Amount [Item 6 - Item 1]"}</td>
+              <td style="padding: 6px 12px; text-align: right; font-weight: 800; color: #047857;">৳ ${formatMoney(res.increasedBasic)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 4 Implementation Phases Table -->
+      <div style="margin-bottom: 20px;">
+        <div style="font-size: 13px; font-weight: 700; color: #1e3a8a; margin-bottom: 8px; border-left: 3px solid #2563eb; padding-left: 8px;">
+          ${isBn ? "২. বাস্তবায়ন ধাপভিত্তিক বিস্তারিত বেতন বিবরণী (৪টি ধাপ)" : "2. Implementation Phase-wise Salary Breakdown (4 Phases)"}
+        </div>
+        <table style="width: 100%; border-collapse: collapse; font-size: 11px;">
+          <thead>
+            <tr style="background-color: #f1f5f9; color: #334155; border-top: 1px solid #cbd5e1; border-bottom: 1px solid #cbd5e1;">
+              <th style="padding: 6px 8px; text-align: left;">${isBn ? "বাস্তবায়ন ধাপ" : "Phase"}</th>
+              <th style="padding: 6px 8px; text-align: left;">${isBn ? "কার্যকর তারিখ" : "Effective Date"}</th>
+              <th style="padding: 6px 8px; text-align: right;">${isBn ? "মূল বেতন" : "Basic Pay"}</th>
+              <th style="padding: 6px 8px; text-align: right;">${isBn ? "বাসা ভাড়া" : "House Rent"}</th>
+              <th style="padding: 6px 8px; text-align: right;">${isBn ? "চিকিৎসা" : "Medical"}</th>
+              <th style="padding: 6px 8px; text-align: right;">${isBn ? "অন্যান্য ভাতা" : "Others"}</th>
+              <th style="padding: 6px 10px; text-align: right; background-color: #e2e8f0; font-weight: 700;">${isBn ? "মোট প্রাপ্তি (Gross)" : "Gross Salary"}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 8px; font-weight: 700; color: #1d4ed8;">${isBn ? "১ম ধাপ (৪০%/৫০% বৃদ্ধি)" : "Phase 1 (40%/50%)"}</td>
+              <td style="padding: 7px 8px; color: #64748b;">${isBn ? "১ জুলাই ২০২৬" : "1 July 2026"}</td>
+              <td style="padding: 7px 8px; text-align: right; font-weight: 700;">৳ ${formatMoney(p1.basic)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p1.houseRent)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p1.medical)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p1.tiffin)}</td>
+              <td style="padding: 7px 10px; text-align: right; font-weight: 800; background-color: #eff6ff; color: #1d4ed8;">৳ ${formatMoney(p1.gross)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 8px; font-weight: 700; color: #7c3aed;">${isBn ? "২য় ধাপ (অতিরিক্ত ৩০%/২৫%)" : "Phase 2 (+30%/25%)"}</td>
+              <td style="padding: 7px 8px; color: #64748b;">${isBn ? "১ জানুয়ারি ২০২৭" : "1 Jan 2027"}</td>
+              <td style="padding: 7px 8px; text-align: right; font-weight: 700;">৳ ${formatMoney(p2.basic)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p2.houseRent)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p2.medical)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p2.tiffin)}</td>
+              <td style="padding: 7px 10px; text-align: right; font-weight: 800; background-color: #faf5ff; color: #7c3aed;">৳ ${formatMoney(p2.gross)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #e2e8f0;">
+              <td style="padding: 7px 8px; font-weight: 700; color: #d97706;">${isBn ? "৩য় ধাপ (১০০% + জুলাই ২৭ ইনক্রিমেন্ট)" : "Phase 3 (100% + Inc)"}</td>
+              <td style="padding: 7px 8px; color: #64748b;">${isBn ? "১ জুলাই ২০২৭" : "1 July 2027"}</td>
+              <td style="padding: 7px 8px; text-align: right; font-weight: 700;">৳ ${formatMoney(p3.basic)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p3.houseRent)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p3.medical)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p3.tiffin)}</td>
+              <td style="padding: 7px 10px; text-align: right; font-weight: 800; background-color: #fffbeb; color: #b45309;">৳ ${formatMoney(p3.gross)}</td>
+            </tr>
+            <tr style="border-bottom: 1px solid #cbd5e1;">
+              <td style="padding: 7px 8px; font-weight: 700; color: #059669;">${isBn ? "৪র্থ ধাপ (নতুন ভাতাদি সহ)" : "Phase 4 (New Allowances)"}</td>
+              <td style="padding: 7px 8px; color: #64748b;">${isBn ? "১ জানুয়ারি ২০২৮" : "1 Jan 2028"}</td>
+              <td style="padding: 7px 8px; text-align: right; font-weight: 700;">৳ ${formatMoney(p4.basic)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p4.houseRent)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney(p4.medical)}</td>
+              <td style="padding: 7px 8px; text-align: right;">৳ ${formatMoney((p4.tiffin || 0) + (p4.conveyance || 0) + (p4.mobile || 0) + (p4.education || 0))}</td>
+              <td style="padding: 7px 10px; text-align: right; font-weight: 800; background-color: #ecfdf5; color: #047857;">৳ ${formatMoney(p4.gross)}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Arrears & Notes Box -->
+      <div style="background-color: #fffbeb; border: 1px solid #fde68a; border-radius: 8px; padding: 10px 14px; margin-bottom: 24px; font-size: 11px;">
+        <div style="font-weight: 700; color: #92400e; margin-bottom: 4px;">
+          💰 ${isBn ? "বকেয়া ও অতিরিক্ত প্রাপ্তি বিবরণী:" : "Arrears & Extra Receivable Details:"}
+        </div>
+        <div style="color: #78350f; line-height: 1.5;">
+          • ${isBn ? "০১/০৭/২০২৬ তারিখে মাসিক প্রাপ্য অতিরিক্ত:" : "Monthly extra receivable from 01/07/2026:"} <strong>৳ ${formatMoney(res.phase1RunningDiff)}</strong><br/>
+          • ${isBn ? "৩ মাসের বকেয়া (জুলাই, আগস্ট ও সেপ্টেম্বর ২০২৬):" : "3 Months' arrears (July, August, September 2026):"} <strong>৳ ${formatMoney(res.arrear3Months)}</strong> (${isBn ? "অক্টোবর ২০২৬ এর বেতনের সাথে প্রদেয়" : "To be paid with October 2026 salary"})<br/>
+          • ${isBn ? "১ম ও ২য় ধাপে বাসাভাড়াসহ সকল ভাতা বিদ্যমান (৮ম স্কেলের) হারে অপরিবর্তিত থাকবে।" : "All allowances remain at existing 8th scale rates during Phases 1 and 2."}
+        </div>
+      </div>
+
+      <!-- Official Footer Note -->
+      <div style="border-top: 1px solid #e2e8f0; padding-top: 10px; display: flex; justify-content: space-between; align-items: center; font-size: 10px; color: #94a3b8;">
+        <div>Ekush Labs Web Tools • ekushlabs.com</div>
+        <div>${isBn ? "স্বয়ংক্রিয়ভাবে প্রস্তুতকৃত কম্পিউটারাইজড প্রতিবেদন" : "System Generated Computerized Report"}</div>
+      </div>
+    `;
+
+    document.body.appendChild(printContainer);
+
+    try {
+      const [{ jsPDF }, html2canvasModule] = await Promise.all([
+        import("jspdf"),
+        import("html2canvas"),
+      ]);
+      const html2canvas = html2canvasModule.default || html2canvasModule;
+
+      const canvas = await html2canvas(printContainer, {
+        scale: 2,
+        useCORS: true,
+        backgroundColor: "#ffffff",
+      });
+
+      const imgData = canvas.toDataURL("image/jpeg", 0.95);
+      const pdf = new jsPDF({
+        orientation: "portrait",
+        unit: "mm",
+        format: "a4",
+      });
+
+      const imgWidth = 210;
+      const pageHeight = 297;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
+
+      let heightLeft = imgHeight;
+      let position = 0;
+
+      pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+
+      while (heightLeft > 0) {
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, "JPEG", 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      const fileName = `pay-fixation-grade-${res.grade}-basic-${res.current.basic}-${new Date().toISOString().split("T")[0]}.pdf`;
+      pdf.save(fileName);
+    } catch (err) {
+      console.error("PDF generation failed:", err);
+    } finally {
+      document.body.removeChild(printContainer);
+      isGeneratingPdf = false;
+    }
   }
 </script>
 
@@ -1139,14 +1418,41 @@
           </div>
 
           {#if showDiffTooltip}
-            <div class="mt-2 bg-blue-50/80 dark:bg-slate-800 border border-blue-200 dark:border-blue-700 rounded-xl p-3 text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed animate-fade-in-up relative z-10">
-              <div><strong>১. পার্থক্য:</strong> ৳{formatMoney(calculatedResult.current.basic)} (৩০/০৬/২৬ মূল) – ৳{formatMoney(calculatedResult.start8th)} (৮ম প্রারম্ভিক) = <strong>৳{formatMoney(calculatedResult.diff)}</strong></div>
-              <div><strong>২. নির্ধারিত মূল:</strong> ৳{formatMoney(calculatedResult.start9th)} (৯ম প্রারম্ভিক) + ৳{formatMoney(calculatedResult.diff)} (পার্থক্য) = <strong>৳{formatMoney(calculatedResult.rawCandidateBasic)}</strong></div>
-              {#if calculatedResult.elevated}
-                <div class="text-emerald-700 dark:text-emerald-400 mt-1">↳ গেজেট অনুযায়ী পরবর্তী উচ্চতর ধাপ: <strong>৳{formatMoney(calculatedResult.fixedGazetteBasic)}</strong></div>
-              {/if}
+            <div class="mt-2 bg-blue-50/80 dark:bg-slate-800 border border-blue-200 dark:border-blue-700 rounded-xl p-3 text-[11px] text-slate-700 dark:text-slate-300 leading-relaxed animate-fade-in-up relative z-10 flex flex-col gap-1">
+              <div><strong>১. মূল বেতন (৩০-০৬-২০২৬):</strong> ৳{formatMoney(calculatedResult.current.basic)}</div>
+              <div><strong>২. প্রারম্ভিক ধাপ (৮ম স্কেল):</strong> ৳{formatMoney(calculatedResult.start8th)}</div>
+              <div><strong>৩. পার্থক্য [১ - ২]:</strong> ৳{formatMoney(calculatedResult.diff)}</div>
+              <div><strong>৪. প্রারম্ভিক ধাপ (৯ম স্কেল):</strong> ৳{formatMoney(calculatedResult.start9th)}</div>
+              <div><strong>৫. মোট [৩ + ৪]:</strong> ৳{formatMoney(calculatedResult.rawCandidateBasic)}</div>
+              <div><strong>৬. নতুন স্কেলের সমধাপ / উচ্চতর ধাপ:</strong> <strong>৳{formatMoney(calculatedResult.fixedGazetteBasic)}</strong></div>
+              <div><strong>৭. বার্ষিক ইনক্রিমেন্ট সহ মূল বেতন (০১-০৭-২০২৬):</strong> <strong>৳{formatMoney(calculatedResult.july9thIncrementBasic)}</strong></div>
+              <div><strong>৮. বেতন বৃদ্ধির পরিমাণ [৬ - ১]:</strong> ৳{formatMoney(calculatedResult.increasedBasic)}</div>
+              <div class="pt-1 mt-1 border-t border-blue-200 dark:border-blue-700/60 text-slate-600 dark:text-slate-400">
+                ↳ ১ম ধাপ প্রাপ্য: ৩০-০৬-২৬ মূল + (বেতন বৃদ্ধির ৪০% বা ৫০%) + জুলাই ২৬ ইনক্রিমেন্ট = <strong>৳{formatMoney(calculatedResult.methods.difference.phases[0].basic)}</strong>
+              </div>
             </div>
           {/if}
+
+          <!-- Download Pay Fixation Report Button -->
+          <div class="mt-4 pt-3 border-t border-blue-100 dark:border-blue-950/80 relative z-10">
+            <button
+              type="button"
+              on:click={downloadPayFixationPdf}
+              disabled={isGeneratingPdf}
+              class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-xs md:text-sm shadow-md hover:shadow-lg transition-all duration-200 active:scale-[0.99] disabled:opacity-60 disabled:cursor-not-allowed cursor-pointer"
+            >
+              {#if isGeneratingPdf}
+                <svg class="animate-spin h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>{t.generatingReport}</span>
+              {:else}
+                <span class="text-base leading-none">📄</span>
+                <span>{t.downloadReportBtn}</span>
+              {/if}
+            </button>
+          </div>
         </div>
       {/if}
     </div>
@@ -1383,11 +1689,11 @@
                 >
                   {calculatedResult.grade <= 9
                     ? lang === "bn"
-                      ? "৭০% মূল বেতন"
-                      : "70% Basic Salary"
+                      ? "পরবর্তী ৩০% বেতন বৃদ্ধি"
+                      : "Additional 30% Pay Increase"
                     : lang === "bn"
-                      ? "৭৫% মূল বেতন"
-                      : "75% Basic Salary"}
+                      ? "পরবর্তী ২৫% বেতন বৃদ্ধি"
+                      : "Additional 25% Pay Increase"}
                 </div>
 
                 <div
