@@ -23,6 +23,7 @@
   let rules = null;
   let draws = [];
   let selectedDrawIds = [];
+  let showDrawsExpanded = false;
 
   // Input states
   let activeTab = 'text'; // 'text' | 'range' | 'file'
@@ -32,6 +33,7 @@
   let excelLoading = false;
   let excelStats = null;
   let fileInputRef;
+  let isDraggingOver = false;
 
   // Staged combined bond numbers
   let validNumbersSet = new Set();
@@ -56,34 +58,20 @@
       rules = await store.fetchRules();
       draws = manifest.draws || [];
 
-      // Select latest draw by default, plus all claimable draws
+      // Automatically select all active claimable draws within the official 2-year window
       const today = new Date().toISOString().split('T')[0];
       const claimable = draws
         .filter((d) => !d.claimableUntil || d.claimableUntil >= today)
         .map((d) => d.id);
 
+      // Default to all claimable (or latest draw if none found)
       selectedDrawIds = claimable.length > 0 ? claimable : (draws[0] ? [draws[0].id] : []);
 
-      // Preload the draws
+      // Preload the draws into memory
       await store.loadSelectedDraws(selectedDrawIds);
     } catch (err) {
       console.error(err);
       loadError = err.message || 'Failed to load draw data.';
-    } finally {
-      loadingData = false;
-    }
-  }
-
-  async function handleSelectionChange(newIds) {
-    selectedDrawIds = newIds;
-    loadingData = true;
-    try {
-      await store.loadSelectedDraws(selectedDrawIds);
-      if (hasChecked && validNumbersSet.size > 0) {
-        runCheck();
-      }
-    } catch (err) {
-      loadError = err.message || 'Error updating draws.';
     } finally {
       loadingData = false;
     }
@@ -96,6 +84,12 @@
     duplicateCount = res.duplicateCount;
     hasChecked = false;
     matchResult = null;
+  }
+
+  function insertSampleNumbers() {
+    const samples = ['0806964', '0144370', '0307973', '0657980', '0925766'];
+    rawTextInput = samples.join('\n');
+    handleTextInputChange();
   }
 
   function addRangeToNumbers(shouldCheckImmediately = false) {
@@ -128,8 +122,7 @@
     }
   }
 
-  async function handleFileUpload(e) {
-    const file = e.target.files?.[0];
+  async function processUploadedFile(file) {
     if (!file) return;
 
     excelLoading = true;
@@ -145,12 +138,47 @@
       }
       validNumbersSet = new Set(validNumbersSet);
       duplicateCount += res.duplicateCount;
-      hasChecked = false;
-      matchResult = null;
+
+      // Auto-check immediately as requested!
+      if (validNumbersSet.size > 0) {
+        runCheck();
+        setTimeout(() => {
+          const resultsEl = document.getElementById('results-section');
+          if (resultsEl) {
+            resultsEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 150);
+      }
     } finally {
       excelLoading = false;
       if (fileInputRef) fileInputRef.value = '';
     }
+  }
+
+  function handleFileUpload(e) {
+    const file = e.target.files?.[0];
+    if (file) {
+      processUploadedFile(file);
+    }
+  }
+
+  function handleFileDrop(e) {
+    e.preventDefault();
+    isDraggingOver = false;
+    const file = e.dataTransfer?.files?.[0];
+    if (file) {
+      processUploadedFile(file);
+    }
+  }
+
+  function handleDragOver(e) {
+    e.preventDefault();
+    isDraggingOver = true;
+  }
+
+  function handleDragLeave(e) {
+    e.preventDefault();
+    isDraggingOver = false;
   }
 
   function clearAll() {
@@ -240,6 +268,58 @@
   {/if}
 
   {#if draws.length > 0}
+    <!-- Centered Latest Draw Header with Expandable 8-Draw Grid -->
+    <div class="flex flex-col items-center justify-center space-y-3">
+      <button
+        type="button"
+        on:click={() => (showDrawsExpanded = !showDrawsExpanded)}
+        class="group inline-flex flex-wrap items-center justify-center gap-2 sm:gap-3 px-5 py-2.5 rounded-full bg-white/90 dark:bg-slate-800/90 border border-slate-200/90 dark:border-white/10 shadow-sm hover:shadow-md backdrop-blur-md transition-all active:scale-[0.99] cursor-pointer"
+      >
+        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500 text-white text-xs font-black shadow-sm">
+          ✓
+        </span>
+        <span class="text-base sm:text-lg font-black text-slate-900 dark:text-white tracking-tight">
+          {lang === 'bn'
+            ? `সর্বশেষ ড্র: ${englishToBanglaDigits(draws[0]?.drawNumber || '')}তম`
+            : `Latest Draw: #${draws[0]?.drawNumber || ''}`}
+        </span>
+        {#if draws[0]?.date}
+          <span class="text-sm sm:text-base font-bold text-slate-700 dark:text-slate-300">
+            {lang === 'bn' ? `তারিখ: ${englishToBanglaDigits(draws[0].date)}` : `Date: ${draws[0].date}`}
+          </span>
+        {/if}
+        <span class="inline-flex items-center justify-center w-5 h-5 rounded-full bg-slate-100 dark:bg-slate-700 text-slate-500 dark:text-slate-400 group-hover:bg-primary-start group-hover:text-white transition-all transform {showDrawsExpanded ? 'rotate-180' : ''} text-xs font-bold ml-1">
+          ▼
+        </span>
+      </button>
+
+      <!-- Expandable 8-Draws Grid (2 rows x 4 chips) -->
+      {#if showDrawsExpanded}
+        <div class="w-full max-w-2xl p-4 sm:p-5 rounded-2xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-white/10 shadow-inner backdrop-blur-md space-y-3 animate-fadeIn">
+          <div class="text-xs sm:text-sm font-semibold text-slate-600 dark:text-slate-300 text-center">
+            {lang === 'bn'
+              ? 'সরকারি নিয়মানুযায়ী বিগত ২ বছরের ড্র-সমূহ বিবেচিত হবে'
+              : 'Draws of the last 2 years considered under official rules:'}
+          </div>
+
+          <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+            {#each draws.slice(0, 8) as draw}
+              <div class="flex flex-col items-center justify-center py-2 px-3 rounded-xl bg-slate-50 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-700/80 shadow-xs">
+                <span class="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
+                  {lang === 'bn' ? `[${englishToBanglaDigits(draw.drawNumber)}তম]` : `[Draw #${draw.drawNumber}]`}
+                </span>
+                {#if draw.date}
+                  <span class="text-[10px] text-slate-500 dark:text-slate-400 font-mono mt-0.5">
+                    {lang === 'bn' ? englishToBanglaDigits(draw.date) : draw.date}
+                  </span>
+                {/if}
+              </div>
+            {/each}
+          </div>
+        </div>
+      {/if}
+    </div>
+
     <!-- Input Tabs Island -->
     <div class="p-6 rounded-3xl bg-white/80 dark:bg-slate-800/80 backdrop-blur-md border border-slate-200 dark:border-white/10 shadow-lg space-y-5">
       <InputPanel
@@ -251,9 +331,19 @@
       <!-- Tab 1: Textarea -->
       {#if activeTab === 'text'}
         <div class="space-y-3">
-          <label for="bond-text-input" class="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
-            {lang === 'bn' ? 'প্রাইজবন্ড নম্বরসমূহ প্রবেশ করান' : 'Enter Prize Bond Numbers'}
-          </label>
+          <div class="flex items-center justify-between">
+            <label for="bond-text-input" class="block text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-wider">
+              {lang === 'bn' ? 'প্রাইজবন্ড নম্বরসমূহ প্রবেশ করান' : 'Enter Prize Bond Numbers'}
+            </label>
+            <button
+              type="button"
+              on:click={insertSampleNumbers}
+              class="text-xs text-primary-start dark:text-blue-400 hover:underline font-semibold flex items-center gap-1"
+            >
+              <span>✨</span>
+              <span>{lang === 'bn' ? 'নমুনা নম্বর দিয়ে পরীক্ষা করুন' : 'Try sample numbers'}</span>
+            </button>
+          </div>
           <textarea
             id="bond-text-input"
             bind:value={rawTextInput}
@@ -322,7 +412,14 @@
       <!-- Tab 3: Excel Upload -->
       {#if activeTab === 'file'}
         <div class="space-y-4">
-          <div class="border-2 border-dashed border-slate-300 dark:border-slate-700 rounded-3xl p-8 text-center hover:border-primary-start transition">
+          <div
+            on:dragover={handleDragOver}
+            on:dragleave={handleDragLeave}
+            on:drop={handleFileDrop}
+            class="relative border-2 border-dashed rounded-3xl p-8 text-center transition-all duration-200 {isDraggingOver
+              ? 'border-blue-500 bg-blue-50/50 dark:bg-blue-900/20 scale-[1.01]'
+              : 'border-slate-300 dark:border-slate-700 hover:border-primary-start bg-slate-50/50 dark:bg-slate-900/30'}"
+          >
             <input
               type="file"
               accept=".xlsx,.xls,.csv"
@@ -331,31 +428,52 @@
               class="hidden"
               id="excel-file-input"
             />
-            <label for="excel-file-input" class="cursor-pointer block space-y-2">
-              <div class="text-4xl">📁</div>
-              <div class="font-bold text-slate-800 dark:text-white text-base">
-                {lang === 'bn' ? 'এক্সেল (.xlsx, .xls) অথবা .csv ফাইল বেছে নিন' : 'Choose an Excel (.xlsx, .xls) or .csv file'}
-              </div>
-              <p class="text-xs text-slate-500">
-                {lang === 'bn' ? 'সর্বোচ্চ ৫ মেগাবাইট। ফাইলটি কখনোই সার্ভারে আপলোড হয় না।' : 'Up to 5MB. Scanned entirely in browser.'}
-              </p>
+            <label for="excel-file-input" class="cursor-pointer block space-y-2.5">
+              {#if excelLoading}
+                <div class="text-4xl animate-spin">⏳</div>
+                <div class="font-bold text-slate-800 dark:text-white text-base">
+                  {lang === 'bn' ? 'ফাইলটি স্ক্যান ও স্বয়ংক্রিয়ভাবে যাচাই করা হচ্ছে...' : 'Scanning & Auto-Checking File...'}
+                </div>
+                <p class="text-xs text-slate-500">
+                  {lang === 'bn' ? 'অনুগ্রহ করে অপেক্ষা করুন, ফলাফল প্রস্তুত হচ্ছে' : 'Please wait, checking winning numbers...'}
+                </p>
+              {:else}
+                <div class="text-5xl transform transition-transform group-hover:scale-110">
+                  {isDraggingOver ? '📥' : '📊'}
+                </div>
+                <div class="font-bold text-slate-800 dark:text-white text-base">
+                  {lang === 'bn' ? 'এক্সেল (.xlsx, .xls) বা .csv ফাইল এখানে ড্রপ করুন অথবা নির্বাচন করুন' : 'Drop Excel (.xlsx, .xls) / CSV here or browse'}
+                </div>
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 text-xs font-semibold">
+                  <span>⚡</span>
+                  <span>{lang === 'bn' ? 'ফাইল আপলোড করলেই সরাসরি স্বয়ংক্রিয়ভাবে ফলাফল প্রদর্শিত হবে' : 'Automatically checks numbers right upon upload'}</span>
+                </div>
+                <p class="text-xs text-slate-400 mt-1">
+                  {lang === 'bn' ? '১০০% নিরাপদ ও গোপনীয় — ফাইলটি সম্পূর্ণ আপনার ব্রাউজারে প্রক্রিয়াজাত হয়।' : '100% private — your file is processed entirely inside your browser.'}
+                </p>
+              {/if}
             </label>
           </div>
 
-          <div class="flex items-center justify-between text-xs">
+          <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
             <button
               type="button"
               on:click={downloadSampleTemplate}
               class="text-primary-start dark:text-blue-400 hover:underline font-semibold flex items-center gap-1"
             >
               <span>📥</span>
-              <span>{lang === 'bn' ? 'নমুনা টেমপ্লেট ডাউনলোড করুন' : 'Download sample template'}</span>
+              <span>{lang === 'bn' ? 'নমুনা এক্সেল টেমপ্লেট ডাউনলোড করুন' : 'Download sample template'}</span>
             </button>
 
             {#if excelStats}
-              <span class="text-emerald-600 dark:text-emerald-400 font-bold">
-                ✓ {lang === 'bn' ? `${englishToBanglaDigits(excelStats.numbers.length)}টি নম্বর যুক্ত হয়েছে` : `${excelStats.numbers.length} numbers added`}
-              </span>
+              <div class="flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 font-bold border border-emerald-500/20">
+                <span>✓</span>
+                <span>
+                  {lang === 'bn'
+                    ? `মোট ${englishToBanglaDigits(excelStats.numbers.length)}টি প্রাইজবন্ড স্বয়ংক্রিয়ভাবে যাচাই করা হয়েছে`
+                    : `Auto-checked ${excelStats.numbers.length} numbers successfully`}
+                </span>
+              </div>
             {/if}
           </div>
         </div>

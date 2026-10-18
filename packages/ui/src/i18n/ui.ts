@@ -479,7 +479,7 @@ export const ui = {
     // Prize Bond Checker (bn)
     'tools.prizebond.title': 'প্রাইজবন্ড ড্র রেজাল্ট চেকার',
     'tools.prizebond.desc': 'বাংলাদেশ প্রাইজবন্ড ড্রয়ের ফলাফল নিমেষেই যাচাই করুন। শতভাগ নিরাপদ, কোনো তথ্য সার্ভারে পাঠানো হয় না।',
-    'tools.prizebond.subtitle': 'বাংলাদেশ ব্যাংক ১০০ টাকা মূল্যমান প্রাইজবন্ড ড্র যাচাইকরণ টুল',
+    'tools.prizebond.subtitle': '১০০ টাকা মূল্যমান বাংলাদেশ প্রাইজবন্ড ড্র যাচাইকরণ টুল',
     'tools.prizebond.tab.text': 'টাইপ বা পেস্ট করুন',
     'tools.prizebond.tab.range': 'নম্বর রেঞ্জ (সিরিজ)',
     'tools.prizebond.tab.file': 'এক্সেল বা সিএসভি আপলোড',
