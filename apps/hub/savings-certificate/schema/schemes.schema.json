@@ -48,6 +48,13 @@
             "required": ["pensionerOnly"],
             "properties": {
               "pensionerOnly": { "type": "boolean" },
+              "buyerTags": {
+                "type": "object",
+                "properties": {
+                  "bn": { "type": "array", "items": { "type": "string" } },
+                  "en": { "type": "array", "items": { "type": "string" } }
+                }
+              },
               "notes": {
                 "type": "object",
                 "properties": {

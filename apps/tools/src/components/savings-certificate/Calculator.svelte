@@ -42,8 +42,8 @@
   let activePeriod: PeriodManifestItem | null = null;
 
   // User input states
-  let rawAmountInput: string = '5,00,000';
-  let numericAmount: number = 500000;
+  let rawAmountInput: string = '';
+  let numericAmount: number = 0;
   let isPensioner: boolean = false;
   let purchaseDate: string = new Date().toISOString().split('T')[0];
   let showAdvanced: boolean = false;
@@ -80,7 +80,8 @@
         rawAmountInput = formatCurrency(parsed, lang, false);
       }
     } else {
-      rawAmountInput = lang === 'bn' ? '৫,০০,০০০' : '500,000';
+      rawAmountInput = '';
+      numericAmount = 0;
     }
 
     if (searchParams.has('pensioner')) {
@@ -164,8 +165,8 @@
   }
 
   function handleReset() {
-    numericAmount = 500000;
-    rawAmountInput = lang === 'bn' ? '৫,০০,০০০' : '500,000';
+    numericAmount = 0;
+    rawAmountInput = '';
     isPensioner = false;
     purchaseDate = new Date().toISOString().split('T')[0];
     sortBy = 'net';
@@ -361,7 +362,7 @@
             on:change={handlePensionerToggle}
             class="sr-only peer"
           />
-          <div class="w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
+          <div class="relative w-11 h-6 bg-slate-200 peer-focus:outline-none rounded-full peer dark:bg-slate-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-slate-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-emerald-600"></div>
           <div>
             <div class="text-xs sm:text-sm font-bold text-slate-800 dark:text-slate-200">
               {lang === 'bn' ? 'আমি একজন পেনশনার' : 'I am a Pensioner'}
@@ -420,80 +421,94 @@
       {/if}
     </div>
 
-    <!-- Sorting Chips & Filter Bar -->
-    <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
-      <div class="flex flex-wrap items-center gap-2">
-        <span class="text-xs font-bold uppercase tracking-wider text-slate-500 mr-1">
-          {lang === 'bn' ? 'সাজান:' : 'Sort By:'}
-        </span>
+    {#if numericAmount <= 0}
+      <div class="p-8 sm:p-12 text-center rounded-3xl bg-white/70 dark:bg-slate-800/70 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-md">
+        <div class="text-4xl sm:text-5xl mb-3">💰</div>
+        <h3 class="text-lg sm:text-xl font-bold text-slate-800 dark:text-slate-200 mb-2">
+          {lang === 'bn' ? 'বিনিয়োগের পরিমাণ লিখুন বা উপরের প্রেসেট নির্বাচন করুন' : 'Enter an investment amount or pick a preset above'}
+        </h3>
+        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 max-w-md mx-auto">
+          {lang === 'bn'
+            ? 'টাকার পরিমাণ লিখলেই সকল সঞ্চয়পত্রের মাসিক বা বার্ষিক লাভ, উৎসে কর এবং মেয়াদপূর্তির মোট প্রাপ্তির হিসাব তাৎক্ষণিকভাবে দেখতে পাবেন।'
+            : 'Enter an amount to instantly see ranked profit cards, monthly/quarterly payouts, TDS tax, and early encashment values.'}
+        </p>
+      </div>
+    {:else}
+      <!-- Sorting Chips & Filter Bar -->
+      <div class="flex flex-wrap items-center justify-between gap-4 pt-2">
+        <div class="flex flex-wrap items-center gap-2">
+          <span class="text-xs font-bold uppercase tracking-wider text-slate-500 mr-1">
+            {lang === 'bn' ? 'সাজান:' : 'Sort By:'}
+          </span>
 
-        <button
-          type="button"
-          on:click={() => { sortBy = 'net'; updateUrlParams(); }}
-          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'net'
-            ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
-            : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
-        >
-          {lang === 'bn' ? 'সর্বোচ্চ নিট লাভ' : 'Highest Net Return'}
-        </button>
+          <button
+            type="button"
+            on:click={() => { sortBy = 'net'; updateUrlParams(); }}
+            class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'net'
+              ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
+              : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
+          >
+            {lang === 'bn' ? 'সর্বোচ্চ নিট লাভ' : 'Highest Net Return'}
+          </button>
 
-        <button
-          type="button"
-          on:click={() => { sortBy = 'yield'; updateUrlParams(); }}
-          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'yield'
-            ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
-            : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
-        >
-          {lang === 'bn' ? 'সর্বোচ্চ বার্ষিক রিটার্ন' : 'Highest Yield'}
-        </button>
+          <button
+            type="button"
+            on:click={() => { sortBy = 'yield'; updateUrlParams(); }}
+            class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'yield'
+              ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
+              : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
+          >
+            {lang === 'bn' ? 'সর্বোচ্চ বার্ষিক রিটার্ন' : 'Highest Yield'}
+          </button>
 
-        <button
-          type="button"
-          on:click={() => { sortBy = 'income'; updateUrlParams(); }}
-          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'income'
-            ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
-            : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
-        >
-          {lang === 'bn' ? 'নিয়মিত সর্বোচ্চ কিস্তি' : 'Highest Regular Payout'}
-        </button>
+          <button
+            type="button"
+            on:click={() => { sortBy = 'income'; updateUrlParams(); }}
+            class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'income'
+              ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
+              : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
+          >
+            {lang === 'bn' ? 'নিয়মিত সর্বোচ্চ কিস্তি' : 'Highest Regular Payout'}
+          </button>
 
-        <button
-          type="button"
-          on:click={() => { sortBy = 'term'; updateUrlParams(); }}
-          class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'term'
-            ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
-            : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
-        >
-          {lang === 'bn' ? 'স্বল্প মেয়াদী' : 'Shortest Term'}
-        </button>
+          <button
+            type="button"
+            on:click={() => { sortBy = 'term'; updateUrlParams(); }}
+            class="px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all {sortBy === 'term'
+              ? 'bg-slate-900 text-white dark:bg-white dark:text-slate-900 shadow-xs'
+              : 'bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700'}"
+          >
+            {lang === 'bn' ? 'স্বল্প মেয়াদী' : 'Shortest Term'}
+          </button>
+        </div>
+
+        <!-- Compare Mode Trigger Pill -->
+        {#if selectedForCompare.length >= 2}
+          <button
+            type="button"
+            on:click={() => isCompareModalOpen = true}
+            class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-bold shadow-md shadow-emerald-500/20 flex items-center gap-2 animate-pulse"
+          >
+            <span>⚖️</span>
+            <span>{lang === 'bn' ? `${toBanglaDigits(selectedForCompare.length)} টি তুলনা দেখুন` : `Compare ${selectedForCompare.length} Schemes`}</span>
+          </button>
+        {/if}
       </div>
 
-      <!-- Compare Mode Trigger Pill -->
-      {#if selectedForCompare.length >= 2}
-        <button
-          type="button"
-          on:click={() => isCompareModalOpen = true}
-          class="px-4 py-1.5 rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white text-xs sm:text-sm font-bold shadow-md shadow-emerald-500/20 flex items-center gap-2 animate-pulse"
-        >
-          <span>⚖️</span>
-          <span>{lang === 'bn' ? `${toBanglaDigits(selectedForCompare.length)} টি তুলনা দেখুন` : `Compare ${selectedForCompare.length} Schemes`}</span>
-        </button>
-      {/if}
-    </div>
-
-    <!-- Ranked Scheme Cards -->
-    <div class="space-y-6">
-      {#each results as res, idx (res.schemeId)}
-        <SchemeCard
-          result={res}
-          {lang}
-          rankIndex={idx}
-          totalEligible={eligibleCount}
-          isSelectedForCompare={selectedForCompare.includes(res.schemeId)}
-          onToggleCompare={toggleCompare}
-        />
-      {/each}
-    </div>
+      <!-- Ranked Scheme Cards -->
+      <div class="space-y-6">
+        {#each results as res, idx (res.schemeId)}
+          <SchemeCard
+            result={res}
+            {lang}
+            rankIndex={idx}
+            totalEligible={eligibleCount}
+            isSelectedForCompare={selectedForCompare.includes(res.schemeId)}
+            onToggleCompare={toggleCompare}
+          />
+        {/each}
+      </div>
+    {/if}
 
     <!-- Compare Modal View -->
     {#if isCompareModalOpen}

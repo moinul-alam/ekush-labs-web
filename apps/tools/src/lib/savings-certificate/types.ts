@@ -47,6 +47,10 @@ export interface SchemeDefinition {
   payoutFrequency: string | null;
   eligibility: {
     pensionerOnly: boolean;
+    buyerTags?: {
+      bn: string[];
+      en: string[];
+    };
     notes?: {
       bn: string;
       en: string;

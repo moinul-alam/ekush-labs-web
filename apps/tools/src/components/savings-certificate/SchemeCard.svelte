@@ -154,7 +154,7 @@
       </div>
 
       <!-- Quick Metrics Grid -->
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-2">
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
         <div class="p-3 rounded-xl bg-slate-50/70 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/40">
           <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
             {lang === 'bn' ? 'মোট গ্রস মুনাফা' : 'Total Gross Profit'}
@@ -173,18 +173,6 @@
           </div>
           <div class="text-[10px] text-slate-400 mt-0.5">
             {formatPercent(result.appliedTaxRatePercent, lang)} {lang === 'bn' ? 'হারে' : 'rate'}
-          </div>
-        </div>
-
-        <div class="p-3 rounded-xl bg-slate-50/70 dark:bg-slate-800/50 border border-slate-200/60 dark:border-slate-700/40">
-          <div class="text-[11px] font-semibold text-slate-500 dark:text-slate-400">
-            {lang === 'bn' ? 'ফলপ্রসূ নিট রিটার্ন' : 'Effective Net Yield'}
-          </div>
-          <div class="text-sm sm:text-base font-bold text-emerald-600 dark:text-emerald-400 mt-0.5">
-            {formatPercent(result.effectiveAnnualYield, lang)}
-          </div>
-          <div class="text-[10px] text-slate-400 mt-0.5">
-            {lang === 'bn' ? 'বার্ষিক গড়' : 'annualized'}
           </div>
         </div>
 
@@ -209,8 +197,8 @@
           class="w-full py-2.5 px-4 rounded-xl border border-slate-200 dark:border-slate-700 bg-slate-50 dark:bg-slate-800/50 hover:bg-slate-100 dark:hover:bg-slate-800 text-xs sm:text-sm font-bold text-slate-700 dark:text-slate-200 flex items-center justify-between transition-colors"
         >
           <span class="flex items-center gap-2">
-            <span>📊</span>
-            <span>{lang === 'bn' ? 'বিস্তারিত হিসাব, কর ও মেয়াদপূর্ব ভাঙানোর তালিকা' : 'Detailed Calculation, Tax & Early Encashment Schedule'}</span>
+            <span>⏱️</span>
+            <span>{lang === 'bn' ? 'মেয়াদপূর্ব ভাঙানো বা নগদায়নের ছক ও নিয়মাবলী' : 'Early Encashment Schedule & Rules'}</span>
           </span>
           <span class="text-xs transition-transform duration-200 {isDetailsOpen ? 'rotate-180' : ''}">
             ▼
@@ -221,25 +209,6 @@
       <!-- Collapsible Content -->
       {#if isDetailsOpen}
         <div class="space-y-6 pt-2 text-xs sm:text-sm border-t border-slate-100 dark:border-slate-700/60">
-          <!-- Step by Step Breakdown -->
-          <div>
-            <h4 class="font-bold text-slate-900 dark:text-white mb-3 flex items-center gap-2">
-              <span>📝</span>
-              <span>{lang === 'bn' ? 'হিসাব প্রক্রিয়ার ধাপসমূহ' : 'Calculation Steps'}</span>
-            </h4>
-            <div class="space-y-2.5">
-              {#each result.breakdown as step}
-                <div class="p-3.5 rounded-xl bg-slate-50 dark:bg-slate-800/40 border border-slate-100 dark:border-slate-700/40">
-                  <div class="font-bold text-slate-800 dark:text-slate-200 mb-1">
-                    {step.title[lang] || step.title.bn}
-                  </div>
-                  <div class="text-slate-600 dark:text-slate-300 leading-relaxed">
-                    {step.detail[lang] || step.detail.bn}
-                  </div>
-                </div>
-              {/each}
-            </div>
-          </div>
 
           <!-- Early Encashment Schedule Table -->
           {#if result.earlyEncashment && result.earlyEncashment.length > 0}
