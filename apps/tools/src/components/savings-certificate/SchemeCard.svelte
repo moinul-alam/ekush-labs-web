@@ -41,9 +41,13 @@
   <!-- Card Header -->
   <div class="p-6 sm:p-7 border-b border-slate-100 dark:border-slate-700/50">
     <div class="flex flex-wrap items-start justify-between gap-3 mb-3">
-      <!-- Title & Term -->
+      <!-- Title & Badges in Single Line, Aligned Top -->
       <div class="flex-1 min-w-[200px]">
         <div class="flex flex-wrap items-center gap-2 mb-2">
+          <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight mr-1">
+            {name}
+          </h3>
+
           <span
             class="px-2.5 py-0.5 rounded-full text-xs font-bold {isEligible
               ? 'bg-blue-500/10 text-blue-600 dark:text-blue-400 border border-blue-500/20'
@@ -77,12 +81,23 @@
           {/if}
         </div>
 
-        <h3 class="text-xl sm:text-2xl font-black text-slate-900 dark:text-white tracking-tight">
-          {name}
-        </h3>
-        <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
-          {shortDesc}
-        </p>
+        <!-- Eligible Buyers Chips -->
+        {#if scheme.eligibility?.buyerTags}
+          <div class="flex flex-wrap items-center gap-1.5 mt-2">
+            <span class="text-xs font-semibold text-slate-600 dark:text-slate-400">
+              {lang === 'bn' ? 'যারা কিনতে পারবেন' : 'Eligible to buy:'}
+            </span>
+            {#each (scheme.eligibility.buyerTags[lang] || scheme.eligibility.buyerTags.bn) as tag}
+              <span class="px-2.5 py-0.5 rounded-md text-xs font-medium bg-slate-100 dark:bg-slate-700/60 text-slate-700 dark:text-slate-300 border border-slate-200/70 dark:border-slate-700">
+                {tag}
+              </span>
+            {/each}
+          </div>
+        {:else}
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1 line-clamp-2">
+            {shortDesc}
+          </p>
+        {/if}
       </div>
 
       <!-- Compare Checkbox -->
@@ -219,8 +234,8 @@
               </h4>
               <p class="text-[11px] text-slate-500 dark:text-slate-400 mb-3">
                 {lang === 'bn'
-                  ? 'পূর্ণ মেয়াদ শেষ হওয়ার আগে ভাঙালে সংশ্লিষ্ট বছরান্তের নির্ধারিত হারে মুনাফা প্রাপ্য হবে এবং অতিরিক্ত তোলা মুনাফা সমন্বয় করা হবে।'
-                  : 'If encashed before full maturity, profit is recalculated using the completed year rate, adjusting any excess periodic profit received.'}
+                  ? 'পূর্ণ মেয়াদ শেষ হওয়ার আগে ভাঙালে সংশ্লিষ্ট বছরান্তের নির্ধারিত হারে মুনাফা ও মূলধন সহ হাতে পাবেন।'
+                  : 'If encashed before maturity, you will receive the principal plus net profit calculated at the completed-year rate.'}
               </p>
 
               <div class="overflow-x-auto rounded-xl border border-slate-200 dark:border-slate-700">
@@ -231,25 +246,25 @@
                       <th class="p-2.5">{lang === 'bn' ? 'মুনাফার হার' : 'Rate (%)'}</th>
                       <th class="p-2.5">{lang === 'bn' ? 'প্রাপ্য গ্রস লাভ' : 'Gross Entitled'}</th>
                       <th class="p-2.5">{lang === 'bn' ? 'কর' : 'Tax'}</th>
-                      <th class="p-2.5 font-black text-right text-emerald-700 dark:text-emerald-400">{lang === 'bn' ? 'ভাঙালে হাতে পাবেন' : 'Net Receivable'}</th>
+                      <th class="p-2.5 font-black text-right text-emerald-700 dark:text-emerald-400">{lang === 'bn' ? 'ভাঙালে হাতে পাবেন' : 'Receivable (Main + Profit)'}</th>
                     </tr>
                   </thead>
-                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800 bg-white/50 dark:bg-slate-900/30">
-                    {#each result.earlyEncashment as enc}
-                      <tr class="hover:bg-slate-50 dark:hover:bg-slate-800/40">
+                  <tbody class="divide-y divide-slate-100 dark:divide-slate-800">
+                    {#each result.earlyEncashment as enc, idx}
+                      <tr class="{idx % 2 === 0 ? 'bg-white dark:bg-slate-900/40' : 'bg-slate-50 dark:bg-slate-800/60'} hover:bg-emerald-50/50 dark:hover:bg-slate-800/90 transition-colors">
                         <td class="p-2.5 font-semibold text-slate-800 dark:text-slate-200">
                           {lang === 'bn' ? `${toBanglaDigits(enc.afterFullYears)} বছর পূর্ণ হলে` : `After ${enc.afterFullYears} Full Year(s)`}
                         </td>
-                        <td class="p-2.5 text-slate-700 dark:text-slate-300 font-mono">
+                        <td class="p-2.5 text-slate-700 dark:text-slate-300">
                           {formatPercent(enc.ratePercent, lang)}
                         </td>
-                        <td class="p-2.5 text-slate-600 dark:text-slate-400 font-mono">
+                        <td class="p-2.5 text-slate-600 dark:text-slate-400">
                           {formatCurrency(enc.grossProfit ?? 0, lang, false)}
                         </td>
-                        <td class="p-2.5 text-rose-600 dark:text-rose-400 font-mono">
+                        <td class="p-2.5 text-rose-600 dark:text-rose-400">
                           -{formatCurrency(enc.taxDeducted ?? 0, lang, false)}
                         </td>
-                        <td class="p-2.5 font-black text-right text-slate-900 dark:text-white font-mono">
+                        <td class="p-2.5 font-black text-right text-emerald-700 dark:text-emerald-400">
                           {formatCurrency(enc.netReceivable ?? 0, lang)}
                         </td>
                       </tr>
