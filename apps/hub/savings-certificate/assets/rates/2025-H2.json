@@ -1,0 +1,96 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "dataVersion": "2025-07-01.1",
+    "lastVerified": "2026-10-19",
+    "sources": [
+      {
+        "title": "Finance Division Notification on Savings Certificate Rates",
+        "url": "https://nationalsavings.gov.bd",
+        "publishedOn": "2025-07-01",
+        "type": "gazette"
+      }
+    ],
+    "extractedBy": "ai",
+    "reviewed": true,
+    "notes": "Historical rates for Jul-Dec 2025 period (15 lakh slab tier)."
+  },
+  "periodId": "2025-H2",
+  "effectiveFrom": "2025-07-01",
+  "effectiveTo": "2025-12-31",
+  "currency": "BDT",
+  "tierThreshold": 1500000,
+  "tierMode": "excess_only",
+  "schemes": {
+    "family": {
+      "rateAtOrBelowThreshold": 11.52,
+      "rateAboveThreshold": 10.50,
+      "payoutTablePerLakh": {
+        "grossPerPayoutAtOrBelow": 960,
+        "grossPerPayoutAbove": 875,
+        "frequency": "monthly",
+        "atMaturityGrossTotalAtOrBelow": 57600,
+        "atMaturityGrossTotalAbove": 52500
+      },
+      "earlyEncashment": [
+        { "afterFullYears": 1, "rateAtOrBelowThreshold": 9.50, "rateAboveThreshold": 9.00 },
+        { "afterFullYears": 2, "rateAtOrBelowThreshold": 10.00, "rateAboveThreshold": 9.30 },
+        { "afterFullYears": 3, "rateAtOrBelowThreshold": 10.50, "rateAboveThreshold": 9.75 },
+        { "afterFullYears": 4, "rateAtOrBelowThreshold": 11.00, "rateAboveThreshold": 10.15 },
+        { "afterFullYears": 5, "rateAtOrBelowThreshold": 11.52, "rateAboveThreshold": 10.50 }
+      ]
+    },
+    "pensioner": {
+      "rateAtOrBelowThreshold": 11.76,
+      "rateAboveThreshold": 10.75,
+      "payoutTablePerLakh": {
+        "grossPerPayoutAtOrBelow": 2940,
+        "grossPerPayoutAbove": 2687.5,
+        "frequency": "quarterly",
+        "atMaturityGrossTotalAtOrBelow": 58800,
+        "atMaturityGrossTotalAbove": 53750
+      },
+      "earlyEncashment": [
+        { "afterFullYears": 1, "rateAtOrBelowThreshold": 9.70, "rateAboveThreshold": 9.00 },
+        { "afterFullYears": 2, "rateAtOrBelowThreshold": 10.15, "rateAboveThreshold": 9.40 },
+        { "afterFullYears": 3, "rateAtOrBelowThreshold": 10.65, "rateAboveThreshold": 9.85 },
+        { "afterFullYears": 4, "rateAtOrBelowThreshold": 11.20, "rateAboveThreshold": 10.30 },
+        { "afterFullYears": 5, "rateAtOrBelowThreshold": 11.76, "rateAboveThreshold": 10.75 }
+      ]
+    },
+    "profit_3month": {
+      "rateAtOrBelowThreshold": 11.04,
+      "rateAboveThreshold": 10.00,
+      "payoutTablePerLakh": {
+        "grossPerPayoutAtOrBelow": 2760,
+        "grossPerPayoutAbove": 2500,
+        "frequency": "quarterly",
+        "atMaturityGrossTotalAtOrBelow": 33120,
+        "atMaturityGrossTotalAbove": 30000
+      },
+      "earlyEncashment": [
+        { "afterFullYears": 1, "rateAtOrBelowThreshold": 10.00, "rateAboveThreshold": 9.00 },
+        { "afterFullYears": 2, "rateAtOrBelowThreshold": 10.50, "rateAboveThreshold": 9.50 },
+        { "afterFullYears": 3, "rateAtOrBelowThreshold": 11.04, "rateAboveThreshold": 10.00 }
+      ]
+    },
+    "bangladesh_5yr": {
+      "rateAtOrBelowThreshold": 11.28,
+      "rateAboveThreshold": 10.30,
+      "payoutTablePerLakh": {
+        "grossPerPayoutAtOrBelow": 0,
+        "grossPerPayoutAbove": 0,
+        "frequency": "at_maturity",
+        "atMaturityGrossTotalAtOrBelow": 56400,
+        "atMaturityGrossTotalAbove": 51500
+      },
+      "earlyEncashment": [
+        { "afterFullYears": 1, "rateAtOrBelowThreshold": 9.35, "rateAboveThreshold": 8.70 },
+        { "afterFullYears": 2, "rateAtOrBelowThreshold": 9.80, "rateAboveThreshold": 9.10 },
+        { "afterFullYears": 3, "rateAtOrBelowThreshold": 10.25, "rateAboveThreshold": 9.50 },
+        { "afterFullYears": 4, "rateAtOrBelowThreshold": 10.75, "rateAboveThreshold": 9.90 },
+        { "afterFullYears": 5, "rateAtOrBelowThreshold": 11.28, "rateAboveThreshold": 10.30 }
+      ]
+    }
+  }
+}

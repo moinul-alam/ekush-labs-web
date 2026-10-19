@@ -1,0 +1,51 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "dataVersion": "2026-07-01.1",
+    "lastVerified": "2026-10-19",
+    "sources": [
+      {
+        "title": "Department of National Savings Official Notifications",
+        "url": "https://nationalsavings.gov.bd",
+        "publishedOn": "2026-07-01",
+        "type": "official-site"
+      }
+    ],
+    "extractedBy": "ai",
+    "reviewed": true,
+    "notes": "Manifest of savings certificate rate periods."
+  },
+  "latestPeriodId": "2026-H2",
+  "periods": [
+    {
+      "id": "2026-H2",
+      "from": "2026-07-01",
+      "to": "2026-12-31",
+      "file": "rates/2026-H2.json",
+      "label": {
+        "bn": "জুলাই ২০২৬ – ডিসেম্বর ২০২৬ (সর্বশেষ)",
+        "en": "July 2026 – December 2026 (Latest)"
+      }
+    },
+    {
+      "id": "2026-H1",
+      "from": "2026-01-01",
+      "to": "2026-06-30",
+      "file": "rates/2026-H1.json",
+      "label": {
+        "bn": "জানুয়ারি ২০২৬ – জুন ২০২৬",
+        "en": "January 2026 – June 2026"
+      }
+    },
+    {
+      "id": "2025-H2",
+      "from": "2025-07-01",
+      "to": "2025-12-31",
+      "file": "rates/2025-H2.json",
+      "label": {
+        "bn": "জুলাই ২০২৫ – ডিসেম্বর ২০২৫",
+        "en": "July 2025 – December 2025"
+      }
+    }
+  ]
+}

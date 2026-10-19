@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "dataVersion": "2026-07-01.1",
+    "lastVerified": "2026-10-19",
+    "sources": [
+      {
+        "title": "National Board of Revenue (NBR) - Income Tax Act 2023",
+        "url": "https://nbr.gov.bd",
+        "publishedOn": "2023-07-01",
+        "type": "gazette"
+      },
+      {
+        "title": "Internal Resources Division (IRD) Statutory Regulatory Orders",
+        "url": "https://ird.gov.bd",
+        "publishedOn": "2023-07-01",
+        "type": "circular"
+      }
+    ],
+    "extractedBy": "ai",
+    "reviewed": true,
+    "notes": "Verified: 5% TDS up to 5 lakh total investment, 10% on whole profit if exceeding 5 lakh. Pensioner certificate has 0% tax up to 5 lakh."
+  },
+  "rules": [
+    {
+      "effectiveFrom": "2023-07-01",
+      "effectiveTo": null,
+      "sourceTax": [
+        {
+          "upToInvestment": 500000,
+          "rate": 5.0,
+          "appliesTo": "whole_profit"
+        },
+        {
+          "above": 500000,
+          "rate": 10.0,
+          "appliesTo": "whole_profit"
+        }
+      ],
+      "pensionerExemptUpTo": 500000,
+      "measuredOn": "holder_total",
+      "tinRelatedAdjustments": "e-TIN is required for investments above Tk 2,00,000; proof of tax return submission (PSR) is mandatory above Tk 5,00,000.",
+      "notes": {
+        "bn": "মোট বিনিয়োগ ৫ লক্ষ টাকা পর্যন্ত মুনাফার ওপর ৫% উৎসে কর (পেনশনার সঞ্চয়পত্রে ০%); ৫ লক্ষ টাকার বেশি হলে সম্পূর্ণ মুনাফার ওপর ১০% হারে উৎসে কর কর্তন করা হয়।",
+        "en": "5% source tax on profit for cumulative holdings up to Tk 5 lakh (0% for Pensioner certificate); 10% on whole profit for holdings exceeding Tk 5 lakh."
+      }
+    }
+  ]
+}

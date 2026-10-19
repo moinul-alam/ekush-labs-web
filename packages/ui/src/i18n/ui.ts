@@ -485,6 +485,14 @@ export const ui = {
     'tools.prizebond.tab.file': 'এক্সেল বা সিএসভি আপলোড',
     'tools.prizebond.privacy.badge': '১০০% ব্রাউজার ভিত্তিক ও নিরাপদ',
     'tools.prizebond.privacy.note': 'আপনার কোনো বন্ড নম্বর বা ফাইল কোনো সার্ভারে আপলোড করা হয় না। সবকিছু সম্পূর্ণ আপনার ডিভাইসে প্রসেস হয়।',
+
+    // Savings Certificate Calculator (bn)
+    'tools.savings_cert.title': 'সঞ্চয়পত্র মুনাফা ক্যালকুলেটর',
+    'tools.savings_cert.desc': 'জাতীয় সঞ্চয় অধিদপ্তরের সকল সঞ্চয়পত্রের মুনাফা, উৎসে কর ও নগদ প্রাপ্তির নির্ভুল হিসাব।',
+    'tools.savings_cert.subtitle': 'বাংলাদেশ সঞ্চয়পত্র মুনাফা ও উৎসে কর ক্যালকুলেটর',
+    'tools.savings_cert.hero_badge': 'জাতীয় সঞ্চয় অধিদপ্তর (DNS)',
+    'tools.savings_cert.privacy_badge': '১০০% ব্রাউজার ভিত্তিক ও নিরাপদ',
+    'tools.savings_cert.privacy_note': 'আপনার কোনো ব্যক্তিগত বা বিনিয়োগের তথ্য সার্ভারে পাঠানো হয় না। সম্পূর্ণ হিসাব আপনার ডিভাইসেই সম্পন্ন হয়।',
   },
 
   // ------------------------------------------------------------
@@ -957,5 +965,13 @@ export const ui = {
     'tools.prizebond.tab.file': 'Excel / CSV Upload',
     'tools.prizebond.privacy.badge': '100% Client-Side & Private',
     'tools.prizebond.privacy.note': 'Your bond numbers and files are never sent to any server. Everything runs entirely in your browser.',
+
+    // Savings Certificate Calculator (en)
+    'tools.savings_cert.title': 'Savings Certificate Calculator',
+    'tools.savings_cert.desc': 'Calculate profit, TDS tax, and net returns for Bangladesh National Savings Certificates instantly.',
+    'tools.savings_cert.subtitle': 'Bangladesh Sanchayapatra Profit & TDS Calculator',
+    'tools.savings_cert.hero_badge': 'Department of National Savings (DNS)',
+    'tools.savings_cert.privacy_badge': '100% Client-Side & Private',
+    'tools.savings_cert.privacy_note': 'None of your investment numbers or dates are sent to any server. All calculations run strictly inside your web browser.',
   },
 } as const;

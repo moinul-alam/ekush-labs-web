@@ -36,6 +36,15 @@ const t = useTranslations(lang);
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
       
+      <!-- Savings Certificate Calculator -->
+      <a href={lang === 'bn' ? "/savings-certificate-calculator" : "/en/savings-certificate-calculator"} class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 reveal">
+        <div class="absolute top-6 right-6 px-3 py-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full text-xs font-bold text-white tracking-wider uppercase">{t('tools.badge.new')}</div>
+        <div class="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 dark:from-emerald-500/20 dark:to-teal-500/20 flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform duration-400 border border-emerald-500/20 dark:border-emerald-500/30">📜</div>
+        <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">{t('tools.savings_cert.title')}</h3>
+        <p class="text-slate-600 dark:text-silver mb-8 flex-grow">{t('tools.savings_cert.desc')}</p>
+        <div class="font-bold text-emerald-600 dark:text-emerald-400 group-hover:text-emerald-500 transition-colors flex items-center gap-2">{t('tools.tools.open')} <span class="group-hover:translate-x-1 transition-transform">&rarr;</span></div>
+      </a>
+
       <!-- Prize Bond Checker -->
       <a href={lang === 'bn' ? "/prize-bond-result-checker" : "/en/prize-bond-result-checker"} class="group relative flex flex-col p-8 rounded-3xl bg-white dark:bg-[var(--glass-bg)] border border-slate-200 dark:border-[var(--glass-border)] shadow-sm dark:shadow-none backdrop-blur-md hover:-translate-y-2 hover:bg-slate-50 dark:hover:bg-[var(--glass-highlight)] transition-all duration-400 reveal">
         <div class="absolute top-6 right-6 px-3 py-1 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full text-xs font-bold text-white tracking-wider uppercase">{t('tools.badge.popular')}</div>

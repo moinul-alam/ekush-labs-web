@@ -1,0 +1,174 @@
+{
+  "meta": {
+    "schemaVersion": "1.0.0",
+    "dataVersion": "2026-07-01.1",
+    "lastVerified": "2026-10-19",
+    "sources": [
+      {
+        "title": "Department of National Savings Official Schemes & Rules",
+        "url": "https://nationalsavings.gov.bd",
+        "publishedOn": "2026-07-01",
+        "type": "official-site"
+      },
+      {
+        "title": "Internal Resources Division (IRD), Ministry of Finance, Govt of Bangladesh",
+        "url": "https://ird.gov.bd",
+        "publishedOn": "2026-07-01",
+        "type": "official-site"
+      }
+    ],
+    "extractedBy": "ai",
+    "reviewed": true,
+    "notes": "Verified limits, payout frequencies, and terms against nationalsavings.gov.bd."
+  },
+  "schemes": [
+    {
+      "id": "family",
+      "name": {
+        "bn": "পরিবার সঞ্চয়পত্র",
+        "en": "Family Savings Certificate"
+      },
+      "shortDescription": {
+        "bn": "১৮+ নারী, প্রতিবন্ধী ও ৬৫+ পুরুষদের জন্য ৫ বছর মেয়াদি মাসিক মুনাফাভিত্তিক সঞ্চয়পত্র।",
+        "en": "5-year monthly profit savings certificate for women aged 18+, disabled persons, and senior men (65+)."
+      },
+      "termYears": 5,
+      "payoutType": "monthly",
+      "payoutFrequency": "monthly",
+      "eligibility": {
+        "pensionerOnly": false,
+        "notes": {
+          "bn": "১৮ বছর বা তদূর্ধ্ব বাংলাদেশি নারী, যেকোনো শারীরিক প্রতিবন্ধী এবং ৬৫ বছর বা তদূর্ধ্ব বয়স্ক পুরুষ একক নামে কিনতে পারেন। যৌথ নামে প্রযোজ্য নয়।",
+          "en": "Bangladeshi women aged 18+, any person with physical disability, and senior men aged 65+. Individual name only."
+        }
+      },
+      "purchaseLimits": {
+        "individual": {
+          "max": 4500000,
+          "notes": "একক নামে সর্বোচ্চ ৪৫,০০,০০০ (পঁয়তাল্লিশ লক্ষ) টাকা"
+        },
+        "joint": {
+          "max": null,
+          "notes": "যৌথ নামে ক্রয় প্রযোজ্য নয়"
+        },
+        "minPurchase": 10000,
+        "denominations": [10000, 20000, 50000, 100000, 200000, 500000, 1000000]
+      },
+      "rateTierThreshold": 750000,
+      "encashment": {
+        "allowedBeforeMaturity": true
+      }
+    },
+    {
+      "id": "pensioner",
+      "name": {
+        "bn": "পেনশনার সঞ্চয়পত্র",
+        "en": "Pensioner Savings Certificate"
+      },
+      "shortDescription": {
+        "bn": "অবসরপ্রাপ্ত কর্মচারীদের জন্য ৫ বছর মেয়াদি ত্রৈমাসিক মুনাফাভিত্তিক বিশেষ সঞ্চয়পত্র।",
+        "en": "5-year quarterly profit savings certificate exclusively for retired public-sector personnel."
+      },
+      "termYears": 5,
+      "payoutType": "quarterly",
+      "payoutFrequency": "quarterly",
+      "eligibility": {
+        "pensionerOnly": true,
+        "notes": {
+          "bn": "অবসরপ্রাপ্ত সরকারি, আধা-সরকারি, স্বায়ত্তশাসিত প্রতিষ্ঠানের কর্মকর্তা-কর্মচারী ও মরহুম কর্মচারীর স্ত্রী/স্বামী/সন্তান।",
+          "en": "Retired government, semi-govt, autonomous employees and eligible spouses/survivors."
+        }
+      },
+      "purchaseLimits": {
+        "individual": {
+          "max": 5000000,
+          "notes": "আনুতোষিক (গ্র্যাচুইটি) ও ভবিষ্য তহবিলের সমপরিমাণ, সর্বোচ্চ ৫০,০০,০০০ (পঞ্চাশ লক্ষ) টাকা"
+        },
+        "joint": {
+          "max": null,
+          "notes": "যৌথ নামে ক্রয় প্রযোজ্য নয়"
+        },
+        "minPurchase": 50000,
+        "denominations": [50000, 100000, 200000, 500000, 1000000]
+      },
+      "rateTierThreshold": 750000,
+      "encashment": {
+        "allowedBeforeMaturity": true
+      }
+    },
+    {
+      "id": "profit_3month",
+      "name": {
+        "bn": "৩ মাস অন্তর মুনাফাভিত্তিক সঞ্চয়পত্র",
+        "en": "3-Month Profit-Bearing Savings Certificate"
+      },
+      "shortDescription": {
+        "bn": "সকল নাগরিকের জন্য ৩ বছর মেয়াদি প্রতি তিন মাস পর পর নিয়মিত মুনাফা পাওয়ার সঞ্চয়পত্র।",
+        "en": "3-year quarterly profit savings certificate open to all adult Bangladeshi citizens."
+      },
+      "termYears": 3,
+      "payoutType": "quarterly",
+      "payoutFrequency": "quarterly",
+      "eligibility": {
+        "pensionerOnly": false,
+        "notes": {
+          "bn": "সকল প্রাপ্তবয়স্ক বাংলাদেশি নাগরিক। একক ও যৌথ উভয় নামেই ক্রয় করা যায়।",
+          "en": "All adult Bangladeshi citizens. Available in individual and joint names."
+        }
+      },
+      "purchaseLimits": {
+        "individual": {
+          "max": 3000000,
+          "notes": "একক নামে সর্বোচ্চ ৩০,০০,০০০ (ত্রিশ লক্ষ) টাকা"
+        },
+        "joint": {
+          "max": 6000000,
+          "notes": "যৌথ নামে সর্বোচ্চ ৬০,০০,০০০ (ষাট লক্ষ) টাকা"
+        },
+        "minPurchase": 100000,
+        "denominations": [100000, 200000, 500000, 1000000]
+      },
+      "rateTierThreshold": 750000,
+      "encashment": {
+        "allowedBeforeMaturity": true
+      }
+    },
+    {
+      "id": "bangladesh_5yr",
+      "name": {
+        "bn": "৫ বছর মেয়াদী বাংলাদেশ সঞ্চয়পত্র",
+        "en": "5-Year Bangladesh Savings Certificate"
+      },
+      "shortDescription": {
+        "bn": "সকল নাগরিক ও প্রতিষ্ঠানের জন্য মেয়াদপূর্তিতে এককালীন সর্বোচ্চ রিটার্ন পাওয়ার সঞ্চয়পত্র।",
+        "en": "5-year cumulative certificate with high lump-sum return at maturity, open to individuals and institutions."
+      },
+      "termYears": 5,
+      "payoutType": "at_maturity",
+      "payoutFrequency": null,
+      "eligibility": {
+        "pensionerOnly": false,
+        "notes": {
+          "bn": "সকল বাংলাদেশি নাগরিক ও সরকার অনুমোদিত অনাদায়ী প্রতিষ্ঠান। একক ও যৌথ উভয় নামেই ক্রয় করা যায়।",
+          "en": "All adult Bangladeshi citizens and recognized institutions. Available in individual and joint names."
+        }
+      },
+      "purchaseLimits": {
+        "individual": {
+          "max": 3000000,
+          "notes": "একক নামে সর্বোচ্চ ৩০,০০,০০০ (ত্রিশ লক্ষ) টাকা"
+        },
+        "joint": {
+          "max": 6000000,
+          "notes": "যৌথ নামে সর্বোচ্চ ৬০,০০,০০০ (ষাট লক্ষ) টাকা"
+        },
+        "minPurchase": 10,
+        "denominations": [10, 50, 100, 500, 1000, 5000, 10000, 25000, 50000, 100000, 500000, 1000000]
+      },
+      "rateTierThreshold": 750000,
+      "encashment": {
+        "allowedBeforeMaturity": true
+      }
+    }
+  ]
+}

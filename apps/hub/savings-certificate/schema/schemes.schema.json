@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SavingsCertificateSchemes",
+  "type": "object",
+  "required": ["meta", "schemes"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["schemaVersion", "dataVersion", "lastVerified", "sources"],
+      "properties": {
+        "schemaVersion": { "type": "string" },
+        "dataVersion": { "type": "string" },
+        "lastVerified": { "type": "string" },
+        "sources": { "type": "array", "minItems": 1 },
+        "extractedBy": { "type": "string" },
+        "reviewed": { "type": "boolean" },
+        "notes": { "type": "string" }
+      }
+    },
+    "schemes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "termYears", "payoutType", "eligibility", "purchaseLimits"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": {
+            "type": "object",
+            "required": ["bn", "en"],
+            "properties": {
+              "bn": { "type": "string" },
+              "en": { "type": "string" }
+            }
+          },
+          "shortDescription": {
+            "type": "object",
+            "properties": {
+              "bn": { "type": "string" },
+              "en": { "type": "string" }
+            }
+          },
+          "termYears": { "type": "number" },
+          "payoutType": { "enum": ["at_maturity", "monthly", "quarterly"] },
+          "payoutFrequency": { "type": ["string", "null"] },
+          "eligibility": {
+            "type": "object",
+            "required": ["pensionerOnly"],
+            "properties": {
+              "pensionerOnly": { "type": "boolean" },
+              "notes": {
+                "type": "object",
+                "properties": {
+                  "bn": { "type": "string" },
+                  "en": { "type": "string" }
+                }
+              }
+            }
+          },
+          "purchaseLimits": {
+            "type": "object",
+            "required": ["individual", "joint"],
+            "properties": {
+              "individual": {
+                "type": "object",
+                "properties": {
+                  "max": { "type": ["number", "null"] },
+                  "notes": { "type": "string" }
+                }
+              },
+              "joint": {
+                "type": "object",
+                "properties": {
+                  "max": { "type": ["number", "null"] },
+                  "notes": { "type": "string" }
+                }
+              },
+              "minPurchase": { "type": ["number", "null"] },
+              "denominations": {
+                "type": "array",
+                "items": { "type": "number" }
+              }
+            }
+          },
+          "rateTierThreshold": { "type": ["number", "null"] },
+          "encashment": {
+            "type": "object",
+            "properties": {
+              "allowedBeforeMaturity": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    }
+  }
+}

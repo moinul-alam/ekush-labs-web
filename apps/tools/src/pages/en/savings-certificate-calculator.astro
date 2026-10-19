@@ -1,0 +1,104 @@
+---
+import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
+import Calculator from '../../components/savings-certificate/Calculator.svelte';
+import PromoBanner from '../../components/PromoBanner.astro';
+import { useTranslations } from '@ekush-labs/ui/src/i18n/utils';
+
+const t = useTranslations('en');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How is the profit calculated on Bangladesh savings certificates?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Certificates retain the interest rate in force on their purchase date for their entire duration, as per Department of National Savings circulars."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does the lower rate above Tk 7.5 Lakh apply to the entire investment?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No, it applies strictly to the excess portion above Tk 7.5 Lakh. The first Tk 7.5 Lakh receives the highest headline rate."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is the tax deducted at source (TDS) on certificate interest?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "A 5% tax is deducted on cumulative investments up to Tk 5 Lakh, and 10% on whole profit if exceeding Tk 5 Lakh. Pensioner certificates up to Tk 5 Lakh are tax exempt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can certificates be encashed before maturity?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, after completing 1 full year, certificates can be encashed early with profit adjusted based on the official reduced schedule."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${t('tools.savings_cert.title')} | ${t('app.ekushlabs')}`}
+  description={t('tools.savings_cert.desc')}
+  appName="EkushTools"
+  pageTitle={t('tools.savings_cert.title')}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="pt-24 pb-16 px-[5vw] min-h-screen relative">
+    <!-- Background Decor -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-blue-500/10 to-transparent blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-t from-emerald-500/10 to-transparent blur-3xl"></div>
+    </div>
+
+    <!-- SEO & Intro Heading Shell -->
+    <div class="max-w-4xl mx-auto text-center mb-10">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-blue-500/10 text-primary-start dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-500/20">
+        🇧🇩 {t('tools.savings_cert.hero_badge')}
+      </span>
+      <h1 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight mb-3">
+        {t('tools.savings_cert.title')}
+      </h1>
+      <p class="text-base md:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto mb-6">
+        {t('tools.savings_cert.desc')}
+      </p>
+
+      <!-- Trust Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200">
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">⚡</span>
+          <span>Instant Ranked Schemes</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">🔒</span>
+          <span>100% Client-Side & Private</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">⚖️</span>
+          <span>Accurate Tier & TDS Logic</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">⏱️</span>
+          <span>Early Encashment Schedule</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Interactive Island -->
+    <Calculator client:load lang="en" />
+
+    <div class="max-w-4xl mx-auto mt-12">
+      <PromoBanner />
+    </div>
+  </div>
+</BaseLayout>
