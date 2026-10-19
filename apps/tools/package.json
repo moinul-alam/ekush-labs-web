@@ -8,7 +8,8 @@
     "build": "astro build",
     "preview": "npm run build && wrangler dev",
     "deploy": "npm run build && wrangler deploy",
-    "cf-typegen": "wrangler types"
+    "cf-typegen": "wrangler types",
+    "test": "vitest run"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^11.2.0",
@@ -23,6 +24,7 @@
     "xlsx": "^0.18.5"
   },
   "devDependencies": {
+    "vitest": "^5.0.5",
     "wrangler": "^4.98.0"
   }
 }

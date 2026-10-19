@@ -54,13 +54,44 @@ const faqSchema = {
     </div>
 
     <!-- SEO & Intro Heading Shell -->
-    <div class="max-w-4xl mx-auto text-center mb-8">
-      <span class="inline-flex items-center gap-1.5 px-4 py-1.5 rounded-full bg-blue-500/10 text-primary-start dark:text-blue-400 text-xs md:text-sm font-bold uppercase tracking-wider mb-3 border border-blue-500/20 shadow-sm">
-        {t('tools.prizebond.subtitle')}
-      </span>
-      <h1 class="text-3xl md:text-5xl font-black text-slate-900 dark:text-white tracking-tight">
-        {t('tools.prizebond.title')}
+    <div class="max-w-4xl mx-auto text-center mb-10">
+      <!-- Authentic Live Badge -->
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-semibold mb-4 backdrop-blur-sm shadow-xs transition-transform hover:scale-105">
+        <span class="relative flex h-2 w-2">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+        </span>
+        <span>বাংলাদেশ প্রাইজ বন্ড (১০০ টাকা মূল্যমান)</span>
+      </div>
+
+      <!-- Main Focus Hero Heading (H1 for SEO & Visual Impact) -->
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.25] md:leading-[1.2] mb-4 text-slate-900 dark:text-white">
+        <span class="bg-gradient-to-r from-emerald-600 via-teal-600 to-primary-start dark:from-emerald-400 dark:via-teal-300 dark:to-blue-400 bg-clip-text text-transparent">
+          {t('tools.prizebond.subtitle')}
+        </span>
       </h1>
+
+      <!-- Supporting Tagline -->
+
+      <!-- Trust & Key Feature Badges -->
+      <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 text-xs sm:text-sm font-medium text-slate-700 dark:text-slate-200">
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">⚡</span>
+          <span>এক ক্লিকে নির্ভুল যাচাই</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">🔒</span>
+          <span>১০০% নিরাপদ ও ক্লায়েন্ট-সাইড</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">📄</span>
+          <span>ফ্রি PDF রিপোর্ট</span>
+        </div>
+        <div class="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/80 dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/60 shadow-xs backdrop-blur-sm">
+          <span class="text-base">📅</span>
+          <span>বিগত ২ বছরের সকল ড্র</span>
+        </div>
+      </div>
     </div>
 
     <!-- Interactive Island -->
