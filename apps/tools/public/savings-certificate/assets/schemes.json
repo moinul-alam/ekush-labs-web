@@ -37,6 +37,10 @@
       "payoutFrequency": "monthly",
       "eligibility": {
         "pensionerOnly": false,
+        "buyerTags": {
+          "bn": ["১৮ বছরের উর্দ্ধে নারী", "প্রতিবন্ধী", "৬৫+ পুরুষ"],
+          "en": ["Women 18+", "Persons with Disabilities", "Men 65+"]
+        },
         "notes": {
           "bn": "১৮ বছর বা তদূর্ধ্ব বাংলাদেশি নারী, যেকোনো শারীরিক প্রতিবন্ধী এবং ৬৫ বছর বা তদূর্ধ্ব বয়স্ক পুরুষ একক নামে কিনতে পারেন। যৌথ নামে প্রযোজ্য নয়।",
           "en": "Bangladeshi women aged 18+, any person with physical disability, and senior men aged 65+. Individual name only."
@@ -74,6 +78,10 @@
       "payoutFrequency": "quarterly",
       "eligibility": {
         "pensionerOnly": true,
+        "buyerTags": {
+          "bn": ["অবসরপ্রাপ্ত সরকারি কর্মকর্তা-কর্মচারী", "মরহুম কর্মচারীর পরিবার"],
+          "en": ["Retired Public-Sector Personnel", "Eligible Family / Survivors"]
+        },
         "notes": {
           "bn": "অবসরপ্রাপ্ত সরকারি, আধা-সরকারি, স্বায়ত্তশাসিত প্রতিষ্ঠানের কর্মকর্তা-কর্মচারী ও মরহুম কর্মচারীর স্ত্রী/স্বামী/সন্তান।",
           "en": "Retired government, semi-govt, autonomous employees and eligible spouses/survivors."
@@ -111,6 +119,10 @@
       "payoutFrequency": "quarterly",
       "eligibility": {
         "pensionerOnly": false,
+        "buyerTags": {
+          "bn": ["সকল প্রাপ্তবয়স্ক নাগরিক", "একক ও যৌথ নামে"],
+          "en": ["All Adult Citizens", "Individual & Joint"]
+        },
         "notes": {
           "bn": "সকল প্রাপ্তবয়স্ক বাংলাদেশি নাগরিক। একক ও যৌথ উভয় নামেই ক্রয় করা যায়।",
           "en": "All adult Bangladeshi citizens. Available in individual and joint names."
@@ -148,6 +160,10 @@
       "payoutFrequency": null,
       "eligibility": {
         "pensionerOnly": false,
+        "buyerTags": {
+          "bn": ["সকল প্রাপ্তবয়স্ক নাগরিক", "স্বীকৃত প্রতিষ্ঠান", "একক ও যৌথ নামে"],
+          "en": ["All Adult Citizens", "Recognized Institutions", "Individual & Joint"]
+        },
         "notes": {
           "bn": "সকল বাংলাদেশি নাগরিক ও সরকার অনুমোদিত অনাদায়ী প্রতিষ্ঠান। একক ও যৌথ উভয় নামেই ক্রয় করা যায়।",
           "en": "All adult Bangladeshi citizens and recognized institutions. Available in individual and joint names."

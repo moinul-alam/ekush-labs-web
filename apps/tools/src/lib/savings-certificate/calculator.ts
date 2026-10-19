@@ -222,16 +222,8 @@ export function calculateSchemeResult(
       const entitledTax = Math.round((entitledGrossProfit * taxRatePercent) / 100);
       const entitledNetProfit = entitledGrossProfit - entitledTax;
 
-      let netReceivable = amount + entitledNetProfit;
-
-      // If periodic profit was already withdrawn by holder during those years:
-      if (periodicPayout) {
-        const receivedGross = Math.round(tierCalc.annualProfit * y);
-        const receivedTax = Math.round((receivedGross * taxRatePercent) / 100);
-        const receivedNet = receivedGross - receivedTax;
-        const excessNetTaken = receivedNet - entitledNetProfit;
-        netReceivable = Math.max(0, amount - excessNetTaken);
-      }
+      // Net receivable is principal (main) + entitled net profit
+      const netReceivable = amount + entitledNetProfit;
 
       earlyEncashment.push({
         afterFullYears: y,
