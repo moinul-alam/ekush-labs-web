@@ -1,81 +1,82 @@
 ---
-import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
-import Calculator from '../components/savings-certificate/Calculator.svelte';
-import PromoBanner from '../components/PromoBanner.astro';
-import { useTranslations } from '@ekush-labs/ui/src/i18n/utils';
+import BaseLayout from "@ekush-labs/ui/src/layouts/BaseLayout.astro";
+import Calculator from "../components/savings-certificate/Calculator.svelte";
+import PromoBanner from "../components/PromoBanner.astro";
+import { useTranslations } from "@ekush-labs/ui/src/i18n/utils";
 
-const t = useTranslations('bn');
+const t = useTranslations("bn");
 
 const faqSchema = {
   "@context": "https://schema.org",
   "@type": "FAQPage",
-  "mainEntity": [
+  mainEntity: [
     {
       "@type": "Question",
-      "name": "সঞ্চয়পত্রের মুনাফার হার কীভাবে হিসাব করা হয়?",
-      "acceptedAnswer": {
+      name: "সঞ্চয়পত্রের মুনাফার হার কীভাবে হিসাব করা হয়?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "জাতীয় সঞ্চয় অধিদপ্তরের নিয়ম অনুযায়ী প্রতিটি সঞ্চয়পত্র যে তারিখে ক্রয় করা হয়, সেই তারিখে কার্যকর সরকারি প্রজ্ঞাপনের মুনাফার হারই পূর্ণ মেয়াদের জন্য অপরিবর্তিত থাকে।"
-      }
+        text: "জাতীয় সঞ্চয় অধিদপ্তরের নিয়ম অনুযায়ী প্রতিটি সঞ্চয়পত্র যে তারিখে ক্রয় করা হয়, সেই তারিখে কার্যকর সরকারি প্রজ্ঞাপনের মুনাফার হারই পূর্ণ মেয়াদের জন্য অপরিবর্তিত থাকে।",
+      },
     },
     {
       "@type": "Question",
-      "name": "৭.৫০ লক্ষ টাকার বেশি বিনিয়োগে মুনাফার হার কীভাবে প্রযোজ্য হয়?",
-      "acceptedAnswer": {
+      name: "৭.৫০ লক্ষ টাকার বেশি বিনিয়োগে মুনাফার হার কীভাবে প্রযোজ্য হয়?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "সঞ্চয়পত্রের স্ল্যাব প্রগতিশীল (Excess-only)। প্রথম ৭.৫০ লক্ষ টাকা পর্যন্ত অংশের জন্য সর্বোচ্চ হার প্রযোজ্য হয় এবং ৭.৫০ লক্ষ টাকার অতিরিক্ত অংশের জন্যই কেবল পরবর্তী স্তরের নির্ধারিত মুনাফার হার কার্যকর হয়।"
-      }
+        text: "সঞ্চয়পত্রের স্ল্যাব প্রগতিশীল (Excess-only)। প্রথম ৭.৫০ লক্ষ টাকা পর্যন্ত অংশের জন্য সর্বোচ্চ হার প্রযোজ্য হয় এবং ৭.৫০ লক্ষ টাকার অতিরিক্ত অংশের জন্যই কেবল পরবর্তী স্তরের নির্ধারিত মুনাফার হার কার্যকর হয়।",
+      },
     },
     {
       "@type": "Question",
-      "name": "সঞ্চয়পত্রের মুনাফার ওপর উৎসে কর কত টাকা কাটা হয়?",
-      "acceptedAnswer": {
+      name: "সঞ্চয়পত্রের মুনাফার ওপর উৎসে কর কত টাকা কাটা হয়?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "সর্বমোট বিনিয়োগ ৫ লক্ষ টাকা পর্যন্ত থাকলে মুনাফার ওপর ৫% উৎসে কর কর্তন করা হয়। তবে মোট বিনিয়োগ ৫ লক্ষ টাকার বেশি হলে সম্পূর্ণ মুনাফার ওপর ১০% হারে উৎসে কর কাটা হয়। পেনশনার সঞ্চয়পত্রে ৫ লক্ষ টাকা পর্যন্ত করমুক্ত।"
-      }
+        text: "সর্বমোট বিনিয়োগ ৫ লক্ষ টাকা পর্যন্ত থাকলে মুনাফার ওপর ৫% উৎসে কর কর্তন করা হয়। তবে মোট বিনিয়োগ ৫ লক্ষ টাকার বেশি হলে সম্পূর্ণ মুনাফার ওপর ১০% হারে উৎসে কর কাটা হয়। পেনশনার সঞ্চয়পত্রে ৫ লক্ষ টাকা পর্যন্ত করমুক্ত।",
+      },
     },
     {
       "@type": "Question",
-      "name": "মেয়াদ পূর্ণ হওয়ার আগেই কি সঞ্চয়পত্র ভাঙানো যায়?",
-      "acceptedAnswer": {
+      name: "মেয়াদ পূর্ণ হওয়ার আগেই কি সঞ্চয়পত্র ভাঙানো যায়?",
+      acceptedAnswer: {
         "@type": "Answer",
-        "text": "হ্যাঁ, ন্যূনতম ১ বছর পূর্ণ হওয়ার পর মেয়াদপূর্তির পূর্বে যেকোনো সময় ভাঙানো যায়। তবে বছরান্তের জন্য নির্ধারিত হ্রাসকৃত হারে মুনাফা প্রাপ্য হবে এবং পূর্বে উত্তোলিত অতিরিক্ত মুনাফা সমন্বয় করা হবে।"
-      }
-    }
-  ]
+        text: "হ্যাঁ, ন্যূনতম ১ বছর পূর্ণ হওয়ার পর মেয়াদপূর্তির পূর্বে যেকোনো সময় ভাঙানো যায়। তবে বছরান্তের জন্য নির্ধারিত হ্রাসকৃত হারে মুনাফা প্রাপ্য হবে এবং পূর্বে উত্তোলিত অতিরিক্ত মুনাফা সমন্বয় করা হবে।",
+      },
+    },
+  ],
 };
 ---
 
 <BaseLayout
-  title={`${t('tools.savings_cert.title')} | ${t('app.ekushlabs')}`}
-  description={t('tools.savings_cert.desc')}
+  title={`${t("tools.savings_cert.title")} | ${t("app.ekushlabs")}`}
+  description={t("tools.savings_cert.desc")}
   appName="EkushTools"
-  pageTitle={t('tools.savings_cert.title')}
+  pageTitle={t("tools.savings_cert.title")}
 >
   <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
 
   <div class="pt-24 pb-16 px-[5vw] min-h-screen relative">
     <!-- Background Ambient Decor -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
-      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-blue-500/10 to-transparent blur-3xl"></div>
-      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-t from-emerald-500/10 to-transparent blur-3xl"></div>
+      <div
+        class="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-blue-500/10 to-transparent blur-3xl"
+      >
+      </div>
+      <div
+        class="absolute bottom-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-t from-emerald-500/10 to-transparent blur-3xl"
+      >
+      </div>
     </div>
 
     <!-- SEO & Intro Heading Shell -->
     <div class="max-w-4xl mx-auto text-center mb-10">
-      <!-- Live Directorate Badge -->
-      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/10 dark:bg-emerald-400/10 border border-emerald-500/20 text-emerald-700 dark:text-emerald-300 text-xs sm:text-sm font-semibold mb-4 backdrop-blur-sm shadow-xs transition-transform hover:scale-105">
-        <span class="relative flex h-2 w-2">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-        </span>
-        <span>জাতীয় সঞ্চয় অধিদপ্তর (DNS) · বাংলাদেশ সরকার</span>
-      </div>
-
       <!-- Main Focus Hero Heading -->
-      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.25] md:leading-[1.2] mb-4 text-slate-900 dark:text-white">
-        <span class="bg-gradient-to-r from-emerald-600 via-teal-600 to-primary-start dark:from-emerald-400 dark:via-teal-300 dark:to-blue-400 bg-clip-text text-transparent">
-          {t('tools.savings_cert.subtitle')}
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black tracking-tight leading-[1.25] md:leading-[1.2] mb-4 text-slate-900 dark:text-white"
+      >
+        <span
+          class="bg-gradient-to-r from-emerald-600 via-teal-600 to-primary-start dark:from-emerald-400 dark:via-teal-300 dark:to-blue-400 bg-clip-text text-transparent"
+        >
+          {t("tools.savings_cert.subtitle")}
         </span>
       </h1>
     </div>
