@@ -1,0 +1,83 @@
+---
+import BaseLayout from '@ekush-labs/ui/src/layouts/BaseLayout.astro';
+import StudyApp from '../../components/ppr/StudyApp.svelte';
+import PromoBanner from '../../components/PromoBanner.astro';
+import { useTranslations } from '@ekush-labs/ui/src/i18n/utils';
+
+const t = useTranslations('en');
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I find a rule in the Public Procurement Rules 2025?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Type a rule number (e.g. 42), a subject (e.g. quotation) or a familiar acronym (e.g. OTM). Results are grouped by chapter and each row shows its gazette page."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I see which rules a rule refers to?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Every 'Rule', 'Schedule' and 'Chapter' named in the text is a clickable link, and the 'Refers to' and 'Cited by' panels show the relationship in both directions."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I open the original gazette page a rule sits on?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each rule carries its gazette page number, and clicking it opens the original PDF (via pdf.js) at exactly that page. The page numbers are verified against the printed footer of every gazette page, not estimated."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is this a replacement for the official gazette?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. This is an unofficial reading aid for the original gazette. Always verify against the Public Procurement Rules 2025 as published in the Bangladesh Gazette."
+      }
+    }
+  ]
+};
+---
+
+<BaseLayout
+  title={`${t('tools.ppr.title')} | ${t('app.ekushlabs')}`}
+  description={t('tools.ppr.desc')}
+  appName="EkushTools"
+  pageTitle={t('tools.ppr.title')}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+
+  <div class="pt-24 pb-16 px-[5vw] min-h-screen relative">
+    <!-- Background Decor -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none -z-10">
+      <div class="absolute top-0 right-1/4 w-[500px] h-[500px] rounded-full bg-gradient-to-b from-emerald-500/10 to-transparent blur-3xl"></div>
+      <div class="absolute bottom-0 left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-to-t from-indigo-500/10 to-transparent blur-3xl"></div>
+    </div>
+
+    <!-- SEO & Intro Heading Shell -->
+    <div class="max-w-4xl mx-auto text-center mb-10">
+      <span class="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-400 text-xs font-bold uppercase tracking-wider mb-4 border border-emerald-500/20">
+        🇧🇩 {t('tools.ppr.badge')}
+      </span>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-black tracking-tight leading-[1.25] md:leading-[1.2] mb-4 text-slate-900 dark:text-white">
+        <span class="bg-gradient-to-r from-emerald-600 via-teal-600 to-primary-start dark:from-emerald-400 dark:via-teal-300 dark:to-blue-400 bg-clip-text text-transparent">
+          {t('tools.ppr.subtitle')}
+        </span>
+      </h1>
+    </div>
+
+    <!-- Interactive Island -->
+    <StudyApp client:load lang="en" />
+
+    <div class="max-w-4xl mx-auto mt-12">
+      <PromoBanner />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,585 @@
+{
+  "schemaVersion": 1,
+  "edition": "ppr2025",
+  "title": "সরকারি ক্রয় বিধিমালা ২০২৫",
+  "chapters": [
+    {
+      "number": 1,
+      "ordinal": "প্রথম",
+      "page": 9559,
+      "pdfPage": 0,
+      "headingMissing": false,
+      "rules": [
+        1,
+        2,
+        3
+      ],
+      "ruleRange": [
+        1,
+        3
+      ],
+      "parts": []
+    },
+    {
+      "number": 2,
+      "ordinal": "দ্বিতীয়",
+      "page": 9566,
+      "pdfPage": 7,
+      "headingMissing": true,
+      "rules": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "ruleRange": [
+        4,
+        21
+      ],
+      "parts": [
+        {
+          "label": "১",
+          "title": "দরপত্র বা প্রস্তাব দলিল প্রস্তুতকরণ",
+          "page": 9566
+        },
+        {
+          "label": "২",
+          "title": "ক্রয় কমিটিসমূহ এবং বিশেষ ধরনের ক্রয়",
+          "page": 9571
+        }
+      ]
+    },
+    {
+      "number": 3,
+      "ordinal": "তৃতীয়",
+      "page": 9577,
+      "pdfPage": 18,
+      "headingMissing": false,
+      "rules": [
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        47,
+        48,
+        49,
+        50,
+        51,
+        52,
+        53,
+        54,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        73,
+        74,
+        75,
+        76,
+        77
+      ],
+      "ruleRange": [
+        22,
+        77
+      ],
+      "parts": [
+        {
+          "label": "১",
+          "title": "সাধারণ",
+          "page": 9577
+        },
+        {
+          "label": "২",
+          "title": "দরপত্র বা প্রস্তাবের বৈধতার মেয়াদ নির্ধারণ এবং নিরাপত্তা জামানত",
+          "page": 9583
+        },
+        {
+          "label": "৩",
+          "title": "বিনির্দেশ প্রস্তুতকরণ এবং গোপনীয়তা রক্ষা",
+          "page": 9587
+        },
+        {
+          "label": "৪",
+          "title": "দরপত্র, প্রস্তাব, ইত্যাদি বাতিলকরণ",
+          "page": 9590
+        },
+        {
+          "label": "৫",
+          "title": "ক্রয় অনুমোদন প্রক্রিয়া, চুক্তিসম্পাদন নোটিশ এবং উহা প্রকাশ",
+          "page": 9592
+        },
+        {
+          "label": "৬",
+          "title": "চুক্তি পরিচালনা ও ব্যবস্থাপনা",
+          "page": 9597
+        },
+        {
+          "label": "৭",
+          "title": "ক্রয়সংক্রান্ত রেকর্ডপত্র সংরক্ষণ",
+          "page": 9611
+        },
+        {
+          "label": "৮",
+          "title": "ক্রয় প্রক্রিয়া-উত্তর পুনরীক্ষণ",
+          "page": 9613
+        },
+        {
+          "label": "০৯",
+          "title": "ব্যক্তির যোগ্যতা",
+          "page": 9614
+        },
+        {
+          "label": "১০",
+          "title": "যৌথ উদ্যোগ (JVCA)",
+          "page": 9621
+        },
+        {
+          "label": "১১",
+          "title": "স্বার্থের সংঘাত",
+          "page": 9623
+        },
+        {
+          "label": "১২",
+          "title": "অভিযোগ ও আপিল",
+          "page": 9624
+        }
+      ]
+    },
+    {
+      "number": 4,
+      "ordinal": "চতুর্থ",
+      "page": 9631,
+      "pdfPage": 72,
+      "headingMissing": false,
+      "rules": [
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107,
+        108,
+        109
+      ],
+      "ruleRange": [
+        78,
+        109
+      ],
+      "parts": [
+        {
+          "label": "১",
+          "title": "অভ্যন্তরীণ ক্রয়: উন্মুক্ত দরপত্র পদ্ধতি",
+          "page": 9631
+        },
+        {
+          "label": "২",
+          "title": "অভ্যন্তরীণ ক্রয়: সীমিত দরপত্র পদ্ধতি",
+          "page": 9632
+        },
+        {
+          "label": "৩",
+          "title": "অভ্যন্তরীণ ক্রয়: দুই পর্যায়বিশিষ্ট দরপত্র পদ্ধতি",
+          "page": 9634
+        },
+        {
+          "label": "৪",
+          "title": "অভ্যন্তরীণ ক্রয়: এক ধাপ দুই খাম দরপত্র পদ্ধতি",
+          "page": 9636
+        },
+        {
+          "label": "৫",
+          "title": "অভ্যন্তরীণ ক্রয়: কোটেশন প্রদানের অনুরোধ জ্ঞাপন পদ্ধতি",
+          "page": 9638
+        },
+        {
+          "label": "৬",
+          "title": "অভ্যন্তরীণ ক্রয়: বিপরীত নিলাম পদ্ধতি",
+          "page": 9642
+        },
+        {
+          "label": "৭",
+          "title": "অভ্যন্তরীণ ক্রয়: সরাসরি ক্রয় পদ্ধতি",
+          "page": 9643
+        },
+        {
+          "label": "৮",
+          "title": "আন্তর্জাতিক ক্রয়",
+          "page": 9646
+        },
+        {
+          "label": "৯",
+          "title": "ফ্রেমওয়ার্ক এগ্রিমেন্ট",
+          "page": 9652
+        }
+      ]
+    },
+    {
+      "number": 5,
+      "ordinal": "পঞ্চম",
+      "page": 9654,
+      "pdfPage": 95,
+      "headingMissing": false,
+      "rules": [
+        110,
+        111,
+        112,
+        113,
+        114,
+        115,
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
+      ],
+      "ruleRange": [
+        110,
+        123
+      ],
+      "parts": [
+        {
+          "label": "১",
+          "title": "বিজ্ঞাপন",
+          "page": 9654
+        },
+        {
+          "label": "২",
+          "title": "প্রাকযোগ্যতা",
+          "page": 9656
+        },
+        {
+          "label": "৩",
+          "title": "দরপত্র প্রক্রিয়াকরণ",
+          "page": 9659
+        }
+      ]
+    },
+    {
+      "number": 6,
+      "ordinal": "ষষ্ঠ",
+      "page": 9675,
+      "pdfPage": 116,
+      "headingMissing": false,
+      "rules": [
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148
+      ],
+      "ruleRange": [
+        124,
+        148
+      ],
+      "parts": [
+        {
+          "label": "১",
+          "title": "পদ্ধতি ও কার্যপ্রণালি",
+          "page": 9675
+        },
+        {
+          "label": "২",
+          "title": "বুদ্ধিবৃত্তিক ও পেশাগতসেবা ক্রয়ের জন্য আগ্রহব্যক্তকরণের অনুরোধ এবং প্রস্তাবের প্রক্রিয়াকরণ",
+          "page": 9685
+        },
+        {
+          "label": "৩",
+          "title": "প্রস্তাব মূল্যায়ন, নেগোসিয়েশন এবং প্রক্রিয়ার পরিসমাপ্তি",
+          "page": 9695
+        }
+      ]
+    },
+    {
+      "number": 7,
+      "ordinal": "সপ্তম",
+      "page": 9701,
+      "pdfPage": 142,
+      "headingMissing": false,
+      "rules": [
+        149
+      ],
+      "ruleRange": [
+        149,
+        149
+      ],
+      "parts": []
+    },
+    {
+      "number": 8,
+      "ordinal": "অষ্টম",
+      "page": 9706,
+      "pdfPage": 147,
+      "headingMissing": false,
+      "rules": [
+        150
+      ],
+      "ruleRange": [
+        150,
+        150
+      ],
+      "parts": []
+    },
+    {
+      "number": 9,
+      "ordinal": "নবম",
+      "page": 9706,
+      "pdfPage": 147,
+      "headingMissing": false,
+      "rules": [
+        151,
+        152,
+        153,
+        154
+      ],
+      "ruleRange": [
+        151,
+        154
+      ],
+      "parts": [
+        {
+          "label": "ক",
+          "title": "বি",
+          "page": 9739
+        },
+        {
+          "label": "খ",
+          "title": "বি",
+          "page": 9742
+        },
+        {
+          "label": "গ",
+          "title": "বি",
+          "page": 9745
+        },
+        {
+          "label": "ঘ",
+          "title": "বি",
+          "page": 9747
+        },
+        {
+          "label": "ক",
+          "title": "বি",
+          "page": 9753
+        },
+        {
+          "label": "ক",
+          "title": "বি",
+          "page": 9801
+        },
+        {
+          "label": "খ",
+          "title": "] T",
+          "page": 9805
+        },
+        {
+          "label": "গ",
+          "title": "Fi",
+          "page": 9810
+        },
+        {
+          "label": "ঘ",
+          "title": "Te",
+          "page": 9811
+        },
+        {
+          "label": "ক",
+          "title": "বি",
+          "page": 9817
+        },
+        {
+          "label": "খ",
+          "title": "বি",
+          "page": 9820
+        },
+        {
+          "label": "গ",
+          "title": "বি",
+          "page": 9822
+        }
+      ]
+    }
+  ],
+  "schedules": [
+    {
+      "number": 1,
+      "title": "বিধি ৪(১) দ্রষ্টব্য] পণ্য, কার্য, ভৌতসেবা এবং বুদ্ধিবৃত্তিক ও পেশাগত সেবা ক্রয়ের আদর্শ দলিলসমূহের তালিকা সারণি-১",
+      "page": 9711
+    },
+    {
+      "number": 2,
+      "title": "বিধি সময়, মূল্য, ইত্যাদি ৯(১) বিনির্দেশ ও প্রাক্কলন কমিটি: ▶ক্রয়কারীর নিজ দপ্তর হইতে বা প্রয়োজনে অন্য ক্রয়কারী",
+      "page": 9717
+    },
+    {
+      "number": 3,
+      "title": "অংশ-ক [বিধি ১১(১৭) দ্রষ্টব্য] Procurement Processing and Approval Procedure for Goods or Works or Physical Services",
+      "page": 9739
+    },
+    {
+      "number": 4,
+      "title": "বিধি ২৪(১) দ্রষ্টব্য] Procurement Strategy Development Format Section-1: Key Component Requirements: [For each key",
+      "page": 9751
+    },
+    {
+      "number": 5,
+      "title": "অংশ-ক [বিধি ২৫(১৩) দ্রষ্টব্য] Total Procurement Plan for Development Project / Program This part identifies the",
+      "page": 9753
+    },
+    {
+      "number": 7,
+      "title": "বিধি ৪৮(৪)(ক)(৩)(আ) দ্রষ্টব্য] সরকারি ক্রয় সংক্রান্ত মন্ত্রিসভা কমিটির জন্য ক্রয় প্রস্তাব প্রেরণের নমুনা ছক [গোপনীয়]",
+      "page": 9763
+    },
+    {
+      "number": 8,
+      "title": "বিধি ৪৯(১) দ্রষ্টব্য] NOTIFICATION OF AWARD (Goods or Works or Physical Services) Reference No: Date: To: [Name of the",
+      "page": 9766
+    },
+    {
+      "number": 9,
+      "title": "বিধি ৪৯(১) এর শর্তাংশ দ্রষ্টব্য] Format for Reporting Contract Award GOVERNMENT OF THE PEOPLE'S REPUBLIC OF BANGLADESH",
+      "page": 9767
+    },
+    {
+      "number": 10,
+      "title": "বিধি ৪৯(২) ও ১৪৮(২) দ্রষ্টব্য] Format for Public Reporting on Contract Signing Note: 1. For any contract above BDT",
+      "page": 9768
+    },
+    {
+      "number": 11,
+      "title": "বিধি ৬০(৪) দ্রষ্টব্য] অংশ-ক Records of Procurement to be Maintained by a Procuring Entity (1) The records of",
+      "page": 9769
+    },
+    {
+      "number": 12,
+      "title": "বিধি ৭০(২) দ্রষ্টব্য] JOINT VENTURE (JV) SAMPLE AGREEMENT THIS JOINT VENTURE AGREEMENT (\"Agreement\"), made and entered",
+      "page": 9775
+    },
+    {
+      "number": 13,
+      "title": "বিধি ৭১(১) দ্রষ্টব্য] সারণী (Consultant Conflicts of Interest: Range of Possible Cases) Category of Consultant",
+      "page": 9780
+    },
+    {
+      "number": 17,
+      "title": "অংশ-ক: বিধি ১১৬ দ্রষ্টব্য] Tender Submission Form (Goods) [this letter shall be completed and signed by the Authorized",
+      "page": 9801
+    },
+    {
+      "number": 18,
+      "title": "বিধি ১১৮(২৫) ও (২৬) দ্রষ্টব্য] অভ্যন্তরীণ ক্রয়ের ক্ষেত্রে দরপত্র মূল্যায়ন কমিটি কর্তৃক উল্লেখযোগ্যরূপে নিম্নমূল্যের",
+      "page": 9812
+    },
+    {
+      "number": 19,
+      "title": "অংশ ক [বিধি ১২৪(৫) ও ১৩৩(৮) দ্রষ্টব্য] General Considerations for the Employment of Consultants (1) Appointment of",
+      "page": 9817
+    },
+    {
+      "number": 20,
+      "title": "বিধি ১৪৯(১) দ্রষ্টব্য] The Code of Ethics for Public Procurement 1. Short title and Commencement—This code may be",
+      "page": 9824
+    },
+    {
+      "number": 21,
+      "title": "বিধি ১৪৯(১১) দ্রষ্টব্য] ডিবারমেন্ট রিভিউ বোর্ড (Debarment Review Board)",
+      "page": 9827
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "editions": [
+    {
+      "id": "ppr2025",
+      "titleBn": "সরকারি ক্রয় বিধিমালা ২০২৫",
+      "titleEn": "Public Procurement Rules 2025",
+      "lang": "bn",
+      "gazetteDate": "2025-09-28",
+      "effectiveFrom": null,
+      "supersedes": "ppr2008",
+      "sourcePdf": "PPR2025.pdf",
+      "pdfPages": 271,
+      "pageOffset": 9559,
+      "pageOffsetNote": "gazette page = pdf index + pageOffset (printed footer number); verified on all 271 pages",
+      "verified": false,
+      "verifiedNote": "titles and effective date need confirmation against the document cover before release"
+    }
+  ]
+}

@@ -9,6 +9,11 @@ packages/*/dist/
 apps/*/dist/
 .output/
 
+# ── Python pipeline (apps/hub/ppr) ───────────────
+apps/hub/ppr/build/
+__pycache__/
+*.pyc
+
 # ── Astro ─────────────────────────────────────────
 .astro/
 

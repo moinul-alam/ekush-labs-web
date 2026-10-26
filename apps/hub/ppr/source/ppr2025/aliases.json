@@ -1,0 +1,97 @@
+{
+  "schemaVersion": 1,
+  "edition": "ppr2025",
+  "note": "Terminology for this edition. A query in any spelling of a group resolves to the group's key token - the Bengali term with its spaces removed - so OTM finds the rules on উন্মুক্ত দরপত্র পদ্ধতি. Edit here; the index rebuilds from it.",
+  "groups": [
+    {
+      "id": "otm",
+      "bn": "উন্মুক্ত দরপত্র পদ্ধতি",
+      "en": "Open Tendering Method",
+      "terms": ["OTM", "ওটিএম", "উন্মুক্ত দরপত্র", "ওপেন টেন্ডারিং"]
+    },
+    {
+      "id": "ltm",
+      "bn": "সীমিত দরপত্র পদ্ধতি",
+      "en": "Limited Tendering Method",
+      "terms": ["LTM", "সীমিত দরপত্র", "লিমিটেড টেন্ডারিং"]
+    },
+    {
+      "id": "quotation",
+      "bn": "কোটেশন পদ্ধতি",
+      "en": "Request for Quotation",
+      "terms": ["RFQ", "কোটেশন", "দর জিজ্ঞাসা"]
+    },
+    {
+      "id": "direct",
+      "bn": "সরাসরি ক্রয় পদ্ধতি",
+      "en": "Direct Contracting",
+      "terms": ["সরাসরি ক্রয়", "ডাইরেক্ট ক্রয়"]
+    },
+    {
+      "id": "reverse-auction",
+      "bn": "বিপরীত নিলাম",
+      "en": "Reverse Auction",
+      "terms": ["বিপরীত নিলাম পদ্ধতি", "রিভার্স অকশন"]
+    },
+    {
+      "id": "single-source",
+      "bn": "একক উৎস পদ্ধতি",
+      "en": "Single Source",
+      "terms": ["একক উৎস", "একমাত্র উৎস", "সিংগল সোর্স"]
+    },
+    {
+      "id": "quality-cost",
+      "bn": "গুণ ও খরচ ভিত্তিক নির্বাচন",
+      "en": "Quality and Cost Based Selection",
+      "terms": ["QCBS", "গুণ ও খরচ ভিত্তিক", "কিউসিবিএস"]
+    },
+    {
+      "id": "least-cost",
+      "bn": "সর্বনিম্ন খরচ ভিত্তিক নির্বাচন",
+      "en": "Least Cost Based Selection",
+      "terms": ["LCBS", "সর্বনিম্ন খরচ ভিত্তিক", "এলসিবিএস"]
+    },
+    {
+      "id": "egp",
+      "bn": "ই-জিপি",
+      "en": "Electronic Government Procurement",
+      "terms": ["e-GP", "eGP", "ইজিপি", "ই-জিপি পোর্টাল", "ইজিপি পোর্টাল"]
+    },
+    {
+      "id": "tender",
+      "bn": "দরপত্র",
+      "en": "Tender",
+      "terms": ["টেন্ডার"]
+    },
+    {
+      "id": "ppp",
+      "bn": "পাবলিক প্রাইভেট পার্টনারশিপ",
+      "en": "Public Private Partnership",
+      "terms": ["PPP", "পিপিপি", "পিপিপি চুক্তি"]
+    },
+    {
+      "id": "concession",
+      "bn": "কনসেশন",
+      "en": "Concession",
+      "terms": ["কনসেশন চুক্তি"]
+    },
+    {
+      "id": "jv",
+      "bn": "জয়েন্ট ভেঞ্চার",
+      "en": "Joint Venture",
+      "terms": ["JV", "যৌথ উদ্যোগ", "জেভি"]
+    },
+    {
+      "id": "bppa",
+      "bn": "বাংলাদেশ পাবলিক প্রকিউরমেন্ট অথরিটি",
+      "en": "Bangladesh Public Procurement Authority",
+      "terms": ["BPPA", "বিপিপিএ", "বিপিপিএ-এর"]
+    },
+    {
+      "id": "cptu",
+      "bn": "সেন্ট্রাল প্রকিউরমেন্ট টেকনিক্যাল ইউনিট",
+      "en": "Central Procurement Technical Unit",
+      "terms": ["CPTU", "সিপিটিইউ", "সিপিটিইউ-এর"]
+    }
+  ]
+}

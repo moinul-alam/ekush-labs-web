@@ -493,6 +493,12 @@ export const ui = {
     'tools.savings_cert.hero_badge': 'জাতীয় সঞ্চয় অধিদপ্তর (DNS)',
     'tools.savings_cert.privacy_badge': '১০০% ব্রাউজার ভিত্তিক ও নিরাপদ',
     'tools.savings_cert.privacy_note': 'আপনার কোনো ব্যক্তিগত বা বিনিয়োগের তথ্য সার্ভারে পাঠানো হয় না। সম্পূর্ণ হিসাব আপনার ডিভাইসেই সম্পন্ন হয়।',
+
+    // PPR 2025 Study Tool (bn)
+    'tools.ppr.title': 'সরকারি ক্রয় বিধিমালা ২০২৫ (PPR)',
+    'tools.ppr.desc': 'সরকারি ক্রয় বিধিমালা ২০২৫-এর ১৫৪টি বিধি ও তফসিল — অধ্যায়ভিত্তিক অনুসন্ধান, আন্তঃসংযোগ, সংজ্ঞার্থ এবং মূল গেজেটের পৃষ্ঠা।',
+    'tools.ppr.subtitle': 'সরকারি ক্রয় বিধিমালা ২০২৫: অনুসন্ধান ও পাঠ',
+    'tools.ppr.badge': 'অনানুষ্ঠানিক রেফারেন্স',
   },
 
   // ------------------------------------------------------------
@@ -973,5 +979,11 @@ export const ui = {
     'tools.savings_cert.hero_badge': 'Department of National Savings (DNS)',
     'tools.savings_cert.privacy_badge': '100% Client-Side & Private',
     'tools.savings_cert.privacy_note': 'None of your investment numbers or dates are sent to any server. All calculations run strictly inside your web browser.',
+
+    // PPR 2025 Study Tool (en)
+    'tools.ppr.title': 'Public Procurement Rules 2025 (PPR)',
+    'tools.ppr.desc': 'Browse and search the 154 rules and schedules of the Public Procurement Rules 2025 — chapter by chapter, with cross-references, definitions and the original gazette page.',
+    'tools.ppr.subtitle': 'Public Procurement Rules 2025: search and read',
+    'tools.ppr.badge': 'Unofficial reference',
   },
 } as const;

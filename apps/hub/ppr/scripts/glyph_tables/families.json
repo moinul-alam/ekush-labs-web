@@ -1,0 +1,14 @@
+{
+  "schemaVersion": 1,
+  "note": "Order matters: first match wins, so longer family names must precede shorter ones. 'referenceFont' names the Unicode font in scripts/reference_fonts/ whose glyphs are the same letterforms as this legacy family, used to auto-label shapes.",
+  "families": [
+    { "id": "sutonnymj", "match": ["SutonnyMJ"], "kind": "legacy" },
+    { "id": "nikoshban", "match": ["NikoshBAN"], "kind": "legacy", "referenceFont": "NikoshBAN.ttf" },
+    { "id": "nikosh", "match": ["Nikosh"], "kind": "legacy", "referenceFont": "Nikosh.ttf" },
+    { "id": "shonarbangla", "match": ["ShonarBangla"], "kind": "unicode" },
+    { "id": "kalpurush", "match": ["Kalpurush"], "kind": "unicode" },
+    { "id": "vrinda", "match": ["Vrinda"], "kind": "unicode" },
+    { "id": "nirmala", "match": ["NirmalaUI", "Nirmala UI"], "kind": "unicode" },
+    { "id": "symbol", "match": ["Symbol", "Wingdings", "Webdings"], "kind": "symbol" }
+  ]
+}

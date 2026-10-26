@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "edition": "ppr2025",
+  "note": "Facet vocabulary. `chapter` is structural, derived from the corpus; the others are keyword-hit facets - a provision is tagged with every value whose terms occur in its title or body. Edit the term lists here; the index rebuilds from them.",
+  "facets": [
+    {
+      "id": "chapter",
+      "labelBn": "অধ্যায়",
+      "labelEn": "Chapter",
+      "kind": "structural"
+    },
+    {
+      "id": "method",
+      "labelBn": "ক্রয় পদ্ধতি",
+      "labelEn": "Procurement method",
+      "kind": "terms",
+      "values": [
+        { "id": "otm", "bn": "উন্মুক্ত দরপত্র পদ্ধতি", "en": "Open Tendering Method", "terms": ["উন্মুক্ত দরপত্র পদ্ধতি", "উন্মুক্ত দরপত্র", "OTM"] },
+        { "id": "ltm", "bn": "সীমিত দরপত্র পদ্ধতি", "en": "Limited Tendering Method", "terms": ["সীমিত দরপত্র পদ্ধতি", "সীমিত দরপত্র", "LTM"] },
+        { "id": "quotation", "bn": "কোটেশন পদ্ধতি", "en": "Request for Quotation", "terms": ["কোটেশন পদ্ধতি", "কোটেশন", "RFQ"] },
+        { "id": "direct", "bn": "সরাসরি ক্রয় পদ্ধতি", "en": "Direct Contracting", "terms": ["সরাসরি ক্রয় পদ্ধতি", "সরাসরি ক্রয়"] },
+        { "id": "reverse-auction", "bn": "বিপরীত নিলাম", "en": "Reverse Auction", "terms": ["বিপরীত নিলাম"] },
+        { "id": "single-source", "bn": "একক উৎস পদ্ধতি", "en": "Single Source", "terms": ["একক উৎস পদ্ধতি", "একক উৎস"] }
+      ]
+    },
+    {
+      "id": "unit",
+      "labelBn": "ক্রয়ের পক্ষ",
+      "labelEn": "Party",
+      "kind": "terms",
+      "values": [
+        { "id": "procuring-entity", "bn": "ক্রয়কারী", "en": "Procuring entity", "terms": ["ক্রয়কারী"] },
+        { "id": "bppa", "bn": "বিপিপিএ", "en": "BPPA", "terms": ["বিপিপিএ", "BPPA"] },
+        { "id": "cptu", "bn": "সিপিটিইউ", "en": "CPTU", "terms": ["সিপিটিইউ", "CPTU"] },
+        { "id": "procurement-unit", "bn": "ক্রয় ইউনিট / শাখা", "en": "Procurement unit", "terms": ["ক্রয় ইউনিট", "শাখা"] },
+        { "id": "consultant", "bn": "পরামর্শক", "en": "Consultant", "terms": ["পরামর্শক"] },
+        { "id": "tenderer", "bn": "দরপত্রদাতা / সরবরাহকারী", "en": "Tenderer / supplier", "terms": ["দরপত্রদাতা", "আবেদনকারী", "সরবরাহকারী", "ঠিকাদার"] }
+      ]
+    }
+  ]
+}

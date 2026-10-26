@@ -1,0 +1,3694 @@
+{
+  "schemaVersion": 1,
+  "family": "nikosh",
+  "note": "shape id -> Unicode. 'unicode' is one character, or several where the drawing is a conjunct. 'confidence' is 1.0 for an exact drawing match against the reference font, 0.9 where the match was a ligature glyph of that font, lower where the reading was a convention. 'candidates' lists every reading of the same drawing. Empty 'unicode' means the reference font has no such drawing and the shape needs review.",
+  "shapes": {
+    "97d170e155": {
+      "unicode": " ",
+      "confidence": 0.9,
+      "source": "blank",
+      "candidates": [
+        " "
+      ],
+      "count": 2943,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "01"
+        ],
+        "Nikosh@655": [
+          "01"
+        ]
+      }
+    },
+    "8048d450f7": {
+      "unicode": "া",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "া"
+      ],
+      "count": 1405,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "06"
+        ],
+        "Nikosh@655": [
+          "05"
+        ]
+      }
+    },
+    "8b54796f3b": {
+      "unicode": "ি",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ি"
+      ],
+      "count": 916,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "14"
+        ],
+        "Nikosh@655": [
+          "06"
+        ]
+      }
+    },
+    "f7b44a5259": {
+      "unicode": "র",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "র"
+      ],
+      "count": 881,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "11"
+        ],
+        "Nikosh@655": [
+          "07"
+        ]
+      }
+    },
+    "8cdf5dd469": {
+      "unicode": "ে",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ে"
+      ],
+      "count": 760,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "0D"
+        ],
+        "Nikosh@655": [
+          "18"
+        ]
+      }
+    },
+    "95ada2bc8e": {
+      "unicode": "ক",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ক"
+      ],
+      "count": 676,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "12"
+        ],
+        "Nikosh@655": [
+          "04"
+        ]
+      }
+    },
+    "e77b536303": {
+      "unicode": "ব",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ব"
+      ],
+      "count": 509,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "0A"
+        ],
+        "Nikosh@655": [
+          "15"
+        ]
+      }
+    },
+    "b44f07a94f": {
+      "unicode": "ন",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ন"
+      ],
+      "count": 508,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "16"
+        ],
+        "Nikosh@655": [
+          "16"
+        ]
+      }
+    },
+    "42687784cd": {
+      "unicode": "ত",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ত"
+      ],
+      "count": 440,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "07"
+        ],
+        "Nikosh@655": [
+          "13"
+        ]
+      }
+    },
+    "fc605f0b67": {
+      "unicode": "প",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "প"
+      ],
+      "count": 350,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "13"
+        ],
+        "Nikosh@655": [
+          "09"
+        ]
+      }
+    },
+    "b08e6572a4": {
+      "unicode": "স",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "স"
+      ],
+      "count": 346,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "10"
+        ],
+        "Nikosh@655": [
+          "1B"
+        ]
+      }
+    },
+    "559fdf359d": {
+      "unicode": "য়",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "য়"
+      ],
+      "count": 309,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "18"
+        ],
+        "Nikosh@655": [
+          "14"
+        ]
+      }
+    },
+    "526435c806": {
+      "unicode": "দ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "দ"
+      ],
+      "count": 291,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "0E"
+        ],
+        "Nikosh@655": [
+          "19"
+        ]
+      }
+    },
+    "1fd30c1b62": {
+      "unicode": "ম",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ম"
+      ],
+      "count": 287,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "17"
+        ],
+        "Nikosh@655": [
+          "10"
+        ]
+      }
+    },
+    "bc9bfc83c9": {
+      "unicode": "র্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "র্",
+        "ৰ্"
+      ],
+      "count": 275,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "45"
+        ],
+        "Nikosh@655": [
+          "1E"
+        ]
+      }
+    },
+    "fc8e64838b": {
+      "unicode": "ে",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ে"
+      ],
+      "count": 223,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "29"
+        ],
+        "Nikosh@655": [
+          "3E"
+        ]
+      }
+    },
+    "674fe93374": {
+      "unicode": "(",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "("
+      ],
+      "count": 195,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "39"
+        ],
+        "Nikosh@655": [
+          "26"
+        ]
+      }
+    },
+    "cc66f828be": {
+      "unicode": ")",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        ")"
+      ],
+      "count": 194,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "3A"
+        ],
+        "Nikosh@655": [
+          "29"
+        ]
+      }
+    },
+    "d40ed32b27": {
+      "unicode": "পর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "পর্",
+        "পৰ্"
+      ],
+      "count": 189,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "04"
+        ],
+        "Nikosh@655": [
+          "21"
+        ]
+      }
+    },
+    "1fe0a1da15": {
+      "unicode": "য",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "য",
+        "য্"
+      ],
+      "count": 171,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "40"
+        ],
+        "Nikosh@655": [
+          "3B"
+        ]
+      }
+    },
+    "e16ffaed43": {
+      "unicode": "ী",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ী"
+      ],
+      "count": 170,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "09"
+        ],
+        "Nikosh@655": [
+          "0A"
+        ]
+      }
+    },
+    "1bae3c6a3b": {
+      "unicode": "ল",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ল"
+      ],
+      "count": 162,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "0C"
+        ],
+        "Nikosh@655": [
+          "2A"
+        ]
+      }
+    },
+    "3714a1bb89": {
+      "unicode": "হ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "হ"
+      ],
+      "count": 160,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "57"
+        ],
+        "Nikosh@655": [
+          "0F"
+        ]
+      }
+    },
+    "b591852299": {
+      "unicode": "শ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "শ"
+      ],
+      "count": 152,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "0F"
+        ],
+        "Nikosh@655": [
+          "1A"
+        ]
+      }
+    },
+    "9078a9b89c": {
+      "unicode": "ণ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ণ"
+      ],
+      "count": 147,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "03"
+        ],
+        "Nikosh@655": [
+          "0C"
+        ]
+      }
+    },
+    "a5aa142438": {
+      "unicode": "১",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "১"
+      ],
+      "count": 126,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "22"
+        ],
+        "Nikosh@655": [
+          "32"
+        ]
+      }
+    },
+    "889a461d20": {
+      "unicode": "ধ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ধ"
+      ],
+      "count": 118,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "3B"
+        ],
+        "Nikosh@655": [
+          "51"
+        ]
+      }
+    },
+    "7eb6faa7c1": {
+      "unicode": "ই",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ই"
+      ],
+      "count": 116,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "33"
+        ],
+        "Nikosh@655": [
+          "41"
+        ]
+      }
+    },
+    "fed3fa09d6": {
+      "unicode": "অ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "অ"
+      ],
+      "count": 111,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "42"
+        ],
+        "Nikosh@655": [
+          "54"
+        ]
+      }
+    },
+    "968f5a1334": {
+      "unicode": "কর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "কর্",
+        "কৰ্"
+      ],
+      "count": 109,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "4A"
+        ],
+        "Nikosh@655": [
+          "1F"
+        ]
+      }
+    },
+    "0de21d471e": {
+      "unicode": "জ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "জ"
+      ],
+      "count": 99,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "05"
+        ],
+        "Nikosh@655": [
+          "12"
+        ]
+      }
+    },
+    "a7f6779e31": {
+      "unicode": "তর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "তর্",
+        "তৰ্"
+      ],
+      "count": 94,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "5A"
+        ],
+        "Nikosh@655": [
+          "22"
+        ]
+      }
+    },
+    "38082d7ab8": {
+      "unicode": "ক্ষ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ক্ষ"
+      ],
+      "count": 92,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "1A"
+        ],
+        "Nikosh@655": [
+          "0B"
+        ]
+      }
+    },
+    "9bf483f2eb": {
+      "unicode": "০",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "০"
+      ],
+      "count": 92,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "2C"
+        ],
+        "Nikosh@655": [
+          "25"
+        ]
+      }
+    },
+    "d767b3c8a9": {
+      "unicode": "গ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "গ"
+      ],
+      "count": 90,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "02"
+        ],
+        "Nikosh@655": [
+          "08"
+        ]
+      }
+    },
+    "433c935d7b": {
+      "unicode": "ং",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ং"
+      ],
+      "count": 84,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "0B"
+        ],
+        "Nikosh@655": [
+          "43"
+        ]
+      }
+    },
+    "ef54e607a1": {
+      "unicode": "এ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "এ"
+      ],
+      "count": 84,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "30"
+        ],
+        "Nikosh@655": [
+          "3D"
+        ]
+      }
+    },
+    "f0a7b41caa": {
+      "unicode": ",",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        ","
+      ],
+      "count": 79,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "37"
+        ],
+        "Nikosh@655": [
+          "48"
+        ]
+      }
+    },
+    "67448e7657": {
+      "unicode": "২",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "২"
+      ],
+      "count": 78,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "25"
+        ],
+        "Nikosh@655": [
+          "33"
+        ]
+      }
+    },
+    "9ae5129f93": {
+      "unicode": "ও",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ও"
+      ],
+      "count": 76,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "1B"
+        ],
+        "Nikosh@655": [
+          "0D"
+        ]
+      }
+    },
+    "0caa83d1ef": {
+      "unicode": "উ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "উ"
+      ],
+      "count": 70,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "35"
+        ],
+        "Nikosh@655": [
+          "60"
+        ]
+      }
+    },
+    "a0383fcd7e": {
+      "unicode": "।",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "।"
+      ],
+      "count": 69,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "34"
+        ],
+        "Nikosh@655": [
+          "31"
+        ]
+      }
+    },
+    "4019279843": {
+      "unicode": "ট",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ট"
+      ],
+      "count": 66,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "67"
+        ],
+        "Nikosh@655": [
+          "2B"
+        ]
+      }
+    },
+    "ca882e05f2": {
+      "unicode": "৫",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "৫"
+      ],
+      "count": 65,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "2D"
+        ],
+        "Nikosh@655": [
+          "2E"
+        ]
+      }
+    },
+    "0365bc7251": {
+      "unicode": "ক্ত",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ক্ত"
+      ],
+      "count": 65,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "52"
+        ],
+        "Nikosh@655": [
+          "5D"
+        ]
+      }
+    },
+    "8b205811fb": {
+      "unicode": "ভ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ভ"
+      ],
+      "count": 62,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "1E"
+        ],
+        "Nikosh@655": [
+          "49"
+        ]
+      }
+    },
+    "fca37d7315": {
+      "unicode": "মূ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "মূ"
+      ],
+      "count": 59,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "1C"
+        ],
+        "Nikosh@655": [
+          "1C"
+        ]
+      }
+    },
+    "ddd97f2cb8": {
+      "unicode": "আ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "আ"
+      ],
+      "count": 58,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "32"
+        ],
+        "Nikosh@655": [
+          "35"
+        ]
+      }
+    },
+    "2af941b057": {
+      "unicode": "িট",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "িট"
+      ],
+      "count": 58,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "47"
+        ],
+        "Nikosh@655": [
+          "11"
+        ]
+      }
+    },
+    "b426466863": {
+      "unicode": "চ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "চ"
+      ],
+      "count": 55,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "50"
+        ],
+        "Nikosh@655": [
+          "27"
+        ]
+      }
+    },
+    "ca01f64966": {
+      "unicode": "ত্ত",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ত্ত"
+      ],
+      "count": 51,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "3D"
+        ],
+        "Nikosh@655": [
+          "30"
+        ]
+      }
+    },
+    "4cf395df82": {
+      "unicode": "-",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "-"
+      ],
+      "count": 50,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "6E"
+        ],
+        "Nikosh@655": [
+          "46"
+        ]
+      }
+    },
+    "6ea10c2da0": {
+      "unicode": "লয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "লয্"
+      ],
+      "count": 46,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "1D"
+        ],
+        "Nikosh@655": [
+          "3A"
+        ]
+      }
+    },
+    "d640a09688": {
+      "unicode": "তৃ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "তৃ"
+      ],
+      "count": 42,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "53"
+        ],
+        "Nikosh@655": [
+          "1D"
+        ]
+      }
+    },
+    "35ec00c748": {
+      "unicode": "৩",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "৩"
+      ],
+      "count": 41,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "24"
+        ],
+        "Nikosh@655": [
+          "5A"
+        ]
+      }
+    },
+    "1a0b4a9f02": {
+      "unicode": "থ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "থ"
+      ],
+      "count": 40,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "41"
+        ],
+        "Nikosh@655": [
+          "71"
+        ]
+      }
+    },
+    "3d43552d00": {
+      "unicode": "বয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "বয্"
+      ],
+      "count": 39,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "56"
+        ],
+        "Nikosh@655": [
+          "5B"
+        ]
+      }
+    },
+    "4af6102d8d": {
+      "unicode": ":",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        ":"
+      ],
+      "count": 38,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "21"
+        ],
+        "Nikosh@655": [
+          "20"
+        ]
+      }
+    },
+    "324aa30549": {
+      "unicode": "গয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "গয্"
+      ],
+      "count": 38,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "5B"
+        ],
+        "Nikosh@655": [
+          "50"
+        ]
+      }
+    },
+    "8fe1f0a50c": {
+      "unicode": "দ্ধ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "দ্ধ"
+      ],
+      "count": 37,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "4D"
+        ],
+        "Nikosh@655": [
+          "4C"
+        ]
+      }
+    },
+    "3d04b04663": {
+      "unicode": ";",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        ";"
+      ],
+      "count": 36,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "5C"
+        ],
+        "Nikosh@655": [
+          "2C"
+        ]
+      }
+    },
+    "4e4e4f36c9": {
+      "unicode": "খ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "খ"
+      ],
+      "count": 33,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "20"
+        ],
+        "Nikosh@655": [
+          "3C"
+        ]
+      }
+    },
+    "780e56de3f": {
+      "unicode": "নু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "নু"
+      ],
+      "count": 32,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "43"
+        ],
+        "Nikosh@655": [
+          "62"
+        ]
+      }
+    },
+    "4c666a8952": {
+      "unicode": "গর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "গর্",
+        "গৰ্"
+      ],
+      "count": 32,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "5E"
+        ],
+        "Nikosh@655": [
+          "0E"
+        ]
+      }
+    },
+    "4613ad22ff": {
+      "unicode": "৪",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "৪"
+      ],
+      "count": 29,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "23"
+        ],
+        "Nikosh@655": [
+          "24"
+        ]
+      }
+    },
+    "d059b589b8": {
+      "unicode": "ম্প",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ম্প"
+      ],
+      "count": 29,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "4B"
+        ],
+        "Nikosh@655": [
+          "73"
+        ]
+      }
+    },
+    "871eda07b8": {
+      "unicode": "য্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "য্"
+      ],
+      "count": 29,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "64"
+        ],
+        "Nikosh@655": [
+          "53"
+        ]
+      }
+    },
+    "b83f896b81": {
+      "unicode": "ষ্ট",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ষ্ট"
+      ],
+      "count": 28,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "2F"
+        ],
+        "Nikosh@655": [
+          "45"
+        ]
+      }
+    },
+    "007c65d28b": {
+      "unicode": "নয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "নয্"
+      ],
+      "count": 27,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "71"
+        ],
+        "Nikosh@655": [
+          "6E"
+        ]
+      }
+    },
+    "66a29a0b8a": {
+      "unicode": "ন্ত",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ন্ত"
+      ],
+      "count": 26,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "62"
+        ],
+        "Nikosh@655": [
+          "64"
+        ]
+      }
+    },
+    "e73dd3033b": {
+      "unicode": "প্ত",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "প্ত"
+      ],
+      "count": 25,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "55"
+        ],
+        "Nikosh@655": [
+          "38"
+        ]
+      }
+    },
+    "27c14073a0": {
+      "unicode": "ৗ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ৗ"
+      ],
+      "count": 24,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "49"
+        ],
+        "Nikosh@655": [
+          "4A"
+        ]
+      }
+    },
+    "50cc7e7932": {
+      "unicode": "চু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "চু"
+      ],
+      "count": 24,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "5F"
+        ],
+        "Nikosh@655": [
+          "5C"
+        ]
+      }
+    },
+    "f417532f56": {
+      "unicode": "স্ত",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "স্ত"
+      ],
+      "count": 23,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "19"
+        ],
+        "Nikosh@655": [
+          "6C"
+        ]
+      }
+    },
+    "d511bd51c7": {
+      "unicode": "ধয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ধয্"
+      ],
+      "count": 23,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "68"
+        ],
+        "Nikosh@655": [
+          "66"
+        ]
+      }
+    },
+    "579d2016c6": {
+      "unicode": "৬",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "৬"
+      ],
+      "count": 22,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "38"
+        ],
+        "Nikosh@655": [
+          "70"
+        ]
+      }
+    },
+    "93d1aa6592": {
+      "unicode": "ষ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ষ"
+      ],
+      "count": 22,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "6F"
+        ],
+        "Nikosh@655": [
+          "63"
+        ]
+      }
+    },
+    "ab1769e869": {
+      "unicode": "স্থ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "স্থ"
+      ],
+      "count": 20,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "73"
+        ],
+        "Nikosh@655": [
+          "34"
+        ]
+      }
+    },
+    "c87ad19815": {
+      "unicode": "জ্ঞ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "জ্ঞ"
+      ],
+      "count": 19,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "1F"
+        ],
+        "Nikosh@655": [
+          "37"
+        ]
+      }
+    },
+    "841077457d": {
+      "unicode": "৯",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "৯"
+      ],
+      "count": 19,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "6A"
+        ],
+        "Nikosh@655": [
+          "67"
+        ]
+      }
+    },
+    "c76f2c20ed": {
+      "unicode": "ক্ক",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ক্ক"
+      ],
+      "count": 18,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "46"
+        ],
+        "Nikosh@655": [
+          "39"
+        ]
+      }
+    },
+    "596d977a0e": {
+      "unicode": "বৃ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "বৃ"
+      ],
+      "count": 17,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "4E"
+        ],
+        "Nikosh@655": [
+          "4D"
+        ]
+      }
+    },
+    "0fe2a924dc": {
+      "unicode": "ণয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ণয্"
+      ],
+      "count": 15,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "48"
+        ],
+        "Nikosh@655": [
+          "47"
+        ]
+      }
+    },
+    "525d3c4630": {
+      "unicode": "৮",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "৮"
+      ],
+      "count": 15,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "6D"
+        ],
+        "Nikosh@655": [
+          "65"
+        ]
+      }
+    },
+    "698204c353": {
+      "unicode": ".",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "."
+      ],
+      "count": 14,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "31"
+        ],
+        "Nikosh@655": [
+          "7E"
+        ]
+      }
+    },
+    "44a510f1d9": {
+      "unicode": "াঁ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "াঁ"
+      ],
+      "count": 14,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A1"
+        ],
+        "Nikosh@655": [
+          "55"
+        ]
+      }
+    },
+    "cc09ee3ce1": {
+      "unicode": "=",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "="
+      ],
+      "count": 14,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "7C"
+        ]
+      }
+    },
+    "66eb3b95ae": {
+      "unicode": "বু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "বু"
+      ],
+      "count": 13,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "4C"
+        ],
+        "Nikosh@655": [
+          "4B"
+        ]
+      }
+    },
+    "c3260fb76f": {
+      "unicode": "ঠ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঠ"
+      ],
+      "count": 13,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "5D"
+        ],
+        "Nikosh@655": [
+          "59"
+        ]
+      }
+    },
+    "cfdbb5eca7": {
+      "unicode": "শ্ল",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "শ্ল"
+      ],
+      "count": 13,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "60"
+        ],
+        "Nikosh@655": [
+          "44"
+        ]
+      }
+    },
+    "f7bac23648": {
+      "unicode": "৭",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "৭"
+      ],
+      "count": 12,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "3C"
+        ],
+        "Nikosh@655": [
+          "2D"
+        ]
+      }
+    },
+    "32ed40ae0c": {
+      "unicode": "সব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "সব্"
+      ],
+      "count": 12,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "7A"
+        ],
+        "Nikosh@655": [
+          "6D"
+        ]
+      }
+    },
+    "27a46409c0": {
+      "unicode": "র্ী",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "র্ী",
+        "ৰ্ী"
+      ],
+      "count": 11,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "4F"
+        ]
+      }
+    },
+    "9564fb36ae": {
+      "unicode": "রূ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "রূ"
+      ],
+      "count": 10,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "3F"
+        ]
+      }
+    },
+    "dbf4370525": {
+      "unicode": "ন্ট",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ন্ট"
+      ],
+      "count": 9,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "36"
+        ],
+        "Nikosh@655": [
+          "57"
+        ]
+      }
+    },
+    "017e6c85ad": {
+      "unicode": "যু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "যু"
+      ],
+      "count": 9,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "51"
+        ],
+        "Nikosh@655": [
+          "4E"
+        ]
+      }
+    },
+    "cb38df98b8": {
+      "unicode": "ফ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ফ"
+      ],
+      "count": 9,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "54"
+        ],
+        "Nikosh@655": [
+          "76"
+        ]
+      }
+    },
+    "70fdf47a07": {
+      "unicode": "ৎ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ৎ"
+      ],
+      "count": 9,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "69"
+        ],
+        "Nikosh@655": [
+          "4F"
+        ]
+      }
+    },
+    "df581c3ed2": {
+      "unicode": "স্প",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "স্প"
+      ],
+      "count": 9,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "61"
+        ]
+      }
+    },
+    "8cfeb43bed": {
+      "unicode": "ন্তর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "ন্তর্",
+        "ন্তৰ্"
+      ],
+      "count": 8,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "08"
+        ],
+        "Nikosh@655": [
+          "58"
+        ]
+      }
+    },
+    "94bb09045c": {
+      "unicode": "ম্ন",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ম্ন"
+      ],
+      "count": 8,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "3E"
+        ],
+        "Nikosh@655": [
+          "74"
+        ]
+      }
+    },
+    "f24d0df69f": {
+      "unicode": "কৃ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "কৃ"
+      ],
+      "count": 8,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "61"
+        ],
+        "Nikosh@655": [
+          "72"
+        ]
+      }
+    },
+    "ff367bf19c": {
+      "unicode": "সু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "সু"
+      ],
+      "count": 8,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "6C"
+        ],
+        "Nikosh@655": [
+          "78"
+        ]
+      }
+    },
+    "cdbe8280a9": {
+      "unicode": "ষ্ঠ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ষ্ঠ"
+      ],
+      "count": 8,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "7F"
+        ],
+        "Nikosh@655": [
+          "6B"
+        ]
+      }
+    },
+    "b27a99c9a4": {
+      "unicode": "নূ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "নূ"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "63"
+        ],
+        "Nikosh@655": [
+          "52"
+        ]
+      }
+    },
+    "b236a91188": {
+      "unicode": "ল্ল",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ল্ল"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "80"
+        ],
+        "Nikosh@655": [
+          "28"
+        ]
+      }
+    },
+    "e5374bf041": {
+      "unicode": "খয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "খয্"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "82"
+        ],
+        "Nikosh@655": [
+          "68"
+        ]
+      }
+    },
+    "b3acc5a67c": {
+      "unicode": "পূ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "পূ"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "83"
+        ],
+        "Nikosh@655": [
+          "5F"
+        ]
+      }
+    },
+    "2ade9f1d61": {
+      "unicode": "ন্ম",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ন্ম"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "8E"
+        ]
+      }
+    },
+    "aa7582bc9b": {
+      "unicode": "ু",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ু"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "8F"
+        ]
+      }
+    },
+    "785b2e6c57": {
+      "unicode": "চ্চ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "চ্চ"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "99"
+        ],
+        "Nikosh@655": [
+          "23"
+        ]
+      }
+    },
+    "140ce10f77": {
+      "unicode": "পঁ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "পঁ"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "2F"
+        ]
+      }
+    },
+    "4b8ad300d7": {
+      "unicode": "ঞ্চ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ঞ্চ"
+      ],
+      "count": 7,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "36"
+        ]
+      }
+    },
+    "5a121fc480": {
+      "unicode": "/",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "/"
+      ],
+      "count": 6,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "28"
+        ],
+        "Nikosh@655": [
+          "84"
+        ]
+      }
+    },
+    "21edccc1e6": {
+      "unicode": "দ্দ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "দ্দ"
+      ],
+      "count": 6,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "89"
+        ],
+        "Nikosh@655": [
+          "6A"
+        ]
+      }
+    },
+    "a07b097852": {
+      "unicode": "হব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "হব্"
+      ],
+      "count": 6,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "8B"
+        ],
+        "Nikosh@655": [
+          "69"
+        ]
+      }
+    },
+    "659643d352": {
+      "unicode": "ঊ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঊ"
+      ],
+      "count": 6,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "3F"
+        ]
+      }
+    },
+    "97e9667be1": {
+      "unicode": "িঠ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "িঠ"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "44"
+        ],
+        "Nikosh@655": [
+          "8B"
+        ]
+      }
+    },
+    "ef6da976d2": {
+      "unicode": "ঃ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঃ"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "58"
+        ],
+        "Nikosh@655": [
+          "89"
+        ]
+      }
+    },
+    "2170383b4d": {
+      "unicode": "সয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "সয্"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "59"
+        ]
+      }
+    },
+    "bb4ec98aea": {
+      "unicode": "ঘ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঘ"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "72"
+        ],
+        "Nikosh@655": [
+          "75"
+        ]
+      }
+    },
+    "2e4d86ff0b": {
+      "unicode": "ছ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ছ"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "77"
+        ]
+      }
+    },
+    "66ecfa19f2": {
+      "unicode": "তব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "তব্"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "79"
+        ]
+      }
+    },
+    "624ec3d9a8": {
+      "unicode": "ফর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "ফর্",
+        "ফৰ্"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "9E"
+        ]
+      }
+    },
+    "1236aee2ca": {
+      "unicode": "[",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "["
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "02"
+        ]
+      }
+    },
+    "28c4ff8e9c": {
+      "unicode": "]",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "]"
+      ],
+      "count": 5,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "03"
+        ]
+      }
+    },
+    "8bce1f862d": {
+      "unicode": "ল্প",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ল্প"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "15"
+        ]
+      }
+    },
+    "1ff929b764": {
+      "unicode": "মব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "মব্"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "2B"
+        ]
+      }
+    },
+    "ba0f298292": {
+      "unicode": "নব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "নব্"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "65"
+        ]
+      }
+    },
+    "73fd7b866f": {
+      "unicode": "শ্চ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "শ্চ"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "78"
+        ]
+      }
+    },
+    "d24a973cb7": {
+      "unicode": "দব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "দব্"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "7B"
+        ]
+      }
+    },
+    "4f5eaa6c20": {
+      "unicode": "ন্ন",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ন্ন"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "85"
+        ]
+      }
+    },
+    "40eebe2994": {
+      "unicode": "গু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "গু"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "96"
+        ]
+      }
+    },
+    "b25255768c": {
+      "unicode": "%",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "%"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A4"
+        ],
+        "Nikosh@655": [
+          "77"
+        ]
+      }
+    },
+    "4fb305adf9": {
+      "unicode": "ড়",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ড়"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A5"
+        ],
+        "Nikosh@655": [
+          "7D"
+        ]
+      }
+    },
+    "61e919c64e": {
+      "unicode": "ষ্প",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ষ্প"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A6"
+        ]
+      }
+    },
+    "e1d8deddba": {
+      "unicode": "ৈ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ৈ"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "17"
+        ]
+      }
+    },
+    "f8132aeba2": {
+      "unicode": "ধব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ধব্"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "40"
+        ]
+      }
+    },
+    "124492f95e": {
+      "unicode": "+",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "+"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "82"
+        ]
+      }
+    },
+    "c1c4ccb056": {
+      "unicode": "দ্ধৃ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "দ্ধৃ"
+      ],
+      "count": 4,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "87"
+        ]
+      }
+    },
+    "43ddf58541": {
+      "unicode": "ঙ্গ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ঙ্গ"
+      ],
+      "count": 3,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "26"
+        ],
+        "Nikosh@655": [
+          "8C"
+        ]
+      }
+    },
+    "cd48c912ea": {
+      "unicode": "স্তু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "স্তু"
+      ],
+      "count": 3,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "6B"
+        ]
+      }
+    },
+    "992df4117f": {
+      "unicode": "ঝ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঝ"
+      ],
+      "count": 3,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "86"
+        ],
+        "Nikosh@655": [
+          "42"
+        ]
+      }
+    },
+    "37bbeb88f8": {
+      "unicode": "দয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "দয্"
+      ],
+      "count": 3,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "8D"
+        ]
+      }
+    },
+    "aa17e544e4": {
+      "unicode": "দু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "দু"
+      ],
+      "count": 3,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "90"
+        ],
+        "Nikosh@655": [
+          "6F"
+        ]
+      }
+    },
+    "987681cac7": {
+      "unicode": "পু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "পু"
+      ],
+      "count": 3,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "94"
+        ],
+        "Nikosh@655": [
+          "88"
+        ]
+      }
+    },
+    "b082a52365": {
+      "unicode": "কু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "কু"
+      ],
+      "count": 3,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "5E"
+        ]
+      }
+    },
+    "edd7f55f50": {
+      "unicode": "ব্দ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ব্দ"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "27"
+        ]
+      }
+    },
+    "d349d66d47": {
+      "unicode": "পয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "পয্"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "66"
+        ]
+      }
+    },
+    "6dd7c2e1c8": {
+      "unicode": "থয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "থয্"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "70"
+        ]
+      }
+    },
+    "0f774821c6": {
+      "unicode": "ঙ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঙ"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "74"
+        ]
+      }
+    },
+    "12e5cd44a1": {
+      "unicode": "শু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "শু"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "7C"
+        ],
+        "Nikosh@655": [
+          "79"
+        ]
+      }
+    },
+    "feb6eeeff9": {
+      "unicode": "ভু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ভু"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "88"
+        ]
+      }
+    },
+    "aef26c84c4": {
+      "unicode": "শয্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "শয্"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "8A"
+        ]
+      }
+    },
+    "ae2079417f": {
+      "unicode": "ৃ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ৃ"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "8C"
+        ]
+      }
+    },
+    "a011ced8d6": {
+      "unicode": "রু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "রু"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@171",
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A2"
+        ],
+        "Nikosh@655": [
+          "7A"
+        ]
+      }
+    },
+    "b6ba7964c4": {
+      "unicode": "দর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "দর্",
+        "দৰ্"
+      ],
+      "count": 2,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "7B"
+        ]
+      }
+    },
+    "828e058868": {
+      "unicode": "প্ট",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "প্ট"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "2A"
+        ]
+      }
+    },
+    "8ab70a3255": {
+      "unicode": "খর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "খর্",
+        "খৰ্"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "2E"
+        ]
+      }
+    },
+    "f18fe68df0": {
+      "unicode": "ঝু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ঝু"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "75"
+        ]
+      }
+    },
+    "6f4fb68342": {
+      "unicode": "ঁ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঁ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "76"
+        ]
+      }
+    },
+    "8f171b4a93": {
+      "unicode": "ল্ক",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ল্ক"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "7D"
+        ]
+      }
+    },
+    "758a09ec1e": {
+      "unicode": "হর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "হর্",
+        "হৰ্"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "7E"
+        ]
+      }
+    },
+    "b9479db589": {
+      "unicode": "মু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "মু"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "81"
+        ]
+      }
+    },
+    "cef6a861cd": {
+      "unicode": "তু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "তু"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "84"
+        ]
+      }
+    },
+    "8fc2a6a205": {
+      "unicode": "ম্ভ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ম্ভ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "87"
+        ]
+      }
+    },
+    "58ff361379": {
+      "unicode": "ৈ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ৈ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "91"
+        ]
+      }
+    },
+    "065e039ec2": {
+      "unicode": "ষ্টর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "ষ্টর্",
+        "ষ্টৰ্"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "92"
+        ]
+      }
+    },
+    "82f3b0ac68": {
+      "unicode": "টু",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "টু"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "93"
+        ]
+      }
+    },
+    "a1d7222d02": {
+      "unicode": "টর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "টর্",
+        "টৰ্"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "95"
+        ]
+      }
+    },
+    "da64bda51a": {
+      "unicode": "দৃ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "দৃ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "97"
+        ]
+      }
+    },
+    "c1f932c9ff": {
+      "unicode": "ঢ়",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঢ়"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "98"
+        ]
+      }
+    },
+    "50b51c423f": {
+      "unicode": "্",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "্"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "9A"
+        ]
+      }
+    },
+    "447fc24e8b": {
+      "unicode": "ন্থ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ন্থ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "9B"
+        ]
+      }
+    },
+    "34743c3e6c": {
+      "unicode": "স্কৃ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "স্কৃ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "9C"
+        ]
+      }
+    },
+    "3bb191eed0": {
+      "unicode": "শর্",
+      "confidence": 0.6,
+      "source": "shape-match-ambiguous",
+      "candidates": [
+        "শর্",
+        "শৰ্"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "9D"
+        ]
+      }
+    },
+    "7fe1d942db": {
+      "unicode": "ড",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ড"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "9F"
+        ]
+      }
+    },
+    "2472c126da": {
+      "unicode": "ত্তব্",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ত্তব্"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A0"
+        ]
+      }
+    },
+    "0cf06698e5": {
+      "unicode": "স্ক",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "স্ক"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A3"
+        ]
+      }
+    },
+    "432b91ea72": {
+      "unicode": "ঢ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঢ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@171"
+      ],
+      "codes": {
+        "Nikosh@171": [
+          "A7"
+        ]
+      }
+    },
+    "8b68617ffa": {
+      "unicode": "প্ল",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "প্ল"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "56"
+        ]
+      }
+    },
+    "d95d2c79f9": {
+      "unicode": "S",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "S"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "7F"
+        ]
+      }
+    },
+    "d319f1bdc6": {
+      "unicode": "D",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "D"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "80"
+        ]
+      }
+    },
+    "6862741ce5": {
+      "unicode": "{",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "{"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "81"
+        ]
+      }
+    },
+    "f32a5a75e0": {
+      "unicode": "}",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "}"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "83"
+        ]
+      }
+    },
+    "308ff3768e": {
+      "unicode": "ঋ",
+      "confidence": 1.0,
+      "source": "shape-match",
+      "candidates": [
+        "ঋ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "85"
+        ]
+      }
+    },
+    "ae713d8e2e": {
+      "unicode": "চ্ছ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "চ্ছ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "86"
+        ]
+      }
+    },
+    "433ab1e462": {
+      "unicode": "ন্ধ",
+      "confidence": 0.9,
+      "source": "shape-match-ligature",
+      "candidates": [
+        "ন্ধ"
+      ],
+      "count": 1,
+      "objects": [
+        "Nikosh@655"
+      ],
+      "codes": {
+        "Nikosh@655": [
+          "8A"
+        ]
+      }
+    }
+  }
+}
