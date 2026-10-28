@@ -1,0 +1,81 @@
+{
+  "schemaVersion": 1,
+  "edition": "ppr2025",
+  "spans": 15031,
+  "decodedSpans": 9220,
+  "passthroughSpans": {
+    "sutonnymj": 571,
+    "shonarbangla": 41,
+    "symbol": 353,
+    "other": 4797,
+    "kalpurush": 36,
+    "nirmala": 9,
+    "vrinda": 4
+  },
+  "visualChars": 515564,
+  "logicalChars": 510703,
+  "carriedMatras": 31,
+  "hasantaViolations": 0,
+  "knownStrings": [
+    {
+      "logical": "নির্মাণ",
+      "seen": 17,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "সম্পর্কিত",
+      "seen": 30,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "যন্ত্রপাতি",
+      "seen": 30,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "কার্যকর",
+      "seen": 12,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "প্রতিষ্ঠানের",
+      "seen": 34,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "ঊর্ধ্বমুখ",
+      "seen": 1,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "লোকবল",
+      "seen": 5,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "কোনো",
+      "seen": 458,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "বিধিমালার",
+      "seen": 41,
+      "leftoverVisual": 0,
+      "pass": true
+    },
+    {
+      "logical": "সংশ্লিষ্ট",
+      "seen": 189,
+      "leftoverVisual": 0,
+      "pass": true
+    }
+  ]
+}

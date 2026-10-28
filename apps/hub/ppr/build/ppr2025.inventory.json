@@ -1,0 +1,2727 @@
+{
+  "schemaVersion": 1,
+  "edition": "ppr2025",
+  "sourcePdf": "PPR2025.pdf",
+  "pdfPages": 271,
+  "pageOffset": 9559,
+  "footerMismatches": [],
+  "spanCount": 15031,
+  "charCountByFamily": {
+    "nikoshban": 319669,
+    "other": 89741,
+    "nikosh": 16214,
+    "sutonnymj": 12899,
+    "symbol": 353,
+    "shonarbangla": 173,
+    "kalpurush": 104,
+    "nirmala": 88,
+    "vrinda": 4
+  },
+  "fonts": [
+    {
+      "xref": 351,
+      "baseFont": "Arial",
+      "family": "other",
+      "kind": "other",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 703,
+      "baseFont": "Arial",
+      "family": "other",
+      "kind": "other",
+      "pages": 8,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 697,
+      "baseFont": "Arial,Bold",
+      "family": "other",
+      "kind": "other",
+      "pages": 7,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 775,
+      "baseFont": "Calibri",
+      "family": "other",
+      "kind": "other",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 3062,
+      "baseFont": "Cambria",
+      "family": "other",
+      "kind": "other",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 185,
+      "baseFont": "CambriaMath",
+      "family": "other",
+      "kind": "other",
+      "pages": 109,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 659,
+      "baseFont": "CambriaMath",
+      "family": "other",
+      "kind": "other",
+      "pages": 95,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 201,
+      "baseFont": "Kalpurush",
+      "family": "kalpurush",
+      "kind": "unicode",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 171,
+      "baseFont": "Nikosh",
+      "family": "nikosh",
+      "kind": "legacy",
+      "pages": 51,
+      "glyphOrderSize": 1278,
+      "autoMapped": 11
+    },
+    {
+      "xref": 655,
+      "baseFont": "Nikosh",
+      "family": "nikosh",
+      "kind": "legacy",
+      "pages": 14,
+      "glyphOrderSize": 1278,
+      "autoMapped": 19
+    },
+    {
+      "xref": 175,
+      "baseFont": "NikoshBAN",
+      "family": "nikoshban",
+      "kind": "legacy",
+      "pages": 152,
+      "glyphOrderSize": 1278,
+      "autoMapped": 28
+    },
+    {
+      "xref": 331,
+      "baseFont": "NikoshBAN",
+      "family": "nikoshban",
+      "kind": "legacy",
+      "pages": 39,
+      "glyphOrderSize": 1278,
+      "autoMapped": 3
+    },
+    {
+      "xref": 651,
+      "baseFont": "NikoshBAN",
+      "family": "nikoshban",
+      "kind": "legacy",
+      "pages": 71,
+      "glyphOrderSize": 1278,
+      "autoMapped": 44
+    },
+    {
+      "xref": 489,
+      "baseFont": "NirmalaUI",
+      "family": "nirmala",
+      "kind": "unicode",
+      "pages": 2,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 2914,
+      "baseFont": "NirmalaUI",
+      "family": "nirmala",
+      "kind": "unicode",
+      "pages": 3,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 219,
+      "baseFont": "ShonarBangla",
+      "family": "shonarbangla",
+      "kind": "unicode",
+      "pages": 4,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 685,
+      "baseFont": "ShonarBangla",
+      "family": "shonarbangla",
+      "kind": "unicode",
+      "pages": 15,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 167,
+      "baseFont": "ShonarBangla,Bold",
+      "family": "shonarbangla",
+      "kind": "unicode",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 713,
+      "baseFont": "ShonarBangla,Bold",
+      "family": "shonarbangla",
+      "kind": "unicode",
+      "pages": 4,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 159,
+      "baseFont": "SutonnyMJ",
+      "family": "sutonnymj",
+      "kind": "legacy",
+      "pages": 152,
+      "glyphOrderSize": 244,
+      "autoMapped": 36
+    },
+    {
+      "xref": 647,
+      "baseFont": "SutonnyMJ",
+      "family": "sutonnymj",
+      "kind": "legacy",
+      "pages": 119,
+      "glyphOrderSize": 683,
+      "autoMapped": 58
+    },
+    {
+      "xref": 163,
+      "baseFont": "SutonnyMJ,Bold",
+      "family": "sutonnymj",
+      "kind": "legacy",
+      "pages": 1,
+      "glyphOrderSize": 244,
+      "autoMapped": 41
+    },
+    {
+      "xref": 179,
+      "baseFont": "Symbol",
+      "family": "symbol",
+      "kind": "symbol",
+      "pages": 127,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 779,
+      "baseFont": "Symbol",
+      "family": "symbol",
+      "kind": "symbol",
+      "pages": 5,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 215,
+      "baseFont": "TimesNewRoman",
+      "family": "other",
+      "kind": "other",
+      "pages": 4,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 643,
+      "baseFont": "TimesNewRoman",
+      "family": "other",
+      "kind": "other",
+      "pages": 119,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 751,
+      "baseFont": "TimesNewRoman,Bold",
+      "family": "other",
+      "kind": "other",
+      "pages": 2,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 3032,
+      "baseFont": "TimesNewRoman,Italic",
+      "family": "other",
+      "kind": "other",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 679,
+      "baseFont": "Vrinda",
+      "family": "vrinda",
+      "kind": "unicode",
+      "pages": 2,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 693,
+      "baseFont": "Vrinda,Bold",
+      "family": "vrinda",
+      "kind": "unicode",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    },
+    {
+      "xref": 725,
+      "baseFont": "Wingdings",
+      "family": "symbol",
+      "kind": "symbol",
+      "pages": 1,
+      "glyphOrderSize": 0,
+      "autoMapped": 0
+    }
+  ],
+  "duplicateFontNames": [
+    {
+      "page": 66,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 73,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 74,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 80,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 82,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 85,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 86,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 88,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 89,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 90,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 91,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 92,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 93,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 94,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 95,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 96,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 99,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 102,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 103,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 104,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 106,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 107,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 109,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 119,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 120,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 121,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 122,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 123,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 124,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 125,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 130,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 133,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 135,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 136,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 137,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 138,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 139,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 140,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    },
+    {
+      "page": 145,
+      "baseFont": "NikoshBAN",
+      "fonts": [
+        331,
+        175
+      ]
+    }
+  ],
+  "legacyFamilies": {
+    "nikosh": {
+      "distinctCodes": 167,
+      "totalGlyphs": 16214,
+      "autoMappedCodes": 28,
+      "autoMappedCoverage": 0.2622,
+      "uncodedShapes": {},
+      "unresolvedLiterals": [],
+      "codeFrequency": [
+        {
+          "code": "01",
+          "count": 2943
+        },
+        {
+          "code": "06",
+          "count": 1158
+        },
+        {
+          "code": "14",
+          "count": 701
+        },
+        {
+          "code": "07",
+          "count": 677
+        },
+        {
+          "code": "05",
+          "count": 642
+        },
+        {
+          "code": "11",
+          "count": 517
+        },
+        {
+          "code": "16",
+          "count": 508
+        },
+        {
+          "code": "18",
+          "count": 506
+        },
+        {
+          "code": "0D",
+          "count": 468
+        },
+        {
+          "code": "04",
+          "count": 449
+        },
+        {
+          "code": "0A",
+          "count": 413
+        },
+        {
+          "code": "12",
+          "count": 369
+        },
+        {
+          "code": "13",
+          "count": 354
+        },
+        {
+          "code": "10",
+          "count": 327
+        },
+        {
+          "code": "29",
+          "count": 264
+        },
+        {
+          "code": "09",
+          "count": 242
+        },
+        {
+          "code": "1B",
+          "count": 200
+        },
+        {
+          "code": "15",
+          "count": 184
+        },
+        {
+          "code": "19",
+          "count": 182
+        },
+        {
+          "code": "1E",
+          "count": 168
+        },
+        {
+          "code": "45",
+          "count": 165
+        },
+        {
+          "code": "17",
+          "count": 159
+        },
+        {
+          "code": "3B",
+          "count": 156
+        },
+        {
+          "code": "0C",
+          "count": 142
+        },
+        {
+          "code": "0E",
+          "count": 136
+        },
+        {
+          "code": "1A",
+          "count": 131
+        },
+        {
+          "code": "0F",
+          "count": 128
+        },
+        {
+          "code": "26",
+          "count": 128
+        },
+        {
+          "code": "33",
+          "count": 119
+        },
+        {
+          "code": "32",
+          "count": 111
+        },
+        {
+          "code": "57",
+          "count": 106
+        },
+        {
+          "code": "22",
+          "count": 105
+        },
+        {
+          "code": "3A",
+          "count": 102
+        },
+        {
+          "code": "03",
+          "count": 99
+        },
+        {
+          "code": "21",
+          "count": 96
+        },
+        {
+          "code": "40",
+          "count": 93
+        },
+        {
+          "code": "0B",
+          "count": 92
+        },
+        {
+          "code": "3E",
+          "count": 91
+        },
+        {
+          "code": "2C",
+          "count": 89
+        },
+        {
+          "code": "39",
+          "count": 83
+        },
+        {
+          "code": "4A",
+          "count": 83
+        },
+        {
+          "code": "30",
+          "count": 79
+        },
+        {
+          "code": "35",
+          "count": 78
+        },
+        {
+          "code": "2A",
+          "count": 74
+        },
+        {
+          "code": "41",
+          "count": 74
+        },
+        {
+          "code": "02",
+          "count": 69
+        },
+        {
+          "code": "42",
+          "count": 66
+        },
+        {
+          "code": "37",
+          "count": 64
+        },
+        {
+          "code": "1C",
+          "count": 59
+        },
+        {
+          "code": "25",
+          "count": 59
+        },
+        {
+          "code": "3D",
+          "count": 56
+        },
+        {
+          "code": "5A",
+          "count": 56
+        },
+        {
+          "code": "34",
+          "count": 55
+        },
+        {
+          "code": "52",
+          "count": 54
+        },
+        {
+          "code": "54",
+          "count": 54
+        },
+        {
+          "code": "6E",
+          "count": 53
+        },
+        {
+          "code": "2B",
+          "count": 50
+        },
+        {
+          "code": "43",
+          "count": 50
+        },
+        {
+          "code": "51",
+          "count": 49
+        },
+        {
+          "code": "2E",
+          "count": 45
+        },
+        {
+          "code": "1D",
+          "count": 44
+        },
+        {
+          "code": "1F",
+          "count": 44
+        },
+        {
+          "code": "20",
+          "count": 44
+        },
+        {
+          "code": "50",
+          "count": 41
+        },
+        {
+          "code": "49",
+          "count": 40
+        },
+        {
+          "code": "27",
+          "count": 38
+        },
+        {
+          "code": "24",
+          "count": 36
+        },
+        {
+          "code": "38",
+          "count": 35
+        },
+        {
+          "code": "48",
+          "count": 35
+        },
+        {
+          "code": "67",
+          "count": 34
+        },
+        {
+          "code": "31",
+          "count": 33
+        },
+        {
+          "code": "4D",
+          "count": 33
+        },
+        {
+          "code": "08",
+          "count": 32
+        },
+        {
+          "code": "64",
+          "count": 32
+        },
+        {
+          "code": "2D",
+          "count": 30
+        },
+        {
+          "code": "4B",
+          "count": 30
+        },
+        {
+          "code": "5B",
+          "count": 30
+        },
+        {
+          "code": "60",
+          "count": 29
+        },
+        {
+          "code": "5C",
+          "count": 27
+        },
+        {
+          "code": "47",
+          "count": 26
+        },
+        {
+          "code": "56",
+          "count": 26
+        },
+        {
+          "code": "62",
+          "count": 26
+        },
+        {
+          "code": "5D",
+          "count": 25
+        },
+        {
+          "code": "5E",
+          "count": 24
+        },
+        {
+          "code": "71",
+          "count": 24
+        },
+        {
+          "code": "3C",
+          "count": 22
+        },
+        {
+          "code": "53",
+          "count": 21
+        },
+        {
+          "code": "55",
+          "count": 21
+        },
+        {
+          "code": "73",
+          "count": 20
+        },
+        {
+          "code": "5F",
+          "count": 19
+        },
+        {
+          "code": "2F",
+          "count": 18
+        },
+        {
+          "code": "4C",
+          "count": 18
+        },
+        {
+          "code": "66",
+          "count": 18
+        },
+        {
+          "code": "3F",
+          "count": 16
+        },
+        {
+          "code": "6F",
+          "count": 16
+        },
+        {
+          "code": "36",
+          "count": 15
+        },
+        {
+          "code": "4F",
+          "count": 15
+        },
+        {
+          "code": "65",
+          "count": 15
+        },
+        {
+          "code": "7C",
+          "count": 15
+        },
+        {
+          "code": "23",
+          "count": 14
+        },
+        {
+          "code": "4E",
+          "count": 13
+        },
+        {
+          "code": "6C",
+          "count": 13
+        },
+        {
+          "code": "61",
+          "count": 12
+        },
+        {
+          "code": "68",
+          "count": 11
+        },
+        {
+          "code": "59",
+          "count": 10
+        },
+        {
+          "code": "28",
+          "count": 9
+        },
+        {
+          "code": "6A",
+          "count": 9
+        },
+        {
+          "code": "7A",
+          "count": 9
+        },
+        {
+          "code": "44",
+          "count": 8
+        },
+        {
+          "code": "63",
+          "count": 8
+        },
+        {
+          "code": "6D",
+          "count": 8
+        },
+        {
+          "code": "72",
+          "count": 8
+        },
+        {
+          "code": "46",
+          "count": 7
+        },
+        {
+          "code": "7F",
+          "count": 7
+        },
+        {
+          "code": "82",
+          "count": 7
+        },
+        {
+          "code": "8E",
+          "count": 7
+        },
+        {
+          "code": "8F",
+          "count": 7
+        },
+        {
+          "code": "58",
+          "count": 6
+        },
+        {
+          "code": "69",
+          "count": 6
+        },
+        {
+          "code": "70",
+          "count": 6
+        },
+        {
+          "code": "77",
+          "count": 6
+        },
+        {
+          "code": "78",
+          "count": 6
+        },
+        {
+          "code": "79",
+          "count": 6
+        },
+        {
+          "code": "7B",
+          "count": 6
+        },
+        {
+          "code": "8B",
+          "count": 6
+        },
+        {
+          "code": "6B",
+          "count": 5
+        },
+        {
+          "code": "85",
+          "count": 5
+        },
+        {
+          "code": "87",
+          "count": 5
+        },
+        {
+          "code": "99",
+          "count": 5
+        },
+        {
+          "code": "9E",
+          "count": 5
+        },
+        {
+          "code": "74",
+          "count": 4
+        },
+        {
+          "code": "7D",
+          "count": 4
+        },
+        {
+          "code": "80",
+          "count": 4
+        },
+        {
+          "code": "83",
+          "count": 4
+        },
+        {
+          "code": "96",
+          "count": 4
+        },
+        {
+          "code": "A6",
+          "count": 4
+        },
+        {
+          "code": "75",
+          "count": 3
+        },
+        {
+          "code": "86",
+          "count": 3
+        },
+        {
+          "code": "88",
+          "count": 3
+        },
+        {
+          "code": "89",
+          "count": 3
+        },
+        {
+          "code": "8A",
+          "count": 3
+        },
+        {
+          "code": "8C",
+          "count": 3
+        },
+        {
+          "code": "8D",
+          "count": 3
+        },
+        {
+          "code": "A4",
+          "count": 3
+        },
+        {
+          "code": "76",
+          "count": 2
+        },
+        {
+          "code": "7E",
+          "count": 2
+        },
+        {
+          "code": "81",
+          "count": 2
+        },
+        {
+          "code": "84",
+          "count": 2
+        },
+        {
+          "code": "90",
+          "count": 2
+        },
+        {
+          "code": "94",
+          "count": 2
+        },
+        {
+          "code": "91",
+          "count": 1
+        },
+        {
+          "code": "92",
+          "count": 1
+        },
+        {
+          "code": "93",
+          "count": 1
+        },
+        {
+          "code": "95",
+          "count": 1
+        },
+        {
+          "code": "97",
+          "count": 1
+        },
+        {
+          "code": "98",
+          "count": 1
+        },
+        {
+          "code": "9A",
+          "count": 1
+        },
+        {
+          "code": "9B",
+          "count": 1
+        },
+        {
+          "code": "9C",
+          "count": 1
+        },
+        {
+          "code": "9D",
+          "count": 1
+        },
+        {
+          "code": "9F",
+          "count": 1
+        },
+        {
+          "code": "A0",
+          "count": 1
+        },
+        {
+          "code": "A1",
+          "count": 1
+        },
+        {
+          "code": "A2",
+          "count": 1
+        },
+        {
+          "code": "A3",
+          "count": 1
+        },
+        {
+          "code": "A5",
+          "count": 1
+        },
+        {
+          "code": "A7",
+          "count": 1
+        }
+      ],
+      "autoTable": {
+        "01": " ",
+        "21": ":",
+        "28": "/",
+        "31": "।",
+        "34": "।",
+        "37": ",",
+        "39": "(",
+        "3A": ")",
+        "5C": ";",
+        "6E": "-",
+        "A4": "%",
+        "02": "[",
+        "03": "]",
+        "20": ":",
+        "26": "(",
+        "29": ")",
+        "2C": ";",
+        "46": "-",
+        "48": ",",
+        "77": "%",
+        "7C": "=",
+        "7E": ".",
+        "7F": "S",
+        "80": "D",
+        "81": "{",
+        "82": "+",
+        "83": "}",
+        "84": "/"
+      }
+    },
+    "nikoshban": {
+      "distinctCodes": 254,
+      "totalGlyphs": 319669,
+      "autoMappedCodes": 72,
+      "autoMappedCoverage": 0.4335,
+      "uncodedShapes": {},
+      "unresolvedLiterals": [],
+      "codeFrequency": [
+        {
+          "code": "05",
+          "count": 44832
+        },
+        {
+          "code": "0B",
+          "count": 25657
+        },
+        {
+          "code": "02",
+          "count": 15620
+        },
+        {
+          "code": "17",
+          "count": 15067
+        },
+        {
+          "code": "0D",
+          "count": 15018
+        },
+        {
+          "code": "08",
+          "count": 12966
+        },
+        {
+          "code": "0F",
+          "count": 10956
+        },
+        {
+          "code": "19",
+          "count": 10927
+        },
+        {
+          "code": "04",
+          "count": 9428
+        },
+        {
+          "code": "1A",
+          "count": 8556
+        },
+        {
+          "code": "12",
+          "count": 6431
+        },
+        {
+          "code": "16",
+          "count": 6282
+        },
+        {
+          "code": "0C",
+          "count": 5922
+        },
+        {
+          "code": "37",
+          "count": 5508
+        },
+        {
+          "code": "23",
+          "count": 5341
+        },
+        {
+          "code": "1C",
+          "count": 4828
+        },
+        {
+          "code": "1B",
+          "count": 4590
+        },
+        {
+          "code": "2C",
+          "count": 4385
+        },
+        {
+          "code": "09",
+          "count": 4109
+        },
+        {
+          "code": "21",
+          "count": 3610
+        },
+        {
+          "code": "06",
+          "count": 3511
+        },
+        {
+          "code": "33",
+          "count": 3239
+        },
+        {
+          "code": "3B",
+          "count": 2959
+        },
+        {
+          "code": "38",
+          "count": 2892
+        },
+        {
+          "code": "28",
+          "count": 2822
+        },
+        {
+          "code": "2E",
+          "count": 2787
+        },
+        {
+          "code": "03",
+          "count": 2705
+        },
+        {
+          "code": "1F",
+          "count": 2697
+        },
+        {
+          "code": "1D",
+          "count": 2575
+        },
+        {
+          "code": "01",
+          "count": 2469
+        },
+        {
+          "code": "26",
+          "count": 2349
+        },
+        {
+          "code": "24",
+          "count": 2200
+        },
+        {
+          "code": "1E",
+          "count": 2184
+        },
+        {
+          "code": "13",
+          "count": 2100
+        },
+        {
+          "code": "15",
+          "count": 2032
+        },
+        {
+          "code": "20",
+          "count": 2001
+        },
+        {
+          "code": "43",
+          "count": 1879
+        },
+        {
+          "code": "44",
+          "count": 1839
+        },
+        {
+          "code": "4F",
+          "count": 1819
+        },
+        {
+          "code": "18",
+          "count": 1673
+        },
+        {
+          "code": "47",
+          "count": 1662
+        },
+        {
+          "code": "14",
+          "count": 1631
+        },
+        {
+          "code": "42",
+          "count": 1555
+        },
+        {
+          "code": "2F",
+          "count": 1526
+        },
+        {
+          "code": "11",
+          "count": 1475
+        },
+        {
+          "code": "27",
+          "count": 1443
+        },
+        {
+          "code": "07",
+          "count": 1410
+        },
+        {
+          "code": "2B",
+          "count": 1283
+        },
+        {
+          "code": "36",
+          "count": 1215
+        },
+        {
+          "code": "76",
+          "count": 1163
+        },
+        {
+          "code": "5C",
+          "count": 1135
+        },
+        {
+          "code": "50",
+          "count": 1131
+        },
+        {
+          "code": "4C",
+          "count": 1130
+        },
+        {
+          "code": "3F",
+          "count": 1100
+        },
+        {
+          "code": "2A",
+          "count": 1018
+        },
+        {
+          "code": "55",
+          "count": 1001
+        },
+        {
+          "code": "31",
+          "count": 930
+        },
+        {
+          "code": "4E",
+          "count": 885
+        },
+        {
+          "code": "71",
+          "count": 863
+        },
+        {
+          "code": "68",
+          "count": 840
+        },
+        {
+          "code": "0E",
+          "count": 801
+        },
+        {
+          "code": "45",
+          "count": 762
+        },
+        {
+          "code": "77",
+          "count": 761
+        },
+        {
+          "code": "10",
+          "count": 717
+        },
+        {
+          "code": "0A",
+          "count": 669
+        },
+        {
+          "code": "39",
+          "count": 621
+        },
+        {
+          "code": "63",
+          "count": 605
+        },
+        {
+          "code": "66",
+          "count": 605
+        },
+        {
+          "code": "49",
+          "count": 591
+        },
+        {
+          "code": "30",
+          "count": 554
+        },
+        {
+          "code": "41",
+          "count": 538
+        },
+        {
+          "code": "48",
+          "count": 531
+        },
+        {
+          "code": "54",
+          "count": 522
+        },
+        {
+          "code": "3E",
+          "count": 498
+        },
+        {
+          "code": "46",
+          "count": 498
+        },
+        {
+          "code": "75",
+          "count": 496
+        },
+        {
+          "code": "64",
+          "count": 488
+        },
+        {
+          "code": "2D",
+          "count": 479
+        },
+        {
+          "code": "58",
+          "count": 457
+        },
+        {
+          "code": "29",
+          "count": 443
+        },
+        {
+          "code": "4A",
+          "count": 404
+        },
+        {
+          "code": "72",
+          "count": 396
+        },
+        {
+          "code": "60",
+          "count": 394
+        },
+        {
+          "code": "5D",
+          "count": 332
+        },
+        {
+          "code": "3C",
+          "count": 310
+        },
+        {
+          "code": "25",
+          "count": 309
+        },
+        {
+          "code": "35",
+          "count": 308
+        },
+        {
+          "code": "8A",
+          "count": 307
+        },
+        {
+          "code": "7A",
+          "count": 305
+        },
+        {
+          "code": "3A",
+          "count": 283
+        },
+        {
+          "code": "4D",
+          "count": 280
+        },
+        {
+          "code": "5A",
+          "count": 274
+        },
+        {
+          "code": "82",
+          "count": 268
+        },
+        {
+          "code": "7B",
+          "count": 258
+        },
+        {
+          "code": "3D",
+          "count": 255
+        },
+        {
+          "code": "7D",
+          "count": 253
+        },
+        {
+          "code": "53",
+          "count": 245
+        },
+        {
+          "code": "57",
+          "count": 238
+        },
+        {
+          "code": "40",
+          "count": 225
+        },
+        {
+          "code": "6A",
+          "count": 225
+        },
+        {
+          "code": "A5",
+          "count": 220
+        },
+        {
+          "code": "69",
+          "count": 218
+        },
+        {
+          "code": "A4",
+          "count": 212
+        },
+        {
+          "code": "52",
+          "count": 209
+        },
+        {
+          "code": "32",
+          "count": 206
+        },
+        {
+          "code": "51",
+          "count": 201
+        },
+        {
+          "code": "5B",
+          "count": 199
+        },
+        {
+          "code": "74",
+          "count": 196
+        },
+        {
+          "code": "6C",
+          "count": 192
+        },
+        {
+          "code": "8F",
+          "count": 190
+        },
+        {
+          "code": "81",
+          "count": 182
+        },
+        {
+          "code": "67",
+          "count": 177
+        },
+        {
+          "code": "6E",
+          "count": 171
+        },
+        {
+          "code": "4B",
+          "count": 170
+        },
+        {
+          "code": "61",
+          "count": 168
+        },
+        {
+          "code": "59",
+          "count": 162
+        },
+        {
+          "code": "86",
+          "count": 161
+        },
+        {
+          "code": "5F",
+          "count": 159
+        },
+        {
+          "code": "A1",
+          "count": 159
+        },
+        {
+          "code": "A9",
+          "count": 159
+        },
+        {
+          "code": "80",
+          "count": 154
+        },
+        {
+          "code": "6F",
+          "count": 151
+        },
+        {
+          "code": "70",
+          "count": 149
+        },
+        {
+          "code": "A8",
+          "count": 137
+        },
+        {
+          "code": "34",
+          "count": 131
+        },
+        {
+          "code": "7E",
+          "count": 131
+        },
+        {
+          "code": "5E",
+          "count": 125
+        },
+        {
+          "code": "84",
+          "count": 122
+        },
+        {
+          "code": "65",
+          "count": 113
+        },
+        {
+          "code": "96",
+          "count": 112
+        },
+        {
+          "code": "9C",
+          "count": 110
+        },
+        {
+          "code": "97",
+          "count": 109
+        },
+        {
+          "code": "22",
+          "count": 105
+        },
+        {
+          "code": "78",
+          "count": 101
+        },
+        {
+          "code": "79",
+          "count": 101
+        },
+        {
+          "code": "7F",
+          "count": 100
+        },
+        {
+          "code": "A2",
+          "count": 93
+        },
+        {
+          "code": "AB",
+          "count": 90
+        },
+        {
+          "code": "85",
+          "count": 89
+        },
+        {
+          "code": "BF",
+          "count": 88
+        },
+        {
+          "code": "D1",
+          "count": 87
+        },
+        {
+          "code": "D0",
+          "count": 85
+        },
+        {
+          "code": "8C",
+          "count": 81
+        },
+        {
+          "code": "6D",
+          "count": 78
+        },
+        {
+          "code": "62",
+          "count": 72
+        },
+        {
+          "code": "AC",
+          "count": 69
+        },
+        {
+          "code": "A6",
+          "count": 68
+        },
+        {
+          "code": "87",
+          "count": 67
+        },
+        {
+          "code": "B6",
+          "count": 63
+        },
+        {
+          "code": "56",
+          "count": 62
+        },
+        {
+          "code": "8B",
+          "count": 62
+        },
+        {
+          "code": "6B",
+          "count": 61
+        },
+        {
+          "code": "B0",
+          "count": 61
+        },
+        {
+          "code": "A0",
+          "count": 58
+        },
+        {
+          "code": "B7",
+          "count": 57
+        },
+        {
+          "code": "B1",
+          "count": 55
+        },
+        {
+          "code": "90",
+          "count": 53
+        },
+        {
+          "code": "88",
+          "count": 50
+        },
+        {
+          "code": "92",
+          "count": 50
+        },
+        {
+          "code": "93",
+          "count": 49
+        },
+        {
+          "code": "7C",
+          "count": 48
+        },
+        {
+          "code": "C7",
+          "count": 47
+        },
+        {
+          "code": "8E",
+          "count": 43
+        },
+        {
+          "code": "91",
+          "count": 43
+        },
+        {
+          "code": "9F",
+          "count": 43
+        },
+        {
+          "code": "8D",
+          "count": 42
+        },
+        {
+          "code": "B9",
+          "count": 42
+        },
+        {
+          "code": "DD",
+          "count": 42
+        },
+        {
+          "code": "D4",
+          "count": 41
+        },
+        {
+          "code": "AD",
+          "count": 39
+        },
+        {
+          "code": "A3",
+          "count": 36
+        },
+        {
+          "code": "DE",
+          "count": 35
+        },
+        {
+          "code": "E2",
+          "count": 35
+        },
+        {
+          "code": "E7",
+          "count": 35
+        },
+        {
+          "code": "73",
+          "count": 32
+        },
+        {
+          "code": "9D",
+          "count": 32
+        },
+        {
+          "code": "C3",
+          "count": 32
+        },
+        {
+          "code": "83",
+          "count": 31
+        },
+        {
+          "code": "A7",
+          "count": 30
+        },
+        {
+          "code": "94",
+          "count": 29
+        },
+        {
+          "code": "CD",
+          "count": 28
+        },
+        {
+          "code": "BA",
+          "count": 27
+        },
+        {
+          "code": "F5",
+          "count": 27
+        },
+        {
+          "code": "C0",
+          "count": 24
+        },
+        {
+          "code": "CA",
+          "count": 24
+        },
+        {
+          "code": "DB",
+          "count": 24
+        },
+        {
+          "code": "BE",
+          "count": 23
+        },
+        {
+          "code": "C2",
+          "count": 23
+        },
+        {
+          "code": "95",
+          "count": 22
+        },
+        {
+          "code": "99",
+          "count": 21
+        },
+        {
+          "code": "AF",
+          "count": 21
+        },
+        {
+          "code": "CB",
+          "count": 21
+        },
+        {
+          "code": "DF",
+          "count": 21
+        },
+        {
+          "code": "9B",
+          "count": 20
+        },
+        {
+          "code": "C4",
+          "count": 20
+        },
+        {
+          "code": "CF",
+          "count": 20
+        },
+        {
+          "code": "89",
+          "count": 19
+        },
+        {
+          "code": "CE",
+          "count": 19
+        },
+        {
+          "code": "D5",
+          "count": 19
+        },
+        {
+          "code": "EB",
+          "count": 19
+        },
+        {
+          "code": "EF",
+          "count": 19
+        },
+        {
+          "code": "AE",
+          "count": 17
+        },
+        {
+          "code": "B3",
+          "count": 17
+        },
+        {
+          "code": "BD",
+          "count": 17
+        },
+        {
+          "code": "CC",
+          "count": 17
+        },
+        {
+          "code": "E3",
+          "count": 17
+        },
+        {
+          "code": "C1",
+          "count": 16
+        },
+        {
+          "code": "C5",
+          "count": 16
+        },
+        {
+          "code": "D9",
+          "count": 16
+        },
+        {
+          "code": "F2",
+          "count": 16
+        },
+        {
+          "code": "9A",
+          "count": 15
+        },
+        {
+          "code": "D7",
+          "count": 15
+        },
+        {
+          "code": "E9",
+          "count": 15
+        },
+        {
+          "code": "AA",
+          "count": 14
+        },
+        {
+          "code": "ED",
+          "count": 14
+        },
+        {
+          "code": "FA",
+          "count": 14
+        },
+        {
+          "code": "C8",
+          "count": 13
+        },
+        {
+          "code": "D8",
+          "count": 13
+        },
+        {
+          "code": "E0",
+          "count": 13
+        },
+        {
+          "code": "B5",
+          "count": 12
+        },
+        {
+          "code": "B2",
+          "count": 11
+        },
+        {
+          "code": "B4",
+          "count": 11
+        },
+        {
+          "code": "C9",
+          "count": 11
+        },
+        {
+          "code": "F0",
+          "count": 10
+        },
+        {
+          "code": "C6",
+          "count": 9
+        },
+        {
+          "code": "D6",
+          "count": 9
+        },
+        {
+          "code": "E1",
+          "count": 9
+        },
+        {
+          "code": "E5",
+          "count": 9
+        },
+        {
+          "code": "E8",
+          "count": 8
+        },
+        {
+          "code": "D2",
+          "count": 7
+        },
+        {
+          "code": "DA",
+          "count": 7
+        },
+        {
+          "code": "F3",
+          "count": 7
+        },
+        {
+          "code": "BB",
+          "count": 6
+        },
+        {
+          "code": "DC",
+          "count": 6
+        },
+        {
+          "code": "F6",
+          "count": 6
+        },
+        {
+          "code": "F8",
+          "count": 6
+        },
+        {
+          "code": "F7",
+          "count": 5
+        },
+        {
+          "code": "9E",
+          "count": 4
+        },
+        {
+          "code": "B8",
+          "count": 4
+        },
+        {
+          "code": "D3",
+          "count": 4
+        },
+        {
+          "code": "E4",
+          "count": 4
+        },
+        {
+          "code": "F1",
+          "count": 4
+        },
+        {
+          "code": "FC",
+          "count": 4
+        },
+        {
+          "code": "98",
+          "count": 3
+        },
+        {
+          "code": "BC",
+          "count": 3
+        },
+        {
+          "code": "E6",
+          "count": 3
+        },
+        {
+          "code": "EA",
+          "count": 3
+        },
+        {
+          "code": "F4",
+          "count": 3
+        },
+        {
+          "code": "FB",
+          "count": 3
+        },
+        {
+          "code": "EC",
+          "count": 2
+        },
+        {
+          "code": "F9",
+          "count": 2
+        },
+        {
+          "code": "FD",
+          "count": 2
+        },
+        {
+          "code": "FE",
+          "count": 2
+        },
+        {
+          "code": "EE",
+          "count": 1
+        }
+      ],
+      "autoTable": {
+        "05": " ",
+        "11": "।",
+        "1C": "(",
+        "1D": ")",
+        "22": "“",
+        "26": ",",
+        "2A": "”",
+        "35": "‘",
+        "3A": "’",
+        "49": "0",
+        "4A": "4",
+        "4C": "-",
+        "51": "3",
+        "88": "1",
+        "89": "9",
+        "A9": ":",
+        "AA": "5",
+        "B5": "7",
+        "B6": "−",
+        "BA": "%",
+        "C5": "6",
+        "D5": "2",
+        "D8": "d",
+        "D9": "0",
+        "E1": "/",
+        "E3": ".",
+        "FC": "+",
+        "FD": "=",
+        "0D": "1",
+        "13": "D",
+        "18": "×",
+        "06": "-",
+        "08": " ",
+        "0B": "4",
+        "0C": "(",
+        "0E": ")",
+        "14": ",",
+        "2E": ".",
+        "43": "2",
+        "48": "5",
+        "4B": "3",
+        "53": "/",
+        "57": "[",
+        "58": "‘",
+        "5A": "'",
+        "5E": "]",
+        "61": "D",
+        "71": ":",
+        "7A": "।",
+        "84": ";",
+        "8C": "9",
+        "90": "7",
+        "91": "8",
+        "96": "%",
+        "99": "6",
+        "B7": "R",
+        "B8": "S",
+        "BB": "N",
+        "BC": "M",
+        "BD": "W",
+        "C3": "’",
+        "C6": "…",
+        "D7": "s",
+        "DB": "x",
+        "DC": "i",
+        "DE": "=",
+        "DF": "*",
+        "E0": "+",
+        "E2": "−",
+        "E4": "C",
+        "E5": "I",
+        "E6": "P"
+      }
+    },
+    "sutonnymj": {
+      "distinctCodes": 58,
+      "totalGlyphs": 12899,
+      "autoMappedCodes": 58,
+      "autoMappedCoverage": 1.0,
+      "uncodedShapes": {},
+      "unresolvedLiterals": [],
+      "codeFrequency": [
+        {
+          "code": "01",
+          "count": 1416
+        },
+        {
+          "code": "08",
+          "count": 1020
+        },
+        {
+          "code": "17",
+          "count": 695
+        },
+        {
+          "code": "04",
+          "count": 609
+        },
+        {
+          "code": "1A",
+          "count": 595
+        },
+        {
+          "code": "14",
+          "count": 573
+        },
+        {
+          "code": "05",
+          "count": 547
+        },
+        {
+          "code": "0F",
+          "count": 437
+        },
+        {
+          "code": "0B",
+          "count": 429
+        },
+        {
+          "code": "1C",
+          "count": 417
+        },
+        {
+          "code": "11",
+          "count": 397
+        },
+        {
+          "code": "0D",
+          "count": 392
+        },
+        {
+          "code": "1E",
+          "count": 326
+        },
+        {
+          "code": "18",
+          "count": 323
+        },
+        {
+          "code": "07",
+          "count": 313
+        },
+        {
+          "code": "1B",
+          "count": 294
+        },
+        {
+          "code": "19",
+          "count": 292
+        },
+        {
+          "code": "02",
+          "count": 291
+        },
+        {
+          "code": "13",
+          "count": 278
+        },
+        {
+          "code": "0A",
+          "count": 274
+        },
+        {
+          "code": "15",
+          "count": 272
+        },
+        {
+          "code": "12",
+          "count": 271
+        },
+        {
+          "code": "16",
+          "count": 271
+        },
+        {
+          "code": "10",
+          "count": 262
+        },
+        {
+          "code": "09",
+          "count": 259
+        },
+        {
+          "code": "1D",
+          "count": 184
+        },
+        {
+          "code": "1F",
+          "count": 174
+        },
+        {
+          "code": "20",
+          "count": 174
+        },
+        {
+          "code": "21",
+          "count": 159
+        },
+        {
+          "code": "22",
+          "count": 155
+        },
+        {
+          "code": "23",
+          "count": 155
+        },
+        {
+          "code": "03",
+          "count": 153
+        },
+        {
+          "code": "06",
+          "count": 131
+        },
+        {
+          "code": "0E",
+          "count": 123
+        },
+        {
+          "code": "0C",
+          "count": 121
+        },
+        {
+          "code": "24",
+          "count": 51
+        },
+        {
+          "code": "2A",
+          "count": 11
+        },
+        {
+          "code": "28",
+          "count": 9
+        },
+        {
+          "code": "26",
+          "count": 6
+        },
+        {
+          "code": "29",
+          "count": 5
+        },
+        {
+          "code": "27",
+          "count": 4
+        },
+        {
+          "code": "25",
+          "count": 3
+        },
+        {
+          "code": "32",
+          "count": 3
+        },
+        {
+          "code": "2B",
+          "count": 2
+        },
+        {
+          "code": "2C",
+          "count": 2
+        },
+        {
+          "code": "2E",
+          "count": 2
+        },
+        {
+          "code": "31",
+          "count": 2
+        },
+        {
+          "code": "33",
+          "count": 2
+        },
+        {
+          "code": "34",
+          "count": 2
+        },
+        {
+          "code": "35",
+          "count": 2
+        },
+        {
+          "code": "36",
+          "count": 2
+        },
+        {
+          "code": "38",
+          "count": 2
+        },
+        {
+          "code": "3A",
+          "count": 2
+        },
+        {
+          "code": "2D",
+          "count": 1
+        },
+        {
+          "code": "2F",
+          "count": 1
+        },
+        {
+          "code": "30",
+          "count": 1
+        },
+        {
+          "code": "37",
+          "count": 1
+        },
+        {
+          "code": "39",
+          "count": 1
+        }
+      ],
+      "autoTable": {
+        "01": "e",
+        "02": "v",
+        "03": "s",
+        "04": "j",
+        "05": "‡",
+        "06": "`",
+        "07": "k",
+        "08": " ",
+        "09": "†",
+        "0A": "M",
+        "0B": "R",
+        "0C": "U",
+        "0D": ",",
+        "0E": "A",
+        "0F": "w",
+        "10": "Z",
+        "11": "i",
+        "12": "³",
+        "13": "m",
+        "14": "Þ",
+        "15": "¤",
+        "16": "^",
+        "17": "2",
+        "18": "8",
+        "19": "0",
+        "1A": "5",
+        "1B": "9",
+        "1C": "7",
+        "1D": "1",
+        "1E": "3",
+        "1F": "4",
+        "20": "6",
+        "21": "g",
+        "22": "n",
+        "23": "§",
+        "24": "y",
+        "25": "B",
+        "26": "D",
+        "27": "d",
+        "28": "c",
+        "29": "P",
+        "2A": "K",
+        "2B": "(",
+        "2C": ")",
+        "2D": "x",
+        "2E": "ª",
+        "2F": "Y",
+        "30": "q",
+        "31": "u",
+        "32": "I",
+        "33": "X",
+        "34": "…",
+        "35": "©",
+        "36": "|",
+        "37": "t",
+        "38": "b",
+        "39": "æ",
+        "3A": "Ö"
+      }
+    }
+  }
+}

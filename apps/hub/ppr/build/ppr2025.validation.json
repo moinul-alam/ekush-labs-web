@@ -1,0 +1,168 @@
+{
+  "schemaVersion": 1,
+  "edition": "ppr2025",
+  "spans": 15031,
+  "checks": [
+    {
+      "id": 1,
+      "name": "residual characters",
+      "status": "pass",
+      "detail": {
+        "hard": {},
+        "flagged": {
+          "privateUse": 353,
+          "replacement": 108
+        },
+        "flaggedByFamily": {
+          "kalpurush": {
+            "replacement": 82
+          },
+          "shonarbangla": {
+            "replacement": 26
+          },
+          "symbol": {
+            "privateUse": 353
+          }
+        },
+        "note": "replacement = a Unicode Bengali font with no glyph for the codepoint; privateUse = the Symbol / Wingdings runtime encoding. Both are counted here and their disposition is open in progress-status (Open questions)."
+      }
+    },
+    {
+      "id": 2,
+      "name": "expected keywords",
+      "status": "pass",
+      "detail": {
+        "counts": {
+          "বিধি": 507,
+          "অধ্যায়": 30,
+          "তফসিল": 231
+        },
+        "floors": {
+          "বিধি": 100,
+          "অধ্যায়": 10,
+          "তফসিল": 50
+        },
+        "belowFloor": []
+      }
+    },
+    {
+      "id": 3,
+      "name": "rule numbering",
+      "status": "pass",
+      "detail": {
+        "first": 1,
+        "last": 154,
+        "count": 154,
+        "contiguous": true,
+        "chaptersPartition": true,
+        "perChapter": {
+          "1": 3,
+          "2": 18,
+          "3": 56,
+          "4": 32,
+          "5": 14,
+          "6": 25,
+          "7": 1,
+          "8": 1,
+          "9": 4
+        },
+        "rejectedCandidates": 17
+      }
+    },
+    {
+      "id": 4,
+      "name": "page coverage",
+      "status": "pass",
+      "detail": {
+        "expectedPages": 271,
+        "provisionPages": 247,
+        "imageOnlyPages": 24,
+        "missing": [],
+        "outsideEdition": [],
+        "unrecordedImages": [],
+        "phantomImages": []
+      }
+    },
+    {
+      "id": 5,
+      "name": "known strings",
+      "status": "pass",
+      "detail": {
+        "strings": [
+          {
+            "logical": "নির্মাণ",
+            "seen": 23,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "সম্পর্কিত",
+            "seen": 33,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "যন্ত্রপাতি",
+            "seen": 33,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "কার্যকর",
+            "seen": 12,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "প্রতিষ্ঠানের",
+            "seen": 35,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "ঊর্ধ্বমুখ",
+            "seen": 1,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "লোকবল",
+            "seen": 5,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "কোনো",
+            "seen": 796,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "বিধিমালার",
+            "seen": 48,
+            "leftoverVisual": 0,
+            "pass": true
+          },
+          {
+            "logical": "সংশ্লিষ্ট",
+            "seen": 238,
+            "leftoverVisual": 0,
+            "pass": true
+          }
+        ],
+        "failed": []
+      }
+    },
+    {
+      "id": 6,
+      "name": "oracle divergence",
+      "status": "skipped",
+      "detail": {
+        "reason": "external cross-check against the web edition, run by hand"
+      }
+    }
+  ],
+  "passed": 5,
+  "failed": 0,
+  "skipped": 1
+}
