@@ -77,6 +77,20 @@ function calculateTierProfits(
 }
 
 /**
+ * Returns the minimum purchase step for a scheme: the GCD of its available
+ * denominations. A certificate can only be bought by combining whole
+ * denomination units, so the total must be an exact multiple of this step
+ * (e.g. Family = multiples of Tk 10,000). Returns 0 when no denominations
+ * are defined, meaning the check is skipped.
+ */
+function denominationStep(scheme: SchemeDefinition): number {
+  const denoms = scheme.purchaseLimits.denominations;
+  if (!denoms || denoms.length === 0) return 0;
+  const gcd = (a: number, b: number): number => (b === 0 ? a : gcd(b, a % b));
+  return denoms.reduce((acc, d) => gcd(acc, d));
+}
+
+/**
  * Calculates result for a single scheme given input, rate period data, and tax data.
  */
 export function calculateSchemeResult(
@@ -149,13 +163,20 @@ export function calculateSchemeResult(
     };
   }
 
+  // Denomination rule: certificates are sold in fixed denominations, so a
+  // desired amount is trimmed down to the nearest purchasable amount
+  // (e.g. Family sells in multiples of Tk 10,000, so 356,800 → 350,000).
+  // All calculations below are based on this investable amount.
+  const step = denominationStep(scheme);
+  const investableAmount = step > 0 ? Math.floor(amount / step) * step : amount;
+
   // 2. Rate and Profit Calculations
   const threshold = scheme.rateTierThreshold || rateData.tierThreshold || 750000;
   const tierMode = rateData.tierMode || 'excess_only';
   const r1 = schemeRate.rateAtOrBelowThreshold;
   const r2 = schemeRate.rateAboveThreshold;
 
-  const tierCalc = calculateTierProfits(amount, threshold, tierMode, r1, r2);
+  const tierCalc = calculateTierProfits(investableAmount, threshold, tierMode, r1, r2);
   const termYears = scheme.termYears;
   const totalGrossProfit = tierCalc.annualProfit * termYears;
 
@@ -163,9 +184,9 @@ export function calculateSchemeResult(
   const taxRule = resolveTaxRule(taxData, purchaseDate);
   let taxRatePercent = 0;
 
-  if (scheme.id === 'pensioner' && amount <= taxRule.pensionerExemptUpTo) {
+  if (scheme.id === 'pensioner' && investableAmount <= taxRule.pensionerExemptUpTo) {
     taxRatePercent = 0;
-  } else if (amount <= 500000) {
+  } else if (investableAmount <= 500000) {
     taxRatePercent = 5.0;
   } else {
     taxRatePercent = 10.0;
@@ -173,11 +194,11 @@ export function calculateSchemeResult(
 
   const taxDeducted = Math.round((totalGrossProfit * taxRatePercent) / 100);
   const netProfit = Math.round(totalGrossProfit - taxDeducted);
-  const totalAtMaturity = amount + netProfit;
+  const totalAtMaturity = investableAmount + netProfit;
 
   // 4. Effective Annual Yield (% on net return)
   // Annualized return = (netProfit / (amount * termYears)) * 100
-  const effectiveAnnualYield = amount > 0 ? (netProfit / (amount * termYears)) * 100 : 0;
+  const effectiveAnnualYield = investableAmount > 0 ? (netProfit / (investableAmount * termYears)) * 100 : 0;
 
   // 5. Periodic Payout (for monthly / quarterly schemes)
   let periodicPayout: PeriodicPayoutResult | undefined;
@@ -216,14 +237,14 @@ export function calculateSchemeResult(
 
       const yR1 = row.rateAtOrBelowThreshold ?? r1;
       const yR2 = row.rateAboveThreshold ?? r2;
-      const yTier = calculateTierProfits(amount, threshold, tierMode, yR1, yR2);
+      const yTier = calculateTierProfits(investableAmount, threshold, tierMode, yR1, yR2);
 
       const entitledGrossProfit = Math.round(yTier.annualProfit * y);
       const entitledTax = Math.round((entitledGrossProfit * taxRatePercent) / 100);
       const entitledNetProfit = entitledGrossProfit - entitledTax;
 
       // Net receivable is principal (main) + entitled net profit
-      const netReceivable = amount + entitledNetProfit;
+      const netReceivable = investableAmount + entitledNetProfit;
 
       earlyEncashment.push({
         afterFullYears: y,
@@ -245,13 +266,13 @@ export function calculateSchemeResult(
       bn:
         tierCalc.tier2Amount > 0
           ? `প্রথম ${formatCurrency(threshold, 'bn')} এর ওপর ${formatPercent(r1, 'bn')} হারে এবং অতিরিক্ত ${formatCurrency(tierCalc.tier2Amount, 'bn')} এর ওপর ${formatPercent(r2, 'bn')} হারে গড় কার্যকর মুনাফার হার ${formatPercent(tierCalc.weightedRate, 'bn')}।`
-          : `মোট বিনিয়োগ ${formatCurrency(amount, 'bn')} (৭.৫০ লক্ষ টাকার মধ্যে), যার ওপর প্রযোজ্য মুনাফার হার ${formatPercent(r1, 'bn')}।`,
+          : `মোট বিনিয়োগ ${formatCurrency(investableAmount, 'bn')} (৭.৫০ লক্ষ টাকার মধ্যে), যার ওপর প্রযোজ্য মুনাফার হার ${formatPercent(r1, 'bn')}।`,
       en:
         tierCalc.tier2Amount > 0
           ? `First ${formatCurrency(threshold, 'en')} at ${formatPercent(r1, 'en')} and excess ${formatCurrency(tierCalc.tier2Amount, 'en')} at ${formatPercent(r2, 'en')}. Weighted average rate is ${formatPercent(tierCalc.weightedRate, 'en')}.`
-          : `Total investment ${formatCurrency(amount, 'en')} is within Tk 7.5 Lakh threshold; applicable interest rate is ${formatPercent(r1, 'en')}.`,
+          : `Total investment ${formatCurrency(investableAmount, 'en')} is within Tk 7.5 Lakh threshold; applicable interest rate is ${formatPercent(r1, 'en')}.`,
     },
-    amount,
+    amount: investableAmount,
     rate: tierCalc.weightedRate,
   });
 
@@ -276,11 +297,11 @@ export function calculateSchemeResult(
       bn:
         taxRatePercent === 0
           ? `পেনশনার সঞ্চয়পত্রে ৫ লক্ষ টাকা পর্যন্ত বিনিয়োগের মুনাফায় কোনো উৎসে কর কাটা হয় না (০% কর)।`
-          : `মোট বিনিয়োগ ${amount <= 500000 ? '৫ লক্ষ টাকার মধ্যে' : '৫ লক্ষ টাকার বেশি'} হওয়ায় সম্পূর্ণ অর্জিত মুনাফার ওপর ${formatPercent(taxRatePercent, 'bn')} হারে উৎসে কর কর্তন = ${formatCurrency(taxDeducted, 'bn')}।`,
+          : `মোট বিনিয়োগ ${investableAmount <= 500000 ? '৫ লক্ষ টাকার মধ্যে' : '৫ লক্ষ টাকার বেশি'} হওয়ায় সম্পূর্ণ অর্জিত মুনাফার ওপর ${formatPercent(taxRatePercent, 'bn')} হারে উৎসে কর কর্তন = ${formatCurrency(taxDeducted, 'bn')}।`,
       en:
         taxRatePercent === 0
           ? `Zero tax on Pensioner certificate for cumulative holdings up to Tk 5 Lakh (tax exempt).`
-          : `Since total holding is ${amount <= 500000 ? '≤ Tk 5 Lakh' : '> Tk 5 Lakh'}, a ${formatPercent(taxRatePercent, 'en')} source tax applies to total interest = ${formatCurrency(taxDeducted, 'en')}.`,
+          : `Since total holding is ${investableAmount <= 500000 ? '≤ Tk 5 Lakh' : '> Tk 5 Lakh'}, a ${formatPercent(taxRatePercent, 'en')} source tax applies to total interest = ${formatCurrency(taxDeducted, 'en')}.`,
     },
     amount: taxDeducted,
     rate: taxRatePercent,
@@ -319,6 +340,8 @@ export function calculateSchemeResult(
     schemeId: scheme.id,
     scheme,
     eligible: true,
+    requestedAmount: amount,
+    investableAmount,
     grossProfit: Math.round(totalGrossProfit),
     taxDeducted,
     netProfit,

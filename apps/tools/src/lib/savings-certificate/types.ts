@@ -177,6 +177,10 @@ export interface SchemeResult {
     bn: string;
     en: string;
   };
+  /** Amount the user asked for. */
+  requestedAmount?: number;
+  /** Amount actually purchasable in this scheme's denominations (≤ requested). */
+  investableAmount?: number;
   grossProfit?: number;
   taxDeducted?: number;
   netProfit?: number;

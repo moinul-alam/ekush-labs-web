@@ -131,6 +131,23 @@
   <!-- Card Body (Calculations) -->
   {#if isEligible}
     <div class="p-6 sm:p-7 space-y-6">
+      <!-- Investable Amount Notice (when requested amount is trimmed to a valid denomination) -->
+      {#if result.investableAmount != null && result.requestedAmount != null && result.investableAmount < result.requestedAmount}
+        <div class="p-3.5 rounded-2xl bg-blue-50 dark:bg-blue-950/30 border border-blue-200/80 dark:border-blue-800/40 text-blue-800 dark:text-blue-200 flex items-start gap-3 text-xs sm:text-sm">
+          <span class="text-lg leading-none">ℹ️</span>
+          <div>
+            <div class="font-bold">
+              {lang === 'bn' ? 'বিনিয়োগযোগ্য পরিমাণ' : 'Investable Amount'}:
+              {formatCurrency(result.investableAmount, lang)}
+            </div>
+            <div class="mt-0.5">
+              {lang === 'bn'
+                ? `এই সঞ্চয়পত্র নির্দিষ্ট ডিনমিনেশনে বিক্রি হয়, তাই আপনার দেওয়া ${formatCurrency(result.requestedAmount, lang)} সরাসরি বিনিয়োগযোগ্য নয়। নিকটতম ক্রয়যোগ্য পরিমাণ ধরে হিসাব দেখানো হয়েছে।`
+                : `This certificate is sold in fixed denominations, so your amount of ${formatCurrency(result.requestedAmount, lang)} is not directly purchasable. Calculations use the nearest investable amount.`}
+            </div>
+          </div>
+        </div>
+      {/if}
       <!-- Big Highlights -->
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <!-- Main Income Focal Box -->
@@ -306,6 +323,14 @@
                   ? lang === 'bn' ? 'প্রতি ৩ মাসে' : 'Quarterly'
                   : lang === 'bn' ? 'মেয়াদান্তে এককালীন' : 'At maturity'}
               </div>
+              {#if scheme.purchaseLimits.denominations?.length}
+                <div class="sm:col-span-2">
+                  <strong>{lang === 'bn' ? 'উপলব্ধ ডিনমিনেশন (এর গুণিতকে ক্রয়যোগ্য):' : 'Available Denominations (buy in multiples of these):'}</strong>{' '}
+                  <span class="font-semibold">
+                    ৳ {scheme.purchaseLimits.denominations.map((d) => formatCurrency(d, lang, false)).join(' / ')}
+                  </span>
+                </div>
+              {/if}
             </div>
           </div>
         </div>

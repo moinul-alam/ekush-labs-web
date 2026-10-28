@@ -348,6 +348,71 @@ describe('Ceilings and Eligibility Enforcement', () => {
   });
 });
 
+describe('Denomination / Investable Amount', () => {
+  const withDenoms = (id: string, denominations: number[]): SchemeDefinition => {
+    const base = mockSchemes.find((s) => s.id === id)!;
+    return { ...base, purchaseLimits: { ...base.purchaseLimits, denominations } };
+  };
+
+  const family = withDenoms('family', [10000, 20000, 50000, 100000, 200000, 500000, 1000000]);
+  const pensioner = withDenoms('pensioner', [50000, 100000, 200000, 500000, 1000000]);
+  const bangladesh = withDenoms('bangladesh_5yr', [
+    10, 50, 100, 500, 1000, 5000, 10000, 25000, 50000, 100000, 500000, 1000000,
+  ]);
+
+  it('trims a non-multiple amount down to the nearest investable amount (356,800 → 350,000 for Family)', () => {
+    const input: CalcInput = { amount: 356800, purchaseDate: '2026-08-01', isPensioner: false };
+    const res = calculateSchemeResult(family, mockRates, mockTax, input);
+
+    expect(res.eligible).toBe(true);
+    expect(res.requestedAmount).toBe(356800);
+    expect(res.investableAmount).toBe(350000);
+  });
+
+  it('bases the calculations on the investable amount, not the requested amount', () => {
+    const trimmed: CalcInput = { amount: 356800, purchaseDate: '2026-08-01', isPensioner: false };
+    const exact: CalcInput = { amount: 350000, purchaseDate: '2026-08-01', isPensioner: false };
+    const resTrimmed = calculateSchemeResult(family, mockRates, mockTax, trimmed);
+    const resExact = calculateSchemeResult(family, mockRates, mockTax, exact);
+
+    expect(resTrimmed.netProfit).toBe(resExact.netProfit);
+    expect(resTrimmed.totalAtMaturity).toBe(resExact.totalAtMaturity);
+  });
+
+  it('keeps an exact multiple unchanged (360,000 Family)', () => {
+    const input: CalcInput = { amount: 360000, purchaseDate: '2026-08-01', isPensioner: false };
+    const res = calculateSchemeResult(family, mockRates, mockTax, input);
+
+    expect(res.eligible).toBe(true);
+    expect(res.investableAmount).toBe(360000);
+  });
+
+  it('trims to the 50,000 step for Pensioner (125,000 → 100,000)', () => {
+    const input: CalcInput = { amount: 125000, purchaseDate: '2026-08-01', isPensioner: true };
+    const res = calculateSchemeResult(pensioner, mockRates, mockTax, input);
+
+    expect(res.eligible).toBe(true);
+    expect(res.investableAmount).toBe(100000);
+  });
+
+  it('keeps 356,800 for the 5-Year Bangladesh scheme (sold in multiples of 10)', () => {
+    const input: CalcInput = { amount: 356800, purchaseDate: '2026-08-01', isPensioner: false };
+    const res = calculateSchemeResult(bangladesh, mockRates, mockTax, input);
+
+    expect(res.eligible).toBe(true);
+    expect(res.investableAmount).toBe(356800);
+  });
+
+  it('leaves the amount untouched when a scheme defines no denominations', () => {
+    const input: CalcInput = { amount: 356800, purchaseDate: '2026-08-01', isPensioner: false };
+    const noDenoms = mockSchemes.find((s) => s.id === 'family')!;
+    const res = calculateSchemeResult(noDenoms, mockRates, mockTax, input);
+
+    expect(res.eligible).toBe(true);
+    expect(res.investableAmount).toBe(356800);
+  });
+});
+
 describe('Early Encashment Schedule', () => {
   it('generates non-empty early encashment schedule with net receivable', () => {
     const input: CalcInput = { amount: 500000, purchaseDate: '2026-08-01', isPensioner: false };
