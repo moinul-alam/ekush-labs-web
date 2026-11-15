@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "1.1.0",
   "language": "en",
-  "count": 341,
+  "count": 365,
   "words": [
     {
       "month": 1,
@@ -3753,6 +3753,270 @@
       "synonym": "Tranquil",
       "example": "End each year with a serene heart, grateful for every lesson learned.",
       "pronunciation": "sə-REEN (সে-রিন)"
+    },
+    {
+      "month": 12,
+      "day": 8,
+      "word": "Glimmer",
+      "partOfSpeech": "noun",
+      "meaningEn": "A faint, unsteady light, or a slight sign of something.",
+      "meaningBn": "মৃদু আলো, আভাস, ক্ষীণ সম্ভাবনা",
+      "synonym": "Flicker",
+      "example": "A glimmer of light appeared at the end of the tunnel.",
+      "pronunciation": "GLIM-ər (গ্লিম-আর)"
+    },
+    {
+      "month": 12,
+      "day": 9,
+      "word": "Cozy",
+      "partOfSpeech": "adjective",
+      "meaningEn": "Warm, comfortable, and giving a feeling of relaxation.",
+      "meaningBn": "আরামদায়ক, উষ্ণ, স্বস্তিদায়ক",
+      "synonym": "Snug",
+      "example": "We spent the rainy evening in a cozy little café.",
+      "pronunciation": "KOH-zee (কো-জি)"
+    },
+    {
+      "month": 12,
+      "day": 10,
+      "word": "Ember",
+      "partOfSpeech": "noun",
+      "meaningEn": "A small piece of burning coal or wood still glowing in a fire.",
+      "meaningBn": "জ্বলন্ত কয়লা, নিভু নিভু আগুন",
+      "synonym": "Spark",
+      "example": "She stirred the embers to keep the fire alive.",
+      "pronunciation": "EM-bər (এম-বার)"
+    },
+    {
+      "month": 12,
+      "day": 11,
+      "word": "Whisper",
+      "partOfSpeech": "verb",
+      "meaningEn": "To speak very softly, using breath rather than full voice.",
+      "meaningBn": "ফিসফিস করা, কানে কানে বলা",
+      "synonym": "Murmur",
+      "example": "He whispered the answer so the teacher would not hear.",
+      "pronunciation": "WIS-pər (উইস-পার)"
+    },
+    {
+      "month": 12,
+      "day": 12,
+      "word": "Gather",
+      "partOfSpeech": "verb",
+      "meaningEn": "To bring people or things together in one place.",
+      "meaningBn": "জড়ো করা, একত্র করা, সংগ্রহ করা",
+      "synonym": "Collect",
+      "example": "The family gathered around the table for dinner.",
+      "pronunciation": "GA-thər (গ্যাদ-আর)"
+    },
+    {
+      "month": 12,
+      "day": 13,
+      "word": "Harvest",
+      "partOfSpeech": "noun",
+      "meaningEn": "The time or act of collecting crops from the fields.",
+      "meaningBn": "ফসল, ফসল কাটার সময়",
+      "synonym": "Crop",
+      "example": "Farmers worked day and night during the rice harvest.",
+      "pronunciation": "HAR-vist (হার-ভেস্ট)"
+    },
+    {
+      "month": 12,
+      "day": 14,
+      "word": "Brisk",
+      "partOfSpeech": "adjective",
+      "meaningEn": "Quick, energetic, and active; also used for cold, fresh air.",
+      "meaningBn": "চটপটে, সতেজ; (বাতাস) ঠান্ডা ও সতেজ",
+      "synonym": "Lively",
+      "example": "A brisk walk in the morning clears my mind.",
+      "pronunciation": "BRISK (ব্রিস্ক)"
+    },
+    {
+      "month": 12,
+      "day": 15,
+      "word": "Frost",
+      "partOfSpeech": "noun",
+      "meaningEn": "A thin layer of ice that forms on cold surfaces.",
+      "meaningBn": "তুহিন, বরফের পাতলা আস্তরণ",
+      "synonym": "Rime",
+      "example": "Frost covered the grass on the first cold morning.",
+      "pronunciation": "FRAWST (ফ্রস্ট)"
+    },
+    {
+      "month": 12,
+      "day": 16,
+      "word": "Reflect",
+      "partOfSpeech": "verb",
+      "meaningEn": "To throw back light or an image; to think carefully about something.",
+      "meaningBn": "প্রতিফলিত করা, প্রতিবিম্বিত হওয়া; চিন্তা করা",
+      "synonym": "Mirror",
+      "example": "The lake reflected the colours of the evening sky.",
+      "pronunciation": "ri-FLEKT (রি-ফ্লেক্ট)"
+    },
+    {
+      "month": 12,
+      "day": 17,
+      "word": "Renew",
+      "partOfSpeech": "verb",
+      "meaningEn": "To make something new, valid, or active again.",
+      "meaningBn": "নবীকরণ করা, নতুন করে শুরু করা",
+      "synonym": "Restore",
+      "example": "The gardener renewed the soil before planting new seeds.",
+      "pronunciation": "ri-NOO (রি-নিউ)"
+    },
+    {
+      "month": 12,
+      "day": 18,
+      "word": "Shelter",
+      "partOfSpeech": "noun",
+      "meaningEn": "A place that protects people from weather or danger.",
+      "meaningBn": "আশ্রয়, আশ্রয়স্থল",
+      "synonym": "Refuge",
+      "example": "The old banyan tree gave shelter to the travellers.",
+      "pronunciation": "SHEL-tər (শেল-টার)"
+    },
+    {
+      "month": 12,
+      "day": 19,
+      "word": "Anticipate",
+      "partOfSpeech": "verb",
+      "meaningEn": "To expect or look forward to something happening.",
+      "meaningBn": "প্রত্যাশা করা, আগেই অনুমান করা",
+      "synonym": "Expect",
+      "example": "The children anticipated the holidays with great excitement.",
+      "pronunciation": "an-TIS-i-payt (অ্যান-টিসি-পেট)"
+    },
+    {
+      "month": 12,
+      "day": 20,
+      "word": "Gentle",
+      "partOfSpeech": "adjective",
+      "meaningEn": "Kind, calm, and careful; not rough or harsh.",
+      "meaningBn": "কোমল, নরম, ভদ্র",
+      "synonym": "Soft",
+      "example": "She spoke in a gentle voice to calm the crying child.",
+      "pronunciation": "JEN-təl (জেন-টাল)"
+    },
+    {
+      "month": 12,
+      "day": 21,
+      "word": "Solace",
+      "partOfSpeech": "noun",
+      "meaningEn": "Comfort given in a time of sadness or trouble.",
+      "meaningBn": "সান্ত্বনা, সান্ত্বনাদায়ক বস্তু",
+      "synonym": "Comfort",
+      "example": "Music was his only solace during the difficult days.",
+      "pronunciation": "SOL-is (সোল-ইস)"
+    },
+    {
+      "month": 12,
+      "day": 22,
+      "word": "Wander",
+      "partOfSpeech": "verb",
+      "meaningEn": "To walk slowly around without a fixed purpose or route.",
+      "meaningBn": "ঘুরে বেড়ানো, পথ হারিয়ে হাঁটা",
+      "synonym": "Roam",
+      "example": "We wandered through the village lanes all afternoon.",
+      "pronunciation": "WON-dər (ওয়ান-ডার)"
+    },
+    {
+      "month": 12,
+      "day": 23,
+      "word": "Feast",
+      "partOfSpeech": "noun",
+      "meaningEn": "A large, special meal shared to celebrate something.",
+      "meaningBn": "ভোজ, ভোজসভা",
+      "synonym": "Banquet",
+      "example": "The whole neighbourhood joined the feast after the wedding.",
+      "pronunciation": "FEEST (ফিস্ট)"
+    },
+    {
+      "month": 12,
+      "day": 24,
+      "word": "Twinkle",
+      "partOfSpeech": "verb",
+      "meaningEn": "To shine with a light that flickers quickly.",
+      "meaningBn": "ঝিকমিক করা, মিটমিট করা",
+      "synonym": "Sparkle",
+      "example": "Stars twinkled above the quiet village.",
+      "pronunciation": "TWING-kəl (টুইং-কাল)"
+    },
+    {
+      "month": 12,
+      "day": 25,
+      "word": "Rejoice",
+      "partOfSpeech": "verb",
+      "meaningEn": "To feel or show great joy.",
+      "meaningBn": "আনন্দ করা, উল্লাস করা",
+      "synonym": "Celebrate",
+      "example": "The farmers rejoiced when the rain finally came.",
+      "pronunciation": "ri-JOYS (রি-জয়স)"
+    },
+    {
+      "month": 12,
+      "day": 26,
+      "word": "Reminisce",
+      "partOfSpeech": "verb",
+      "meaningEn": "To think or talk about happy things from the past.",
+      "meaningBn": "স্মৃতিচারণ করা, পুরোনো দিনের কথা ভাবা",
+      "synonym": "Recall",
+      "example": "Grandfather liked to reminisce about the days of his youth.",
+      "pronunciation": "rem-i-NIS (রেমি-নিস)"
+    },
+    {
+      "month": 12,
+      "day": 27,
+      "word": "Farewell",
+      "partOfSpeech": "noun",
+      "meaningEn": "An act of saying goodbye to someone.",
+      "meaningBn": "বিদায়, বিদায়-সম্ভাষণ",
+      "synonym": "Goodbye",
+      "example": "Students prepared a farewell party for their departing teacher.",
+      "pronunciation": "fair-WEL (ফেয়ার-ওয়েল)"
+    },
+    {
+      "month": 12,
+      "day": 28,
+      "word": "Stillness",
+      "partOfSpeech": "noun",
+      "meaningEn": "The quality of being quiet and without movement.",
+      "meaningBn": "নিস্তব্ধতা, স্থিরতা",
+      "synonym": "Silence",
+      "example": "The stillness of early morning felt peaceful.",
+      "pronunciation": "STIL-nis (স্টিল-নেস)"
+    },
+    {
+      "month": 12,
+      "day": 29,
+      "word": "Envision",
+      "partOfSpeech": "verb",
+      "meaningEn": "To imagine something as a future possibility.",
+      "meaningBn": "কল্পনা করা, ভবিষ্যতের চিত্র দেখা",
+      "synonym": "Imagine",
+      "example": "She envisioned a city where every child goes to school.",
+      "pronunciation": "en-VIZH-ən (এন-ভিশ-আন)"
+    },
+    {
+      "month": 12,
+      "day": 30,
+      "word": "Culminate",
+      "partOfSpeech": "verb",
+      "meaningEn": "To reach the highest or final point after a long process.",
+      "meaningBn": "চরমে পৌঁছানো, পরিণতিতে পৌঁছানো",
+      "synonym": "Conclude",
+      "example": "The festival culminated in a grand performance at midnight.",
+      "pronunciation": "KUL-mi-nayt (কুল-মি-নেট)"
+    },
+    {
+      "month": 12,
+      "day": 31,
+      "word": "Beginning",
+      "partOfSpeech": "noun",
+      "meaningEn": "The point at which something starts.",
+      "meaningBn": "শুরু, সূচনা",
+      "synonym": "Start",
+      "example": "The first snowfall marked the beginning of winter.",
+      "pronunciation": "bi-GIN-ing (বি-গিন-ইং)"
     }
   ]
 }
