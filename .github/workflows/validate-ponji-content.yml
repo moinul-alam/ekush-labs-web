@@ -1,0 +1,22 @@
+name: Validate Ponji content
+
+on:
+  push:
+    paths:
+      - 'apps/hub/ponji/**'
+      - '.github/workflows/validate-ponji-content.yml'
+  pull_request:
+    paths:
+      - 'apps/hub/ponji/**'
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Validate Ponji datasets
+        run: node apps/hub/ponji/scripts/validate.mjs

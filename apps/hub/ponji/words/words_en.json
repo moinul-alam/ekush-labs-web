@@ -1,7 +1,7 @@
 {
-  "version": "1.1.0",
+  "version": "1.1.1",
   "language": "en",
-  "count": 365,
+  "count": 366,
   "words": [
     {
       "month": 1,
@@ -651,6 +651,17 @@
       "synonym": "Cheerful",
       "example": "Despite the bad news, she remained buoyant and full of hope.",
       "pronunciation": "BOY-ənt (বয়-এন্ট)"
+    },
+    {
+      "month": 2,
+      "day": 29,
+      "word": "Leap",
+      "partOfSpeech": "noun",
+      "meaningEn": "A big jump forward, or a sudden change that moves you ahead.",
+      "meaningBn": "লাফ, দ্রুত অগ্রগতি, আকস্মিক পরিবর্তন",
+      "synonym": "Jump",
+      "example": "Every four years, February takes a leap and gains an extra day.",
+      "pronunciation": "leep (লিপ)"
     },
     {
       "month": 3,

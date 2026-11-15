@@ -1,0 +1,46 @@
+name: Ponji annual content refresh reminder
+
+on:
+  schedule:
+    - cron: '0 6 1 11 *'
+  workflow_dispatch:
+
+permissions:
+  issues: write
+
+jobs:
+  open-issue:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/github-script@v7
+        with:
+          script: |
+            const year = new Date().getUTCFullYear() + 1;
+            const title = `Ponji content refresh for ${year}`;
+            const open = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+            });
+            if (open.data.some((issue) => issue.title === title)) {
+              core.info(`Issue "${title}" already open — skipping.`);
+              return;
+            }
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title,
+              body: [
+                `It is time to refresh the Ekush Ponji words and quotes for ${year}.`,
+                '',
+                'Steps (see `docs/ponji-content.md`):',
+                '- [ ] Draft the new word pool (366 unique spellings, one per calendar slot).',
+                '- [ ] Optionally refresh quotes (366 slots, no invalid dates).',
+                '- [ ] Run `node apps/hub/ponji/scripts/validate.mjs` — must pass.',
+                '- [ ] Bump `manifestVersion`, `datasets.words.version` / `datasets.quotes.version`, and `lastUpdated`.',
+                '- [ ] Push and verify the live hub serves the new files.',
+                '- [ ] Copy the updated datasets into the Flutter app seed assets before the next release.',
+              ].join('\n'),
+            });
+            core.info(`Opened issue "${title}".`);

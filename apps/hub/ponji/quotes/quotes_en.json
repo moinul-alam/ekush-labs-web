@@ -1,7 +1,7 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "language": "en",
-  "count": 367,
+  "count": 366,
   "quotes": [
     {
       "month": 1,
@@ -851,13 +851,6 @@
       "category": "Hope"
     },
     {
-      "month": 4,
-      "day": 31,
-      "text": "Change your thoughts and you change your world.",
-      "author": "Norman Vincent Peale",
-      "category": "Mindset"
-    },
-    {
       "month": 5,
       "day": 1,
       "text": "Shoot for the moon. Even if you miss, you will land among the stars.",
@@ -1283,13 +1276,6 @@
       "text": "One half of the world cannot understand the pleasures of the other.",
       "author": "Jane Austen",
       "category": "Empathy"
-    },
-    {
-      "month": 6,
-      "day": 31,
-      "text": "Silly things do cease to be silly if they are done by sensible people in an impudent way.",
-      "author": "Jane Austen",
-      "category": "Wisdom"
     },
     {
       "month": 7,
@@ -2144,6 +2130,13 @@
       "text": "Why do you stay in prison when the door is so wide open?",
       "author": "Rumi",
       "category": "Freedom"
+    },
+    {
+      "month": 10,
+      "day": 31,
+      "text": "Change your thoughts and you change your world.",
+      "author": "Norman Vincent Peale",
+      "category": "Mindset"
     },
     {
       "month": 11,

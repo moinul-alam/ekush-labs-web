@@ -1,5 +1,5 @@
 {
-  "manifestVersion": 5,
+  "manifestVersion": 6,
   "lastUpdated": "2026-11-16",
   "baseUrl": "https://hub.ekushlabs.com/ponji",
   "datasets": {
@@ -27,14 +27,14 @@
       }
     },
     "quotes": {
-      "version": 1,
+      "version": 2,
       "type": "single_file",
       "files": {
         "en": "quotes/quotes_en.json"
       }
     },
     "words": {
-      "version": 2,
+      "version": 3,
       "type": "single_file",
       "files": {
         "en": "words/words_en.json"
