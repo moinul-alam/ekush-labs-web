@@ -30,13 +30,15 @@ Both daily datasets are keyed by `month` + `day`, one entry per calendar slot:
 - Entries **sorted** by month, then day.
 - No duplicate slots and no impossible dates (`4-31`, `6-31`, and the like).
 
+Quote entries are bilingual: `text` / `author` in English plus `textBn` / `authorBn` in Bengali script, and a dataset-level `categories` map translates each English `category` value into its Bangla label. The app renders Bangla by locale and falls back to English when a `*Bn` field is empty, so Bengali fields are mandatory for new content.
+
 The app reads `words_en.json` / `quotes_en.json` through `manifest.json`. A user's install downloads new data only when `datasets.<name>.version` increases **or** the manifest stamp (`manifestVersion` + `lastUpdated` + file paths) changes.
 
 ## 3. Annual Refresh Procedure
 
 ### Step 1: Draft the New Content
 - Words: 366 entries, unique spellings (repeats across years are fine; repeats within one file are discouraged).
-- Quotes: 366 entries, unique slots.
+- Quotes: 366 entries, unique slots, each with `text`, `textBn`, `author`, `authorBn`, `category`, plus a `categories` map covering every category used.
 - Keep the exact schema of the existing files — the app validates and rejects incomplete entries field-by-field.
 
 ### Step 2: Write the Files
@@ -80,7 +82,7 @@ The Flutter app bundles a copy of both datasets as its offline seed (`apps/ekush
 Refresh the Ekush Ponji daily content for <YEAR>. Steps:
 1. Read apps/hub/ponji/words/words_en.json and quotes/quotes_en.json and keep their exact schema, key order and formatting.
 2. Produce 366 word entries: one per calendar slot including Feb 29, sorted, unique spellings, each with word, partOfSpeech, meaningEn, meaningBn (must contain Bengali script), synonym, example, pronunciation (with Bengali transliteration).
-3. Optionally produce 366 new quotes with text, author, category — one per slot, no invalid dates.
+3. Optionally produce 366 new quotes with text, textBn, author, authorBn, category — one per slot, no invalid dates — and add a Bengali label for every category to the dataset's categories map. Bangla must read naturally, not like a literal machine translation.
 4. Run node apps/hub/ponji/scripts/validate.mjs and fix every error before continuing.
 5. Bump manifestVersion, the changed datasets' versions and lastUpdated in manifest.json; bump each file's own version and count.
 6. Show me the diff summary and the validator output. Do not commit or push until approved.

@@ -157,15 +157,31 @@ function validateQuotes(manifest) {
     logError(`${rel}: count ${data.count} !== quotes.length ${data.quotes.length}`);
   }
 
-  const required = ['text', 'author', 'category'];
+  const categories = data.categories ?? {};
+  if (typeof categories !== 'object' || Array.isArray(categories)) {
+    logError(`${rel}: categories must be an object`);
+  }
+
+  const required = ['text', 'textBn', 'author', 'authorBn', 'category'];
   for (const [i, q] of data.quotes.entries()) {
     for (const field of required) {
       if (!isNonEmptyString(q[field])) {
         logError(`${rel}: entry ${i} (${q.month}-${q.day}) empty "${field}"`);
       }
     }
+    for (const field of ['textBn', 'authorBn']) {
+      if (!BENGALI_RE.test(q[field] ?? '')) {
+        logError(`${rel}: entry ${i} (${q.month}-${q.day}) ${field} has no Bengali text`);
+      }
+    }
     if (!Number.isInteger(q.month) || !Number.isInteger(q.day)) {
       logError(`${rel}: entry ${i} has non-integer month/day`);
+    }
+    const categoryBn = categories[q.category];
+    if (!isNonEmptyString(categoryBn)) {
+      logError(`${rel}: entry ${i} category "${q.category}" has no Bengali label`);
+    } else if (!BENGALI_RE.test(categoryBn)) {
+      logError(`${rel}: category "${q.category}" Bengali label has no Bengali text`);
     }
   }
 

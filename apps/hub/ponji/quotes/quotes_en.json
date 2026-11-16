@@ -1,2568 +1,3401 @@
 {
-  "version": "1.0.1",
+  "version": "1.1.0",
   "language": "en",
   "count": 366,
+  "categories": {
+    "Motivation": "অনুপ্রেরণা",
+    "Philosophy": "দর্শন",
+    "Perseverance": "অধ্যবসায়",
+    "Success": "সাফল্য",
+    "Dreams": "স্বপ্ন",
+    "Mindset": "মানসিকতা",
+    "Gratitude": "কৃতজ্ঞতা",
+    "Courage": "সাহস",
+    "Focus": "মনোযোগ",
+    "Work": "পরিশ্রম",
+    "Ambition": "উচ্চাকাঙ্ক্ষা",
+    "Resilience": "স্থিতধৈর্য",
+    "Self-worth": "আত্মমর্যাদা",
+    "Vision": "দৃষ্টিভঙ্গি",
+    "Action": "কাজ",
+    "Self-mastery": "আত্মনিয়ন্ত্রণ",
+    "Happiness": "সুখ",
+    "Teamwork": "দলগত কাজ",
+    "Balance": "ভারসাম্য",
+    "Kindness": "দয়া",
+    "Patience": "ধৈর্য",
+    "Hope": "আশা",
+    "Leadership": "নেতৃত্ব",
+    "Adventure": "অভিযান",
+    "Stoicism": "স্টোয়িক দর্শন",
+    "Growth": "বিকাশ",
+    "Productivity": "উৎপাদনশীলতা",
+    "Purpose": "উদ্দেশ্য",
+    "Education": "শিক্ষা",
+    "Responsibility": "দায়িত্ব",
+    "Wisdom": "প্রজ্ঞা",
+    "Willpower": "ইচ্ছাশক্তি",
+    "Service": "সেবা",
+    "Creativity": "সৃজনশীলতা",
+    "Ethics": "নৈতিকতা",
+    "Faith": "বিশ্বাস",
+    "Learning": "শেখা",
+    "Friendship": "বন্ধুত্ব",
+    "Truth": "সত্য",
+    "Inner Peace": "অন্তরের প্রশান্তি",
+    "Mindfulness": "সচেতন উপস্থিতি",
+    "Self-love": "আত্মপ্রেম",
+    "Authenticity": "খাঁটি হওয়া",
+    "Inner Strength": "অন্তরের শক্তি",
+    "Perspective": "দৃষ্টিকোণ",
+    "Simplicity": "সরলতা",
+    "Self-discovery": "আত্মানুসন্ধান",
+    "Intentionality": "সংকল্প",
+    "Excellence": "উৎকর্ষ",
+    "Habits": "অভ্যাস",
+    "Humility": "বিনয়",
+    "Preparation": "প্রস্তুতি",
+    "Time": "সময়",
+    "Adaptability": "খাপ খাইয়ে নেওয়া",
+    "Self-awareness": "আত্মসচেতনতা",
+    "Commitment": "অঙ্গীকার",
+    "Greatness": "মহত্ত্ব",
+    "Potential": "সম্ভাবনা",
+    "Love": "ভালোবাসা",
+    "Compassion": "সহানুভূতি",
+    "Empathy": "সহমর্মিতা",
+    "Joy": "আনন্দ",
+    "Change": "পরিবর্তন",
+    "Contentment": "তুষ্টি",
+    "Self-improvement": "আত্মউন্নয়ন",
+    "Character": "চরিত্র",
+    "Virtue": "সদগুণ",
+    "Encouragement": "উৎসাহ",
+    "Nature": "প্রকৃতি",
+    "Self-creation": "নিজেকে গড়া",
+    "Progress": "অগ্রগতি",
+    "Communication": "যোগাযোগ",
+    "Peace": "শান্তি",
+    "Imagination": "কল্পনা",
+    "Empowerment": "ক্ষমতায়ন",
+    "Community": "সম্প্রদায়",
+    "Self-acceptance": "আত্মস্বীকৃতি",
+    "Relationships": "সম্পর্ক",
+    "Human Nature": "মনুষ্য স্বভাব",
+    "Possibility": "সম্ভাব্যতা",
+    "Culture": "সংস্কৃতি",
+    "Self-trust": "আত্মবিশ্বাস",
+    "Solitude": "নিঃসঙ্গতা",
+    "Spirituality": "আধ্যাত্মিকতা",
+    "Identity": "পরিচয়",
+    "Healing": "নিরাময়",
+    "Passion": "আবেগ",
+    "Self-care": "আত্মযত্ন",
+    "Freedom": "স্বাধীনতা",
+    "Art": "শিল্প",
+    "Society": "সমাজ",
+    "Forgiveness": "ক্ষমা",
+    "Integrity": "সততা",
+    "Self-talk": "নিজের সঙ্গে কথা",
+    "Expression": "প্রকাশ",
+    "Impact": "প্রভাব",
+    "Intention": "অভিপ্রায়",
+    "Awareness": "সচেতনতা",
+    "Existence": "অস্তিত্ব"
+  },
   "quotes": [
     {
       "month": 1,
       "day": 1,
       "text": "The only way to do great work is to love what you do.",
+      "textBn": "দুর্দান্ত কাজ করার একমাত্র উপায়—যা করছেন, তা মন থেকে ভালোবাসা।",
       "author": "Steve Jobs",
+      "authorBn": "স্টিভ জবস",
       "category": "Motivation"
     },
     {
       "month": 1,
       "day": 2,
       "text": "In the middle of every difficulty lies opportunity.",
+      "textBn": "প্রতিটি কঠিন সময়ের ভেতরেই লুকিয়ে থাকে সুযোগ।",
       "author": "Albert Einstein",
+      "authorBn": "আলবার্ট আইনস্টাইন",
       "category": "Philosophy"
     },
     {
       "month": 1,
       "day": 3,
       "text": "It does not matter how slowly you go as long as you do not stop.",
+      "textBn": "যত ধীরেই এগোন না কেন, থেমে না গেলেই হলো।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Perseverance"
     },
     {
       "month": 1,
       "day": 4,
       "text": "Success is not final, failure is not fatal: it is the courage to continue that counts.",
+      "textBn": "সফলতাই শেষ নয়, ব্যর্থতাও মৃত্যু নয়; আসল হলো, চালিয়ে যাওয়ার সাহস।",
       "author": "Winston Churchill",
+      "authorBn": "উইনস্টন চার্চিল",
       "category": "Success"
     },
     {
       "month": 1,
       "day": 5,
       "text": "Believe you can and you are halfway there.",
+      "textBn": "‘আমি পারব’—এই বিশ্বাসটাই অর্ধেক পথ।",
       "author": "Theodore Roosevelt",
+      "authorBn": "থিওডোর রুজভেল্ট",
       "category": "Motivation"
     },
     {
       "month": 1,
       "day": 6,
       "text": "The future belongs to those who believe in the beauty of their dreams.",
+      "textBn": "ভবিষ্যৎ তাদেরই, যারা নিজের স্বপ্নের সৌন্দর্যে ভরসা রাখে।",
       "author": "Eleanor Roosevelt",
+      "authorBn": "এলিনর রুজভেল্ট",
       "category": "Dreams"
     },
     {
       "month": 1,
       "day": 7,
       "text": "You miss 100% of the shots you do not take.",
+      "textBn": "যে শট নেওয়া হয় না, তা কখনও গোল হয় না।",
       "author": "Wayne Gretzky",
+      "authorBn": "ওয়েন গ্রেটজকি",
       "category": "Motivation"
     },
     {
       "month": 1,
       "day": 8,
       "text": "Whether you think you can or you think you cannot, you are right.",
+      "textBn": "‘পারব’ বলে ভাবুন, কিংবা ‘পারব না’—দুই ক্ষেত্রেই আপনি ঠিক।",
       "author": "Henry Ford",
+      "authorBn": "হেনরি ফোর্ড",
       "category": "Mindset"
     },
     {
       "month": 1,
       "day": 9,
       "text": "The only limit to our realization of tomorrow is our doubts of today.",
+      "textBn": "কালকের স্বপ্ন গড়ে তোলার একমাত্র বাধা—আজকের সন্দেহ।",
       "author": "Franklin D. Roosevelt",
+      "authorBn": "ফ্র্যাঙ্কলিন ডি. রুজভেল্ট",
       "category": "Motivation"
     },
     {
       "month": 1,
       "day": 10,
       "text": "The purpose of our lives is to be happy.",
+      "textBn": "জীবনের উদ্দেশ্য একটাই—সুখী হওয়া।",
       "author": "Dalai Lama",
+      "authorBn": "দালাই লামা",
       "category": "Philosophy"
     },
     {
       "month": 1,
       "day": 11,
       "text": "Life is what happens when you are busy making other plans.",
+      "textBn": "জীবন তো সেইটা, যা অন্য পরিকল্পনা করতে করতে ঘটে যায়।",
       "author": "John Lennon",
+      "authorBn": "জন লেনন",
       "category": "Philosophy"
     },
     {
       "month": 1,
       "day": 12,
       "text": "You only live once, but if you do it right, once is enough.",
+      "textBn": "জীবন একটাই; ঠিকভাবে বাঁচলে একবারই যথেষ্ট।",
       "author": "Mae West",
+      "authorBn": "মে ওয়েস্ট",
       "category": "Philosophy"
     },
     {
       "month": 1,
       "day": 13,
       "text": "Many of life's failures are people who did not realize how close they were to success when they gave up.",
+      "textBn": "জীবনের বহু ব্যর্থতা শুধু তাদেরই, যারা হাল ছাড়ার সময় বুঝতে পারেনি—সফলতা কতটা কাছে।",
       "author": "Thomas Edison",
+      "authorBn": "টমাস এডিসন",
       "category": "Perseverance"
     },
     {
       "month": 1,
       "day": 14,
       "text": "If you want to live a happy life, tie it to a goal, not to people or things.",
+      "textBn": "সুখী জীবন চাইলে তাকে জুড়ে দিন একটি লক্ষ্যের সঙ্গে—কোনো মানুষ বা জিনিসের সঙ্গে নয়।",
       "author": "Albert Einstein",
+      "authorBn": "আলবার্ট আইনস্টাইন",
       "category": "Philosophy"
     },
     {
       "month": 1,
       "day": 15,
       "text": "If you look at what you have in life, you will always have more.",
+      "textBn": "যা আছে, তাতে কৃতজ্ঞ থাকুন; তবেই দেখবেন হাতে সবসময় আরও বেশি।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Gratitude"
     },
     {
       "month": 1,
       "day": 16,
       "text": "Never let the fear of striking out keep you from playing the game.",
+      "textBn": "আউট হয়ে যাওয়ার ভয়ে খেলাটা ছেড়ে দেবেন না।",
       "author": "Babe Ruth",
+      "authorBn": "বেব রুথ",
       "category": "Courage"
     },
     {
       "month": 1,
       "day": 17,
       "text": "Your time is limited, so do not waste it living someone else's life.",
+      "textBn": "সময় সীমিত—অন্যের জীবনের ছায়ায় তা নষ্ট করবেন না।",
       "author": "Steve Jobs",
+      "authorBn": "স্টিভ জবস",
       "category": "Philosophy"
     },
     {
       "month": 1,
       "day": 18,
       "text": "Not how long, but how well you have lived is the main thing.",
+      "textBn": "কত বছর বাঁচলেন, তা নয়; কত ভালোভাবে বাঁচলেন—সেটাই আসল।",
       "author": "Seneca",
+      "authorBn": "সেনেকা",
       "category": "Philosophy"
     },
     {
       "month": 1,
       "day": 19,
       "text": "Take up one idea. Make that one idea your life — think of it, dream of it, live on that idea.",
+      "textBn": "একটা ভাবনা তুলে নিন। সেই ভাবনাকেই বানিয়ে ফেলুন জীবন—তা নিয়ে ভাবুন, স্বপ্ন দেখুন, তা নিয়েই বাঁচুন।",
       "author": "Swami Vivekananda",
+      "authorBn": "স্বামী বিবেকানন্দ",
       "category": "Focus"
     },
     {
       "month": 1,
       "day": 20,
       "text": "All our dreams can come true if we have the courage to pursue them.",
+      "textBn": "স্বপ্নের পেছনে ছুটে যাওয়ার সাহস থাকলে সব স্বপ্নই সত্যি হতে পারে।",
       "author": "Walt Disney",
+      "authorBn": "ওয়াল্ট ডিজনি",
       "category": "Dreams"
     },
     {
       "month": 1,
       "day": 21,
       "text": "I find that the harder I work, the more luck I seem to have.",
+      "textBn": "যত বেশি পরিশ্রম করি, দেখি ভাগ্যও তত বেশি আমার পক্ষে।",
       "author": "Thomas Jefferson",
+      "authorBn": "টমাস জেফারসন",
       "category": "Work"
     },
     {
       "month": 1,
       "day": 22,
       "text": "Success usually comes to those who are too busy to be looking for it.",
+      "textBn": "সফলতা সাধারণত তাদের কাছেই আসে, যারা এতটাই ব্যস্ত যে সফলতা খোঁজার সময়ই পায় না।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Success"
     },
     {
       "month": 1,
       "day": 23,
       "text": "Opportunities do not happen. You create them.",
+      "textBn": "সুযোগ নিজে থেকে আসে না—তৈরি করতে হয়।",
       "author": "Chris Grosser",
+      "authorBn": "ক্রিস গ্রসার",
       "category": "Motivation"
     },
     {
       "month": 1,
       "day": 24,
       "text": "Do not be afraid to give up the good to go for the great.",
+      "textBn": "ভালোকে ছেড়ে অসাধারণের পথে যেতে ভয় পাবেন না।",
       "author": "John D. Rockefeller",
+      "authorBn": "জন ডি. রকফেলার",
       "category": "Ambition"
     },
     {
       "month": 1,
       "day": 25,
       "text": "A successful man is one who can lay a firm foundation with the bricks others have thrown at him.",
+      "textBn": "যে মানুষ অন্যের ছুড়ে দেওয়া ইট দিয়েই মজবুত ভিত্তি গড়ে নিতে পারে, সেই-ই সফল।",
       "author": "David Brinkley",
+      "authorBn": "ডেভিড ব্রিংকলি",
       "category": "Resilience"
     },
     {
       "month": 1,
       "day": 26,
       "text": "No one can make you feel inferior without your consent.",
+      "textBn": "নিজে অনুমতি না দিলে কেউ আপনাকে ছোট করে দিতে পারে না।",
       "author": "Eleanor Roosevelt",
+      "authorBn": "এলিনর রুজভেল্ট",
       "category": "Self-worth"
     },
     {
       "month": 1,
       "day": 27,
       "text": "If you are going through hell, keep going.",
+      "textBn": "নরক পার হচ্ছেন? তবে থামবেন না, চলতে থাকুন।",
       "author": "Winston Churchill",
+      "authorBn": "উইনস্টন চার্চিল",
       "category": "Perseverance"
     },
     {
       "month": 1,
       "day": 28,
       "text": "The ones who are crazy enough to think they can change the world are the ones that do.",
+      "textBn": "যারা পাগলের মতো ভাবে বিশ্বটা বদলে দিতে পারবে, তারাই একদিন সেটা করে দেখায়।",
       "author": "Steve Jobs",
+      "authorBn": "স্টিভ জবস",
       "category": "Vision"
     },
     {
       "month": 1,
       "day": 29,
       "text": "Do what you can, with what you have, where you are.",
+      "textBn": "যা আছে দিয়ে, যেখানে আছেন সেখান থেকেই, যা পারেন—তাই করুন।",
       "author": "Theodore Roosevelt",
+      "authorBn": "থিওডোর রুজভেল্ট",
       "category": "Action"
     },
     {
       "month": 1,
       "day": 30,
       "text": "It is not the mountain we conquer, but ourselves.",
+      "textBn": "আমরা পাহাড় জয় করি না—জয় করি নিজেদের।",
       "author": "Edmund Hillary",
+      "authorBn": "এডমন্ড হিলারি",
       "category": "Self-mastery"
     },
     {
       "month": 1,
       "day": 31,
       "text": "Happiness is not something readymade. It comes from your own actions.",
+      "textBn": "সুখ কোনো তৈরি জিনিস নয়; নিজের কাজই তা ফিরিয়ে আনে।",
       "author": "Dalai Lama",
+      "authorBn": "দালাই লামা",
       "category": "Happiness"
     },
     {
       "month": 2,
       "day": 1,
       "text": "If you want to go fast, go alone. If you want to go far, go together.",
+      "textBn": "দ্রুত চলতে চাইলে একা চলুন, আর দূরে পৌঁছাতে চাইলে সবার সাথে চলুন।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Teamwork"
     },
     {
       "month": 2,
       "day": 2,
       "text": "Keep your eyes on the stars and your feet on the ground.",
+      "textBn": "চোখ থাকুক তারাদের দিকে, আর পা থাকুক মাটিতে।",
       "author": "Theodore Roosevelt",
+      "authorBn": "থিওডোর রুজভেল্ট",
       "category": "Balance"
     },
     {
       "month": 2,
       "day": 3,
       "text": "You are never too old to set another goal or to dream a new dream.",
+      "textBn": "নতুন লক্ষ্য ঠিক করতে বা নতুন স্বপ্ন দেখতে বয়স কখনোই বেশি হয়ে যায় না।",
       "author": "C. S. Lewis",
+      "authorBn": "সি. এস. লুইস",
       "category": "Dreams"
     },
     {
       "month": 2,
       "day": 4,
       "text": "Too many of us are not living our dreams because we are living our fears.",
+      "textBn": "অনেকেই নিজের স্বপ্ন নিয়ে বাঁচে না, বরং ভয় নিয়ে বাঁচে।",
       "author": "Les Brown",
+      "authorBn": "লেস ব্রাউন",
       "category": "Courage"
     },
     {
       "month": 2,
       "day": 5,
       "text": "I have not failed. I have just found 10,000 ways that will not work.",
+      "textBn": "আমি ব্যর্থ হইনি; শুধু ১০,০০০টি পথ খুঁজে পেয়েছি যেগুলো কাজ করে না।",
       "author": "Thomas Edison",
+      "authorBn": "টমাস এডিসন",
       "category": "Perseverance"
     },
     {
       "month": 2,
       "day": 6,
       "text": "Remember that not getting what you want is sometimes a wonderful stroke of luck.",
+      "textBn": "মনে রাখবেন, যা চাইছেন তা না পাওয়াটাও কখনো কখনো বড় সৌভাগ্যের হাতছানি।",
       "author": "Dalai Lama",
+      "authorBn": "দালাই লামা",
       "category": "Philosophy"
     },
     {
       "month": 2,
       "day": 7,
       "text": "Dream big and dare to fail.",
+      "textBn": "বড় স্বপ্ন দেখুন, আর ব্যর্থ হওয়ার সাহস রাখুন।",
       "author": "Norman Vaughan",
+      "authorBn": "নরম্যান ভন",
       "category": "Ambition"
     },
     {
       "month": 2,
       "day": 8,
       "text": "Our greatest glory is not in never falling, but in rising every time we fall.",
+      "textBn": "আমাদের বড় গৌরব কখনো না পড়ার মধ্যে নয়, বরং প্রতিবার পড়ে আবার উঠে দাঁড়ানোর মধ্যে।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Resilience"
     },
     {
       "month": 2,
       "day": 9,
       "text": "Life is 10% what happens to us and 90% how we react to it.",
+      "textBn": "জীবনে যা ঘটে তার ১০%, আর ৯০% হলো আমরা তার জবাব কীভাবে দিই।",
       "author": "Charles R. Swindoll",
+      "authorBn": "চার্লস আর. সুইন্ডল",
       "category": "Mindset"
     },
     {
       "month": 2,
       "day": 10,
       "text": "An unexamined life is not worth living.",
+      "textBn": "যে জীবন নিয়ে প্রশ্ন করা হয় না, সে জীবন বাঁচার যোগ্য নয়।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Philosophy"
     },
     {
       "month": 2,
       "day": 11,
       "text": "Spread love everywhere you go. Let no one ever come to you without leaving happier.",
+      "textBn": "যেখানেই যান, ভালোবাসা ছড়িয়ে দিন; কেউ যেন আপনার কাছে এসে খুশি হয়ে ফেরে।",
       "author": "Mother Teresa",
+      "authorBn": "মাদার তেরেসা",
       "category": "Kindness"
     },
     {
       "month": 2,
       "day": 12,
       "text": "Do not judge each day by the harvest you reap but by the seeds that you plant.",
+      "textBn": "প্রতিদিনের হিসাব করুন যে বীজ বুনলেন তা দিয়ে, ফসল দিয়ে নয়।",
       "author": "Robert Louis Stevenson",
+      "authorBn": "রবার্ট লুই স্টিভেনসন",
       "category": "Patience"
     },
     {
       "month": 2,
       "day": 13,
       "text": "The best time to plant a tree was 20 years ago. The second best time is now.",
+      "textBn": "গাছ লাগানোর সবচেয়ে ভালো সময় ছিল ২০ বছর আগে; এরপর সবচেয়ে ভালো সময় এখন।",
       "author": "Chinese Proverb",
+      "authorBn": "চীনা প্রবাদ",
       "category": "Action"
     },
     {
       "month": 2,
       "day": 14,
       "text": "It is during our darkest moments that we must focus to see the light.",
+      "textBn": "জীবনের সবচেয়ে অন্ধকার সময়েই আলো খুঁজে দেখার চোখ রাখতে হয়।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Hope"
     },
     {
       "month": 2,
       "day": 15,
       "text": "Whoever is happy will make others happy too.",
+      "textBn": "যে সুখী, সে অন্যকেও সুখী করে তোলে।",
       "author": "Anne Frank",
+      "authorBn": "অ্যান ফ্র্যাঙ্ক",
       "category": "Happiness"
     },
     {
       "month": 2,
       "day": 16,
       "text": "Do not go where the path may lead; go instead where there is no path and leave a trail.",
+      "textBn": "যে পথ আছে, সেই পথ ধরে যাবেন না; বরং যেখানে পথ নেই, সেখানে হাঁটুন—আপনার পায়ের ছাপই পথ হয়ে উঠবে।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Leadership"
     },
     {
       "month": 2,
       "day": 17,
       "text": "You will face many defeats in life, but never let yourself be defeated.",
+      "textBn": "জীবনে অনেক পরাজয় আসবে, কিন্তু নিজেকে কখনো পরাজিত হতে দেবেন না।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Resilience"
     },
     {
       "month": 2,
       "day": 18,
       "text": "In the end, it is not the years in your life that count. It is the life in your years.",
+      "textBn": "শেষ বিচারে জীবনের বছরগুলো নয়, বরং বছরের ভেতরের জীবনটাই গণ্য হয়।",
       "author": "Abraham Lincoln",
+      "authorBn": "আব্রাহাম লিংকন",
       "category": "Philosophy"
     },
     {
       "month": 2,
       "day": 19,
       "text": "Life is either a daring adventure or nothing at all.",
+      "textBn": "জীবন হয় একটা দুঃসাহসী অভিযান, নয়তো কিছুই নয়।",
       "author": "Helen Keller",
+      "authorBn": "হেলেন কেলার",
       "category": "Adventure"
     },
     {
       "month": 2,
       "day": 20,
       "text": "You have power over your mind, not outside events. Realize this, and you will find strength.",
+      "textBn": "আপনার শক্তি নিজের মনের উপর, বাইরের ঘটনার উপর নয়। এটা বুঝলেই শক্তি খুঁজে পাবেন।",
       "author": "Marcus Aurelius",
+      "authorBn": "মার্কাস অরেলিয়াস",
       "category": "Stoicism"
     },
     {
       "month": 2,
       "day": 21,
       "text": "The impediment to action advances action. What stands in the way becomes the way.",
+      "textBn": "যা কাজের পথ আটকায়, তা-ই কাজকে এগিয়ে নেয়; যা পথে বাধা হয়, সেটাই হয়ে ওঠে পথ।",
       "author": "Marcus Aurelius",
+      "authorBn": "মার্কাস অরেলিয়াস",
       "category": "Stoicism"
     },
     {
       "month": 2,
       "day": 22,
       "text": "Very little is needed to make a happy life; it is all within yourself, in your way of thinking.",
+      "textBn": "সুখী জীবন গড়তে খুব কমই দরকার; সবকিছু আপনার ভেতরেই, আপনার ভাবনাতেই।",
       "author": "Marcus Aurelius",
+      "authorBn": "মার্কাস অরেলিয়াস",
       "category": "Stoicism"
     },
     {
       "month": 2,
       "day": 23,
       "text": "Waste no more time arguing about what a good man should be. Be one.",
+      "textBn": "একজন ভালো মানুষ কেমন হবে তা নিয়ে আর সময় নষ্ট করবেন না—নিজেই একজন হয়ে উঠুন।",
       "author": "Marcus Aurelius",
+      "authorBn": "মার্কাস অরেলিয়াস",
       "category": "Stoicism"
     },
     {
       "month": 2,
       "day": 24,
       "text": "Begin at once to live, and count each separate day as a separate life.",
+      "textBn": "এখনই বাঁচা শুরু করুন; প্রতিটি দিনকে আলাদা একটা জীবন হিসেবে ভাবুন।",
       "author": "Seneca",
+      "authorBn": "সেনেকা",
       "category": "Philosophy"
     },
     {
       "month": 2,
       "day": 25,
       "text": "Luck is what happens when preparation meets opportunity.",
+      "textBn": "ভাগ্য মানে সুযোগের সাথে প্রস্তুতির দেখা হয়ে যাওয়া।",
       "author": "Seneca",
+      "authorBn": "সেনেকা",
       "category": "Success"
     },
     {
       "month": 2,
       "day": 26,
       "text": "We suffer more in imagination than in reality.",
+      "textBn": "বাস্তবের চেয়ে কল্পনায় আমরা বেশি কষ্ট পাই।",
       "author": "Seneca",
+      "authorBn": "সেনেকা",
       "category": "Stoicism"
     },
     {
       "month": 2,
       "day": 27,
       "text": "Difficulties strengthen the mind, as labor does the body.",
+      "textBn": "পরিশ্রম যেমন শরীরকে সবল করে, প্রতিকূলতা তেমনি মনকে শক্ত করে।",
       "author": "Seneca",
+      "authorBn": "সেনেকা",
       "category": "Growth"
     },
     {
       "month": 2,
       "day": 28,
       "text": "He who fears death will never do anything worthy of a living man.",
+      "textBn": "যে মৃত্যুকে ভয় পায়, সে বাঁচার যোগ্য কোনো কাজই করতে পারে না।",
       "author": "Seneca",
+      "authorBn": "সেনেকা",
       "category": "Courage"
     },
     {
       "month": 2,
       "day": 29,
       "text": "The key is not to prioritize what is on your schedule, but to schedule your priorities.",
+      "textBn": "আসল বিষয় হলো—সময়সূচিতে যা আছে তা গুরুত্বপূর্ণ করে তোলা নয়, বরং গুরুত্বপূর্ণ কাজগুলোর জন্য সময় নির্ধারণ করা।",
       "author": "Stephen Covey",
+      "authorBn": "স্টিফেন কোভি",
       "category": "Productivity"
     },
     {
       "month": 3,
       "day": 1,
       "text": "The secret of getting ahead is getting started.",
+      "textBn": "এগিয়ে যাওয়ার রহস্য একটাই—শুরু করে ফেলা।",
       "author": "Mark Twain",
+      "authorBn": "মার্ক টোয়েইন",
       "category": "Action"
     },
     {
       "month": 3,
       "day": 2,
       "text": "Twenty years from now you will be more disappointed by the things you did not do than by the ones you did.",
+      "textBn": "২০ বছর পর দেখবেন, যা করেননি তা নিয়ে আফসোস বেশি—যা করেছেন তা নিয়ে নয়।",
       "author": "Mark Twain",
+      "authorBn": "মার্ক টোয়েইন",
       "category": "Action"
     },
     {
       "month": 3,
       "day": 3,
       "text": "Courage is resistance to fear, mastery of fear — not absence of fear.",
+      "textBn": "সাহস মানে ভয়ের অনুপস্থিতি নয়; সাহস হলো ভয়ের মুখোমুখি দাঁড়িয়ে তাকে জয় করা।",
       "author": "Mark Twain",
+      "authorBn": "মার্ক টোয়েইন",
       "category": "Courage"
     },
     {
       "month": 3,
       "day": 4,
       "text": "The two most important days in your life are the day you are born and the day you find out why.",
+      "textBn": "জীবনের সবচেয়ে গুরুত্বপূর্ণ দুটি দিন—যেদিন আপনি জন্মেছেন, আর যেদিন বুঝেছেন কেন জন্মেছেন।",
       "author": "Mark Twain",
+      "authorBn": "মার্ক টোয়েইন",
       "category": "Purpose"
     },
     {
       "month": 3,
       "day": 5,
       "text": "Keep away from people who try to belittle your ambitions.",
+      "textBn": "যারা আপনার স্বপ্নকে ছোট করে দেখাতে চায়, তাদের থেকে দূরে থাকুন।",
       "author": "Mark Twain",
+      "authorBn": "মার্ক টোয়েইন",
       "category": "Motivation"
     },
     {
       "month": 3,
       "day": 6,
       "text": "It always seems impossible until it is done.",
+      "textBn": "কাজ শেষ হওয়ার আগে সবকিছুই অসম্ভব মনে হয়।",
       "author": "Nelson Mandela",
+      "authorBn": "নেলসন ম্যান্ডেলা",
       "category": "Motivation"
     },
     {
       "month": 3,
       "day": 7,
       "text": "Education is the most powerful weapon which you can use to change the world.",
+      "textBn": "শিক্ষাই সবচেয়ে শক্তিশালী অস্ত্র, যা দিয়ে পৃথিবীকে বদলে দেওয়া যায়।",
       "author": "Nelson Mandela",
+      "authorBn": "নেলসন ম্যান্ডেলা",
       "category": "Education"
     },
     {
       "month": 3,
       "day": 8,
       "text": "I am not a product of my circumstances. I am a product of my decisions.",
+      "textBn": "আমি পরিস্থিতির ফসল নই, আমি আমার সিদ্ধান্তের ফসল।",
       "author": "Stephen Covey",
+      "authorBn": "স্টিফেন কোভি",
       "category": "Responsibility"
     },
     {
       "month": 3,
       "day": 9,
       "text": "Act as if what you do makes a difference. It does.",
+      "textBn": "এমনভাবে কাজ করুন যেন আপনার কাজেই কিছু বদলায়। সত্যিই বদলায়।",
       "author": "William James",
+      "authorBn": "উইলিয়াম জেমস",
       "category": "Purpose"
     },
     {
       "month": 3,
       "day": 10,
       "text": "Success is stumbling from failure to failure with no loss of enthusiasm.",
+      "textBn": "সফলতা মানে উৎসাহ না হারিয়ে এক ব্যর্থতা থেকে আরেক ব্যর্থতায় হোঁচট খেতে খেতে এগিয়ে যাওয়া।",
       "author": "Winston Churchill",
+      "authorBn": "উইনস্টন চার্চিল",
       "category": "Resilience"
     },
     {
       "month": 3,
       "day": 11,
       "text": "You must be the change you wish to see in the world.",
+      "textBn": "পৃথিবীতে যে পরিবর্তন দেখতে চান, সেই পরিবর্তন আপনি নিজেই হয়ে উঠুন।",
       "author": "Mahatma Gandhi",
+      "authorBn": "মহাত্মা গান্ধী",
       "category": "Leadership"
     },
     {
       "month": 3,
       "day": 12,
       "text": "The weak can never forgive. Forgiveness is the attribute of the strong.",
+      "textBn": "দুর্বল কেউ ক্ষমা করতে পারে না; ক্ষমা শক্তিমানদের গুণ।",
       "author": "Mahatma Gandhi",
+      "authorBn": "মহাত্মা গান্ধী",
       "category": "Wisdom"
     },
     {
       "month": 3,
       "day": 13,
       "text": "First they ignore you, then they laugh at you, then they fight you, then you win.",
+      "textBn": "প্রথমে মানুষ আপনাকে উপেক্ষা করবে, তারপর হাসবে, তারপর লড়বে—আর শেষে আপনি জিতবেন।",
       "author": "Mahatma Gandhi",
+      "authorBn": "মহাত্মা গান্ধী",
       "category": "Perseverance"
     },
     {
       "month": 3,
       "day": 14,
       "text": "Strength does not come from physical capacity. It comes from an indomitable will.",
+      "textBn": "শক্তি আসে শরীরের সামর্থ্য থেকে নয়, আসে অদম্য ইচ্ছাশক্তি থেকে।",
       "author": "Mahatma Gandhi",
+      "authorBn": "মহাত্মা গান্ধী",
       "category": "Willpower"
     },
     {
       "month": 3,
       "day": 15,
       "text": "The best way to find yourself is to lose yourself in the service of others.",
+      "textBn": "নিজেকে খুঁজে পাওয়ার সবচেয়ে ভালো উপায়—অন্যের সেবায় নিজেকে ভুলে যাওয়া।",
       "author": "Mahatma Gandhi",
+      "authorBn": "মহাত্মা গান্ধী",
       "category": "Service"
     },
     {
       "month": 3,
       "day": 16,
       "text": "Imagination is more important than knowledge.",
+      "textBn": "কল্পনা জ্ঞানের চেয়ে বেশি গুরুত্বপূর্ণ।",
       "author": "Albert Einstein",
+      "authorBn": "আলবার্ট আইনস্টাইন",
       "category": "Creativity"
     },
     {
       "month": 3,
       "day": 17,
       "text": "A person who never made a mistake never tried anything new.",
+      "textBn": "যে কখনো ভুল করেনি, সে কখনো নতুন কিছু করার চেষ্টাও করেনি।",
       "author": "Albert Einstein",
+      "authorBn": "আলবার্ট আইনস্টাইন",
       "category": "Growth"
     },
     {
       "month": 3,
       "day": 18,
       "text": "Logic will get you from A to Z; imagination will get you everywhere.",
+      "textBn": "যুক্তি শুরু থেকে শেষ পর্যন্ত পৌঁছে দেয়, আর কল্পনা পৌঁছে দেয় সবখানে।",
       "author": "Albert Einstein",
+      "authorBn": "আলবার্ট আইনস্টাইন",
       "category": "Creativity"
     },
     {
       "month": 3,
       "day": 19,
       "text": "Life is like riding a bicycle. To keep your balance you must keep moving.",
+      "textBn": "জীবন সাইকেল চালানোর মতো—ভারসাম্য ধরে রাখতে হলে চলতে থাকতে হবে।",
       "author": "Albert Einstein",
+      "authorBn": "আলবার্ট আইনস্টাইন",
       "category": "Philosophy"
     },
     {
       "month": 3,
       "day": 20,
       "text": "Strive not to be a success, but rather to be of value.",
+      "textBn": "সফল হওয়ার চেষ্টা নয়, কাজে আসার চেষ্টা করুন।",
       "author": "Albert Einstein",
+      "authorBn": "আলবার্ট আইনস্টাইন",
       "category": "Purpose"
     },
     {
       "month": 3,
       "day": 21,
       "text": "Darkness cannot drive out darkness; only light can do that.",
+      "textBn": "অন্ধকার দিয়ে অন্ধকারকে তাড়ানো যায় না; আলোই পারে।",
       "author": "Martin Luther King Jr.",
+      "authorBn": "মার্টিন লুথার কিং জুনিয়র",
       "category": "Philosophy"
     },
     {
       "month": 3,
       "day": 22,
       "text": "The time is always right to do what is right.",
+      "textBn": "সঠিক কাজটি করার জন্য সময় সবসময়ই সঠিক।",
       "author": "Martin Luther King Jr.",
+      "authorBn": "মার্টিন লুথার কিং জুনিয়র",
       "category": "Ethics"
     },
     {
       "month": 3,
       "day": 23,
       "text": "Faith is taking the first step even when you do not see the whole staircase.",
+      "textBn": "বিশ্বাস মানে পুরো সিঁড়ি না দেখেও প্রথম পদক্ষেপ নেওয়া।",
       "author": "Martin Luther King Jr.",
+      "authorBn": "মার্টিন লুথার কিং জুনিয়র",
       "category": "Faith"
     },
     {
       "month": 3,
       "day": 24,
       "text": "If you cannot fly then run; if you cannot run then walk; if you cannot walk then crawl — but whatever you do, keep moving.",
+      "textBn": "উড়তে না পারলে দৌড়ান, দৌড়াতে না পারলে হাঁটুন, হাঁটতে না পারলে হামাগুড়ি দিন—তবে যা-ই করুন, থামবেন না।",
       "author": "Martin Luther King Jr.",
+      "authorBn": "মার্টিন লুথার কিং জুনিয়র",
       "category": "Perseverance"
     },
     {
       "month": 3,
       "day": 25,
       "text": "I have learned that people will forget what you said, but never how you made them feel.",
+      "textBn": "শিখেছি—লোকে ভুলে যায় আপনি কী বলেছেন, কিন্তু আপনি তাকে কেমন অনুভব করিয়েছেন, তা কখনো ভোলে না।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Wisdom"
     },
     {
       "month": 3,
       "day": 26,
       "text": "Nothing will work unless you do.",
+      "textBn": "আপনি কিছু না করলে কিছুই কাজ করবে না।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Work"
     },
     {
       "month": 3,
       "day": 27,
       "text": "My mission in life is not merely to survive, but to thrive.",
+      "textBn": "আমার জীবনের লক্ষ্য শুধু টিকে থাকা নয়, বেড়ে ওঠা।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Purpose"
     },
     {
       "month": 3,
       "day": 28,
       "text": "To know what you know and what you do not know, that is true knowledge.",
+      "textBn": "যা জানেন আর যা জানেন না—দুটোই জানা, এটাই প্রকৃত জ্ঞান।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Wisdom"
     },
     {
       "month": 3,
       "day": 29,
       "text": "Everything has beauty, but not everyone sees it.",
+      "textBn": "সবকিছুতেই সৌন্দর্য আছে, কিন্তু সবাই তা দেখে না।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Philosophy"
     },
     {
       "month": 3,
       "day": 30,
       "text": "He who learns but does not think is lost. He who thinks but does not learn is in great danger.",
+      "textBn": "যে পড়ে কিন্তু ভাবে না, সে হারিয়ে যায়; আর যে ভাবে কিন্তু পড়ে না, সে বড় বিপদে থাকে।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Learning"
     },
     {
       "month": 3,
       "day": 31,
       "text": "The man who moves a mountain begins by carrying away small stones.",
+      "textBn": "পর্বত সরাতে চাইলে প্রথমে ছোট ছোট পাথর বয়ে শুরু করুন।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Perseverance"
     },
     {
       "month": 4,
       "day": 1,
       "text": "When you reach the end of your rope, tie a knot in it and hang on.",
+      "textBn": "দড়ির শেষ প্রান্তে পৌঁছে গেলে গিঁট দিয়ে ধরে টিকে থাকুন।",
       "author": "Franklin D. Roosevelt",
+      "authorBn": "ফ্র্যাঙ্কলিন ডি. রুজভেল্ট",
       "category": "Resilience"
     },
     {
       "month": 4,
       "day": 2,
       "text": "In three words I can sum up everything I have learned about life: it goes on.",
+      "textBn": "জীবন নিয়ে শেখা সবকিছু তিন শব্দে বলতে পারি—জীবন চলতেই থাকে।",
       "author": "Robert Frost",
+      "authorBn": "রবার্ট ফ্রস্ট",
       "category": "Philosophy"
     },
     {
       "month": 4,
       "day": 3,
       "text": "No road is long with good company.",
+      "textBn": "ভালো সঙ্গী থাকলে কোনো পথই লম্বা মনে হয় না।",
       "author": "Turkish Proverb",
+      "authorBn": "তুর্কি প্রবাদ",
       "category": "Friendship"
     },
     {
       "month": 4,
       "day": 4,
       "text": "The mind is everything. What you think you become.",
+      "textBn": "মনই সবকিছু; আপনি যা ভাবেন, আপনিই তাই হয়ে ওঠেন।",
       "author": "Buddha",
+      "authorBn": "বুদ্ধ",
       "category": "Mindset"
     },
     {
       "month": 4,
       "day": 5,
       "text": "Three things cannot be long hidden: the sun, the moon, and the truth.",
+      "textBn": "তিনটি জিনিস বেশি দিন লুকিয়ে থাকে না—সূর্য, চাঁদ আর সত্য।",
       "author": "Buddha",
+      "authorBn": "বুদ্ধ",
       "category": "Truth"
     },
     {
       "month": 4,
       "day": 6,
       "text": "Peace comes from within. Do not seek it without.",
+      "textBn": "শান্তি আসে ভেতর থেকে; বাইরে খুঁজবেন না।",
       "author": "Buddha",
+      "authorBn": "বুদ্ধ",
       "category": "Inner Peace"
     },
     {
       "month": 4,
       "day": 7,
       "text": "Do not dwell in the past, do not dream of the future, concentrate the mind on the present moment.",
+      "textBn": "অতীত নিয়ে আটকে থাকবেন না, ভবিষ্যতের স্বপ্নে হারাবেন না; মন রাখুন এই মুহূর্তে।",
       "author": "Buddha",
+      "authorBn": "বুদ্ধ",
       "category": "Mindfulness"
     },
     {
       "month": 4,
       "day": 8,
       "text": "You yourself, as much as anybody in the entire universe, deserve your love and affection.",
+      "textBn": "এই পৃথিবীর যে কেউ যেমন ভালোবাসার যোগ্য, আপনিও কম নন—নিজের ভালোবাসা আর মমতাটুকু নিজেকে দিন।",
       "author": "Buddha",
+      "authorBn": "বুদ্ধ",
       "category": "Self-love"
     },
     {
       "month": 4,
       "day": 9,
       "text": "Health is the greatest gift, contentment the greatest wealth, faithfulness the best relationship.",
+      "textBn": "সুস্বাস্থ্য শ্রেষ্ঠ উপহার, তৃপ্তি শ্রেষ্ঠ সম্পদ, আর বিশ্বস্ততা শ্রেষ্ঠ সম্পর্ক।",
       "author": "Buddha",
+      "authorBn": "বুদ্ধ",
       "category": "Wisdom"
     },
     {
       "month": 4,
       "day": 10,
       "text": "To be yourself in a world that is constantly trying to make you something else is the greatest accomplishment.",
+      "textBn": "এমন এক দুনিয়ায় যেখানে সবাই আপনাকে অন্য কিছু বানাতে চায়, নিজেকে নিজের মতো রাখাই সবচেয়ে বড় অর্জন।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Authenticity"
     },
     {
       "month": 4,
       "day": 11,
       "text": "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+      "textBn": "পেছনের আর সামনের সবকিছুই তুচ্ছ, ভেতরে যা আছে তার কাছে।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Inner Strength"
     },
     {
       "month": 4,
       "day": 12,
       "text": "For every minute you are angry you lose sixty seconds of happiness.",
+      "textBn": "প্রতিটি মিনিট রাগে কাটালে জীবনের ষাট সেকেন্ড সুখ হারায়।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Happiness"
     },
     {
       "month": 4,
       "day": 13,
       "text": "Nothing great was ever achieved without enthusiasm.",
+      "textBn": "উদ্দীপনা ছাড়া কোনো মহৎ কাজই কখনো হয়নি।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Motivation"
     },
     {
       "month": 4,
       "day": 14,
       "text": "Write it on your heart that every day is the best day in the year.",
+      "textBn": "হৃদয়ে লিখে রাখুন—প্রতিদিনই বছরের সেরা দিন।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Gratitude"
     },
     {
       "month": 4,
       "day": 15,
       "text": "Once you choose hope, anything is possible.",
+      "textBn": "একবার আশাকে বেছে নিলে সবকিছুই সম্ভব হয়ে ওঠে।",
       "author": "Christopher Reeve",
+      "authorBn": "ক্রিস্টোফার রিভ",
       "category": "Hope"
     },
     {
       "month": 4,
       "day": 16,
       "text": "It is not what you look at that matters, it is what you see.",
+      "textBn": "মূল কথা চোখের সামনে কী আছে তা নয়; আপনি তাতে কী দেখতে পান, সেটাই আসল।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Perspective"
     },
     {
       "month": 4,
       "day": 17,
       "text": "Go confidently in the direction of your dreams. Live the life you have imagined.",
+      "textBn": "আত্মবিশ্বাস নিয়ে স্বপ্নের পথে এগিয়ে যান। যে জীবন স্বপ্নে দেখেছেন, সেটাই বাঁচুন।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Dreams"
     },
     {
       "month": 4,
       "day": 18,
       "text": "Our life is frittered away by detail. Simplify, simplify.",
+      "textBn": "আমাদের জীবন ছোট ছোট খুঁটিনাটিতে শেষ হয়ে যায়। সরল করে নিন, আরও সরল।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Simplicity"
     },
     {
       "month": 4,
       "day": 19,
       "text": "Not until we are lost do we begin to find ourselves.",
+      "textBn": "হারিয়ে না গেলে নিজেকে খুঁজে পাওয়া শুরু হয় না।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Self-discovery"
     },
     {
       "month": 4,
       "day": 20,
       "text": "I went to the woods because I wished to live deliberately.",
+      "textBn": "আমি বনে গিয়েছিলাম, কারণ নিজে বেছে নিয়েই বাঁচতে চেয়েছিলাম।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Intentionality"
     },
     {
       "month": 4,
       "day": 21,
       "text": "Kind words do not cost much, yet they accomplish much.",
+      "textBn": "মিষ্টি কথার খরচ কম, কিন্তু কাজ অনেক।",
       "author": "Blaise Pascal",
+      "authorBn": "ব্লেজ পাস্কাল",
       "category": "Kindness"
     },
     {
       "month": 4,
       "day": 22,
       "text": "The heart has its reasons which reason knows nothing of.",
+      "textBn": "হৃদয়ের নিজস্ব কারণ আছে, যুক্তি যার খোঁজ জানে না।",
       "author": "Blaise Pascal",
+      "authorBn": "ব্লেজ পাস্কাল",
       "category": "Philosophy"
     },
     {
       "month": 4,
       "day": 23,
       "text": "Excellence is never an accident. It is always the result of high intention and sincere effort.",
+      "textBn": "শ্রেষ্ঠত্ব কখনো আকস্মিক নয়; এটা তীব্র মনোবল আর আন্তরিক শ্রমের ফল।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Excellence"
     },
     {
       "month": 4,
       "day": 24,
       "text": "We are what we repeatedly do. Excellence, then, is not an act, but a habit.",
+      "textBn": "আমরা যা বারবার করি, সেটাই হয়ে উঠি। তাই শ্রেষ্ঠত্ব কোনো একবারের কাজ নয়, অভ্যাস।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Habits"
     },
     {
       "month": 4,
       "day": 25,
       "text": "Knowing yourself is the beginning of all wisdom.",
+      "textBn": "নিজেকে জানাই সমস্ত প্রজ্ঞার শুরু।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Wisdom"
     },
     {
       "month": 4,
       "day": 26,
       "text": "Patience is bitter, but its fruit is sweet.",
+      "textBn": "ধৈর্য তিতা, কিন্তু এর ফল মিষ্টি।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Patience"
     },
     {
       "month": 4,
       "day": 27,
       "text": "The more you know, the more you realize you do not know.",
+      "textBn": "যত বেশি শেখেন, তত ভালো বোঝেন কত কম জানেন।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Humility"
     },
     {
       "month": 4,
       "day": 28,
       "text": "Pleasure in the job puts perfection in the work.",
+      "textBn": "কাজে আনন্দ থাকলে কাজেই নিখুঁততা আসে।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Work"
     },
     {
       "month": 4,
       "day": 29,
       "text": "Quality is not an act, it is a habit.",
+      "textBn": "গুণমান কোনো একবারের কাজ নয়, অভ্যাস।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Excellence"
     },
     {
       "month": 4,
       "day": 30,
       "text": "Hope is a waking dream.",
+      "textBn": "আশা হলো জেগে থাকা স্বপ্ন।",
       "author": "Aristotle",
+      "authorBn": "অ্যারিস্টটল",
       "category": "Hope"
     },
     {
       "month": 5,
       "day": 1,
       "text": "Shoot for the moon. Even if you miss, you will land among the stars.",
+      "textBn": "চাঁদে লক্ষ্য রাখুন। মিস করলেও তারাদের মাঝেই পৌঁছে যাবেন।",
       "author": "Les Brown",
+      "authorBn": "লেস ব্রাউন",
       "category": "Ambition"
     },
     {
       "month": 5,
       "day": 2,
       "text": "Well done is better than well said.",
+      "textBn": "ভালো করে বলা নয়, ভালো করে করা—সেটাই বেশি মূল্যবান।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Action"
     },
     {
       "month": 5,
       "day": 3,
       "text": "An investment in knowledge pays the best interest.",
+      "textBn": "সবচেয়ে লাভজনক বিনিয়োগ হলো জ্ঞান।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Education"
     },
     {
       "month": 5,
       "day": 4,
       "text": "Tell me and I forget. Teach me and I remember. Involve me and I learn.",
+      "textBn": "বলুন, আমি ভুলে যাই। শেখান, আমি মনে রাখি। জড়িয়ে নিন, আমি শিখি।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Learning"
     },
     {
       "month": 5,
       "day": 5,
       "text": "By failing to prepare, you are preparing to fail.",
+      "textBn": "প্রস্তুতি না নিয়ে আপনি ব্যর্থতার প্রস্তুতিই নিচ্ছেন।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Preparation"
     },
     {
       "month": 5,
       "day": 6,
       "text": "Energy and persistence conquer all things.",
+      "textBn": "শক্তি আর অধ্যবসায় সবকিছুকে জয় করে।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Perseverance"
     },
     {
       "month": 5,
       "day": 7,
       "text": "Either write something worth reading or do something worth writing.",
+      "textBn": "হয় লেখার মতো কিছু লিখুন, নয়তো লেখার যোগ্য কিছু করুন।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Purpose"
     },
     {
       "month": 5,
       "day": 8,
       "text": "Lost time is never found again.",
+      "textBn": "হারানো সময় কখনো ফিরে পাওয়া যায় না।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Time"
     },
     {
       "month": 5,
       "day": 9,
       "text": "Never leave that till tomorrow which you can do today.",
+      "textBn": "আজকের কাজ কালকের জন্য ফেলে রাখবেন না।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Productivity"
     },
     {
       "month": 5,
       "day": 10,
       "text": "Without continual growth and progress, such words as improvement and success have no meaning.",
+      "textBn": "ধারাবাহিক বৃদ্ধি আর অগ্রগতি না থাকলে উন্নতি আর সফলতার শব্দগুলোর কোনো মানে থাকে না।",
       "author": "Benjamin Franklin",
+      "authorBn": "বেঞ্জামিন ফ্র্যাঙ্কলিন",
       "category": "Growth"
     },
     {
       "month": 5,
       "day": 11,
       "text": "The best revenge is massive success.",
+      "textBn": "সবচেয়ে ভালো প্রতিশোধ—বিরাট সফলতা।",
       "author": "Frank Sinatra",
+      "authorBn": "ফ্র্যাঙ্ক সিনাত্রা",
       "category": "Success"
     },
     {
       "month": 5,
       "day": 12,
       "text": "I am not afraid of storms, for I am learning how to sail my ship.",
+      "textBn": "ঝড়কে আমি ভয় পাই না, কারণ আমি শিখছি নিজের জাহাজ চালাতে।",
       "author": "Louisa May Alcott",
+      "authorBn": "লুইসা মে অলকট",
       "category": "Courage"
     },
     {
       "month": 5,
       "day": 13,
       "text": "There are no shortcuts to any place worth going.",
+      "textBn": "যেখানে যাওয়া সার্থক, সেখানে পৌঁছানোর কোনো শর্টকাট নেই।",
       "author": "Beverly Sills",
+      "authorBn": "বেভারলি সিলস",
       "category": "Perseverance"
     },
     {
       "month": 5,
       "day": 14,
       "text": "The secret of success is to do the common thing uncommonly well.",
+      "textBn": "সফলতার রহস্য—সাধারণ কাজটাই অসাধারণভাবে করা।",
       "author": "John D. Rockefeller Jr.",
+      "authorBn": "জন ডি. রকফেলার জুনিয়র",
       "category": "Excellence"
     },
     {
       "month": 5,
       "day": 15,
       "text": "If you genuinely want something, do not wait for it — teach yourself to be impatient.",
+      "textBn": "সত্যিই কিছু চাইলে তার জন্য অপেক্ষা করবেন না—নিজেকে শেখান অধৈর্য হতে।",
       "author": "Gurbaksh Chahal",
+      "authorBn": "গুরবক্ষ ছাহাল",
       "category": "Motivation"
     },
     {
       "month": 5,
       "day": 16,
       "text": "Do one thing every day that scares you.",
+      "textBn": "প্রতিদিন একটা কাজ করুন, যেটা আপনাকে ভয় দেখায়।",
       "author": "Eleanor Roosevelt",
+      "authorBn": "এলিনর রুজভেল্ট",
       "category": "Courage"
     },
     {
       "month": 5,
       "day": 17,
       "text": "With the new day comes new strength and new thoughts.",
+      "textBn": "নতুন দিনের সাথে আসে নতুন শক্তি আর নতুন ভাবনা।",
       "author": "Eleanor Roosevelt",
+      "authorBn": "এলিনর রুজভেল্ট",
       "category": "Motivation"
     },
     {
       "month": 5,
       "day": 18,
       "text": "Great minds discuss ideas; average minds discuss events; small minds discuss people.",
+      "textBn": "বড় মন আলোচনা করে ভাবনার কথা, সাধারণ মন ঘটনার কথা, আর ছোট মন মানুষের কথা।",
       "author": "Eleanor Roosevelt",
+      "authorBn": "এলিনর রুজভেল্ট",
       "category": "Wisdom"
     },
     {
       "month": 5,
       "day": 19,
       "text": "Beautiful young people are accidents of nature, but beautiful old people are works of art.",
+      "textBn": "সুন্দর তরুণ-তরুণী প্রকৃতির আকস্মিক উপহার, কিন্তু সুন্দর বয়স্ক মানুষ শিল্পের সৃষ্টি।",
       "author": "Eleanor Roosevelt",
+      "authorBn": "এলিনর রুজভেল্ট",
       "category": "Wisdom"
     },
     {
       "month": 5,
       "day": 20,
       "text": "The purpose of life is to contribute in some way to making things better.",
+      "textBn": "জীবনের উদ্দেশ্য—যেভাবে পারি, কিছুকে আরও ভালো করে তোলা।",
       "author": "Robert F. Kennedy",
+      "authorBn": "রবার্ট এফ. কেনেডি",
       "category": "Purpose"
     },
     {
       "month": 5,
       "day": 21,
       "text": "It is not the strongest of the species that survives, nor the most intelligent; it is the most adaptable.",
+      "textBn": "টিকে থাকে সবচেয়ে শক্তিশালী প্রজাতি নয়, সবচেয়ে বুদ্ধিমানও নয়; টিকে থাকে সবচেয়ে বেশি খাপ খাওয়াতে পারা প্রজাতি।",
       "author": "Charles Darwin",
+      "authorBn": "চার্লস ডারউইন",
       "category": "Adaptability"
     },
     {
       "month": 5,
       "day": 22,
       "text": "A journey of a thousand miles begins with a single step.",
+      "textBn": "হাজার মাইলের যাত্রাও শুরু হয় এক পা ফেলা দিয়ে।",
       "author": "Lao Tzu",
+      "authorBn": "লাও তজু",
       "category": "Action"
     },
     {
       "month": 5,
       "day": 23,
       "text": "When I let go of what I am, I become what I might be.",
+      "textBn": "নিজেকে যা ভেবে আঁকড়ে আছি, তা ছেড়ে দিলেই হয়ে উঠতে পারি যা হতে পারতাম।",
       "author": "Lao Tzu",
+      "authorBn": "লাও তজু",
       "category": "Growth"
     },
     {
       "month": 5,
       "day": 24,
       "text": "Nature does not hurry, yet everything is accomplished.",
+      "textBn": "প্রকৃতি তাড়াহুড়ো করে না, তবু সব কাজ হয়ে যায়।",
       "author": "Lao Tzu",
+      "authorBn": "লাও তজু",
       "category": "Patience"
     },
     {
       "month": 5,
       "day": 25,
       "text": "Knowing others is wisdom. Knowing yourself is enlightenment.",
+      "textBn": "অন্যকে চেনা জ্ঞান; নিজেকে চেনা আলোকপ্রাপ্তি।",
       "author": "Lao Tzu",
+      "authorBn": "লাও তজু",
       "category": "Self-awareness"
     },
     {
       "month": 5,
       "day": 26,
       "text": "To the mind that is still, the whole universe surrenders.",
+      "textBn": "যে মন স্থির, সমস্ত জগৎ তার কাছে নত।",
       "author": "Lao Tzu",
+      "authorBn": "লাও তজু",
       "category": "Inner Peace"
     },
     {
       "month": 5,
       "day": 27,
       "text": "Life is really simple, but we insist on making it complicated.",
+      "textBn": "জীবন আসলে খুব সরল, আমরাই তা জটিল করে তুলি।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Simplicity"
     },
     {
       "month": 5,
       "day": 28,
       "text": "Before you embark on a journey of revenge, dig two graves.",
+      "textBn": "প্রতিশোধের পথে নামলে আগে দুটি কবর খুঁড়ে নিন।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Wisdom"
     },
     {
       "month": 5,
       "day": 29,
       "text": "It does not matter how slowly you go so long as you do not stop.",
+      "textBn": "কত ধীরে এগোচ্ছেন তা নয়, থামছেন কি না সেটাই আসল।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Perseverance"
     },
     {
       "month": 5,
       "day": 30,
       "text": "When it is obvious that the goals cannot be reached, do not adjust the goals, adjust the action steps.",
+      "textBn": "লক্ষ্যে পৌঁছানো যাবে না বুঝলে লক্ষ্য বদলাবেন না—বদলান কাজের ধাপগুলো।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Adaptability"
     },
     {
       "month": 5,
       "day": 31,
       "text": "Wherever you go, go with all your heart.",
+      "textBn": "যেখানেই যান, মনপ্রাণ নিয়ে যান।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Commitment"
     },
     {
       "month": 6,
       "day": 1,
       "text": "The will to win, the desire to succeed, the urge to reach your full potential — these are the keys that will unlock the door to personal excellence.",
+      "textBn": "জেতার ইচ্ছা, সফল হওয়ার আকাঙ্ক্ষা আর নিজের পূর্ণ সামর্থ্য ছুঁয়ে দেখার তাড়না—এগুলোই সেই চাবি, যা নিজের শ্রেষ্ঠত্বের দরজা খোলে।",
       "author": "Confucius",
+      "authorBn": "কনফুসিয়াস",
       "category": "Excellence"
     },
     {
       "month": 6,
       "day": 2,
       "text": "Be not afraid of greatness. Some are born great, some achieve greatness, and some have greatness thrust upon them.",
+      "textBn": "মহত্ত্বকে ভয় পাবেন না। কেউ মহান হয়ে জন্মে, কেউ মহত্ত্ব অর্জন করে, আর কারও কাঁধে মহত্ত্ব চাপিয়ে দেওয়া হয়।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Greatness"
     },
     {
       "month": 6,
       "day": 3,
       "text": "We know what we are, but know not what we may be.",
+      "textBn": "আমরা জানি আমরা কী; জানি না আমরা কতটা হতে পারি।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Potential"
     },
     {
       "month": 6,
       "day": 4,
       "text": "All the world is a stage, and all the men and women merely players.",
+      "textBn": "পুরো পৃথিবীটাই এক মঞ্চ, আর নারী-পুরুষ সবাই কেবল অভিনেতা।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Philosophy"
     },
     {
       "month": 6,
       "day": 5,
       "text": "There is nothing either good or bad, but thinking makes it so.",
+      "textBn": "ভালো-মন্দ বলে কিছু নেই, ভাবনাই তাকে ভালো বা মন্দ বানায়।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Mindset"
     },
     {
       "month": 6,
       "day": 6,
       "text": "Our doubts are traitors, and make us lose the good we oft might win, by fearing to attempt.",
+      "textBn": "সন্দেহ এক বিশ্বাসঘাতক; চেষ্টার ভয়ে আমরা যা সহজেই জিতে নিতে পারতাম, তা হারিয়ে ফেলি।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Courage"
     },
     {
       "month": 6,
       "day": 7,
       "text": "What's in a name? That which we call a rose by any other name would smell as sweet.",
+      "textBn": "নামে কী আসে যায়? কোনো গোলাপকে অন্য নামে ডাকলেও তার সুবাস তো একই থাকে।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Philosophy"
     },
     {
       "month": 6,
       "day": 8,
       "text": "Love all, trust a few, do wrong to none.",
+      "textBn": "সবাইকে ভালোবাসুন, অল্প কয়েকজনকে বিশ্বাস করুন, কারো সাথে অন্যায় করবেন না।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Wisdom"
     },
     {
       "month": 6,
       "day": 9,
       "text": "Give every man thine ear, but few thy voice.",
+      "textBn": "সবার কথা শুনুন, কিন্তু নিজের মুখ অল্প খুলুন।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Wisdom"
     },
     {
       "month": 6,
       "day": 10,
       "text": "The robbed that smiles, steals something from the thief.",
+      "textBn": "যে ব্যক্তি ক্ষতিগ্রস্ত হয়েও হাসে, সে চোরের কাছ থেকেও কিছু কেড়ে নেয়।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Resilience"
     },
     {
       "month": 6,
       "day": 11,
       "text": "How sharper than a serpent's tooth it is to have a thankless child.",
+      "textBn": "অকৃতজ্ঞ সন্তান থাকা সাপের দাঁতের চেয়েও তীক্ষ্ণ ব্যথা দেয়।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Gratitude"
     },
     {
       "month": 6,
       "day": 12,
       "text": "The course of true love never did run smooth.",
+      "textBn": "প্রকৃত প্রেমের পথ কখনোই সমতল ছিল না।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Love"
     },
     {
       "month": 6,
       "day": 13,
       "text": "I am not bound to please thee with my answers.",
+      "textBn": "আমার উত্তর দিয়ে আপনাকে খুশি করার কোনো বাধ্যবাধকতা আমার নেই।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Authenticity"
     },
     {
       "month": 6,
       "day": 14,
       "text": "We are such stuff as dreams are made on, and our little life is rounded with a sleep.",
+      "textBn": "আমরা স্বপ্নের উপাদানে গড়া; আর আমাদের ছোট্ট জীবন ঘিরে থাকে ঘুম।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Philosophy"
     },
     {
       "month": 6,
       "day": 15,
       "text": "Brevity is the soul of wit.",
+      "textBn": "সংক্ষিপ্ততাই বুদ্ধির প্রাণ।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Wisdom"
     },
     {
       "month": 6,
       "day": 16,
       "text": "The fool doth think he is wise, but the wise man knows himself to be a fool.",
+      "textBn": "মূর্খ নিজেকে জ্ঞানী ভাবে, আর জ্ঞানী নিজেকে মূর্খ বলে জানেন।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Humility"
     },
     {
       "month": 6,
       "day": 17,
       "text": "We know what we are, but know not what we may be.",
+      "textBn": "আমরা জানি আমরা কী; জানি না আমরা কতটা হতে পারি।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Potential"
     },
     {
       "month": 6,
       "day": 18,
       "text": "The quality of mercy is not strained; it droppeth as the gentle rain from heaven.",
+      "textBn": "দয়ার গুণ জোরপূর্বক আসে না; তা আকাশ থেকে ঝরা কোমল বৃষ্টির মতো ঝরে পড়ে।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Compassion"
     },
     {
       "month": 6,
       "day": 19,
       "text": "Cowards die many times before their deaths; the valiant never taste of death but once.",
+      "textBn": "কাপুরুষ মরে বহুবার, আর বীর মৃত্যুর স্বাদ নেয় কেবল একবার।",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Courage"
     },
     {
       "month": 6,
       "day": 20,
       "text": "How poor are they that have not patience.",
+      "textBn": "ধৈর্য যার নেই, সে কত দরিদ্র!",
       "author": "William Shakespeare",
+      "authorBn": "উইলিয়াম শেক্সপিয়র",
       "category": "Patience"
     },
     {
       "month": 6,
       "day": 21,
       "text": "The pain of parting is nothing to the joy of meeting again.",
+      "textBn": "বিচ্ছেদের ব্যথা আবার মিলনের আনন্দের কাছে তুচ্ছ।",
       "author": "Charles Dickens",
+      "authorBn": "চার্লস ডিকেন্স",
       "category": "Hope"
     },
     {
       "month": 6,
       "day": 22,
       "text": "No one is useless in this world who lightens the burdens of another.",
+      "textBn": "এই পৃথিবীতে কেউ অকেজো নয়, যে অন্য কারো বোঝা হালকা করে।",
       "author": "Charles Dickens",
+      "authorBn": "চার্লস ডিকেন্স",
       "category": "Service"
     },
     {
       "month": 6,
       "day": 23,
       "text": "Have a heart that never hardens, a temper that never tires, a touch that never hurts.",
+      "textBn": "এমন হৃদয় রাখুন যা কখনো কঠিন হয় না, এমন মেজাজ রাখুন যা কখনো ক্লান্ত হয় না, এমন স্পর্শ রাখুন যা কখনো আঘাত করে না।",
       "author": "Charles Dickens",
+      "authorBn": "চার্লস ডিকেন্স",
       "category": "Kindness"
     },
     {
       "month": 6,
       "day": 24,
       "text": "It was the best of times, it was the worst of times — but it was always a time to keep going.",
+      "textBn": "সেটা ছিল সবচেয়ে ভালো সময়, আবার সবচেয়ে খারাপ সময়—তবে যেকোনো সময়েই চলতে থাকাই ছিল পথ।",
       "author": "Charles Dickens",
+      "authorBn": "চার্লস ডিকেন্স",
       "category": "Resilience"
     },
     {
       "month": 6,
       "day": 25,
       "text": "Reflect upon your present blessings, of which every man has many.",
+      "textBn": "আপনার বর্তমানের কল্যাণগুলো একবার গুনে দেখুন—প্রত্যেকের ভাগেই সেগুলো অনেক।",
       "author": "Charles Dickens",
+      "authorBn": "চার্লস ডিকেন্স",
       "category": "Gratitude"
     },
     {
       "month": 6,
       "day": 26,
       "text": "Whatever I have tried to do in life, I have tried with all my heart to do it well.",
+      "textBn": "জীবনে যা কিছু করার চেষ্টা করেছি, মনপ্রাণ দিয়েই ভালোভাবে করার চেষ্টা করেছি।",
       "author": "Charles Dickens",
+      "authorBn": "চার্লস ডিকেন্স",
       "category": "Commitment"
     },
     {
       "month": 6,
       "day": 27,
       "text": "A loving heart is the truest wisdom.",
+      "textBn": "ভালোবাসাপূর্ণ হৃদয়ই সবচেয়ে সত্যিকারের প্রজ্ঞা।",
       "author": "Charles Dickens",
+      "authorBn": "চার্লস ডিকেন্স",
       "category": "Love"
     },
     {
       "month": 6,
       "day": 28,
       "text": "There is nothing I would not do for those who are really my friends.",
+      "textBn": "যারা সত্যিই আমার বন্ধু, তাদের জন্য যা না করতে পারি, এমন কিছু নেই।",
       "author": "Jane Austen",
+      "authorBn": "জেন অস্টেন",
       "category": "Friendship"
     },
     {
       "month": 6,
       "day": 29,
       "text": "I declare after all there is no enjoyment like reading.",
+      "textBn": "পড়ার মতো আনন্দ আর নেই—এটা আমি দ্বিধা ছাড়াই বলি।",
       "author": "Jane Austen",
+      "authorBn": "জেন অস্টেন",
       "category": "Learning"
     },
     {
       "month": 6,
       "day": 30,
       "text": "One half of the world cannot understand the pleasures of the other.",
+      "textBn": "পৃথিবীর অর্ধেক মানুষ অন্য অর্ধের আনন্দ বুঝতে পারে না।",
       "author": "Jane Austen",
+      "authorBn": "জেন অস্টেন",
       "category": "Empathy"
     },
     {
       "month": 7,
       "day": 1,
       "text": "There is no charm equal to tenderness of heart.",
+      "textBn": "হৃদয়ের কোমলতার মতো মোহিনী কিছু নেই।",
       "author": "Jane Austen",
+      "authorBn": "জেন অস্টেন",
       "category": "Kindness"
     },
     {
       "month": 7,
       "day": 2,
       "text": "To be fond of dancing was a certain step towards falling in love.",
+      "textBn": "নাচের প্রতি অনুরাগ প্রেমে পড়ার এক নিশ্চিত ধাপ।",
       "author": "Jane Austen",
+      "authorBn": "জেন অস্টেন",
       "category": "Joy"
     },
     {
       "month": 7,
       "day": 3,
       "text": "The secret of change is to focus all of your energy not on fighting the old, but on building the new.",
+      "textBn": "পরিবর্তনের রহস্য—পুরনোকে হারানোর লড়াইয়ে নয়, নতুনকে গড়ে তোলায় নিজের সব শক্তি ঢেলে দেওয়া।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Change"
     },
     {
       "month": 7,
       "day": 4,
       "text": "The only true wisdom is in knowing you know nothing.",
+      "textBn": "একমাত্র সত্যিকারের প্রজ্ঞা হলো—জানা যে আপনি কিছুই জানেন না।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Humility"
     },
     {
       "month": 7,
       "day": 5,
       "text": "Strong minds discuss ideas, average minds discuss events, weak minds discuss people.",
+      "textBn": "শক্ত মন আলোচনা করে ভাবনার কথা, সাধারণ মন ঘটনার কথা, আর দুর্বল মন মানুষের কথা।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Wisdom"
     },
     {
       "month": 7,
       "day": 6,
       "text": "He who is not contented with what he has, would not be contented with what he would like to have.",
+      "textBn": "যে যা আছে তা নিয়ে তৃপ্ত নয়, সে যা পেতে চায় তা পেলেও তৃপ্ত হবে না।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Contentment"
     },
     {
       "month": 7,
       "day": 7,
       "text": "Employ your time in improving yourself by other men's writings, so that you shall gain easily what others have labored hard for.",
+      "textBn": "অন্যের লেখা পড়ে নিজেকে উন্নত করতে সময় দিন; তাহলে অন্যের কঠোর পরিশ্রমের ফল আপনি সহজেই পাবেন।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Learning"
     },
     {
       "month": 7,
       "day": 8,
       "text": "To move the world, we must first move ourselves.",
+      "textBn": "পৃথিবীকে নাড়াতে হলে আগে নিজেকেই নাড়াতে হবে।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Self-improvement"
     },
     {
       "month": 7,
       "day": 9,
       "text": "Contentment is natural wealth, luxury is artificial poverty.",
+      "textBn": "তৃপ্তিই স্বাভাবিক সম্পদ, আর বিলাসিতা কৃত্রিম দারিদ্র্য।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Contentment"
     },
     {
       "month": 7,
       "day": 10,
       "text": "I cannot teach anybody anything. I can only make them think.",
+      "textBn": "আমি কাউকে কিছু শেখাতে পারি না; আমি কেবল তাকে ভাবতে শেখাতে পারি।",
       "author": "Socrates",
+      "authorBn": "সক্রেটিস",
       "category": "Learning"
     },
     {
       "month": 7,
       "day": 11,
       "text": "The measure of a man is what he does with power.",
+      "textBn": "ক্ষমতা পেয়ে মানুষ কী করে, তা দিয়েই তার মাপ বোঝা যায়।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Character"
     },
     {
       "month": 7,
       "day": 12,
       "text": "At the touch of love, everyone becomes a poet.",
+      "textBn": "ভালোবাসার স্পর্শে সবাই কবি হয়ে ওঠে।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Love"
     },
     {
       "month": 7,
       "day": 13,
       "text": "Wise men talk because they have something to say; fools because they have to say something.",
+      "textBn": "জ্ঞানীরা কথা বলেন, কারণ তাদের বলার মতো কিছু আছে; মূর্খরা কথা বলেন, কারণ তাদের কিছু বলতেই হয়।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Wisdom"
     },
     {
       "month": 7,
       "day": 14,
       "text": "You can discover more about a person in an hour of play than in a year of conversation.",
+      "textBn": "এক বছরের কথাবার্তার চেয়ে এক ঘণ্টার খেলায় একজন মানুষকে বেশি চেনা যায়।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Character"
     },
     {
       "month": 7,
       "day": 15,
       "text": "Courage is knowing what not to fear.",
+      "textBn": "সাহস মানে জানা—কী ভয় পাওয়া উচিত নয়।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Courage"
     },
     {
       "month": 7,
       "day": 16,
       "text": "No man should bring children into the world who is unwilling to persevere to the end in their nature and education.",
+      "textBn": "যে সন্তানের স্বভাবে আর শিক্ষায় শেষ পর্যন্ত লেগে থাকতে চায় না, তার শিশুদের পৃথিবীতে আনার অধিকার কারোর নেই।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Responsibility"
     },
     {
       "month": 7,
       "day": 17,
       "text": "The beginning is the most important part of the work.",
+      "textBn": "শুরু করাই কাজের সবচেয়ে গুরুত্বপূর্ণ অংশ।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Action"
     },
     {
       "month": 7,
       "day": 18,
       "text": "Good actions give strength to ourselves and inspire good actions in others.",
+      "textBn": "ভালো কাজ নিজেদের শক্তি দেয়, আর অন্যদেরও ভালো কাজের প্রেরণা জোগায়।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Virtue"
     },
     {
       "month": 7,
       "day": 19,
       "text": "There are three classes of men: lovers of wisdom, lovers of honor, and lovers of gain.",
+      "textBn": "মানুষ তিন শ্রেণির—জ্ঞানপ্রেমিক, সম্মানপ্রেমিক আর সম্পদপ্রেমিক।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Philosophy"
     },
     {
       "month": 7,
       "day": 20,
       "text": "One of the penalties for refusing to participate in politics is that you end up being governed by your inferiors.",
+      "textBn": "রাজনীতিতে অংশ না নেওয়ার শাস্তি—আপনাকে আপনার নিচের মানুষেরা শাসন করবে।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Leadership"
     },
     {
       "month": 7,
       "day": 21,
       "text": "Never discourage anyone who continually makes progress, no matter how slow.",
+      "textBn": "যে ধারাবাহিকভাবে এগোচ্ছে, তাকে কখনো নিরুৎসাহিত করবেন না—যত ধীরেই হোক।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Encouragement"
     },
     {
       "month": 7,
       "day": 22,
       "text": "Every heart sings a song, incomplete, until another heart whispers back.",
+      "textBn": "প্রতিটি হৃদয় একটা অসম্পূর্ণ গান গায়, যতক্ষণ না আরেকটা হৃদয় সেই সুরে সাড়া দেয়।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Love"
     },
     {
       "month": 7,
       "day": 23,
       "text": "There is no harm in repeating a good thing.",
+      "textBn": "ভালো কিছু বারবার বলায় কোনো ক্ষতি নেই।",
       "author": "Plato",
+      "authorBn": "প্লেটো",
       "category": "Wisdom"
     },
     {
       "month": 7,
       "day": 24,
       "text": "The price of anything is the amount of life you exchange for it.",
+      "textBn": "প্রতিটি জিনিসের দাম—তার বদলে আপনি জীবন থেকে যা খরচ করলেন।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Time"
     },
     {
       "month": 7,
       "day": 25,
       "text": "If you have built castles in the air, your work need not be lost; that is where they should be. Now put the foundations under them.",
+      "textBn": "আকাশে দুর্গ গড়লে কিছুই নষ্ট হয় না—দুর্গের জায়গা তো সেখানেই। এখন তার নিচে ভিত্তি গড়ে দিন।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Dreams"
     },
     {
       "month": 7,
       "day": 26,
       "text": "You must live in the present, launch yourself on every wave, find your eternity in each moment.",
+      "textBn": "এই মুহূর্তেই বাঁচুন, প্রতিটি ঢেউয়ের সাথে ভেসে চলুন, প্রতিটি মুহূর্তে খুঁজে নিন আপনার অনন্তকাল।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Mindfulness"
     },
     {
       "month": 7,
       "day": 27,
       "text": "Things do not change; we change.",
+      "textBn": "জিনিসপত্র বদলায় না; বদলাই আমরা।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Self-improvement"
     },
     {
       "month": 7,
       "day": 28,
       "text": "Success is finding satisfaction in giving a little more than you take.",
+      "textBn": "যত নেন তার চেয়ে একটু বেশি দেওয়ার মধ্যে সন্তুষ্টি খুঁজে পাওয়াই সফলতা।",
       "author": "Christopher Reeve",
+      "authorBn": "ক্রিস্টোফার রিভ",
       "category": "Service"
     },
     {
       "month": 7,
       "day": 29,
       "text": "The only way to have a friend is to be one.",
+      "textBn": "বন্ধু পেতে হলে নিজেকেই বন্ধু হতে হবে।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Friendship"
     },
     {
       "month": 7,
       "day": 30,
       "text": "Do not go where the path may lead; go instead where there is no path and leave a trail.",
+      "textBn": "যে পথ আছে, সেই পথ ধরে যাবেন না; বরং যেখানে পথ নেই, সেখানে হাঁটুন—আপনার পায়ের ছাপই পথ হয়ে উঠবে।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Leadership"
     },
     {
       "month": 7,
       "day": 31,
       "text": "The earth laughs in flowers.",
+      "textBn": "ফুলে ফুলেই পৃথিবী হাসে।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Nature"
     },
     {
       "month": 8,
       "day": 1,
       "text": "Finish each day and be done with it. Tomorrow is a new day.",
+      "textBn": "প্রতিদিনের কাজ সেরে সেটার হিসাব শেষ করুন। কাল নতুন একটি দিন।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Resilience"
     },
     {
       "month": 8,
       "day": 2,
       "text": "Do not be too timid and squeamish about your actions. All life is an experiment.",
+      "textBn": "নিজের কাজ নিয়ে এতটা জড়োসড়ো আর সংকুচিত হবেন না; গোটা জীবনটাই তো একটা পরীক্ষা।",
       "author": "Ralph Waldo Emerson",
+      "authorBn": "রালফ ওয়াল্ডো এমারসন",
       "category": "Courage"
     },
     {
       "month": 8,
       "day": 3,
       "text": "The greatest glory in living lies not in never falling, but in rising every time we fall.",
+      "textBn": "জীবনের বড় গৌরব কখনো না পড়ার মধ্যে নয়, বরং প্রতিবার পড়ে আবার উঠে দাঁড়ানোর মধ্যে।",
       "author": "Nelson Mandela",
+      "authorBn": "নেলসন ম্যান্ডেলা",
       "category": "Resilience"
     },
     {
       "month": 8,
       "day": 4,
       "text": "Real generosity toward the future lies in giving all to the present.",
+      "textBn": "ভবিষ্যতের প্রতি সত্যিকারের উদারতা—বর্তমানকে সবটুকু দেওয়া।",
       "author": "Albert Camus",
+      "authorBn": "আলবেয়ার কামু",
       "category": "Commitment"
     },
     {
       "month": 8,
       "day": 5,
       "text": "In the depth of winter, I finally learned that within me there lay an invincible summer.",
+      "textBn": "শীতের গভীরে আমি অবশেষে বুঝলাম, আমার ভেতরেই ছিল একটি অজেয় গ্রীষ্ম।",
       "author": "Albert Camus",
+      "authorBn": "আলবেয়ার কামু",
       "category": "Inner Strength"
     },
     {
       "month": 8,
       "day": 6,
       "text": "You will never be happy if you continue to search for what happiness consists of.",
+      "textBn": "সুখ কী নিয়ে গঠিত তা খুঁজতে থাকলে আপনি কখনো সুখী হবেন না।",
       "author": "Albert Camus",
+      "authorBn": "আলবেয়ার কামু",
       "category": "Happiness"
     },
     {
       "month": 8,
       "day": 7,
       "text": "Always go too far, because that is where you will find the truth.",
+      "textBn": "সবসময় একটু বেশি দূর পর্যন্ত যান—সত্য ঠিক সেখানেই পাবেন।",
       "author": "Albert Camus",
+      "authorBn": "আলবেয়ার কামু",
       "category": "Truth"
     },
     {
       "month": 8,
       "day": 8,
       "text": "Blessed are the hearts that can bend; they shall never be broken.",
+      "textBn": "ধন্য সেই হৃদয়গুলো, যারা নত হতে জানে; তারা কখনো ভেঙে পড়ে না।",
       "author": "Albert Camus",
+      "authorBn": "আলবেয়ার কামু",
       "category": "Resilience"
     },
     {
       "month": 8,
       "day": 9,
       "text": "Don't walk behind me; I may not lead. Don't walk in front of me; I may not follow. Just walk beside me and be my friend.",
+      "textBn": "আমার পেছনে চলবেন না—হয়তো আমি নেতৃত্ব দিতে পারি না। সামনে চলবেন না—হয়তো আমি অনুসরণ করতে পারি না। শুধু আমার পাশে থাকুন, বন্ধু হয়ে।",
       "author": "Albert Camus",
+      "authorBn": "আলবেয়ার কামু",
       "category": "Friendship"
     },
     {
       "month": 8,
       "day": 10,
       "text": "Those who cannot change their minds cannot change anything.",
+      "textBn": "যারা মন বদলাতে পারে না, তারা কিছুই বদলাতে পারে না।",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Change"
     },
     {
       "month": 8,
       "day": 11,
       "text": "Life is not about finding yourself. Life is about creating yourself.",
+      "textBn": "জীবন নিজেকে খুঁজে পাওয়ার নয়, নিজেকে গড়ে তোলার।",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Self-creation"
     },
     {
       "month": 8,
       "day": 12,
       "text": "Progress is impossible without change, and those who cannot change their minds cannot change anything.",
+      "textBn": "পরিবর্তন ছাড়া অগ্রগতি অসম্ভব; আর যারা মন বদলাতে পারে না, তারা কিছুই বদলাতে পারে না।",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Progress"
     },
     {
       "month": 8,
       "day": 13,
       "text": "The single biggest problem in communication is the illusion that it has taken place.",
+      "textBn": "যোগাযোগের সবচেয়ে বড় সমস্যা—এই ভ্রম যে যোগাযোগটা হয়ে গেছে।",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Communication"
     },
     {
       "month": 8,
       "day": 14,
       "text": "A life spent making mistakes is not only more honorable, but more useful than a life spent doing nothing.",
+      "textBn": "ভুল করতে করতে কাটানো জীবন শুধু বেশি সম্মানজনক নয়, কিছু না করে কাটানো জীবনের চেয়ে বেশি উপকারীও।",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Growth"
     },
     {
       "month": 8,
       "day": 15,
       "text": "You see things; and you say 'Why?' But I dream things that never were; and I say 'Why not?'",
+      "textBn": "আপনি জিনিসপত্র দেখে বলেন ‘কেন?’ আমি এমন স্বপ্ন দেখি যা কখনো ছিল না, আর বলি ‘কেন নয়?’",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Vision"
     },
     {
       "month": 8,
       "day": 16,
       "text": "The reasonable man adapts himself to the world; the unreasonable one persists in trying to adapt the world to himself.",
+      "textBn": "বুদ্ধিমান মানুষ নিজেকে পৃথিবীর সাথে খাপ খাইয়ে নেয়; বোকা মানুষ পৃথিবীকে নিজের সাথে খাপ খাওয়ানোর চেষ্টায় লেগে থাকে।",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Change"
     },
     {
       "month": 8,
       "day": 17,
       "text": "We are made wise not by the recollection of our past, but by the responsibility for our future.",
+      "textBn": "আমাদের জ্ঞানী করে তোলে অতীতের স্মৃতি নয়—ভবিষ্যতের দায়িত্ব।",
       "author": "George Bernard Shaw",
+      "authorBn": "জর্জ বার্নার্ড শ",
       "category": "Responsibility"
     },
     {
       "month": 8,
       "day": 18,
       "text": "The secret to getting ahead is getting started.",
+      "textBn": "এগিয়ে যাওয়ার রহস্য একটাই—শুরু করে ফেলা।",
       "author": "Agatha Christie",
+      "authorBn": "আগাথা ক্রিস্টি",
       "category": "Action"
     },
     {
       "month": 8,
       "day": 19,
       "text": "I like living. I have sometimes been wildly, despairingly, acutely miserable, but through it all I still know quite certainly that just to be alive is a grand thing.",
+      "textBn": "আমি বাঁচতে ভালোবাসি। কখনো আমি ভীষণ, হতাশাজনকভাবে কষ্ট পেয়েছি, তবু সবটা পেরিয়ে আমি নিশ্চিত—শুধু বেঁচে থাকাটাই একটা অসাধারণ ব্যাপার।",
       "author": "Agatha Christie",
+      "authorBn": "আগাথা ক্রিস্টি",
       "category": "Gratitude"
     },
     {
       "month": 8,
       "day": 20,
       "text": "Good advice is always certain to be ignored, but that is no reason not to give it.",
+      "textBn": "ভালো পরামর্শ সর্বদাই উপেক্ষিত হয়, তবে সেটা না দেওয়ার কারণ নয়।",
       "author": "Agatha Christie",
+      "authorBn": "আগাথা ক্রিস্টি",
       "category": "Wisdom"
     },
     {
       "month": 8,
       "day": 21,
       "text": "One is left with the horrible feeling now that war settles nothing; that to win a war is as disastrous as to lose one.",
+      "textBn": "শুধু একটা ভয়ংকর অনুভূতি থেকে যায়—যুদ্ধ কিছুই মেটায় না; যুদ্ধ জেতাও পরাজয়ের মতোই সর্বনাশ।",
       "author": "Agatha Christie",
+      "authorBn": "আগাথা ক্রিস্টি",
       "category": "Peace"
     },
     {
       "month": 8,
       "day": 22,
       "text": "The best time to plan a book is while you are doing the dishes.",
+      "textBn": "বইয়ের পরিকল্পনা করার সবচেয়ে ভালো সময়—যখন বাসন ধুচ্ছেন।",
       "author": "Agatha Christie",
+      "authorBn": "আগাথা ক্রিস্টি",
       "category": "Creativity"
     },
     {
       "month": 8,
       "day": 23,
       "text": "To know is nothing at all; to imagine is everything.",
+      "textBn": "জানা কিছুই না; কল্পনা করাই সব।",
       "author": "Anatole France",
+      "authorBn": "অ্যানাতোল ফ্রান্স",
       "category": "Imagination"
     },
     {
       "month": 8,
       "day": 24,
       "text": "If you want to go fast, go alone. If you want to go far, go together.",
+      "textBn": "দ্রুত চলতে চাইলে একা চলুন, আর দূরে পৌঁছাতে চাইলে সবার সাথে চলুন।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Teamwork"
     },
     {
       "month": 8,
       "day": 25,
       "text": "Until the lion learns to write, every story will glorify the hunter.",
+      "textBn": "যতদিন সিংহ লিখতে না শিখবে, ততদিন সব গল্পই শিকারিকে প্রশংসায় ভাসাবে।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Empowerment"
     },
     {
       "month": 8,
       "day": 26,
       "text": "A child who is not embraced by the village will burn it down to feel its warmth.",
+      "textBn": "যে শিশুকে গ্রামটা বুকে নেয় না, সে গ্রামের উষ্ণতা অনুভব করতে গ্রামটাই জ্বালিয়ে দেয়।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Community"
     },
     {
       "month": 8,
       "day": 27,
       "text": "Rain does not fall on one roof alone.",
+      "textBn": "বৃষ্টি এক ছাদের উপরই ঝরে না; সবাইকে ভিজিয়ে দেয়।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Community"
     },
     {
       "month": 8,
       "day": 28,
       "text": "The axe forgets, but the tree remembers.",
+      "textBn": "কুড়াল ভুলে যায়, গাছ মনে রাখে।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Empathy"
     },
     {
       "month": 8,
       "day": 29,
       "text": "When the music changes, so does the dance.",
+      "textBn": "সুর বদলালে নাচও বদলায়।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Adaptability"
     },
     {
       "month": 8,
       "day": 30,
       "text": "Smooth seas do not make skillful sailors.",
+      "textBn": "শান্ত সমুদ্রে দক্ষ নাবিক তৈরি হয় না।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Growth"
     },
     {
       "month": 8,
       "day": 31,
       "text": "He who does not know one thing knows another.",
+      "textBn": "যা জানে না একজন, তা জানে আরেকজন।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Wisdom"
     },
     {
       "month": 9,
       "day": 1,
       "text": "However long the night, the dawn will break.",
+      "textBn": "রাত যতই দীর্ঘ হোক, ভোর হবে।",
       "author": "African Proverb",
+      "authorBn": "আফ্রিকান প্রবাদ",
       "category": "Hope"
     },
     {
       "month": 9,
       "day": 2,
       "text": "Not everything that is faced can be changed, but nothing can be changed until it is faced.",
+      "textBn": "সামনে দাঁড়ালেই সব বদলে দেওয়া যায় না, কিন্তু সামনে না দাঁড়ালে কোনো কিছুই বদলায় না।",
       "author": "James Baldwin",
+      "authorBn": "জেমস বল্ডউইন",
       "category": "Change"
     },
     {
       "month": 9,
       "day": 3,
       "text": "Not everything that is faced can be changed, but nothing can be changed until it is faced.",
+      "textBn": "সামনে দাঁড়ালেই সব বদলে দেওয়া যায় না, কিন্তু সামনে না দাঁড়ালে কোনো কিছুই বদলায় না।",
       "author": "James Baldwin",
+      "authorBn": "জেমস বল্ডউইন",
       "category": "Courage"
     },
     {
       "month": 9,
       "day": 4,
       "text": "I am not what happened to me. I am what I choose to become.",
+      "textBn": "যা আমার সাথে ঘটেছে, তা আমি নই। যা হতে আমি বেছে নিয়েছি, সেটাই আমি।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Self-creation"
     },
     {
       "month": 9,
       "day": 5,
       "text": "The most terrifying thing is to accept oneself completely.",
+      "textBn": "সবচেয়ে ভয়ংকর কাজ—পুরোপুরি নিজেকে মেনে নেওয়া।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Self-acceptance"
     },
     {
       "month": 9,
       "day": 6,
       "text": "Your vision will become clear only when you can look into your own heart.",
+      "textBn": "নিজের হৃদয়ের ভেতরটা দেখতে পারলেই আপনার দৃষ্টি পরিষ্কার হবে।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Self-awareness"
     },
     {
       "month": 9,
       "day": 7,
       "text": "Knowing your own darkness is the best method for dealing with the darknesses of other people.",
+      "textBn": "নিজের অন্ধকার চেনাই অন্যের অন্ধকার সামলানোর সেরা উপায়।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Self-awareness"
     },
     {
       "month": 9,
       "day": 8,
       "text": "Even a happy life cannot be without a measure of darkness, and the word happy would lose its meaning if it were not balanced by sadness.",
+      "textBn": "একটা সুখী জীবনেও কিছুটা অন্ধকার থাকা চাই; দুঃখের সাথে ভারসাম্য না থাকলে ‘সুখী’ শব্দটার মানেই হারিয়ে যেত।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Balance"
     },
     {
       "month": 9,
       "day": 9,
       "text": "The meeting of two personalities is like the contact of two chemical substances: if there is any reaction, both are transformed.",
+      "textBn": "দুটি ব্যক্তিত্বের মিলন দুটি রাসায়নিক পদার্থের সংস্পর্শের মতো—প্রতিক্রিয়া হলে দুটিই বদলে যায়।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Relationships"
     },
     {
       "month": 9,
       "day": 10,
       "text": "In all chaos there is a cosmos, in all disorder a secret order.",
+      "textBn": "সব বিশৃঙ্খলার ভেতরেই একটা নিখিল, আর সব এলোমেলোতায় একটা গোপন শৃঙ্খলা আছে।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Philosophy"
     },
     {
       "month": 9,
       "day": 11,
       "text": "Until you make the unconscious conscious, it will direct your life and you will call it fate.",
+      "textBn": "অচেতনকে সচেতন না করলে তা-ই আপনার জীবন চালাবে, আর আপনি তাকে বলবেন ভাগ্য।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Self-awareness"
     },
     {
       "month": 9,
       "day": 12,
       "text": "Life really does begin at forty. Up until then, you are just doing research.",
+      "textBn": "জীবন সত্যিই চল্লিশ থেকে শুরু হয়। তার আগে আপনি কেবল গবেষণাই করে যান।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Philosophy"
     },
     {
       "month": 9,
       "day": 13,
       "text": "The privilege of a lifetime is to become who you truly are.",
+      "textBn": "সারা জীবনের বিশেষাধিকার—সত্যিকারের আপনি হয়ে উঠতে পারা।",
       "author": "Carl Jung",
+      "authorBn": "কার্ল ইয়ুং",
       "category": "Authenticity"
     },
     {
       "month": 9,
       "day": 14,
       "text": "Show me a man or woman alone and I will show you a saint. Give them a family, and they will show you a devil.",
+      "textBn": "একা একজন পুরুষ বা নারী দেখান, আমি তাকে দেবদূত দেখাব। তাকে একটা পরিবার দিন, সে আপনাকে শয়তান দেখাবে।",
       "author": "Eugene O'Neill",
+      "authorBn": "ইউজিন ও'নিল",
       "category": "Human Nature"
     },
     {
       "month": 9,
       "day": 15,
       "text": "The secret of joy in work is contained in one word — excellence.",
+      "textBn": "কাজে আনন্দের রহস্য এক শব্দে—শ্রেষ্ঠত্ব।",
       "author": "Pearl S. Buck",
+      "authorBn": "পার্ল এস. বাক",
       "category": "Excellence"
     },
     {
       "month": 9,
       "day": 16,
       "text": "You cannot make yourself feel something you do not feel, but you can make yourself do right in spite of your feelings.",
+      "textBn": "যা অনুভব করেন না, তা নিজে থেকে অনুভব করতে পারবেন না; কিন্তু অনুভূতির পরেও আপনি সঠিকটা করতে পারেন।",
       "author": "Pearl S. Buck",
+      "authorBn": "পার্ল এস. বাক",
       "category": "Character"
     },
     {
       "month": 9,
       "day": 17,
       "text": "You can judge your age by the amount of pain you feel when you come in contact with a new idea.",
+      "textBn": "নতুন কোনো ভাবনার সংস্পর্শে এলে কতটা কষ্ট হয়, তা দিয়েই আপনার বয়স বোঝা যায়।",
       "author": "Pearl S. Buck",
+      "authorBn": "পার্ল এস. বাক",
       "category": "Growth"
     },
     {
       "month": 9,
       "day": 18,
       "text": "All things are possible until they are proved impossible — and even the impossible may only be so, as of now.",
+      "textBn": "সবকিছুই সম্ভব—যতক্ষণ অসম্ভব প্রমাণিত না হয়; আর অসম্ভবও হয়তো শুধু এখনকার জন্যই অসম্ভব।",
       "author": "Pearl S. Buck",
+      "authorBn": "পার্ল এস. বাক",
       "category": "Possibility"
     },
     {
       "month": 9,
       "day": 19,
       "text": "Daring ideas are like chessmen moved forward; they may be beaten, but they may start a winning game.",
+      "textBn": "দুঃসাহসী ভাবনা দাবার গুটির মতো সামনে এগিয়ে দেওয়া—হয়তো আটকে যাবে, কিন্তু জেতা খেলাও শুরু করতে পারে।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Courage"
     },
     {
       "month": 9,
       "day": 20,
       "text": "Whatever you can do, or dream you can, begin it. Boldness has genius, power, and magic in it.",
+      "textBn": "আপনি যা করতে পারেন বা করতে পারে ভাবতে পারেন—সেটা শুরু করে দিন। সাহসের ভেতরেই থাকে প্রতিভা, শক্তি আর জাদু।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Action"
     },
     {
       "month": 9,
       "day": 21,
       "text": "Knowing is not enough; we must apply. Willing is not enough; we must do.",
+      "textBn": "শুধু জানাই যথেষ্ট নয়, তার প্রয়োগ চাই; শুধু ইচ্ছাই যথেষ্ট নয়, কাজ চাই।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Action"
     },
     {
       "month": 9,
       "day": 22,
       "text": "One ought, every day at least, to hear a little song, read a good poem, see a fine picture, and speak a few reasonable words.",
+      "textBn": "প্রতিদিন অন্তত একটু গান শোনা, একটা ভালো কবিতা পড়া, একটা সুন্দর ছবি দেখা আর দুটো বুদ্ধিমানের কথা বলা উচিত।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Culture"
     },
     {
       "month": 9,
       "day": 23,
       "text": "A man sees in the world what he carries in his heart.",
+      "textBn": "মানুষ পৃথিবীতে যা দেখে, তা আসলে তার হৃদয়ে যা বহন করে তা-ই।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Perspective"
     },
     {
       "month": 9,
       "day": 24,
       "text": "As soon as you trust yourself, you will know how to live.",
+      "textBn": "নিজেকে বিশ্বাস করতে শিখলেই আপনি বুঝে যাবেন কীভাবে বাঁচতে হয়।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Self-trust"
     },
     {
       "month": 9,
       "day": 25,
       "text": "Treat people as if they were what they ought to be and you help them to become what they are capable of being.",
+      "textBn": "মানুষকে এমনভাবে দেখুন যেন তারা যা হওয়া উচিত তা-ই; আপনি তাহলে তাদের সামর্থ্যের সর্বোচ্চটা হয়ে উঠতে সাহায্য করবেন।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Leadership"
     },
     {
       "month": 9,
       "day": 26,
       "text": "If children grew up according to early indications, we should have nothing but geniuses.",
+      "textBn": "শিশুদের শুরুর লক্ষণ দেখে বড় করলে দুনিয়ায় শুধু প্রতিভাই থাকত।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Education"
     },
     {
       "month": 9,
       "day": 27,
       "text": "The intelligent man finds almost everything ridiculous, the sensible man hardly anything.",
+      "textBn": "বুদ্ধিমান মানুষের কাছে প্রায় সবকিছুই হাস্যকর, আর বিবেচক মানুষের কাছে প্রায় কিছুই নয়।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Wisdom"
     },
     {
       "month": 9,
       "day": 28,
       "text": "Difficulties increase the nearer we approach the goal.",
+      "textBn": "লক্ষ্যের যত কাছে যাই, প্রতিকূলতাও তত বাড়ে।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Perseverance"
     },
     {
       "month": 9,
       "day": 29,
       "text": "The soul that sees beauty may sometimes walk alone.",
+      "textBn": "যে আত্মা সৌন্দর্য দেখে, তাকে কখনো একা হাঁটতে হতে পারে।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Solitude"
     },
     {
       "month": 9,
       "day": 30,
       "text": "Nothing is worth more than this day.",
+      "textBn": "আজকের দিনের চেয়ে মূল্যবান আর কিছু নেই।",
       "author": "Johann Wolfgang von Goethe",
+      "authorBn": "ইয়োহান ভোলফগাং ফন গ্যেটে",
       "category": "Mindfulness"
     },
     {
       "month": 10,
       "day": 1,
       "text": "The most common form of despair is not being who you are.",
+      "textBn": "হতাশার সবচেয়ে সাধারণ রূপ—নিজে যা, তা না হওয়া।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Authenticity"
     },
     {
       "month": 10,
       "day": 2,
       "text": "Life can only be understood backwards; but it must be lived forwards.",
+      "textBn": "জীবনকে বোঝা যায় পেছন দিকে, কিন্তু বাঁচতে হয় সামনের দিকে।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Philosophy"
     },
     {
       "month": 10,
       "day": 3,
       "text": "The most painful state of being is remembering the future, particularly the one you will never have.",
+      "textBn": "সবচেয়ে কষ্টের অবস্থা—ভবিষ্যৎ মনে করা, বিশেষ করে যে ভবিষ্যৎ আপনার কখনো হবে না।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Philosophy"
     },
     {
       "month": 10,
       "day": 4,
       "text": "Anxiety is the dizziness of freedom.",
+      "textBn": "উদ্বেগ হলো স্বাধীনতার মাথা ঘোরা।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Philosophy"
     },
     {
       "month": 10,
       "day": 5,
       "text": "To dare is to lose one's footing momentarily. To not dare is to lose oneself.",
+      "textBn": "সাহস দেখানো মানে এক মুহূর্তের জন্য ভারসাম্য হারানো; সাহস না দেখানো মানে হারিয়ে ফেলা নিজেকে।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Courage"
     },
     {
       "month": 10,
       "day": 6,
       "text": "People demand freedom of speech as a compensation for the freedom of thought which they seldom use.",
+      "textBn": "মানুষ বাকস্বাধীনতা দাবি করে ভাবনাস্বাধীনতার ক্ষতিপূরণ হিসেবে—যেটা তারা খুব কমই ব্যবহার করে।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Wisdom"
     },
     {
       "month": 10,
       "day": 7,
       "text": "The function of prayer is not to influence God, but rather to change the nature of the one who prays.",
+      "textBn": "প্রার্থনার কাজ ঈশ্বরকে প্রভাবিত করা নয়; প্রার্থনাকারী নিজেই বদলে যাওয়া।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Spirituality"
     },
     {
       "month": 10,
       "day": 8,
       "text": "Once you label me you negate me.",
+      "textBn": "একবার আমাকে লেবেল লাগালেই আপনি আমাকে অস্বীকার করলেন।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Identity"
     },
     {
       "month": 10,
       "day": 9,
       "text": "What I really need is to get clear about what I must do, not what I must know.",
+      "textBn": "আমার আসলে দরকার—আমি কী জানব তা নয়, কী করতে হবে তা পরিষ্কার হওয়া।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Purpose"
     },
     {
       "month": 10,
       "day": 10,
       "text": "God creates out of nothing. Wonderful you say. Yes, to be sure, but He does what is still more wonderful: He makes saints out of sinners.",
+      "textBn": "ঈশ্বর শূন্য থেকে সৃষ্টি করেন। আপনি বলবেন, ও! কিন্তু তিনি তার চেয়েও বিস্ময়কর কাজ করেন—পাপীদের দিয়ে গড়ে তোলেন সাধু।",
       "author": "Søren Kierkegaard",
+      "authorBn": "সোরেন কিয়ের্কেগার্ড",
       "category": "Faith"
     },
     {
       "month": 10,
       "day": 11,
       "text": "The wound is the place where the Light enters you.",
+      "textBn": "ক্ষতটাই সেই জায়গা যেখানে আলো আপনার ভেতরে ঢোকে।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Healing"
     },
     {
       "month": 10,
       "day": 12,
       "text": "Out beyond ideas of wrongdoing and rightdoing, there is a field. I will meet you there.",
+      "textBn": "ভুল-ঠিকের ভাবনার বাইরে একটা মাঠ আছে। ওইখানেই দেখা হবে।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Philosophy"
     },
     {
       "month": 10,
       "day": 13,
       "text": "What you seek is seeking you.",
+      "textBn": "যাকে আপনি খুঁজছেন, সেও আপনাকে খুঁজছে।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Spirituality"
     },
     {
       "month": 10,
       "day": 14,
       "text": "Do not be satisfied with the stories that come before you. Unfold your own myth.",
+      "textBn": "আপনার আগের গল্পগুলো দিয়েই সন্তুষ্ট থাকবেন না। নিজের পুরাণ নিজেই গেঁথে নিন।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Self-creation"
     },
     {
       "month": 10,
       "day": 15,
       "text": "Raise your words, not voice. It is rain that grows flowers, not thunder.",
+      "textBn": "কণ্ঠ নয়, কথা উঁচু করুন। ফুল ফোটায় বৃষ্টি, বজ্র নয়।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Communication"
     },
     {
       "month": 10,
       "day": 16,
       "text": "The quieter you become, the more you are able to hear.",
+      "textBn": "আপনি যত নীরব হবেন, তত বেশি শুনতে পারবেন।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Mindfulness"
     },
     {
       "month": 10,
       "day": 17,
       "text": "Yesterday I was clever, so I wanted to change the world. Today I am wise, so I am changing myself.",
+      "textBn": "কাল আমি চতুর ছিলাম, তাই দুনিয়া বদলাতে চেয়েছিলাম। আজ জ্ঞানী হয়েছি, তাই নিজেকে বদলাচ্ছি।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Wisdom"
     },
     {
       "month": 10,
       "day": 18,
       "text": "When you do things from your soul, you feel a river moving in you, a joy.",
+      "textBn": "মন থেকে কিছু করলে বুঝবেন ভেতরে একটা নদী বয়ে যাচ্ছে—সেটাই আনন্দ।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Joy"
     },
     {
       "month": 10,
       "day": 19,
       "text": "Stop acting so small. You are the universe in ecstatic motion.",
+      "textBn": "নিজেকে এত ছোট করে দেখানো বন্ধ করুন। আপনি তো উল্লাসে নাচতে থাকা পুরো বিশ্বব্রহ্মাণ্ড।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Self-worth"
     },
     {
       "month": 10,
       "day": 20,
       "text": "Let yourself be silently drawn by the strange pull of what you really love.",
+      "textBn": "যাকে সত্যিই ভালোবাসেন, তার অদ্ভুত টানে নিঃশব্দে নিজেকে ভাসিয়ে দিন।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Passion"
     },
     {
       "month": 10,
       "day": 21,
       "text": "Sell your cleverness and buy bewilderment.",
+      "textBn": "নিজের চতুরতা বিক্রি করে দিশেহারা বিস্ময় কিনে নিন।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Humility"
     },
     {
       "month": 10,
       "day": 22,
       "text": "Be a lamp, or a lifeboat, or a ladder. Help someone's soul heal.",
+      "textBn": "বাতি হয়ে উঠুন, বা লাইফবোট, নয়তো মই। কারো আত্মাকে সুস্থ হতে সাহায্য করুন।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Service"
     },
     {
       "month": 10,
       "day": 23,
       "text": "Live where you fear to live. Destroy your reputation. Be notorious.",
+      "textBn": "যেখানে বাঁচতে ভয় পান, সেখানেই বাঁচুন। নিজের সুনাম গুঁড়িয়ে দিন। বদনামই হোক আপনার পরিচয়।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Courage"
     },
     {
       "month": 10,
       "day": 24,
       "text": "Be grateful for whoever comes, because each has been sent as a guide from beyond.",
+      "textBn": "যে-ই আসুক, কৃতজ্ঞ থাকুন—প্রত্যেককেই পাঠানো হয়েছে ওপার থেকে পথ দেখাতে।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Gratitude"
     },
     {
       "month": 10,
       "day": 25,
       "text": "Ignore those that make you fearful and sad, that degrade you back towards disease and death.",
+      "textBn": "যারা আপনাকে ভীত আর বিষণ্ন করে, রোগ আর মৃত্যুর দিকে টেনে নেয়—তাদের কথা শুনবেন না।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Self-care"
     },
     {
       "month": 10,
       "day": 26,
       "text": "When I am silent, I have thunder hidden inside.",
+      "textBn": "যখন নীরব থাকি, তখন ভেতরে বজ্রধ্বনি লুকিয়ে থাকে।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Inner Strength"
     },
     {
       "month": 10,
       "day": 27,
       "text": "Travel brings power and love back into your life.",
+      "textBn": "ভ্রমণ জীবনে ফিরিয়ে আনে শক্তি আর ভালোবাসা।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Adventure"
     },
     {
       "month": 10,
       "day": 28,
       "text": "Your task is not to seek for love, but merely to seek and find all the barriers within yourself that you have built against it.",
+      "textBn": "আপনার কাজ ভালোবাসা খোঁজা নয়; বরং নিজের ভেতরে ভালোবাসার বিরুদ্ধে যে দেয়ালগুলো তুলেছেন, সেগুলো খুঁজে ভাঙা।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Love"
     },
     {
       "month": 10,
       "day": 29,
       "text": "Work in the invisible world at least as hard as you do in the visible.",
+      "textBn": "অদৃশ্য জগতে অন্তত ততটাই পরিশ্রম করুন, যতটা করেন দৃশ্যমান জগতে।",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Spirituality"
     },
     {
       "month": 10,
       "day": 30,
       "text": "Why do you stay in prison when the door is so wide open?",
+      "textBn": "দরজা এতখানি খোলা, তবু আপনি কারাগারেই থাকছেন কেন?",
       "author": "Rumi",
+      "authorBn": "রুমি",
       "category": "Freedom"
     },
     {
       "month": 10,
       "day": 31,
       "text": "Change your thoughts and you change your world.",
+      "textBn": "ভাবনা বদলান, আর আপনার পুরো পৃথিবী বদলে যাবে।",
       "author": "Norman Vincent Peale",
+      "authorBn": "নরম্যান ভিনসেন্ট পিল",
       "category": "Mindset"
     },
     {
       "month": 11,
       "day": 1,
       "text": "He who has a why to live can bear almost any how.",
+      "textBn": "যার বেঁচে থাকার একটা কারণ আছে, সে প্রায় যেকোনোভাবেই বেঁচে থাকতে পারে।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Purpose"
     },
     {
       "month": 11,
       "day": 2,
       "text": "Without music, life would be a mistake.",
+      "textBn": "সঙ্গীত ছাড়া জীবনটা একটা ভুল হতো।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Art"
     },
     {
       "month": 11,
       "day": 3,
       "text": "That which does not kill us makes us stronger.",
+      "textBn": "যা আমাদের মারে না, তা আমাদের আরও শক্ত করে তোলে।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Resilience"
     },
     {
       "month": 11,
       "day": 4,
       "text": "In individuals, insanity is rare; but in groups, parties, nations, and epochs, it is the rule.",
+      "textBn": "ব্যক্তি হিসেবে পাগলামি বিরল; কিন্তু দল, দলবাজি, জাতি আর যুগের হাতে তা-ই নিয়ম।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Society"
     },
     {
       "month": 11,
       "day": 5,
       "text": "The higher we soar, the smaller we appear to those who cannot fly.",
+      "textBn": "আমরা যতই উঁচুতে উঠি, ওড়ার সামর্থ্য যাদের নেই তাদের চোখে ততই ছোট দেখাই।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Vision"
     },
     {
       "month": 11,
       "day": 6,
       "text": "There are no facts, only interpretations.",
+      "textBn": "কোনো তথ্য নেই, আছে কেবল ব্যাখ্যা।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Philosophy"
     },
     {
       "month": 11,
       "day": 7,
       "text": "One must still have chaos in oneself to be able to give birth to a dancing star.",
+      "textBn": "নাচের মতো ঝলমলে তারা জন্ম দিতে চাইলে ভেতরে কিছুটা বিশৃঙ্খলা থাকতে হয়।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Creativity"
     },
     {
       "month": 11,
       "day": 8,
       "text": "The secret for harvesting from existence the greatest fruitfulness and the greatest enjoyment is to live dangerously.",
+      "textBn": "জীবন থেকে সবচেয়ে বেশি ফল আর সবচেয়ে বড় আনন্দ তুলে নেওয়ার গোপন রহস্য হলো—ঝুঁকি নিয়ে বাঁচা।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Courage"
     },
     {
       "month": 11,
       "day": 9,
       "text": "We love life, not because we are used to living but because we are used to loving.",
+      "textBn": "আমরা জীবনকে ভালোবাসি বাঁচার অভ্যাসে নয়, ভালোবাসার অভ্যাসে।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Love"
     },
     {
       "month": 11,
       "day": 10,
       "text": "The man of knowledge must be able not only to love his enemies but also to hate his friends.",
+      "textBn": "জ্ঞানী মানুষকে শুধু শত্রুকে ভালোবাসতেই হবে না, বন্ধুদের ঘৃণা করতেও জানতে হবে।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Wisdom"
     },
     {
       "month": 11,
       "day": 11,
       "text": "The surest way to corrupt a youth is to instruct him to hold in higher esteem those who think alike than those who think differently.",
+      "textBn": "একজন তরুণকে নষ্ট করার সবচেয়ে নিশ্চিত উপায়—তাকে শেখানো যে একমত যারা, তাদেরই বেশি সম্মান করতে হবে, ভিন্নমত যাদের, তাদের নয়।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Education"
     },
     {
       "month": 11,
       "day": 12,
       "text": "Blessed are the forgetful, for they get the better even of their blunders.",
+      "textBn": "ভাগ্যবান তারা যারা ভুলে যেতে পারে—কারণ ভুলেও তারা বাকিদের চেয়ে ভালো থাকে।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Forgiveness"
     },
     {
       "month": 11,
       "day": 13,
       "text": "To live is to suffer, to survive is to find some meaning in the suffering.",
+      "textBn": "বাঁচা মানে কষ্ট পাওয়া; টিকে থাকা মানে কষ্টের মধ্যে একটা মানে খুঁজে পাওয়া।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Resilience"
     },
     {
       "month": 11,
       "day": 14,
       "text": "In every real man a child is hidden that wants to play.",
+      "textBn": "প্রতিটি সত্যিকারের মানুষের ভেতরে লুকিয়ে থাকে একটা শিশু, যে খেলতে চায়।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Joy"
     },
     {
       "month": 11,
       "day": 15,
       "text": "Become who you are.",
+      "textBn": "যা তুমি, তা-ই হয়ে ওঠো।",
       "author": "Friedrich Nietzsche",
+      "authorBn": "ফ্রিডরিখ নিটশে",
       "category": "Authenticity"
     },
     {
       "month": 11,
       "day": 16,
       "text": "The biggest adventure you can take is to live the life of your dreams.",
+      "textBn": "জীবনের সবচেয়ে বড় অভিযান—স্বপ্নের মতো একটা জীবন বাঁচা।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Dreams"
     },
     {
       "month": 11,
       "day": 17,
       "text": "You get in life what you have the courage to ask for.",
+      "textBn": "জীবনে আপনি যা চাওয়ার সাহস করেন, তা-ই পাবেন।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Courage"
     },
     {
       "month": 11,
       "day": 18,
       "text": "The more you praise and celebrate your life, the more there is in life to celebrate.",
+      "textBn": "নিজের জীবনকে যত বেশি প্রশংসা করবেন, উদযাপন করবেন—জীবনে উদযাপনের জিনিসও তত বেশি পাবেন।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Gratitude"
     },
     {
       "month": 11,
       "day": 19,
       "text": "Turn your wounds into wisdom.",
+      "textBn": "তোমার ক্ষতগুলোকে প্রজ্ঞায় বদলে ফেলো।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Growth"
     },
     {
       "month": 11,
       "day": 20,
       "text": "Create the highest, grandest vision possible for your life, because you become what you believe.",
+      "textBn": "নিজের জীবনের জন্য যতটা সম্ভব মহান স্বপ্ন তৈরি করো, কারণ তুমি যা বিশ্বাস করো, তা-ই হয়ে ওঠো।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Vision"
     },
     {
       "month": 11,
       "day": 21,
       "text": "Real integrity is doing the right thing, knowing that nobody is going to know whether you did it or not.",
+      "textBn": "সত্যিকারের সততা হলো সঠিক কাজটি করা—এটা জেনেই যে কেউ জানবে না, আপনি করেছেন কি না।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Integrity"
     },
     {
       "month": 11,
       "day": 22,
       "text": "Surround yourself with only people who are going to lift you higher.",
+      "textBn": "নিজেকে ঘিরে রাখো শুধু এমন মানুষ দিয়ে, যারা তোমাকে আরও ওপরে তুলে দেবে।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Relationships"
     },
     {
       "month": 11,
       "day": 23,
       "text": "Passion is energy. Feel the power that comes from focusing on what excites you.",
+      "textBn": "জীবনের আবেগই শক্তি। যা আপনাকে উত্তেজিত করে, তাতে মনোযোগ দিলে যে শক্তি আসে—তা অনুভব করুন।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Passion"
     },
     {
       "month": 11,
       "day": 24,
       "text": "Be thankful for what you have; you will end up having more.",
+      "textBn": "যা আছে তার জন্য কৃতজ্ঞ থাকো; শেষে আরও বেশি পাবো।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Gratitude"
     },
     {
       "month": 11,
       "day": 25,
       "text": "The greatest discovery of all time is that a person can change his future by merely changing his attitude.",
+      "textBn": "ইতিহাসের সবচেয়ে বড় আবিষ্কার—কেউ শুধু নিজের দৃষ্টিভঙ্গি বদলেও নিজের ভবিষ্যৎ বদলে ফেলতে পারে।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Mindset"
     },
     {
       "month": 11,
       "day": 26,
       "text": "Doing the best at this moment puts you in the best place for the next moment.",
+      "textBn": "এই মুহূর্তে যতটা পারো সেরাটা দাও—তাহলে পরের মুহূর্তের জন্য সেরা জায়গায় থাকবে।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Mindfulness"
     },
     {
       "month": 11,
       "day": 27,
       "text": "My philosophy is that not only are you responsible for your life, but doing the best at this moment puts you in the best place for the next moment.",
+      "textBn": "আমার বিশ্বাস—নিজের জীবনের দায়িত্ব আপনার, আর এই মুহূর্তে সেরাটা দেওয়াই আপনাকে পরের মুহূর্তের জন্য সেরা জায়গায় রাখে।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Responsibility"
     },
     {
       "month": 11,
       "day": 28,
       "text": "Every time you state what you want or believe, you are the first to hear it. It is a message to both you and others about what you think is possible.",
+      "textBn": "যখনই নিজের চাওয়া বা বিশ্বাসের কথা বলো, তার প্রথম শ্রোতা তুমি নিজেই। এটি তোমাকে আর সবাইকে জানায়—তুমি কী সম্ভব বলে ভাবো।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Self-talk"
     },
     {
       "month": 11,
       "day": 29,
       "text": "With every experience, you alone are painting your own canvas, thought by thought, choice by choice.",
+      "textBn": "প্রতিটি অভিজ্ঞতায় কেবল তুমিই নিজের ছবি আঁকছো—একটা ভাবনা, একটা সিদ্ধান্ত করে করে।",
       "author": "Oprah Winfrey",
+      "authorBn": "ওপরা উইনফ্রে",
       "category": "Self-creation"
     },
     {
       "month": 11,
       "day": 30,
       "text": "The greatest gift that you can give yourself is a little bit of your own attention.",
+      "textBn": "নিজেকে দেওয়ার সবচেয়ে বড় উপহার—নিজের প্রতি একটু মনোযোগ।",
       "author": "Anthony J. D'Angelo",
+      "authorBn": "অ্যান্থনি জে. ডি'অ্যাঞ্জেলো",
       "category": "Self-care"
     },
     {
       "month": 12,
       "day": 1,
       "text": "It is not how much we have, but how much we enjoy, that makes happiness.",
+      "textBn": "আমাদের কত আছে তা নয়, কতটা উপভোগ করতে পারি—তাতেই সুখ।",
       "author": "Charles Spurgeon",
+      "authorBn": "চার্লস স্পার্জন",
       "category": "Happiness"
     },
     {
       "month": 12,
       "day": 2,
       "text": "We must accept finite disappointment, but never lose infinite hope.",
+      "textBn": "সীমিত হতাশা মেনে নিতে হবে, কিন্তু অসীম আশা কখনো হারানো যাবে না।",
       "author": "Martin Luther King Jr.",
+      "authorBn": "মার্টিন লুথার কিং জুনিয়র",
       "category": "Hope"
     },
     {
       "month": 12,
       "day": 3,
       "text": "Darkness cannot drive out darkness; only light can do that. Hate cannot drive out hate; only love can do that.",
+      "textBn": "অন্ধকারকে অন্ধকার দিয়ে দূর করা যায় না; শুধু আলোই পারে। ঘৃণাকে ঘৃণা দিয়ে দূর করা যায় না; শুধু ভালোবাসাই পারে।",
       "author": "Martin Luther King Jr.",
+      "authorBn": "মার্টিন লুথার কিং জুনিয়র",
       "category": "Love"
     },
     {
       "month": 12,
       "day": 4,
       "text": "The time is always right to do what is right.",
+      "textBn": "সঠিক কাজটা করার জন্য সময়টা সবসময়ই সঠিক।",
       "author": "Martin Luther King Jr.",
+      "authorBn": "মার্টিন লুথার কিং জুনিয়র",
       "category": "Ethics"
     },
     {
       "month": 12,
       "day": 5,
       "text": "Every moment is a fresh beginning.",
+      "textBn": "প্রতিটি মুহূর্তই একটা নতুন শুরু।",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Hope"
     },
     {
       "month": 12,
       "day": 6,
       "text": "Only those who will risk going too far can possibly find out how far one can go.",
+      "textBn": "শুধু তারা, যারা অনেক দূর যাওয়ার ঝুঁকি নেয়, জেনে নিতে পারে কত দূর যাওয়া সম্ভব।",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Courage"
     },
     {
       "month": 12,
       "day": 7,
       "text": "The journey not the arrival matters.",
+      "textBn": "গুরুত্বপূর্ণ পৌঁছানো নয়, যাত্রাটাই।",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Philosophy"
     },
     {
       "month": 12,
       "day": 8,
       "text": "What we call the beginning is often the end. And to make an end is to make a beginning.",
+      "textBn": "যাকে আমরা শুরু বলি, তা প্রায়ই শেষ। আর শেষ করার মানেই নতুন কিছু শুরু করা।",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Philosophy"
     },
     {
       "month": 12,
       "day": 9,
       "text": "Genuine poetry can communicate before it is understood.",
+      "textBn": "সত্যিকারের কবিতা বোঝার আগেই মানুষের মনে পৌঁছে যায়।",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Art"
     },
     {
       "month": 12,
       "day": 10,
       "text": "Where is the wisdom we have lost in knowledge? Where is the knowledge we have lost in information?",
+      "textBn": "জ্ঞানের ভেতরে হারানো প্রজ্ঞা কোথায়? তথ্যের ভেতরে হারানো জ্ঞান কোথায়?",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Wisdom"
     },
     {
       "month": 12,
       "day": 11,
       "text": "Humankind cannot bear very much reality.",
+      "textBn": "মানবজাতি বেশি বাস্তবতা সহ্য করতে পারে না।",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Philosophy"
     },
     {
       "month": 12,
       "day": 12,
       "text": "Do I dare disturb the universe?",
+      "textBn": "আমি কি মহাবিশ্বকে আলোড়িত করার সাহস করি?",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Courage"
     },
     {
       "month": 12,
       "day": 13,
       "text": "In my beginning is my end.",
+      "textBn": "আমার শুরুর ভেতরেই আছে আমার শেষ।",
       "author": "T. S. Eliot",
+      "authorBn": "টি. এস. এলিয়ট",
       "category": "Philosophy"
     },
     {
       "month": 12,
       "day": 14,
       "text": "You are the sum total of everything you have ever seen, heard, eaten, smelled, been told, forgot — it is all there.",
+      "textBn": "তুমি যা যা দেখেছ, শুনেছ, খেয়েছ, গন্ধ নিয়েছ, শুনে নিয়েছ আর ভুলে গেছ—সব মিলিয়েই তুমি; সবই তোমার ভেতরে আছে।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Identity"
     },
     {
       "month": 12,
       "day": 15,
       "text": "We delight in the beauty of the butterfly, but rarely admit the changes it has gone through to achieve that beauty.",
+      "textBn": "প্রজাপতির সৌন্দর্যে আমরা মুগ্ধ হই, কিন্তু সেই সৌন্দর্য পেতে তাকে কতটা বদলাতে হয়েছে—তা সহজে স্বীকার করি না।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Growth"
     },
     {
       "month": 12,
       "day": 16,
       "text": "If you are always trying to be normal, you will never know how amazing you can be.",
+      "textBn": "যদি সবসময় সাধারণ হতে চেষ্টা করো, কখনো জানতেই পারবে না তুমি কত অসাধারণ হতে পারো।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Authenticity"
     },
     {
       "month": 12,
       "day": 17,
       "text": "Try to be a rainbow in someone's cloud.",
+      "textBn": "কারো মেঘের আকাশে রংধনু হওয়ার চেষ্টা করো।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Kindness"
     },
     {
       "month": 12,
       "day": 18,
       "text": "Success is liking yourself, liking what you do, and liking how you do it.",
+      "textBn": "সফলতা মানে নিজেকে ভালোবাসা, যা করো তা ভালোবাসা, আর যেভাবে করো তাকেও ভালোবাসা।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Success"
     },
     {
       "month": 12,
       "day": 19,
       "text": "I've learned that you can tell a lot about a person by the way he handles these three things: a rainy day, lost luggage, and tangled Christmas tree lights.",
+      "textBn": "শিখেছি—তিনটা জিনিসে একজন মানুষকে চেনা যায়: বৃষ্টির একটা দিন, হারানো লাগেজ আর প্যাঁচানো ক্রিসমাস বাতির আলো।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Character"
     },
     {
       "month": 12,
       "day": 20,
       "text": "When someone shows you who they are, believe them the first time.",
+      "textBn": "কেউ যখন নিজের আসল রূপ দেখায়, প্রথমবারেই বিশ্বাস করো।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Wisdom"
     },
     {
       "month": 12,
       "day": 21,
       "text": "You may encounter many defeats, but you must not be defeated.",
+      "textBn": "অনেকবার পরাজয়ের মুখে পড়বে, কিন্তু হার মানা চলবে না।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Resilience"
     },
     {
       "month": 12,
       "day": 22,
       "text": "There is no greater agony than bearing an untold story inside you.",
+      "textBn": "ভেতরে অকথিত একটা গল্প চেপে রাখার চেয়ে বড় যন্ত্রণা আর নেই।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Expression"
     },
     {
       "month": 12,
       "day": 23,
       "text": "I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.",
+      "textBn": "শিখেছি—মানুষ কী বলেছ তা ভুলে যাবে, কী করেছ তাও ভুলে যাবে, কিন্তু তুমি তাদের কেমন অনুভব করিয়েছ—তা কখনো ভুলবে না।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Impact"
     },
     {
       "month": 12,
       "day": 24,
       "text": "Ask for what you want and be prepared to get it.",
+      "textBn": "যা চাও, চেয়ে নাও—আর তা পেলেও যেন ভেঙে না পড়ো।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Intention"
     },
     {
       "month": 12,
       "day": 25,
       "text": "Nothing will work unless you do.",
+      "textBn": "তুমি না করলে কোনো কিছুই কাজ করবে না।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Work"
     },
     {
       "month": 12,
       "day": 26,
       "text": "We need much less than we think we need.",
+      "textBn": "আমরা যতটা ভাবি, তার চেয়ে অনেক কম দিয়েই চলে যায়।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Simplicity"
     },
     {
       "month": 12,
       "day": 27,
       "text": "We are only as blind as we want to be.",
+      "textBn": "আমরা ততটাই অন্ধ, যতটুকু অন্ধ হতে চাই।",
       "author": "Maya Angelou",
+      "authorBn": "মায়া অ্যাঞ্জেলো",
       "category": "Awareness"
     },
     {
       "month": 12,
       "day": 28,
       "text": "Pursue some path, however narrow and crooked, in which you can walk with love and reverence.",
+      "textBn": "এমন কোনো পথ ধরো—যত সরু বা বাঁকাই হোক—যেটায় তুমি ভালোবাসা আর শ্রদ্ধা নিয়ে হাঁটতে পারো।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Purpose"
     },
     {
       "month": 12,
       "day": 29,
       "text": "You must live in the present, launch yourself on every wave, find your eternity in each moment.",
+      "textBn": "বর্তমানে বাঁচো, প্রতিটি ঢেউয়ে নিজেকে ভাসাও, প্রতিটি মুহূর্তে খুঁজে নাও অনন্তকাল।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Mindfulness"
     },
     {
       "month": 12,
       "day": 30,
       "text": "The mass of men lead lives of quiet desperation. What is called resignation is confirmed desperation.",
+      "textBn": "অধিকাংশ মানুষ চুপচাপ হতাশা নিয়ে বেঁচে থাকে। যাকে আমরা নিয়তি বলে মানি, তা আসলে নিশ্চিত হতাশাই।",
       "author": "Henry David Thoreau",
+      "authorBn": "হেনরি ডেভিড থোরো",
       "category": "Authenticity"
     },
     {
       "month": 12,
       "day": 31,
       "text": "I took a deep breath and listened to the old brag of my heart: I am, I am, I am.",
+      "textBn": "গভীর একটা শ্বাস নিলাম, আর শুনলাম আমার হৃদয়ের পুরোনো গর্ব—আমি আছি, আমি আছি, আমি আছি।",
       "author": "Sylvia Plath",
+      "authorBn": "সিলভিয়া প্লাথ",
       "category": "Existence"
     }
   ]
